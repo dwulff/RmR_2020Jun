@@ -1,5 +1,5 @@
 ---
-title: "TITEL"
+title: "Dashboards"
 author: "Reporting mit R<br>
   <a href='https://therbootcamp.github.io'>
     The R Bootcamp
@@ -73,30 +73,168 @@ print2 <- function(x, nlines=10,...) {
 
 ```
 
-
-# TITEL
+# Was sind Dashboards?
 
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Teile den slide vertical mit links text und rechts Abbildung, code, etc.</span></li>  
-  <li class="m2"><span>40-50 ist idealer split. immer mindestens 10 abstand.</span></li>
-  <li class="m3"><span>Verwende, wo möglich numbered bullets, mit kurzen, prägnanten Aussagen: Omit needless words!.</span></li>
-  <li class="m4"><span>Hervorhebung.</span></li>
-  <ul class="level">
-    <li><span>Verwende das tag "high" <high>um Wörter hervorzuheben</high></li></span>
-    <li><span>Vermeide italic oder underline</li></span>
-  </ul>
+  <li class="m1"><span>Typischerweise einzelseitige Präsentation von Resultaten.</span></li> 
+  <li class="m2"><span>Präsentation zusammengehöriger Analysen.</span></li>  
+  <li class="m3"><span>Geben einfache Übersicht über wichtigste Parameter.</span></li>
+  <li class="m4"><span>Können dynamisch und interaktiv sein.</span></li>
 </ul>
 
 ]
 
 .pull-righ5[
 
-<p align = "center">
-  <img src="image/linear.png" ><br>
-  <font style="font-size:10px">from <a href="https://lifehacker.com/four-common-statistical-misconceptions-you-should-avoid-906056582">lifehacker.com</a></font>
-</p>
+
+]
+
+---
+
+# Dashboards bieten...
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Einfache Übersicht.</span></li>  
+  <li class="m2"><span>Performance Masse.</span></li>
+  <li class="m3"><span>Storyboards.</span></li>
+  <li class="m4"><span>Dynamik und Interaktivität.</span></li>
+</ul>
+
+
+]
+
+.pull-righ5[
+
+
+]
+
+
+---
+
+# Layout
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Standardmässig spaltenweise; zeilenweise möglich.</span></li>  
+  <li class="m2"><span>Standardmässig eine Spalte; mehrere möglich.</span></li>
+  <li class="m3"><span>Headers bestimmen die Boxen.</span></li>
+  <li class="m4"><span>Standardmässig eine Seite; scrollable
+  möglich.</span></li>
+  <li class="m5"><span>Tabs möglich.</span></li>
+</ul>
+
+
+]
+
+.pull-righ5[
+
+
+]
+
+---
+
+# Komponenten
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Grafiken.</span></li>  
+  <li class="m2"><span>Tabellen.</span></li>
+  <li class="m3"><span>[Text](http://stephanieevergreen.com/problem-with-dashboards/).</span></li>
+  <li class="m4"><span><mono>valueBox</mono>es.</span></li>
+  <li class="m5"><span><mono>gauge</mono>s.</span></li>
+  <li class="m6"><span><mono>htmlwidgets</mono>s.</span></li>
+</ul>
+
+
+]
+
+.pull-righ5[
+
+
+]
+
+---
+
+# Storyboard
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Grafiken.</span></li>  
+  <li class="m2"><span>Tabellen.</span></li>
+  <li class="m3"><span>[Text](http://stephanieevergreen.com/problem-with-dashboards/).</span></li>
+  <li class="m4"><span><mono>valueBox</mono>es.</span></li>
+  <li class="m5"><span><mono>gauge</mono>s.</span></li>
+  <li class="m6"><span><mono>htmlwidgets</mono>s.</span></li>
+</ul>
+
+
+]
+
+.pull-righ5[
+
+
+]
+
+---
+
+# plotly / leaflet -> CHECK WHICH ONE
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Grafiken.</span></li>  
+  <li class="m2"><span>Tabellen.</span></li>
+  <li class="m3"><span>[Text](http://stephanieevergreen.com/problem-with-dashboards/).</span></li>
+  <li class="m4"><span><mono>valueBox</mono>es.</span></li>
+  <li class="m5"><span><mono>gauge</mono>s.</span></li>
+  <li class="m6"><span><mono>htmlwidgets</mono>s.</span></li>
+</ul>
+
+
+]
+
+.pull-righ5[
+
+
+]
+
+---
+
+# Mehrere Seiten
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Erste headers (<mono>#</mono>) definieren jeweils eigene Seiten.</span></li>
+</ul>
+
+
+]
+
+.pull-righ5[
+
+
+]
+
+---
+
+
+# Dynamische Dashboards mit Shiny
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Mit Shiny werden Dashboards interaktiv, sodass z.B. Variablen für einen Plot ausgewählt werden können</span></li>  
+  <li class="m2"><span>Nachteil: benötigt einen Server.</span></li>
+</ul>
+
+
+Mehr zu Shiny in der nächsten Session!
+
+]
+
+.pull-righ5[
 
 
 ]
@@ -105,5 +243,5 @@ print2 <- function(x, nlines=10,...) {
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/SmR_2020Jun/_sessions/_template/LinearModelsI_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboard/Dashboard_practical.html">Practical</a></h1>
 

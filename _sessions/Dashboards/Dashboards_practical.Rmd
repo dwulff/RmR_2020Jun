@@ -1,10 +1,10 @@
 ---
-title: "TITEL"
+title: "Dashboards Practical"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
       <font style='font-style:normal'>Reporting mit R</font><br>
-      <a href='https://therbootcamp.github.io/SmR_2020Jun/'>
+      <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -57,38 +57,42 @@ library(tidyverse)
 
 ## Überblick
 
-In diesem Practical wirst die Clusteranalyse an zwei Datensätzen üben. 
+In diesem Practical übst du, (dynamische) Daschboards in Markdown zu erstellen.
 
 Am Ende des Practicals wirst du wissen wie man:
 
-1. Cluster anhand verschiedener Methoden identifiziert.
-2. Wie man die Anzahl der Cluster in den Daten schätzt.
+1. Dashboard-Layouts bestimmt.
+2. Die einzelnen Komponenten mit Inhalt füllst.
+3. Ein Storyboard erstellst.
+4. Grafiken mit plotly aufpeppst.
+5. Erste Schritte mit Shiny macht.
 
 ## Aufgaben
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
+1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelistet sind, in deinem `1_Data` Ordner hast. 
 
-2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Unsupervised learning Practical" als Kommentare an den Anfang des Skripts.
+2. Öffne ein neues RMarkdown Skript und wähle das Template "Flex Dashboard" aus (siehe screenshot unten).
 
-```{r, eval = FALSE, echo = TRUE}
-## NAME
-## DATUM
-## Unsupervised learning Practical
-```
+<p align="center" width="100%">
+  <img src="image/screenshot_template.PNG" alt="Trulli" style="width:50%">
+</p>
 
-3. Speichere das neue Skript unter dem Namen `unspervised_learning_practical.R` im `2_Code` Ordner.
 
-4. Lade die Pakete `tidyverse`, `cstab`, `dbscan`, und `mclust`.
+3. Speichere das neue Skript unter dem Namen `dashboards_practical.Rmd` im `2_Code` Ordner.
 
-### B - Lade den `gap` Datensatz
+4. Schreibe als Titel "Dashboards Practical" hinein.
 
-1. Verwende die `read_csv()` Funktion um den Datensatz `gap.csv` als Objekt `gap` einzulesen.
+### B - Setup
+
+1. Lade die Pakete `tidyverse`, `plotly`, und `flexdashboard` (letzteres sollte, wenn du das richtige Template ausgewählt hast, bereits als `library()` Befehl eingefügt sein) im Setup chunk.
 
 ```{r, echo = T, eval = T, message = F}
-# Lese gap.csv
-gap <- read_csv('1_Data/gap.csv')
+# Lade Pakete
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
 ```
 
 2. Printe den Datensatz. 
