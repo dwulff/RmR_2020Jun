@@ -57,15 +57,15 @@ library(tidyverse)
 
 ## Überblick
 
-In diesem Practical übst du, (dynamische) Daschboards in Markdown zu erstellen.
+In diesem Practical übst du, (dynamische) Dashboards in Markdown zu erstellen. Genauer wirst du [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/BerlinDashboard.html) Dashboard erstellen.
 
 Am Ende des Practicals wirst du wissen wie man:
 
 1. Dashboard-Layouts bestimmt.
 2. Die einzelnen Komponenten mit Inhalt füllst.
 3. Ein Storyboard erstellst.
-4. Grafiken mit plotly aufpeppst.
-5. Erste Schritte mit Shiny macht.
+4. Karten mit `leaflet` plottest.
+5. Grafiken mit `plotly` aufpeppst.
 
 ## Aufgaben
 
@@ -86,32 +86,36 @@ Am Ende des Practicals wirst du wissen wie man:
 
 ### B - Setup
 
-1. Lade die Pakete `tidyverse`, `plotly`, und `flexdashboard` (letzteres sollte, wenn du das richtige Template ausgewählt hast, bereits als `library()` Befehl eingefügt sein) im Setup chunk.
+1. Lade die Pakete `tidyverse`, `plotly`, `leaflet`, `viridis`, `htmltools`, `lubridate`, `patchwork` und `flexdashboard` (letzteres sollte, wenn du das richtige Template ausgewählt hast, bereits als `library()` Befehl eingefügt sein) im Setup chunk.
 
 ```{r, echo = T, eval = T, message = F}
 # Lade Pakete
 library(flexdashboard)
 library(tidyverse)
 library(plotly)
-```
-
-2. Printe den Datensatz. 
-
-3. Verwende `summary()` um einen weiteren Überblick über die Daten zu bekommen.
-
-4. Verwende den Code unten um einen neuen Datensatz mit ausschliesslich den Daten aus dem Jahr 2007 und den beiden Variablen `Lebenserwartung` und `BIP pro Kopf` zu erstellen.
-
-```{r, echo = T, eval = T, message = F}
-# gap in 2007
-gap2007 <- gap %>% 
-  filter(Jahr == 2007) %>% 
-  select(`BIP pro Kopf`, Lebenserwartung)
+library(leaflet)
+library(viridis)
+library(htmltools)
+library(lubridate)
+library(patchwork)
 ```
 
 
-### C - *k*-means
 
-1. Verwende die `kmeans()` Funktion um den `gap2007` Datensatz in `3` Cluster aufzuteilen. 
+2. Lade den `airbnb` Datensatz mit `read_csv()` so wie du das in den bisherigen Practicals auch gemacht hast.
+
+```{r echo = TRUE}
+airbnb <- read_csv("XXX/XXX")
+```
+
+
+### C - Layout
+
+1. Zur Erinnerung, du wirst [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/BerlinDashboard.html) Dashboard erstellen. Öffne den Link am besten in einem separaten Tab in deinem Browser. Wir werden wärend dieses Practicals immer wieder darauf verweisen.
+
+2. Schau dir das Dashboard genau an, um einen Eindruck zu kriegen, was du genau nachbauen sollst, wie das Layout aussieht, und welche Komponenten verwendet werden.
+
+3. Setze zunächst das Layout des ganzen Dashboards auf. Verwende dazu zuerst Zeilen von Gleichheitszeichen `========` (dies entspricht Titeln der ersten Stufe, also was du bisher mit einem `#` gekennzeichnet hast).
 
 ```{r, echo = T, eval = F, message = F}
 # kmeans für gap in 2007

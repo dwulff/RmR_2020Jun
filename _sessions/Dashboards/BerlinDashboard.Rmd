@@ -208,6 +208,7 @@ pg1 / pg2
 
 *** 
 
+**Mittlere Gesamtratings**
 ```{r fig.width=3,fig.height=2, fig.align="center"}
 # erstelle einen gauge der mittleren Gesamtratings
 gesamtrating <- round(mean(airbnb$Rating_gesamt, na.rm = TRUE), 1)
@@ -256,6 +257,7 @@ ps1 / ps2
 
 *** 
 
+**Mittlere Sauberkeitsratings**
 ```{r fig.width=3,fig.height=2, fig.align="center"}
 # erstelle einen gauge der mittleren Sauberkeitsratings
 sauberkeit <- round(mean(airbnb$Rating_sauberkeit, na.rm = TRUE), 1)
@@ -304,6 +306,7 @@ pl1 / pl2
 
 *** 
 
+**Mittlere Lageratings**
 ```{r fig.width=3,fig.height=2, fig.align="center"}
 # erstelle einen gauge der mittleren Lageratings
 lage <- round(mean(airbnb$Rating_lage, na.rm = TRUE), 1)
@@ -312,6 +315,6 @@ gauge(lage, min = 0, max = 10, gaugeSectors(
 ))
 ```
 
-<p style="font-size: 20px;">Verrückt; auch die Lageratings sind fast alle super. Entweder Berlin hat fast nur erstklassige Wohngebiete, viele der guten Wohnungen sind bei Airbnb vermietet, oder die Gäste sind sehr wohlwollend. Wir wissen es schlussendlich nicht. Jedenfalls scheint sich – zumindest basierend auf den unterschiedlichen Bewertungen – ein Besuch in Berlin zu lohnen.<p>
+<p style="font-size: 20px;">Verrückt; auch die Lageratings sind fast alle super. Entweder Berlin hat fast nur erstklassige Wohngebiete, viele der guten Wohnungen sind bei Airbnb vermietet, oder die Gäste sind sehr wohlwollend. Wir wissen es schlussendlich nicht (eine einfache Erklärung für die guten ratings könnte z.B. auch sein, dass gute Airbnbs einfach häufiger besucht werden).<p>
 
 

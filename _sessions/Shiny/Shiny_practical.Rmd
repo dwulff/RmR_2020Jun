@@ -57,6 +57,10 @@ library(tidyverse)
 
 ## Überblick
 
+NOTES FÜR APP
+- GAUGES SPÄTER NACH STADTTEIL AUSWÄHLBAR
+- 
+
 In diesem Practical wirst die Clusteranalyse an zwei Datensätzen üben. 
 
 Am Ende des Practicals wirst du wissen wie man:
