@@ -24,7 +24,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 Übersicht der Airbnbs in Berlin {data-orientation=rows}
 ======================================================================
 
-Allgemein {data-height = 400}
+Zeile {data-height = 400}
 ----------------------------------------------------------------------
 
 ### Superhosts
@@ -76,30 +76,13 @@ valueBox(preiswert,
          icon = "fa-money-bill-wave", color = "#85a95d")
 ```
 
-Berlin
+Zeile
 ----------------------------------------------------------------------
 
 ```{r fig.width=18, fig.height=6.5}
 
-## Farbpalette vorbereiten
-# Anzahl Stadtteile
-n_stadtteile <- length(unique(airbnb$Stadtteil))
-# Definiere n_stadtteile verschiedene Farben aus der viridis palette
-farben <- viridis(n_stadtteile)
-# Erstelle Farbpalette
-pal <- colorFactor(farben,
-                   domain = unique(airbnb$Stadtteil))
-
 # Erstelle neue Variable für die Labels
 airbnb %>% 
-  mutate(
-    superhost = case_when(isTRUE(.$Host_superhost) ~ "Ja",
-                          TRUE ~ "Nein"),
-    info = paste0("Unterkunft: <b>", Unterkunftsart,
-                  "</b><br>Schlafzimmer: <b>", Schlafzimme,
-                  "</b><br>Superhost: <b>", superhost,
-                  "</b><br>Preis pro Nacht: <b>", Preis, "&euro;</b>")
-  ) %>% 
   # Erstelle Plot
   leaflet() %>% 
   # Setze Anfangskoordinaten und Zoomwert
@@ -111,13 +94,8 @@ airbnb %>%
     lng = ~Längengrad,
     lat = ~Breitengrad,
     radius = 4,
-    stroke = FALSE, fillOpacity = 0.5,
-    color = ~pal(Stadtteil),
-    label = ~lapply(info, HTML),
-    labelOptions = labelOptions(textsize = "15px")
-  ) %>% 
-  # Füge Legende hinzu
-  addLegend(pal = pal, values = ~Stadtteil, opacity = 1)
+    stroke = FALSE, fillOpacity = 0.5
+  )
 
 ```
 
@@ -127,7 +105,7 @@ Entwicklung über Zeit {data-orientation=columns}
 ======================================================================
 
 
-Entwicklung über die Zeit {data-width = 750}
+Spalte {data-width = 800}
 ----------------------------------------------------------------------
 
 ### Entwicklung der Berliner Airbnbs seit 2009
@@ -135,6 +113,11 @@ Entwicklung über die Zeit {data-width = 750}
 ```{r fig.width=12, fig.height=7}
 
 ### Plot zum Verlauf über die Zeit
+
+# Anzahl Stadtteile
+n_stadtteile <- length(unique(airbnb$Stadtteil))
+# Definiere n_stadtteile verschiedene Farben aus der viridis palette
+farben <- viridis(n_stadtteile)
 
 # Passe den Datensatz an
 Verlauf <- airbnb %>%
@@ -146,27 +129,14 @@ Verlauf <- airbnb %>%
   # letztere als 10er Logarithmus der Anzahl Airbnbs
   mutate(Datum = Erstellungsdatum,
          Kumulativ = log10(1:n())) %>%
-  # Gruppiere über Stadtteil, Datum, und Kumulativ Variablen
-  group_by(Stadtteil, Datum, Kumulativ) %>% 
-  # Berechne deskriptive Statistiken und erstelle Variable mit 
-  # Text für Popup Felder
-  summarise(
-    m_preis = mean(Preis, na.rm = TRUE),
-    superhosts = sum(Host_superhost, na.rm = TRUE),
-    m_rating = mean(Rating_gesamt, na.rm = TRUE),
-    hover_text = paste0("Mittlerer Preis: <b>", m_preis,
-                        "</b><br>Superhosts: <b>", superhosts,
-                        "</b><br>Mittleres Gesamtrating: <b>",
-                        m_rating, "</b>")
-  ) %>% 
   # Erstelle den Plot mit Datum auf der x- und Kumulativ auf der y-Achse
   # Separate und eingefärbte Linien pro Stadtteil
   ggplot(aes(x = Datum, y = Kumulativ, col = Stadtteil)) +
-  # Zeichne Punkte ein; das text Argument wird später von ggplotly() verwendet
-  geom_point(aes(text = hover_text)) +
+  # Zeichne Punkte ein
+  geom_point() +
   # Zeichne Linien
   geom_line(show.legend = FALSE) +
-  # Definiere Farbwerte; Objekt farben stammt noch von der Karte auf p.1
+  # Definiere Farbwerte
   scale_color_manual(values = farben) +
   # Definiere y-Achsenbeschriftung; verwendet HTML wegen plotly
   ylab("log<sub>10</sub>(Kumulative Häufigkeit)") +
@@ -178,7 +148,7 @@ ggplotly(Verlauf)
 
 ```
 
-Erklärung {data-width = 250}
+Spalte {data-width = 200}
 ----------------------------------------------------------------------
 
 ### Hintergründe
