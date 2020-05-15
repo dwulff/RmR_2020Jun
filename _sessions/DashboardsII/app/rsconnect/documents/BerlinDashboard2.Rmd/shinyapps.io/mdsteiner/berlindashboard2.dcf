@@ -1,0 +1,12 @@
+name: berlindashboard2
+title:
+username:
+account: mdsteiner
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2306498
+bundleId: 3152838
+url: https://mdsteiner.shinyapps.io/berlindashboard2/
+when: 1589566160.56946
+asMultiple: FALSE
+asStatic: FALSE
