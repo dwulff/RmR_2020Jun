@@ -31,6 +31,12 @@ sliderInput("Schlafzimmer", "Minimum Anzahl Schlafzimmer",
             min = 0, max = 12,
             value = 0)
 
+# Preis pro Nacht
+sliderInput("Preis", "Max Preis pro Nacht (log):", 
+            min = 0, max = ceiling(max(log10(airbnb$Preis), na.rm = TRUE)),
+            value = ceiling(max(log10(airbnb$Preis), na.rm = TRUE)),
+            step = .01)
+
 # Auswahl der zu Plottenden Stadtteile
 checkboxGroupInput("Stadtteile", "Wähle Stadtteile:",
                    choices = sort(unique(airbnb$Stadtteil)),
@@ -40,6 +46,29 @@ checkboxGroupInput("Stadtteile", "Wähle Stadtteile:",
 selectInput("Farbpalette", "Wähle Farbpalette:",
             choices = c("viridis", "cividis", "magma", "inferno"),
             selected = "viridis")
+
+# kreire reaktives airbnb Objekt
+airbnb_dynamic <- reactive({
+
+    airbnb %>%
+      filter(Stadtteil %in% c(input$Stadtteile) &
+               Schlafzimmer >= as.numeric(input$Schlafzimmer) &
+               log10(Preis) <= as.numeric(input$Preis)) 
+  
+    
+})
+
+farben_dynamic <- reactive({
+  ## Farbpalette vorbereiten
+  # Anzahl Stadtteile
+  n_stadtteile <- length(input$Stadtteile)
+  # Definiere n_stadtteile verschiedene Farben aus der viridis palette
+  switch(input$Farbpalette,
+         viridis = viridis(n_stadtteile),
+         cividis = cividis(n_stadtteile),
+         magma = magma(n_stadtteile),
+         inferno = inferno(n_stadtteile))
+})
 ```
 
 
@@ -106,31 +135,18 @@ Zeile
 ```{r fig.width=18, fig.height=6.5}
 
 renderLeaflet({
-  
-## Farbpalette vorbereiten
-# Anzahl Stadtteile
-n_stadtteile <- length(input$Stadtteile)
-# Definiere n_stadtteile verschiedene Farben aus der viridis palette
-farben <- switch(input$Farbpalette,
-                 viridis = viridis(n_stadtteile),
-                 cividis = cividis(n_stadtteile),
-                 magma = magma(n_stadtteile),
-                 inferno = inferno(n_stadtteile))
 
-dom <- airbnb %>% 
-  filter(Stadtteil %in% c(input$Stadtteile)) %>% 
+dom <- airbnb_dynamic() %>% 
   pull(Stadtteil) %>% unique()
 
 # Erstelle Farbpalette
-pal <- colorFactor(farben,
+pal <- colorFactor(farben_dynamic(),
                    domain = dom)
 
 # Erstelle neue Variable für die Labels
-airbnb %>% 
-  filter(Stadtteil %in% c(input$Stadtteile) &
-           Schlafzimmer >= as.numeric(input$Schlafzimmer)) %>% 
+airbnb_dynamic() %>% 
   mutate(
-    superhost = case_when(isTRUE(.$Host_superhost) ~ "Ja",
+    superhost = case_when(isTRUE(Host_superhost) ~ "Ja",
                           TRUE ~ "Nein"),
     info = paste0("Unterkunft: <b>", Unterkunftsart,
                   "</b><br>Schlafzimmer: <b>", Schlafzimmer,
@@ -177,17 +193,9 @@ Spalte {data-width = 800}
 
 ### Plot zum Verlauf über die Zeit
 renderPlotly({
-  # Anzahl Stadtteile
-n_stadtteile <- length(unique(airbnb$Stadtteil))
-# Definiere n_stadtteile verschiedene Farben aus der viridis palette
-farben <- switch(input$Farbpalette,
-                 viridis = viridis(n_stadtteile),
-                 cividis = cividis(n_stadtteile),
-                 magma = magma(n_stadtteile),
-                 inferno = inferno(n_stadtteile))
 
 # Passe den Datensatz an
-Verlauf <- airbnb %>%
+Verlauf <- airbnb_dynamic() %>%
   # Gruppiere über Stadtteile
   group_by(Stadtteil) %>%
   # Ordne Zeilen Aufsteigend nach Erstellungsdatum 
@@ -217,7 +225,7 @@ Verlauf <- airbnb %>%
   # Zeichne Linien
   geom_line(show.legend = FALSE) +
   # Definiere Farbwerte; Objekt farben stammt noch von der Karte auf p.1
-  scale_color_manual(values = farben) +
+  scale_color_manual(values = farben_dynamic()) +
   # Definiere y-Achsenbeschriftung; verwendet HTML wegen plotly
   ylab("log<sub>10</sub>(Kumulative Häufigkeit)") +
   # Definiere Plot design
@@ -256,10 +264,7 @@ Bewertungen der Airbnbs {.storyboard}
 renderPlot({
   
   # Wähle die Rating_gesamt Variable zum Plotten aus
-  pg1 <- airbnb %>% 
-    filter(Stadtteil %in% c(input$Stadtteile) &
-           Schlafzimmer >= as.numeric(input$Schlafzimmer)) %>% 
-    ggplot(aes(Rating_gesamt)) +
+  pg1 <- ggplot(airbnb_dynamic(), aes(Rating_gesamt)) +
     # Erstelle ein Histogramm mit Balkenbreite 1
     geom_histogram(binwidth = 1) +
     # Definiere die Achsenbeschriftungen
@@ -280,10 +285,7 @@ renderPlot({
   
   # Wähle die Preis und Rating_gesamt Variablen zum Plotten aus und
   # berechne den 10er Logarithmus von Preis
-  pg2 <- airbnb %>% 
-    filter(Stadtteil %in% c(input$Stadtteile) &
-           Schlafzimmer >= as.numeric(input$Schlafzimmer)) %>%   
-    ggplot(aes(x = log10(Preis), y = Rating_gesamt)) +
+  pg2 <- ggplot(airbnb_dynamic(), aes(x = log10(Preis), y = Rating_gesamt)) +
     # Erstelle ein Streudiagramm, mit zu 25% transparenten Punkten
     geom_point(alpha = .25) +
     # Definiere die Achsenbeschriftungen mit Subskript für 10
@@ -311,14 +313,12 @@ renderPlot({
 *** 
 
 **Mittlere Gesamtratings**
-```{r fig.width=3,fig.height=2, fig.align="center"}
+```{r fig.width=3,fig.height=1.5, fig.align="center"}
 
 renderGauge({
   
   # Berechne mittleres Gesamtrating und Runde auf eine Kommastelle
-  gesamtrating <- airbnb %>% 
-    filter(Stadtteil %in% c(input$Stadtteile) &
-           Schlafzimmer >= as.numeric(input$Schlafzimmer)) %>% 
+  gesamtrating <- airbnb_dynamic() %>% 
     pull(Rating_gesamt) %>% mean(na.rm = TRUE) %>% round(1)
   
   # Estelle den gauge mit dem gesamtrating Objekt
@@ -346,10 +346,7 @@ renderGauge({
 ```{r}
 renderPlot({
   # Erstelle das Histogramm der Sauberkeitsratings
-  ps1 <- airbnb %>% 
-      filter(Stadtteil %in% c(input$Stadtteile) &
-             Schlafzimmer >= as.numeric(input$Schlafzimmer)) %>%
-    ggplot(aes(Rating_sauberkeit)) +
+  ps1 <- ggplot(airbnb_dynamic(), aes(Rating_sauberkeit)) +
     geom_histogram(binwidth = 1) +
     labs(x = "Sauberkeitsrating",
          y = "Häufigkeit") +
@@ -362,10 +359,7 @@ renderPlot({
   
   # Erstelle das Streudiagramm für den Zusammenhang von Preis und 
   # Sauberkeitsrating
-  ps2 <- airbnb %>% 
-      filter(Stadtteil %in% c(input$Stadtteile) &
-             Schlafzimmer >= as.numeric(input$Schlafzimmer)) %>% 
-    ggplot(aes(x = log10(Preis), y = Rating_sauberkeit)) +
+  ps2 <- ggplot(airbnb_dynamic(), aes(x = log10(Preis), y = Rating_sauberkeit)) +
     geom_point(alpha = .25) +
     labs(x = bquote("log"[10]*"(Preis)"),
          y = "Sauberkeitsrating") +
@@ -385,12 +379,10 @@ renderPlot({
 *** 
 
 **Mittlere Sauberkeitsratings**
-```{r fig.width=3,fig.height=2, fig.align="center"}
+```{r fig.width=3,fig.height=1.5, fig.align="center"}
 renderGauge({
   # erstelle einen gauge der mittleren Sauberkeitsratings
-  sauberkeit <- airbnb %>% 
-    filter(Stadtteil %in% c(input$Stadtteile) &
-           Schlafzimmer >= as.numeric(input$Schlafzimmer)) %>%
+  sauberkeit <- airbnb_dynamic() %>% 
     pull(Rating_sauberkeit) %>% mean(na.rm = TRUE) %>%  round(1)
   gauge(sauberkeit, min = 0, max = 10, gaugeSectors(
     success = c(8, 10), warning = c(5, 7), danger = c(0, 4)
@@ -410,10 +402,7 @@ renderGauge({
 ```{r}
 renderPlot({
   # Erstelle das Histogramm der Lageratings
-  pl1 <- airbnb %>% 
-        filter(Stadtteil %in% c(input$Stadtteile) &
-               Schlafzimmer >= as.numeric(input$Schlafzimmer)) %>%
-    ggplot(aes(Rating_lage)) +
+  pl1 <- ggplot(airbnb_dynamic(), aes(Rating_lage)) +
     geom_histogram(binwidth = 1) +
     labs(x = "Lagerating",
          y = "Häufigkeit") +
@@ -422,14 +411,11 @@ renderPlot({
     theme(
       axis.title = element_text(size = 16),
       axis.text = element_text(size = 12)
-    ) 
-  
-  # Erstelle das Streudiagramm für den Zusammenhang von Preis und 
+    )
+
+  # Erstelle das Streudiagramm für den Zusammenhang von Preis und
   # Lageratings
-  pl2 <- airbnb %>% 
-        filter(Stadtteil %in% c(input$Stadtteile) &
-               Schlafzimmer >= as.numeric(input$Schlafzimmer)) %>%
-    ggplot(aes(x = log10(Preis), y = Rating_lage)) +
+  pl2 <- ggplot(airbnb_dynamic(), aes(x = log10(Preis), y = Rating_lage)) +
     geom_point(alpha = .25) +
     labs(x = bquote("log"[10]*"(Preis)"),
          y = "Lagerating") +
@@ -439,7 +425,7 @@ renderPlot({
       axis.title = element_text(size = 16),
       axis.text = element_text(size = 12)
     )
-  
+
   # Plotte die Grafiken untereinander
   pl1 / pl2
 })
@@ -449,18 +435,16 @@ renderPlot({
 *** 
 
 **Mittlere Lageratings**
-```{r fig.width=3,fig.height=2, fig.align="center"}
+```{r fig.width=3,fig.height=1.5, fig.align="center"}
 
 renderGauge({
   # erstelle einen gauge der mittleren Sauberkeitsratings
-  lage <- airbnb %>% 
-    filter(Stadtteil %in% c(input$Stadtteile) &
-           Schlafzimmer >= as.numeric(input$Schlafzimmer)) %>%
+  lage <- airbnb_dynamic() %>%
     pull(Rating_lage) %>% mean(na.rm = TRUE) %>%  round(1)
   gauge(lage, min = 0, max = 10, gaugeSectors(
     success = c(8, 10), warning = c(5, 7), danger = c(0, 4)
   ))
-  
+
 })
 
 ```
