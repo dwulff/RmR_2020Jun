@@ -1,0 +1,67 @@
+---
+title: "flexdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(leaflet)
+library(viridis)
+library(htmltools)
+library(patchwork)
+airbnb <- read_csv("1_Data/airbnb.csv")
+```
+
+Übersicht der Airbnbs in Berlin {data-orientation=rows}
+======================================================================
+
+Zeile 1 {data-height = 400}
+----------------------------------------------------------------------
+
+### Superhosts
+
+```{r}
+# berechne die Anzahl Superhosts im airbnb Datensatz
+n_superhosts <- sum(airbnb$Host_superhost)
+# Erstelle valueBox
+valueBox(n_superhosts, caption = "Superhost")
+```
+
+
+### Allstar
+
+### Preiswert
+
+Zeile 2
+----------------------------------------------------------------------
+
+### Karte {.no-title}
+
+Entwicklung über Zeit
+======================================================================
+
+Spalte 1
+----------------------------------------------------------------------
+
+### Entwicklung der Berliner Airbnbs seit 2009
+
+Spalte 2 {data-height = 200}
+----------------------------------------------------------------------
+
+### Hintergründe
+
+Bewertungen der Airbnbs {.storyboard}
+======================================================================
+
+### <span style="font-size: 20px;">Gesamtrating</span> {data-commentary-width=300}
+
+### <span style="font-size: 20px;">Sauberkeit</span> {data-commentary-width=300}
+
+### <span style="font-size: 20px;">Lage</span> {data-commentary-width=300}
+
+

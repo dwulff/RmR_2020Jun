@@ -76,7 +76,7 @@ farben_dynamic <- reactive({
 Übersicht der Airbnbs in Berlin {data-orientation=rows}
 ======================================================================
 
-Zeile {data-height = 400}
+Zeile 1 {data-height = 400}
 ----------------------------------------------------------------------
 
 ### Superhosts
@@ -128,7 +128,7 @@ valueBox(preiswert,
          icon = "fa-money-bill-wave", color = "#85a95d")
 ```
 
-Zeile
+Zeile 2
 ----------------------------------------------------------------------
 
 ### Karte {.no-title}
@@ -185,7 +185,7 @@ Entwicklung über Zeit {data-orientation=columns}
 
 
 
-Spalte
+Spalte 1
 ----------------------------------------------------------------------
 
 ### Entwicklung der Berliner Airbnbs seit 2009
@@ -239,7 +239,7 @@ ggplotly(Verlauf)
 
 ```
 
-Spalte {data-width = 200}
+Spalte 2 {data-width = 200}
 ----------------------------------------------------------------------
 
 ### Hintergründe
