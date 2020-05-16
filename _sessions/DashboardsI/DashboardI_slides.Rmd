@@ -1,5 +1,5 @@
 ---
-title: "Dashboards"
+title: "Dashboards I"
 author: "Reporting mit R<br>
   <a href='https://therbootcamp.github.io'>
     The R Bootcamp
@@ -80,7 +80,7 @@ print2 <- function(x, nlines=10,...) {
 <ul>
   <li class="m1"><span>Typischerweise einzelseitige Präsentation von Resultaten.</span></li> 
   <li class="m2"><span>Präsentation zusammengehöriger Analysen.</span></li>  
-  <li class="m3"><span>Geben einfache Übersicht über wichtigste Parameter.</span></li>
+  <li class="m3"><span>Geben einfache Übersicht über wichtigste Parameter/KPI (Key Performance Indicators).</span></li>
   <li class="m4"><span>Können dynamisch und interaktiv sein.</span></li>
 </ul>
 
@@ -88,6 +88,10 @@ print2 <- function(x, nlines=10,...) {
 
 .pull-righ5[
 
+<p align = "center">
+  <img src="image/HR_dashboard.png" width=50%><br>
+  <font style="font-size:10px">from <a href="https://towardsdatascience.com/building-an-hr-dashboard-in-r-using-flexdashboard-76d14ed3f32">towardsdatascience.com</a></font>
+</p>
 
 ]
 
@@ -108,8 +112,33 @@ print2 <- function(x, nlines=10,...) {
 
 .pull-righ5[
 
+<p align = "center">
+  <img src="image/HR_dashboard.png" width=50%><br>
+  <font style="font-size:10px">from <a href="https://towardsdatascience.com/building-an-hr-dashboard-in-r-using-flexdashboard-76d14ed3f32">towardsdatascience.com</a></font>
+</p>
 
 ]
+
+---
+
+# Ein Beispiel
+
+<p align = "center">
+  <iframe src="https://jjallaire.shinyapps.io/shiny-crandash/#dashboard" width="100%%" height="450" style="border:none;">
+</iframe><br>
+  <font style="font-size:10px">from <a href="https://jjallaire.shinyapps.io/shiny-crandash/#dashboard">rstudio.com</a></font>
+</p>
+
+---
+
+# Ein Beispiel
+
+<p align = "center">
+  <iframe src="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html" width="100%%" height="450" style="border:none;">
+</iframe><br>
+  <font style="font-size:10px">from <a href="https://therbootcamp.github.io/">therbootcamp.com</a></font>
+</p>
+
 
 
 ---

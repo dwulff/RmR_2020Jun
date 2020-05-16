@@ -58,7 +58,7 @@ library(tidyverse)
 
 ## Überblick
 
-In diesem Practical übst du, (dynamische) Dashboards in Markdown zu erstellen. Genauer wirst du [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/BerlinDashboard.html) Dashboard erstellen.
+In diesem Practical übst du, (dynamische) Dashboards in Markdown zu erstellen. Genauer wirst du [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html) Dashboard erstellen.
 
 Am Ende des Practicals wirst du wissen wie man:
 
@@ -111,7 +111,7 @@ airbnb <- read_csv("../XXX/XXX")
 
 ### C - Layout
 
-Beim Erstellen eines Dashboards ist es hilfreich, sich von Beginn an ein Layout zurechtzulegen, welches man dann Schritt für Schritt auffüllt. Eine Skizze oder zumindest eine bildliche/ konzeptuelle Vorstellung ist daher wichtig. Zur Erinnerung, du wirst in diesem Practical  [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/BerlinDashboard.html) Dashboard erstellen.
+Beim Erstellen eines Dashboards ist es hilfreich, sich von Beginn an ein Layout zurechtzulegen, welches man dann Schritt für Schritt auffüllt. Eine Skizze oder zumindest eine bildliche/ konzeptuelle Vorstellung ist daher wichtig. Zur Erinnerung, du wirst in diesem Practical  [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html) Dashboard erstellen.
 
 1.  Öffne den Link am besten in einem separaten Tab in deinem Browser. Wir werden während dieses Practicals immer wieder darauf verweisen.
 
@@ -124,7 +124,7 @@ TITEL
 ======================================================================
 ```
 
-4. In `flexdashboards` sind Seiten Standardmässig spaltenweise ausgerichtet. Schaue dir das [Dashboard](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/BerlinDashboard.html) nochmals an. Sind alle drei Seiten spaltenweise ausgerichtet?
+4. In `flexdashboards` sind Seiten Standardmässig spaltenweise ausgerichtet. Schaue dir das [Dashboard](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html) nochmals an. Sind alle drei Seiten spaltenweise ausgerichtet?
 
 5. Genau, nur die zweite Seite ist spaltenweise ausgerichtet. Die erste Seite ist zeilenweise ausgerichtet, und die dritte Seite ist ein Storyboard. In einem Dashboard mit mehreren Seiten, kannst du jeweils nach dem Titel die Seitenausrichtung bestimmen, indem du für eine spalteinweise Ausrichtung `{data-orientation=columns}`, für eine zeilenweise Ausrichtung `{data-orientation=rows}` und für ein Storyboard `{.storyboard}` nach dem Titel (aber auf derselben Zeile) schreibst. Füge die entsprechende Ausrichtung nach den drei Titeln ein.
 
@@ -195,7 +195,7 @@ valueBox(XXX, caption = "XXX")
 
 9. So, das war es für den Moment für diese Seite; die interaktiven Grafiken erstellen wir weiter unten. Gehe im Code zur zweiten Seite. Dort werden wir den Text erstellen.
 
-10. Schaue dir den Text in der rechten Spalte des [Dashboards](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/BerlinDashboard.html) an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen (du darfst copy-pasten um nicht alles abschreiben zu müssen).
+10. Schaue dir den Text in der rechten Spalte des [Dashboards](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html) an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen (du darfst copy-pasten um nicht alles abschreiben zu müssen).
 
 11. Du kannst deinen Text mit dem untenstehenden Text, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen. Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?
 
