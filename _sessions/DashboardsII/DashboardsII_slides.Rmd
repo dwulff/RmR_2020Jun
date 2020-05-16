@@ -73,29 +73,319 @@ print2 <- function(x, nlines=10,...) {
 
 ```
 
+# Dashboard aus dem letzten Practical
 
-# TITEL
+<p align = "center">
+  <iframe src="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html" width="100%%" height="450" style="border:none;">
+</iframe><br>
+  <font style="font-size:10px">from <a href="https://therbootcamp.github.io/">therbootcamp.com</a></font>
+</p>
+
+
+---
+
+# Mehr Interaktivität? &#8594; <highm>shiny</highm>!
 
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Teile den slide vertical mit links text und rechts Abbildung, code, etc.</span></li>  
-  <li class="m2"><span>40-50 ist idealer split. immer mindestens 10 abstand.</span></li>
-  <li class="m3"><span>Verwende, wo möglich numbered bullets, mit kurzen, prägnanten Aussagen: Omit needless words!.</span></li>
-  <li class="m4"><span>Hervorhebung.</span></li>
-  <ul class="level">
-    <li><span>Verwende das tag "high" <high>um Wörter hervorzuheben</high></li></span>
-    <li><span>Vermeide italic oder underline</li></span>
-  </ul>
+  <li class="m1"><span>Bisherige Dashboards konnten Popupfenster anzeigen konnten etc. Daten filtern; Variablen auswählen etc. war aber nicht möglich.</span></li>  
+  <li class="m2"><span>Mit <highm>shiny</highm> ist genau dies möglich.</span></li>
 </ul>
 
 ]
 
-.pull-righ5[
+.pull-right5[
 
 <p align = "center">
-  <img src="image/linear.png" ><br>
-  <font style="font-size:10px">from <a href="https://lifehacker.com/four-common-statistical-misconceptions-you-should-avoid-906056582">lifehacker.com</a></font>
+  <img src="image/shiny.png" ><br>
+  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+</p>
+
+
+]
+
+
+---
+
+# Was ist <mono>shiny</mono>?
+
+.pull-left4[
+
+> Shiny is an R package that makes it easy to build interactive web applications (apps) straight from R. - RStudio
+
+<ul>
+  <li class="m1"><span>Interaktive Apps bieten höchste Flexibilität.</span></li>  
+  <li class="m2"><span>Dabei muss man (für simple bis moderat komplexe Apps) <high>ausschliesslich R</high> können.</span></li>
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/shiny_vs_webl.png" >
+</p>
+
+
+]
+
+---
+
+
+# Beispiele
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Bisherige Dashboards konnten Popupfenster anzeigen konnten etc. Daten filtern; Variablen auswählen etc. war aber nicht möglich.</span></li>  
+  <li class="m2"><span>Mit <highm>shiny</highm> ist genau dies möglich.</span></li>
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/shiny.png" ><br>
+  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+</p>
+
+
+]
+
+---
+
+
+# Anatomie einer <mono>shiny</mono> App
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Zwei Teile: <high>UI</high> und <high>server</high></span></li>  
+  <li class="m2"><span>Der UI-Teil beinhaltet die angezeigte Webseite.</span></li>
+  <li class="m3"><span>Der Server-Teil ist für die Umsetzung des Inputs verantwortlich.</span></li>
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/shiny.png" ><br>
+  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+</p>
+
+
+]
+
+---
+
+# User Input
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Input über <high>widgets</high>. Mögliche widgets sind:</span></li> 
+    <ul class="level">
+      <li><span>Slider.</li></span>
+      <li><span>Checkboxen.</li></span>
+      <li><span>Dropdown Menus.</li></span>
+      <li><span>...</li></span>
+    </ul>
+  <li class="m2"><span>Inputwerte werden in <highm>input</highm> gespeichert.</span></li>
+    <ul class="level">
+      <li><span>Werte werden bei neuem Input upgedatet.</li></span>
+      <li><span>Werte werden mit <highm>input$INPUT_ID</highm> angesteuert.</li></span>
+      <li><span>Kontrolliert auf der Serverseite ausgeführte Aktionen.</li></span>
+    </ul>
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/shiny.png" ><br>
+  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+</p>
+
+
+]
+
+---
+
+# Reaktivität
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span><high>Reaktive Objekte</high> werden getrackt.</span></li>  
+  <li class="m2"><span>Verändern sich, wenn Input sich verändert.</span></li>
+  <li class="m3"><span>Veranlassen, wenn sie verändert werden, dass jeder Codeblock, in dem die Objekte verwendet werden, erneut ausgeführt wird.</span></li>
+  <li class="m4"><span>Werden, wie eine Funktion, mit Klammern angesteuert.</span></li>
+</ul>
+
+
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/shiny.png" ><br>
+  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+</p>
+
+
+]
+
+---
+
+
+# <highm>renderXXX()</highm> Funktionen
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Um Veränderungen durch reaktive Objekte zu ermöglichen, müssen die entsprechenden Outputs mit speziellen Funktionen <high>gerendert</high> werden.</span></li>  
+  <li class="m2"><span>Verschiedene <highm>renderXXX()</highm> Funktionen existieren in <mono>shiny</mono>, z.B.:</span></li>
+      <ul class="level">
+      <li><span><mono>renderPlot()</mono></li></span>
+      <li><span><mono>renderTable()</mono></li></span>
+      <li><span><mono>renderText()</mono></li></span>
+      <li><span>...</li></span>
+    </ul>
+  <li class="m3"><span>Viele Pakete bieten eigene render Funktionen, z.B. <mono>renderLeaflet()</mono> oder <mono>renderPlotly()</mono>.</span></li>
+  <li class="m4"><span><mono>input$INPUT_ID</mono> kann direkt in render Funktionen verwendet werden.</span></li>
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/shiny.png" ><br>
+  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+</p>
+
+
+]
+
+---
+
+
+# Verwende <highm>FUNKTION({...})</highm>
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Verwende <highm>{}</highm> um mehrere <high>unabhängige</high> Statements in einer <mono>reactive()</mono> oder <mono>renderXXX()</mono> Funktion.</span></li>  
+</ul>
+
+```{r eval = FALSE, echo = TRUE}
+# Beispiel mehrere Statements in renderPlot()
+renderPlot({
+  n_colors <- length(unique(basel$bildung))
+  farben <- viridis(n_colors)
+  
+  ggplot(...) +
+    geom_point() +
+    scale_color_manual(values = farben)
+  
+})
+```
+
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/shiny.png" ><br>
+  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+</p>
+
+
+]
+
+---
+
+
+# Beispiel
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Input definiert Merkmal.</span></li> 
+  <li class="m2"><span>Reaktiver Datensatz, gefiltert nach Input.</span></li> 
+  <li class="m3"><span>Verwendung des reaktiven Datensatzes in Plot</span></li> 
+</ul>
+
+]
+
+.pull-right5[
+
+```{r eval = FALSE, echo = TRUE}
+# Widget für User Input
+checkboxGroupInput("MERKMAL", "TITEL", ...)
+
+# Reaktive Daten generieren
+DATEN_REAKTIV <- reactive({
+  DATEN %>% 
+    filter(MERKMAL %in% input$MERKMAL)
+})
+
+# Verwende Reaktive Daten mit Klammern
+# Plot 1
+renderPlot({
+  DATEN_REAKTIV() %>% 
+    ggplot(aes(...)) +
+    geom_point()
+})
+
+# Plot 2
+renderPlot({
+  DATEN_REAKTIV() %>% 
+    ggplot(aes(...)) +
+    geom_histogram()
+})
+```
+
+
+]
+
+---
+
+# <mono>shiny</mono>-Apps - Verschiedene Ansätze
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span><mono>shiny</mono></span></li>  
+    <ul class="level">
+      <li><span>Pro: Volle Flexibilität.</li></span>
+      <li><span>Contra: Hohe Komplexität.</li></span>
+    </ul>
+  <li class="m2"><span><mono>shinydasboard</mono></span></li>
+    <ul class="level">
+      <li><span>Pro: Niedrigere Komplexität.</li></span>
+      <li><span>Contra: Weniger Flexibilität.</li></span>
+    </ul>
+  <li class="m3"><span><mono>flexdasboard</mono></span></li>
+    <ul class="level">
+      <li><span>Pro: Sehr einfach, da Ausbau von Markdown.</li></span>
+      <li><span>Contra: Niedrige Flexibilität.</li></span>
+    </ul>
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/shiny.png" ><br>
+  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
 </p>
 
 
@@ -105,5 +395,5 @@ print2 <- function(x, nlines=10,...) {
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/SmR_2020Jun/_sessions/_template/LinearModelsI_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsII/DashboardsII_practical.html">Practical</a></h1>
 

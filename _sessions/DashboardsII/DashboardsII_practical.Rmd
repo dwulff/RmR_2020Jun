@@ -1,10 +1,10 @@
 ---
-title: "TITEL"
+title: "Dashboards II Practical"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
       <font style='font-style:normal'>Reporting mit R</font><br>
-      <a href='https://therbootcamp.github.io/SmR_2020Jun/'>
+      <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -35,7 +35,7 @@ knitr::opts_chunk$set(comment = NA,
                       fig.width = 6, 
                       fig.height = 6,
                       fig.align = 'center',
-                      echo = FALSE, 
+                      echo = TRUE, 
                       eval = FALSE, 
                       warning = FALSE)
 
@@ -57,7 +57,7 @@ library(tidyverse)
 
 ## Überblick
 
-In diesem Practical wirst das Dashboard der letzten Aufgabe weiter ausbauen und interaktiver und dynamischer gestalten. Am Ende wirst du [dieses](https://mdsteiner.shinyapps.io/berlindashboard2/) Dashboard erstellen.
+In diesem Practical wirst du das Dashboard der letzten Aufgabe weiter ausbauen und interaktiver und dynamischer gestalten. Am Ende wirst du [dieses](https://mdsteiner.shinyapps.io/berlindashboard2/) Dashboard erstellen.
 
 Am Ende des Practicals wirst du wissen wie man:
 
@@ -81,15 +81,15 @@ Am Ende des Practicals wirst du wissen wie man:
 
 2. So, dieser Schritt hat bereits dein Dokument umgewandelt. Dein "Knit" Button wurde jetzt automatisch in einen "Run-Document" Button umgewandelt. Das heisst, dass ab jetzt kein stand-alone HTML-Dokument erstellt wird, sondern beim Rendern eine App geöffnet wird, die eure R-Session als Server verwendet.
 
-3. Im allerersten R chunk deines Dokuments, ändere das `setup` in der chunk Definition um in `global`. Damit wird aller Code, der in diesem chunk enthalten ist, nur einmal am Beim Aufstarten der App geladen, was deren Performanz verbessert.
+3. Im allerersten R chunk deines Dokuments, ändere das `setup` in der chunk Definition um in `global`. Damit wird aller Code, der in diesem chunk enthalten ist, nur einmal am beim Aufstarten der App geladen, was deren Performanz verbessert.
 
 4. Ist die App jetzt bereits dynamisch und reaktiv?
 
-5. Nein, wir müssen zuerst Inputs definieren. Dazu verwenden wir einen Sidebar, indem alle User Inputs gemacht werden. Füge dazu noch vor dem Titel der ersten Seite (also vor `Übersicht der Airbnbs in Berlin {data-orientation=rows}`) eine neue Seite ein und nenne diese `Inputs` (erinnere, dass man Seiten mit einem Titel und einer Zeile Gleichheitszeichen definiert).
+5. Nein, wir müssen zuerst Inputs definieren. Dazu verwenden wir eine Sidebar, indem alle User Inputs gemacht werden. Füge dazu noch vor dem Titel der ersten Seite (also vor `Übersicht der Airbnbs in Berlin {data-orientation=rows}`) eine neue Seite ein und nenne diese `Inputs` (erinnere, dass man Seiten mit einem Titel und einer Zeile Gleichheitszeichen definiert).
 
-6. Hinter das `Inputs` (aber auf derselben Zeile), schreibe `{.sidebar}`. Damit wird ein Sidebar definiert, der über alle drei Seiten der App fix auf der linken Seite bestehen bleibt. 
+6. Hinter das `Inputs` (aber auf derselben Zeile), schreibe `{.sidebar}`. Damit wird eine Sidebar definiert, die über alle drei Seiten der App fix auf der linken Seite bestehen bleibt. 
 
-7. Zeit den neu erstellten Sidebar zu füllen. Erstelle dazu unterhalb des `Inputs` Titels (also auch unterhalb der Gleichheitszeichen) einen neuen R chunk.
+7. Zeit, die neu erstellte Sidebar zu füllen. Erstelle dazu unterhalb des `Inputs` Titels (also auch unterhalb der Gleichheitszeichen) einen neuen R chunk.
 
 8. In diesen Chunk füllen wir jetzt nach und nach vier Inputmöglichkeiten. Füge mit dem untenstehenden Code einen Slider ein. In das erste Argument wird die `inputID` spezifiziert, unter welcher der Input, also der mit dem Slider ausgewählte Wert, nachher ansteuerbar ist. Das zweite Argument spezifiziert das `label`, also den Titel des Sliders. Setze die `inputID` auf `"Schlafzimmer"`, und das `label` auf `"Minimum Anzahl Schlafzimmer"`. Die anderen Argumente spezifizieren Minimum, Maximum, und Standardwert.
 
@@ -111,7 +111,7 @@ sliderInput("XXX", "XXX",
 
 ```
 
-10. Als drittes, spezifiziere Checkboxen, mit denen die Stadtteile ausgewählt werden können. Verwende dazu die `checkboxGroupInput()` Funktion. Setze die `inputID` auf `"Stadtteile"`, und das `label` auf `"Wähle Stadtteile:"`. Das `choices` Argument definiert, wie viele Checkboxes angezeigt werden sollen, und welche Werte diese annehmen können. Im `selected` Argument wird definiert, welche Checkboxes Standarmässig angewählt werden (hier alle).
+10. Als drittes, spezifiziere Checkboxen, mit denen die Stadtteile ausgewählt werden können. Verwende dazu die `checkboxGroupInput()` Funktion. Setze die `inputID` auf `"Stadtteile"`, und das `label` auf `"Wähle Stadtteile:"`. Das `choices` Argument definiert, wie viele Checkboxes angezeigt werden sollen, und welche Werte diese annehmen können. Im `selected` Argument wird definiert, welche Checkboxes standardmässig angewählt werden (hier alle).
 
 ```{r}
 
@@ -135,7 +135,7 @@ selectInput("Farbpalette", "Wähle Farbpalette:",
 ```
 
 
-12. Bevor du nun das Dokument ausführen kannst, musst du zuerst die Plots etwas anpassen. Und zwar ist es so, das in `shiny` R outputs wie Plots explizit mit `renderXXX()` Funktionen gerendert werden müssen. Gehe zuerst zum R chunk, in dem sich der `leaflet` code befindet (den Code der value Boxen können wir so stehen lassen), und packe den gesamten Code dieses chunks in die `renderLeaflet({})` Funktion, zwischen die geschwungenen Klammern, wie unten angezeigt (mit den geschwungenen Klammern können mehrere, für sich stehende Zeilen und Funktionen zusammen gerendert werden; sie werden von den geschwungenen Klammern sozusagen gruppiert).
+12. Bevor du nun das Dokument ausführen kannst, musst du zuerst die Plots etwas anpassen. Und zwar ist es so, dass in `shiny` R outputs wie Plots explizit mit `renderXXX()` Funktionen gerendert werden müssen. Gehe zuerst zum R chunk, in dem sich der `leaflet` code befindet (den Code der value Boxen können wir so stehen lassen), und packe den gesamten Code dieses chunks in die `renderLeaflet({})` Funktion, zwischen die geschwungenen Klammern, wie unten angezeigt (mit den geschwungenen Klammern können mehrere, für sich stehende Zeilen und Funktionen zusammen gerendert werden; sie werden von den geschwungenen Klammern sozusagen gruppiert).
 
 ```{r}
 renderLeaflet({
@@ -162,7 +162,7 @@ renderPlotly({
 14. Gehe zum nächsten R chunk, in dem das Histogram der Gesamtratings definiert wird. Wiederum, packe den Code des gesamten chunks diesmal in die `renderPlot({})` Funktion.
 
 ```{r}
-renderPlotly({
+renderPlot({
   
   PLOT CODE
   PLOT CODE
@@ -183,11 +183,11 @@ renderGauge({
 })
 ```
 
-16. Wiederhole die Schritte B14 und B15 auch noch für die letzten chunks (zweimal die Plots und zweimal die Pauges, in abwechselnder Reihenfolge).
+16. Wiederhole die Schritte B14 und B15 auch noch für die letzten chunks (zweimal die Plots und zweimal die Gauges, in abwechselnder Reihenfolge).
 
 17. So, jetzt kannst du dein Dokument ausführen. Passiert etwas, wenn du mit den Inputwerten herumspielst?
 
-18. Der Grund weshalb nichts passiert ist, dass zwar Inputs definiert werden, diese aber nirgends bei den Plots vorkommen. Wir müssen also den Code der Plots erst anpassen. Um jedoch, zum Beispiel, die Auswahl der Stadtteile nicht in jedem Plot durchführen zu müssen, können wir *reaktive Objekte* erstellen, also Objekte, die mit jeder Veränderung der Inputwerte upgedatet werden. Die Grundsätzliche Syntax ist wiefolgt:
+18. Der Grund weshalb nichts passiert ist, dass zwar Inputs definiert werden, diese aber nirgends bei den Plots vorkommen. Wir müssen also den Code der Plots erst anpassen. Um jedoch, zum Beispiel, die Auswahl der Stadtteile nicht in jedem Plot durchführen zu müssen, können wir *reaktive Objekte* erstellen, also Objekte, die mit jeder Veränderung der Inputwerte upgedatet werden. Die grundsätzliche Syntax ist wiefolgt:
 
 ```{r}
 DYNAMISCHES_OBJEKT <- reactive({
@@ -195,10 +195,10 @@ DYNAMISCHES_OBJEKT <- reactive({
 })
 ```
 
-19. Die `reactive()` Funktion erstellt also ein reaktives Objekt und führt den in der Funktion geschriebenen Code jedes Mal aus, wenn sich ein Inputwert verändert. Der untenstehende Code definiert zwei reaktive Objekte `airbnb_dynamic` - eine reaktive Version des `airbnb` Datensatzes, gefiltert nach `Stadtteil`, `Schlafzimmer`, und dem 10er Logarithmus von `Preis` - sowie `farben_dynamic` - ein reaktives Objekt, welches basierend auf der ausgewählten Farbpalette (aus dem `viridis` Paket) und der Anzahl ausgewählter Stadtteile, einen Vektor von Farbwerten zurückgibt. Kopiere den Code und füge ihn ganz unten in den R chunk in dem die Inputs definiert werden (der zweite R chunk im Dokument) ein.
+19. Die `reactive()` Funktion erstellt also ein reaktives Objekt und führt den in der Funktion geschriebenen Code jedes Mal aus, wenn sich ein Inputwert verändert. Der untenstehende Code definiert zwei reaktive Objekte `airbnb_dynamic` - eine reaktive Version des `airbnb` Datensatzes, gefiltert nach `Stadtteil`, `Schlafzimmer`, und dem 10er Logarithmus von `Preis` - sowie `farben_dynamic` und ein reaktives Objekt, welches basierend auf der ausgewählten Farbpalette (aus dem `viridis` Paket) und der Anzahl ausgewählter Stadtteile einen Vektor von Farbwerten zurückgibt. Kopiere den Code und füge ihn ganz unten in den R chunk in dem die Inputs definiert werden (der zweite R chunk im Dokument) ein.
 
 ```{r}
-# kreire reaktives airbnb Objekt
+# kreiere reaktives airbnb Objekt
 airbnb_dynamic <- reactive({
 
     airbnb %>%
@@ -224,9 +224,7 @@ farben_dynamic <- reactive({
 
 20. Um die reaktive Version der `airbnb` Daten in den Plots und Gauges zu verwenden, ersetze `airbnb` in den Definitionen der Karte (dem `leaflet` Plot), der Häufigkeitsverteilung (dem `plotly` Plot), der Histogramme (dem `ggplot2` Plot), und der Gauges (also alle die Teile, die du vorhin in eine `renderXXX()` Funktion gepackt hast) durch `airbnb_dynamic()`. **Achtung:** Die Klammern nach `airbnb_dynamic` sind nötig; das ist eine spezielle Syntax der reaktiven Objekte.
 
-21. Ersetze ausserdem im Code der Häufigkeitsverteilung (dem `plotly` Plot) das Objekt `farben` durch `farben_dynamic()`. **Tipp:** Du findest das Objekt in der Zeile `scale_color_manual(values = farben) +`.
-
-22. Da nun das `farben` Objekt nicht mehr benötigt wird, lösche dessen Definition oberhalb des Codes für die Häufigkeitsverteilung:
+21. Da wir nun das `farben_dynamic()` Objekt oben definiert haben, wird das `farben` Objekt nicht mehr benötigt. Lösche dessen Definition oberhalb des Codes für die Häufigkeitsverteilung:
 
 ```{r}
 ### LÖSCHE ALLES VON HIER
@@ -236,6 +234,8 @@ n_stadtteile <- length(unique(airbnb$Stadtteil))
 farben <- viridis(n_stadtteile)
 ### BIS HIER
 ```
+
+22. Ersetze ausserdem im Code der Häufigkeitsverteilung (dem `plotly` Plot) das Objekt `farben` durch `farben_dynamic()`. **Tipp:** Du findest das Objekt in der Zeile `scale_color_manual(values = farben) +`.
 
 23. Klicke auf "Run Document". Nun solltest du steuern können, welche Daten welcher Stadtteile gezeigt werden, sowie welche Farbpalette im Plot auf Seite 2 verwendet wird. Cool oder?
 
@@ -267,7 +267,7 @@ pal <- colorFactor(farben_dynamic(),
   addLegend(pal = pal, values = ~Stadtteil, opacity = 1)
 ```
 
-6. Das wars schon, jetzt haben wir auch die Legende. Der letzte Schritt sind die Popupfenster, die Informationen über die Airbnbs anzeigen. Dazu musst du den Code an zwei Stellen anpassen. Zuerst must du zwischen `airbnb_dynamic() %>%` und `leaflet() %>%` eine Zeile mit dem untenstehenden Code einfügen. Der erste Teil erstellt dabei eine Variable `superhost`, die `"Ja"` und `"Nein"` anstelle von `TRUE` und `FALSE` angibt. Der zweite Teil erstellt eine Variable `info`, die Informationen aus unterschiedlichen Variablen mithilfe der `paste0()` Funktion zusammenfügt. Dabei wird etwas HTML verwendet, damit die Infos nachher schön formatiert untereinander dargestellt werden.
+6. Das wars schon, jetzt haben wir auch die Legende. Der letzte Schritt sind die Popupfenster, die Informationen über die Airbnbs anzeigen. Dazu musst du den Code an zwei Stellen anpassen. Zuerst musst du zwischen `airbnb_dynamic() %>%` und `leaflet() %>%` eine Zeile mit dem untenstehenden Code einfügen. Der erste Teil erstellt dabei eine Variable `superhost`, die `"Ja"` und `"Nein"` anstelle von `TRUE` und `FALSE` angibt. Der zweite Teil erstellt eine Variable `info`, die Informationen aus unterschiedlichen Variablen mithilfe der `paste0()` Funktion zusammenfügt. Dabei wird etwas HTML verwendet, damit die Infos nachher schön formatiert untereinander dargestellt werden.
 
 ```{r}
   mutate(

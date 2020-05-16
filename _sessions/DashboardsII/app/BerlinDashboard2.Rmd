@@ -1,5 +1,5 @@
 ---
-title: "Dashboard Practical"
+title: "Dashboards Practical"
 output: 
   flexdashboard::flex_dashboard:
     vertical_layout: fill
@@ -17,7 +17,6 @@ library(plotly)
 library(leaflet)
 library(viridis)
 library(htmltools)
-library(patchwork)
 
 airbnb <- read_csv("1_Data/airbnb.csv")
 
@@ -190,7 +189,7 @@ Spalte 1
 
 ### Entwicklung der Berliner Airbnbs seit 2009
 
-```{r fig.width=12, fig.height=7}
+```{r fig.width=13, fig.height=7}
 
 ### Plot zum Verlauf über die Zeit
 renderPlotly({

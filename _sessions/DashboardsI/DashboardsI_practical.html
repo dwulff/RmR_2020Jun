@@ -239,8 +239,7 @@ library(tidyverse)
 library(plotly)
 library(leaflet)
 library(viridis)
-library(htmltools)
-library(patchwork)</code></pre>
+library(htmltools)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Lade den <code>airbnb</code> Datensatz mit <code>read_csv()</code> ebenfalls im <code>setup</code> chunk, so wie du das in den bisherigen Practicals auch gemacht hast (die beiden Punkte am Anfang verlegen den Pfad um einen Ordner zurück).</li>
 </ol>
@@ -264,18 +263,18 @@ library(patchwork)</code></pre>
 <pre class="markdown"><code>Zeile X
 ----------------------------------------------------------------------</code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li><p>Wenn du das Dokument so knitten würdest, erhielten die beiden Zeilen gleich viel Platz. Die Karte soll jedoch mehr Platz erhalten. Füge dazu nach dem ersten Titel (<code>Zeile</code>, aber auf derselben Zeile im Code) folgenden Code ein: <code>{data-height = 400}</code>. Damit wird die Zeilenhöhe in Pixeln angegeben; die untere Zeile füllt dann den restlichen Platz aus.</p></li>
-<li><p>Die obere Zeile mit den value Boxes, ist wiederum in drei Spalten unterteilt, eine für jede value Box. Verwende Titel dritter Ordnung um die Spalten mit den Namen “Superhosts”, “Allstar”, und “Preiswert” zu erstellen. Für diese Titel werden keine besonderen Zeichen verwendet, sondern wie gewohnt <code>###</code>.</p></li>
-<li><p>In die untere Zeile (also unterhalb des nächsten Titels zweiter Ordnung) musst du nur einen Titel einfügen, ohne Titel dritter Ordnung klappt nähmlich die automatische Grössenanpassung nicht. Gebe “Karte” als Titel an, und füge direkt dahinter <code>{.no-title}</code> ein; damit wird die Präsentation des Titels auf dem Dashboard unterdrückt.</p></li>
+<li><p>Wenn du das Dokument so knitten würdest, erhielten die beiden Zeilen gleich viel Platz. Die Karte soll jedoch mehr Platz erhalten. Füge dazu nach dem ersten Titel (<code>Zeile 1</code>, aber auf derselben Zeile im Code) folgenden Code ein: <code>{data-height = 400}</code>. Damit wird die Zeilenhöhe in Pixeln angegeben; Zeile 2 füllt dann den restlichen Platz aus (<strong>Hinweis:</strong> Die Platzverteilung erfolgt erst, wenn die Komponenten gefüllt werden; wenn du das Dokument jetzt renderst, wird also Zeile 1 im Moment noch gleich hoch sein, wie Zeile 2).</p></li>
+<li><p>Zeile 1 mit den value Boxes, ist wiederum in drei Spalten unterteilt, eine für jede value Box. Verwende Titel dritter Ordnung um die Spalten mit den Namen “Superhosts”, “Allstar”, und “Preiswert” zu erstellen. Für diese Titel werden keine besonderen Zeichen verwendet, sondern wie gewohnt <code>###</code>.</p></li>
+<li><p>In Zeile 2 (also unterhalb des nächsten Titels zweiter Ordnung) musst du nur einen Titel einfügen, ohne Titel dritter Ordnung klappt nähmlich die automatische Grössenanpassung nicht. Gebe “Karte” als Titel an, und füge direkt dahinter <code>{.no-title}</code> ein; damit wird die Präsentation des Titels auf dem Dashboard unterdrückt.</p></li>
 <li><p>Seite 1 ist vom Layout her fertig. Zeit, Seite zwei vorzubereiten. Schaue sie dir dafür nochmals kurz an.</p></li>
 <li><p>Wie du wahrscheinlich gesehen hast, sind es diesmal zwei Spalten. Überlege dir, wie du diese definieren würdest.</p></li>
 <li><p>Genau, du kannst wie bei Aufgabe C6 Titel zweiter Ordnung hinzfügen. Füge die zwei Spalten, diesmal mit den Titeln “Spalte 1” und “Spalte 2”, unter dem Titel der zweiten Seite hinzu (also nach der Zeile mit den Gleichheitszeichen).</p></li>
-<li><p>Wie auf Seite 1, musst du auch hier noch die Spalten anpassen. Dort hattest du mit <code>{data-height = 400}</code> die Höhe einer Zeile festgelegt. Die Breite einer Spalte kann analog mit <code>{data-width = XXX}</code> festgelegt werden. Definiere, dass die zweite Spalte 200 Pixel breit ist; die Erste wird dann automatisch angepasst.</p></li>
-<li><p>Nun fehlen nur noch die Titel der beiden Spalten. Verwende dazu Titel dritter Ordnung (<code>###</code>) und nenne die linke Spalte “Entwicklung der Berliner Airbnbs seit 2009” und die rechte Spalte “Hintergründe”. Füge diese Titel dritter Ordnung jeweils unter dem Titel zweiter Ordnung, welcher die Spalten definiert, ein.</p></li>
+<li><p>Wie auf Seite 1, musst du auch hier noch die Spalten anpassen. Dort hattest du mit <code>{data-height = 400}</code> die Höhe einer Zeile festgelegt. Die Breite einer Spalte kann analog mit <code>{data-width = XXX}</code> festgelegt werden. Definiere, dass Spalte 2 200 Pixel breit ist; die Erste wird dann automatisch angepasst.</p></li>
+<li><p>Nun fehlen nur noch die Titel der beiden Spalten. Verwende dazu Titel dritter Ordnung (<code>###</code>) und nenne die linke Spalte “Entwicklung der Berliner Airbnbs seit 2009” und die rechte Spalte “Hintergründe”. Füge diese Titel dritter Ordnung jeweils unter dem Titel zweiter Ordnung (<code>Spalte 1</code> bzw. <code>Spalte 2</code>), welcher die Spalten definiert, ein.</p></li>
 <li><p>So, nun fehlt nur noch das Layout der letzten Seite. Da es sich um ein Storyboard handelt, musst du keine Spalten oder Zeilen spezifizieren. Du kannst also direkt zu den Titeln dritter Ordnung übergehen.</p></li>
 <li><p>Um die drei Abschnitte des Storyboards zu erstellen, verwende wiederum Titel dritter Ordnung (<code>###</code>). Erstelle drei Abschnitte mit den Namen “Gesamtrating”, “Sauberkeit”, und “Lage”.</p></li>
 <li><p>In den Abschnitten des Storyboards soll es jeweils einen Hauptteil (links), sowie rechts eine schmalere Spalte mit Kommentaren haben. Definiere die Breite der kleineren Kommentarspalte, indem du nach jedem der drei Titel, aber auf derselben Zeile, <code>{data-commentary-width=300}</code> einfügst.</p></li>
-<li><p>Fast geschafft! Nur die Titel der Storyboardabschnitte sind noch etwas klein. Um sie zu vergrössern, musst du etwas HTML Syntax verwenden. Kopiere den untenstehenden Code und ersetze die Titel damit, und füge die Titelnamen von Aufgabe C15 in die <code>XXX</code> des Codes ein.</p></li>
+<li><p>Fast geschafft! Nur die Titel der Storyboardabschnitte sind noch etwas klein. Um sie zu vergrössern, musst du etwas HTML Syntax verwenden. Kopiere den untenstehenden Code und ersetze die Titel damit, und füge die Titelnamen von Aufgabe C16 in die <code>XXX</code> des Codes ein.</p></li>
 </ol>
 <pre class="markdown"><code>&lt;span style=&quot;font-size: 20px;&quot;&gt;XXX&lt;/span&gt;</code></pre>
 </div>
@@ -289,7 +288,7 @@ library(patchwork)</code></pre>
 <pre class="r"><code># berechne die Anzahl Superhosts im airbnb Datensatz
 n_superhosts &lt;- sum(airbnb$Host_superhost)</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Erstelle nun eine value Box mit der <code>valueBox()</code> Funktion und zwar direkt unterhalb des Codes der Aufgabe D2. Gebe dabei als erstes Argument <code>n_superhost</code> ein und setze <code>caption</code> auf <code>&quot;Superhost&quot;</code>.</li>
+<li>Erstelle nun eine value Box mit der <code>valueBox()</code> Funktion und zwar direkt unterhalb des Codes der Aufgabe D2. Gebe dabei als erstes Argument <code>n_superhosts</code> ein und setze <code>caption</code> auf <code>&quot;Superhost&quot;</code>.</li>
 </ol>
 <pre class="r"><code># Erstelle valueBox
 valueBox(XXX, caption = &quot;XXX&quot;)</code></pre>
@@ -317,7 +316,7 @@ pro Nacht; für die meisten Leute nicht gerade ein Schnäppchen. Dabei
 handelt es sich um ein `r airbnb$Unterkunftsart[max(airbnb$Preis)]` 
 im Stadtteil `r airbnb$Stadtteil[max(airbnb$Preis)]`.
 
-Insgesamt wurden über die Jahre in Berlin `r as.integer(sum(airbnb$host_anzahl))`
+Insgesamt wurden über die Jahre in Berlin `r as.integer(sum(airbnb$Host_anzahl))`
 Gäste in Airbnbs empfangen.
 </code></pre>
 <ol start="12" style="list-style-type: decimal">
@@ -351,7 +350,7 @@ ggplot(airbnb, aes(Rating_gesamt)) +
 INHALT RECHTE (KOMMENTAR-) SPALTE
 </code></pre>
 <ol start="15" style="list-style-type: decimal">
-<li><p>Füge nun eine fettgedruckten Titel (mit <code>**TITEL**</code>) unterhalb der eben eingefügten drei Sterne ein. Wähle als Titel “Mittlere Gesamtratings”.</p></li>
+<li><p>Füge nun einen fettgedruckten Titel (mit <code>**TITEL**</code>) unterhalb der eben eingefügten drei Sterne ein. Wähle als Titel “Mittlere Gesamtratings”.</p></li>
 <li><p>Um den <code>gauge</code> zu erstellen, berechne zuerst das mittlere Gesamtrating. Erstelle dazu einen neuen R chunk und füge den untenstehenden Code ein.</p></li>
 </ol>
 <pre class="r"><code># Berechne mittleres Gesamtrating und Runde auf eine Kommastelle
@@ -387,8 +386,8 @@ schliessen.&lt;/p&gt;</code></pre>
 <div id="e---leaflet" class="section level3">
 <h3>E - <code>leaflet</code></h3>
 <ol style="list-style-type: decimal">
-<li><p>Wir starten mit der Karte auf Seite 1. Gehe in deinem Skript zur Syntax, die zweite Zeile auf der ersten Seite erstellt (die Zeile unterhalb der value Boxen).</p></li>
-<li><p><a href="https://rstudio.github.io/leaflet/">leaflet</a> bietet die Möglichkeit, sehr einfach interaktive Karten zu erstellen. Erstelle einen neuen R chunk mit dem folgenden Code:</p></li>
+<li><p>Wir starten mit der Karte auf Seite 1. Gehe in deinem Skript zur Syntax, welche die Zeile 2 auf der ersten Seite erstellt (die Zeile unterhalb der value Boxen).</p></li>
+<li><p><a href="https://rstudio.github.io/leaflet/">leaflet</a> bietet die Möglichkeit, sehr einfach interaktive Karten zu erstellen. Erstelle einen neuen R chunk mit dem folgenden Code unterhalb des “Karte” Titel:</p></li>
 </ol>
 <pre class="r"><code># Definiere Datensatz
 airbnb %&gt;% 
@@ -409,9 +408,6 @@ airbnb %&gt;%
     radius = 4,
     stroke = FALSE, fillOpacity = 0.5
   )</code></pre>
-<ol start="9" style="list-style-type: decimal">
-<li>Nun ist deine Karte wahrscheinlich noch etwas zu klein. Spiele etwas mit den Plotdimensionen (<code>fig.height</code> und <code>fig.width</code> in den Chunkoptionen) herum, bis du etwas passendes gefunden hast.</li>
-</ol>
 </div>
 <div id="f---plotly" class="section level3">
 <h3>F - <code>plotly</code></h3>
@@ -426,6 +422,11 @@ HIER!
 <li>Füge einen R chunk mit dem untenstehenden Code ein (Datenvorbereitung und Plotting ist nicht Teil dieses Kurses, aber wenn du Fragen zum Code hast helfen wir gerne weiter!).</li>
 </ol>
 <pre class="r"><code>### Plot zum Verlauf über die Zeit
+
+# Anzahl Stadtteile
+n_stadtteile &lt;- length(unique(airbnb$Stadtteil))
+# Definiere n_stadtteile verschiedene Farben aus der viridis palette
+farben &lt;- viridis(n_stadtteile)
 
 # Passe den Datensatz an
 Verlauf &lt;- airbnb %&gt;%
@@ -462,10 +463,13 @@ Verlauf &lt;- airbnb %&gt;%
   # Definiere y-Achsenbeschriftung; verwendet HTML wegen plotly
   ylab(&quot;log&lt;sub&gt;10&lt;/sub&gt;(Kumulative Häufigkeit)&quot;) +
   # Definiere Plot design
-  theme_light()</code></pre>
+  theme_light()
+
+# Erstelle Plot
+Verlauf</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li><p>Der Code von Aufgabe F2 erstellt einen statischen Plot. Dieses <code>ggplot</code> Objekt kann jetzt ganz einfach an <code>ggplotly()</code>, einer <code>plotly</code> Funktion weitergegeben werden, um den Plot interaktiv zu gestalten. Dazu musst du nur <code>ggplotly(Verlauf)</code> am Ende des R chunks hinzufügen. Fertig…</p></li>
-<li><p>Bzw. fast fertig. Passe die Dimensionen des Plots (<code>fig.width</code> und <code>fig.height</code> R chunk Optionen) so an, dass die Spalte möglichst ausgefüllt wird. Dazu musst du ein paar Werte ausprobieren…</p></li>
+<li><p>Der Code von Aufgabe F2 erstellt einen statischen Plot. Dieses <code>ggplot</code> Objekt kann jetzt ganz einfach an <code>ggplotly()</code>, einer <code>plotly</code> Funktion weitergegeben werden, um den Plot interaktiv zu gestalten. Dazu musst du nur das <code>Verlauf</code> am Ende des R chunks in <code>ggplotly(Verlauf)</code> umwandeln. Fertig…</p></li>
+<li><p>Bzw. fast fertig. Passe die Dimensionen des Plots (<code>fig.width</code> und <code>fig.height</code> R chunk Optionen) so an, dass die Spalte möglichst ausgefüllt wird. Dazu musst du evtl. ein paar Werte ausprobieren…</p></li>
 </ol>
 </div>
 <div id="g---navigation-bar" class="section level3">

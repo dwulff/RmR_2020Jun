@@ -16,7 +16,6 @@ library(plotly)
 library(leaflet)
 library(viridis)
 library(htmltools)
-library(patchwork)
 
 airbnb <- read_csv("../1_Data/airbnb.csv")
 ```
