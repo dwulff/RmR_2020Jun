@@ -79,7 +79,9 @@ valueBox(preiswert,
 Zeile
 ----------------------------------------------------------------------
 
-```{r fig.width=14.75, fig.height=5.65}
+### Karte {.no-title}
+
+```{r}
 
 # Erstelle neue Variable für die Labels
 airbnb %>% 

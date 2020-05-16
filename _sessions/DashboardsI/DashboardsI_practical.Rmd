@@ -58,7 +58,7 @@ library(tidyverse)
 
 ## Überblick
 
-In diesem Practical übst du, (dynamische) Dashboards in Markdown zu erstellen. Genauer wirst du [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html) Dashboard erstellen.
+In diesem Practical übst du, (dynamische) Dashboards in Markdown zu erstellen. Genauer wirst du [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) Dashboard erstellen.
 
 Am Ende des Practicals wirst du wissen wie man:
 
@@ -111,7 +111,7 @@ airbnb <- read_csv("../XXX/XXX")
 
 ### C - Layout
 
-Beim Erstellen eines Dashboards ist es hilfreich, sich von Beginn an ein Layout zurechtzulegen, welches man dann Schritt für Schritt auffüllt. Eine Skizze oder zumindest eine bildliche/ konzeptuelle Vorstellung ist daher wichtig. Zur Erinnerung, du wirst in diesem Practical  [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html) Dashboard erstellen.
+Beim Erstellen eines Dashboards ist es hilfreich, sich von Beginn an ein Layout zurechtzulegen, welches man dann Schritt für Schritt auffüllt. Eine Skizze oder zumindest eine bildliche/ konzeptuelle Vorstellung ist daher wichtig. Zur Erinnerung, du wirst in diesem Practical  [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) Dashboard erstellen.
 
 1.  Öffne den Link am besten in einem separaten Tab in deinem Browser. Wir werden während dieses Practicals immer wieder darauf verweisen.
 
@@ -124,7 +124,7 @@ TITEL
 ======================================================================
 ```
 
-4. In `flexdashboards` sind Seiten Standardmässig spaltenweise ausgerichtet. Schaue dir das [Dashboard](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html) nochmals an. Sind alle drei Seiten spaltenweise ausgerichtet?
+4. In `flexdashboards` sind Seiten Standardmässig spaltenweise ausgerichtet. Schaue dir das [Dashboard](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) nochmals an. Sind alle drei Seiten spaltenweise ausgerichtet?
 
 5. Genau, nur die zweite Seite ist spaltenweise ausgerichtet. Die erste Seite ist zeilenweise ausgerichtet, und die dritte Seite ist ein Storyboard. In einem Dashboard mit mehreren Seiten, kannst du jeweils nach dem Titel die Seitenausrichtung bestimmen, indem du für eine spalteinweise Ausrichtung `{data-orientation=columns}`, für eine zeilenweise Ausrichtung `{data-orientation=rows}` und für ein Storyboard `{.storyboard}` nach dem Titel (aber auf derselben Zeile) schreibst. Füge die entsprechende Ausrichtung nach den drei Titeln ein.
 
@@ -139,23 +139,25 @@ Zeile
 
 8. Die obere Zeile mit den value Boxes, ist wiederum in drei Spalten unterteilt, eine für jede value Box. Verwende Titel dritter Ordnung um die Spalten mit den Namen "Superhosts", "Allstar", und "Preiswert" zu erstellen. Für diese Titel werden keine besonderen Zeichen verwendet, sondern wie gewohnt `###`.
 
-9. Seite 1 ist vom Layout her fertig. Zeit Seite zwei vorzubereiten. Schaue sie dir dafür nochmals kurz an.
+9. In die untere Zeile (also unterhalb des nächsten Titels zweiter Ordnung) musst du nur einen Titel einfügen, ohne Titel dritter Ordnung klappt nähmlich die automatische Grössenanpassung nicht. Gebe "Karte" als Titel an, und füge direkt dahinter `{.no-title}` ein; damit wird die Präsentation des Titels auf dem Dashboard unterdrückt.
 
-10. Wie du wahrscheinlich gesehen hast, sind es diesmal zwei Spalten. Überlege dir, wie du diese definieren würdest.
+10. Seite 1 ist vom Layout her fertig. Zeit Seite zwei vorzubereiten. Schaue sie dir dafür nochmals kurz an.
 
-11. Genau, du kannst wie bei Aufgabe C6 Titel zweiter Ordnung hinzfügen. Füge die zwei Spalten, diesmal mit den Titeln "Spalte", unter dem Titel der zweiten Seite hinzu (also nach der Zeile mit den Gleichheitszeichen).
+11. Wie du wahrscheinlich gesehen hast, sind es diesmal zwei Spalten. Überlege dir, wie du diese definieren würdest.
 
-12. Wie auf Seite 1, musst du auch hier noch die Spalten anpassen. Dort hattest du mit `{data-height = 400}` die Höhe einer Zeile festgelegt. Die Breite eine Spalte kann analog mit `{data-width = XXX}` festgelegt werden. Definiere, dass die zweite Spalte 200 Pixel breit ist; die Erste wird dann automatisch angepasst.
+12. Genau, du kannst wie bei Aufgabe C6 Titel zweiter Ordnung hinzfügen. Füge die zwei Spalten, diesmal mit den Titeln "Spalte", unter dem Titel der zweiten Seite hinzu (also nach der Zeile mit den Gleichheitszeichen).
 
-13. Nun fehlen nur noch die Titel der beiden Spalten. Verwende dazu Titel dritter Ordnung (`###`) und nenne die linke Spalte "Entwicklung der Berliner Airbnbs seit 2009" und die rechte Spalte "Hintergründe". Füge diese Titel dritter Ordnung jeweils unter dem Titel zweiter Ordnung, welcher die Spalten definiert, ein.
+13. Wie auf Seite 1, musst du auch hier noch die Spalten anpassen. Dort hattest du mit `{data-height = 400}` die Höhe einer Zeile festgelegt. Die Breite eine Spalte kann analog mit `{data-width = XXX}` festgelegt werden. Definiere, dass die zweite Spalte 200 Pixel breit ist; die Erste wird dann automatisch angepasst.
 
-14. So, nun fehlt nur noch das Layout der letzten Seite. Da es sich um ein Storyboard handelt, musst du keine Spalten oder Zeilen spezifizieren. Du kannst also direkt zu den Titeln dritter Ordnung übergehen.
+14. Nun fehlen nur noch die Titel der beiden Spalten. Verwende dazu Titel dritter Ordnung (`###`) und nenne die linke Spalte "Entwicklung der Berliner Airbnbs seit 2009" und die rechte Spalte "Hintergründe". Füge diese Titel dritter Ordnung jeweils unter dem Titel zweiter Ordnung, welcher die Spalten definiert, ein.
 
-15. Um die drei Abschnitte des Storyboards zu erstellen, verwende wiederum Titel dritter Ordnung (`###`). Erstelle drei Abschnitte mit den Namen "Gesamtrating", "Sauberkeit", und "Lage".
+15. So, nun fehlt nur noch das Layout der letzten Seite. Da es sich um ein Storyboard handelt, musst du keine Spalten oder Zeilen spezifizieren. Du kannst also direkt zu den Titeln dritter Ordnung übergehen.
 
-16. In den Abschnitten des Storyboards soll es jeweils einen Hauptteil (links), sowie rechts eine schmalere Spalte mit Kommentaren haben. Definiere die Breite der kleineren Kommentarspalte, indem du nach jedem der drei Titel, aber auf derselben Zeile, `{data-commentary-width=300}` einfügst.
+16. Um die drei Abschnitte des Storyboards zu erstellen, verwende wiederum Titel dritter Ordnung (`###`). Erstelle drei Abschnitte mit den Namen "Gesamtrating", "Sauberkeit", und "Lage".
 
-17. Fast geschafft! Nur die Titel der Storyboardabschnitte sind noch etwas klein. Um sie zu vergrössern, musst du etwas HTML Syntax verwenden. Kopiere den untenstehenden Code und ersetze die Titel damit, und füge die Titelnamen von Aufgabe C15 in die `XXX` des Codes ein.
+17. In den Abschnitten des Storyboards soll es jeweils einen Hauptteil (links), sowie rechts eine schmalere Spalte mit Kommentaren haben. Definiere die Breite der kleineren Kommentarspalte, indem du nach jedem der drei Titel, aber auf derselben Zeile, `{data-commentary-width=300}` einfügst.
+
+18. Fast geschafft! Nur die Titel der Storyboardabschnitte sind noch etwas klein. Um sie zu vergrössern, musst du etwas HTML Syntax verwenden. Kopiere den untenstehenden Code und ersetze die Titel damit, und füge die Titelnamen von Aufgabe C15 in die `XXX` des Codes ein.
 
 ```
 <span style="font-size: 20px;">XXX</span>
@@ -195,7 +197,7 @@ valueBox(XXX, caption = "XXX")
 
 9. So, das war es für den Moment für diese Seite; die interaktiven Grafiken erstellen wir weiter unten. Gehe im Code zur zweiten Seite. Dort werden wir den Text erstellen.
 
-10. Schaue dir den Text in der rechten Spalte des [Dashboards](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html) an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen (du darfst copy-pasten um nicht alles abschreiben zu müssen).
+10. Schaue dir den Text in der rechten Spalte des [Dashboards](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen (du darfst copy-pasten um nicht alles abschreiben zu müssen).
 
 11. Du kannst deinen Text mit dem untenstehenden Text, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen. Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?
 

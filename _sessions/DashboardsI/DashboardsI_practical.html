@@ -201,7 +201,7 @@ summary {
 <h1></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
-<p>In diesem Practical übst du, (dynamische) Dashboards in Markdown zu erstellen. Genauer wirst du <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html">dieses</a> Dashboard erstellen.</p>
+<p>In diesem Practical übst du, (dynamische) Dashboards in Markdown zu erstellen. Genauer wirst du <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html">dieses</a> Dashboard erstellen.</p>
 <p>Am Ende des Practicals wirst du wissen wie man:</p>
 <ol style="list-style-type: decimal">
 <li>Dashboard-Layouts bestimmt.</li>
@@ -247,7 +247,7 @@ library(patchwork)</code></pre>
 </div>
 <div id="c---layout" class="section level3">
 <h3>C - Layout</h3>
-<p>Beim Erstellen eines Dashboards ist es hilfreich, sich von Beginn an ein Layout zurechtzulegen, welches man dann Schritt für Schritt auffüllt. Eine Skizze oder zumindest eine bildliche/ konzeptuelle Vorstellung ist daher wichtig. Zur Erinnerung, du wirst in diesem Practical <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html">dieses</a> Dashboard erstellen.</p>
+<p>Beim Erstellen eines Dashboards ist es hilfreich, sich von Beginn an ein Layout zurechtzulegen, welches man dann Schritt für Schritt auffüllt. Eine Skizze oder zumindest eine bildliche/ konzeptuelle Vorstellung ist daher wichtig. Zur Erinnerung, du wirst in diesem Practical <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html">dieses</a> Dashboard erstellen.</p>
 <ol style="list-style-type: decimal">
 <li><p>Öffne den Link am besten in einem separaten Tab in deinem Browser. Wir werden während dieses Practicals immer wieder darauf verweisen.</p></li>
 <li><p>Schau dir das Dashboard genau an, um einen Eindruck zu erhalten, was du genau nachbauen sollst, wie das Layout aussieht, und welche Komponenten verwendet werden. Wenn es dir hilft, mache dir eine Skizze vom Layout, sodass du eine Vorstellung der Ausrichtungen und Elemente erhälst.</p></li>
@@ -256,7 +256,7 @@ library(patchwork)</code></pre>
 <pre><code>TITEL
 ======================================================================</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li><p>In <code>flexdashboards</code> sind Seiten Standardmässig spaltenweise ausgerichtet. Schaue dir das <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html">Dashboard</a> nochmals an. Sind alle drei Seiten spaltenweise ausgerichtet?</p></li>
+<li><p>In <code>flexdashboards</code> sind Seiten Standardmässig spaltenweise ausgerichtet. Schaue dir das <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html">Dashboard</a> nochmals an. Sind alle drei Seiten spaltenweise ausgerichtet?</p></li>
 <li><p>Genau, nur die zweite Seite ist spaltenweise ausgerichtet. Die erste Seite ist zeilenweise ausgerichtet, und die dritte Seite ist ein Storyboard. In einem Dashboard mit mehreren Seiten, kannst du jeweils nach dem Titel die Seitenausrichtung bestimmen, indem du für eine spalteinweise Ausrichtung <code>{data-orientation=columns}</code>, für eine zeilenweise Ausrichtung <code>{data-orientation=rows}</code> und für ein Storyboard <code>{.storyboard}</code> nach dem Titel (aber auf derselben Zeile) schreibst. Füge die entsprechende Ausrichtung nach den drei Titeln ein.</p></li>
 <li><p>Nun beginnen wir mit dem Layout der einzelnen Seiten. Wir starten mit Seite 1. Du siehst, dass es zwei Zeilen gibt, eine mit den value Boxes, und eine mit der fancy Karte. Die Zeilen (oder Spalten, bei spaltenweisem Layout) werden mit Titel zweiter Ordnung (mit <code>##</code>) definiert. Bei <code>flexdashboar</code> verwenden wir dazu eine Zeile Minuszeichen (<code>-----</code>; siehe Template unten), dies ist jedoch nur eine Konvention. Füge zwei Zeilen, beide mit dem Namen “Zeile” ein (hier müssen keine sinnvollen Titel angegeben werden, da die Titel zweiter Ordnung nicht angezeigt werden).</p></li>
 </ol>
@@ -265,6 +265,7 @@ library(patchwork)</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li><p>Wenn du das Dokument so knitten würdest, erhielten die beiden Zeilen gleich viel Platz. Die Karte soll jedoch mehr Platz erhalten. Füge dazu nach dem ersten Titel (<code>Zeile</code>, aber auf derselben Zeile im Code) folgenden Code ein: <code>{data-height = 400}</code>. Damit wird die Zeilenhöhe in Pixeln angegeben; die untere Zeile füllt dann den restlichen Platz aus.</p></li>
 <li><p>Die obere Zeile mit den value Boxes, ist wiederum in drei Spalten unterteilt, eine für jede value Box. Verwende Titel dritter Ordnung um die Spalten mit den Namen “Superhosts”, “Allstar”, und “Preiswert” zu erstellen. Für diese Titel werden keine besonderen Zeichen verwendet, sondern wie gewohnt <code>###</code>.</p></li>
+<li><p>In die untere Zeile (also unterhalb des nächsten Titels zweiter Ordnung) musst du nur einen Titel einfügen, ohne Titel dritter Ordnung klappt nähmlich die automatische Grössenanpassung nicht. Gebe “Karte” als Titel an, und füge direkt dahinter <code>{.no-title}</code> ein; damit wird die Präsentation des Titels auf dem Dashboard unterdrückt.</p></li>
 <li><p>Seite 1 ist vom Layout her fertig. Zeit Seite zwei vorzubereiten. Schaue sie dir dafür nochmals kurz an.</p></li>
 <li><p>Wie du wahrscheinlich gesehen hast, sind es diesmal zwei Spalten. Überlege dir, wie du diese definieren würdest.</p></li>
 <li><p>Genau, du kannst wie bei Aufgabe C6 Titel zweiter Ordnung hinzfügen. Füge die zwei Spalten, diesmal mit den Titeln “Spalte”, unter dem Titel der zweiten Seite hinzu (also nach der Zeile mit den Gleichheitszeichen).</p></li>
@@ -298,7 +299,7 @@ valueBox(XXX, caption = &quot;XXX&quot;)</code></pre>
 <li><p>Das Icon ist noch falsch. Füge in die <code>valueBox()</code> Funktion ein weiteres Argument <code>icon</code> ein und setze dieses auf <code>&quot;fa-medal&quot;</code>.</p></li>
 <li><p>Fast geschafft; der Titel ist noch etwas zu klein. Um das zu fixen, ersetze <code>&quot;Superhost&quot;</code> im <code>caption</code> Argument mit <code>&quot;&lt;h3 style='color: white;'&gt;Superhost&lt;/h3&gt;&quot;</code>. Damit passt nun alles. Um die anderen beiden value Boxen kümmern wir uns später.</p></li>
 <li><p>So, das war es für den Moment für diese Seite; die interaktiven Grafiken erstellen wir weiter unten. Gehe im Code zur zweiten Seite. Dort werden wir den Text erstellen.</p></li>
-<li><p>Schaue dir den Text in der rechten Spalte des <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/BerlinDashboard.html">Dashboards</a> an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen (du darfst copy-pasten um nicht alles abschreiben zu müssen).</p></li>
+<li><p>Schaue dir den Text in der rechten Spalte des <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html">Dashboards</a> an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen (du darfst copy-pasten um nicht alles abschreiben zu müssen).</p></li>
 <li><p>Du kannst deinen Text mit dem untenstehenden Text, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen. Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?</p></li>
 </ol>
 <pre class="text"><code>**Airbnbs in Berlin**

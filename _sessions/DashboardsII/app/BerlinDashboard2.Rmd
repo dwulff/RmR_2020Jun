@@ -131,7 +131,7 @@ valueBox(preiswert,
 Zeile
 ----------------------------------------------------------------------
 
-### Berlin Karte {.no-title}
+### Karte {.no-title}
 
 ```{r fig.width=18, fig.height=6.5}
 
