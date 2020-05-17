@@ -378,6 +378,7 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 
 - Eine gutes [**flexdashboard**](https://rmarkdown.rstudio.com/flexdashboard/index.html) Tutorial.
 - R [**shiny**](https://shiny.rstudio.com/) Dokumentation und Einführung.
+- [**shinydashboard**](https://rstudio.github.io/shinydashboard/index.html) Dokumentation und Einführung.
 - Buch [**Mastering Shiny**](https://mastering-shiny.org/) von Hadley Wickham.
 - R [**leaflet**](https://rstudio.github.io/leaflet/) Dokumentation und Einführung.
 - R [**plotly**](https://plotly.com/r/) Dokumentation und Einführung.

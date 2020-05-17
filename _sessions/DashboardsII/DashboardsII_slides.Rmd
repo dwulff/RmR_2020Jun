@@ -89,7 +89,7 @@ print2 <- function(x, nlines=10,...) {
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Bisherige Dashboards konnten Popupfenster anzeigen konnten etc. Daten filtern; Variablen auswählen etc. war aber nicht möglich.</span></li>  
+  <li class="m1"><span>Bisherige Dashboards konnten Popupfenster anzeigen etc. Daten filtern, Variablen auswählen etc. war aber nicht möglich.</span></li>  
   <li class="m2"><span>Mit <highm>shiny</highm> ist genau dies möglich.</span></li>
 </ul>
 
@@ -132,27 +132,23 @@ print2 <- function(x, nlines=10,...) {
 
 ---
 
+# Beispiele
+
+<p align = "center">
+  <iframe src="https://vnijs.shinyapps.io/radiant" width="100%%" height="450" style="border:none;">
+</iframe><br>
+  <font style="font-size:10px">from <a href="https://vnijs.shinyapps.io/radiant">vnijs.shinyapps.io/radiant</a></font>
+</p>
+
+---
 
 # Beispiele
 
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Bisherige Dashboards konnten Popupfenster anzeigen konnten etc. Daten filtern; Variablen auswählen etc. war aber nicht möglich.</span></li>  
-  <li class="m2"><span>Mit <highm>shiny</highm> ist genau dies möglich.</span></li>
-</ul>
-
-]
-
-.pull-right5[
-
 <p align = "center">
-  <img src="image/shiny.png" ><br>
-  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+  <iframe src="https://vac-lshtm.shinyapps.io/ncov_tracker/" width="100%%" height="450" style="border:none;">
+</iframe><br>
+  <font style="font-size:10px">from <a href="https://vac-lshtm.shinyapps.io/ncov_tracker/">vac-lshtm.shinyapps.io/ncov_tracker</a></font>
 </p>
-
-
-]
 
 ---
 
@@ -172,8 +168,8 @@ print2 <- function(x, nlines=10,...) {
 .pull-right5[
 
 <p align = "center">
-  <img src="image/shiny.png" ><br>
-  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+  <img src="image/what_is_shiny.png" ><br>
+  <font style="font-size:10px">from <a href="http://juliawrobel.com/tutorials/shiny_tutorial_nba.html">juliawrobel.com</a></font>
 </p>
 
 
@@ -205,9 +201,10 @@ print2 <- function(x, nlines=10,...) {
 
 .pull-right5[
 
+<br>
 <p align = "center">
-  <img src="image/shiny.png" ><br>
-  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+  <img src="image/shiny-inputs.png" ><br>
+  <font style="font-size:10px">from <a href="https://deanattali.com/blog/building-shiny-apps-tutorial/">deanattali.com</a></font>
 </p>
 
 
@@ -222,8 +219,9 @@ print2 <- function(x, nlines=10,...) {
 <ul>
   <li class="m1"><span><high>Reaktive Objekte</high> werden getrackt.</span></li>  
   <li class="m2"><span>Verändern sich, wenn Input sich verändert.</span></li>
-  <li class="m3"><span>Veranlassen, wenn sie verändert werden, dass jeder Codeblock, in dem die Objekte verwendet werden, erneut ausgeführt wird.</span></li>
-  <li class="m4"><span>Werden, wie eine Funktion, mit Klammern angesteuert.</span></li>
+  <li class="m3"><span><mono>input</mono> kann nur in reaktiver Umwelt gelesen werden.</span></li>
+  <li class="m4"><span>Veranlassen, wenn sie verändert werden, dass jeder Codeblock, in dem die Objekte verwendet werden, erneut ausgeführt wird.</span></li>
+  <li class="m5"><span>Werden, wie eine Funktion, mit Klammern angesteuert.</span></li>
 </ul>
 
 
@@ -233,8 +231,8 @@ print2 <- function(x, nlines=10,...) {
 .pull-right5[
 
 <p align = "center">
-  <img src="image/shiny.png" ><br>
-  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+  <img src="image/input_output.png" ><br>
+  <font style="font-size:10px">from <a href="https://cyberhelp.sesync.org/basic-Shiny-lesson/2016/07/26/">cyberhelp.sesync.org</a></font>
 </p>
 
 
@@ -257,7 +255,7 @@ print2 <- function(x, nlines=10,...) {
       <li><span>...</li></span>
     </ul>
   <li class="m3"><span>Viele Pakete bieten eigene render Funktionen, z.B. <mono>renderLeaflet()</mono> oder <mono>renderPlotly()</mono>.</span></li>
-  <li class="m4"><span><mono>input$INPUT_ID</mono> kann direkt in render Funktionen verwendet werden.</span></li>
+  <li class="m4"><span><highm>input$INPUT_ID</highm> kann direkt in render Funktionen verwendet werden.</span></li>
 </ul>
 
 ]
@@ -265,8 +263,8 @@ print2 <- function(x, nlines=10,...) {
 .pull-right5[
 
 <p align = "center">
-  <img src="image/shiny.png" ><br>
-  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+  <img src="image/input_output.png" ><br>
+  <font style="font-size:10px">from <a href="https://cyberhelp.sesync.org/basic-Shiny-lesson/2016/07/26/">cyberhelp.sesync.org</a></font>
 </p>
 
 
@@ -281,7 +279,15 @@ print2 <- function(x, nlines=10,...) {
 
 <ul>
   <li class="m1"><span>Verwende <highm>{}</highm> um mehrere <high>unabhängige</high> Statements in einer <mono>reactive()</mono> oder <mono>renderXXX()</mono> Funktion.</span></li>  
+  <li class="m2"><span>Statements in <highm>{}</highm> werden als Block ausgeführt und nur das letzte Statement wird zurückgegeben (kreierte Objekte werden aber gespeichert).</span></li>  
 </ul>
+
+
+
+
+]
+
+.pull-right5[
 
 ```{r eval = FALSE, echo = TRUE}
 # Beispiel mehrere Statements in renderPlot()
@@ -297,14 +303,13 @@ renderPlot({
 ```
 
 
-]
-
-.pull-right5[
-
-<p align = "center">
-  <img src="image/shiny.png" ><br>
-  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
-</p>
+```{r echo = TRUE}
+{
+  a <- 1
+  a
+  a + 2
+}
+```
 
 
 ]
@@ -372,7 +377,7 @@ renderPlot({
       <li><span>Pro: Niedrigere Komplexität.</li></span>
       <li><span>Contra: Weniger Flexibilität.</li></span>
     </ul>
-  <li class="m3"><span><mono>flexdasboard</mono></span></li>
+  <li class="m3"><span><highm>flexdashboard</highm></span></li>
     <ul class="level">
       <li><span>Pro: Sehr einfach, da Ausbau von Markdown.</li></span>
       <li><span>Contra: Niedrige Flexibilität.</li></span>
@@ -384,8 +389,8 @@ renderPlot({
 .pull-right5[
 
 <p align = "center">
-  <img src="image/shiny.png" ><br>
-  <font style="font-size:10px">from <a href="rstudio.com">rstudio.com</a></font>
+  <img src="image/choices_kid.png" ><br>
+  <font style="font-size:10px">from <a href="www.benfoolery.com/">benfoolery.com</a></font>
 </p>
 
 
