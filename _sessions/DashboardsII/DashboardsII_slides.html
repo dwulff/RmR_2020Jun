@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Dashboards II</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Reporting mit R   The R Bootcamp" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Dashboards II
+### Reporting mit R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp </a> <br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Juni 2020
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          www.therbootcamp.com
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+       Reporting mit R | Juni 2020
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+# Dashboard aus dem letzten Practical
+
+&lt;p align = "center"&gt;
+  &lt;iframe src="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html" width="100%%" height="450" style="border:none;"&gt;
+&lt;/iframe&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://therbootcamp.github.io/"&gt;therbootcamp.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+---
+
+# Mehr Interaktivität? &amp;#8594; &lt;highm&gt;shiny&lt;/highm&gt;!
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Bisherige Dashboards konnten Popupfenster anzeigen etc. Daten filtern, Variablen auswählen etc. war aber nicht möglich.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;Mit &lt;highm&gt;shiny&lt;/highm&gt; ist genau dies möglich.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/shiny.png" &gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="rstudio.com"&gt;rstudio.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+]
+
+
+---
+
+# Was ist &lt;mono&gt;shiny&lt;/mono&gt;?
+
+.pull-left4[
+
+&gt; Shiny is an R package that makes it easy to build interactive web applications (apps) straight from R. - RStudio
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Interaktive Apps bieten höchste Flexibilität.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;Dabei muss man (für simple bis moderat komplexe Apps) &lt;high&gt;ausschliesslich R&lt;/high&gt; können.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/shiny_vs_webl.png" &gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+# Beispiele
+
+&lt;p align = "center"&gt;
+  &lt;iframe src="https://vnijs.shinyapps.io/radiant" width="100%%" height="450" style="border:none;"&gt;
+&lt;/iframe&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://vnijs.shinyapps.io/radiant"&gt;vnijs.shinyapps.io/radiant&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+---
+
+# Beispiele
+
+&lt;p align = "center"&gt;
+  &lt;iframe src="https://vac-lshtm.shinyapps.io/ncov_tracker/" width="100%%" height="450" style="border:none;"&gt;
+&lt;/iframe&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://vac-lshtm.shinyapps.io/ncov_tracker/"&gt;vac-lshtm.shinyapps.io/ncov_tracker&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+---
+
+
+# Anatomie einer &lt;mono&gt;shiny&lt;/mono&gt; App
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Zwei Teile: &lt;high&gt;UI&lt;/high&gt; und &lt;high&gt;server&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;Der UI-Teil beinhaltet die angezeigte Webseite.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Der Server-Teil ist für die Umsetzung des Inputs verantwortlich.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/what_is_shiny.png" &gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="http://juliawrobel.com/tutorials/shiny_tutorial_nba.html"&gt;juliawrobel.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+# User Input
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Input über &lt;high&gt;widgets&lt;/high&gt;. Mögliche widgets sind:&lt;/span&gt;&lt;/li&gt; 
+    &lt;ul class="level"&gt;
+      &lt;li&gt;&lt;span&gt;Slider.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Checkboxen.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Dropdown Menus.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;...&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Inputwerte werden in &lt;highm&gt;input&lt;/highm&gt; gespeichert.&lt;/span&gt;&lt;/li&gt;
+    &lt;ul class="level"&gt;
+      &lt;li&gt;&lt;span&gt;Werte werden bei neuem Input upgedatet.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Werte werden mit &lt;highm&gt;input$INPUT_ID&lt;/highm&gt; angesteuert.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Kontrolliert auf der Serverseite ausgeführte Aktionen.&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/shiny-inputs.png" &gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://deanattali.com/blog/building-shiny-apps-tutorial/"&gt;deanattali.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+# Reaktivität
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Reaktive Objekte&lt;/high&gt; werden getrackt.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;Verändern sich, wenn Input sich verändert.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;input&lt;/mono&gt; kann nur in reaktiver Umwelt gelesen werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;Veranlassen, wenn sie verändert werden, dass jeder Codeblock, in dem die Objekte verwendet werden, erneut ausgeführt wird.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;Werden, wie eine Funktion, mit Klammern angesteuert.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/input_output.png" &gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://cyberhelp.sesync.org/basic-Shiny-lesson/2016/07/26/"&gt;cyberhelp.sesync.org&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+
+# &lt;highm&gt;renderXXX()&lt;/highm&gt; Funktionen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Um Veränderungen durch reaktive Objekte zu ermöglichen, müssen die entsprechenden Outputs mit speziellen Funktionen &lt;high&gt;gerendert&lt;/high&gt; werden.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;Verschiedene &lt;highm&gt;renderXXX()&lt;/highm&gt; Funktionen existieren in &lt;mono&gt;shiny&lt;/mono&gt;, z.B.:&lt;/span&gt;&lt;/li&gt;
+      &lt;ul class="level"&gt;
+      &lt;li&gt;&lt;span&gt;&lt;mono&gt;renderPlot()&lt;/mono&gt;&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;&lt;mono&gt;renderTable()&lt;/mono&gt;&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;&lt;mono&gt;renderText()&lt;/mono&gt;&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;...&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Viele Pakete bieten eigene render Funktionen, z.B. &lt;mono&gt;renderLeaflet()&lt;/mono&gt; oder &lt;mono&gt;renderPlotly()&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;highm&gt;input$INPUT_ID&lt;/highm&gt; kann direkt in render Funktionen verwendet werden.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/input_output.png" &gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://cyberhelp.sesync.org/basic-Shiny-lesson/2016/07/26/"&gt;cyberhelp.sesync.org&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+
+# Verwende &lt;highm&gt;FUNKTION({...})&lt;/highm&gt;
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Verwende &lt;highm&gt;{}&lt;/highm&gt; um mehrere &lt;high&gt;unabhängige&lt;/high&gt; Statements in einer &lt;mono&gt;reactive()&lt;/mono&gt; oder &lt;mono&gt;renderXXX()&lt;/mono&gt; Funktion.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;Statements in &lt;highm&gt;{}&lt;/highm&gt; werden als Block ausgeführt und nur das letzte Statement wird zurückgegeben (kreierte Objekte werden aber gespeichert).&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+
+
+
+]
+
+.pull-right5[
+
+
+```r
+# Beispiel mehrere Statements in renderPlot()
+renderPlot({
+  n_colors &lt;- length(unique(basel$bildung))
+  farben &lt;- viridis(n_colors)
+  
+  ggplot(...) +
+    geom_point() +
+    scale_color_manual(values = farben)
+  
+})
+```
+
+
+
+```r
+{
+  a &lt;- 1
+  a
+  a + 2
+}
+```
+
+```
+## [1] 3
+```
+
+
+]
+
+---
+
+
+# Beispiel
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Input definiert Merkmal.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Reaktiver Datensatz, gefiltert nach Input.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;Verwendung des reaktiven Datensatzes in Plot&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+# Widget für User Input
+checkboxGroupInput("MERKMAL", "TITEL", ...)
+
+# Reaktive Daten generieren
+DATEN_REAKTIV &lt;- reactive({
+  DATEN %&gt;% 
+    filter(MERKMAL %in% input$MERKMAL)
+})
+
+# Verwende Reaktive Daten mit Klammern
+# Plot 1
+renderPlot({
+  DATEN_REAKTIV() %&gt;% 
+    ggplot(aes(...)) +
+    geom_point()
+})
+
+# Plot 2
+renderPlot({
+  DATEN_REAKTIV() %&gt;% 
+    ggplot(aes(...)) +
+    geom_histogram()
+})
+```
+
+
+]
+
+---
+
+# &lt;mono&gt;shiny&lt;/mono&gt;-Apps - Verschiedene Ansätze
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;shiny&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;  
+    &lt;ul class="level"&gt;
+      &lt;li&gt;&lt;span&gt;Pro: Volle Flexibilität.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Contra: Hohe Komplexität.&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;shinydasboard&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;ul class="level"&gt;
+      &lt;li&gt;&lt;span&gt;Pro: Niedrigere Komplexität.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Contra: Weniger Flexibilität.&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;flexdashboard&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;ul class="level"&gt;
+      &lt;li&gt;&lt;span&gt;Pro: Sehr einfach, da Ausbau von Markdown.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Contra: Niedrige Flexibilität.&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/choices_kid.png" &gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="www.benfoolery.com/"&gt;benfoolery.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsII/DashboardsII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

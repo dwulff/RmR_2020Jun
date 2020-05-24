@@ -1,0 +1,385 @@
+---
+title: "Dashboards II Practical"
+author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
+  <tr style='border:none'>
+    <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
+      <font style='font-style:normal'>Reporting mit R</font><br>
+      <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+        <i class='fas fa-clock' style='font-size:.9em;' ></i>
+      </a>
+      <a href='https://therbootcamp.github.io'>
+        <i class='fas fa-home' style='font-size:.9em;'></i>
+      </a>
+      <a href='mailto:therbootcamp@gmail.com'>
+        <i class='fas fa-envelope' style='font-size: .9em;'></i>
+      </a>
+      <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
+        <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+      </a>
+      <a href='https://therbootcamp.github.io'>
+        <font style='font-style:normal'>The R Bootcamp</font>
+      </a>
+    </td>
+    <td style='width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none'>
+      <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+    </td>
+  </tr></table>"
+output:
+  html_document:
+    css: practical.css
+    self_contained: no
+---
+
+```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(comment = NA, 
+                      fig.width = 6, 
+                      fig.height = 6,
+                      fig.align = 'center',
+                      echo = TRUE, 
+                      eval = FALSE, 
+                      warning = FALSE)
+
+options(digits = 3)
+
+# Load packages
+library(tidyverse)
+
+```
+
+<p align="center" width="100%">
+  <img src="image/airbnb.png" alt="Trulli" style="width:100%">
+  <br>
+  <font style="font-size:10px">from <a href="">www.cartoonimpact.com</a></font>
+</p>
+
+
+# {.tabset}
+
+## Überblick
+
+In diesem Practical wirst du das Dashboard der letzten Aufgabe weiter ausbauen und interaktiver und dynamischer gestalten. Am Ende wirst du [dieses](https://mdsteiner.shinyapps.io/berlindashboard2/) Dashboard erstellen.
+
+Am Ende des Practicals wirst du wissen wie man:
+
+1. In leaflet Popupfenster einfügt
+2. Ein `flexdashboard` in eine `shiny` Webapp umwandelt.
+3. Statische in reaktive Grafiken umwandelt.
+
+## Aufgaben
+
+### A - Setup
+
+1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
+
+2. Lade [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/app/BerlinDashboard.Rmd) Markdown Skript herunter und speichere es in deinen `2_Code` Ordner.
+
+3. Öffne das eben heruntergeladene Markdown file. Es enthält das fertige Dashboard der vorherigen Aufgabe. Wir werden hier mit diesem File weiterarbeiten, um sicherzustellen, dass alle auf dem gleichen Stand sind. Wenn du möchtest, kannst du natürlich auch mit deinem zuvor erstellten File weiterarbeiten; allerdings auf eigene Gefahr... :-)
+
+### B - `shiny`
+
+1. Wir wandeln das Markdown Dokument als erstes direkt in eine `shiny` App um. Füge dazu `runtime: shiny` im YAML Code, direkt unter `social: ["twitter", "facebook"]` hinzu und speichere.
+
+2. So, dieser Schritt hat bereits dein Dokument umgewandelt. Dein "Knit" Button wurde jetzt automatisch in einen "Run-Document" Button umgewandelt. Das heisst, dass ab jetzt kein stand-alone HTML-Dokument erstellt wird, sondern beim Rendern eine App geöffnet wird, die eure R-Session als Server verwendet.
+
+3. Im allerersten R chunk deines Dokuments, ändere das `setup` in der chunk Definition um in `global`. Damit wird aller Code, der in diesem chunk enthalten ist, nur einmal am beim Aufstarten der App geladen, was deren Performanz verbessert.
+
+4. Ist die App jetzt bereits dynamisch und reaktiv?
+
+5. Nein, wir müssen zuerst Inputs definieren. Dazu verwenden wir eine Sidebar, indem alle User Inputs gemacht werden. Füge dazu noch vor dem Titel der ersten Seite (also vor `Übersicht der Airbnbs in Berlin {data-orientation=rows}`) eine neue Seite ein und nenne diese `Inputs` (erinnere, dass man Seiten mit einem Titel und einer Zeile Gleichheitszeichen definiert).
+
+6. Hinter das `Inputs` (aber auf derselben Zeile), schreibe `{.sidebar}`. Damit wird eine Sidebar definiert, die über alle drei Seiten der App fix auf der linken Seite bestehen bleibt. 
+
+7. Zeit, die neu erstellte Sidebar zu füllen. Erstelle dazu unterhalb des `Inputs` Titels (also auch unterhalb der Gleichheitszeichen) einen neuen R chunk.
+
+8. In diesen Chunk füllen wir jetzt nach und nach vier Inputmöglichkeiten. Füge mit dem untenstehenden Code einen Slider ein. In das erste Argument wird die `inputID` spezifiziert, unter welcher der Input, also der mit dem Slider ausgewählte Wert, nachher ansteuerbar ist. Das zweite Argument spezifiziert das `label`, also den Titel des Sliders. Setze die `inputID` auf `"Schlafzimmer"`, und das `label` auf `"Minimum Anzahl Schlafzimmer"`. Die anderen Argumente spezifizieren Minimum, Maximum, und Standardwert.
+
+```{r}
+# Auswahl Airbnbs über Schlafzimmer
+sliderInput("XXX", "XXX", 
+            min = 0, max = 12,
+            value = 0)
+```
+
+9. Direkt darunter, spezifiziere einen zweiten Slider, mit dem der Maximale Preis pro Nacht gesteuert wird. Da die Preisverteilung sehr schief ist, wird hier der 10er Logarithmus verwendet. Setze die `inputID` auf `"Preis"`, und das `label` auf `"Max Preis pro Nacht (log):"`. Das zusätzliche `step` Argument spezifiziert die minimalen Schritte, in denen der Slider bewegt werden kann. Setze es auf `.01`.
+
+```{r}
+# Preis pro Nacht
+sliderInput("XXX", "XXX", 
+            min = 0, max = ceiling(max(log10(airbnb$Preis), na.rm = TRUE)),
+            value = ceiling(max(log10(airbnb$Preis), na.rm = TRUE)),
+            step = XXX)
+
+```
+
+10. Als drittes, spezifiziere Checkboxen, mit denen die Stadtteile ausgewählt werden können. Verwende dazu die `checkboxGroupInput()` Funktion. Setze die `inputID` auf `"Stadtteile"`, und das `label` auf `"Wähle Stadtteile:"`. Das `choices` Argument definiert, wie viele Checkboxes angezeigt werden sollen, und welche Werte diese annehmen können. Im `selected` Argument wird definiert, welche Checkboxes standardmässig angewählt werden (hier alle).
+
+```{r}
+
+# Auswahl der zu Plottenden Stadtteile
+checkboxGroupInput("XXX", "XXX",
+                   choices = sort(unique(airbnb$Stadtteil)),
+                   selected = sort(unique(airbnb$Stadtteil)))
+
+
+```
+
+11. Füge zum Schluss noch einen Auswahlinput ein. Mit der Funktion `selectInput` wird ein Dropdownmenu erstellt, aus dem ein Wert ausgewählt wird. `choices` definiert wiederum die möglichen Werte, `selected` den Standardwert. Setze die Werte `"viridis"`, `"cividis"`, `"magma"`, und `"inferno"`, beim `choices` Argument ein. Das sind die Namen vierer Farbpaletten. Definiere `"viridis"` als Standardwert.
+
+```{r}
+
+# Farbpalette
+selectInput("Farbpalette", "Wähle Farbpalette:",
+            choices = c("XXX", "XXX", "XXX", "XXX"),
+            selected = "XXX")
+
+```
+
+
+12. Bevor du nun das Dokument ausführen kannst, musst du zuerst die Plots etwas anpassen. Und zwar ist es so, dass in `shiny` R outputs wie Plots explizit mit `renderXXX()` Funktionen gerendert werden müssen. Gehe zuerst zum R chunk, in dem sich der `leaflet` code befindet (den Code der value Boxen können wir so stehen lassen), und packe den gesamten Code dieses chunks in die `renderLeaflet({})` Funktion, zwischen die geschwungenen Klammern, wie unten angezeigt (mit den geschwungenen Klammern können mehrere, für sich stehende Zeilen und Funktionen zusammen gerendert werden; sie werden von den geschwungenen Klammern sozusagen gruppiert).
+
+```{r}
+renderLeaflet({
+  
+  LEAFLET CODE
+  LEAFLET CODE
+  LEAFLET CODE
+  
+})
+```
+
+13. Gehe nun zum nächsten R chunk, in dem die Häufigkeitsverteilung als `plotly` Grafik erstellt wird. Packe auch hier den Code des gesamten chunks diesmal in die `renderPlotly({})` Funktion.
+
+```{r}
+renderPlotly({
+  
+  PLOTLY CODE
+  PLOTLY CODE
+  PLOTLY CODE
+  
+})
+```
+
+14. Gehe zum nächsten R chunk, in dem das Histogram der Gesamtratings definiert wird. Wiederum, packe den Code des gesamten chunks diesmal in die `renderPlot({})` Funktion.
+
+```{r}
+renderPlot({
+  
+  PLOT CODE
+  PLOT CODE
+  PLOT CODE
+  
+})
+```
+
+15. Gehe zum nächsten R chunk, in dem der `gauge` der mittleren Gesamtratings definiert wird. Wiederum, packe den Code des gesamten chunks diesmal in die `renderGauge({})` Funktion.
+
+```{r}
+renderGauge({
+  
+  GAUGE CODE
+  GAUGE CODE
+  GAUGE CODE
+  
+})
+```
+
+16. Wiederhole die Schritte B14 und B15 auch noch für die letzten chunks (zweimal die Plots und zweimal die Gauges, in abwechselnder Reihenfolge).
+
+17. So, jetzt kannst du dein Dokument ausführen. Passiert etwas, wenn du mit den Inputwerten herumspielst?
+
+18. Der Grund weshalb nichts passiert ist, dass zwar Inputs definiert werden, diese aber nirgends bei den Plots vorkommen. Wir müssen also den Code der Plots erst anpassen. Um jedoch, zum Beispiel, die Auswahl der Stadtteile nicht in jedem Plot durchführen zu müssen, können wir *reaktive Objekte* erstellen, also Objekte, die mit jeder Veränderung der Inputwerte upgedatet werden. Die grundsätzliche Syntax ist wiefolgt:
+
+```{r}
+DYNAMISCHES_OBJEKT <- reactive({
+  MANIPULATION EINES OBJEKTES BASIEREND AUF INPUT
+})
+```
+
+19. Die `reactive()` Funktion erstellt also ein reaktives Objekt und führt den in der Funktion geschriebenen Code jedes Mal aus, wenn sich ein Inputwert verändert. Der untenstehende Code definiert zwei reaktive Objekte `airbnb_dynamic` - eine reaktive Version des `airbnb` Datensatzes, gefiltert nach `Stadtteil`, `Schlafzimmer`, und dem 10er Logarithmus von `Preis` - sowie `farben_dynamic` und ein reaktives Objekt, welches basierend auf der ausgewählten Farbpalette (aus dem `viridis` Paket) und der Anzahl ausgewählter Stadtteile einen Vektor von Farbwerten zurückgibt. Kopiere den Code und füge ihn ganz unten in den R chunk in dem die Inputs definiert werden (der zweite R chunk im Dokument) ein.
+
+```{r}
+# kreiere reaktives airbnb Objekt
+airbnb_dynamic <- reactive({
+
+    airbnb %>%
+      filter(Stadtteil %in% c(input$Stadtteile) &
+               Schlafzimmer >= as.numeric(input$Schlafzimmer) &
+               log10(Preis) <= as.numeric(input$Preis)) 
+  
+    
+})
+
+farben_dynamic <- reactive({
+  ## Farbpalette vorbereiten
+  # Anzahl Stadtteile
+  n_stadtteile <- length(input$Stadtteile)
+  # Definiere n_stadtteile verschiedene Farben aus der viridis palette
+  switch(input$Farbpalette,
+         viridis = viridis(n_stadtteile),
+         cividis = cividis(n_stadtteile),
+         magma = magma(n_stadtteile),
+         inferno = inferno(n_stadtteile))
+})
+```
+
+20. Um die reaktive Version der `airbnb` Daten in den Plots und Gauges zu verwenden, ersetze `airbnb` in den Definitionen der Karte (dem `leaflet` Plot), der Häufigkeitsverteilung (dem `plotly` Plot), der Histogramme (dem `ggplot2` Plot), und der Gauges (also alle die Teile, die du vorhin in eine `renderXXX()` Funktion gepackt hast) durch `airbnb_dynamic()`. **Achtung:** Die Klammern nach `airbnb_dynamic` sind nötig; das ist eine spezielle Syntax der reaktiven Objekte.
+
+21. Da wir nun das `farben_dynamic()` Objekt oben definiert haben, wird das `farben` Objekt nicht mehr benötigt. Lösche dessen Definition oberhalb des Codes für die Häufigkeitsverteilung:
+
+```{r}
+### LÖSCHE ALLES VON HIER
+# Anzahl Stadtteile
+n_stadtteile <- length(unique(airbnb$Stadtteil))
+# Definiere n_stadtteile verschiedene Farben aus der viridis palette
+farben <- viridis(n_stadtteile)
+### BIS HIER
+```
+
+22. Ersetze ausserdem im Code der Häufigkeitsverteilung (dem `plotly` Plot) das Objekt `farben` durch `farben_dynamic()`. **Tipp:** Du findest das Objekt in der Zeile `scale_color_manual(values = farben) +`.
+
+23. Klicke auf "Run Document". Nun solltest du steuern können, welche Daten welcher Stadtteile gezeigt werden, sowie welche Farbpalette im Plot auf Seite 2 verwendet wird. Cool oder?
+
+
+### C - `leaflet` 2
+
+1. Nun ist es an der Zeit, die Karte noch etwas mehr aufzupeppen! Die Datenpunkte sollen nach Stadtteil eingefärbt werden, Popupfenster sollen Informationen über das jeweilige Airbnb anzeigen, und eine Legende soll zeigen, welche Farbe welchem Stadtteil entspricht. Gehe zum `leaflet` Code, der die Karte erstellt.
+
+2. Wir beginnen mit der Einfärbung der Punkte. mit der `colorFactor()` Funktion des `leaflet` Pakets kannst du einfach Farbwerte auf Levels einer kategorialen Variable (wie `Stadtteil`) mappen. Füge den untenstehenden Code vor dem Code der den `leaflet` Plot erstellt (aber innerhalb von `renderLeaflet({})`) ein.
+
+```{r}
+dom <- airbnb_dynamic() %>% 
+  pull(Stadtteil) %>% unique()
+
+# Erstelle Farbpalette
+pal <- colorFactor(farben_dynamic(),
+                   domain = dom)
+```
+
+3. Das so erstellte `pal` Objekt kann jetzt in der `addCircleMarker()` Funktion verwendet werden. Allerdings wird hier eine etwas eigene Syntax verwendet. Füge ein neues Argument `color` in die `addCircleMarker()` Funktion ein und setze es auf `~pal(Stadtteil)` (**Achtung:** die Tilde `~` ersetzt das Gleichheitszeichen **nicht**, sondern gibt `leaflet` lediglich an, dass hier unterschiedliche Werte für die verschiedenen Airbnbs benutzt werden).
+
+4. Führe die App aus. Jetzt sollten die Punkte nach Stadtteil eingefärbt sein.
+
+5. Im Moment ist aber noch nicht ersichtlich, welche Farbe zu welchem Stadtteil gehört (und mit Ausnahme von Dirk weiss nicht jeder wo sich welcher Stadtteil befindet). Eine Legende muss her. Das geht in `leaflet` ganz einfach mit der `addLegend()` Funktion. Dabei muss eine mit `colorFactor()` erstellte Farbpalette, sowie die Werte nach denen die Marker eingefärbt werden sollen als Argumente spezifiziert werden. Füge den untenstehenden Code direkt nach der `addCircleMarker()` Funktion ein, sodass die Pipe (` %>% `) direkt nach der schliessenden Klammer von `addCircleMarker()` (also auf derselben Zeile) steht. 
+
+```{r}
+ %>% 
+  # Füge Legende hinzu
+  addLegend(pal = pal, values = ~Stadtteil, opacity = 1)
+```
+
+6. Das wars schon, jetzt haben wir auch die Legende. Der letzte Schritt sind die Popupfenster, die Informationen über die Airbnbs anzeigen. Dazu musst du den Code an zwei Stellen anpassen. Zuerst musst du zwischen `airbnb_dynamic() %>%` und `leaflet() %>%` eine Zeile mit dem untenstehenden Code einfügen. Der erste Teil erstellt dabei eine Variable `superhost`, die `"Ja"` und `"Nein"` anstelle von `TRUE` und `FALSE` angibt. Der zweite Teil erstellt eine Variable `info`, die Informationen aus unterschiedlichen Variablen mithilfe der `paste0()` Funktion zusammenfügt. Dabei wird etwas HTML verwendet, damit die Infos nachher schön formatiert untereinander dargestellt werden.
+
+```{r}
+  mutate(
+    superhost = case_when(isTRUE(Host_superhost) ~ "Ja",
+                          TRUE ~ "Nein"),
+    info = paste0("Unterkunft: <b>", Unterkunftsart,
+                  "</b><br>Schlafzimmer: <b>", Schlafzimmer,
+                  "</b><br>Superhost: <b>", superhost,
+                  "</b><br>Preis pro Nacht: <b>", Preis, "&euro;</b>")
+  ) %>% 
+```
+
+7. Die neu erstellte Variable `info` muss jetzt noch in `addCircleMarkers()` aufgerufen werden, und der angezeigte Text etwas vergrössert werden. Füge dazu die Argumente `label = ~lapply(info, HTML)` und `labelOptions = labelOptions(textsize = "15px")` in der `addCircleMarkers()` Funktion hinzu. `lapply(info, HTML)` wendet die `HTML()` Funktion auf jedes Element von `info` an, was nötig ist, das der Text von `leaflet` als HTML gerendert wird.
+
+8. Führe die App erneut aus. Jetzt sollte alles klappen. Fancy oder?
+
+### X - Challenges
+
+1. Schaue dir die Popupfenster der beiden Plots auf den Seiten 1 und 2 an. Gibt es zusätzliche Dinge die du angezeigt haben möchtest? Versuche diese zu implementieren.
+
+2. `leaflet` ermöglicht es auch Icons anstatt nur Punkten zu plotten. Eine Anleitung findest du [hier](https://rstudio.github.io/leaflet/markers.html). Versuche, Marker mit unterschiedlichen Icons zu verwenden, zum Beispiel könntest du ein bestimmtes Icon für Superhosts verwenden und ein weiteres für ganz schlechte Airbnbs, und ein weiteres für den Rest. 
+
+3. Gibt es weitere Variablen, für die du einen Input erstellen möchtest, um danach filtern zu können? Versuche diese zu implementieren. **Tipp:** [Hier](https://shiny.rstudio.com/gallery/widget-gallery.html) findest du eine Übersicht der möglichen Inputformate.
+
+
+
+
+
+
+
+## Datensatz
+
+Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv) Datensatz enthält Zahlen zu 9868 Berliner Airbnbs 
+
+
+|Variable | Beschreibung |
+|:-------------|:-------------------------------------|
+|Preis| Preis pro Nacht|
+ |Erstellungsdatum| Eröffnungsdatum des Airbnbs |
+ |Unterkunftsart| Appartement, Loft, House, etc.|
+ |Schlafplätze| Anzahl Schlafplätze |
+ |Schlafzimmer| Anzahl Schlafzimmer |
+ |Badezimmer| Anzahl Badezimmer |
+ |Reinigungsgebühr| Reinigungsgebühr |
+ |Verfügbarkeit_90Tage| |
+ |Viertel| In welchem Viertel befindet sich das Airbnb |
+ |Stadtteil| In welchem Stadtteil befindet sich das Airbnb |
+ |Breitengrad| Breitengrad|
+ |Längengrad| Längengrad |
+ |Host_id| Host id |
+ |Host_seit| Erfahrung des Hosts |
+ |Host_antwortzeit| Host Antwortzeit|
+ |Host_antwortrate| Host Antwortrate |
+ |Host_superhost| Superhost Ja/Nein |
+ |Host_anzahl| Anzahl Gäste |
+ |Rating_gesamt| Gesamtrating |
+ |Rating_genauigkeit| Genauigkeitsrating |
+ |Rating_sauberkeit| Sauberkeitsrating |
+ |Rating_checkin| Checkinrating |
+ |Rating_kommunikation| Kommunikationsrating |
+ |Rating_lage| Lagerating |
+ |Rating_wertigkeit| Wertigkeitsrating |
+ |Küche| Küche vorhanden TRUE/FALSE |
+ |Wifi| WLAN vorhanden TRUE/FALSE |
+ |TV| TV vorhanden TRUE/FALSE |
+ |Kaffeemaschine| Kaffeemaschine vorhanden TRUE/FALSE|
+ |Geschirrspüler| Geschirrspüler vorhanden TRUE/FALSE|
+ |Terrasse_Balkon| Terrasse/Balkon vorhanden TRUE/FALSE|
+ |Badewanne| Badewanne vorhanden TRUE/FALSE|
+ |Check_in_24h| 24h Check-In vorhanden TRUE/FALSE|
+
+
+
+## Funktionen
+
+### Paket
+
+|Paket| Installation|
+|:------|:------|
+|`tidyverse`|`install.packages("tidyverse")`|
+|`flexdashboard`|`install.packages("flexdashboard")`|
+|`plotly`|`install.packages("plotly")`|
+|`leaflet`|`install.packages("leaflet")`|
+|`viridis`|`install.packages("viridis")`|
+|`htmltools`|`install.packages("htmltools")`|
+|`shiny`|`install.packages("shiny")`|
+
+### Funktionen
+
+
+| Funktion| Paket | Beschreibung |
+|:---|:------|:---------------------------------------------|
+| `gauge()`|`flexdashboard`| Erstelle einen gauge. | 
+| `renderGauge()`|`flexdashboard`| Rendere Gauges in `shiny` | 
+| `valueBox()`|`flexdashboard`| Erstelle eine value Box | 
+| `ggplotly()`|`plotly`| Konvertiere `ggplot2` Objekt in `plotly` Objekt | 
+| `renderPlotly()`|`plotly`| Rendere `plotly` Plot in `shiny` | 
+| `leaflet()`|`leaflet`| Initiiere `leaflet` Karte | 
+| `setView()`|`leaflet`| Definiere Anfangsfenster | 
+| `addTiles()`|`leaflet`| Zeige Karte | 
+| `addCircleMarkers()`|`leaflet`| Füge Kreisförmige Marker auf die Karte | 
+| `renderLeaflet()`|`leaflet`| Rendere `leaflet` Plot in `shiny` | 
+| `reactive()`|`shiny`| Initiiere reaktives Objekt | 
+| `XXXInput()`|`shiny`| Definiere Inputwidget. Siehe [hier](https://shiny.rstudio.com/gallery/widget-gallery.html) für eine Übersicht der möglichen Inputformate. | 
+
+
+## Materialien
+
+- Eine gutes [**flexdashboard**](https://rmarkdown.rstudio.com/flexdashboard/index.html) Tutorial.
+- R [**shiny**](https://shiny.rstudio.com/) Dokumentation und Einführung.
+- [**shinydashboard**](https://rstudio.github.io/shinydashboard/index.html) Dokumentation und Einführung.
+- Buch [**Mastering Shiny**](https://mastering-shiny.org/) von Hadley Wickham.
+- R [**leaflet**](https://rstudio.github.io/leaflet/) Dokumentation und Einführung.
+- R [**plotly**](https://plotly.com/r/) Dokumentation und Einführung.
+- [**HTML**](https://www.w3schools.com/html/default.asp) Dokumentation und Einführung.
