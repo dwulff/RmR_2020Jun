@@ -67,8 +67,12 @@ require(stargazer)
 source("../../_materials/palette/therbootcamp_palettes.R")
 
 # knitr options
-knitr::opts_chunk$set(dpi = 300, echo = FALSE, warning = FALSE, fig.align = 'center', message= FALSE)
-
+knitr::opts_chunk$set(dpi = 300, 
+                      echo = FALSE, 
+                      warning = FALSE, 
+                      fig.align = 'center', 
+                      message= FALSE,
+                      comment = NA)
 # special print function: avoid if possible
 print2 <- function(x, nlines=10,...) {
    cat(head(capture.output(print(x,...)), nlines), sep="\n")}
@@ -80,15 +84,22 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 # Was sind die Eigenschaften der Wohnungen?
 
+In diesem Abschnitt wollen wir etwas mehr über die Wohnungen rausfinden.
+
+Dazu werden wir die Einstellungen der chunks genauer betrachten und dann Tabellen erstellen.
+---
+
+# Chunks und Tabellen
+
 .pull-left4[
 <ul>
-  <li class="m1"><span>Im ersten Schritt wollen wir verschiedene Wege betrachten, wie wir unseren Datensatz in einem Markdown Dokument  darstellen können. Dafür werden wir  <highm>chunk</highm> Optionen verwenden</span></li>
-  <li class="m2"><span><highm>Tabellen</highm> bieten uns dann eine einfache Möglichkeit Überblick über die Eigenschaften der Wohnung in unserem Datensatz zu erhatlten</span></li> 
+  <li class="m1"><span>Welche chunk Optionen gibt es?</span></li>
+  <li class="m2"><span>Tabellen </span></li> 
 
 </ul>
 ]
 
-.pull-righ5[
+.pull-right5[
 ]
 ---
 
@@ -96,7 +107,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 .pull-left4[
 <ul>
-  <li class="m1"><span> <highm>include = FALSE</highm>: Berechnungen im Hintergrund durchführen Code und Ergebnisse werde nicht angezeigt</span></li>  
+  <li class="m1"><span> <highm>include = FALSE:</highm>  Code und Ergebnisse werde nicht angezeigt</span></li>  
 </ul>
 
 ```{r eval = FALSE, echo = TRUE}
@@ -104,15 +115,18 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 airbnb <- read_csv("1_Data/airbnb.csv")
 ```
 
+Daten können im nächsten Chunk abgefragt werden! 
+
 ]
 
-.pull-righ5[
+.pull-right5[
 
-Daten können dann im nächsten Chunk abgefragt werden: 
-
-```{r eval = TRUE}
-head(airbnb)
+```{r echo = TRUE}
+airbnb
 ```
+
+
+
 ]
 
 ---
@@ -121,8 +135,8 @@ head(airbnb)
 
 .pull-left4[
 <ul>
-  <li class="m1"><span><highm> include = FALSE</highm>: Berechnungen im Hintergrund durchführen Code und Ergebnisse werde nicht angezeigt</span></li> 
-  <li class="m2"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, Ergebnisse werden gezeigt </span></li>
+  <li class="m1"><span> <highm>include = FALSE:</highm> Code und <high>Ergebnisse werde nicht angezeigt</high></span></li>  
+  <li class="m2"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
 </ul>
 
 ```{r eval = FALSE, echo = TRUE}
@@ -131,11 +145,11 @@ select(airbnb, Preis)
 ```
 ]
 
-.pull-righ5[
+.pull-right5[
 
 
 ```{r echo = FALSE}
-select(airbnb, Preis)
+select(airbnb, Preis, Erstellungsdatum, Unterkunftsart)
 ```
 
 ]
@@ -146,29 +160,29 @@ select(airbnb, Preis)
 
 .pull-left4[
 <ul>
-  <li class="m1"><span><highm> include = FALSE</highm>: Berechnungen im Hintergrund durchführen Code und Ergebnisse werde nicht angezeigt</span></li> 
-  <li class="m2"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, Ergebnisse werden gezeigt </span></li>
-  <li class="m3"><span><highm>message = FALSE</highm></span></li>
+  <li class="m1"><span> <highm>include = FALSE:</highm> Code und <high>Ergebnisse werde nicht angezeigt</high></span></li>  
+  <li class="m2"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
+  <li class="m3"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
 </ul>
 
 ```{r eval = FALSE, echo = TRUE}
 {r message = FALSE}
-message('helloooo!')
+message('Alles erledigt!')
 ```
 
 ]
 
-.pull-righ5[
+.pull-right5[
 
 Message: TRUE
 ```{r message = TRUE}
-message('helloooo!')
+message('Alles erledigt!')
 ```
 
 Message: FALSE
 
 ```{r message = FALSE}
-message('helloooo!')
+message('Alles erledigt!')
 ```
 ]
 
@@ -178,20 +192,27 @@ message('helloooo!')
 
 .pull-left4[
 <ul>
-  <li class="m1"><span> <highm>include = FALSE</highm>: Berechnungen im Hintergrund durchführen Code und Ergebnisse werde nicht angezeigt</span></li> 
-  <li class="m2"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, Ergebnisse werden gezeigt </span></li>
-  <li class="m3"><span><highm>message = FALSE</highm></span></li>
-  <li class="m4"><span><highm>fig.cap = '...' </highm>Abbilungsunterschrift hinzufügen</span>, <highm>fig.width </highm>= '...', <highm>fig.height</highm> = '...'</li>
+  <li class="m1"><span> <highm>include = FALSE:</highm> Code und <high>Ergebnisse werde nicht angezeigt</high></span></li>  
+  <li class="m2"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
+  <li class="m3"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
+  <li class="m4"><span><highm>fig.width </highm>= '...', <highm>fig.height</highm> = '...'</li>
 </ul>
+
+```{r eval = FALSE, echo = TRUE}
+{r fig.width = 5, fig.height = 3}
+ggplot(airbnb, aes(Erstellungsdatum, Preis)) +
+  geom_point() + 
+  theme_bw()
+```
 
 
 ]
 
-.pull-righ5[
+.pull-right5[
 
-```{r fig.cap = 'Caption: AirBnB Preis', fig.width = 2, fig.height = 1.5}
+```{r fig.width = 5, fig.height = 3, dpi = 300}
 ggplot(airbnb, aes(Erstellungsdatum, Preis)) +
-  geom_point(size = .001) + 
+  geom_point() + 
   theme_bw()
 ```
 ]
@@ -204,7 +225,7 @@ ggplot(airbnb, aes(Erstellungsdatum, Preis)) +
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Inhaltsverzeichnis anzeigen <highm>toc: true</highm> und die 'Tiefe' erhöhen <highm>toc_depth: 2</highm></li>
+  <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
 </ul>
 
 ````markdown
@@ -219,7 +240,7 @@ output:
 
 ]
 
-.pull-righ5[
+.pull-right5[
 
 <p align="center" width="100%">
   <img src="image/TOC_Demo.png" alt="TOC Demo" style="width:30%">
@@ -233,8 +254,8 @@ output:
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Inhaltsverzeichnis anzeigen <highm>toc: true</highm> und die 'Tiefe' erhöhen <highm>toc_depth: 2</highm></li>
- <li class="m2"><span> Überschirten werden mit <highm>number_sections: true</highm> numeriert</span></li>
+  <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
+ <li class="m2"><span> Überschriften werden mit <high>number_sections: true</high> numeriert</span></li>
 </ul>
 
 ````markdown
@@ -249,9 +270,9 @@ output:
 
 ]
 
-.pull-righ5[
+.pull-right5[
 <p align="center" width="100%">
-  <img src="image/TOC_Demo_enumerate.png" alt="TOC Demo" style="width:30%">
+  <img src="image/_Screenshots/markdown_screen.001.png" alt="TOC Demo" style="width:70%">
 </p>
 
 ]
@@ -263,9 +284,9 @@ output:
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Inhaltsverzeichnis anzeigen <highm>toc: true</highm> und die 'Tiefe' erhöhen <highm>toc_depth: 2</highm></li>
- <li class="m2"><span> Überschirten werden mit <highm>number_sections: true</highm> numeriert</span></li>
-  <li class="m3"> <span> Um das Inhaltsverzeichnis immer anzuzeigen kann die Option <highm>toc_float: true</highm> eingefügt werden</span></li>
+  <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
+ <li class="m2"><span> Überschriften werden mit <high>number_sections: true</high> numeriert</span></li>
+  <li class="m3"> <span>Inhaltsverzeichnis permament links anzeigen <high>toc_float: true</high></span></li>
 
 </ul>
 
@@ -282,11 +303,10 @@ output:
 
 ]
 
-.pull-righ5[
+.pull-right5[
 
 <p align="center" width="100%">
-  <img src="image/TOC_Demo_float.png" alt="TOC Demo " style="width:5
-  0%">
+ <img src="image/_Screenshots/markdown_screen.003.png" alt="TOC Demo" style="width:150%">
 </p>
 ]
 
@@ -296,16 +316,20 @@ output:
 
 .pull-left4[
 
-Tabellen können mit einfach mit <highm>table()</highm> angezeigt werden- sind dann allerdings nicht schön formatiert ... 
+Tabellen werden mit <highm>table()</highm> angezeigt werden- sind dann allerdings nicht schön formatiert ... 
 
-```{r eval = FALSE, echo = TRUE}
-table(select(airbnb, Preis) %>% 
-        slice(1:5))
-```
+````markdown
+{r}
+df <- select(airbnb, Preis) %>% 
+      slice(1:5)
+        
+table(df)
+
+````
 
 ]
 
-.pull-righ5[
+.pull-right5[
 
 ```{r}
 table(select(airbnb, Preis) %>% slice(1:5))
@@ -318,16 +342,17 @@ table(select(airbnb, Preis) %>% slice(1:5))
 # Tabellen
 
 .pull-left4[
-Schönere Darstellung ist mit <highm>kable()</highm> möglich ... 
+Schönere Darstellung ist mit <high>kable()</high> möglich ... 
 
 ```{r eval = FALSE, echo = TRUE}
+{r}
 kable(select(airbnb, Preis) %>% 
             slice(1:5),  
       col.names = "Preis")
 ```
 ]
 
-.pull-righ5[
+.pull-right5[
 
 ```{r}
 kable(select(airbnb, Preis) %>% slice(1:5),  col.names = "Preis")
@@ -347,7 +372,7 @@ summary(model)
 ```
 ]
 
-.pull-righ5[
+.pull-right5[
 ```{r results = 'asis'}
 stargazer(model, header=FALSE, type="html")
 ```

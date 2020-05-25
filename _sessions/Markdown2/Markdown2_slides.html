@@ -46,15 +46,22 @@ layout: true
 
 # Was sind die Eigenschaften der Wohnungen?
 
+In diesem Abschnitt wollen wir etwas mehr über die Wohnungen rausfinden.
+
+Dazu werden wir die Einstellungen der chunks genauer betrachten und dann Tabellen erstellen.
+---
+
+# Chunks und Tabellen
+
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Im ersten Schritt wollen wir verschiedene Wege betrachten, wie wir unseren Datensatz in einem Markdown Dokument  darstellen können. Dafür werden wir  &lt;highm&gt;chunk&lt;/highm&gt; Optionen verwenden&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;Tabellen&lt;/highm&gt; bieten uns dann eine einfache Möglichkeit Überblick über die Eigenschaften der Wohnung in unserem Datensatz zu erhatlten&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Welche chunk Optionen gibt es?&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Tabellen &lt;/span&gt;&lt;/li&gt; 
 
 &lt;/ul&gt;
 ]
 
-.pull-righ5[
+.pull-right5[
 ]
 ---
 
@@ -62,7 +69,7 @@ layout: true
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE&lt;/highm&gt;: Berechnungen im Hintergrund durchführen Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m1"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt;  Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt;  
 &lt;/ul&gt;
 
 
@@ -71,30 +78,41 @@ layout: true
 airbnb &lt;- read_csv("1_Data/airbnb.csv")
 ```
 
+Daten können im nächsten Chunk abgefragt werden! 
+
 ]
 
-.pull-righ5[
+.pull-right5[
 
-Daten können dann im nächsten Chunk abgefragt werden: 
 
+```r
+airbnb
+```
 
 ```
-## # A tibble: 6 x 33
-##   Preis Erstellungsdatum Unterkunftsart Schlafplätze Schlafzimmer Badezimmer Reinigungsgebühr Verfügbarkeit_9…
-##   &lt;dbl&gt; &lt;date&gt;           &lt;chr&gt;                 &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt;
-## 1   125 2010-02-15       Loft                      2            1        1   $39.00                          0
-## 2    33 2009-08-18       Apartment                 2            1        1   $0.00                          45
-## 3   180 2015-08-09       Apartment                 7            4        2.5 $80.00                          0
-## 4    49 2010-02-18       Apartment                 2            0        1   $50.00                         37
-## 5   129 2012-10-03       Loft                      4            2        1   $49.00                         67
-## 6    98 2010-05-15       Apartment                 4            2        1   $60.00                         72
-## # … with 25 more variables: Viertel &lt;chr&gt;, Stadtteil &lt;chr&gt;, Breitengrad &lt;dbl&gt;, Längengrad &lt;dbl&gt;,
-## #   Host_id &lt;dbl&gt;, Host_seit &lt;date&gt;, Host_antwortzeit &lt;chr&gt;, Host_antwortrate &lt;chr&gt;, Host_superhost &lt;lgl&gt;,
-## #   Host_anzahl &lt;dbl&gt;, Rating_gesamt &lt;dbl&gt;, Rating_genauigkeit &lt;dbl&gt;, Rating_sauberkeit &lt;dbl&gt;,
-## #   Rating_checkin &lt;dbl&gt;, Rating_kommunikation &lt;dbl&gt;, Rating_lage &lt;dbl&gt;, Rating_wertigkeit &lt;dbl&gt;,
-## #   Küche &lt;lgl&gt;, Wifi &lt;lgl&gt;, TV &lt;lgl&gt;, Kaffeemaschine &lt;lgl&gt;, Geschirrspüler &lt;lgl&gt;, Terrasse_Balkon &lt;lgl&gt;,
-## #   Badewanne &lt;lgl&gt;, Check_in_24h &lt;lgl&gt;
+# A tibble: 9,868 x 33
+   Preis Erstellungsdatum Unterkunftsart Schlafplätze Schlafzimmer Badezimmer Reinigungsgebühr
+   &lt;dbl&gt; &lt;date&gt;           &lt;chr&gt;                 &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;           
+ 1   125 2010-02-15       Loft                      2            1        1   $39.00          
+ 2    33 2009-08-18       Apartment                 2            1        1   $0.00           
+ 3   180 2015-08-09       Apartment                 7            4        2.5 $80.00          
+ 4    49 2010-02-18       Apartment                 2            0        1   $50.00          
+ 5   129 2012-10-03       Loft                      4            2        1   $49.00          
+ 6    98 2010-05-15       Apartment                 4            2        1   $60.00          
+ 7   160 2010-10-10       Apartment                 5            1        1   $45.00          
+ 8    65 2010-09-18       Condominium               4            1        1   $100.00         
+ 9    90 2010-09-22       Apartment                 4            2        2.5 $45.00          
+10   269 2010-08-17       Apartment                 8            2        2   $50.00          
+# … with 9,858 more rows, and 26 more variables: Verfügbarkeit_90Tage &lt;dbl&gt;, Viertel &lt;chr&gt;, Stadtteil &lt;chr&gt;,
+#   Breitengrad &lt;dbl&gt;, Längengrad &lt;dbl&gt;, Host_id &lt;dbl&gt;, Host_seit &lt;date&gt;, Host_antwortzeit &lt;chr&gt;,
+#   Host_antwortrate &lt;chr&gt;, Host_superhost &lt;lgl&gt;, Host_anzahl &lt;dbl&gt;, Rating_gesamt &lt;dbl&gt;,
+#   Rating_genauigkeit &lt;dbl&gt;, Rating_sauberkeit &lt;dbl&gt;, Rating_checkin &lt;dbl&gt;, Rating_kommunikation &lt;dbl&gt;,
+#   Rating_lage &lt;dbl&gt;, Rating_wertigkeit &lt;dbl&gt;, Küche &lt;lgl&gt;, Wifi &lt;lgl&gt;, TV &lt;lgl&gt;, Kaffeemaschine &lt;lgl&gt;,
+#   Geschirrspüler &lt;lgl&gt;, Terrasse_Balkon &lt;lgl&gt;, Badewanne &lt;lgl&gt;, Check_in_24h &lt;lgl&gt;
 ```
+
+
+
 ]
 
 ---
@@ -103,8 +121,8 @@ Daten können dann im nächsten Chunk abgefragt werden:
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt; include = FALSE&lt;/highm&gt;: Berechnungen im Hintergrund durchführen Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, Ergebnisse werden gezeigt &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und &lt;high&gt;Ergebnisse werde nicht angezeigt&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, &lt;high&gt;Ergebnisse werden gezeigt&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
@@ -114,25 +132,25 @@ select(airbnb, Preis)
 ```
 ]
 
-.pull-righ5[
+.pull-right5[
 
 
 
 ```
-## # A tibble: 9,868 x 1
-##    Preis
-##    &lt;dbl&gt;
-##  1   125
-##  2    33
-##  3   180
-##  4    49
-##  5   129
-##  6    98
-##  7   160
-##  8    65
-##  9    90
-## 10   269
-## # … with 9,858 more rows
+# A tibble: 9,868 x 3
+   Preis Erstellungsdatum Unterkunftsart
+   &lt;dbl&gt; &lt;date&gt;           &lt;chr&gt;         
+ 1   125 2010-02-15       Loft          
+ 2    33 2009-08-18       Apartment     
+ 3   180 2015-08-09       Apartment     
+ 4    49 2010-02-18       Apartment     
+ 5   129 2012-10-03       Loft          
+ 6    98 2010-05-15       Apartment     
+ 7   160 2010-10-10       Apartment     
+ 8    65 2010-09-18       Condominium   
+ 9    90 2010-09-22       Apartment     
+10   269 2010-08-17       Apartment     
+# … with 9,858 more rows
 ```
 
 ]
@@ -143,25 +161,25 @@ select(airbnb, Preis)
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt; include = FALSE&lt;/highm&gt;: Berechnungen im Hintergrund durchführen Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, Ergebnisse werden gezeigt &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;message = FALSE&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und &lt;high&gt;Ergebnisse werde nicht angezeigt&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, &lt;high&gt;Ergebnisse werden gezeigt&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;message = FALSE:&lt;/highm&gt; Warnungen unterdrücken&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
 ```r
 {r message = FALSE}
-message('helloooo!')
+message('Alles erledigt!')
 ```
 
 ]
 
-.pull-righ5[
+.pull-right5[
 
 Message: TRUE
 
 ```
-## helloooo!
+Alles erledigt!
 ```
 
 Message: FALSE
@@ -175,21 +193,26 @@ Message: FALSE
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE&lt;/highm&gt;: Berechnungen im Hintergrund durchführen Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, Ergebnisse werden gezeigt &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;message = FALSE&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m4"&gt;&lt;span&gt;&lt;highm&gt;fig.cap = '...' &lt;/highm&gt;Abbilungsunterschrift hinzufügen&lt;/span&gt;, &lt;highm&gt;fig.width &lt;/highm&gt;= '...', &lt;highm&gt;fig.height&lt;/highm&gt; = '...'&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und &lt;high&gt;Ergebnisse werde nicht angezeigt&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, &lt;high&gt;Ergebnisse werden gezeigt&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;message = FALSE:&lt;/highm&gt; Warnungen unterdrücken&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;highm&gt;fig.width &lt;/highm&gt;= '...', &lt;highm&gt;fig.height&lt;/highm&gt; = '...'&lt;/li&gt;
 &lt;/ul&gt;
+
+
+```r
+{r fig.width = 5, fig.height = 3}
+ggplot(airbnb, aes(Erstellungsdatum, Preis)) +
+  geom_point() + 
+  theme_bw()
+```
 
 
 ]
 
-.pull-righ5[
+.pull-right5[
 
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-8-1.png" alt="Caption: AirBnB Preis"  /&gt;
-&lt;p class="caption"&gt;Caption: AirBnB Preis&lt;/p&gt;
-&lt;/div&gt;
+&lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 
@@ -200,7 +223,7 @@ Message: FALSE
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Inhaltsverzeichnis anzeigen &lt;highm&gt;toc: true&lt;/highm&gt; und die 'Tiefe' erhöhen &lt;highm&gt;toc_depth: 2&lt;/highm&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Inhaltsverzeichnis anzeigen &lt;high&gt;toc: true&lt;/high&gt; und die 'Tiefe' erhöhen &lt;high&gt;toc_depth: 2&lt;/high&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ````markdown
@@ -215,7 +238,7 @@ output:
 
 ]
 
-.pull-righ5[
+.pull-right5[
 
 &lt;p align="center" width="100%"&gt;
   &lt;img src="image/TOC_Demo.png" alt="TOC Demo" style="width:30%"&gt;
@@ -229,8 +252,8 @@ output:
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Inhaltsverzeichnis anzeigen &lt;highm&gt;toc: true&lt;/highm&gt; und die 'Tiefe' erhöhen &lt;highm&gt;toc_depth: 2&lt;/highm&gt;&lt;/li&gt;
- &lt;li class="m2"&gt;&lt;span&gt; Überschirten werden mit &lt;highm&gt;number_sections: true&lt;/highm&gt; numeriert&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Inhaltsverzeichnis anzeigen &lt;high&gt;toc: true&lt;/high&gt; und die 'Tiefe' erhöhen &lt;high&gt;toc_depth: 2&lt;/high&gt;&lt;/li&gt;
+ &lt;li class="m2"&gt;&lt;span&gt; Überschriften werden mit &lt;high&gt;number_sections: true&lt;/high&gt; numeriert&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ````markdown
@@ -245,9 +268,9 @@ output:
 
 ]
 
-.pull-righ5[
+.pull-right5[
 &lt;p align="center" width="100%"&gt;
-  &lt;img src="image/TOC_Demo_enumerate.png" alt="TOC Demo" style="width:30%"&gt;
+  &lt;img src="image/_Screenshots/markdown_screen.001.png" alt="TOC Demo" style="width:70%"&gt;
 &lt;/p&gt;
 
 ]
@@ -259,9 +282,9 @@ output:
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Inhaltsverzeichnis anzeigen &lt;highm&gt;toc: true&lt;/highm&gt; und die 'Tiefe' erhöhen &lt;highm&gt;toc_depth: 2&lt;/highm&gt;&lt;/li&gt;
- &lt;li class="m2"&gt;&lt;span&gt; Überschirten werden mit &lt;highm&gt;number_sections: true&lt;/highm&gt; numeriert&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt; &lt;span&gt; Um das Inhaltsverzeichnis immer anzuzeigen kann die Option &lt;highm&gt;toc_float: true&lt;/highm&gt; eingefügt werden&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Inhaltsverzeichnis anzeigen &lt;high&gt;toc: true&lt;/high&gt; und die 'Tiefe' erhöhen &lt;high&gt;toc_depth: 2&lt;/high&gt;&lt;/li&gt;
+ &lt;li class="m2"&gt;&lt;span&gt; Überschriften werden mit &lt;high&gt;number_sections: true&lt;/high&gt; numeriert&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt; &lt;span&gt;Inhaltsverzeichnis permament links anzeigen &lt;high&gt;toc_float: true&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -278,11 +301,10 @@ output:
 
 ]
 
-.pull-righ5[
+.pull-right5[
 
 &lt;p align="center" width="100%"&gt;
-  &lt;img src="image/TOC_Demo_float.png" alt="TOC Demo " style="width:5
-  0%"&gt;
+ &lt;img src="image/_Screenshots/markdown_screen.003.png" alt="TOC Demo" style="width:150%"&gt;
 &lt;/p&gt;
 ]
 
@@ -292,23 +314,26 @@ output:
 
 .pull-left4[
 
-Tabellen können mit einfach mit &lt;highm&gt;table()&lt;/highm&gt; angezeigt werden- sind dann allerdings nicht schön formatiert ... 
+Tabellen werden mit &lt;highm&gt;table()&lt;/highm&gt; angezeigt werden- sind dann allerdings nicht schön formatiert ... 
 
+````markdown
+{r}
+df &lt;- select(airbnb, Preis) %&gt;% 
+      slice(1:5)
+        
+table(df)
 
-```r
-table(select(airbnb, Preis) %&gt;% 
-        slice(1:5))
-```
+````
 
 ]
 
-.pull-righ5[
+.pull-right5[
 
 
 ```
-## 
-##  33  49 125 129 180 
-##   1   1   1   1   1
+
+ 33  49 125 129 180 
+  1   1   1   1   1 
 ```
 
 ]
@@ -318,17 +343,18 @@ table(select(airbnb, Preis) %&gt;%
 # Tabellen
 
 .pull-left4[
-Schönere Darstellung ist mit &lt;highm&gt;kable()&lt;/highm&gt; möglich ... 
+Schönere Darstellung ist mit &lt;high&gt;kable()&lt;/high&gt; möglich ... 
 
 
 ```r
+{r}
 kable(select(airbnb, Preis) %&gt;% 
             slice(1:5),  
       col.names = "Preis")
 ```
 ]
 
-.pull-righ5[
+.pull-right5[
 
 
 | Preis|
@@ -354,7 +380,7 @@ summary(model)
 ```
 ]
 
-.pull-righ5[
+.pull-right5[
 
 &lt;table style="text-align:center"&gt;&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;Dependent variable:&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td colspan="1" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;
