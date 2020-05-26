@@ -49,6 +49,7 @@ layout: true
 In diesem Abschnitt wollen wir etwas mehr über die Wohnungen rausfinden.
 
 Dazu werden wir die Einstellungen der chunks genauer betrachten und dann Tabellen erstellen.
+
 ---
 
 # Chunks und Tabellen
@@ -63,22 +64,23 @@ Dazu werden wir die Einstellungen der chunks genauer betrachten und dann Tabelle
 
 .pull-right5[
 ]
+
 ---
 
 # Feinheiten in den Chunk Einstellungen 
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt;  Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt&lt;/span&gt;&lt;/li&gt;  
 &lt;/ul&gt;
 
 
 ```r
-{r include = FALSE}
-airbnb &lt;- read_csv("1_Data/airbnb.csv")
+{r}
+airbnb &lt;- 
+  read_csv("1_Data/airbnb.csv")
+airbnb
 ```
-
-Daten können im nächsten Chunk abgefragt werden! 
 
 ]
 
@@ -86,6 +88,8 @@ Daten können im nächsten Chunk abgefragt werden!
 
 
 ```r
+airbnb &lt;- 
+  read_csv("1_Data/airbnb.csv")
 airbnb
 ```
 
@@ -111,6 +115,32 @@ airbnb
 #   Geschirrspüler &lt;lgl&gt;, Terrasse_Balkon &lt;lgl&gt;, Badewanne &lt;lgl&gt;, Check_in_24h &lt;lgl&gt;
 ```
 
+]
+
+---
+
+# Feinheiten in den Chunk Einstellungen 
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+
+```r
+{r include = FALSE}
+airbnb &lt;- 
+  read_csv("1_Data/airbnb.csv")
+airbnb
+```
+
+Daten können im nächsten Chunk abgefragt werden! 
+
+]
+
+.pull-right5[
+
 
 
 ]
@@ -121,14 +151,15 @@ airbnb
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und &lt;high&gt;Ergebnisse werde nicht angezeigt&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, &lt;high&gt;Ergebnisse werden gezeigt&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, &lt;high&gt;Ergebnisse werden gezeigt&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
 ```r
 {r echo = FALSE}
-select(airbnb, Preis)
+select(airbnb, Preis, Erstellungsdatum)
 ```
 ]
 
@@ -137,19 +168,19 @@ select(airbnb, Preis)
 
 
 ```
-# A tibble: 9,868 x 3
-   Preis Erstellungsdatum Unterkunftsart
-   &lt;dbl&gt; &lt;date&gt;           &lt;chr&gt;         
- 1   125 2010-02-15       Loft          
- 2    33 2009-08-18       Apartment     
- 3   180 2015-08-09       Apartment     
- 4    49 2010-02-18       Apartment     
- 5   129 2012-10-03       Loft          
- 6    98 2010-05-15       Apartment     
- 7   160 2010-10-10       Apartment     
- 8    65 2010-09-18       Condominium   
- 9    90 2010-09-22       Apartment     
-10   269 2010-08-17       Apartment     
+# A tibble: 9,868 x 2
+   Preis Erstellungsdatum
+   &lt;dbl&gt; &lt;date&gt;          
+ 1   125 2010-02-15      
+ 2    33 2009-08-18      
+ 3   180 2015-08-09      
+ 4    49 2010-02-18      
+ 5   129 2012-10-03      
+ 6    98 2010-05-15      
+ 7   160 2010-10-10      
+ 8    65 2010-09-18      
+ 9    90 2010-09-22      
+10   269 2010-08-17      
 # … with 9,858 more rows
 ```
 
@@ -161,9 +192,10 @@ select(airbnb, Preis)
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und &lt;high&gt;Ergebnisse werde nicht angezeigt&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, &lt;high&gt;Ergebnisse werden gezeigt&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;message = FALSE:&lt;/highm&gt; Warnungen unterdrücken&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, &lt;high&gt;Ergebnisse werden gezeigt&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;highm&gt;message = FALSE:&lt;/highm&gt; Warnungen unterdrücken&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
@@ -193,18 +225,20 @@ Message: FALSE
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und &lt;high&gt;Ergebnisse werde nicht angezeigt&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, &lt;high&gt;Ergebnisse werden gezeigt&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;message = FALSE:&lt;/highm&gt; Warnungen unterdrücken&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m4"&gt;&lt;span&gt;&lt;highm&gt;fig.width &lt;/highm&gt;= '...', &lt;highm&gt;fig.height&lt;/highm&gt; = '...'&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, &lt;high&gt;Ergebnisse werden gezeigt&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;highm&gt;message = FALSE:&lt;/highm&gt; Warnungen unterdrücken&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;&lt;highm&gt;fig.width &lt;/highm&gt;= '...', &lt;highm&gt;fig.height&lt;/highm&gt; = '...'&lt;/li&gt;
 &lt;/ul&gt;
 
 
 ```r
 {r fig.width = 5, fig.height = 3}
-ggplot(airbnb, aes(Erstellungsdatum, Preis)) +
-  geom_point() + 
-  theme_bw()
+ggplot(airbnb, 
+aes(Erstellungsdatum, Preis)) +
+geom_point() + 
+theme_bw()
 ```
 
 
@@ -212,9 +246,8 @@ ggplot(airbnb, aes(Erstellungsdatum, Preis)) +
 
 .pull-right5[
 
-&lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
 ]
-
 
 
 ---
@@ -241,8 +274,7 @@ output:
 .pull-right5[
 
 &lt;p align="center" width="100%"&gt;
-  &lt;img src="image/TOC_Demo.png" alt="TOC Demo" style="width:30%"&gt;
-  &lt;img src="image/TOC_Demo_depth.png" alt="TOC Demo depth" style="width:35%"&gt;
+  &lt;img src="image/Markdown2_Toc2.png" alt="TOC Demo depth" style="width:80%"&gt;
 &lt;/p&gt;
 ]
 
@@ -270,7 +302,7 @@ output:
 
 .pull-right5[
 &lt;p align="center" width="100%"&gt;
-  &lt;img src="image/_Screenshots/markdown_screen.001.png" alt="TOC Demo" style="width:70%"&gt;
+  &lt;img src="image/Markdown2_Enum.png" alt="TOC Demo" style="width:70%"&gt;
 &lt;/p&gt;
 
 ]
@@ -288,7 +320,7 @@ output:
 
 &lt;/ul&gt;
 
-
+ 
 ````markdown
 title: "Mein Demo"
 author: "MSM"
@@ -304,7 +336,7 @@ output:
 .pull-right5[
 
 &lt;p align="center" width="100%"&gt;
- &lt;img src="image/_Screenshots/markdown_screen.003.png" alt="TOC Demo" style="width:150%"&gt;
+ &lt;img src="image/Markdown2_Float.png" alt="TOC Demo" style="width:150%"&gt;
 &lt;/p&gt;
 ]
 
@@ -314,16 +346,15 @@ output:
 
 .pull-left4[
 
-Tabellen werden mit &lt;highm&gt;table()&lt;/highm&gt; angezeigt werden- sind dann allerdings nicht schön formatiert ... 
+Tabellen werden mit &lt;highm&gt;table()&lt;/highm&gt; angezeigt - sind dann allerdings nicht schön formatiert ... 
 
-````markdown
-{r}
+
+```r
 df &lt;- select(airbnb, Preis) %&gt;% 
       slice(1:5)
         
 table(df)
-
-````
+```
 
 ]
 
@@ -377,6 +408,31 @@ kable(select(airbnb, Preis) %&gt;%
 ```r
 model &lt;- lm(Preis ~ Schlafzimmer + Badezimmer + Rating_gesamt, data = airbnb)
 summary(model)
+```
+
+```
+
+Call:
+lm(formula = Preis ~ Schlafzimmer + Badezimmer + Rating_gesamt, 
+    data = airbnb)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+  -362    -34    -17     13   8914 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)     -5.254     23.693   -0.22     0.82    
+Schlafzimmer    36.833      2.316   15.91  &lt; 2e-16 ***
+Badezimmer      24.767      4.480    5.53  3.3e-08 ***
+Rating_gesamt    0.122      0.244    0.50     0.62    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 156 on 9741 degrees of freedom
+  (123 observations deleted due to missingness)
+Multiple R-squared:  0.0404,	Adjusted R-squared:  0.0401 
+F-statistic:  137 on 3 and 9741 DF,  p-value: &lt;2e-16
 ```
 ]
 

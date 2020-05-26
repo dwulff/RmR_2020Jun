@@ -87,6 +87,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 In diesem Abschnitt wollen wir etwas mehr über die Wohnungen rausfinden.
 
 Dazu werden wir die Einstellungen der chunks genauer betrachten und dann Tabellen erstellen.
+
 ---
 
 # Chunks und Tabellen
@@ -101,18 +102,50 @@ Dazu werden wir die Einstellungen der chunks genauer betrachten und dann Tabelle
 
 .pull-right5[
 ]
+
 ---
 
 # Feinheiten in den Chunk Einstellungen 
 
 .pull-left4[
 <ul>
-  <li class="m1"><span> <highm>include = FALSE:</highm>  Code und Ergebnisse werde nicht angezeigt</span></li>  
+  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
+</ul>
+
+```{r eval = FALSE, echo = TRUE}
+{r}
+airbnb <- 
+  read_csv("1_Data/airbnb.csv")
+airbnb
+```
+
+]
+
+.pull-right5[
+
+```{r eval = TRUE, echo = TRUE}
+airbnb <- 
+  read_csv("1_Data/airbnb.csv")
+airbnb
+```
+
+]
+
+---
+
+# Feinheiten in den Chunk Einstellungen 
+
+.pull-left4[
+<ul>
+  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
+  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
 </ul>
 
 ```{r eval = FALSE, echo = TRUE}
 {r include = FALSE}
-airbnb <- read_csv("1_Data/airbnb.csv")
+airbnb <- 
+  read_csv("1_Data/airbnb.csv")
+airbnb
 ```
 
 Daten können im nächsten Chunk abgefragt werden! 
@@ -121,11 +154,11 @@ Daten können im nächsten Chunk abgefragt werden!
 
 .pull-right5[
 
-```{r echo = TRUE}
+```{r echo = FALSE, eval = FALSE}
+airbnb <- 
+  read_csv("1_Data/airbnb.csv")
 airbnb
 ```
-
-
 
 ]
 
@@ -135,21 +168,22 @@ airbnb
 
 .pull-left4[
 <ul>
-  <li class="m1"><span> <highm>include = FALSE:</highm> Code und <high>Ergebnisse werde nicht angezeigt</high></span></li>  
-  <li class="m2"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
+  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
+  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
+  <li class="m3"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
 </ul>
 
 ```{r eval = FALSE, echo = TRUE}
 {r echo = FALSE}
-select(airbnb, Preis)
+select(airbnb, Preis, Erstellungsdatum)
 ```
 ]
 
 .pull-right5[
 
 
-```{r echo = FALSE}
-select(airbnb, Preis, Erstellungsdatum, Unterkunftsart)
+```{r eval = TRUE, echo = FALSE}
+select(airbnb, Preis, Erstellungsdatum)
 ```
 
 ]
@@ -160,9 +194,10 @@ select(airbnb, Preis, Erstellungsdatum, Unterkunftsart)
 
 .pull-left4[
 <ul>
-  <li class="m1"><span> <highm>include = FALSE:</highm> Code und <high>Ergebnisse werde nicht angezeigt</high></span></li>  
-  <li class="m2"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
-  <li class="m3"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
+  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
+  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
+  <li class="m3"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
+  <li class="m4"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
 </ul>
 
 ```{r eval = FALSE, echo = TRUE}
@@ -192,17 +227,19 @@ message('Alles erledigt!')
 
 .pull-left4[
 <ul>
-  <li class="m1"><span> <highm>include = FALSE:</highm> Code und <high>Ergebnisse werde nicht angezeigt</high></span></li>  
-  <li class="m2"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
-  <li class="m3"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
-  <li class="m4"><span><highm>fig.width </highm>= '...', <highm>fig.height</highm> = '...'</li>
+  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
+  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
+  <li class="m3"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
+  <li class="m4"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
+  <li class="m5"><span><highm>fig.width </highm>= '...', <highm>fig.height</highm> = '...'</li>
 </ul>
 
 ```{r eval = FALSE, echo = TRUE}
 {r fig.width = 5, fig.height = 3}
-ggplot(airbnb, aes(Erstellungsdatum, Preis)) +
-  geom_point() + 
-  theme_bw()
+ggplot(airbnb, 
+aes(Erstellungsdatum, Preis)) +
+geom_point() + 
+theme_bw()
 ```
 
 
@@ -211,12 +248,12 @@ ggplot(airbnb, aes(Erstellungsdatum, Preis)) +
 .pull-right5[
 
 ```{r fig.width = 5, fig.height = 3, dpi = 300}
-ggplot(airbnb, aes(Erstellungsdatum, Preis)) +
-  geom_point() + 
-  theme_bw()
+ggplot(airbnb, 
+aes(Erstellungsdatum, Preis)) +
+geom_point() + 
+theme_bw()
 ```
 ]
-
 
 
 ---
@@ -243,8 +280,7 @@ output:
 .pull-right5[
 
 <p align="center" width="100%">
-  <img src="image/TOC_Demo.png" alt="TOC Demo" style="width:30%">
-  <img src="image/TOC_Demo_depth.png" alt="TOC Demo depth" style="width:35%">
+  <img src="image/Markdown2_Toc2.png" alt="TOC Demo depth" style="width:80%">
 </p>
 ]
 
@@ -272,7 +308,7 @@ output:
 
 .pull-right5[
 <p align="center" width="100%">
-  <img src="image/_Screenshots/markdown_screen.001.png" alt="TOC Demo" style="width:70%">
+  <img src="image/Markdown2_Enum.png" alt="TOC Demo" style="width:70%">
 </p>
 
 ]
@@ -290,7 +326,7 @@ output:
 
 </ul>
 
-
+ 
 ````markdown
 title: "Mein Demo"
 author: "MSM"
@@ -306,7 +342,7 @@ output:
 .pull-right5[
 
 <p align="center" width="100%">
- <img src="image/_Screenshots/markdown_screen.003.png" alt="TOC Demo" style="width:150%">
+ <img src="image/Markdown2_Float.png" alt="TOC Demo" style="width:150%">
 </p>
 ]
 
@@ -316,22 +352,20 @@ output:
 
 .pull-left4[
 
-Tabellen werden mit <highm>table()</highm> angezeigt werden- sind dann allerdings nicht schön formatiert ... 
+Tabellen werden mit <highm>table()</highm> angezeigt - sind dann allerdings nicht schön formatiert ... 
 
-````markdown
-{r}
+```{r eval = FALSE, echo = TRUE}
 df <- select(airbnb, Preis) %>% 
       slice(1:5)
         
 table(df)
-
-````
+```
 
 ]
 
 .pull-right5[
 
-```{r}
+```{r eval = TRUE}
 table(select(airbnb, Preis) %>% slice(1:5))
 ```
 
@@ -367,6 +401,10 @@ kable(select(airbnb, Preis) %>% slice(1:5),  col.names = "Preis")
 .pull-left4[
 
 ```{r eval = FALSE, echo = TRUE}
+model <- lm(Preis ~ Schlafzimmer + Badezimmer + Rating_gesamt, data = airbnb)
+summary(model)
+```
+```{r eval = TRUE, echo = FALSE}
 model <- lm(Preis ~ Schlafzimmer + Badezimmer + Rating_gesamt, data = airbnb)
 summary(model)
 ```
