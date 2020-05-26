@@ -82,15 +82,132 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ```
 
-# Was sind die Eigenschaften der Wohnungen?
+# RMarkdown nach Word und Power Point
 
-In diesem Abschnitt wollen wir etwas mehr über die Wohnungen rausfinden.
-
-Dazu werden wir die Einstellungen der chunks genauer betrachten und dann Tabellen erstellen.
+Direkt Word und Power Point Dateien mit R erstellen.
 
 ---
 
-# Chunks und Tabellen
+# Neue Markdown Datei
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>New File - R Markdown</span></li>
+</ul>
+
+````markdown
+title: "Mein Word Dokument"
+author: MSM
+date: 22/05/2020
+output: word_document
+````
+
+
+]
+
+.pull-right5[
+
+<p align="center" width="100%">
+  <img src="image/Word_New.png" alt="Word New" style="width:80%">
+</p>
+ 
+]
+
+---
+
+# Word als Export
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>New File - R Markdown</span></li>
+  <li class="m2"><span>Word Dokument</span></li> 
+</ul>
+
+````markdown
+title: "Mein Word Dokument"
+author: MSM
+date: 22/05/2020
+output: word_document
+````
+
+
+]
+
+.pull-right5[
+
+<p align="center" width="100%">
+  <img src="image/Word_Select.png" alt="Word Select" style="width:80%">
+</p>
+ 
+]
+
+---
+
+# Word Template
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Word template erstellen</span></li>
+  <li class="m2"><span>Formatierung in Word anpassen</span></li>
+  <li class="m3"><span>Als Vorlage in Markdown einbinden</span></li>
+</ul>
+
+````markdown
+title: "Mein Word Dokument"
+author: MSM
+date: 22/05/2020
+output: 
+ word_document:
+ reference_docx: Word_Template.docx
+````
+
+
+]
+
+.pull-right5[
+
+<p align="center" width="100%">
+  <img src="image/Word_StylePane.png" alt="Word Select" style="width:75%">
+  <img src="image/Word_Styles.png" alt="Word Select" style="width:75%">
+</p>
+ 
+]
+
+---
+
+# Word Template
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Word template erstellen</span></li>
+  <li class="m2"><span>Formatierung in Word anpassen</span></li>
+  <li class="m3"><span>Als Vorlage in Markdown einbinden</span></li>
+</ul>
+
+````markdown
+title: "Mein Word Dokument"
+author: MSM
+date: 22/05/2020
+output: 
+ word_document:
+ reference_docx: Word_Template.docx
+````
+
+
+]
+
+.pull-right5[
+
+<p align="center" width="100%">
+  <img src="image/Word_Fett.png" alt="Word Select" style="width:75%">
+  <img src="image/Word_Normal_Unter.png" alt="Word Select" style="width:75%">
+</p>
+ 
+]
+
+---
+
+# titel
 
 .pull-left4[
 <ul>
@@ -104,361 +221,6 @@ Dazu werden wir die Einstellungen der chunks genauer betrachten und dann Tabelle
 ]
 
 ---
-
-# Feinheiten in den Chunk Einstellungen 
-
-.pull-left4[
-<ul>
-  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
-</ul>
-
-```{r eval = FALSE, echo = TRUE}
-{r}
-airbnb <- 
-  read_csv("1_Data/airbnb.csv")
-airbnb
-```
-
-]
-
-.pull-right5[
-
-```{r eval = TRUE, echo = TRUE}
-airbnb <- 
-  read_csv("1_Data/airbnb.csv")
-airbnb
-```
-
-]
-
----
-
-# Feinheiten in den Chunk Einstellungen 
-
-.pull-left4[
-<ul>
-  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
-  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
-</ul>
-
-```{r eval = FALSE, echo = TRUE}
-{r include = FALSE}
-airbnb <- 
-  read_csv("1_Data/airbnb.csv")
-airbnb
-```
-
-Daten können im nächsten Chunk abgefragt werden! 
-
-]
-
-.pull-right5[
-
-```{r echo = FALSE, eval = FALSE}
-airbnb <- 
-  read_csv("1_Data/airbnb.csv")
-airbnb
-```
-
-]
-
----
-
-# Feinheiten in den Chunk Einstellungen 
-
-.pull-left4[
-<ul>
-  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
-  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
-  <li class="m3"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
-</ul>
-
-```{r eval = FALSE, echo = TRUE}
-{r echo = FALSE}
-select(airbnb, Preis, Erstellungsdatum)
-```
-]
-
-.pull-right5[
-
-
-```{r eval = TRUE, echo = FALSE}
-select(airbnb, Preis, Erstellungsdatum)
-```
-
-]
-
----
-
-# Feinheiten in den Chunk Einstellungen 
-
-.pull-left4[
-<ul>
-  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
-  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
-  <li class="m3"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
-  <li class="m4"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
-</ul>
-
-```{r eval = FALSE, echo = TRUE}
-{r message = FALSE}
-message('Alles erledigt!')
-```
-
-]
-
-.pull-right5[
-
-Message: TRUE
-```{r message = TRUE}
-message('Alles erledigt!')
-```
-
-Message: FALSE
-
-```{r message = FALSE}
-message('Alles erledigt!')
-```
-]
-
----
-
-# Feinheiten in den Chunk Einstellungen 
-
-.pull-left4[
-<ul>
-  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
-  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
-  <li class="m3"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
-  <li class="m4"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
-  <li class="m5"><span><highm>fig.width </highm>= '...', <highm>fig.height</highm> = '...'</li>
-</ul>
-
-```{r eval = FALSE, echo = TRUE}
-{r fig.width = 5, fig.height = 3}
-ggplot(airbnb, 
-aes(Erstellungsdatum, Preis)) +
-geom_point() + 
-theme_bw()
-```
-
-
-]
-
-.pull-right5[
-
-```{r fig.width = 5, fig.height = 3, dpi = 300}
-ggplot(airbnb, 
-aes(Erstellungsdatum, Preis)) +
-geom_point() + 
-theme_bw()
-```
-]
-
-
----
-
-# Inhaltsverzeichnis  
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
-</ul>
-
-````markdown
-title: "Mein Demo"
-author: "MSM"
-date: "5/22/2020"
-output:
-  html_document:
-    toc: true
-    toc_depth: 2
-```` 
-
-]
-
-.pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/Markdown2_Toc2.png" alt="TOC Demo depth" style="width:80%">
-</p>
-]
-
----
-
-# Inhaltsverzeichnis  
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
- <li class="m2"><span> Überschriften werden mit <high>number_sections: true</high> numeriert</span></li>
-</ul>
-
-````markdown
-title: "Meine erste Präsentation"
-author: "MSM"
-date: "5/19/2020"
-output:
-  html_document:
-    toc: true
-     number_sections: true
-```` 
-
-]
-
-.pull-right5[
-<p align="center" width="100%">
-  <img src="image/Markdown2_Enum.png" alt="TOC Demo" style="width:70%">
-</p>
-
-]
-
----
-
-# Inhaltsverzeichnis  
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
- <li class="m2"><span> Überschriften werden mit <high>number_sections: true</high> numeriert</span></li>
-  <li class="m3"> <span>Inhaltsverzeichnis permament links anzeigen <high>toc_float: true</high></span></li>
-
-</ul>
-
- 
-````markdown
-title: "Mein Demo"
-author: "MSM"
-date: "5/22/2020"
-output:
-  html_document:
-    toc: true
-    toc_float: true
-```` 
-
-]
-
-.pull-right5[
-
-<p align="center" width="100%">
- <img src="image/Markdown2_Float.png" alt="TOC Demo" style="width:150%">
-</p>
-]
-
----
-
-# Tabellen
-
-.pull-left4[
-
-Tabellen mit <highm>table()</highm> direkt ausgeben
-
-```{r echo = FALSE}
-df <- select(airbnb, 
-             Preis, 
-             Unterkunftsart) %>% 
-      slice(1:5)
-```
-
-```{r eval = FALSE, echo = TRUE}
-df <- select(airbnb, 
-             Preis, 
-             Unterkunftsart) %>% 
-      slice(1:5)
-        
-table(df)
-```
-]
-
-.pull-right5[
-
-
-```{r eval = TRUE}
-table(select(airbnb, Preis, Unterkunftsart) %>% slice(1:15))
-```
-
-]
-
----
-
-# Tabellen
-
-.pull-left4[
-Schönere Darstellung ist mit <high>kable()</high> möglich ... 
-
-```{r eval = FALSE, echo = TRUE}
-{r}
-kable(df, 
-      col.names = c("Preis",
-                    "Unterkunft"))
-```
-]
-
-.pull-right5[
-
-```{r}
-kable(df)
-```
-
-]
-
----
-
-# Welche Faktoren bestimmen den Preis?
-
-.pull-left4[
-
-Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
-
-```{r eval = FALSE, echo = TRUE}
-model <- lm(Preis ~ Schlafzimmer + 
-                    Rating_gesamt, 
-            data = airbnb)
-```
-```{r eval = TRUE, echo = FALSE}
-model <- lm(Preis ~ Schlafzimmer +
-                    Rating_gesamt, 
-            data = airbnb)
-```
-]
-
-.pull-right5[
-
-```{r options(width = 20)}
-summary(model)
-```
-]
-
----
-
-# Welche Faktoren bestimmen den Preis?
-
-.pull-left4[
-
-Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
-
-```{r eval = FALSE, echo = TRUE}
-model <- lm(Preis ~ Schlafzimmer + 
-                    Rating_gesamt, 
-            data = airbnb)
-```
-```{r eval = TRUE, echo = FALSE}
-model <- lm(Preis ~ Schlafzimmer + Rating_gesamt, 
-            data = airbnb)
-```
-]
-
-.pull-right5[
-
-```{r results = 'asis'}
-stargazer(model, header=FALSE, type="html")
-```
-
-]
-
----
-
 
 class: middle, center
 

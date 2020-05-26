@@ -82,382 +82,210 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ```
 
-# Was sind die Eigenschaften der Wohnungen?
+# Kleiner Auslflug nach HTML und CSS
 
-In diesem Abschnitt wollen wir etwas mehr über die Wohnungen rausfinden.
-
-Dazu werden wir die Einstellungen der chunks genauer betrachten und dann Tabellen erstellen.
 
 ---
 
-# Chunks und Tabellen
+# HTML
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Welche chunk Optionen gibt es?</span></li>
-  <li class="m2"><span>Tabellen </span></li> 
-
+  <li class="m1"><span>Hyper Text <high>Markup</high> Language</span></li>
+  <li class="m2"><span>Struktur wird mit <high>Tags</high> beschrieben</span></li> 
+  <li class="m3"><span>Im Browser wird eine Seite gerendert darsgestellt (vgl. Knit)</span></li> 
 </ul>
+
+````html
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+</html>
+````
+
 ]
 
 .pull-right5[
+
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+</html>
+
 ]
 
 ---
 
-# Feinheiten in den Chunk Einstellungen 
+# HTML Tags
 
 .pull-left4[
 <ul>
-  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
+  <li class="m1"><span>Beschreiben Formatierung des Inhalts</span></li>
+  <li class="m2"><span>Kommen in Paaren mit <high>Start und End </high> tag</span></li> 
+  <li class="m3"><span>Das end tag enthält einen / </span></li> 
 </ul>
 
-```{r eval = FALSE, echo = TRUE}
-{r}
-airbnb <- 
-  read_csv("1_Data/airbnb.csv")
-airbnb
-```
+````html
+<tag start>Inhalt</tag end>
+<br> Neue Zeile
+
+<h1>Überschrift 1. Ebene</h1>
+  <h2>Überschrift 2. Ebene</h2>
+  
+<b>Fett</b>
+
+<i>Kursiv</i>
+
+<a href="therbootcamp.github.io">
+  Ein Link</a>
+
+````
 
 ]
 
 .pull-right5[
 
-```{r eval = TRUE, echo = TRUE}
-airbnb <- 
-  read_csv("1_Data/airbnb.csv")
-airbnb
-```
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Überschrift 1. Ebene</h1>
+  <h2>Überschrift 2. Ebene</h2>
+  
+  
+<b>Fett</b>
+<br>
+<i>Kursiv</i>
+<br>
+<a href="therbootcamp.github.io">
+  Ein Link</a>
+</body>
+</html>
 
 ]
 
 ---
 
-# Feinheiten in den Chunk Einstellungen 
+# CSS
 
 .pull-left4[
 <ul>
-  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
-  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
+  <li class="m1"><span>Beschreibt wie Tags in HTML anzgezeigt werden sollen</span></li>
+  <li class="m2"><span>Jedem HTML Tag können Styles zugewiesen werden</span></li> 
+  <li class="m3"><span>Dafür wird der CSS Selector (h1) mit verschiedenen Deklarationen (color: blue) erweitert</span></li> 
 </ul>
 
-```{r eval = FALSE, echo = TRUE}
-{r include = FALSE}
-airbnb <- 
-  read_csv("1_Data/airbnb.csv")
-airbnb
-```
+````html
+h1 {color: blue}
 
-Daten können im nächsten Chunk abgefragt werden! 
+p {color: red;
+   text_align: center}
+
+````
 
 ]
 
 .pull-right5[
 
-```{r echo = FALSE, eval = FALSE}
-airbnb <- 
-  read_csv("1_Data/airbnb.csv")
-airbnb
-```
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1{color: blue}>Überschrift 1. Ebene</h1>
+  
+</body>
+</html>
 
 ]
 
 ---
 
-# Feinheiten in den Chunk Einstellungen 
+# CSS einbinden
 
 .pull-left4[
 <ul>
-  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
-  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
-  <li class="m3"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
+  <li class="m1"><span><high>extern</high> mit <link> in eigenem .css file</span></li>
 </ul>
 
-```{r eval = FALSE, echo = TRUE}
-{r echo = FALSE}
-select(airbnb, Preis, Erstellungsdatum)
-```
+````html
+<link rel="stylesheet" 
+  type="text/css" 
+  href="mystyle.css">
+````
+
 ]
 
 .pull-right5[
 
+mystyle.css
+````html
+body {
+  background-color: lightblue;
+}
 
-```{r eval = TRUE, echo = FALSE}
-select(airbnb, Preis, Erstellungsdatum)
-```
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+````
 
 ]
 
 ---
 
-# Feinheiten in den Chunk Einstellungen 
+# CSS einbinden
 
 .pull-left4[
 <ul>
-  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
-  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
-  <li class="m3"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
-  <li class="m4"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
+  <li class="m1"><span><high>extern</high> mit <link> in eigenem .css file</span></li>
+  <li class="m2"><span><high>inline</high></span></li> 
 </ul>
 
-```{r eval = FALSE, echo = TRUE}
-{r message = FALSE}
-message('Alles erledigt!')
-```
+````html
+<h1 style="color:blue;
+           text-align:center;">
+           This is a heading</h1>
+           
+<p style="color:red;">
+          This is a paragraph.</p>
+````
 
 ]
 
 .pull-right5[
 
-Message: TRUE
-```{r message = TRUE}
-message('Alles erledigt!')
-```
-
-Message: FALSE
-
-```{r message = FALSE}
-message('Alles erledigt!')
-```
-]
-
----
-
-# Feinheiten in den Chunk Einstellungen 
-
-.pull-left4[
-<ul>
-  <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
-  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
-  <li class="m3"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
-  <li class="m4"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
-  <li class="m5"><span><highm>fig.width </highm>= '...', <highm>fig.height</highm> = '...'</li>
-</ul>
-
-```{r eval = FALSE, echo = TRUE}
-{r fig.width = 5, fig.height = 3}
-ggplot(airbnb, 
-aes(Erstellungsdatum, Preis)) +
-geom_point() + 
-theme_bw()
-```
-
-
-]
-
-.pull-right5[
-
-```{r fig.width = 5, fig.height = 3, dpi = 300}
-ggplot(airbnb, 
-aes(Erstellungsdatum, Preis)) +
-geom_point() + 
-theme_bw()
-```
-]
-
-
----
-
-# Inhaltsverzeichnis  
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
-</ul>
-
-````markdown
-title: "Mein Demo"
-author: "MSM"
-date: "5/22/2020"
-output:
-  html_document:
-    toc: true
-    toc_depth: 2
-```` 
-
-]
-
-.pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/Markdown2_Toc2.png" alt="TOC Demo depth" style="width:80%">
-</p>
-]
-
----
-
-# Inhaltsverzeichnis  
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
- <li class="m2"><span> Überschriften werden mit <high>number_sections: true</high> numeriert</span></li>
-</ul>
-
-````markdown
-title: "Meine erste Präsentation"
-author: "MSM"
-date: "5/19/2020"
-output:
-  html_document:
-    toc: true
-     number_sections: true
-```` 
-
-]
-
-.pull-right5[
-<p align="center" width="100%">
-  <img src="image/Markdown2_Enum.png" alt="TOC Demo" style="width:70%">
-</p>
+<h1 style="color:blue;
+           text-align:center;">
+           Meine Überschrift</h1>
+           
+<p style="color:red;">
+          Mein roter Absatz</p>
 
 ]
 
 ---
 
-# Inhaltsverzeichnis  
 
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
- <li class="m2"><span> Überschriften werden mit <high>number_sections: true</high> numeriert</span></li>
-  <li class="m3"> <span>Inhaltsverzeichnis permament links anzeigen <high>toc_float: true</high></span></li>
-
-</ul>
-
- 
-````markdown
-title: "Mein Demo"
-author: "MSM"
-date: "5/22/2020"
-output:
-  html_document:
-    toc: true
-    toc_float: true
-```` 
-
-]
-
-.pull-right5[
-
-<p align="center" width="100%">
- <img src="image/Markdown2_Float.png" alt="TOC Demo" style="width:150%">
-</p>
-]
-
----
-
-# Tabellen
-
-.pull-left4[
-
-Tabellen mit <highm>table()</highm> direkt ausgeben
-
-```{r echo = FALSE}
-df <- select(airbnb, 
-             Preis, 
-             Unterkunftsart) %>% 
-      slice(1:5)
-```
-
-```{r eval = FALSE, echo = TRUE}
-df <- select(airbnb, 
-             Preis, 
-             Unterkunftsart) %>% 
-      slice(1:5)
-        
-table(df)
-```
-]
-
-.pull-right5[
-
-
-```{r eval = TRUE}
-table(select(airbnb, Preis, Unterkunftsart) %>% slice(1:15))
-```
-
-]
-
----
-
-# Tabellen
-
-.pull-left4[
-Schönere Darstellung ist mit <high>kable()</high> möglich ... 
-
-```{r eval = FALSE, echo = TRUE}
-{r}
-kable(df, 
-      col.names = c("Preis",
-                    "Unterkunft"))
-```
-]
-
-.pull-right5[
-
-```{r}
-kable(df)
-```
-
-]
-
----
-
-# Welche Faktoren bestimmen den Preis?
-
-.pull-left4[
-
-Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
-
-```{r eval = FALSE, echo = TRUE}
-model <- lm(Preis ~ Schlafzimmer + 
-                    Rating_gesamt, 
-            data = airbnb)
-```
-```{r eval = TRUE, echo = FALSE}
-model <- lm(Preis ~ Schlafzimmer +
-                    Rating_gesamt, 
-            data = airbnb)
-```
-]
-
-.pull-right5[
-
-```{r options(width = 20)}
-summary(model)
-```
-]
-
----
-
-# Welche Faktoren bestimmen den Preis?
-
-.pull-left4[
-
-Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
-
-```{r eval = FALSE, echo = TRUE}
-model <- lm(Preis ~ Schlafzimmer + 
-                    Rating_gesamt, 
-            data = airbnb)
-```
-```{r eval = TRUE, echo = FALSE}
-model <- lm(Preis ~ Schlafzimmer + Rating_gesamt, 
-            data = airbnb)
-```
-]
-
-.pull-right5[
-
-```{r results = 'asis'}
-stargazer(model, header=FALSE, type="html")
-```
-
-]
-
----
 
 
 class: middle, center
