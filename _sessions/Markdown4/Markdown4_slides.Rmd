@@ -1,5 +1,5 @@
 ---
-title: "Advanced Markdown"
+title: "Exportieren nach Office"
 author: "Reporting mit R<br>
   <a href='https://therbootcamp.github.io'>
     The R Bootcamp
@@ -462,5 +462,5 @@ stargazer(model, header=FALSE, type="html")
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/_Markdown2/Markdown2_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/_Markdown4/Markdown4_practical.html">Practical</a></h1>
 

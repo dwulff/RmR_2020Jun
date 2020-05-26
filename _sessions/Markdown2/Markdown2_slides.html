@@ -346,25 +346,42 @@ output:
 
 .pull-left4[
 
-Tabellen werden mit &lt;highm&gt;table()&lt;/highm&gt; angezeigt - sind dann allerdings nicht schön formatiert ... 
+Tabellen mit &lt;highm&gt;table()&lt;/highm&gt; direkt ausgeben
+
+
 
 
 ```r
-df &lt;- select(airbnb, Preis) %&gt;% 
+df &lt;- select(airbnb, 
+             Preis, 
+             Unterkunftsart) %&gt;% 
       slice(1:5)
         
 table(df)
 ```
-
 ]
 
 .pull-right5[
 
 
-```
 
- 33  49 125 129 180 
-  1   1   1   1   1 
+```
+     Unterkunftsart
+Preis Apartment Condominium Loft
+  33          1           0    0
+  37          1           0    0
+  49          1           0    0
+  62          1           0    0
+  65          1           1    0
+  70          1           0    0
+  90          1           0    0
+  98          1           0    0
+  100         1           0    0
+  125         0           0    1
+  129         0           0    1
+  160         1           0    0
+  180         1           0    0
+  269         1           0    0
 ```
 
 ]
@@ -379,22 +396,22 @@ Schönere Darstellung ist mit &lt;high&gt;kable()&lt;/high&gt; möglich ...
 
 ```r
 {r}
-kable(select(airbnb, Preis) %&gt;% 
-            slice(1:5),  
-      col.names = "Preis")
+kable(df, 
+      col.names = c("Preis",
+                    "Unterkunft"))
 ```
 ]
 
 .pull-right5[
 
 
-| Preis|
-|-----:|
-|   125|
-|    33|
-|   180|
-|    49|
-|   129|
+ Preis  Unterkunftsart 
+------  ---------------
+   125  Loft           
+    33  Apartment      
+   180  Apartment      
+    49  Apartment      
+   129  Loft           
 
 ]
 
@@ -404,60 +421,81 @@ kable(select(airbnb, Preis) %&gt;%
 
 .pull-left4[
 
+Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
+
 
 ```r
-model &lt;- lm(Preis ~ Schlafzimmer + Badezimmer + Rating_gesamt, data = airbnb)
-summary(model)
+model &lt;- lm(Preis ~ Schlafzimmer + 
+                    Rating_gesamt, 
+            data = airbnb)
 ```
 
-```
-
-Call:
-lm(formula = Preis ~ Schlafzimmer + Badezimmer + Rating_gesamt, 
-    data = airbnb)
-
-Residuals:
-   Min     1Q Median     3Q    Max 
-  -362    -34    -17     13   8914 
-
-Coefficients:
-              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)     -5.254     23.693   -0.22     0.82    
-Schlafzimmer    36.833      2.316   15.91  &lt; 2e-16 ***
-Badezimmer      24.767      4.480    5.53  3.3e-08 ***
-Rating_gesamt    0.122      0.244    0.50     0.62    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 156 on 9741 degrees of freedom
-  (123 observations deleted due to missingness)
-Multiple R-squared:  0.0404,	Adjusted R-squared:  0.0401 
-F-statistic:  137 on 3 and 9741 DF,  p-value: &lt;2e-16
-```
 ]
 
 .pull-right5[
 
+
+```
+
+Call:
+lm(formula = Preis ~ Schlafzimmer + Rating_gesamt, data = airbnb)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+  -354    -35    -17     13   8913 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)     15.891     23.412    0.68      0.5    
+Schlafzimmer    41.717      2.144   19.46   &lt;2e-16 ***
+Rating_gesamt    0.128      0.245    0.52      0.6    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 156 on 9747 degrees of freedom
+  (118 observations deleted due to missingness)
+Multiple R-squared:  0.0374,	Adjusted R-squared:  0.0372 
+F-statistic:  189 on 2 and 9747 DF,  p-value: &lt;2e-16
+```
+]
+
+---
+
+# Welche Faktoren bestimmen den Preis?
+
+.pull-left4[
+
+Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
+
+
+```r
+model &lt;- lm(Preis ~ Schlafzimmer + 
+                    Rating_gesamt, 
+            data = airbnb)
+```
+
+]
+
+.pull-right5[
+
+
 &lt;table style="text-align:center"&gt;&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;Dependent variable:&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td colspan="1" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;Preis&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Schlafzimmer&lt;/td&gt;&lt;td&gt;36.830&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(2.316)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Schlafzimmer&lt;/td&gt;&lt;td&gt;41.720&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(2.144)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;Badezimmer&lt;/td&gt;&lt;td&gt;24.770&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(4.480)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Rating_gesamt&lt;/td&gt;&lt;td&gt;0.128&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.245)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;Rating_gesamt&lt;/td&gt;&lt;td&gt;0.122&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.244)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Constant&lt;/td&gt;&lt;td&gt;15.890&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(23.410)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;Constant&lt;/td&gt;&lt;td&gt;-5.254&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(23.690)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Observations&lt;/td&gt;&lt;td&gt;9,745&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.040&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;Adjusted R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.040&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;Residual Std. Error&lt;/td&gt;&lt;td&gt;155.800 (df = 9741)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;F Statistic&lt;/td&gt;&lt;td&gt;136.800&lt;sup&gt;***&lt;/sup&gt; (df = 3; 9741)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Observations&lt;/td&gt;&lt;td&gt;9,750&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.037&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Adjusted R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.037&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Residual Std. Error&lt;/td&gt;&lt;td&gt;156.000 (df = 9747)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;F Statistic&lt;/td&gt;&lt;td&gt;189.500&lt;sup&gt;***&lt;/sup&gt; (df = 2; 9747)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/td&gt;&lt;td style="text-align:right"&gt;&lt;sup&gt;*&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;**&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;***&lt;/sup&gt;p&lt;0.01&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 
@@ -468,7 +506,7 @@ F-statistic:  137 on 3 and 9741 DF,  p-value: &lt;2e-16
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/SmR_2020Jun/_sessions/_template/LinearModelsI_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/_Markdown2/Markdown2_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
