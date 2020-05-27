@@ -47,11 +47,11 @@ library(tidyverse)
 ```
 
 <p align="center" width="100%">
-  <img src="image/baseball.png" alt="Trulli" style="width:100%">
+  <img src="image/nestle_chunks.jpg" alt="Chunks" style="width:50%">
   <br>
-  <font style="font-size:10px">from <a href="">www.popsci.com</a></font>
+  <font style="font-size:10px">from <a href="">www.nestle.com</a></font>
 </p>
-
+ 
 
 # {.tabset}
 
@@ -69,44 +69,30 @@ Am Ende des Practicals kannst du:
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
+1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelistet sind, in deinem `1_Data` Ordner hast. 
 
-2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Unsupervised learning Practical" als Kommentare an den Anfang des Skripts.
+2. Öffne ein neues RMarkdown Skript und wähle das Template "Document" aus (siehe screenshot unten).
 
-```{r, eval = FALSE, echo = TRUE}
-## NAME
-## DATUM
-## Unsupervised learning Practical
+<p align="center" width="100%">
+  <img src="image/Markdown_Document.png" alt="New Markdown Document" style="width:50%">
+</p>
+
+3. Trage bei Title "Chunk Pactical" und deinen Namen ein.
+
+4. Speichere das neue Skript unter dem Namen `markdown2_practical.Rmd` im `2_Code` Ordner.
+
+5. Lösche alles unterhalb des `setup` R chunks.
+
+
+### B - Lade den `airbnb` Datensatz
+
+1. Lade den Datensatz `airbnb.csv` als Objekt `airbnb` im `setup` chunk.
+
+```{r echo = TRUE}
+airbnb <- read_csv("../XXX/XXX")
 ```
 
-3. Speichere das neue Skript unter dem Namen `unspervised_learning_practical.R` im `2_Code` Ordner.
-
-4. Lade die Pakete `tidyverse`, `cstab`, `dbscan`, und `mclust`.
-
-### B - Lade den `gap` Datensatz
-
-1. Verwende die `read_csv()` Funktion um den Datensatz `gap.csv` als Objekt `gap` einzulesen.
-
-```{r, echo = T, eval = T, message = F}
-# Lese gap.csv
-gap <- read_csv('1_Data/gap.csv')
-```
-
-2. Printe den Datensatz. 
-
-3. Verwende `summary()` um einen weiteren Überblick über die Daten zu bekommen.
-
-4. Verwende den Code unten um einen neuen Datensatz mit ausschliesslich den Daten aus dem Jahr 2007 und den beiden Variablen `Lebenserwartung` und `BIP pro Kopf` zu erstellen.
-
-```{r, echo = T, eval = T, message = F}
-# gap in 2007
-gap2007 <- gap %>% 
-  filter(Jahr == 2007) %>% 
-  select(`BIP pro Kopf`, Lebenserwartung)
-```
-
-
-### C - *k*-means
+### C - 
 
 1. Verwende die `kmeans()` Funktion um den `gap2007` Datensatz in `3` Cluster aufzuteilen. 
 
@@ -452,26 +438,11 @@ table(mpg_dbscan$cluster, mpg_gm$classification)
 
 |Datei | Zeilen | Spalten | 
 |:----|:-----|:------|
-|[gap.csv](https://raw.githubusercontent.com/therbootcamp/ML_2020Apr/master/_sessions/Unsupervised/1_Data/gap.csv) | 1692 | 6 | 
-|[credit.csv](https://raw.githubusercontent.com/therbootcamp/ML_2020Apr/master/_sessions/Unsupervised/1_Data/credit.csv) | 8636 | 8 | 
+|[airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_sessions/Markdown2/1_Data/airbnb.csv | 9868 | 33 | 
 
-#### gap.csv
+#### airbnb.csv
 
-Der `gap` Datensatz basiert auf dem [Gapminder](https://www.gapminder.org/) Projekt und stammt aus dem R Paket [gapminder](https://cran.r-project.org/web/packages/gapminder/README.html).  
-
-|Variable | Beschreibung |
-|:-------------|:-------------------------------------|
-|Land| Name des Landes  |
-|Kontinent| Name des Kontinents |
-|Jahr| Jahr |
-|Lebenserwartung| in Jahren |
-|Population| Anzahl Einwohner des Landes |
-|BIP pro Kopf| Bruttoinlandsprodukt pro Einwohner|
-
-
-#### credit.csv
-
-Der `credit` Datensatz ist ein Ausschnitt des Öffentlich verfügbaren [*Credit Card Dataset*](https://www.kaggle.com/arjunbhasin2013/ccdata). Der Datensatz beinhaltet 8 Features, die einen Auschnitt des Verhaltens von 8636 Kreditkartenkunden beschreiben.  
+Der `airbnb` .... XXX Datensatz ist ein Ausschnitt des Öffentlich verfügbaren [*Credit Card Dataset*](https://www.kaggle.com/arjunbhasin2013/ccdata). Der Datensatz beinhaltet 8 Features, die einen Auschnitt des Verhaltens von 8636 Kreditkartenkunden beschreiben.  
 
 |Variable | Beschreibung |
 |:-------------|:-------------------------------------|
@@ -492,9 +463,6 @@ Der `credit` Datensatz ist ein Ausschnitt des Öffentlich verfügbaren [*Credit 
 |Paket| Installation|
 |:------|:------|
 |`tidyverse`|`install.packages("tidyverse")`|
-|`cstab`|`install.packages("cstab")`|
-|`dbscan`|`install.packages("dbscan")`|
-|`mclust`|`install.packages("mclust")`|
 
 ### Funktionen
 

@@ -13,15 +13,15 @@
 
 <title>Mit Chunks umgehen</title>
 
-<script src="template_practical_files/jquery/jquery.min.js"></script>
+<script src="Makrdown2_practical_files/jquery/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="template_practical_files/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<script src="template_practical_files/bootstrap/js/bootstrap.min.js"></script>
-<script src="template_practical_files/bootstrap/shim/html5shiv.min.js"></script>
-<script src="template_practical_files/bootstrap/shim/respond.min.js"></script>
-<script src="template_practical_files/navigation/tabsets.js"></script>
-<link href="template_practical_files/highlightjs/default.css" rel="stylesheet" />
-<script src="template_practical_files/highlightjs/highlight.js"></script>
+<link href="Makrdown2_practical_files/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Makrdown2_practical_files/bootstrap/js/bootstrap.min.js"></script>
+<script src="Makrdown2_practical_files/bootstrap/shim/html5shiv.min.js"></script>
+<script src="Makrdown2_practical_files/bootstrap/shim/respond.min.js"></script>
+<script src="Makrdown2_practical_files/navigation/tabsets.js"></script>
+<link href="Makrdown2_practical_files/highlightjs/default.css" rel="stylesheet" />
+<script src="Makrdown2_practical_files/highlightjs/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -195,7 +195,7 @@ summary {
 
 
 <p align="center" width="100%">
-<img src="image/baseball.png" alt="Trulli" style="width:100%"> <br> <font style="font-size:10px">from <a href="">www.popsci.com</a></font>
+<img src="image/nestle_chunks.jpg" alt="Chunks" style="width:50%"> <br> <font style="font-size:10px">from <a href="">www.nestle.com</a></font>
 </p>
 <div id="section" class="section level1 tabset">
 <h1></h1>
@@ -214,36 +214,27 @@ summary {
 <div id="a---setup" class="section level3">
 <h3>A - Setup</h3>
 <ol style="list-style-type: decimal">
-<li><p>Öffne dein <code>TheRBootcamp</code> R project. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelisted sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
-<li><p>Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und “Unsupervised learning Practical” als Kommentare an den Anfang des Skripts.</p></li>
+<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelistet sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
+<li><p>Öffne ein neues RMarkdown Skript und wähle das Template “Document” aus (siehe screenshot unten).</p></li>
 </ol>
-<pre class="r"><code>## NAME
-## DATUM
-## Unsupervised learning Practical</code></pre>
+<p align="center" width="100%">
+<img src="image/Markdown_Document.png" alt="New Markdown Document" style="width:50%">
+</p>
 <ol start="3" style="list-style-type: decimal">
-<li><p>Speichere das neue Skript unter dem Namen <code>unspervised_learning_practical.R</code> im <code>2_Code</code> Ordner.</p></li>
-<li><p>Lade die Pakete <code>tidyverse</code>, <code>cstab</code>, <code>dbscan</code>, und <code>mclust</code>.</p></li>
+<li><p>Trage bei Title “Chunk Pactical” und deinen Namen ein.</p></li>
+<li><p>Speichere das neue Skript unter dem Namen <code>markdown2_practical.Rmd</code> im <code>2_Code</code> Ordner.</p></li>
+<li><p>Lösche alles unterhalb des <code>setup</code> R chunks.</p></li>
 </ol>
 </div>
-<div id="b---lade-den-gap-datensatz" class="section level3">
-<h3>B - Lade den <code>gap</code> Datensatz</h3>
+<div id="b---lade-den-airbnb-datensatz" class="section level3">
+<h3>B - Lade den <code>airbnb</code> Datensatz</h3>
 <ol style="list-style-type: decimal">
-<li>Verwende die <code>read_csv()</code> Funktion um den Datensatz <code>gap.csv</code> als Objekt <code>gap</code> einzulesen.</li>
+<li>Lade den Datensatz <code>airbnb.csv</code> als Objekt <code>airbnb</code> im <code>setup</code> chunk.</li>
 </ol>
-<pre class="r"><code># Lese gap.csv
-gap &lt;- read_csv(&#39;1_Data/gap.csv&#39;)</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li><p>Printe den Datensatz.</p></li>
-<li><p>Verwende <code>summary()</code> um einen weiteren Überblick über die Daten zu bekommen.</p></li>
-<li><p>Verwende den Code unten um einen neuen Datensatz mit ausschliesslich den Daten aus dem Jahr 2007 und den beiden Variablen <code>Lebenserwartung</code> und <code>BIP pro Kopf</code> zu erstellen.</p></li>
-</ol>
-<pre class="r"><code># gap in 2007
-gap2007 &lt;- gap %&gt;% 
-  filter(Jahr == 2007) %&gt;% 
-  select(`BIP pro Kopf`, Lebenserwartung)</code></pre>
+<pre class="r"><code>airbnb &lt;- read_csv(&quot;../XXX/XXX&quot;)</code></pre>
 </div>
-<div id="c---k-means" class="section level3">
-<h3>C - <em>k</em>-means</h3>
+<div id="c--" class="section level3">
+<h3>C -</h3>
 <ol style="list-style-type: decimal">
 <li>Verwende die <code>kmeans()</code> Funktion um den <code>gap2007</code> Datensatz in <code>3</code> Cluster aufzuteilen.</li>
 </ol>
@@ -433,6 +424,11 @@ table(mpg_dbscan$cluster, mpg_gm$classification)</code></pre>
 <div id="datensätze" class="section level2">
 <h2>Datensätze</h2>
 <table>
+<colgroup>
+<col width="27%" />
+<col width="33%" />
+<col width="38%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Datei</th>
@@ -442,58 +438,15 @@ table(mpg_dbscan$cluster, mpg_gm$classification)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/ML_2020Apr/master/_sessions/Unsupervised/1_Data/gap.csv">gap.csv</a></td>
-<td align="left">1692</td>
-<td align="left">6</td>
-</tr>
-<tr class="even">
-<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/ML_2020Apr/master/_sessions/Unsupervised/1_Data/credit.csv">credit.csv</a></td>
-<td align="left">8636</td>
-<td align="left">8</td>
+<td align="left"><a href="#airbnb.csv">airbnb.csv</a>(<a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_sessions/Markdown2/1_Data/airbnb.csv" class="uri">https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_sessions/Markdown2/1_Data/airbnb.csv</a></td>
+<td align="left">9868</td>
+<td align="left">33</td>
 </tr>
 </tbody>
 </table>
-<div id="gap.csv" class="section level4">
-<h4>gap.csv</h4>
-<p>Der <code>gap</code> Datensatz basiert auf dem <a href="https://www.gapminder.org/">Gapminder</a> Projekt und stammt aus dem R Paket <a href="https://cran.r-project.org/web/packages/gapminder/README.html">gapminder</a>.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Variable</th>
-<th align="left">Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Land</td>
-<td align="left">Name des Landes</td>
-</tr>
-<tr class="even">
-<td align="left">Kontinent</td>
-<td align="left">Name des Kontinents</td>
-</tr>
-<tr class="odd">
-<td align="left">Jahr</td>
-<td align="left">Jahr</td>
-</tr>
-<tr class="even">
-<td align="left">Lebenserwartung</td>
-<td align="left">in Jahren</td>
-</tr>
-<tr class="odd">
-<td align="left">Population</td>
-<td align="left">Anzahl Einwohner des Landes</td>
-</tr>
-<tr class="even">
-<td align="left">BIP pro Kopf</td>
-<td align="left">Bruttoinlandsprodukt pro Einwohner</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="credit.csv" class="section level4">
-<h4>credit.csv</h4>
-<p>Der <code>credit</code> Datensatz ist ein Ausschnitt des Öffentlich verfügbaren <a href="https://www.kaggle.com/arjunbhasin2013/ccdata"><em>Credit Card Dataset</em></a>. Der Datensatz beinhaltet 8 Features, die einen Auschnitt des Verhaltens von 8636 Kreditkartenkunden beschreiben.</p>
+<div id="airbnb.csv" class="section level4">
+<h4>airbnb.csv</h4>
+<p>Der <code>airbnb</code> …. XXX Datensatz ist ein Ausschnitt des Öffentlich verfügbaren <a href="https://www.kaggle.com/arjunbhasin2013/ccdata"><em>Credit Card Dataset</em></a>. Der Datensatz beinhaltet 8 Features, die einen Auschnitt des Verhaltens von 8636 Kreditkartenkunden beschreiben.</p>
 <table>
 <colgroup>
 <col width="26%" />
@@ -557,18 +510,6 @@ table(mpg_dbscan$cluster, mpg_gm$classification)</code></pre>
 <tr class="odd">
 <td align="left"><code>tidyverse</code></td>
 <td align="left"><code>install.packages("tidyverse")</code></td>
-</tr>
-<tr class="even">
-<td align="left"><code>cstab</code></td>
-<td align="left"><code>install.packages("cstab")</code></td>
-</tr>
-<tr class="odd">
-<td align="left"><code>dbscan</code></td>
-<td align="left"><code>install.packages("dbscan")</code></td>
-</tr>
-<tr class="even">
-<td align="left"><code>mclust</code></td>
-<td align="left"><code>install.packages("mclust")</code></td>
 </tr>
 </tbody>
 </table>
