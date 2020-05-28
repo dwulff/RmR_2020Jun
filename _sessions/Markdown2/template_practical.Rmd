@@ -1,5 +1,5 @@
 ---
-title: "TITEL"
+title: "Mit Chunks umgehen"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
@@ -57,12 +57,13 @@ library(tidyverse)
 
 ## Überblick
 
-In diesem Practical wirst die Clusteranalyse an zwei Datensätzen üben. 
+In diesem Practical wirst verschiedene Chunk Einstellungen mit dem AirBnB Datensatz üben. 
 
-Am Ende des Practicals wirst du wissen wie man:
+Am Ende des Practicals kannst du:
 
-1. Cluster anhand verschiedener Methoden identifiziert.
-2. Wie man die Anzahl der Cluster in den Daten schätzt.
+1. Chunks nach deinen Wünschen konfigurieren
+2. Verschiedene Arten von Inhaltsverzeichnissen erstellen 
+3. Tabellen erstellen
 
 ## Aufgaben
 

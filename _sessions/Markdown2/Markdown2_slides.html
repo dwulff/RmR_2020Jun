@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Reporting mit R   The R Bootcamp" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
   <body>
@@ -46,9 +47,9 @@ layout: true
 
 # Was sind die Eigenschaften der Wohnungen?
 
-In diesem Abschnitt wollen wir etwas mehr über die Wohnungen rausfinden.
+In diesem Abschnitt wollen wir etwas mehr über die Wohnungen herausfinden.
 
-Dazu werden wir die Einstellungen der chunks genauer betrachten und dann Tabellen erstellen.
+Dazu werden wir die Einstellungen der chunks genauer betrachten, Tabellen und ein Inhaltsverzeichnis erstellen.
 
 ---
 
@@ -71,16 +72,15 @@ Dazu werden wir die Einstellungen der chunks genauer betrachten und dann Tabelle
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Angaben werden &lt;high&gt;Code&lt;/high&gt; und &lt;high&gt;Ergebnisse&lt;/high&gt; aus einem Chunk direkt angezeigt&lt;/span&gt;&lt;/li&gt;  
 &lt;/ul&gt;
 
-
-```r
+````markdown
 {r}
 airbnb &lt;- 
   read_csv("1_Data/airbnb.csv")
 airbnb
-```
+````
 
 ]
 
@@ -123,17 +123,16 @@ airbnb
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Angaben werden &lt;high&gt;Code&lt;/high&gt; und &lt;high&gt;Ergebnisse&lt;/high&gt; aus einem Chunk direkt angezeigt&lt;/span&gt;&lt;/li&gt;  
   &lt;li class="m2"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt;  
 &lt;/ul&gt;
 
-
-```r
+````markdown
 {r include = FALSE}
 airbnb &lt;- 
   read_csv("1_Data/airbnb.csv")
 airbnb
-```
+````
 
 Daten können im nächsten Chunk abgefragt werden! 
 
@@ -151,16 +150,16 @@ Daten können im nächsten Chunk abgefragt werden!
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Angaben werden &lt;high&gt;Code&lt;/high&gt; und &lt;high&gt;Ergebnisse&lt;/high&gt; aus einem Chunk direkt angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und Ergebnisse werde &lt;high&gt;nicht&lt;/high&gt; angezeigt&lt;/span&gt;&lt;/li&gt;  
   &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, &lt;high&gt;Ergebnisse werden gezeigt&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-
-```r
+````markdown
 {r echo = FALSE}
-select(airbnb, Preis, Erstellungsdatum)
-```
+select(airbnb, Preis, 
+               Erstellungsdatum)
+````
 ]
 
 .pull-right5[
@@ -192,17 +191,16 @@ select(airbnb, Preis, Erstellungsdatum)
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und Ergebnisse werde nicht angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m1"&gt;&lt;span&gt; Ohne zusätzliche Angaben werden &lt;high&gt;Code&lt;/high&gt; und &lt;high&gt;Ergebnisse&lt;/high&gt; aus einem Chunk direkt angezeigt&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt; &lt;highm&gt;include = FALSE:&lt;/highm&gt; Code und Ergebnisse werde &lt;high&gt;nicht&lt;/high&gt; angezeigt&lt;/span&gt;&lt;/li&gt;  
   &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;echo = FALSE&lt;/highm&gt;: Code wird nicht angezeigt, &lt;high&gt;Ergebnisse werden gezeigt&lt;/high&gt; &lt;/span&gt;&lt;/li&gt;
   &lt;li class="m4"&gt;&lt;span&gt;&lt;highm&gt;message = FALSE:&lt;/highm&gt; Warnungen unterdrücken&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-
-```r
+````markdown
 {r message = FALSE}
 message('Alles erledigt!')
-```
+````
 
 ]
 
@@ -232,21 +230,19 @@ Message: FALSE
   &lt;li class="m5"&gt;&lt;span&gt;&lt;highm&gt;fig.width &lt;/highm&gt;= '...', &lt;highm&gt;fig.height&lt;/highm&gt; = '...'&lt;/li&gt;
 &lt;/ul&gt;
 
-
-```r
+````mardown
 {r fig.width = 5, fig.height = 3}
 ggplot(airbnb, 
 aes(Erstellungsdatum, Preis)) +
 geom_point() + 
 theme_bw()
-```
-
+````
 
 ]
 
 .pull-right5[
 
-&lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 
@@ -267,14 +263,14 @@ output:
   html_document:
     toc: true
     toc_depth: 2
-```` 
+````
 
 ]
 
 .pull-right5[
 
 &lt;p align="center" width="100%"&gt;
-  &lt;img src="image/Markdown2_Toc2.png" alt="TOC Demo depth" style="width:80%"&gt;
+  &lt;img src="image/Markdown2_Toc2.png" alt="TOC depth" style="width:80%"&gt;
 &lt;/p&gt;
 ]
 
@@ -289,9 +285,9 @@ output:
 &lt;/ul&gt;
 
 ````markdown
-title: "Meine erste Präsentation"
+title: "Meine Demo"
 author: "MSM"
-date: "5/19/2020"
+date: "5/25/2020"
 output:
   html_document:
     toc: true
@@ -317,20 +313,17 @@ output:
   &lt;li class="m1"&gt;&lt;span&gt;Inhaltsverzeichnis anzeigen &lt;high&gt;toc: true&lt;/high&gt; und die 'Tiefe' erhöhen &lt;high&gt;toc_depth: 2&lt;/high&gt;&lt;/li&gt;
  &lt;li class="m2"&gt;&lt;span&gt; Überschriften werden mit &lt;high&gt;number_sections: true&lt;/high&gt; numeriert&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m3"&gt; &lt;span&gt;Inhaltsverzeichnis permament links anzeigen &lt;high&gt;toc_float: true&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-
 &lt;/ul&gt;
 
- 
 ````markdown
 title: "Mein Demo"
 author: "MSM"
-date: "5/22/2020"
+date: "5/25/2020"
 output:
   html_document:
     toc: true
     toc_float: true
 ```` 
-
 ]
 
 .pull-right5[
@@ -346,42 +339,32 @@ output:
 
 .pull-left4[
 
-Tabellen mit &lt;highm&gt;table()&lt;/highm&gt; direkt ausgeben
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Tabellen könne mit &lt;highm&gt;table()&lt;/highm&gt; direkt ausgeben&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 
 
-
-```r
+````markdown
+{r}
 df &lt;- select(airbnb, 
              Preis, 
-             Unterkunftsart) %&gt;% 
-      slice(1:5)
-        
+             Unterkunftsart) 
 table(df)
-```
+````
 ]
 
 .pull-right5[
 
 
-
 ```
      Unterkunftsart
-Preis Apartment Condominium Loft
-  33          1           0    0
-  37          1           0    0
-  49          1           0    0
-  62          1           0    0
-  65          1           1    0
-  70          1           0    0
-  90          1           0    0
-  98          1           0    0
-  100         1           0    0
-  125         0           0    1
-  129         0           0    1
-  160         1           0    0
-  180         1           0    0
-  269         1           0    0
+Preis Apartment Loft
+  33          1    0
+  49          1    0
+  125         0    1
+  129         0    1
+  180         1    0
 ```
 
 ]
@@ -391,27 +374,173 @@ Preis Apartment Condominium Loft
 # Tabellen
 
 .pull-left4[
-Schönere Darstellung ist mit &lt;high&gt;kable()&lt;/high&gt; möglich ... 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Tabellen könne mit &lt;highm&gt;table()&lt;/highm&gt; direkt ausgeben&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Schönere Darstellung ist mit &lt;high&gt;kable()&lt;/high&gt; möglich &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 
 
 ```r
 {r}
-kable(df, 
-      col.names = c("Preis",
-                    "Unterkunft"))
+kable(df)
 ```
 ]
 
 .pull-right5[
 
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Preis &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Unterkunftsart &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 125 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Loft &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Apartment &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 180 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Apartment &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 49 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Apartment &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 129 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Loft &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
- Preis  Unterkunftsart 
-------  ---------------
-   125  Loft           
-    33  Apartment      
-   180  Apartment      
-    49  Apartment      
-   129  Loft           
+]
+
+---
+
+# Tabellen
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Tabellen könne mit &lt;highm&gt;table()&lt;/highm&gt; direkt ausgeben&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Schönere Darstellung ist mit &lt;high&gt;kable()&lt;/high&gt; möglich &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Spaltennamen&lt;/high&gt; verändern und &lt;high&gt;Captions&lt;/high&gt; einfügen &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+````Markdown
+{r}
+kable(
+  df,
+  col.names = c("M", "SD", 
+                "M", "SD"),
+  digits = 2,
+  caption = "Mittelwert und 
+             Standardabweichung"
+  )
+````
+
+]
+
+.pull-right5[
+
+
+```
+# A tibble: 1 x 4
+  av_Preis sd_Preis av_Rating sd_Rating
+     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1     77.6     158.      94.9      6.48
+```
+
+&lt;table&gt;
+&lt;caption&gt;Mittelwert und Standardabweichung&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; M &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SD &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; M &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SD &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 77.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 158.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 94.87 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.48 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+# Tabellen
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Tabellen könne mit &lt;highm&gt;table()&lt;/highm&gt; direkt ausgeben&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Schönere Darstellung ist mit &lt;high&gt;kable()&lt;/high&gt; möglich &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Spaltennamen&lt;/high&gt; verändern und &lt;high&gt;Captions&lt;/high&gt; einfügen &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+````Markdown
+{r}
+kable(
+  df,
+  col.names = c("M", "SD", 
+                "M", "SD"),
+  digits = 2,
+  caption = "Mittelwert und 
+             Standardabweichung"
+  ) %&gt;%
+  add_header_above(
+    header = c("Preis" = 2, 
+               "Rating" = 2)
+    ) 
+````
+
+]
+
+.pull-right5[
+
+
+```
+# A tibble: 1 x 4
+  av_Preis sd_Preis av_Rating sd_Rating
+     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1     77.6     158.      94.9      6.48
+```
+
+&lt;table&gt;
+&lt;caption&gt;Mittelwert und Standardabweichung&lt;/caption&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Preis&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Rating&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; M &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SD &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; M &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SD &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 77.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 158.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 94.87 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.48 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ]
 
@@ -420,20 +549,28 @@ kable(df,
 # Welche Faktoren bestimmen den Preis?
 
 .pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Regression mit &lt;high&gt;Vorhersage&lt;/high&gt; von &lt;high&gt;Preis&lt;/high&gt; durch die Anzahl der Schlafzimmer und das &lt;high&gt;Rating&lt;/high&gt; eines Objektes.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
 
 
-```r
+````markdown
+{r eval = TRUE, echo = TRUE}
+
 model &lt;- lm(Preis ~ Schlafzimmer + 
                     Rating_gesamt, 
             data = airbnb)
-```
+````
 
 ]
 
 .pull-right5[
 
+
+```r
+summary(model)
+```
 
 ```
 
@@ -464,16 +601,21 @@ F-statistic:  189 on 2 and 9747 DF,  p-value: &lt;2e-16
 # Welche Faktoren bestimmen den Preis?
 
 .pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Regression mit &lt;high&gt;Vorhersage&lt;/high&gt; von &lt;high&gt;Preis&lt;/high&gt; durch die Anzahl der Schlafzimmer und das &lt;high&gt;Rating&lt;/high&gt; eines Objektes.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Verbesserung des Layouts mit &lt;highm&gt;stargazer()&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
 
 
-```r
-model &lt;- lm(Preis ~ Schlafzimmer + 
-                    Rating_gesamt, 
-            data = airbnb)
+````markdown
+{r results = 'asis'}
+
+stargazer(model, 
+          header=FALSE, 
+          type="html",
+          single.row = TRUE)
 ```
-
 ]
 
 .pull-right5[
@@ -482,15 +624,9 @@ model &lt;- lm(Preis ~ Schlafzimmer +
 &lt;table style="text-align:center"&gt;&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;Dependent variable:&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td colspan="1" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;Preis&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Schlafzimmer&lt;/td&gt;&lt;td&gt;41.720&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(2.144)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;Rating_gesamt&lt;/td&gt;&lt;td&gt;0.128&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.245)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;Constant&lt;/td&gt;&lt;td&gt;15.890&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(23.410)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Schlafzimmer&lt;/td&gt;&lt;td&gt;41.720&lt;sup&gt;***&lt;/sup&gt; (2.144)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Rating_gesamt&lt;/td&gt;&lt;td&gt;0.128 (0.245)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Constant&lt;/td&gt;&lt;td&gt;15.890 (23.410)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Observations&lt;/td&gt;&lt;td&gt;9,750&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td style="text-align:left"&gt;R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.037&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td style="text-align:left"&gt;Adjusted R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.037&lt;/td&gt;&lt;/tr&gt;
