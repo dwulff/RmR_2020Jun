@@ -62,8 +62,8 @@ options(digits = 4)
 require(tidyverse)
 require(knitr)
 require(stargazer)
+require(kable)
 require(kableExtra)
-require(tidyr)
 
 # load color set
 source("../../_materials/palette/therbootcamp_palettes.R")
@@ -519,7 +519,7 @@ kable(
   ) %>%
   add_header_above(
     header = c("Preis" = 2, "Rating" = 2)
-    ) 
+    )
 ```
 
 ]
@@ -563,7 +563,7 @@ summary(model)
 .pull-left4[
 <ul>
   <li class="m1"><span>Regression mit <high>Vorhersage</high> von <high>Preis</high> durch die Anzahl der Schlafzimmer und das <high>Rating</high> eines Objektes.</span></li>
-  <li class="m2"><span> </span></li>
+  <li class="m2"><span>Verbesserung des Layouts mit <highm>stargazer()</highm></span></li>
 </ul>
 
 ```{r eval = TRUE, echo = FALSE}
@@ -572,18 +572,22 @@ model <- lm(Preis ~ Schlafzimmer + Rating_gesamt,
 ```
 
 ````markdown
-{r eval = TRUE, echo = TRUE}
+{r results = 'asis'}
 
-model <- lm(Preis ~ Schlafzimmer + 
-                    Rating_gesamt, 
-            data = airbnb)
+stargazer(model, 
+          header=FALSE, 
+          type="html",
+          single.row = TRUE)
 ```
 ]
 
 .pull-right5[
 
 ```{r results = 'asis'}
-stargazer(model, header=FALSE, type="html")
+stargazer(model, 
+          header=FALSE, 
+          type="html",
+          single.row = TRUE)
 ```
 
 ]

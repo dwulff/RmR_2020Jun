@@ -603,17 +603,18 @@ F-statistic:  189 on 2 and 9747 DF,  p-value: &lt;2e-16
 .pull-left4[
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Regression mit &lt;high&gt;Vorhersage&lt;/high&gt; von &lt;high&gt;Preis&lt;/high&gt; durch die Anzahl der Schlafzimmer und das &lt;high&gt;Rating&lt;/high&gt; eines Objektes.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Verbesserung des Layouts mit &lt;highm&gt;stargazer()&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
 
 ````markdown
-{r eval = TRUE, echo = TRUE}
+{r results = 'asis'}
 
-model &lt;- lm(Preis ~ Schlafzimmer + 
-                    Rating_gesamt, 
-            data = airbnb)
+stargazer(model, 
+          header=FALSE, 
+          type="html",
+          single.row = TRUE)
 ```
 ]
 
@@ -623,15 +624,9 @@ model &lt;- lm(Preis ~ Schlafzimmer +
 &lt;table style="text-align:center"&gt;&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;Dependent variable:&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td colspan="1" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;Preis&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Schlafzimmer&lt;/td&gt;&lt;td&gt;41.720&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(2.144)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;Rating_gesamt&lt;/td&gt;&lt;td&gt;0.128&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.245)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;Constant&lt;/td&gt;&lt;td&gt;15.890&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(23.410)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Schlafzimmer&lt;/td&gt;&lt;td&gt;41.720&lt;sup&gt;***&lt;/sup&gt; (2.144)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Rating_gesamt&lt;/td&gt;&lt;td&gt;0.128 (0.245)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Constant&lt;/td&gt;&lt;td&gt;15.890 (23.410)&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Observations&lt;/td&gt;&lt;td&gt;9,750&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td style="text-align:left"&gt;R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.037&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td style="text-align:left"&gt;Adjusted R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.037&lt;/td&gt;&lt;/tr&gt;
