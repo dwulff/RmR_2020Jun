@@ -63,8 +63,7 @@ require(tidyverse)
 require(knitr)
 require(stargazer)
 require(kableExtra)
-
-
+require(tidyr)
 
 # load color set
 source("../../_materials/palette/therbootcamp_palettes.R")
@@ -87,7 +86,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 # Was sind die Eigenschaften der Wohnungen?
 
-In diesem Abschnitt wollen wir etwas mehr über die Wohnungen rausfinden.
+In diesem Abschnitt wollen wir etwas mehr über die Wohnungen herausfinden.
 
 Dazu werden wir die Einstellungen der chunks genauer betrachten, Tabellen und ein Inhaltsverzeichnis erstellen.
 
@@ -276,7 +275,7 @@ output:
   html_document:
     toc: true
     toc_depth: 2
-```` 
+````
 
 ]
 
@@ -298,7 +297,7 @@ output:
 </ul>
 
 ````markdown
-title: "Meine erste Präsentation"
+title: "Meine Demo"
 author: "MSM"
 date: "5/25/2020"
 output:
@@ -326,10 +325,8 @@ output:
   <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
  <li class="m2"><span> Überschriften werden mit <high>number_sections: true</high> numeriert</span></li>
   <li class="m3"> <span>Inhaltsverzeichnis permament links anzeigen <high>toc_float: true</high></span></li>
-
 </ul>
 
- 
 ````markdown
 title: "Mein Demo"
 author: "MSM"
@@ -339,7 +336,6 @@ output:
     toc: true
     toc_float: true
 ```` 
-
 ]
 
 .pull-right5[
@@ -367,6 +363,7 @@ df <- select(airbnb,
 ```
 
 ````markdown
+{r}
 df <- select(airbnb, 
              Preis, 
              Unterkunftsart) 
@@ -390,7 +387,6 @@ table(df)
 <ul>
   <li class="m1"><span>Tabellen könne mit <highm>table()</highm> direkt ausgeben</span></li>
   <li class="m2"><span>Schönere Darstellung ist mit <high>kable()</high> möglich </span></li>
-
 </ul>
 
 
@@ -411,18 +407,137 @@ df %>%
 
 ---
 
+# Tabellen
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Tabellen könne mit <highm>table()</highm> direkt ausgeben</span></li>
+  <li class="m2"><span>Schönere Darstellung ist mit <high>kable()</high> möglich </span></li>
+  <li class="m3"><span><high>Spaltennamen</high> verändern und <high>Captions</high> einfügen </span></li>
+</ul>
+
+````Markdown
+{r}
+kable(
+  df,
+  col.names = c("M", "SD", 
+                "M", "SD"),
+  digits = 2,
+  caption = "Mittelwert und 
+             Standardabweichung"
+  )
+````
+
+]
+
+.pull-right5[
+
+```{r eval = TRUE, echo = FALSE}
+select(airbnb, 
+       Preis, 
+       Rating_gesamt) %>%
+  summarise(av_Preis = mean(Preis),
+            sd_Preis = sd(Preis),
+            av_Rating = mean(Rating_gesamt, na.rm = TRUE),
+            sd_Rating = sd(Rating_gesamt, na.rm = TRUE))
+```
+
+```{r eval = TRUE, echo = FALSE}
+df <- select(airbnb, 
+       Preis, 
+       Rating_gesamt) %>%
+  summarise(av_Preis = mean(Preis),
+            sd_Preis = sd(Preis),
+            av_Rating = mean(Rating_gesamt, na.rm = TRUE),
+            sd_Rating = sd(Rating_gesamt, na.rm = TRUE))
+
+kable(
+  df,
+  col.names = c("M", "SD", "M", "SD"),
+  digits = 2,
+  caption = "Mittelwert und Standardabweichung"
+  )
+```
+
+]
+
+---
+
+# Tabellen
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Tabellen könne mit <highm>table()</highm> direkt ausgeben</span></li>
+  <li class="m2"><span>Schönere Darstellung ist mit <high>kable()</high> möglich </span></li>
+  <li class="m3"><span><high>Spaltennamen</high> verändern und <high>Captions</high> einfügen </span></li>
+</ul>
+
+````Markdown
+{r}
+kable(
+  df,
+  col.names = c("M", "SD", 
+                "M", "SD"),
+  digits = 2,
+  caption = "Mittelwert und 
+             Standardabweichung"
+  ) %>%
+  add_header_above(
+    header = c("Preis" = 2, 
+               "Rating" = 2)
+    ) 
+````
+
+]
+
+.pull-right5[
+
+```{r eval = TRUE, echo = FALSE}
+select(airbnb, 
+       Preis, 
+       Rating_gesamt) %>%
+  summarise(av_Preis = mean(Preis),
+            sd_Preis = sd(Preis),
+            av_Rating = mean(Rating_gesamt, na.rm = TRUE),
+            sd_Rating = sd(Rating_gesamt, na.rm = TRUE))
+```
+
+```{r eval = TRUE, echo = FALSE}
+df <- select(airbnb, 
+       Preis, 
+       Rating_gesamt) %>%
+  summarise(av_Preis = mean(Preis),
+            sd_Preis = sd(Preis),
+            av_Rating = mean(Rating_gesamt, na.rm = TRUE),
+            sd_Rating = sd(Rating_gesamt, na.rm = TRUE))
+
+kable(
+  df,
+  col.names = c("M", "SD", "M", "SD"),
+  digits = 2,
+  caption = "Mittelwert und Standardabweichung"
+  ) %>%
+  add_header_above(
+    header = c("Preis" = 2, "Rating" = 2)
+    ) 
+```
+
+]
+
+---
+
 # Welche Faktoren bestimmen den Preis?
 
 .pull-left4[
-
-Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
+<ul>
+  <li class="m1"><span>Regression mit <high>Vorhersage</high> von <high>Preis</high> durch die Anzahl der Schlafzimmer und das <high>Rating</high> eines Objektes.</span></li>
+</ul>
 
 ```{r eval = TRUE, echo = FALSE}
 model <- lm(Preis ~ Schlafzimmer +
                     Rating_gesamt, 
             data = airbnb)
 ```
-
 
 ````markdown
 {r eval = TRUE, echo = TRUE}
@@ -446,16 +561,21 @@ summary(model)
 # Welche Faktoren bestimmen den Preis?
 
 .pull-left4[
+<ul>
+  <li class="m1"><span>Regression mit <high>Vorhersage</high> von <high>Preis</high> durch die Anzahl der Schlafzimmer und das <high>Rating</high> eines Objektes.</span></li>
+  <li class="m2"><span> </span></li>
+</ul>
 
-Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
-
-```{r eval = FALSE, echo = TRUE}
-model <- lm(Preis ~ Schlafzimmer + 
-                    Rating_gesamt, 
-            data = airbnb)
-```
 ```{r eval = TRUE, echo = FALSE}
 model <- lm(Preis ~ Schlafzimmer + Rating_gesamt, 
+            data = airbnb)
+```
+
+````markdown
+{r eval = TRUE, echo = TRUE}
+
+model <- lm(Preis ~ Schlafzimmer + 
+                    Rating_gesamt, 
             data = airbnb)
 ```
 ]

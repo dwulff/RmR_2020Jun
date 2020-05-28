@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Reporting mit R   The R Bootcamp" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
   <body>
@@ -46,7 +47,7 @@ layout: true
 
 # Was sind die Eigenschaften der Wohnungen?
 
-In diesem Abschnitt wollen wir etwas mehr über die Wohnungen rausfinden.
+In diesem Abschnitt wollen wir etwas mehr über die Wohnungen herausfinden.
 
 Dazu werden wir die Einstellungen der chunks genauer betrachten, Tabellen und ein Inhaltsverzeichnis erstellen.
 
@@ -262,7 +263,7 @@ output:
   html_document:
     toc: true
     toc_depth: 2
-```` 
+````
 
 ]
 
@@ -284,7 +285,7 @@ output:
 &lt;/ul&gt;
 
 ````markdown
-title: "Meine erste Präsentation"
+title: "Meine Demo"
 author: "MSM"
 date: "5/25/2020"
 output:
@@ -312,10 +313,8 @@ output:
   &lt;li class="m1"&gt;&lt;span&gt;Inhaltsverzeichnis anzeigen &lt;high&gt;toc: true&lt;/high&gt; und die 'Tiefe' erhöhen &lt;high&gt;toc_depth: 2&lt;/high&gt;&lt;/li&gt;
  &lt;li class="m2"&gt;&lt;span&gt; Überschriften werden mit &lt;high&gt;number_sections: true&lt;/high&gt; numeriert&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m3"&gt; &lt;span&gt;Inhaltsverzeichnis permament links anzeigen &lt;high&gt;toc_float: true&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-
 &lt;/ul&gt;
 
- 
 ````markdown
 title: "Mein Demo"
 author: "MSM"
@@ -325,7 +324,6 @@ output:
     toc: true
     toc_float: true
 ```` 
-
 ]
 
 .pull-right5[
@@ -348,6 +346,7 @@ output:
 
 
 ````markdown
+{r}
 df &lt;- select(airbnb, 
              Preis, 
              Unterkunftsart) 
@@ -378,7 +377,6 @@ Preis Apartment Loft
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Tabellen könne mit &lt;highm&gt;table()&lt;/highm&gt; direkt ausgeben&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;Schönere Darstellung ist mit &lt;high&gt;kable()&lt;/high&gt; möglich &lt;/span&gt;&lt;/li&gt;
-
 &lt;/ul&gt;
 
 
@@ -426,12 +424,134 @@ kable(df)
 
 ---
 
+# Tabellen
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Tabellen könne mit &lt;highm&gt;table()&lt;/highm&gt; direkt ausgeben&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Schönere Darstellung ist mit &lt;high&gt;kable()&lt;/high&gt; möglich &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Spaltennamen&lt;/high&gt; verändern und &lt;high&gt;Captions&lt;/high&gt; einfügen &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+````Markdown
+{r}
+kable(
+  df,
+  col.names = c("M", "SD", 
+                "M", "SD"),
+  digits = 2,
+  caption = "Mittelwert und 
+             Standardabweichung"
+  )
+````
+
+]
+
+.pull-right5[
+
+
+```
+# A tibble: 1 x 4
+  av_Preis sd_Preis av_Rating sd_Rating
+     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1     77.6     158.      94.9      6.48
+```
+
+&lt;table&gt;
+&lt;caption&gt;Mittelwert und Standardabweichung&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; M &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SD &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; M &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SD &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 77.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 158.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 94.87 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.48 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+# Tabellen
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Tabellen könne mit &lt;highm&gt;table()&lt;/highm&gt; direkt ausgeben&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Schönere Darstellung ist mit &lt;high&gt;kable()&lt;/high&gt; möglich &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Spaltennamen&lt;/high&gt; verändern und &lt;high&gt;Captions&lt;/high&gt; einfügen &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+````Markdown
+{r}
+kable(
+  df,
+  col.names = c("M", "SD", 
+                "M", "SD"),
+  digits = 2,
+  caption = "Mittelwert und 
+             Standardabweichung"
+  ) %&gt;%
+  add_header_above(
+    header = c("Preis" = 2, 
+               "Rating" = 2)
+    ) 
+````
+
+]
+
+.pull-right5[
+
+
+```
+# A tibble: 1 x 4
+  av_Preis sd_Preis av_Rating sd_Rating
+     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1     77.6     158.      94.9      6.48
+```
+
+&lt;table&gt;
+&lt;caption&gt;Mittelwert und Standardabweichung&lt;/caption&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Preis&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Rating&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; M &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SD &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; M &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SD &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 77.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 158.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 94.87 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.48 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
 # Welche Faktoren bestimmen den Preis?
 
 .pull-left4[
-
-Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
-
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Regression mit &lt;high&gt;Vorhersage&lt;/high&gt; von &lt;high&gt;Preis&lt;/high&gt; durch die Anzahl der Schlafzimmer und das &lt;high&gt;Rating&lt;/high&gt; eines Objektes.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 
 
@@ -481,16 +601,20 @@ F-statistic:  189 on 2 and 9747 DF,  p-value: &lt;2e-16
 # Welche Faktoren bestimmen den Preis?
 
 .pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Regression mit &lt;high&gt;Vorhersage&lt;/high&gt; von &lt;high&gt;Preis&lt;/high&gt; durch die Anzahl der Schlafzimmer und das &lt;high&gt;Rating&lt;/high&gt; eines Objektes.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt; &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-Regression mit Vorhersage von Preis durch die Anzahl der Schlafzimmer und das Rating eines Objektes.
 
 
-```r
+````markdown
+{r eval = TRUE, echo = TRUE}
+
 model &lt;- lm(Preis ~ Schlafzimmer + 
                     Rating_gesamt, 
             data = airbnb)
 ```
-
 ]
 
 .pull-right5[
