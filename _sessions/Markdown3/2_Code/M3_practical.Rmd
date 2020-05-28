@@ -1,0 +1,29 @@
+---
+title: "Meine Demo"
+author: "MSM"
+date: "5/28/2020"
+output: 
+  html_document:
+    theme: lumen
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitrBootstrap)
+```
+
+## R Markdown
+
+<button type="button" class="btn btn-primary">Primary</button>
+
+<strong>heavy</strong> heavy
+
+```{r}
+a <- 1
+plot(a)
+
+c <- a+3
+```
+
+### Including Plots
+

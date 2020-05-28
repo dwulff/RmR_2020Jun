@@ -143,7 +143,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ````html
 <tag start>Inhalt</tag end>
-<br> Neue Zeile
+<br> Neue Zeile (Ausnahme!)
 
 <h1>Überschrift 1. Ebene</h1>
   <h2>Überschrift 2. Ebene</h2>
@@ -184,13 +184,43 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ---
 
+# Footer und Header
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
+ <li class="m2"><span> Überschriften werden mit <high>number_sections: true</high> numeriert</span></li>
+</ul>
+
+````markdown
+title: "Meine Demo"
+author: "MSM"
+date: "5/25/2020"
+output: 
+  html_document:
+    includes:
+      after_body: footer.html
+```` 
+
+]
+
+.pull-right5[
+<p align="center" width="100%">
+  <img src="image/Markdown2_Enum.png" alt="TOC Demo" style="width:70%">
+</p>
+
+]
+
+
+
+---
 # CSS
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Beschreibt wie Tags in HTML anzgezeigt werden sollen</span></li>
+  <li class="m1"><span>Beschreibt wie Tags in HTML angezeigt werden sollen</span></li>
   <li class="m2"><span>Jedem HTML Tag können Styles zugewiesen werden</span></li> 
-  <li class="m3"><span>Dafür wird der CSS Selector (h1) mit verschiedenen Deklarationen (color: blue) erweitert</span></li> 
+  <li class="m3"><span>Dafür wird der CSS Selector (h1) mit verschiedenen Deklarationen (zB: color: blue) erweitert</span></li> 
 </ul>
 
 ````html
@@ -207,12 +237,14 @@ p {color: red;
 
 <html>
 <head>
+
 <title>Page Title</title>
 </head>
 <body>
 
-<h1{color: blue}>Überschrift 1. Ebene</h1>
-  
+<h1 style="color:blue;">Überschrift 1. Ebene</h1>
+
+
 </body>
 </html>
 
@@ -224,7 +256,7 @@ p {color: red;
 
 .pull-left4[
 <ul>
-  <li class="m1"><span><high>extern</high> mit <link> in eigenem .css file</span></li>
+  <li class="m1"><span><high>extern</high> mit <link> eigenem .css file</span></li>
 </ul>
 
 ````html
@@ -257,8 +289,8 @@ h1 {
 
 .pull-left4[
 <ul>
-  <li class="m1"><span><high>extern</high> mit <link> in eigenem .css file</span></li>
-  <li class="m2"><span><high>inline</high></span></li> 
+  <li class="m1"><span><high>extern</high> mit <link> eigenem .css file</span></li>
+  <li class="m2"><span><high>inline</high> direkt im HTML tag </span></li> 
 </ul>
 
 ````html
@@ -285,7 +317,52 @@ h1 {
 
 ---
 
+# Mit CSS Text hervorheben
 
+.pull-left4[
+<ul>
+  <li class="m1"><span><high>extern</high> mit <link> eigenem .css file</span></li>
+  <li class="m2"><span><high>inline</high> direkt im HTML tag </span></li> 
+</ul>
+
+````html
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+- This is my first conclusion
+- This is my second conclusion
+
+</div>
+````
+
+]
+
+.pull-right5[
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 2px; padding: 10px;}
+</style>
+
+Normaler Text
+<div class = "blue">
+Wichtige Schulussfolgerung
+</div>
+
+Normaler Text
+]
+
+---
+
+# Themes und Highlight
+
+theme	
+Visual theme ("default", "cerulean", "journal", "flatly", "darkly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", or "yeti"). Pass NULL for no theme (in this case you can use the css parameter to add your own styles).
+
+highlight	
+Syntax highlighting style. Supported styles include "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock", and "textmate". Pass NULL to prevent syntax highlighting.
+---
 
 
 class: middle, center

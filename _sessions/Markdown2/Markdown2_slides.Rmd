@@ -234,10 +234,10 @@ message('Alles erledigt!')
   <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
   <li class="m3"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
   <li class="m4"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
-  <li class="m5"><span><highm>fig.width </highm>= '...', <highm>fig.height</highm> = '...'</li>
+  <li class="m5"><span><highm>fig.width </highm>= '...', <highm>fig.height</highm> = '...' (Default:  is fig.width = 7 and fig.height = 5)</span></li>
 </ul>
 
-````mardown
+````markdown
 {r fig.width = 5, fig.height = 3}
 ggplot(airbnb, 
 aes(Erstellungsdatum, Preis)) +

@@ -105,7 +105,7 @@ layout: true
 
 ````html
 &lt;tag start&gt;Inhalt&lt;/tag end&gt;
-&lt;br&gt; Neue Zeile
+&lt;br&gt; Neue Zeile (Ausnahme!)
 
 &lt;h1&gt;Überschrift 1. Ebene&lt;/h1&gt;
   &lt;h2&gt;Überschrift 2. Ebene&lt;/h2&gt;
@@ -146,13 +146,43 @@ layout: true
 
 ---
 
+# Footer und Header
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Inhaltsverzeichnis anzeigen &lt;high&gt;toc: true&lt;/high&gt; und die 'Tiefe' erhöhen &lt;high&gt;toc_depth: 2&lt;/high&gt;&lt;/li&gt;
+ &lt;li class="m2"&gt;&lt;span&gt; Überschriften werden mit &lt;high&gt;number_sections: true&lt;/high&gt; numeriert&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+````markdown
+title: "Meine Demo"
+author: "MSM"
+date: "5/25/2020"
+output: 
+  html_document:
+    includes:
+      after_body: footer.html
+```` 
+
+]
+
+.pull-right5[
+&lt;p align="center" width="100%"&gt;
+  &lt;img src="image/Markdown2_Enum.png" alt="TOC Demo" style="width:70%"&gt;
+&lt;/p&gt;
+
+]
+
+
+
+---
 # CSS
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Beschreibt wie Tags in HTML anzgezeigt werden sollen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Beschreibt wie Tags in HTML angezeigt werden sollen&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;Jedem HTML Tag können Styles zugewiesen werden&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Dafür wird der CSS Selector (h1) mit verschiedenen Deklarationen (color: blue) erweitert&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;Dafür wird der CSS Selector (h1) mit verschiedenen Deklarationen (zB: color: blue) erweitert&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ````html
@@ -169,12 +199,14 @@ p {color: red;
 
 &lt;html&gt;
 &lt;head&gt;
+
 &lt;title&gt;Page Title&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
-&lt;h1{color: blue}&gt;Überschrift 1. Ebene&lt;/h1&gt;
-  
+&lt;h1 style="color:blue;"&gt;Überschrift 1. Ebene&lt;/h1&gt;
+
+
 &lt;/body&gt;
 &lt;/html&gt;
 
@@ -186,7 +218,7 @@ p {color: red;
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;extern&lt;/high&gt; mit &lt;link&gt; in eigenem .css file&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;extern&lt;/high&gt; mit &lt;link&gt; eigenem .css file&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ````html
@@ -219,8 +251,8 @@ h1 {
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;extern&lt;/high&gt; mit &lt;link&gt; in eigenem .css file&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;inline&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;extern&lt;/high&gt; mit &lt;link&gt; eigenem .css file&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;inline&lt;/high&gt; direkt im HTML tag &lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ````html
@@ -247,9 +279,43 @@ h1 {
 
 ---
 
+# Mit CSS Text hervorheben
 
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;extern&lt;/high&gt; mit &lt;link&gt; eigenem .css file&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;inline&lt;/high&gt; direkt im HTML tag &lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
 
+````html
+&lt;style&gt;
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+&lt;/style&gt;
+&lt;div class = "blue"&gt;
 
+- This is my first conclusion
+- This is my second conclusion
+
+&lt;/div&gt;
+````
+
+]
+
+.pull-right5[
+
+&lt;style&gt;
+div.blue { background-color:#e6f0ff; border-radius: 2px; padding: 10px;}
+&lt;/style&gt;
+
+Normaler Text
+&lt;div class = "blue"&gt;
+Wichtige Schulussfolgerung
+&lt;/div&gt;
+
+Normaler Text
+]
+
+---
 class: middle, center
 
 &lt;h1&gt;&lt;a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/_Markdown3/Markdown3_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
