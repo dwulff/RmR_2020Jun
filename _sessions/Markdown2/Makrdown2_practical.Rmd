@@ -110,6 +110,8 @@ library(XXX)
 ````Markdown
 {r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(XXX)
+library(XXX)
 airbnb <- read_csv("../XXX/XXX")
 ````
 

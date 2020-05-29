@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Styling</title>
+
+<script src="Markdown3_practical_files/jquery/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Markdown3_practical_files/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Markdown3_practical_files/bootstrap/js/bootstrap.min.js"></script>
+<script src="Markdown3_practical_files/bootstrap/shim/html5shiv.min.js"></script>
+<script src="Markdown3_practical_files/bootstrap/shim/respond.min.js"></script>
+<script src="Markdown3_practical_files/navigation/tabsets.js"></script>
+<link href="Markdown3_practical_files/highlightjs/default.css" rel="stylesheet" />
+<script src="Markdown3_practical_files/highlightjs/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Styling</h1>
+<h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
+<col width='10%'>
+<col width='10%'>
+<tr style="border:none">
+<td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
+<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/SmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+</td>
+<td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
+<img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+</td>
+</tr>
+</table></h4>
+
+</div>
+
+
+<p align="center" width="100%">
+<img src="image/styles.png" alt="Style" style="width:50%"> <br> <font style="font-size:10px">from <a href="">www.insider.com</a></font>
+</p>
+<div id="section" class="section level1 tabset">
+<h1></h1>
+<div id="überblick" class="section level2">
+<h2>Überblick</h2>
+<p>In diesem Practical wirst du lernen Markdown Dokumente zu formatieren.</p>
+<p>Am Ende des Practicals wirst du wissen wie man:</p>
+<ol style="list-style-type: decimal">
+<li>Formatierungen in einem HTML Dokument verändern kann</li>
+<li>Einen CSS Style Sheet erstellen und einbindet</li>
+<li>Verschiedene Themes in einem Dokument verwendet</li>
+</ol>
+</div>
+<div id="aufgaben" class="section level2">
+<h2>Aufgaben</h2>
+<div id="a---setup" class="section level3">
+<h3>A - Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelistet sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
+<li><p>Öffne ein neues RMarkdown Skript und wähle das Template “Document” aus (siehe screenshot unten).</p></li>
+</ol>
+<p align="center" width="100%">
+<img src="image/Markdown_Document.png" alt="New Markdown Document" style="width:50%">
+</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Trage bei Title “Styling Pactical” und deinen Namen ein.</p></li>
+<li><p>Speichere das neue Skript unter dem Namen <code>markdown3_styling.Rmd</code> im <code>2_Code</code> Ordner.</p></li>
+<li><p>Lösche alles unterhalb des <code>setup</code> R chunks.</p></li>
+</ol>
+</div>
+<div id="b---lade-den-airbnb-datensatz" class="section level3">
+<h3>B - Lade den <code>airbnb</code> Datensatz</h3>
+</div>
+<div id="c---eigene-header-und-footer-datei-erstellen" class="section level3">
+<h3>C - Eigene Header und Footer Datei erstellen</h3>
+<ol style="list-style-type: decimal">
+<li><p>Erstelle eine <code>header.html' Datei und speichere Sie in deinem</code>2_Code` Verzeichnis ab.</p></li>
+<li><p>Füge den Text <code>Mein Dokument Header</code> in blauem Font ein</p></li>
+</ol>
+<pre class="html"><code>&lt;!DOCTYPE html&gt;
+&lt;div style: &quot;font-color: XXX&quot;&gt;XXX&lt;/div&gt;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Zentriere den Header</li>
+</ol>
+<pre class="html"><code>&lt;!DOCTYPE html&gt;
+&lt;div style: &quot;font-color: XXX; text-align: XXX&quot;&gt;XXX&lt;/div&gt;</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Füge eine horizontale Linie unter dem Text ein</li>
+</ol>
+<pre class="html"><code>&lt;!DOCTYPE html&gt;
+&lt;div style: &quot;font-color: XXX; text-align: XXX&quot;&gt;XXX&lt;/div&gt;
+&lt;XXX /&gt;</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Erstelle eine <code>footer.html' Datei und speichere Sie in deinem</code>2_Code` Verzeichnis ab.</p></li>
+<li><p>Diese Datei soll zuerst eine horizontale Linie beinhalten und dann zentriert deinen Namen und einen link zu (d)einer Webseite</p></li>
+</ol>
+<pre class="html"><code>&lt;!DOCTYPE html&gt;
+&lt;XXX /&gt;
+&lt;p style=&quot;text-align: XXX;&quot;&gt;
+XXX XXX
+&lt;XXX&gt;
+&lt;a href=&quot;XXX&quot;&gt;XXX&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Füge im YAML header deine beiden Dateien (header.html und footer.html) ein</li>
+</ol>
+<pre class="html"><code>output: 
+  html_document:
+    includes:
+      after_body: XXX.html
+      before_body: XXX.html</code></pre>
+</div>
+<div id="x---challenges-modellselektion-gaussian-mixtures" class="section level3">
+<h3>X - Challenges: Modellselektion Gaussian mixtures</h3>
+</div>
+</div>
+<div id="beispiele" class="section level2">
+<h2>Beispiele</h2>
+<pre class="r"><code>library(tidyverse) 
+library(cstab)
+library(dbscan)
+library(mclust, mask.ok = F)
+
+# Beispieldatensatz
+data(mpg)
+
+# Verarbeitung des Datensatzes
+mpg &lt;- mpg %&gt;% select_if(is.numeric)
+mpg_stand &lt;- mpg  %&gt;% 
+  scale %&gt;%         # Standardisieren
+  as_tibble()
+
+# k-means -----
+
+# Finde Cluster
+mpg_km &lt;- kmeans(mpg_stand, 
+                 centers = 3)
+
+# Zeige Zentroide
+mpg_km$centers
+
+# k-selection -----
+
+# Zeige Binnenvarianz Verlauf
+km_verlauf &lt;- purrr::map(2:20, kmeans, x = mpg_stand)
+binnenvarianz &lt;- purrr::map_dbl(km_verlauf, 
+                               `[[`, i = &#39;tot.withinss&#39;)
+
+# Plotte die Binnenvarianz
+plot(binnenvarianz)
+
+# Gap &amp; Slope Statistik
+k_est &lt;- cDistance(as.matrix(mpg_stand), 
+                   kseq = 2:20) 
+k_est$k__Gap
+k_est$k_Slope
+
+# Cluster stability
+k_est &lt;- cStability(as.matrix(mpg_stand), 
+                    kseq = 2:20) 
+k_est$k_instab
+  
+# DBSCAN -----
+
+# Finde Cluster
+mpg_dbscan &lt;- dbscan(mpg_stand, eps = 1)
+
+# Zeige Zentroide
+mpg %&gt;% 
+  mutate(cl = mpg_dbscan$cluster) %&gt;%
+  group_by(cl) %&gt;% 
+  summarize_all(mean)
+
+# Gaussian Mixtures -----
+
+# Finde Cluster
+mpg_gm &lt;- Mclust(mpg)
+
+# Zeige Zentroide
+mpg %&gt;% 
+  mutate(cl = mpg_gm$classification) %&gt;%
+  group_by(cl) %&gt;% 
+  summarize_all(mean)
+
+# Plotte Cluster
+plot(mpg_gm, what = &#39;classification&#39;)
+
+# Vergleiche Cluster -----
+
+table(mpg_km$cluster, mpg_dbscan$cluster)
+table(mpg_km$cluster, mpg_gm$classification)
+table(mpg_dbscan$cluster, mpg_gm$classification)</code></pre>
+</div>
+<div id="datensätze" class="section level2">
+<h2>Datensätze</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Datei</th>
+<th align="left">Zeilen</th>
+<th align="left">Spalten</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/ML_2020Apr/master/_sessions/Unsupervised/1_Data/gap.csv">gap.csv</a></td>
+<td align="left">1692</td>
+<td align="left">6</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/ML_2020Apr/master/_sessions/Unsupervised/1_Data/credit.csv">credit.csv</a></td>
+<td align="left">8636</td>
+<td align="left">8</td>
+</tr>
+</tbody>
+</table>
+<div id="gap.csv" class="section level4">
+<h4>gap.csv</h4>
+<p>Der <code>gap</code> Datensatz basiert auf dem <a href="https://www.gapminder.org/">Gapminder</a> Projekt und stammt aus dem R Paket <a href="https://cran.r-project.org/web/packages/gapminder/README.html">gapminder</a>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Land</td>
+<td align="left">Name des Landes</td>
+</tr>
+<tr class="even">
+<td align="left">Kontinent</td>
+<td align="left">Name des Kontinents</td>
+</tr>
+<tr class="odd">
+<td align="left">Jahr</td>
+<td align="left">Jahr</td>
+</tr>
+<tr class="even">
+<td align="left">Lebenserwartung</td>
+<td align="left">in Jahren</td>
+</tr>
+<tr class="odd">
+<td align="left">Population</td>
+<td align="left">Anzahl Einwohner des Landes</td>
+</tr>
+<tr class="even">
+<td align="left">BIP pro Kopf</td>
+<td align="left">Bruttoinlandsprodukt pro Einwohner</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="credit.csv" class="section level4">
+<h4>credit.csv</h4>
+<p>Der <code>credit</code> Datensatz ist ein Ausschnitt des Öffentlich verfügbaren <a href="https://www.kaggle.com/arjunbhasin2013/ccdata"><em>Credit Card Dataset</em></a>. Der Datensatz beinhaltet 8 Features, die einen Auschnitt des Verhaltens von 8636 Kreditkartenkunden beschreiben.</p>
+<table>
+<colgroup>
+<col width="26%" />
+<col width="73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BALANCE</td>
+<td align="left">Verfügbares Guthaben</td>
+</tr>
+<tr class="even">
+<td align="left">BALANCE_FREQUENCY</td>
+<td align="left">Änderungsfrequenz des Guthabens (1 = häufig, 0 = selten)</td>
+</tr>
+<tr class="odd">
+<td align="left">PURCHASES</td>
+<td align="left">Summe der Einkäufe</td>
+</tr>
+<tr class="even">
+<td align="left">CREDITLIMIT</td>
+<td align="left">Kreditlimit der Karte</td>
+</tr>
+<tr class="odd">
+<td align="left">ONEOFFPURCHASES</td>
+<td align="left">Betrag der grössten einmaligen Zahlung</td>
+</tr>
+<tr class="even">
+<td align="left">MINIMUM_PAYMENTS</td>
+<td align="left">Minimale Konto-Ausgleichszahlung</td>
+</tr>
+<tr class="odd">
+<td align="left">PRCFULLPAYMENT</td>
+<td align="left">Prozent vollständige Konto-Ausgleichszahlung</td>
+</tr>
+<tr class="even">
+<td align="left">TENURE</td>
+<td align="left">Dauer des Kundenverhältnisses</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="funktionen" class="section level2">
+<h2>Funktionen</h2>
+<div id="paket" class="section level3">
+<h3>Paket</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Paket</th>
+<th align="left">Installation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>tidyverse</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>cstab</code></td>
+<td align="left"><code>install.packages("cstab")</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>dbscan</code></td>
+<td align="left"><code>install.packages("dbscan")</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>mclust</code></td>
+<td align="left"><code>install.packages("mclust")</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen-1" class="section level3">
+<h3>Funktionen</h3>
+<p><em>Clustering</em></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Funktion</th>
+<th align="left">Paket</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>kmeans()</code></td>
+<td align="left"><code>stats</code></td>
+<td align="left">Clustere die Daten mit <em>k</em>-means</td>
+</tr>
+<tr class="even">
+<td align="left"><code>dbscan()</code></td>
+<td align="left"><code>dbscan</code></td>
+<td align="left">Clustere die Daten mit DBSCAN</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Mclust()</code></td>
+<td align="left"><code>mclust</code></td>
+<td align="left">Clustere die Daten mit Gaussian Mixtures</td>
+</tr>
+</tbody>
+</table>
+<p><em>k-selection</em></p>
+<table>
+<colgroup>
+<col width="7%" />
+<col width="12%" />
+<col width="80%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Funktion</th>
+<th align="left">Paket</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>cDistance()</code></td>
+<td align="left"><code>cstab</code></td>
+<td align="left">Identifiziere <em>k</em> mit distanzbasierten Methoden, z.B., der Gap Statistik.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>cStability()</code></td>
+<td align="left"><code>cstab</code></td>
+<td align="left">Identifiziere <em>k</em> mit stabilitätsbasierten Methoden.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="materialien" class="section level2">
+<h2>Materialien</h2>
+<div id="dokumentation" class="section level3">
+<h3>Dokumentation</h3>
+<ul>
+<li>Eine gutes <a href="https://www.r-bloggers.com/the-complete-guide-to-clustering-analysis-k-means-and-hierarchical-clustering-by-hand-and-in-r/"><strong>Tutorial</strong></a> über <em>k</em>-means und hierarchisches Clustering.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 ---
-title: "Exportieren nach Office"
+title: "Slides und Export"
 author: "Reporting mit R<br>
   <a href='https://therbootcamp.github.io'>
     The R Bootcamp
@@ -82,7 +82,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ```
 
-# RMarkdown nach Word und Power Point
+# HTML / Power Point Slides | Export nach Word und Power Point
 
 Direkt Word und Power Point Dateien mit R erstellen.
 
@@ -109,6 +109,29 @@ output: word_document
 
 <p align="center" width="100%">
   <img src="image/Word_New.png" alt="Word New" style="width:80%">
+</p>
+ 
+]
+
+---
+
+# Presentationen in HTML
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>New File - R Markdown</span></li>
+</ul>
+
+````markdown
+````
+
+
+]
+
+.pull-right5[
+
+<p align="center" width="100%">
+  <img src="image/.png" alt="Presentation New" style="width:80%">
 </p>
  
 ]

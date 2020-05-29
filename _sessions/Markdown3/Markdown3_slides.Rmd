@@ -1,5 +1,5 @@
 ---
-title: "Styling und Coporate Design"
+title: "Styling"
 author: "Reporting mit R<br>
   <a href='https://therbootcamp.github.io'>
     The R Bootcamp
@@ -82,8 +82,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ```
 
-# Kleiner Auslflug nach HTML und CSS
-
+# Kleiner Ausflug nach HTML und CSS
 
 ---
 
@@ -97,17 +96,14 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 </ul>
 
 ````html
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>Seitentitel</title>
 </head>
 <body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
+<h1>Erste Überschrift</h1>
+Lorem ipsum ...
 </body>
 </html>
 ````
@@ -118,12 +114,12 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 <html>
 <head>
-<title>Page Title</title>
+<title>Seitentitel</title>
 </head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+<h1>Erste Überschrift</h1>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 </body>
 </html>
@@ -136,14 +132,13 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Beschreiben Formatierung des Inhalts</span></li>
-  <li class="m2"><span>Kommen in Paaren mit <high>Start und End </high> tag</span></li> 
-  <li class="m3"><span>Das end tag enthält einen / </span></li> 
+  <li class="m1"><span>Beschreiben <high>Formatierung</high> des Inhalts</span></li>
+  <li class="m2"><span>In Paaren mit <high>Start und End </high> Tag</span></li> 
+  <li class="m3"><span>Das end Tag enthält einen <high>/</high></span></li> 
 </ul>
 
 ````html
 <tag start>Inhalt</tag end>
-<br> Neue Zeile (Ausnahme!)
 
 <h1>Überschrift 1. Ebene</h1>
   <h2>Überschrift 2. Ebene</h2>
@@ -151,6 +146,8 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 <b>Fett</b>
 
 <i>Kursiv</i>
+
+<br> Neue Zeile (Ausnahme!)
 
 <a href="therbootcamp.github.io">
   Ein Link</a>
@@ -175,8 +172,8 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 <br>
 <i>Kursiv</i>
 <br>
-<a href="therbootcamp.github.io">
-  Ein Link</a>
+<br>
+<a href="https://therbootcamp.github.io">Ein Link</a>
 </body>
 </html>
 
@@ -184,51 +181,22 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ---
 
-# Footer und Header
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>Inhaltsverzeichnis anzeigen <high>toc: true</high> und die 'Tiefe' erhöhen <high>toc_depth: 2</high></li>
- <li class="m2"><span> Überschriften werden mit <high>number_sections: true</high> numeriert</span></li>
-</ul>
-
-````markdown
-title: "Meine Demo"
-author: "MSM"
-date: "5/25/2020"
-output: 
-  html_document:
-    includes:
-      after_body: footer.html
-```` 
-
-]
-
-.pull-right5[
-<p align="center" width="100%">
-  <img src="image/Markdown2_Enum.png" alt="TOC Demo" style="width:70%">
-</p>
-
-]
-
-
-
----
 # CSS
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Beschreibt wie Tags in HTML angezeigt werden sollen</span></li>
-  <li class="m2"><span>Jedem HTML Tag können Styles zugewiesen werden</span></li> 
-  <li class="m3"><span>Dafür wird der CSS Selector (h1) mit verschiedenen Deklarationen (zB: color: blue) erweitert</span></li> 
+  <li class="m1"><span>Beschreibt <high>wie</high> Tags in HTML angezeigt werden sollen</span></li>
+  <li class="m2"><span>Jedem HTML Tag können <high>Styles</high> zugewiesen werden</span></li> 
+  <li class="m3"><span>Dafür wird der CSS <high>Selector</high> (z.B. h1) mit verschiedenen <high>Deklarationen</high> (zB: color: blue) erweitert</span></li> 
 </ul>
 
 ````html
-h1 {color: blue}
+<h1 style = color: blue;>
+Überschrift 1. Ebene</h1>
 
-p {color: red;
-   text_align: center}
-
+<p style = color: red;
+   text_align: center>
+   Text fett in rot</p>
 ````
 
 ]
@@ -244,6 +212,9 @@ p {color: red;
 
 <h1 style="color:blue;">Überschrift 1. Ebene</h1>
 
+<p style = "color: red;
+    font-weight: bold;">
+   Text fett in rot</p>
 
 </body>
 </html>
@@ -256,50 +227,16 @@ p {color: red;
 
 .pull-left4[
 <ul>
-  <li class="m1"><span><high>extern</high> mit <link> eigenem .css file</span></li>
-</ul>
-
-````html
-<link rel="stylesheet" 
-  type="text/css" 
-  href="mystyle.css">
-````
-
-]
-
-.pull-right5[
-
-mystyle.css
-````html
-body {
-  background-color: lightblue;
-}
-
-h1 {
-  color: navy;
-  margin-left: 20px;
-}
-````
-
-]
-
----
-
-# CSS einbinden
-
-.pull-left4[
-<ul>
-  <li class="m1"><span><high>extern</high> mit <link> eigenem .css file</span></li>
-  <li class="m2"><span><high>inline</high> direkt im HTML tag </span></li> 
+  <li class="m1"><span><high>inline</high> direkt im HTML tag </span></li> 
 </ul>
 
 ````html
 <h1 style="color:blue;
            text-align:center;">
-           This is a heading</h1>
+           Meine Überschrift</h1>
            
 <p style="color:red;">
-          This is a paragraph.</p>
+          Mein roter Absatz</p>
 ````
 
 ]
@@ -321,47 +258,150 @@ h1 {
 
 .pull-left4[
 <ul>
-  <li class="m1"><span><high>extern</high> mit <link> eigenem .css file</span></li>
-  <li class="m2"><span><high>inline</high> direkt im HTML tag </span></li> 
+ <li class="m1"><span><high>inline</high> direkt im HTML tag </span></li> 
 </ul>
 
 ````html
-<style>
-div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
-</style>
-<div class = "blue">
+Normaler Text
 
-- This is my first conclusion
-- This is my second conclusion
+<p style = 
+"background-color:lightblue; 
+padding: 10px;">
+Wichtige Schlussfolgerung
+</p>
 
-</div>
+<p style = 
+"font-weight: bold">
+Fetter Text
+</p>
 ````
 
 ]
 
 .pull-right5[
 
-<style>
-div.blue { background-color:#e6f0ff; border-radius: 2px; padding: 10px;}
-</style>
-
 Normaler Text
-<div class = "blue">
-Wichtige Schulussfolgerung
-</div>
 
-Normaler Text
+<p style = "background-color:lightblue; 
+        padding: 10px;">
+        Wichtige Schlussfolgerung
+        </p>
+
+<p style = "font-weight: bold">
+        Fetter Text
+        </p>
+]
+
+---
+
+# CSS einbinden
+
+.pull-left4[
+<ul>
+  <li class="m1"><span><high>inline</high> direkt im HTML tag </span></li> 
+  <li class="m2"><span>Für globale Anpassung aller Tags eines Dokumentes bietet sich 
+  ein <high>externes</high> .css file an</span></li>
+</ul>
+
+````html
+title: "Meine Demo"
+author: "MSM"
+date: "5/28/2020"
+output:
+  html_document:
+    css: ["mystyle.css"]
+````
+
+]
+
+.pull-right5[
+
+mystyle.css
+````html
+body {
+  background-color: lightgrey;
+}
+
+h1 {
+  color: green;
+  text-align: center;
+}
+
+p {
+  color: red;
+  font-weight: bold;
+}
+````
+
+]
+
+---
+
+# Footer und Header
+
+.pull-left4[
+<ul>
+  <li class="m1"><span>Um einen Footer/Header zu erstellen brauchen wir ein <high>externes HTML file</high> </li>
+  <li class="m2"><span>Diese File wird dann mit <high>includes: after_body</high> (bzw <highm> before_body</highm>) eingebunden </li>
+</ul>
+
+````markdown
+title: "Meine Demo"
+author: "MSM"
+date: "5/28/2020"
+output: 
+  html_document:
+    includes:
+      after_body: footer.html
+```` 
+
+]
+
+.pull-right5[
+
+<p align="center" width="100%">
+  <img src="image/Footer.png" alt="Footer" style="width:120%">
+</p>
+
+<p align="center" width="100%">
+  <img src="image/Footer_Screenshot.png" alt="Footer" style="width:120%">
+</p>
+
+ich weiss ... das sieht scheisse aus ... HTML Document einbinden .. Ideas?
 ]
 
 ---
 
 # Themes und Highlight
 
-theme	
-Visual theme ("default", "cerulean", "journal", "flatly", "darkly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", or "yeti"). Pass NULL for no theme (in this case you can use the css parameter to add your own styles).
+.pull-left4[
+<ul>
+  <li class="m1"><span>Will man sich nicht mit gestalterischen Details herumschlagen kann man direkt <high>vorgefertigte Themes und Highlights</high>  übernehmen </span></li>
+  <li class="m2"><span>Beides wird im <high>header<high> festgelegt</span></li>
+</ul>
 
-highlight	
-Syntax highlighting style. Supported styles include "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock", and "textmate". Pass NULL to prevent syntax highlighting.
+````markdown
+title: "Meine Demo"
+author: "MSM"
+date: "5/28/2020"
+output: 
+  html_document:
+    theme: sandstone
+    highlight: espresso
+```` 
+]
+
+.pull-right5[
+
+<p align="center" width="100%">
+  <img src="image/Theme.png" alt="Footer" style="width:120%">
+</p>
+
+Themes: "default", "cerulean", "journal", "flatly", "darkly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", "yeti"
+
+Highlight: "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock", "textmate"
+
+]
 ---
 
 
