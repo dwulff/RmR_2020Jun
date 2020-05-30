@@ -63,7 +63,7 @@ In diesem Practical wirst Du verschiedene Chunk Einstellungen mit dem AirBnB Dat
 Am Ende des Practicals kannst du:
 
 1. Chunks nach deinen Wünschen konfigurieren
-2. Verschiedene Arten von Inhaltsverzeichnissen erstellen 
+2. Verschiedene Arten von Inhaltsverzeichnissen einbauen 
 3. Tabellen erstellen und gestalten
 
 ## Aufgaben
@@ -85,10 +85,10 @@ Am Ende des Practicals kannst du:
 5. Lösche alles unterhalb des `setup` R chunks.
 
 
-### B - Lade den `airbnb` Datensatz
+### B - `airbnb` Datensatz und Inhaltsverzeichnis anzeigen
 
 1. Wir wollen ein Inhaltsverzeichnis angezeigt bekommen. Im YAML header müssen  
-wir also die Option toc auf TRUE setzen
+wir also die Option `toc` auf TRUE setzen
 
 ````Markdown
 output:
@@ -115,7 +115,6 @@ library(XXX)
 airbnb <- read_csv("../XXX/XXX")
 ````
 
-
 4. Erstelle einen neuen Chunk und zeige mit Hilfe der `summary()` Funktion eine Zusammenfassung des `airbnb` Datensatzes an. Es soll die Funktion und das Output angezeigt werden!
 ````Markdown
 {r}
@@ -139,7 +138,7 @@ XXX %>%
   mutate(hat_alles = Kaffeemaschine + Geschirrspüler + Wifi)
 ````
 
-3. Schiesslich wollen wir nur das Ergebnis im HTML file sehen (ohne Code)
+3. Schliesslich wollen wir nur das Ergebnis im HTML file sehen (ohne Code)
 ````Markdown
 {r echo = XXX}
 XXX %>%
@@ -158,7 +157,7 @@ XXX %>%
 
 5. Nun wollen wir noch die Darstellung verbessern. Dazu speichern wir unseren dataframe 
 zuerst in ein neues Objekt `vorhanden` ab. Dann schicken wir dieses Objekt in die Funktion
-kable()
+`kable()`
 
 ````Markdown
 {r echo = XXX}
@@ -177,11 +176,10 @@ etwas sinnvollerers ändern. Die Spalten sollen neu: `Kriterium` und `Anzahl` he
 ````Markdown
 kable(vorhanden,
       col.names = c('XXX', 'XXX'),
-      ) %>%
-kable_styling(full_width = F, font_size = 20)
+      )
 ````
 
-7. Dann noch die Breite der Tabelle reduzieren und die Schriftgrösse erhöhen - hier
+7. Jetzt noch die Breite der Tabelle reduzieren und die Schriftgrösse erhöhen - hier
 ist `kable_styling` hilfreich.
  
 ````Markdown

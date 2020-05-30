@@ -140,17 +140,18 @@ airbnb
 .pull-left4[
 <ul>
   <li class="m1"><span> Ohne zusätzliche Angaben werden <high>Code</high> und <high>Ergebnisse</high> aus einem Chunk direkt angezeigt</span></li>  
-  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
+  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde <high>nicht</high> angezeigt</span></li>  
 </ul>
 
 ````markdown
 {r include = FALSE}
-airbnb <- 
-  read_csv("1_Data/airbnb.csv")
-airbnb
+
+  read_csv("1_Data/airbnb.csv") %>%
+  summarise(Preis_Mittelwert = 
+  mean(Preis))
 ````
 
-Daten können im nächsten Chunk abgefragt werden! 
+Daten können im <high>nächsten Chunk</high> verwendet werden! 
 
 ]
 
@@ -231,10 +232,10 @@ message('Alles erledigt!')
 .pull-left4[
 <ul>
   <li class="m1"><span> Ohne zusätzliche Chunk Angaben werden Code und Ergebnisse angezeigt</span></li>  
-  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde nicht angezeigt</span></li>  
+  <li class="m2"><span> <highm>include = FALSE:</highm> Code und Ergebnisse werde <high>nicht</high> angezeigt</span></li>  
   <li class="m3"><span><highm>echo = FALSE</highm>: Code wird nicht angezeigt, <high>Ergebnisse werden gezeigt</high> </span></li>
   <li class="m4"><span><highm>message = FALSE:</highm> Warnungen unterdrücken</span></li>
-  <li class="m5"><span><highm>fig.width </highm>= '...', <highm>fig.height</highm> = '...' (Default:  is fig.width = 7 and fig.height = 5)</span></li>
+  <li class="m5"><span><highm>fig.width </highm>= '...', <highm>fig.height</highm> = '...'</span></li>
 </ul>
 
 ````markdown
@@ -303,7 +304,7 @@ date: "5/25/2020"
 output:
   html_document:
     toc: true
-     number_sections: true
+      number_sections: true
 ```` 
 
 ]
@@ -352,7 +353,7 @@ output:
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Tabellen könne mit <highm>table()</highm> direkt ausgeben</span></li>
+  <li class="m1"><span>Tabellen könne mit <highm>table()</highm> direkt aus einem Chunk ausgeben werden</span></li>
 </ul>
 
 ```{r eval = TRUE, echo = FALSE}
@@ -385,7 +386,7 @@ table(df)
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Tabellen könne mit <highm>table()</highm> direkt ausgeben</span></li>
+  <li class="m1"><span>Tabellen könne mit <highm>table()</highm> direkt aus einem Chunk ausgeben werden</span></li>
   <li class="m2"><span>Schönere Darstellung ist mit <high>kable()</high> möglich </span></li>
 </ul>
 
@@ -411,7 +412,7 @@ df %>%
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Tabellen könne mit <highm>table()</highm> direkt ausgeben</span></li>
+  <li class="m1"><span>Tabellen könne mit <highm>table()</highm> direkt aus einem Chunk ausgeben werden</span></li>
   <li class="m2"><span>Schönere Darstellung ist mit <high>kable()</high> möglich </span></li>
   <li class="m3"><span><high>Spaltennamen</high> verändern und <high>Captions</high> einfügen </span></li>
 </ul>
@@ -420,10 +421,10 @@ df %>%
 {r}
 kable(
   df,
-  col.names = c("M", "SD", 
-                "M", "SD"),
+  col.names = c("M Preis", "SD Preis", 
+                "M Rating", "SD Rating"),
   digits = 2,
-  caption = "Mittelwert und 
+  caption = "Abb 1: Mittelwert und 
              Standardabweichung"
   )
 ````
@@ -453,9 +454,9 @@ df <- select(airbnb,
 
 kable(
   df,
-  col.names = c("M", "SD", "M", "SD"),
+  col.names = c("M Preis", "SD Preis", "M Rating", "SD Rating"),
   digits = 2,
-  caption = "Mittelwert und Standardabweichung"
+  caption = "Abb 1: Mittelwert und Standardabweichung"
   )
 ```
 
@@ -467,7 +468,7 @@ kable(
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Tabellen könne mit <highm>table()</highm> direkt ausgeben</span></li>
+  <li class="m1"><span>Tabellen könne mit <highm>table()</highm> direkt aus einem Chunk ausgeben werden</span></li>
   <li class="m2"><span>Schönere Darstellung ist mit <high>kable()</high> möglich </span></li>
   <li class="m3"><span><high>Spaltennamen</high> verändern und <high>Captions</high> einfügen </span></li>
 </ul>
@@ -479,7 +480,7 @@ kable(
   col.names = c("M", "SD", 
                 "M", "SD"),
   digits = 2,
-  caption = "Mittelwert und 
+  caption = " Abb 1: Mittelwert und 
              Standardabweichung"
   ) %>%
   add_header_above(
@@ -515,7 +516,7 @@ kable(
   df,
   col.names = c("M", "SD", "M", "SD"),
   digits = 2,
-  caption = "Mittelwert und Standardabweichung"
+  caption = "Abb 1: Mittelwert und Standardabweichung"
   ) %>%
   add_header_above(
     header = c("Preis" = 2, "Rating" = 2)
