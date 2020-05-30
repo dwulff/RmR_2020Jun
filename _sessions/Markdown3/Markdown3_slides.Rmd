@@ -90,9 +90,9 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Hyper Text <high>Markup</high> Language</span></li>
+  <li class="m1"><span>HTML = Hyper Text <high>Markup</high> Language</span></li>
   <li class="m2"><span>Struktur wird mit <high>Tags</high> beschrieben</span></li> 
-  <li class="m3"><span>Im Browser wird eine Seite gerendert darsgestellt (vgl. Knit)</span></li> 
+  <li class="m3"><span>Im <high>Browser</high> wird eine Seite gerendert darsgestellt (vgl. Knit)</span></li> 
 </ul>
 
 ````html
@@ -185,17 +185,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Beschreibt <high>wie</high> Tags in HTML angezeigt werden sollen</span></li>
-  <li class="m2"><span>Jedem HTML Tag können <high>Styles</high> zugewiesen werden</span></li> 
-  <li class="m3"><span>Dafür wird der CSS <high>Selector</high> (z.B. h1) mit verschiedenen <high>Deklarationen</high> (zB: color: blue) erweitert</span></li> 
+  <li class="m1"><span>CSS = Cascading <high>Style Sheets</high></span></li>
+  <li class="m2"><span>Beschreibt <high>wie</high> Tags in HTML angezeigt werden sollen</span></li>
+  <li class="m3"><span>Jedem HTML Tag können <high>Styles</high> zugewiesen werden</span></li> 
+  <li class="m4"><span>Dafür wird der CSS <high>Selector</high> (z.B. h1) mit verschiedenen <high>Deklarationen</high> (zB: color: blue) erweitert</span></li> 
 </ul>
 
 ````html
-<h1 style = color: blue;>
+<h1 style = "color: blue;">
 Überschrift 1. Ebene</h1>
 
-<p style = color: red;
-   text_align: center>
+<p style = "color: red;
+   text_align: center">
    Text fett in rot</p>
 ````
 
@@ -235,8 +236,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
            text-align:center;">
            Meine Überschrift</h1>
            
-<p style="color:red;">
-          Mein roter Absatz</p>
+<p style="font-size: 40px;">
+          Mein grosser Absatz</p>
+          
+<div style="font-size: 40px;
+            font-family: Arial;">
+          Mein grosser Absatz in 
+          Arial</div>
 ````
 
 ]
@@ -247,14 +253,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
            text-align:center;">
            Meine Überschrift</h1>
            
-<p style="color:red;">
-          Mein roter Absatz</p>
+<p style="font-size: 40px;">
+          Mein grosser Absatz</p>
+
+<div style="font-size: 40px;
+            font-family: Arial;">
+          Mein grosser Absatz in Arial</div>
+
+
 
 ]
 
 ---
 
-# Mit CSS Text hervorheben
+# CSS einbinden
 
 .pull-left4[
 <ul>
@@ -376,8 +388,8 @@ ich weiss ... das sieht scheisse aus ... HTML Document einbinden .. Ideas?
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Will man sich nicht mit gestalterischen Details herumschlagen kann man direkt <high>vorgefertigte Themes und Highlights</high>  übernehmen </span></li>
-  <li class="m2"><span>Beides wird im <high>header<high> festgelegt</span></li>
+  <li class="m1"><span>Direkt <high>vorgefertigte Themes und Code Highlights</high>  einbinden </span></li>
+  <li class="m2"><span>Beides wird im YAML <high>header<high> festgelegt</span></li>
 </ul>
 
 ````markdown
@@ -402,8 +414,8 @@ Themes: "default", "cerulean", "journal", "flatly", "darkly", "readable", "space
 Highlight: "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock", "textmate"
 
 ]
----
 
+---
 
 class: middle, center
 

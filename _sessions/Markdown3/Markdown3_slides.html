@@ -52,9 +52,9 @@ layout: true
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Hyper Text &lt;high&gt;Markup&lt;/high&gt; Language&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;HTML = Hyper Text &lt;high&gt;Markup&lt;/high&gt; Language&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;Struktur wird mit &lt;high&gt;Tags&lt;/high&gt; beschrieben&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Im Browser wird eine Seite gerendert darsgestellt (vgl. Knit)&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;Im &lt;high&gt;Browser&lt;/high&gt; wird eine Seite gerendert darsgestellt (vgl. Knit)&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ````html
@@ -95,8 +95,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 .pull-left4[
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Beschreiben &lt;high&gt;Formatierung&lt;/high&gt; des Inhalts&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Kommen in Paaren mit &lt;high&gt;Start und End &lt;/high&gt; tag&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Das end tag enthält einen &lt;high&gt;/&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;In Paaren mit &lt;high&gt;Start und End &lt;/high&gt; Tag&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;Das end Tag enthält einen &lt;high&gt;/&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ````html
@@ -147,17 +147,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Beschreibt &lt;high&gt;wie&lt;/high&gt; Tags in HTML angezeigt werden sollen&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Jedem HTML Tag können &lt;high&gt;Styles&lt;/high&gt; zugewiesen werden&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Dafür wird der CSS &lt;high&gt;Selector&lt;/high&gt; (z.B. h1) mit verschiedenen &lt;high&gt;Deklarationen&lt;/high&gt; (zB: color: blue) erweitert&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;CSS = Cascading &lt;high&gt;Style Sheets&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Beschreibt &lt;high&gt;wie&lt;/high&gt; Tags in HTML angezeigt werden sollen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Jedem HTML Tag können &lt;high&gt;Styles&lt;/high&gt; zugewiesen werden&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m4"&gt;&lt;span&gt;Dafür wird der CSS &lt;high&gt;Selector&lt;/high&gt; (z.B. h1) mit verschiedenen &lt;high&gt;Deklarationen&lt;/high&gt; (zB: color: blue) erweitert&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ````html
-&lt;h1 style = color: blue;&gt;
+&lt;h1 style = "color: blue;"&gt;
 Überschrift 1. Ebene&lt;/h1&gt;
 
-&lt;p style = color: red;
-   text_align: center&gt;
+&lt;p style = "color: red;
+   text_align: center"&gt;
    Text fett in rot&lt;/p&gt;
 ````
 
@@ -197,8 +198,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
            text-align:center;"&gt;
            Meine Überschrift&lt;/h1&gt;
            
-&lt;p style="color:red;"&gt;
-          Mein roter Absatz&lt;/p&gt;
+&lt;p style="font-size: 40px;"&gt;
+          Mein grosser Absatz&lt;/p&gt;
+          
+&lt;div style="font-size: 40px;
+            font-family: Arial;"&gt;
+          Mein grosser Absatz in 
+          Arial&lt;/div&gt;
 ````
 
 ]
@@ -209,14 +215,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
            text-align:center;"&gt;
            Meine Überschrift&lt;/h1&gt;
            
-&lt;p style="color:red;"&gt;
-          Mein roter Absatz&lt;/p&gt;
+&lt;p style="font-size: 40px;"&gt;
+          Mein grosser Absatz&lt;/p&gt;
+
+&lt;div style="font-size: 40px;
+            font-family: Arial;"&gt;
+          Mein grosser Absatz in Arial&lt;/div&gt;
+
+
 
 ]
 
 ---
 
-# Mit CSS Text hervorheben
+# CSS einbinden
 
 .pull-left4[
 &lt;ul&gt;
@@ -338,8 +350,8 @@ ich weiss ... das sieht scheisse aus ... HTML Document einbinden .. Ideas?
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Will man sich nicht mit gestalterischen Details herumschlagen kann man direkt &lt;high&gt;vorgefertigte Themes und Highlights&lt;/high&gt;  übernehmen &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Beides wird im &lt;high&gt;header&lt;high&gt; festgelegt&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Direkt &lt;high&gt;vorgefertigte Themes und Code Highlights&lt;/high&gt;  einbinden &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Beides wird im YAML &lt;high&gt;header&lt;high&gt; festgelegt&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ````markdown
@@ -364,8 +376,8 @@ Themes: "default", "cerulean", "journal", "flatly", "darkly", "readable", "space
 Highlight: "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock", "textmate"
 
 ]
----
 
+---
 
 class: middle, center
 

@@ -94,11 +94,19 @@ library(XXX)
 airbnb <- read_csv("../XXX/XXX")
 ````
 
-2. Erstelle eine Überschrift 
-
-2. Füge eine Tabelle mit den ersten 20 Zeile des `airbnb` Datensates ein
-
-
+2. Erstelle eine Überschrift erster Ordnung für die Analyse die blau und zentriert ist
+````Makrdown
+<hXXX style="color:XXX; 
+           text-align:XXX;">
+           XXX</h1>
+````
+3. Erstelle eine Überschrift zweiter Ordnung für die Analyse die blau und zentriert ist
+````Makrdown
+<hXXX style="color:XXX; 
+           text-align:XXX;">
+           XXX</h1>
+````
+3. Füge eine Tabelle mit den ersten 20 Zeile des `airbnb` Datensates ein
 
 
 ### C - Eigene Header und Footer Datei einfügen
