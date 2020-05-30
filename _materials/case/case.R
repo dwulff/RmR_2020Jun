@@ -64,7 +64,13 @@ airbnb = listing %>% bind_cols(location, host, reviews) %>%
     Verfügbarkeit_90Tage = availability_90
     )  %>% 
   filter(!is.na(Erstellungsdatum),!is.na(Host_seit))
-write_csv(airbnb,'_materials/case/airbnb.csv')
+
+set.seed(100)
+airbnb$Wohnung_id = sample(10000:99999, nrow(airbnb))
+
+airbnb = airbnb %>% select(Wohnung_id, everything())
+
+write_csv(airbnb,'~/Dropbox (2.0)/Work/Software/RBootcamps/RmR_2020Jun/_materials/case/airbnb.csv')
 
 sum(is.na(airbnb$Host_seit))
 
