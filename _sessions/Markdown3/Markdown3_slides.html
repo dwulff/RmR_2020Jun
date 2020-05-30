@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Styling und Coporate Design</title>
+    <title>Styling</title>
     <meta charset="utf-8" />
     <meta name="author" content="Reporting mit R   The R Bootcamp" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
@@ -11,7 +11,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Styling und Coporate Design
+# Styling
 ### Reporting mit R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp </a> <br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
 ### Juni 2020
 
@@ -44,8 +44,7 @@ layout: true
 
 
 
-# Kleiner Auslflug nach HTML und CSS
-
+# Kleiner Ausflug nach HTML und CSS
 
 ---
 
@@ -53,23 +52,20 @@ layout: true
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Hyper Text &lt;high&gt;Markup&lt;/high&gt; Language&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;HTML = Hyper Text &lt;high&gt;Markup&lt;/high&gt; Language&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;Struktur wird mit &lt;high&gt;Tags&lt;/high&gt; beschrieben&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Im Browser wird eine Seite gerendert darsgestellt (vgl. Knit)&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;Im &lt;high&gt;Browser&lt;/high&gt; wird eine Seite gerendert darsgestellt (vgl. Knit)&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ````html
-
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;title&gt;Page Title&lt;/title&gt;
+&lt;title&gt;Seitentitel&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-
-&lt;h1&gt;My First Heading&lt;/h1&gt;
-&lt;p&gt;My first paragraph.&lt;/p&gt;
-
+&lt;h1&gt;Erste Überschrift&lt;/h1&gt;
+Lorem ipsum ...
 &lt;/body&gt;
 &lt;/html&gt;
 ````
@@ -80,12 +76,12 @@ layout: true
 
 &lt;html&gt;
 &lt;head&gt;
-&lt;title&gt;Page Title&lt;/title&gt;
+&lt;title&gt;Seitentitel&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
-&lt;h1&gt;My First Heading&lt;/h1&gt;
-&lt;p&gt;My first paragraph.&lt;/p&gt;
+&lt;h1&gt;Erste Überschrift&lt;/h1&gt;
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 &lt;/body&gt;
 &lt;/html&gt;
@@ -98,14 +94,13 @@ layout: true
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Beschreiben Formatierung des Inhalts&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Kommen in Paaren mit &lt;high&gt;Start und End &lt;/high&gt; tag&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Das end tag enthält einen / &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Beschreiben &lt;high&gt;Formatierung&lt;/high&gt; des Inhalts&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;In Paaren mit &lt;high&gt;Start und End &lt;/high&gt; Tag&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;Das end Tag enthält einen &lt;high&gt;/&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ````html
 &lt;tag start&gt;Inhalt&lt;/tag end&gt;
-&lt;br&gt; Neue Zeile
 
 &lt;h1&gt;Überschrift 1. Ebene&lt;/h1&gt;
   &lt;h2&gt;Überschrift 2. Ebene&lt;/h2&gt;
@@ -113,6 +108,8 @@ layout: true
 &lt;b&gt;Fett&lt;/b&gt;
 
 &lt;i&gt;Kursiv&lt;/i&gt;
+
+&lt;br&gt; Neue Zeile (Ausnahme!)
 
 &lt;a href="therbootcamp.github.io"&gt;
   Ein Link&lt;/a&gt;
@@ -137,8 +134,8 @@ layout: true
 &lt;br&gt;
 &lt;i&gt;Kursiv&lt;/i&gt;
 &lt;br&gt;
-&lt;a href="therbootcamp.github.io"&gt;
-  Ein Link&lt;/a&gt;
+&lt;br&gt;
+&lt;a href="https://therbootcamp.github.io"&gt;Ein Link&lt;/a&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 
@@ -150,17 +147,19 @@ layout: true
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Beschreibt wie Tags in HTML anzgezeigt werden sollen&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Jedem HTML Tag können Styles zugewiesen werden&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Dafür wird der CSS Selector (h1) mit verschiedenen Deklarationen (color: blue) erweitert&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;CSS = Cascading &lt;high&gt;Style Sheets&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Beschreibt &lt;high&gt;wie&lt;/high&gt; Tags in HTML angezeigt werden sollen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Jedem HTML Tag können &lt;high&gt;Styles&lt;/high&gt; zugewiesen werden&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m4"&gt;&lt;span&gt;Dafür wird der CSS &lt;high&gt;Selector&lt;/high&gt; (z.B. h1) mit verschiedenen &lt;high&gt;Deklarationen&lt;/high&gt; (zB: color: blue) erweitert&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ````html
-h1 {color: blue}
+&lt;h1 style = "color: blue;"&gt;
+Überschrift 1. Ebene&lt;/h1&gt;
 
-p {color: red;
-   text_align: center}
-
+&lt;p style = "color: red;
+   text_align: center"&gt;
+   Text fett in rot&lt;/p&gt;
 ````
 
 ]
@@ -169,12 +168,17 @@ p {color: red;
 
 &lt;html&gt;
 &lt;head&gt;
+
 &lt;title&gt;Page Title&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
-&lt;h1{color: blue}&gt;Überschrift 1. Ebene&lt;/h1&gt;
-  
+&lt;h1 style="color:blue;"&gt;Überschrift 1. Ebene&lt;/h1&gt;
+
+&lt;p style = "color: red;
+    font-weight: bold;"&gt;
+   Text fett in rot&lt;/p&gt;
+
 &lt;/body&gt;
 &lt;/html&gt;
 
@@ -186,50 +190,21 @@ p {color: red;
 
 .pull-left4[
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;extern&lt;/high&gt; mit &lt;link&gt; in eigenem .css file&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-````html
-&lt;link rel="stylesheet" 
-  type="text/css" 
-  href="mystyle.css"&gt;
-````
-
-]
-
-.pull-right5[
-
-mystyle.css
-````html
-body {
-  background-color: lightblue;
-}
-
-h1 {
-  color: navy;
-  margin-left: 20px;
-}
-````
-
-]
-
----
-
-# CSS einbinden
-
-.pull-left4[
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;extern&lt;/high&gt; mit &lt;link&gt; in eigenem .css file&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;inline&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;inline&lt;/high&gt; direkt im HTML tag &lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ````html
 &lt;h1 style="color:blue;
            text-align:center;"&gt;
-           This is a heading&lt;/h1&gt;
+           Meine Überschrift&lt;/h1&gt;
            
-&lt;p style="color:red;"&gt;
-          This is a paragraph.&lt;/p&gt;
+&lt;p style="font-size: 40px;"&gt;
+          Mein grosser Absatz&lt;/p&gt;
+          
+&lt;div style="font-size: 40px;
+            font-family: Arial;"&gt;
+          Mein grosser Absatz in 
+          Arial&lt;/div&gt;
 ````
 
 ]
@@ -240,15 +215,169 @@ h1 {
            text-align:center;"&gt;
            Meine Überschrift&lt;/h1&gt;
            
-&lt;p style="color:red;"&gt;
-          Mein roter Absatz&lt;/p&gt;
+&lt;p style="font-size: 40px;"&gt;
+          Mein grosser Absatz&lt;/p&gt;
+
+&lt;div style="font-size: 40px;
+            font-family: Arial;"&gt;
+          Mein grosser Absatz in Arial&lt;/div&gt;
+
+
 
 ]
 
 ---
 
+# CSS einbinden
 
+.pull-left4[
+&lt;ul&gt;
+ &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;inline&lt;/high&gt; direkt im HTML tag &lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
 
+````html
+Normaler Text
+
+&lt;p style = 
+"background-color:lightblue; 
+padding: 10px;"&gt;
+Wichtige Schlussfolgerung
+&lt;/p&gt;
+
+&lt;p style = 
+"font-weight: bold"&gt;
+Fetter Text
+&lt;/p&gt;
+````
+
+]
+
+.pull-right5[
+
+Normaler Text
+
+&lt;p style = "background-color:lightblue; 
+        padding: 10px;"&gt;
+        Wichtige Schlussfolgerung
+        &lt;/p&gt;
+
+&lt;p style = "font-weight: bold"&gt;
+        Fetter Text
+        &lt;/p&gt;
+]
+
+---
+
+# CSS einbinden
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;inline&lt;/high&gt; direkt im HTML tag &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Für globale Anpassung aller Tags eines Dokumentes bietet sich 
+  ein &lt;high&gt;externes&lt;/high&gt; .css file an&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+````html
+title: "Meine Demo"
+author: "MSM"
+date: "5/28/2020"
+output:
+  html_document:
+    css: ["mystyle.css"]
+````
+
+]
+
+.pull-right5[
+
+mystyle.css
+````html
+body {
+  background-color: lightgrey;
+}
+
+h1 {
+  color: green;
+  text-align: center;
+}
+
+p {
+  color: red;
+  font-weight: bold;
+}
+````
+
+]
+
+---
+
+# Footer und Header
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Um einen Footer/Header zu erstellen brauchen wir ein &lt;high&gt;externes HTML file&lt;/high&gt; &lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Diese File wird dann mit &lt;high&gt;includes: after_body&lt;/high&gt; (bzw &lt;highm&gt; before_body&lt;/highm&gt;) eingebunden &lt;/li&gt;
+&lt;/ul&gt;
+
+````markdown
+title: "Meine Demo"
+author: "MSM"
+date: "5/28/2020"
+output: 
+  html_document:
+    includes:
+      after_body: footer.html
+```` 
+
+]
+
+.pull-right5[
+
+&lt;p align="center" width="100%"&gt;
+  &lt;img src="image/Footer.png" alt="Footer" style="width:120%"&gt;
+&lt;/p&gt;
+
+&lt;p align="center" width="100%"&gt;
+  &lt;img src="image/Footer_Screenshot.png" alt="Footer" style="width:120%"&gt;
+&lt;/p&gt;
+
+ich weiss ... das sieht scheisse aus ... HTML Document einbinden .. Ideas?
+]
+
+---
+
+# Themes und Highlight
+
+.pull-left4[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Direkt &lt;high&gt;vorgefertigte Themes und Code Highlights&lt;/high&gt;  einbinden &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Beides wird im YAML &lt;high&gt;header&lt;high&gt; festgelegt&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+````markdown
+title: "Meine Demo"
+author: "MSM"
+date: "5/28/2020"
+output: 
+  html_document:
+    theme: sandstone
+    highlight: espresso
+```` 
+]
+
+.pull-right5[
+
+&lt;p align="center" width="100%"&gt;
+  &lt;img src="image/Theme.png" alt="Footer" style="width:120%"&gt;
+&lt;/p&gt;
+
+Themes: "default", "cerulean", "journal", "flatly", "darkly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", "yeti"
+
+Highlight: "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock", "textmate"
+
+]
+
+---
 
 class: middle, center
 

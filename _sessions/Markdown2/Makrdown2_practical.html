@@ -13,15 +13,15 @@
 
 <title>Mit Chunks umgehen</title>
 
-<script src="Makrdown2_practical_files/jquery-1.11.3/jquery.min.js"></script>
+<script src="Makrdown2_practical_files/jquery/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="Makrdown2_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="Makrdown2_practical_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="Makrdown2_practical_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="Makrdown2_practical_files/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="Makrdown2_practical_files/navigation-1.1/tabsets.js"></script>
-<link href="Makrdown2_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="Makrdown2_practical_files/highlightjs-9.12.0/highlight.js"></script>
+<link href="Makrdown2_practical_files/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Makrdown2_practical_files/bootstrap/js/bootstrap.min.js"></script>
+<script src="Makrdown2_practical_files/bootstrap/shim/html5shiv.min.js"></script>
+<script src="Makrdown2_practical_files/bootstrap/shim/respond.min.js"></script>
+<script src="Makrdown2_practical_files/navigation/tabsets.js"></script>
+<link href="Makrdown2_practical_files/highlightjs/default.css" rel="stylesheet" />
+<script src="Makrdown2_practical_files/highlightjs/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -205,7 +205,7 @@ summary {
 <p>Am Ende des Practicals kannst du:</p>
 <ol style="list-style-type: decimal">
 <li>Chunks nach deinen Wünschen konfigurieren</li>
-<li>Verschiedene Arten von Inhaltsverzeichnissen erstellen</li>
+<li>Verschiedene Arten von Inhaltsverzeichnissen einbauen</li>
 <li>Tabellen erstellen und gestalten</li>
 </ol>
 </div>
@@ -226,21 +226,31 @@ summary {
 <li><p>Lösche alles unterhalb des <code>setup</code> R chunks.</p></li>
 </ol>
 </div>
-<div id="b---lade-den-airbnb-datensatz" class="section level3">
-<h3>B - Lade den <code>airbnb</code> Datensatz</h3>
+<div id="b---airbnb-datensatz-und-inhaltsverzeichnis-anzeigen" class="section level3">
+<h3>B - <code>airbnb</code> Datensatz und Inhaltsverzeichnis anzeigen</h3>
 <ol style="list-style-type: decimal">
-<li>Füge im <code>setup</code> chunk die library tidyverse() ein</li>
+<li>Wir wollen ein Inhaltsverzeichnis angezeigt bekommen. Im YAML header müssen<br />
+wir also die Option <code>toc</code> auf TRUE setzen</li>
+</ol>
+<pre class="markdown"><code>output:
+  html_document:
+    toc: XXX</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Füge im <code>setup</code> chunk die libraries <code>tidyverse()</code> und <code>kableExtra()</code> ein</li>
 </ol>
 <pre class="markdown"><code>{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(XXX)
 library(XXX)</code></pre>
-<ol start="2" style="list-style-type: decimal">
+<ol start="3" style="list-style-type: decimal">
 <li>Lade den Datensatz <code>airbnb.csv</code> als Objekt <code>airbnb</code> im <code>setup</code> chunk aus dem Ordner 1_Data.</li>
 </ol>
 <pre class="markdown"><code>{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(XXX)
+library(XXX)
 airbnb &lt;- read_csv(&quot;../XXX/XXX&quot;)</code></pre>
-<ol start="2" style="list-style-type: decimal">
+<ol start="4" style="list-style-type: decimal">
 <li>Erstelle einen neuen Chunk und zeige mit Hilfe der <code>summary()</code> Funktion eine Zusammenfassung des <code>airbnb</code> Datensatzes an. Es soll die Funktion und das Output angezeigt werden!</li>
 </ol>
 <pre class="markdown"><code>{r}
@@ -249,19 +259,57 @@ summary(XXX)</code></pre>
 <div id="c---die-richtige-wohnung-finden" class="section level3">
 <h3>C - Die richtige Wohnung finden</h3>
 <ol style="list-style-type: decimal">
-<li>Wir wollen nun herausfinden welche Wohnung eine Kaffeemaschine, einen Geschirrspüler und Wifi hat (alles was man zum Leben braucht).</li>
+<li>Wir wollen nun herausfinden welche Wohnung eine Kaffeemaschine, einen Geschirrspüler und Wifi hat (alles was man zum Leben braucht). Dafür wählen wir zuerst die drei Variablen aus (Kaffeemaschine, Geschirrspüler, Wifi).</li>
 </ol>
 <pre class="markdown"><code>{r}
-airbnb %&gt;%
-  select(Kaffeemaschine, Geschirrspüler, Wifi)</code></pre>
-<ol style="list-style-type: decimal">
-<li>Verwende die <code>kmeans()</code> Funktion um den <code>gap2007</code> Datensatz in <code>3</code> Cluster aufzuteilen.</li>
-</ol>
-<pre class="r"><code># kmeans für gap in 2007
-gap2007_km &lt;- kmeans(x = XX, centers = XX) </code></pre>
+XXX %&gt;%
+  select(XXX, XXX, XXX)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Printe <code>gap2007_km</code> in die Console und studiere den Output.</li>
+<li>Jetzt erstellen wir eine neue Variable <code>hat_alles</code> in der wir die drei Variablen addieren.</li>
 </ol>
+<pre class="markdown"><code>{r}
+XXX %&gt;%
+  select(XXX, XXX, XXX) %&gt;%
+  mutate(hat_alles = Kaffeemaschine + Geschirrspüler + Wifi)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Schliesslich wollen wir nur das Ergebnis im HTML file sehen (ohne Code)</li>
+</ol>
+<pre class="markdown"><code>{r echo = XXX}
+XXX %&gt;%
+  select(XXX, XXX, XXX) %&gt;%
+  mutate(hat_alles = XXX + XXX + XXX)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Wieviele Wohnungen mit allen 3 Annehmlichkeiten gibt es? Code und Ergebnisse anzeigen!</li>
+</ol>
+<pre class="markdown"><code>{r echo = XXX}
+XXX %&gt;%
+  select(XXX, XXX, XXX) %&gt;%
+  mutate(hat_alles = XXX + XXX + XXX) %&gt;%
+  count(hat_alles)</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Nun wollen wir noch die Darstellung verbessern. Dazu speichern wir unseren dataframe zuerst in ein neues Objekt <code>vorhanden</code> ab. Dann schicken wir dieses Objekt in die Funktion <code>kable()</code></li>
+</ol>
+<pre class="markdown"><code>{r echo = XXX}
+vorhanden &lt;- 
+XXX %&gt;%
+  select(XXX, XXX, XXX) %&gt;%
+  mutate(hat_alles = XXX + XXX + XXX) %&gt;%
+  count(hat_alles)
+  
+kable(vorhanden)  </code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Im nächsten Schritt werden wir die Namen der Spalten von <code>hat_alles</code> und <code>n</code> in etwas sinnvollerers ändern. Die Spalten sollen neu: <code>Kriterium</code> und <code>Anzahl</code> heissen.</li>
+</ol>
+<pre class="markdown"><code>kable(vorhanden,
+      col.names = c(&#39;XXX&#39;, &#39;XXX&#39;),
+      )</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Jetzt noch die Breite der Tabelle reduzieren und die Schriftgrösse erhöhen - hier ist <code>kable_styling</code> hilfreich.</li>
+</ol>
+<pre class="markdown"><code>kable(vorhanden,
+      col.names = c(&#39;XXX&#39;, &#39;XXX&#39;),
+      ) %&gt;%
+kable_styling(full_width = XXX, font_size = XXX)</code></pre>
 </div>
 </div>
 <div id="beispiele" class="section level2">
@@ -429,7 +477,7 @@ table(mpg_dbscan$cluster, mpg_gm$classification)</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left"><code>tidyverse</code></td>
-<td align="left"><code>install.packages("tidyverse")</code></td>
+<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
 </tr>
 </tbody>
 </table>

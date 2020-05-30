@@ -43,7 +43,8 @@ options(digits = 3)
 
 # Load packages
 library(tidyverse)
-
+library(knitr)
+library(kableExtra)
 ```
 
 <p align="center" width="100%">
@@ -62,7 +63,7 @@ In diesem Practical wirst Du verschiedene Chunk Einstellungen mit dem AirBnB Dat
 Am Ende des Practicals kannst du:
 
 1. Chunks nach deinen Wünschen konfigurieren
-2. Verschiedene Arten von Inhaltsverzeichnissen erstellen 
+2. Verschiedene Arten von Inhaltsverzeichnissen einbauen 
 3. Tabellen erstellen und gestalten
 
 ## Aufgaben
@@ -84,64 +85,109 @@ Am Ende des Practicals kannst du:
 5. Lösche alles unterhalb des `setup` R chunks.
 
 
-### B - Lade den `airbnb` Datensatz
+### B - `airbnb` Datensatz und Inhaltsverzeichnis anzeigen
 
-1. Füge im `setup` chunk die library tidyverse() ein
+1. Wir wollen ein Inhaltsverzeichnis angezeigt bekommen. Im YAML header müssen  
+wir also die Option `toc` auf TRUE setzen
+
+````Markdown
+output:
+  html_document:
+    toc: XXX
+````
+
+2. Füge im `setup` chunk die libraries `tidyverse()` und `kableExtra()` ein
 
 ````Markdown
 {r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(XXX)
+library(XXX)
 ````
 
-2. Lade den Datensatz `airbnb.csv` als Objekt `airbnb` im `setup` chunk aus dem Ordner 1_Data.
+3. Lade den Datensatz `airbnb.csv` als Objekt `airbnb` im `setup` chunk aus dem Ordner 1_Data.
 
 ````Markdown
 {r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(XXX)
+library(XXX)
 airbnb <- read_csv("../XXX/XXX")
 ````
 
-2. Erstelle einen neuen Chunk und zeige mit Hilfe der `summary()` Funktion eine Zusammenfassung des `airbnb` Datensatzes an. Es soll die Funktion und das Output angezeigt werden!
+4. Erstelle einen neuen Chunk und zeige mit Hilfe der `summary()` Funktion eine Zusammenfassung des `airbnb` Datensatzes an. Es soll die Funktion und das Output angezeigt werden!
 ````Markdown
 {r}
 summary(XXX)
 ````
 
-
-
-
-
-
 ### C - Die richtige Wohnung finden
 
-1. Wir wollen nun herausfinden welche Wohnung eine Kaffeemaschine, einen Geschirrspüler und Wifi hat (alles was man zum Leben braucht).
+1. Wir wollen nun herausfinden welche Wohnung eine Kaffeemaschine, einen Geschirrspüler und Wifi hat (alles was man zum Leben braucht). Dafür wählen wir zuerst die drei Variablen aus (Kaffeemaschine, Geschirrspüler, Wifi).
 ````Markdown
 {r}
-airbnb %>%
-  select(Kaffeemaschine, Geschirrspüler, Wifi)
+XXX %>%
+  select(XXX, XXX, XXX)
 ````
 
-1. Verwende die `kmeans()` Funktion um den `gap2007` Datensatz in `3` Cluster aufzuteilen. 
+2. Jetzt erstellen wir eine neue Variable `hat_alles` in der wir die drei Variablen addieren.
+````Markdown
+{r}
+XXX %>%
+  select(XXX, XXX, XXX) %>%
+  mutate(hat_alles = Kaffeemaschine + Geschirrspüler + Wifi)
+````
 
-```{r, echo = T, eval = F, message = F}
-# kmeans für gap in 2007
-gap2007_km <- kmeans(x = XX, centers = XX) 
-```
+3. Schliesslich wollen wir nur das Ergebnis im HTML file sehen (ohne Code)
+````Markdown
+{r echo = XXX}
+XXX %>%
+  select(XXX, XXX, XXX) %>%
+  mutate(hat_alles = XXX + XXX + XXX)
+````
 
-```{r, message = F}
-# kmeans für gap in 2007
-gap2007_km <- kmeans(x = gap2007, centers = 3) 
-```
+4. Wieviele Wohnungen mit allen 3 Annehmlichkeiten gibt es? Code und Ergebnisse anzeigen!
+````Markdown
+{r echo = XXX}
+XXX %>%
+  select(XXX, XXX, XXX) %>%
+  mutate(hat_alles = XXX + XXX + XXX) %>%
+  count(hat_alles)
+````
 
-2. Printe `gap2007_km` in die Console und studiere den Output.
+5. Nun wollen wir noch die Darstellung verbessern. Dazu speichern wir unseren dataframe 
+zuerst in ein neues Objekt `vorhanden` ab. Dann schicken wir dieses Objekt in die Funktion
+`kable()`
 
-```{r, message = F}
-# kmeans für gap in 2007
-gap2007_km
-```
+````Markdown
+{r echo = XXX}
+vorhanden <- 
+XXX %>%
+  select(XXX, XXX, XXX) %>%
+  mutate(hat_alles = XXX + XXX + XXX) %>%
+  count(hat_alles)
+  
+kable(vorhanden)  
+````
 
+6. Im nächsten Schritt werden wir die Namen der Spalten von `hat_alles` und `n` in 
+etwas sinnvollerers ändern. Die Spalten sollen neu: `Kriterium` und `Anzahl` heissen.
+ 
+````Markdown
+kable(vorhanden,
+      col.names = c('XXX', 'XXX'),
+      )
+````
 
+7. Jetzt noch die Breite der Tabelle reduzieren und die Schriftgrösse erhöhen - hier
+ist `kable_styling` hilfreich.
+ 
+````Markdown
+kable(vorhanden,
+      col.names = c('XXX', 'XXX'),
+      ) %>%
+kable_styling(full_width = XXX, font_size = XXX)
+````
 
 ## Beispiele
 

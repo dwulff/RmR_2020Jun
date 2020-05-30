@@ -8,12 +8,14 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(knitr)
+library(kableExtra)
 airbnb <- read_csv('../1_Data/airbnb.csv')
 ```
 
 ```{r eval = FALSE}
 summary(airbnb)
-````
+```
 
 
 ### C
@@ -21,11 +23,41 @@ summary(airbnb)
 ```{r }
 airbnb %>%
   select(Kaffeemaschine, Geschirrspüler, Wifi)
-````
+```
 
-```{r }
+```{r echo = FALSE}
 airbnb %>%
   select(Kaffeemaschine, Geschirrspüler, Wifi) %>%
-  summarise(hat_alles = Kaffeemaschine + Geschirrspüler + Wifi)
-````
+  mutate(hat_alles = Kaffeemaschine + Geschirrspüler + Wifi)
+```
 
+```{r}
+airbnb %>%
+  select(Kaffeemaschine, Geschirrspüler, Wifi) %>%
+  mutate(hat_alles = Kaffeemaschine + Geschirrspüler + Wifi) %>%
+  count(hat_alles)
+```
+
+
+```{r}
+vorhanden <- 
+airbnb %>%
+  select(Kaffeemaschine, Geschirrspüler, Wifi) %>%
+  mutate(hat_alles = Kaffeemaschine + Geschirrspüler + Wifi) %>%
+  count(hat_alles)
+
+kable(vorhanden)
+```
+
+```{r}
+vorhanden <- 
+airbnb %>%
+  select(Kaffeemaschine, Geschirrspüler, Wifi) %>%
+  mutate(hat_alles = Kaffeemaschine + Geschirrspüler + Wifi) %>%
+  count(hat_alles)
+
+kable(vorhanden,
+      col.names = c('Kriterium', 'Anzahl'),
+      ) %>%
+kable_styling(full_width = F, font_size = 20)
+```
