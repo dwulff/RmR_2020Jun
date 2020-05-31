@@ -1,8 +1,10 @@
 ---
 output:
   html_document:
+    toc: true
+    toc_depth: 5
     includes:
-      before_body: 2_Assets/header.Rhtml
+      in_header: 2_Assets/header.Rhtml
 ---
 
 ```{r setup, include=FALSE}
@@ -15,6 +17,7 @@ library(rgdal)
 require(mapproj)
 require(knitr)
 require(patchwork)
+require(lubridate)
 
 airbnb <- read_csv('1_Data/airbnb.csv')
 berlin <- readRDS('1_Data/berlin.RDS')
@@ -23,39 +26,37 @@ theme_set(theme_minimal())
 ```
 
 
-### Entwicklung
+### Neueinstellungen
 
-#### Zeitlicher Verlauf
+#### Entwicklung
 
-Seit `r strftime(min(airbnb$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin `r nrow(airbnb)` Airbnb Wohnungen eingestellt. Von diesen Wohnungn weisen aktuell `r round(mean(airbnb$Verfügbarkeit_90Tage > 0) * 100)`% Verfügbarkeiten von durchschnittlich `r round(mean(airbnb$Verfügbarkeit_90Tage[airbnb$Verfügbarkeit_90Tage>0]),1)` Tagen für die nächsten 3 Monate auf.    
+:::::: {.columns style="display: flex;"}
+::: {.column width="40%"}
+Seit `r strftime(min(airbnb$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin `r nrow(airbnb)` Airbnb Wohnungen eingestellt. Von diesen Wohnungn weisen aktuell `r round(mean(airbnb$Verfügbarkeit_90Tage > 0) * 100)`% Verfügbarkeiten von durchschnittlich `r round(mean(airbnb$Verfügbarkeit_90Tage[airbnb$Verfügbarkeit_90Tage>0]),1)` Tagen für die nächsten 3 Monate auf.
 
-Einstellungen von AirBnB Wohnungen haben über die letzten Jahre rasant zugenommen. 
+**Einstellungen von AirBnB Wohnungen haben über die letzten Jahre rasant zugenommen.** 
+:::
 
-```{r fig.asp=1,echo = F, fig.asp=.25}
-ggplot(airbnb, aes(x = Erstellungsdatum)) + geom_histogram() + labs(y = "Häufigkeit")
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+
+```{r message = F, echo = F, fig.asp=.3}
+ggplot(airbnb %>% filter(Erstellungsdatum > "2018-01-01", 
+                         Erstellungsdatum < "2019-12-31"), 
+       aes(x = Erstellungsdatum)) + geom_histogram() + labs(y = "Häufigkeit")
+
 ```
 
-
-### Räumliche Verteilung
+:::
+::::::
 
 #### Stadteile
 
 :::::: {.columns style="display: flex;"}
-
-::: {.column width="55%"}
-```{r message = F, echo = F, fig.asp=.3}
-ggplot(airbnb, aes(y = Stadtteil)) + geom_bar()
-
-```
-:::
-
-::: {.column width="5%"}
-\
-<!-- an empty Div (with a white space), serving as
-a column separator -->
-:::
-
 ::: {.column width="40%"}
+
 The figure on the left-hand side shows the `cars` data.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -64,39 +65,48 @@ enim ad minim veniam, quis nostrud exercitation ullamco laboris
 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
 nulla pariatur.
+
+:::
+::: {.column width="5%"}
 :::
 
-::::::
+::: {.column width="55%"}
+```{r message = F, echo = F, fig.asp=.3}
 
-
-
-
-#### Stadteile über die Zeit
-
-```{r message = F, echo = F, fig.asp=.5}
-Verlauf = airbnb %>% 
-  group_by(Stadtteil) %>% 
-  arrange(Erstellungsdatum) %>% 
-  mutate(Datum = Erstellungsdatum, 
-         Kumulativ = 1:n()) %>% 
-  ggplot(aes(x = Datum, y = Kumulativ, col = Stadtteil)) + 
-  geom_line() 
-
-(Verlauf + theme(legend.position="none") | Verlauf + scale_y_continuous(trans = 'log')) & 
-  labs(y = 'Kumulative Häufigkeit') 
+ggplot(airbnb %>% filter(Erstellungsdatum > "2018-01-01", 
+                         Erstellungsdatum < "2019-12-31") %>% 
+         group_by(Stadtteil, Jahr = year(Erstellungsdatum)) %>% 
+         summarize(Wohnungen = n()), 
+       aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
+  geom_bar(stat='identity', position='dodge') + 
+  theme(legend.position = 'none')
 
 ```
 
-#### Karte
 
-You can also embed plots, for example:
-
-```{r echo = F, fig.asp=.6}
+```{r echo = F}
 ggmap(berlin) + 
   theme(axis.title = element_blank(),
         axis.line = element_blank(),
         axis.text = element_blank(),
         axis.ticks = element_blank()) +
   coord_map(ylim=c(52.45,52.58)) +
-  geom_point(airbnb, mapping = aes(x = Längengrad, y = Breitengrad,col=Stadtteil),size=.1)
+  geom_point(airbnb %>% filter(Erstellungsdatum > "2018-01-01", 
+                         Erstellungsdatum < "2019-12-31"), 
+             mapping = aes(x = Längengrad, y = Breitengrad, col = year(Erstellungsdatum)),size=.1) + 
+  theme(legend.position = 'none')
 ```
+
+
+:::
+
+::::::
+
+### Preis
+
+#### Prädiktoren
+
+
+
+
+
