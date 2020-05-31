@@ -1,6 +1,6 @@
 ---
 output:
-  pdf_document:
+  html_document:
     includes:
       before_body: 2_Assets/header.Rhtml
 ---
