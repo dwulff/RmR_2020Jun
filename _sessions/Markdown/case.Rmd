@@ -44,8 +44,15 @@ Seit `r strftime(min(airbnb$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin `r 
 
 ```{r message = F, echo = F, fig.asp=.3}
 ggplot(airbnb %>% filter(Erstellungsdatum > "2018-01-01", 
-                         Erstellungsdatum < "2019-12-31"), 
-       aes(x = Erstellungsdatum)) + geom_histogram() + labs(y = "Häufigkeit")
+                         Erstellungsdatum < "2019-12-31") %>% 
+         group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
+         summarize(
+           Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
+           Wohnungen = n()), 
+       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+  geom_bar(stat='identity', position='dodge') + 
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 45, hjust = 1))
 
 ```
 
