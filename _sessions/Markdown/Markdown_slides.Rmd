@@ -1,0 +1,140 @@
+---
+title: "Markdown"
+author: "Reporting mit R<br>
+  <a href='https://therbootcamp.github.io'>
+    The R Bootcamp
+  </a>
+  <br>
+  <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+    <i class='fas fa-clock' style='font-size:.9em;'></i>
+  </a>&#8239; 
+  <a href='https://therbootcamp.github.io'>
+    <i class='fas fa-home' style='font-size:.9em;' ></i>
+  </a>&#8239;
+  <a href='mailto:therbootcamp@gmail.com'>
+    <i class='fas fa-envelope' style='font-size: .9em;'></i>
+  </a>&#8239;
+  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
+    <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+  </a>"
+date: "Juni 2020"
+output:
+  xaringan::moon_reader:
+    css: ["default", "baselrbootcamp.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+layout: true
+
+<div class="my-footer">
+  <span style="text-align:center">
+    <span> 
+      <img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/>
+    </span>
+    <a href="https://therbootcamp.github.io/">
+      <span style="padding-left:82px"> 
+        <font color="#7E7E7E">
+          www.therbootcamp.com
+        </font>
+      </span>
+    </a>
+    <a href="https://therbootcamp.github.io/">
+      <font color="#7E7E7E">
+       Reporting mit R | Juni 2020
+      </font>
+    </a>
+    </span>
+  </div> 
+
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+options(width = 110)
+options(digits = 4)
+
+# Load packages
+require(tidyverse)
+library(leaflet)
+library(plotly)
+
+# load color set
+source("../../_materials/palette/therbootcamp_palettes.R")
+
+# knitr options
+knitr::opts_chunk$set(dpi = 300, echo = FALSE, warning = FALSE, fig.align = 'center', message= FALSE)
+
+# special print function: avoid if possible
+print2 <- function(x, nlines=10,...) {
+   cat(head(capture.output(print(x,...)), nlines), sep="\n")}
+
+basel <- read.csv("1_Data/basel.csv")
+
+```
+
+# Was ist Markdown?
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Entwickelt von John Gruber and Aaron Swartz in 2004.<br><br>
+  "<high>easy-to-read</high> and <high>easy-to-write</high> plain text format, [...] convert it to structurally valid XHTML (or HTML)"</span></li> 
+  <li class="m2"><span>Einfache <high>Syntax für die Gestaltung</high> von Dokumenten.</span></li>  
+  <ul>
+    <li><span>Text in fett und kursiv</span></li>   
+    <li><span>Listen</span></li>  
+    <li><span>Überschriften</span></li> 
+    <li><span>Links</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right5[
+
+<br>
+
+<p align = "center">
+  <img src="image/markdown.png" width=400px><br>
+  <font style="font-size:10px">from <a href="https://de.wikipedia.org/wiki/Markdown">wikipedia.org</a></font>
+</p>
+
+]
+
+---
+
+# Was ist R Markdown?
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Verwendet Markdown zum gestalten dynamischer Dokumente mit eingebetteten...</span></li> 
+  <ul>
+    <li><span>Code chunks</span></li>   
+    <li><span>Staistischen Outputs</span></li>  
+    <li><span>Visualisierungen</span></li> 
+  </ul>
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/HR_dashboard.png" width=125%><br>
+  <font style="font-size:10px">from <a href="https://towardsdatascience.com/building-an-hr-dashboard-in-r-using-flexdashboard-76d14ed3f32">towardsdatascience.com</a></font>
+</p>
+
+]
+
+---
+
+class: middle, center
+
+<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown/Markdown_practical.html">Practical</a></h1>
+

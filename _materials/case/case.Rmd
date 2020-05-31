@@ -1,8 +1,9 @@
 ---
 title: "Airbnb in Berlin"
 output:
-  pdf_document: default
   html_document: default
+  includes:
+    before_body: 2_Assets/header.html
 ---
 
 ```{r setup, include=FALSE}
