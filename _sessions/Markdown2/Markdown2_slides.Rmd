@@ -103,28 +103,27 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 ---
 
-# Abbildungen skalieren
+# Grafiken
 
 .pull-left4[
 
-Die Standardausgabe von Figures in Markdown ist oft unscharf und/oder falsch skaliert. 
+Die Standardausgabe von Grafiken in Markdown ist oft unscharf und/oder falsch skaliert. 
 
-Ohne Zusatz sieht das folgendermassen aus: 
-
-````Markdown
-{r}
-ggplot(airbnb_1819 ...)
-````
 ]
 
 .pull-right5[
-```{r message = F, echo = F}
+````Markdown
+{r}
+ggplot(airbnb_1819, ...)
+````
+
+```{r message = F, echo = F, fig.height = 4.5}
 ggplot(airbnb_1819 %>% 
          group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
          summarize(
            Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
            Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+       aes(x = Monat, y = Wohnungen)) + 
   geom_bar(stat='identity', position='dodge') + 
   theme(legend.position = 'none',
         axis.text.x = element_text(angle = 45, hjust = 1)) 
@@ -135,9 +134,12 @@ cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
 ]
 ---
 
-# Abbildungen skalieren - Breite und Höhe
+# Grafiken
 
 .pull-left4[
+
+Im Chunk werden Paramter für die <high>Darstellung</high> von Grafiken festgelegt. 
+Viele dieser Einstellungen beginnen mit <highm>fig.*</highm>.
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
   <col width="40%">
@@ -152,15 +154,15 @@ cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
 </tr>
 <tr>
   <td bgcolor="white">
-  <highm>fig.width()</highm> und <highm>fig.height()
+  fig.width() und fig.height()
   </td>
   <td bgcolor="white">
-  Breite und Höhe in inches
+  <high>Breite</high> und <high>Höhe</high> in inches
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <highm>fit.asp()</highm>
+  fig.asp()
   </td>
   <td bgcolor="white">
    <high>Aspect Ratio</high> basierend auf der Breite   
@@ -168,36 +170,35 @@ cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
 </tr>
 <tr>
   <td bgcolor="white">
-  <highm>fit.align()</highm>
+  fig.align()
   </td>
   <td bgcolor="white">
-  Position der Abbildung ('center', 'left', 'right')
+  <high>Position</high> der Abbildung ('center', 'left', 'right')
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <highm>dpoi</highm> 
+  dpi 
   </td>
   <td bgcolor="white">
-  Dichte der gedruckten Punkte
+  <high>Dichte</high> der gedruckten Punkte (dots per inch)
   </td> 
 </tr>
 </table>
 ]
 
-.pull-right55[
+.pull-right5[
 
 ````Markdown
 {r fig.width = 6}
-ggplot(airbnb_1819 ...)
 ````
-```{r message = F, echo = F, fig.height = 5}
+```{r message = F, echo = F, fig.height = 4.5, fig.width = 6}
 ggplot(airbnb_1819 %>% 
          group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
          summarize(
            Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
            Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+       aes(x = Monat, y = Wohnungen)) + 
   geom_bar(stat='identity', position='dodge') + 
   theme(legend.position = 'none',
         axis.text.x = element_text(angle = 45, hjust = 1)) 
@@ -206,156 +207,226 @@ ggplot(airbnb_1819 %>%
 
 ---
 
-# Abbildungen skalieren - Breite und Höhe
+
+# Grafiken
 
 .pull-left4[
 
-<ul>
-  <li class="m1"><span><highm>fig.width()</highm> und <highm>fig.height()</highm> für Breite und Höhe in inches</span></li>
-</ul>
+Im Chunk werden Paramter für die <high>Darstellung</high> von Grafiken festgelegt. 
+Viele dieser Einstellungen beginnen mit <highm>fig.*</highm>.
 
-Breite auf 6 setzen: 
-
-````Markdown
-{r fig.width = 6}
-ggplot(airbnb_1819 ...)
-````
-
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Funktion</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  fig.width() und fig.height()
+  </td>
+  <td bgcolor="white">
+  <high>Breite</high> und <high>Höhe</high> in inches
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  fig.asp()
+  </td>
+  <td bgcolor="white">
+   <high>Aspect Ratio</high> basierend auf der Breite   
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  fig.align()
+  </td>
+  <td bgcolor="white">
+  <high>Position</high> der Abbildung ('center', 'left', 'right')
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  dpi 
+  </td>
+  <td bgcolor="white">
+  <high>Dichte</high> der gedruckten Punkte (dots per inch)
+  </td> 
+</tr>
+</table>
 ]
 
 .pull-right5[
-```{r message = F, echo = F, fig.width = 6}
+
+````Markdown
+{r fig.width = 6, fig.asp = .5}
+````
+```{r message = F, echo = F, fig.height = 4.5, fig.width = 6, fig.asp = .5}
 ggplot(airbnb_1819 %>% 
          group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
          summarize(
            Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
            Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+       aes(x = Monat, y = Wohnungen)) + 
   geom_bar(stat='identity', position='dodge') + 
   theme(legend.position = 'none',
         axis.text.x = element_text(angle = 45, hjust = 1)) 
-
-cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
-
 ```
 ]
+
 ---
 
-
-# Abbildungen skalieren - Aspect Ratio
+# Grafiken
 
 .pull-left4[
 
-<ul>
-  <li class="m1"><span><highm>fig.width()</highm> und <highm>fig.height()</highm> für Breite und Höhe</span></li>
-  <li class="m2"><span><highm>fig.asp()</highm> setzt die <high>Aspect Ratio</high> für die Figure fest basierend auf der Breite <highm>Aspect Ratio = fig.width * fig.asp</highm></span></li>
-</ul>
+Im Chunk werden Paramter für die <high>Darstellung</high> von Grafiken festgelegt. 
+Viele dieser Einstellungen beginnen mit <highm>fig.*</highm>.
 
-Aspect Ratio auf .5
-
-````Markdown
-{r fig.width = 6, 
-   fig.asp = .5}
-ggplot(airbnb_1819 ...)
-````
-
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Funktion</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  fig.width() und fig.height()
+  </td>
+  <td bgcolor="white">
+  <high>Breite</high> und <high>Höhe</high> in inches
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  fig.asp()
+  </td>
+  <td bgcolor="white">
+   <high>Aspect Ratio</high> basierend auf der Breite   
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  fig.align()
+  </td>
+  <td bgcolor="white">
+  <high>Position</high> der Abbildung ('center', 'left', 'right')
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  dpi 
+  </td>
+  <td bgcolor="white">
+  <high>Dichte</high> der gedruckten Punkte (dots per inch)
+  </td> 
+</tr>
+</table>
 ]
 
 .pull-right5[
-```{r message = F, echo = F, fig.width = 6, fig.asp = .5}
-ggplot(airbnb_1819 %>% 
-         group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
-         summarize(
-           Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
-           Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
-  geom_bar(stat='identity', position='dodge') + 
-  theme(legend.position = 'none',
-        axis.text.x = element_text(angle = 45, hjust = 1)) 
-
-cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
-
-```
-]
----
-
-
-# Abbildungen skalieren - Ausrichtung
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span><highm>fig.width()</highm> und <highm>fig.height()</highm> für Breite und Höhe</span></li>
-  <li class="m2"><span><highm>fig.asp()</highm> setzt die <high>Aspect Ratio</high> für die Figure fest basierend auf der Breite <highm>Aspect Ratio = fig.width * fig.asp</highm></span></li>
-  <li class="m3"><span>Mit <highm>fig.align()</highm> wird die Position der Abbildung kontrolliert ('center', 'left', 'right'</span></li>
-</ul>
 
 ````Markdown
-{r fig.width = 6, 
-   fig.asp = .5, 
+{r fig.width = 6, fig.asp = .5, 
    fig.align = 'center'}
-ggplot(airbnb_1819 ...)
 ````
-
-]
-
-.pull-right5[
-```{r message = F, echo = F, fig.width = 6, fig.asp = .5, fig.align = 'center'}
+```{r message = F, echo = F, fig.height = 4.5, fig.width = 6, fig.asp = .5, fig.align = 'center'}
 ggplot(airbnb_1819 %>% 
          group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
          summarize(
            Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
            Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+       aes(x = Monat, y = Wohnungen)) + 
   geom_bar(stat='identity', position='dodge') + 
   theme(legend.position = 'none',
         axis.text.x = element_text(angle = 45, hjust = 1)) 
-
-cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
-
 ```
 ]
+
 ---
 
-
-
-# Abbildungen skalieren - Schärfe
+# Grafiken
 
 .pull-left4[
 
-<ul>
-  <li class="m1"><span><highm>fig.width()</highm> und <highm>fig.height()</highm> für Breite und Höhe</span></li>
-  <li class="m2"><span><highm>fig.asp()</highm> setzt die <high>Aspect Ratio</high> für die Figure fest basierend auf der Breite <highm>Aspect Ratio = fig.width * fig.asp</highm></span></li>
-  <li class="m3"><span>Mit <highm>fig.align()</highm> wird die Position der Abbildung kontrolliert ('center', 'left', 'right'</span></li>
-  <li class="m4"><span>Mit <highm>dpi</highm> wird die Dichte der gedruckten Punkte definiert </span></li>
-</ul>
+Im Chunk werden Paramter für die <high>Darstellung</high> von Grafiken festgelegt. 
+Viele dieser Einstellungen beginnen mit <highm>fig.*</highm>.
 
-````Markdown
-{r fig.width = 6, 
-   fig.asp = .5, 
-   fig.align = 'center', 
-   dpi = 300}
-ggplot(airbnb_1819 ...)
-````
-
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Funktion</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  fig.width() und fig.height()
+  </td>
+  <td bgcolor="white">
+  <high>Breite</high> und <high>Höhe</high> in inches
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  fig.asp()
+  </td>
+  <td bgcolor="white">
+   <high>Aspect Ratio</high> basierend auf der Breite   
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  fig.align()
+  </td>
+  <td bgcolor="white">
+  <high>Position</high> der Abbildung ('center', 'left', 'right')
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  dpi 
+  </td>
+  <td bgcolor="white">
+  <high>Dichte</high> der gedruckten Punkte (dots per inch)
+  </td> 
+</tr>
+</table>
 ]
 
 .pull-right5[
-```{r message = F, echo = F, fig.width = 6, fig.asp = .5, fig.align = 'center', dpi = 300}
+
+````Markdown
+{r fig.width = 6, fig.asp = .5, 
+   fig.align = 'center', dpi = 300}
+````
+```{r message = F, echo = F, fig.height = 4.5, fig.width = 6, fig.asp = .5, fig.align = 'center', dpi = 300}
 ggplot(airbnb_1819 %>% 
          group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
          summarize(
            Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
            Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+       aes(x = Monat, y = Wohnungen)) + 
   geom_bar(stat='identity', position='dodge') + 
   theme(legend.position = 'none',
         axis.text.x = element_text(angle = 45, hjust = 1)) 
-
-cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
-
 ```
 ]
+
 ---
 
 
