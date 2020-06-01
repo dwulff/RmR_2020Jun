@@ -30,6 +30,12 @@ output:
     self_contained: no
 ---
 
+<style>
+pre code,  .md:not(.use-csslab) pre code {
+  white-space: pre-wrap;
+  }
+</style>
+
 ```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(comment = NA, 
                       fig.width = 6, 
@@ -112,6 +118,9 @@ airbnb_1819 <- airbnb %>%
          Erstellungsdatum < "2019-12-31")
 ```
 
+
+
+
 ### B - Präambel
 
 1. Unter den `setup` chunk, setze eine Überschrift auf drittem level (`###`) mit Titel `Präambel`. 
@@ -122,13 +131,13 @@ airbnb_1819 <- airbnb %>%
 
 2. Unter die Überschrift setze den folgenden Text. 
 
-````{r results = 'asis'}
+````wrap
 Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. Er wurde zum Zwecke der Übung auf Basis öffentlich verfügbarer Daten erstellt und repräsentiert einzig die Position der Autoren. Es besteht keine Beziehung zu AirBnB.  
 ````
 
 3. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
-### C - Neueinstellungen
+### C - Neueinstellungen: Text pt. 1
 
 1. Setze eine weitere Überschrift auf dritter Ebene (`###`) mit Titel `Neueinstellungen` und darunter eine Überschrift auf vierter Ebene (`####`) mit dem Titel `Entwicklung`.
 
@@ -138,17 +147,57 @@ Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen
 
 2. Füge nun diesn Text ein. Er enthält einige Werte, die du gleich durch in-line Code ersetzen wirst.
 
-````{r results ="asis"}
+````wrap
 Seit 02.01.2018 wurden in Berlin 5007 Airbnb Wohnungen eingestellt. Von diesen Wohnungn weisen aktuell 73% Verfügbarkeiten von durchschnittlich 47.5 Tagen für die nächsten 3 Monate auf.
+
 Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt 3274 neue Wohnungen eingestellt wohingegend im Jahr 2018 nur 1733 Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von 89%.
 ````
 
-3. Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen in-line Code aus.
+3. Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen in-line Code aus. Nicht vergessen, der Code muss innerhalb zweier Ticks gesetzt werden. Knitte das Dokument.  
 
-````markdown
-`r min(airbnb_1819$Erstellungsdatum)` 
+````text
+r min(airbnb_1819$Erstellungsdatum)
 ````
 
+4. Jetzt sollte der Text ein Datum enthalten, welches aber noch nicht ganz richtig formatiert ist. Hier hilft die `strftime()` Funktion. Versuche den folgenden erwarteten in-line Code um das Datum in das richtige Format zu bringen.   
+
+````text
+r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")
+````
+5. Als nächstes ersetze die Anzahl der Wohnungen durch `nrow(airbnb_1819)`. Nicht das `r` am Anfang vergessen. 
+
+6. Ersetze nun Prozentsatz der Wohnungen durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)` und die durchschnittliche Verfügbarkeit durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)`. Jetzt sollten alle Zahlen des ersten Paragraphen durch Code ersetzt worden sein. Überprüfe ob alles stimmt. 
+
+7. Ersetze nun Prozentsatz der Wohnungen durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)` und die durchschnittliche Verfügbarkeit durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)`. Jetzt sollten alle Zahlen des ersten Paragraphen durch Code ersetzt worden sein. Überprüfe ob alles stimmt. 
+
+8. Im nächsten Paragraphen ersetze die ersten beiden Zahlen durch `n_2019 <- sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` und `n_2018 <- sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018`. In diesen beiden Fällen siehst du, dass auch Zuweisungen in in-line Code möglich sind. 
+
+9. Ersetze nun die Zuwachsangabe am Ende des Paragraphen durch `(round(n_2019/n_2018, 2) - 1)*100`, was , wie du siehst, auf die beiden zuvor im in-line Code definierten Objekte zurückgreift. Knitte das Dokument und überprüfe, ob nun alle Zahlen einwandfrei wiedergegeben werden.
+
+10. Zuletzt verwende `**` um den gesamten zweiten Paragraphen Fett zu setzen. Setze hierfür einmal die zwei Sterne vor das erste und nach dem letzten Wort des Paragraphen. Nun alles wie im Zieldokument?
+
+### D - Neueinstellungen: Grafikchunk pt. 1
+
+1. Erstelle einen neuen R `chunk`. In den `chunk` kopiere den Code unten, welcher eine erste Version der ersten Abbildung im Bericht generiert. 
+
+```R
+# Plotte Häufigkeiten
+ggplot(airbnb_1819 %>% 
+         group_by(Jahr = year(Erstellungsdatum), 
+                  Monat_tmp = month(Erstellungsdatum)) %>% 
+         summarize(
+           Monat = as_factor(paste(first(Jahr), first(Monat_tmp), sep = '-')),
+           Wohnungen = n()), 
+       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+  geom_bar(stat = 'identity', position = 'dodge') + 
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 45, hjust = 1)) 
+```
+
+
+### E - Neueinstellungen: Text pt. 2
+
+### F - Neueinstellungen: Grafikchunk pt. 2
 
 
 ## Datensatz

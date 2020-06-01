@@ -194,6 +194,11 @@ summary {
 </div>
 
 
+<style>
+pre code,  .md:not(.use-csslab) pre code {
+  white-space: pre-wrap;
+  }
+</style>
 <p align="center" width="100%">
 <img src="image/airbnb_banner.png" alt="Trulli" style="width:100%"> <br> <font style="font-size:10px">adapted from <a href="https://news.airbnb.com/de/unterkunften-fur-covid-19-einsatzkrafte/">airbnb.com</a></font>
 </p>
@@ -248,21 +253,64 @@ airbnb_1819 &lt;- airbnb %&gt;%
 </ol>
 <pre class="markdown"><code>### Präambel</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Unter die Überschrift setze den folgenden Text.</p></li>
-<li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
+<li>Unter die Überschrift setze den folgenden Text.</li>
+</ol>
+<pre class="wrap"><code>Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. Er wurde zum Zwecke der Übung auf Basis öffentlich verfügbarer Daten erstellt und repräsentiert einzig die Position der Autoren. Es besteht keine Beziehung zu AirBnB.  </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</li>
 </ol>
 </div>
-<div id="c---neueinstellungen" class="section level3">
-<h3>C - Neueinstellungen</h3>
+<div id="c---neueinstellungen-text-pt.-1" class="section level3">
+<h3>C - Neueinstellungen: Text pt. 1</h3>
 <ol style="list-style-type: decimal">
 <li>Setze eine weitere Überschrift auf dritter Ebene (<code>###</code>) mit Titel <code>Neueinstellungen</code> und darunter eine Überschrift auf vierter Ebene (<code>####</code>) mit dem Titel <code>Entwicklung</code>.</li>
 </ol>
 <pre class="markdown"><code>### Präambel</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Füge nun diesn Text ein. Er enthält einige Werte, die du gleich durch in-line Code ersetzen wirst.</p></li>
-<li><p>Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen in-line Code aus.</p></li>
+<li>Füge nun diesn Text ein. Er enthält einige Werte, die du gleich durch in-line Code ersetzen wirst.</li>
 </ol>
-<pre class="markdown"><code>2018-01-02 </code></pre>
+<pre class="wrap"><code>Seit 02.01.2018 wurden in Berlin 5007 Airbnb Wohnungen eingestellt. Von diesen Wohnungn weisen aktuell 73% Verfügbarkeiten von durchschnittlich 47.5 Tagen für die nächsten 3 Monate auf.
+
+Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt 3274 neue Wohnungen eingestellt wohingegend im Jahr 2018 nur 1733 Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von 89%.</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen in-line Code aus. Nicht vergessen, der Code muss innerhalb zweier Ticks gesetzt werden. Knitte das Dokument.</li>
+</ol>
+<pre class="text"><code>r min(airbnb_1819$Erstellungsdatum)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Jetzt sollte der Text ein Datum enthalten, welches aber noch nicht ganz richtig formatiert ist. Hier hilft die <code>strftime()</code> Funktion. Versuche den folgenden erwarteten in-line Code um das Datum in das richtige Format zu bringen.</li>
+</ol>
+<pre class="text"><code>r strftime(min(airbnb_1819$Erstellungsdatum), &quot;%d.%m.%Y&quot;)</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Als nächstes ersetze die Anzahl der Wohnungen durch <code>nrow(airbnb_1819)</code>. Nicht das <code>r</code> am Anfang vergessen.</p></li>
+<li><p>Ersetze nun Prozentsatz der Wohnungen durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage &gt; 0) * 100)</code> und die durchschnittliche Verfügbarkeit durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage&gt;0]),1)</code>. Jetzt sollten alle Zahlen des ersten Paragraphen durch Code ersetzt worden sein. Überprüfe ob alles stimmt.</p></li>
+<li><p>Ersetze nun Prozentsatz der Wohnungen durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage &gt; 0) * 100)</code> und die durchschnittliche Verfügbarkeit durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage&gt;0]),1)</code>. Jetzt sollten alle Zahlen des ersten Paragraphen durch Code ersetzt worden sein. Überprüfe ob alles stimmt.</p></li>
+<li><p>Im nächsten Paragraphen ersetze die ersten beiden Zahlen durch <code>n_2019 &lt;- sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019</code> und <code>n_2018 &lt;- sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018</code>. In diesen beiden Fällen siehst du, dass auch Zuweisungen in in-line Code möglich sind.</p></li>
+<li><p>Ersetze nun die Zuwachsangabe am Ende des Paragraphen durch <code>(round(n_2019/n_2018, 2) - 1)*100</code>, was , wie du siehst, auf die beiden zuvor im in-line Code definierten Objekte zurückgreift. Knitte das Dokument und überprüfe, ob nun alle Zahlen einwandfrei wiedergegeben werden.</p></li>
+<li><p>Zuletzt verwende <code>**</code> um den gesamten zweiten Paragraphen Fett zu setzen. Setze hierfür einmal die zwei Sterne vor das erste und nach dem letzten Wort des Paragraphen. Nun alles wie im Zieldokument?</p></li>
+</ol>
+</div>
+<div id="d---neueinstellungen-grafikchunk-pt.-1" class="section level3">
+<h3>D - Neueinstellungen: Grafikchunk pt. 1</h3>
+<ol style="list-style-type: decimal">
+<li>Erstelle einen neuen R <code>chunk</code>.</li>
+</ol>
+<pre class="r"><code># Plotte Häufigkeiten
+ggplot(airbnb_1819 %&gt;% 
+         group_by(Jahr = year(Erstellungsdatum), 
+                  Monat_tmp = month(Erstellungsdatum)) %&gt;% 
+         summarize(
+           Monat = as_factor(paste(first(Jahr), first(Monat_tmp), sep = &#39;-&#39;)),
+           Wohnungen = n()), 
+       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+  geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) + 
+  theme(legend.position = &#39;none&#39;,
+        axis.text.x = element_text(angle = 45, hjust = 1)) </code></pre>
+</div>
+<div id="e---neueinstellungen-text-pt.-2" class="section level3">
+<h3>E - Neueinstellungen: Text pt. 2</h3>
+</div>
+<div id="f---neueinstellungen-grafikchunk-pt.-2" class="section level3">
+<h3>F - Neueinstellungen: Grafikchunk pt. 2</h3>
 </div>
 </div>
 <div id="datensatz" class="section level2">
