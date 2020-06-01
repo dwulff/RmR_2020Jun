@@ -135,6 +135,76 @@ cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
 ]
 ---
 
+# Abbildungen skalieren - Breite und Höhe
+
+.pull-left4[
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Funktion</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <highm>fig.width()</highm> und <highm>fig.height()
+  </td>
+  <td bgcolor="white">
+  Breite und Höhe in inches
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <highm>fit.asp()</highm>
+  </td>
+  <td bgcolor="white">
+   <high>Aspect Ratio</high> basierend auf der Breite   
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <highm>fit.align()</highm>
+  </td>
+  <td bgcolor="white">
+  Position der Abbildung ('center', 'left', 'right')
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <highm>dpoi</highm> 
+  </td>
+  <td bgcolor="white">
+  Dichte der gedruckten Punkte
+  </td> 
+</tr>
+</table>
+]
+
+.pull-right55[
+
+````Markdown
+{r fig.width = 6}
+ggplot(airbnb_1819 ...)
+````
+```{r message = F, echo = F, fig.height = 5}
+ggplot(airbnb_1819 %>% 
+         group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
+         summarize(
+           Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
+           Wohnungen = n()), 
+       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+  geom_bar(stat='identity', position='dodge') + 
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 45, hjust = 1)) 
+```
+]
+
+---
 
 # Abbildungen skalieren - Breite und Höhe
 
