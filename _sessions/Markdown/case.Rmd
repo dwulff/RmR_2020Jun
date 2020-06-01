@@ -210,24 +210,42 @@ austattung %>%
 #### Regressionsmodell
 
 ```{r, echo = FALSE}
-austattung_var <- c('Küche','Wifi','TV','Kaffeemaschine','Geschirrspüler','Terrasse_Balkon','Check_in_24h')
+austattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
 
 austattung <- airbnb_1819 %>% 
   mutate(Hotel = Unterkunftsart %in% c('Boutique hotel','Hotel')) %>% 
   select(Preis, Hotel, all_of(austattung_var))
 
 austattung_mod <- lm(Preis ~ ., data = austattung)
-
 ```
 
 <table width=100%>
-<col width = 40%>
-<col width = 10%>
 <col width = 50%>
+<col width = 10%>
+<col width = 40%>
 <tr>
   <td>
   
+  Die Regression legt nahe, dass Küche, TV und Terrasse oder Balkon den grössten Einfluss auf den Preis in denletztene beiden Jahren hatten. 
   
+  Der Einfluss der Küche ist gegenüber dem Unterschied in Tabelle 1 gesunken, jedoch nach wie vor signifikant. 
+  
+  <b>Überraschenderweise ist der Effekt eines 24h Check-ins, welcher deskriptiv am grössten ausfiel, nicht signifikant. Dies ist ebenfalls auf den Zusammen zur Unterkunftsart zurückzuführen</b>
+  
+  Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Hotels haben eine um `r coefficients(austattung_mod)['HotelTRUE'] %>% round(1)`€ höheren Preis als Unterkünfte die keine Hotels sind.  
+  
+```{r, echo = FALSE}
+
+Hotel <- airbnb_1819 %>% 
+  group_by(year(Erstellungsdatum)) %>% 
+  summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel','Hotel'))) 
+
+  
+
+```
+
+<b>Der Anteil von Hotels ist von `r ((Hotel$Anteil[1]-1)*100) %>% round(1)`% im Jahre 2018 auf `r (Hotel$Anteil[2]*100) %>% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht. 
+
   
   </td>
   <td>
@@ -235,7 +253,7 @@ austattung_mod <- lm(Preis ~ ., data = austattung)
   <td>
 
 ```{r message = F, echo = F, fig.asp=.5}
-tab <- sjPlot::tab_model(mod, 
+tab <- sjPlot::tab_model(austattung_mod,
                   pred.labels = c('Achsenabschnitt', names(austattung)[-1]),
                   title = 'Table 2. Regression des Preises auf die Austattung.',
                   CSS = list(css.caption = "font-weight:500", css.table="width: auto; margin-right: 0px;margin-left: auto;"))
