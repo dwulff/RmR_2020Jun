@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Reporting mit R   The R Bootcamp" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
   <body>
@@ -133,7 +134,7 @@ ggplot(airbnb_1819, ...)
 .pull-right5[
 
 ````Markdown
-{r fig.width = 6}
+{r fig.width = 5}
 ggplot(airbnb_1819, ...)
 ````
 ![](Markdown2_slides_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
@@ -146,8 +147,10 @@ ggplot(airbnb_1819, ...)
 
 .pull-left4[
 
-Im Chunk werden Paramter für die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken festgelegt. 
-Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;chunk&lt;/mono&gt;-Optionen angpasst werden.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Grafikoptionen beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
   &lt;col width="40%"&gt;
@@ -162,7 +165,7 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.width() und fig.height()
+  &lt;mono&gt;fig.width&lt;/mono&gt; und &lt;mono&gt;fig.height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
@@ -170,7 +173,7 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.asp()
+  &lt;mono&gt;fig.asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
    &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
@@ -178,15 +181,15 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.align()
+  &lt;mono&gt;fig.align&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; der Abbildung ('center', 'left', 'right')
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung (&lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  dpi 
+  &lt;mono&gt;dpi&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
@@ -198,7 +201,8 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 .pull-right5[
 
 ````Markdown
-{r fig.width = 6, fig.asp = .5}
+{r fig.width = 5, fig.asp = .5}
+ggplot(airbnb_1819, ...)
 ````
 ![](Markdown2_slides_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
 ]
@@ -209,8 +213,10 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 
 .pull-left4[
 
-Im Chunk werden Paramter für die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken festgelegt. 
-Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;chunk&lt;/mono&gt;-Optionen angpasst werden.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Grafikoptionen beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
   &lt;col width="40%"&gt;
@@ -225,7 +231,7 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.width() und fig.height()
+  &lt;mono&gt;fig.width&lt;/mono&gt; und &lt;mono&gt;fig.height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
@@ -233,7 +239,7 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.asp()
+  &lt;mono&gt;fig.asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
    &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
@@ -241,15 +247,15 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.align()
+  &lt;mono&gt;fig.align&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; der Abbildung ('center', 'left', 'right')
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung (&lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  dpi 
+  &lt;mono&gt;dpi&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
@@ -261,8 +267,9 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 .pull-right5[
 
 ````Markdown
-{r fig.width = 6, fig.asp = .5, 
+{r fig.width = 5, fig.asp = .5, 
    fig.align = 'center'}
+ggplot(airbnb_1819, ...)
 ````
 &lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
 ]
@@ -273,8 +280,10 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 
 .pull-left4[
 
-Im Chunk werden Paramter für die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken festgelegt. 
-Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;chunk&lt;/mono&gt;-Optionen angpasst werden.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Grafikoptionen beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
   &lt;col width="40%"&gt;
@@ -289,7 +298,7 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.width() und fig.height()
+  &lt;mono&gt;fig.width&lt;/mono&gt; und &lt;mono&gt;fig.height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
@@ -297,7 +306,7 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.asp()
+  &lt;mono&gt;fig.asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
    &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
@@ -305,15 +314,15 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.align()
+  &lt;mono&gt;fig.align&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; der Abbildung ('center', 'left', 'right')
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung (&lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  dpi 
+  &lt;mono&gt;dpi&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
@@ -325,37 +334,1368 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 .pull-right5[
 
 ````Markdown
-{r fig.width = 6, fig.asp = .5, 
+{r fig.width = 5, fig.asp = .5, 
    fig.align = 'center', dpi = 300}
+ggplot(airbnb_1819, ...)
 ````
 &lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
 
+# Tabellen
 
-# Tabellen schöner formatieren
+.pull-left4[
+
+Die Standardausgabe eines Dataframes ist gut für die Konsole geeignet, aber weniger schön für einen Bericht.
+
+Hier berechnen wir für jedes Ausstattungsmerkmal (vorhanden / nicht vorahnden) den Mittelwert des Preises.
+]
+
+.pull-right5[
+
+
+
+
+```
+# A tibble: 7 x 5
+  Ausstattung     Nicht_vorhanden Vorhanden Differenz Prozent_vorhanden
+  &lt;chr&gt;                     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt;
+1 Check_in_24h               79.9     153.     72.9                1.30
+2 TV                         62.5     101.     38.2               48.2 
+3 Wifi                       56.3      81.7    25.3               96.7 
+4 Terrasse_Balkon            76.1      92.9    16.8               28.0 
+5 Geschirrspüler             78.5      85.0     6.47              36.3 
+6 Kaffeemaschine             80.5      81.2     0.736             50.5 
+7 Küche                     162.       73.4   -88.9               91.7 
+```
+
+]
+
+---
+
+# Tabellen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Der Befehl &lt;mono&gt;kable()&lt;/mono&gt; hilft bei der  
+  &lt;high&gt;Gestaltung&lt;/high&gt; von &lt;high&gt;HTML Tabellen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;kable()&lt;/mono&gt; erwartet eine &lt;high&gt;Matrize&lt;/high&gt; oder &lt;high&gt;Tabelle&lt;/high&gt; als Eingabe&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;format&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Ausgabeformat&lt;/high&gt; (&lt;mono&gt;'html', 'markdown', 'latex')&lt;/mono&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;col.names&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Spaltennamen&lt;/high&gt; mit Vektor bestimmen   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;escape&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Ignoriert &lt;high&gt;spezielle Zeichen&lt;/high&gt; wie \ oder $ 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;align&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Ausrichtung&lt;/high&gt; der Spalten (&lt;mono&gt;'(c)enter'&lt;/mono&gt;, &lt;mono&gt;'(l)eft'&lt;/mono&gt;, &lt;mono&gt;'(r)ight'&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+
+
+
+```r
+Ausstattung %&gt;% kable(format = 'html')
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Ausstattung &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Nicht_vorhanden &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Vorhanden &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Differenz &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Prozent_vorhanden &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Check_in_24h &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 79.88 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 152.82 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 72.9309 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.298 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TV &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 62.46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 100.61 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38.1523 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48.153 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wifi &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56.31 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 81.66 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.3497 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 96.745 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Terrasse_Balkon &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76.13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 92.90 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.7701 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28.041 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Geschirrspüler &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 78.49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 84.95 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.4669 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.269 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kaffeemaschine &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80.46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 81.20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7362 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50.469 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Küche &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 162.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 73.44 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -88.9012 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 91.692 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+# Tabellen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Der Befehl &lt;mono&gt;kable()&lt;/mono&gt; hilft bei der  
+  &lt;high&gt;Gestaltung&lt;/high&gt; von &lt;high&gt;HTML Tabellen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;kable()&lt;/mono&gt; erwartet eine &lt;high&gt;Matrize&lt;/high&gt; oder &lt;high&gt;Tabelle&lt;/high&gt; als Eingabe&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;format&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Ausgabeformat&lt;/high&gt; (&lt;mono&gt;'html', 'markdown', 'latex')&lt;/mono&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;col.names&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Spaltennamen&lt;/high&gt; mit Vektor bestimmen   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;escape&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Ignoriert &lt;high&gt;spezielle Zeichen&lt;/high&gt; wie \ oder $ 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;align&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Ausrichtung&lt;/high&gt; der Spalten (&lt;mono&gt;'(c)enter'&lt;/mono&gt;, &lt;mono&gt;'(l)eft'&lt;/mono&gt;, &lt;mono&gt;'(r)ight'&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+
+```r
+Ausstattung %&gt;% kable(format = 'html',
+col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 
+              'Preis&lt;br&gt;vorh.','Differenz',
+              'Prozent&lt;br&gt;vorh.'))
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Preis&amp;lt;br&amp;gt;Nicht-vorh. &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Preis&amp;lt;br&amp;gt;vorh. &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Differenz &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Prozent&amp;lt;br&amp;gt;vorh. &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Check_in_24h &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 79.88 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 152.82 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 72.9309 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.298 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TV &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 62.46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 100.61 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38.1523 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48.153 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wifi &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56.31 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 81.66 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.3497 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 96.745 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Terrasse_Balkon &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76.13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 92.90 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.7701 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28.041 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Geschirrspüler &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 78.49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 84.95 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.4669 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.269 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kaffeemaschine &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80.46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 81.20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7362 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50.469 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Küche &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 162.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 73.44 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -88.9012 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 91.692 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+# Tabellen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Der Befehl &lt;mono&gt;kable()&lt;/mono&gt; hilft bei der  
+  &lt;high&gt;Gestaltung&lt;/high&gt; von &lt;high&gt;HTML Tabellen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;kable()&lt;/mono&gt; erwartet eine &lt;high&gt;Matrize&lt;/high&gt; oder &lt;high&gt;Tabelle&lt;/high&gt; als Eingabe&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;format&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Ausgabeformat&lt;/high&gt; (&lt;mono&gt;'html', 'markdown', 'latex')&lt;/mono&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;col.names&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Spaltennamen&lt;/high&gt; mit Vektor bestimmen   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;escape&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Ignoriert &lt;high&gt;spezielle Zeichen&lt;/high&gt; wie \ oder $ 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;align&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Ausrichtung&lt;/high&gt; der Spalten (&lt;mono&gt;'(c)enter'&lt;/mono&gt;, &lt;mono&gt;'(l)eft'&lt;/mono&gt;, &lt;mono&gt;'(r)ight'&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+
+```r
+Ausstattung %&gt;% kable(format = 'html',
+col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 
+              'Preis&lt;br&gt;vorh.','Differenz',
+              'Prozent&lt;br&gt;vorh.'),
+escape = FALSE)
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Preis&lt;br&gt;Nicht-vorh. &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Preis&lt;br&gt;vorh. &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Differenz &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Prozent&lt;br&gt;vorh. &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Check_in_24h &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 79.88 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 152.82 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 72.9309 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.298 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TV &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 62.46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 100.61 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38.1523 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48.153 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wifi &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56.31 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 81.66 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.3497 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 96.745 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Terrasse_Balkon &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76.13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 92.90 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.7701 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28.041 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Geschirrspüler &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 78.49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 84.95 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.4669 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.269 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kaffeemaschine &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80.46 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 81.20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7362 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50.469 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Küche &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 162.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 73.44 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -88.9012 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 91.692 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+# Tabellen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Der Befehl &lt;mono&gt;kable()&lt;/mono&gt; hilft bei der  
+  &lt;high&gt;Gestaltung&lt;/high&gt; von &lt;high&gt;HTML Tabellen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;kable()&lt;/mono&gt; erwartet eine &lt;high&gt;Matrize&lt;/high&gt; oder &lt;high&gt;Tabelle&lt;/high&gt; als Eingabe&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;format&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Ausgabeformat&lt;/high&gt; (&lt;mono&gt;'html', 'markdown', 'latex')&lt;/mono&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;col.names&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Spaltennamen&lt;/high&gt; mit Vektor bestimmen   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;escape&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Ignoriert &lt;high&gt;spezielle Zeichen&lt;/high&gt; wie \ oder $ 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;align&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Ausrichtung&lt;/high&gt; der Spalten (&lt;mono&gt;'(c)enter'&lt;/mono&gt;, &lt;mono&gt;'(l)eft'&lt;/mono&gt;, &lt;mono&gt;'(r)ight'&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+
+```r
+Ausstattung %&gt;% kable(format = 'html',
+col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 
+              'Preis&lt;br&gt;vorh.','Differenz',
+              'Prozent&lt;br&gt;vorh.'),
+escape = FALSE, align = 'lcccc')
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preis&lt;br&gt;Nicht-vorh. &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preis&lt;br&gt;vorh. &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Differenz &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Prozent&lt;br&gt;vorh. &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Check_in_24h &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 79.88 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 152.82 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 72.9309 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.298 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TV &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 62.46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 100.61 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38.1523 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 48.153 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wifi &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 56.31 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 81.66 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 25.3497 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 96.745 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Terrasse_Balkon &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 76.13 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 92.90 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 16.7701 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 28.041 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Geschirrspüler &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 78.49 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 84.95 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 6.4669 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 36.269 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kaffeemaschine &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 80.46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 81.20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.7362 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 50.469 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Küche &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 162.35 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 73.44 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -88.9012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 91.692 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+# Tabellen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Zur &lt;high&gt;Verfeinerung&lt;/high&gt; der Formatierung gibt es zusätzlicher Befehle&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;cell_spec&lt;/mono&gt; und &lt;mono&gt;column_spec&lt;/mono&gt; werden vor- bzw nachgeschalten&lt;/span&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;caption&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;Einfügen eines &lt;high&gt;Grafiktitels&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;digits&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Anzahl&lt;/high&gt; Nachkommastellen   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;cell_spec&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;column_spec&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+
+```r
+...
+caption = 'Tabelle 1. Aussttatung und 
+Einfluss auf den Preis')
+```
+
+&lt;table&gt;
+&lt;caption&gt;Tabelle 1. Aussttatung und Einfluss auf den Preis&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preis&lt;br&gt;Nicht-vorh. &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preis&lt;br&gt;vorh. &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Differenz &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Prozent&lt;br&gt;vorh. &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Check_in_24h &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 79.88 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 152.82 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 72.9309 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.298 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TV &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 62.46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 100.61 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38.1523 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 48.153 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wifi &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 56.31 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 81.66 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 25.3497 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 96.745 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Terrasse_Balkon &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 76.13 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 92.90 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 16.7701 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 28.041 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Geschirrspüler &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 78.49 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 84.95 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 6.4669 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 36.269 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kaffeemaschine &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 80.46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 81.20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.7362 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 50.469 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Küche &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 162.35 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 73.44 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -88.9012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 91.692 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+# Tabellen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Zur &lt;high&gt;Verfeinerung&lt;/high&gt; der Formatierung gibt es zusätzlicher Befehle&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;cell_spec&lt;/mono&gt; und &lt;mono&gt;column_spec&lt;/mono&gt; werden vor- bzw nachgeschalten&lt;/span&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;caption&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;Einfügen eines &lt;high&gt;Grafiktitels&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;digits&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Anzahl&lt;/high&gt; Nachkommastellen   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;cell_spec&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;column_spec&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+
+```r
+...
+caption = 'Tabelle 1. Ausstattung und 
+Einfluss auf den Preis'),
+digits = 1
+```
+
+&lt;table&gt;
+&lt;caption&gt;Tabelle 1. Ausstattung und Einfluss auf den Preis&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preis&lt;br&gt;Nicht-vorh. &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preis&lt;br&gt;vorh. &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Differenz &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Prozent&lt;br&gt;vorh. &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Check_in_24h &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 79.9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 152.8 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 72.9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TV &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 62.5 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 100.6 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 38.2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 48.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wifi &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 56.3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 81.7 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 25.3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 96.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Terrasse_Balkon &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 76.1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 92.9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 16.8 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 28.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Geschirrspüler &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 78.5 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 85.0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 6.5 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 36.3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kaffeemaschine &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 80.5 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 81.2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.7 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 50.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Küche &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 162.3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 73.4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -88.9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 91.7 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
 
 
 ---
 
-# Links einfügen
+# Tabellen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Zur &lt;high&gt;Verfeinerung&lt;/high&gt; der Formatierung gibt es zusätzlicher Befehle&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;cell_spec&lt;/mono&gt; und &lt;mono&gt;column_spec&lt;/mono&gt; werden vor- bzw nachgeschalten&lt;/span&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;caption&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;Einfügen eines &lt;high&gt;Grafiktitels&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;digits&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Anzahl&lt;/high&gt; Nachkommastellen   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;cell_spec&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;column_spec&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+
+```r
+Ausstattung %&gt;% 
+mutate_if(is.numeric, function(x) {
+      cell_spec(round(x,1), bold = T, 
+      font_size = spec_font_size(x, 
+      begin=10, end=16))}) %&gt;% ...
+```
+
+
+&lt;table&gt;
+&lt;caption&gt;Tabelle 1. Ausstattung und Einfluss auf den Preis&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preis&lt;br&gt;Nicht-vorh. &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preis&lt;br&gt;vorh. &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Differenz &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Prozent&lt;br&gt;vorh. &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Check_in_24h &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;" &gt;79.9&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 16px;" &gt;152.8&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 16px;" &gt;72.9&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 10px;" &gt;1.3&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TV &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 10px;" &gt;62.5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 12px;" &gt;100.6&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 15px;" &gt;38.2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 13px;" &gt;48.2&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wifi &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 10px;" &gt;56.3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;" &gt;81.7&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 14px;" &gt;25.3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 16px;" &gt;96.7&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Terrasse_Balkon &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;" &gt;76.1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;" &gt;92.9&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 14px;" &gt;16.8&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 12px;" &gt;28&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Geschirrspüler &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;" &gt;78.5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;" &gt;85&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 14px;" &gt;6.5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 12px;" &gt;36.3&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kaffeemaschine &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;" &gt;80.5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;" &gt;81.2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 13px;" &gt;0.7&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 13px;" &gt;50.5&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Küche &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 16px;" &gt;162.3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 10px;" &gt;73.4&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 10px;" &gt;-88.9&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 16px;" &gt;91.7&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+---
+
+# Tabellen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Zur &lt;high&gt;Verfeinerung&lt;/high&gt; der Formatierung gibt es zusätzlicher Befehle&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;cell_spec&lt;/mono&gt; und &lt;mono&gt;column_spec&lt;/mono&gt; werden vor- bzw nachgeschalten&lt;/span&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;caption&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;Einfügen eines &lt;high&gt;Grafiktitels&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;digits&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Anzahl&lt;/high&gt; Nachkommastellen   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;cell_spec&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;column_spec&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+
+```r
+... %&gt;%
+column_spec(c(4), background = '#6BB7B9'))
+```
+
+&lt;table&gt;
+&lt;caption&gt;Tabelle 1. Ausstattung und Einfluss auf den Preis&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preis&lt;br&gt;Nicht-vorh. &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preis&lt;br&gt;vorh. &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Differenz &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Prozent&lt;br&gt;vorh. &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Check_in_24h &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;"&gt;79.9&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 16px;"&gt;152.8&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;background-color: #6BB7B9 !important;"&gt; &lt;span style=" font-weight: bold;    font-size: 16px;"&gt;72.9&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 10px;"&gt;1.3&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TV &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 10px;"&gt;62.5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 12px;"&gt;100.6&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;background-color: #6BB7B9 !important;"&gt; &lt;span style=" font-weight: bold;    font-size: 15px;"&gt;38.2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 13px;"&gt;48.2&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wifi &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 10px;"&gt;56.3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;"&gt;81.7&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;background-color: #6BB7B9 !important;"&gt; &lt;span style=" font-weight: bold;    font-size: 14px;"&gt;25.3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 16px;"&gt;96.7&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Terrasse_Balkon &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;"&gt;76.1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;"&gt;92.9&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;background-color: #6BB7B9 !important;"&gt; &lt;span style=" font-weight: bold;    font-size: 14px;"&gt;16.8&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 12px;"&gt;28&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Geschirrspüler &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;"&gt;78.5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;"&gt;85&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;background-color: #6BB7B9 !important;"&gt; &lt;span style=" font-weight: bold;    font-size: 14px;"&gt;6.5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 12px;"&gt;36.3&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kaffeemaschine &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;"&gt;80.5&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 11px;"&gt;81.2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;background-color: #6BB7B9 !important;"&gt; &lt;span style=" font-weight: bold;    font-size: 13px;"&gt;0.7&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 13px;"&gt;50.5&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Küche &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 16px;"&gt;162.3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 10px;"&gt;73.4&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;background-color: #6BB7B9 !important;"&gt; &lt;span style=" font-weight: bold;    font-size: 10px;"&gt;-88.9&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &lt;span style=" font-weight: bold;    font-size: 16px;"&gt;91.7&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
 
 ---
 
-# References
+# Statistische Modelle
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;&lt;/mono&gt; &lt;/span&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;caption&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;Einfügen eines &lt;high&gt;Grafiktitels&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;digits&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Anzahl&lt;/high&gt; Nachkommastellen   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;cell_spec&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;column_spec&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+
+```
+
+Call:
+lm(formula = Preis ~ ., data = ausstattung)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+  -530    -34    -13     12   8428 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)            90.08      10.78    8.36  &lt; 2e-16 ***
+HotelTRUE             437.34      26.76   16.35  &lt; 2e-16 ***
+KücheTRUE             -37.95      10.99   -3.45  0.00056 ***
+TVTRUE                 28.07       5.81    4.83  1.4e-06 ***
+Terrasse_BalkonTRUE    20.71       6.45    3.21  0.00133 ** 
+Check_in_24hTRUE       42.11      25.46    1.65  0.09827 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 203 on 5001 degrees of freedom
+Multiple R-squared:  0.0742,	Adjusted R-squared:  0.0733 
+F-statistic: 80.1 on 5 and 5001 DF,  p-value: &lt;2e-16
+```
+]
 
 ---
 
+# Statistische Modelle
 
+.pull-left4[
 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;/span&gt; &lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;caption&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;Einfügen eines &lt;high&gt;Grafiktitels&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;digits&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Anzahl&lt;/high&gt; Nachkommastellen   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;cell_spec&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;column_spec&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
 
+.pull-right5[
 
+&lt;table style="width: auto; 
+                             margin-right: 0px;
+                             margin-left: auto;"&gt;
+&lt;caption style="font-weight:500"&gt;Table 2. Regression der Ausstattung auf den Preis.&lt;/caption&gt;
+&lt;tr&gt;
+&lt;th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; text-align:left; "&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th colspan="3" style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black;"&gt;Preis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal; border-bottom:1px solid black; text-align:left; "&gt;Predictors&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal; border-bottom:1px solid black; "&gt;Estimates&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal; border-bottom:1px solid black; "&gt;CI&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal; border-bottom:1px solid black; "&gt;p&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;Achsenabschnitt&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;90.08&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;68.95&amp;nbsp;&amp;ndash;&amp;nbsp;111.21&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;Hotel&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;437.34&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;384.88&amp;nbsp;&amp;ndash;&amp;nbsp;489.79&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;K&amp;uuml;che&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;-37.95&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;-59.50&amp;nbsp;&amp;ndash;&amp;nbsp;-16.40&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;0.001&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;TV&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;28.07&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;16.67&amp;nbsp;&amp;ndash;&amp;nbsp;39.47&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;Terrasse_Balkon&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;20.71&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;8.06&amp;nbsp;&amp;ndash;&amp;nbsp;33.35&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;0.001&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;Check_in_24h&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;42.11&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;-7.81&amp;nbsp;&amp;ndash;&amp;nbsp;92.02&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.098&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;"&gt;Observations&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center; border-top:1px solid;" colspan="3"&gt;5007&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;"&gt;R&lt;sup&gt;2&lt;/sup&gt; / R&lt;sup&gt;2&lt;/sup&gt; adjusted&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:center;" colspan="3"&gt;0.074 / 0.073&lt;/td&gt;
+&lt;/tr&gt;
 
+&lt;/table&gt;
+]
 
+---
 
+# Links und Fussnoten
 
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Zur Vervollständigung unseres Dokumentes fehlen uns noch Quellenangaben&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  Links
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;Können einfach eingefügt werden: https://therbootcamp.github.io
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  Fussnoten
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Im Text mit &lt;mono&gt;^[]&lt;/mono&gt; einfügen   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+Er wurde zum Zwecke der Übung auf Basis öffentlich verfügbarer Daten[^Daten wurde heruntergeladen von http://insideairbnb.com/get-the-data.html] erstellt und repräsentiert einzig die Position der Autoren. 
+]
+
+---
 
 class: middle, center
 
