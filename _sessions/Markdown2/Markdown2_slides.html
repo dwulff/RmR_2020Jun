@@ -57,28 +57,30 @@ layout: true
 
 ---
 
-# Abbildungen skalieren
+# Grafiken
 
 .pull-left4[
 
-Die Standardausgabe von Figures in Markdown ist oft unscharf und/oder falsch skaliert. 
+Die Standardausgabe von Grafiken in Markdown ist oft unscharf und/oder falsch skaliert. 
 
-Ohne Zusatz sieht das folgendermassen aus: 
-
-````Markdown
-{r}
-ggplot(airbnb_1819 ...)
-````
 ]
 
 .pull-right5[
+````Markdown
+{r}
+ggplot(airbnb_1819, ...)
+````
+
 ![](Markdown2_slides_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
 ]
 ---
 
-# Abbildungen skalieren - Breite und Höhe
+# Grafiken
 
 .pull-left4[
+
+Im Chunk werden Paramter für die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken festgelegt. 
+Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
   &lt;col width="40%"&gt;
@@ -93,15 +95,15 @@ ggplot(airbnb_1819 ...)
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;highm&gt;fig.width()&lt;/highm&gt; und &lt;highm&gt;fig.height()
+  fig.width() und fig.height()
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  Breite und Höhe in inches
+  &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;highm&gt;fit.asp()&lt;/highm&gt;
+  fig.asp()
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
    &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
@@ -109,132 +111,223 @@ ggplot(airbnb_1819 ...)
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;highm&gt;fit.align()&lt;/highm&gt;
+  fig.align()
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  Position der Abbildung ('center', 'left', 'right')
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung ('center', 'left', 'right')
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;highm&gt;dpoi&lt;/highm&gt; 
+  dpi 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  Dichte der gedruckten Punkte
+  &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
 ]
 
-.pull-right55[
+.pull-right5[
 
 ````Markdown
 {r fig.width = 6}
-ggplot(airbnb_1819 ...)
 ````
 ![](Markdown2_slides_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
 ]
 
 ---
 
-# Abbildungen skalieren - Breite und Höhe
+
+# Grafiken
 
 .pull-left4[
 
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt;fig.width()&lt;/highm&gt; und &lt;highm&gt;fig.height()&lt;/highm&gt; für Breite und Höhe in inches&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
+Im Chunk werden Paramter für die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken festgelegt. 
+Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 
-Breite auf 6 setzen: 
-
-````Markdown
-{r fig.width = 6}
-ggplot(airbnb_1819 ...)
-````
-
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  fig.width() und fig.height()
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  fig.asp()
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  fig.align()
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung ('center', 'left', 'right')
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  dpi 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
 ]
 
 .pull-right5[
+
+````Markdown
+{r fig.width = 6, fig.asp = .5}
+````
 ![](Markdown2_slides_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
 ]
+
 ---
 
-
-# Abbildungen skalieren - Aspect Ratio
+# Grafiken
 
 .pull-left4[
 
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt;fig.width()&lt;/highm&gt; und &lt;highm&gt;fig.height()&lt;/highm&gt; für Breite und Höhe&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;fig.asp()&lt;/highm&gt; setzt die &lt;high&gt;Aspect Ratio&lt;/high&gt; für die Figure fest basierend auf der Breite &lt;highm&gt;Aspect Ratio = fig.width * fig.asp&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
+Im Chunk werden Paramter für die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken festgelegt. 
+Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 
-Aspect Ratio auf .5
-
-````Markdown
-{r fig.width = 6, 
-   fig.asp = .5}
-ggplot(airbnb_1819 ...)
-````
-
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  fig.width() und fig.height()
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  fig.asp()
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  fig.align()
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung ('center', 'left', 'right')
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  dpi 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
 ]
 
 .pull-right5[
-![](Markdown2_slides_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
-]
----
-
-
-# Abbildungen skalieren - Ausrichtung
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt;fig.width()&lt;/highm&gt; und &lt;highm&gt;fig.height()&lt;/highm&gt; für Breite und Höhe&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;fig.asp()&lt;/highm&gt; setzt die &lt;high&gt;Aspect Ratio&lt;/high&gt; für die Figure fest basierend auf der Breite &lt;highm&gt;Aspect Ratio = fig.width * fig.asp&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;Mit &lt;highm&gt;fig.align()&lt;/highm&gt; wird die Position der Abbildung kontrolliert ('center', 'left', 'right'&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
 ````Markdown
-{r fig.width = 6, 
-   fig.asp = .5, 
+{r fig.width = 6, fig.asp = .5, 
    fig.align = 'center'}
-ggplot(airbnb_1819 ...)
 ````
+&lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+]
 
+---
+
+# Grafiken
+
+.pull-left4[
+
+Im Chunk werden Paramter für die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken festgelegt. 
+Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  fig.width() und fig.height()
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  fig.asp()
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  fig.align()
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung ('center', 'left', 'right')
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  dpi 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
 ]
 
 .pull-right5[
+
+````Markdown
+{r fig.width = 6, fig.asp = .5, 
+   fig.align = 'center', dpi = 300}
+````
 &lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
 ]
----
 
-
-
-# Abbildungen skalieren - Schärfe
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt;fig.width()&lt;/highm&gt; und &lt;highm&gt;fig.height()&lt;/highm&gt; für Breite und Höhe&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;highm&gt;fig.asp()&lt;/highm&gt; setzt die &lt;high&gt;Aspect Ratio&lt;/high&gt; für die Figure fest basierend auf der Breite &lt;highm&gt;Aspect Ratio = fig.width * fig.asp&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;Mit &lt;highm&gt;fig.align()&lt;/highm&gt; wird die Position der Abbildung kontrolliert ('center', 'left', 'right'&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m4"&gt;&lt;span&gt;Mit &lt;highm&gt;dpi&lt;/highm&gt; wird die Dichte der gedruckten Punkte definiert &lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-````Markdown
-{r fig.width = 6, 
-   fig.asp = .5, 
-   fig.align = 'center', 
-   dpi = 300}
-ggplot(airbnb_1819 ...)
-````
-
-]
-
-.pull-right5[
-&lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
-]
 ---
 
 
