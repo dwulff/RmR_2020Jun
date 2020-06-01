@@ -10,7 +10,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, 
+knitr::opts_chunk$set(echo = FALSE, 
                       message = FALSE, 
                       warning = FALSE, 
                       dev.args = list(bg = "transparent"))
@@ -51,19 +51,19 @@ Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen
   <col width = 10%>
   <col width = 50%>
   <tr>
-    <td>
+  <td>
   
 Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin `r nrow(airbnb_1819)` Airbnb Wohnungeneingestellt. Von diesen Wohnungn weisen aktuell `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen für die nächsten 3 Monate auf.
 
 **Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt wohingegend im Jahr 2018 nur `r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von `r (round(n_2019/n_2018, 2) - 1)*100`%.**
   
-    </td>
-    <td>
+  </td>
+  <td>
   
-    </td>
-    <td>
+  </td>
+  <td>
 
-```{r message = F, echo = F, fig.asp=.5, fig.cap=cap, background='transparent'}
+```{r fig.asp = .5, fig.cap = cap, background = 'transparent'}
 
 # Plotte Häufigkeiten
 ggplot(airbnb_1819 %>% 
@@ -78,15 +78,15 @@ ggplot(airbnb_1819 %>%
         axis.text.x = element_text(angle = 45, hjust = 1)) 
 
 # Ergänze caption
-cap = "Figure 1. Neueinstellungen pro Monat"
+cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
 
 ```
 
-    </td>
+  </td>
   </tr>
 </table>
 
-#### Stadteile
+#### Stadtteile
 
 <table>
 <col width = 40%>
@@ -95,7 +95,8 @@ cap = "Figure 1. Neueinstellungen pro Monat"
 <tr>
   <td>
 
-```{r, echo = FALSE}
+```{r}
+# Berechne Häufigkeiten über die Bezirke
 Stadtteile <- airbnb_1819 %>% 
          group_by(Stadtteil, 
                   Jahr = year(Erstellungsdatum)) %>% 
@@ -103,33 +104,32 @@ Stadtteile <- airbnb_1819 %>%
   ungroup() %>% 
   arrange(desc(Jahr), Wohnungen) %>% 
   mutate(Stadtteil = as_factor(Stadtteil))
-
-
-
 ```
 
 Neueinstellungen fallen nach wie vor sehr unterschiedlich in den Bezirke aus. Die meisten Neueinstellungen im Jahr 2019 gab es in `r Stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()`, die wenigsten in `r Stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`.   
  
-```{r, echo = FALSE}
-Zuwachs = Stadtteile %>% 
+```{r}
+
+# Veränderung über die Stadtteile
+Veränderung = Stadtteile %>% 
   group_by(Stadtteil) %>% 
-  summarize(Zuwachs = 100 * round(Wohnungen[Jahr == 2019]/Wohnungen[Jahr == 2018]-1,2))
+  summarize(veränderung = (100 * (Wohnungen[Jahr == 2019]/Wohnungen[Jahr == 2018] - 1)) %>% round(1))
 
-min_stadtteil = Zuwachs %>% 
-  slice(which.min(Zuwachs)) %>% 
+min_stadtteil = Veränderung %>% 
+  slice(which.min(veränderung)) %>% 
   pull(Stadtteil)
 
-max_stadtteil = Zuwachs %>% 
-  slice(which.max(Zuwachs)) %>% 
+max_stadtteil = Veränderung %>% 
+  slice(which.max(veränderung)) %>% 
   pull(Stadtteil)
 
-min_veränderung = Zuwachs %>% 
-  slice(which.min(Zuwachs)) %>% 
-  pull(Zuwachs)
+min_veränderung = Veränderung %>% 
+  slice(which.min(veränderung)) %>% 
+  pull(veränderung)
 
-max_veränderung = Zuwachs %>% 
-  slice(which.max(Zuwachs)) %>% 
-  pull(Zuwachs)
+max_veränderung = Veränderung %>% 
+  slice(which.max(veränderung)) %>% 
+  pull(veränderung)
 
 ```
 
