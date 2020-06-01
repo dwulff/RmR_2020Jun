@@ -7,6 +7,7 @@ output:
     css: 2_Assets/airbnb.css
     includes:
       in_header: 2_Assets/header.Rhtml
+bibliography: 2_Assets/references.json
 ---
 
 ```{r setup, include=FALSE}

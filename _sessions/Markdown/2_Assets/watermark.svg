@@ -26,11 +26,11 @@
        id="clipPath36"
        clipPathUnits="userSpaceOnUse"><path
          id="path34"
-         d="M -153,-300 H 1136 V 989 H -153 Z" /></clipPath><clipPath
+         d="M -91,-228 H 1093 V 956 H -91 Z" /></clipPath><clipPath
        id="clipPath40"
        clipPathUnits="userSpaceOnUse"><path
          id="path38"
-         d="M 142,5 H 917 V 768 H 142 Z" /></clipPath></defs><g
+         d="M 129,0 H 938 V 768 H 129 Z" /></clipPath></defs><g
      transform="matrix(1.3333333,0,0,-1.3333333,0,1024)"
      id="g10"><g
        id="g12" /><g
@@ -53,11 +53,11 @@
                  id="g50"
                  clip-path="url(#clipPath40)"><g
                    id="g48"
-                   transform="rotate(45,141.00198,331.13269)"><text
+                   transform="rotate(45,120.84838,275.52547)"><text
                      id="text46"
-                     style="font-variant:normal;font-weight:bold;font-size:280px;font-family:HelveticaNeue;-inkscape-font-specification:HelveticaNeue-Bold;writing-mode:lr-tb;fill:#929292;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     style="font-variant:normal;font-weight:bold;font-size:210px;font-family:HelveticaNeue;-inkscape-font-specification:HelveticaNeue-Bold;writing-mode:lr-tb;fill:#929292;fill-opacity:1;fill-rule:nonzero;stroke:none"
                      transform="scale(1,-1)"><tspan
                        id="tspan44"
                        y="0"
-                       x="0 253.96001 471.79999 679.28003">MOCK</tspan></text>
+                       x="0 190.47 353.85001 509.45999 661.08002 816.69">MOCKUP</tspan></text>
 </g></g></g></g></g></g></g></g></svg>
