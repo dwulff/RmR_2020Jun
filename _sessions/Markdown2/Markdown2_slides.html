@@ -948,7 +948,7 @@ escape = FALSE, align = 'lcccc')
   &lt;mono&gt;cell_spec&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
+  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;font_size&lt;/mono&gt;)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -956,7 +956,7 @@ escape = FALSE, align = 'lcccc')
   &lt;mono&gt;column_spec&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
+  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
@@ -967,12 +967,12 @@ escape = FALSE, align = 'lcccc')
 
 ```r
 ...
-caption = 'Tabelle 1. Aussttatung und 
+caption = 'Tabelle 1. Ausstattung und 
 Einfluss auf den Preis')
 ```
 
 &lt;table&gt;
-&lt;caption&gt;Tabelle 1. Aussttatung und Einfluss auf den Preis&lt;/caption&gt;
+&lt;caption&gt;Tabelle 1. Ausstattung und Einfluss auf den Preis&lt;/caption&gt;
  &lt;thead&gt;
   &lt;tr&gt;
    &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
@@ -1079,7 +1079,7 @@ Einfluss auf den Preis')
   &lt;mono&gt;cell_spec&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
+  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;font_size&lt;/mono&gt;)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1087,7 +1087,7 @@ Einfluss auf den Preis')
   &lt;mono&gt;column_spec&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
+  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
@@ -1175,7 +1175,6 @@ digits = 1
 # Tabellen
 
 .pull-left4[
-
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Zur &lt;high&gt;Verfeinerung&lt;/high&gt; der Formatierung gibt es zusätzlicher Befehle&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;cell_spec&lt;/mono&gt; und &lt;mono&gt;column_spec&lt;/mono&gt; werden vor- bzw nachgeschalten&lt;/span&gt; &lt;/li&gt;
@@ -1212,7 +1211,7 @@ digits = 1
   &lt;mono&gt;cell_spec&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
+  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;font_size&lt;/mono&gt;)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1220,7 +1219,7 @@ digits = 1
   &lt;mono&gt;column_spec&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
+  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
@@ -1228,13 +1227,12 @@ digits = 1
 
 .pull-right5[
 
-
 ```r
 Ausstattung %&gt;% 
 mutate_if(is.numeric, function(x) {
-      cell_spec(round(x,1), bold = T, 
-      font_size = spec_font_size(x, 
-      begin=10, end=16))}) %&gt;% ...
+cell_spec(round(x,1), bold = T, 
+font_size = spec_font_size(x, 
+            begin=10, end=16))}) %&gt;% ...
 ```
 
 
@@ -1345,7 +1343,7 @@ mutate_if(is.numeric, function(x) {
   &lt;mono&gt;cell_spec&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
+  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;font_size&lt;/mono&gt;)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1353,7 +1351,7 @@ mutate_if(is.numeric, function(x) {
   &lt;mono&gt;column_spec&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
+  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
@@ -1430,6 +1428,7 @@ column_spec(c(4), background = '#6BB7B9'))
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
 ]
 
 ---
@@ -1439,53 +1438,11 @@ column_spec(c(4), background = '#6BB7B9'))
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;&lt;/mono&gt; &lt;/span&gt; &lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die Standardausgabe eines &lt;high&gt;statistischen Modells&lt;/high&gt; ist nur auf der Konsole sinnvoll&lt;/span&gt;
+
+ &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
-  &lt;col width="40%"&gt;
-  &lt;col width="60%"&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Funktion&lt;/b&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Beschreibung&lt;/b&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;caption&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;Einfügen eines &lt;high&gt;Grafiktitels&lt;/high&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;digits&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Anzahl&lt;/high&gt; Nachkommastellen   
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;cell_spec&lt;/mono&gt; 
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;column_spec&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;/table&gt;
 ]
 
 .pull-right5[
@@ -1519,13 +1476,14 @@ F-statistic: 80.1 on 5 and 5001 DF,  p-value: &lt;2e-16
 
 ---
 
-# Statistische Modelle
-
 .pull-left4[
 
+# Statistische Modelle
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;/span&gt; &lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit dem &lt;mono&gt;sjPlot&lt;/mono&gt; Package lassen sich &lt;high&gt;statistische Modelle&lt;/high&gt; als HTML ausgeben&lt;/span&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Die &lt;high&gt;abhängige Variable&lt;/high&gt; wird als Spaltenkopf gesetzt und Konfidenzintervalle und p-Werte angezeigt&lt;/span&gt;&lt;/li&gt;
+ &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -1541,44 +1499,291 @@ F-statistic: 80.1 on 5 and 5001 DF,  p-value: &lt;2e-16
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;caption&lt;/mono&gt;
+  &lt;mono&gt;tab_model&lt;/mono&gt;
   &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;Einfügen eines &lt;high&gt;Grafiktitels&lt;/high&gt;
-  &lt;/td&gt; 
+  &lt;td bgcolor="white"&gt;Ausgabe eines &lt;high&gt;Regressionsmodells&lt;/high&gt; in HTML&lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;digits&lt;/mono&gt;
+  &lt;mono&gt;title&lt;/mono&gt;
   &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Anzahl&lt;/high&gt; Nachkommastellen   
-  &lt;/td&gt; 
+  &lt;td bgcolor="white"&gt;Tabellen Beschriftung&lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;cell_spec&lt;/mono&gt; 
+  &lt;mono&gt;pred.labels&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Zellformatierung&lt;/high&gt; gestalten (&lt;mono&gt;background&lt;/mono&gt;)
-  &lt;/td&gt; 
+  &lt;high&gt;Namen&lt;/high&gt; der Koeffizienten anpassen&lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;column_spec&lt;/mono&gt;
+   &lt;mono&gt;CSS&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Spaltenformatierung&lt;/high&gt; gestalten (&lt;mono&gt;bold&lt;/mono&gt;)
-  &lt;/td&gt; 
+  Feintuning mit CSS&lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
 ]
 
 .pull-right5[
 
-&lt;table style="width: auto; 
-                             margin-right: 0px;
-                             margin-left: auto;"&gt;
-&lt;caption style="font-weight:500"&gt;Table 2. Regression der Ausstattung auf den Preis.&lt;/caption&gt;
+
+```r
+sjPlot::tab_model(ausstattung_modell,
+title = 'Table 2. Regression der Ausstattung 
+auf den Preis.')
+```
+
+&lt;table style="border-collapse:collapse; border:none;"&gt;
+&lt;caption style="font-weight: bold; text-align:left;"&gt;Table 2. Regression der Ausstattung 
+auf den Preis.&lt;/caption&gt;
+&lt;tr&gt;
+&lt;th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; "&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; "&gt;Preis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; "&gt;Predictors&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;Estimates&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;CI&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;p&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;(Intercept)&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;90.08&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;68.95&amp;nbsp;&amp;ndash;&amp;nbsp;111.21&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;HotelTRUE&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;437.34&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;384.88&amp;nbsp;&amp;ndash;&amp;nbsp;489.79&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;K&amp;uuml;cheTRUE&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;-37.95&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;-59.50&amp;nbsp;&amp;ndash;&amp;nbsp;-16.40&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;0.001&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;TVTRUE&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;28.07&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;16.67&amp;nbsp;&amp;ndash;&amp;nbsp;39.47&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;Terrasse_BalkonTRUE&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;20.71&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;8.06&amp;nbsp;&amp;ndash;&amp;nbsp;33.35&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;0.001&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;Check_in_24hTRUE&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;42.11&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;-7.81&amp;nbsp;&amp;ndash;&amp;nbsp;92.02&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.098&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;"&gt;Observations&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3"&gt;5007&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;"&gt;R&lt;sup&gt;2&lt;/sup&gt; / R&lt;sup&gt;2&lt;/sup&gt; adjusted&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3"&gt;0.074 / 0.073&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+]
+
+---
+
+.pull-left4[
+
+# Statistische Modelle
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit dem &lt;mono&gt;sjPlot&lt;/mono&gt; Package lassen sich &lt;high&gt;statistische Modelle&lt;/high&gt; als HTML ausgeben&lt;/span&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Die &lt;high&gt;abhängige Variable&lt;/high&gt; wird als Spaltenkopf gesetzt und Konfidenzintervalle und p-Werte angezeigt&lt;/span&gt;&lt;/li&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;tab_model&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;Ausgabe eines &lt;high&gt;Regressionsmodells&lt;/high&gt; in HTML&lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;title&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;Tabellen Beschriftung&lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;pred.labels&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Namen&lt;/high&gt; der Koeffizienten anpassen&lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;mono&gt;CSS&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Feintuning mit CSS&lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+&lt;br&gt;
+
+```r
+sjPlot::tab_model(ausstattung_modell,
+title = 'Table 2. Regression der Ausstattung 
+auf den Preis.',
+pred.labels = c('Achsenabschnitt', 
+                names(ausstattung)[-1]))
+```
+
+&lt;table style="border-collapse:collapse; border:none;"&gt;
+&lt;caption style="font-weight: bold; text-align:left;"&gt;Table 2. Regression der Ausstattung 
+auf den Preis.&lt;/caption&gt;
+&lt;tr&gt;
+&lt;th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; "&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; "&gt;Preis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; "&gt;Predictors&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;Estimates&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;CI&lt;/td&gt;
+&lt;td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  "&gt;p&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;Achsenabschnitt&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;90.08&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;68.95&amp;nbsp;&amp;ndash;&amp;nbsp;111.21&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;Hotel&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;437.34&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;384.88&amp;nbsp;&amp;ndash;&amp;nbsp;489.79&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;K&amp;uuml;che&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;-37.95&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;-59.50&amp;nbsp;&amp;ndash;&amp;nbsp;-16.40&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;0.001&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;TV&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;28.07&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;16.67&amp;nbsp;&amp;ndash;&amp;nbsp;39.47&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;&amp;lt;0.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;Terrasse_Balkon&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;20.71&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;8.06&amp;nbsp;&amp;ndash;&amp;nbsp;33.35&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;&lt;strong&gt;0.001&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; "&gt;Check_in_24h&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;42.11&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;-7.81&amp;nbsp;&amp;ndash;&amp;nbsp;92.02&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "&gt;0.098&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;"&gt;Observations&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3"&gt;5007&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;"&gt;R&lt;sup&gt;2&lt;/sup&gt; / R&lt;sup&gt;2&lt;/sup&gt; adjusted&lt;/td&gt;
+&lt;td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3"&gt;0.074 / 0.073&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+]
+
+---
+
+.pull-left4[
+# Statistische Modelle
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit dem &lt;mono&gt;sjPlot&lt;/mono&gt; Package lassen sich &lt;high&gt;statistische Modelle&lt;/high&gt; als HTML ausgeben&lt;/span&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Die &lt;high&gt;abhängige Variable&lt;/high&gt; wird als Spaltenkopf gesetzt und Konfidenzintervalle und p-Werte angezeigt&lt;/span&gt;&lt;/li&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;tab_model&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;Ausgabe eines &lt;high&gt;Regressionsmodells&lt;/high&gt; in HTML&lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;title&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;Tabellen Beschriftung&lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;pred.labels&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Namen&lt;/high&gt; der Koeffizienten anpassen&lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;mono&gt;CSS&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Feintuning mit CSS&lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+&lt;br&gt;
+
+
+```r
+CSS = list(css.caption = "font-weight:500", 
+           css.table="width: auto; 
+                      margin-right: 0px;
+                      margin-left: auto;"))
+```
+&lt;table style="width: auto; margin-right: 0px;margin-left: auto;"&gt;
+&lt;caption style="font-weight:500"&gt;Table 2. Regression des Preises auf die Ausstattung.&lt;/caption&gt;
 &lt;tr&gt;
 &lt;th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; text-align:left; "&gt;&amp;nbsp;&lt;/th&gt;
 &lt;th colspan="3" style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black;"&gt;Preis&lt;/th&gt;
@@ -1635,6 +1840,7 @@ F-statistic: 80.1 on 5 and 5001 DF,  p-value: &lt;2e-16
 &lt;/tr&gt;
 
 &lt;/table&gt;
+
 ]
 
 ---
