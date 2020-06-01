@@ -804,7 +804,7 @@ escape = FALSE, align = 'lcccc')
   <mono>cell_spec</mono> 
   </td>
   <td bgcolor="white">
-  <high>Zellformatierung</high> gestalten (<mono>background</mono>)
+  <high>Zellformatierung</high> gestalten (<mono>font_size</mono>)
   </td> 
 </tr>
 <tr>
@@ -812,7 +812,7 @@ escape = FALSE, align = 'lcccc')
   <mono>column_spec</mono>
   </td>
   <td bgcolor="white">
-  <high>Spaltenformatierung</high> gestalten (<mono>bold</mono>)
+  <high>Spaltenformatierung</high> gestalten (<mono>background</mono>)
   </td> 
 </tr>
 </table>
@@ -822,7 +822,7 @@ escape = FALSE, align = 'lcccc')
 
 ```{r echo = TRUE, eval = FALSE}
 ...
-caption = 'Tabelle 1. Aussttatung und 
+caption = 'Tabelle 1. Ausstattung und 
 Einfluss auf den Preis')
 ```
 
@@ -832,7 +832,7 @@ col.names = c('', 'Preis<br>Nicht-vorh.',
               'Preis<br>vorh.','Differenz',
               'Prozent<br>vorh.'),
 escape = FALSE, align = 'lcccc',
-caption = 'Tabelle 1. Aussttatung und Einfluss auf den Preis')
+caption = 'Tabelle 1. Ausstattung und Einfluss auf den Preis')
 ```
 
 ]
@@ -879,7 +879,7 @@ caption = 'Tabelle 1. Aussttatung und Einfluss auf den Preis')
   <mono>cell_spec</mono> 
   </td>
   <td bgcolor="white">
-  <high>Zellformatierung</high> gestalten (<mono>background</mono>)
+  <high>Zellformatierung</high> gestalten (<mono>font_size</mono>)
   </td> 
 </tr>
 <tr>
@@ -887,7 +887,7 @@ caption = 'Tabelle 1. Aussttatung und Einfluss auf den Preis')
   <mono>column_spec</mono>
   </td>
   <td bgcolor="white">
-  <high>Spaltenformatierung</high> gestalten (<mono>bold</mono>)
+  <high>Spaltenformatierung</high> gestalten (<mono>background</mono>)
   </td> 
 </tr>
 </table>
@@ -920,7 +920,6 @@ digits = 1)
 # Tabellen
 
 .pull-left4[
-
 <ul>
   <li class="m1"><span>Zur <high>Verfeinerung</high> der Formatierung gibt es zusätzlicher Befehle</span></li>
   <li class="m2"><span><mono>cell_spec</mono> und <mono>column_spec</mono> werden vor- bzw nachgeschalten</span> </li>
@@ -957,7 +956,7 @@ digits = 1)
   <mono>cell_spec</mono> 
   </td>
   <td bgcolor="white">
-  <high>Zellformatierung</high> gestalten (<mono>background</mono>)
+  <high>Zellformatierung</high> gestalten (<mono>font_size</mono>)
   </td> 
 </tr>
 <tr>
@@ -965,20 +964,19 @@ digits = 1)
   <mono>column_spec</mono>
   </td>
   <td bgcolor="white">
-  <high>Spaltenformatierung</high> gestalten (<mono>bold</mono>)
+  <high>Spaltenformatierung</high> gestalten (<mono>background</mono>)
   </td> 
 </tr>
 </table>
 ]
 
 .pull-right5[
-
 ```{r echo = TRUE, eval = FALSE}
 Ausstattung %>% 
 mutate_if(is.numeric, function(x) {
-      cell_spec(round(x,1), bold = T, 
-      font_size = spec_font_size(x, 
-      begin=10, end=16))}) %>% ...
+cell_spec(round(x,1), bold = T, 
+font_size = spec_font_size(x, 
+            begin=10, end=16))}) %>% ...
 ```
 
 
@@ -1040,7 +1038,7 @@ digits = 1)
   <mono>cell_spec</mono> 
   </td>
   <td bgcolor="white">
-  <high>Zellformatierung</high> gestalten (<mono>background</mono>)
+  <high>Zellformatierung</high> gestalten (<mono>font_size</mono>)
   </td> 
 </tr>
 <tr>
@@ -1048,7 +1046,7 @@ digits = 1)
   <mono>column_spec</mono>
   </td>
   <td bgcolor="white">
-  <high>Spaltenformatierung</high> gestalten (<mono>bold</mono>)
+  <high>Spaltenformatierung</high> gestalten (<mono>background</mono>)
   </td> 
 </tr>
 </table>
@@ -1076,6 +1074,7 @@ caption = 'Tabelle 1. Ausstattung und Einfluss auf den Preis',
 digits = 1) %>%
 column_spec(c(4), background = '#6BB7B9')
 ```
+
 ]
 
 ---
@@ -1085,53 +1084,11 @@ column_spec(c(4), background = '#6BB7B9')
 .pull-left4[
 
 <ul>
-  <li class="m1"><span></span></li>
-  <li class="m2"><span><mono></mono> </span> </li>
+  <li class="m1"><span>Die Standardausgabe eines <high>statistischen Modells</high> ist nur auf der Konsole sinnvoll</span>
+
+ </li>
 </ul>
 
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Funktion</b>
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>caption</mono>
-  </td>
-  <td bgcolor="white">Einfügen eines <high>Grafiktitels</high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>digits</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Anzahl</high> Nachkommastellen   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>cell_spec</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Zellformatierung</high> gestalten (<mono>background</mono>)
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>column_spec</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Spaltenformatierung</high> gestalten (<mono>bold</mono>)
-  </td> 
-</tr>
-</table>
 ]
 
 .pull-right5[
@@ -1148,13 +1105,14 @@ summary(ausstattung_mod)
 
 ---
 
-# Statistische Modelle
-
 .pull-left4[
 
+# Statistische Modelle
+
 <ul>
-  <li class="m1"><span></span></li>
-  <li class="m2"><span></span> </li>
+  <li class="m1"><span>Mit dem <mono>sjPlot</mono> Package lassen sich <high>statistische Modelle</high> als HTML ausgeben</span>
+  <li class="m2"><span>Die <high>abhängige Variable</high> wird als Spaltenkopf gesetzt und Konfidenzintervalle und p-Werte angezeigt</span></li>
+ </li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -1170,50 +1128,173 @@ summary(ausstattung_mod)
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>caption</mono>
+  <mono>tab_model</mono>
   </td>
-  <td bgcolor="white">Einfügen eines <high>Grafiktitels</high>
-  </td> 
+  <td bgcolor="white">Ausgabe eines <high>Regressionsmodells</high> in HTML</td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>digits</mono>
+  <mono>title</mono>
   </td>
-  <td bgcolor="white">
-   <high>Anzahl</high> Nachkommastellen   
-  </td> 
+  <td bgcolor="white">Tabellen Beschriftung</td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>cell_spec</mono> 
+  <mono>pred.labels</mono> 
   </td>
   <td bgcolor="white">
-  <high>Zellformatierung</high> gestalten (<mono>background</mono>)
-  </td> 
+  <high>Namen</high> der Koeffizienten anpassen</td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>column_spec</mono>
+   <mono>CSS</mono>
   </td>
   <td bgcolor="white">
-  <high>Spaltenformatierung</high> gestalten (<mono>bold</mono>)
-  </td> 
+  Feintuning mit CSS</td> 
 </tr>
 </table>
 ]
 
 .pull-right5[
 
-```{r}
+```{r echo = TRUE}
 sjPlot::tab_model(ausstattung_modell,
-                  pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
-                  title = 'Table 2. Regression der Ausstattung auf den Preis.',
-                  CSS = list(css.caption = "font-weight:500", 
-                             css.table="width: auto; 
-                             margin-right: 0px;
-                             margin-left: auto;"))
-
+title = 'Table 2. Regression der Ausstattung 
+auf den Preis.')
 ```
+]
+
+---
+
+.pull-left4[
+
+# Statistische Modelle
+
+<ul>
+  <li class="m1"><span>Mit dem <mono>sjPlot</mono> Package lassen sich <high>statistische Modelle</high> als HTML ausgeben</span>
+  <li class="m2"><span>Die <high>abhängige Variable</high> wird als Spaltenkopf gesetzt und Konfidenzintervalle und p-Werte angezeigt</span></li>
+ </li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Funktion</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>tab_model</mono>
+  </td>
+  <td bgcolor="white">Ausgabe eines <high>Regressionsmodells</high> in HTML</td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>title</mono>
+  </td>
+  <td bgcolor="white">Tabellen Beschriftung</td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>pred.labels</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Namen</high> der Koeffizienten anpassen</td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+   <mono>CSS</mono>
+  </td>
+  <td bgcolor="white">
+  Feintuning mit CSS</td> 
+</tr>
+</table>
+]
+
+.pull-right5[
+<br>
+```{r echo = TRUE}
+sjPlot::tab_model(ausstattung_modell,
+title = 'Table 2. Regression der Ausstattung 
+auf den Preis.',
+pred.labels = c('Achsenabschnitt', 
+                names(ausstattung)[-1]))
+```
+]
+
+---
+
+.pull-left4[
+# Statistische Modelle
+
+<ul>
+  <li class="m1"><span>Mit dem <mono>sjPlot</mono> Package lassen sich <high>statistische Modelle</high> als HTML ausgeben</span>
+  <li class="m2"><span>Die <high>abhängige Variable</high> wird als Spaltenkopf gesetzt und Konfidenzintervalle und p-Werte angezeigt</span></li>
+ </li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Funktion</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>tab_model</mono>
+  </td>
+  <td bgcolor="white">Ausgabe eines <high>Regressionsmodells</high> in HTML</td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>title</mono>
+  </td>
+  <td bgcolor="white">Tabellen Beschriftung</td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>pred.labels</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Namen</high> der Koeffizienten anpassen</td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+   <mono>CSS</mono>
+  </td>
+  <td bgcolor="white">
+  Feintuning mit CSS</td> 
+</tr>
+</table>
+]
+
+.pull-right5[
+
+<br>
+
+```{r echo = TRUE, eval = FALSE}
+CSS = list(css.caption = "font-weight:500", 
+           css.table="width: auto; 
+                      margin-right: 0px;
+                      margin-left: auto;"))
+```
+```{r}
+sjPlot::tab_model(ausstattung_mod,
+                  pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
+                  title = 'Table 2. Regression des Preises auf die Ausstattung.',
+                  CSS = list(css.caption = "font-weight:500", css.table="width: auto; margin-right: 0px;margin-left: auto;"))
+```
+
 ]
 
 ---
