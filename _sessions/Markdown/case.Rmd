@@ -7,7 +7,6 @@ output:
     css: 2_Assets/airbnb.css
     includes:
       in_header: 2_Assets/header.Rhtml
-bibliography: 2_Assets/references.json
 ---
 
 ```{r setup, include=FALSE}
@@ -37,6 +36,9 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 <!--## {.tabset}--->
 
+### Präambel
+
+Dieser Bericht evaluiert Veränderungen in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. Er wurde zum Zwecke der Übung auf Basis öffentlich verfügbarer Daten^[Daten wurde heruntergeladen von http://insideairbnb.com/get-the-data.html] erstellt und repräsentiert einzig die Position der Autoren. Es besteht keine Beziehung zu AirBnB.   
 
 ### Neueinstellungen
 
@@ -175,7 +177,9 @@ austattung <- airbnb_1819 %>%
 <col width = 65%>
 <tr>
   <td>
-  Das Austattungsmerkmal mit dem grössten Unterschied im Preis ist `r austattung %>% pull(Austattung) %>% first()` (`r austattung %>% pull(Differenz) %>% first()`), das Austattungsmerkmal mit dem kleinsten Unterschied im Preis ist `r austattung %>% pull(Austattung) %>% last()` (`r austattung %>% pull(Differenz) %>% last()`).  
+  Das Austattungsmerkmal mit dem grössten Unterschied im Preis ist `r austattung %>% pull(Austattung) %>% first()` (`r austattung %>% pull(Differenz) %>% first() %>% round(1)`), das Austattungsmerkmal mit dem kleinsten Unterschied im Preis ist `r austattung %>% pull(Austattung) %>% last()` (`r austattung %>% pull(Differenz) %>% last() %>% round(1)`). 
+  
+  <b>Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.</b>  
   </td>
   <td>
   </td>
@@ -205,26 +209,34 @@ austattung %>%
 
 #### Regressionsmodell
 
+```{r, echo = FALSE}
+austattung_var <- c('Küche','Wifi','TV','Kaffeemaschine','Geschirrspüler','Terrasse_Balkon','Check_in_24h')
+
+austattung <- airbnb_1819 %>% 
+  mutate(Hotel = Unterkunftsart %in% c('Boutique hotel','Hotel')) %>% 
+  select(Preis, Hotel, all_of(austattung_var))
+
+austattung_mod <- lm(Preis ~ ., data = austattung)
+
+```
+
 <table width=100%>
 <col width = 40%>
 <col width = 10%>
 <col width = 50%>
 <tr>
   <td>
+  
+  
+  
   </td>
   <td>
   </td>
   <td>
 
 ```{r message = F, echo = F, fig.asp=.5}
-
-austattung_var <- c('Küche','Wifi','TV','Kaffeemaschine','Geschirrspüler','Terrasse_Balkon','Check_in_24h')
-austattung <- airbnb_1819 %>% 
-  select(Preis, all_of(austattung_var))
-
-mod <- lm(Preis ~ ., data = austattung)
 tab <- sjPlot::tab_model(mod, 
-                  pred.labels = names(austattung),
+                  pred.labels = c('Achsenabschnitt', names(austattung)[-1]),
                   title = 'Table 2. Regression des Preises auf die Austattung.',
                   CSS = list(css.caption = "font-weight:500", css.table="width: auto; margin-right: 0px;margin-left: auto;"))
 tab
