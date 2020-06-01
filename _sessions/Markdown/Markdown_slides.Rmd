@@ -134,6 +134,17 @@ basel <- read.csv("1_Data/basel.csv")
 
 ---
 
+# Kinds of documents
+
+---
+
+# Two Paths
+
+
+
+
+---
+
 class: middle, center
 
 <h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown/Markdown_practical.html">Practical</a></h1>

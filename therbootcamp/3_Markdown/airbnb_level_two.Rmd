@@ -184,7 +184,7 @@ hotel <- airbnb_1819 %>%
   summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel'))) 
 ```
 
-<b>Der Anteil von Hotels ist von `r ((hotel$Anteil[1]-1)*100) %>% round(1)`% im Jahre 2018 auf `r (hotel$Anteil[2]*100) %>% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. 
+<b>Der Anteil von Hotels ist von `r (hotel$Anteil[1]*100) %>% round(1)`% im Jahre 2018 auf `r (hotel$Anteil[2]*100) %>% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. 
 
 
 ```{r message = F, echo = F, fig.asp=.5}
