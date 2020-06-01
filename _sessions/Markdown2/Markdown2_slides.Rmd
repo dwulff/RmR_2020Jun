@@ -134,12 +134,14 @@ cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
 ]
 ---
 
-# Grafiken
+# Grafiken skalieren
 
 .pull-left4[
 
-Im Chunk werden Paramter für die <high>Darstellung</high> von Grafiken festgelegt. 
-Viele dieser Einstellungen beginnen mit <highm>fig.*</highm>.
+<ul>
+  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>chunk</mono>-Optionen angpasst werden.</span></li> 
+  <li class="m2"><span>Grafikoptionen beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
+</ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
   <col width="40%">
@@ -154,7 +156,7 @@ Viele dieser Einstellungen beginnen mit <highm>fig.*</highm>.
 </tr>
 <tr>
   <td bgcolor="white">
-  fig.width() und fig.height()
+  <mono>fig.width</mono> und <mono>fig.height</mono>
   </td>
   <td bgcolor="white">
   <high>Breite</high> und <high>Höhe</high> in inches
@@ -162,7 +164,7 @@ Viele dieser Einstellungen beginnen mit <highm>fig.*</highm>.
 </tr>
 <tr>
   <td bgcolor="white">
-  fig.asp()
+  <mono>fig.asp</mono>
   </td>
   <td bgcolor="white">
    <high>Aspect Ratio</high> basierend auf der Breite   
@@ -170,15 +172,15 @@ Viele dieser Einstellungen beginnen mit <highm>fig.*</highm>.
 </tr>
 <tr>
   <td bgcolor="white">
-  fig.align()
+  <mono>fig.align</mono>
   </td>
   <td bgcolor="white">
-  <high>Position</high> der Abbildung ('center', 'left', 'right')
+  <high>Position</high> der Abbildung (<mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>)
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  dpi 
+  <mono>dpi</mono> 
   </td>
   <td bgcolor="white">
   <high>Dichte</high> der gedruckten Punkte (dots per inch)
@@ -191,6 +193,7 @@ Viele dieser Einstellungen beginnen mit <highm>fig.*</highm>.
 
 ````Markdown
 {r fig.width = 6}
+ggplot(airbnb_1819, ...)
 ````
 ```{r message = F, echo = F, fig.height = 4.5, fig.width = 6}
 ggplot(airbnb_1819 %>% 

@@ -75,12 +75,14 @@ ggplot(airbnb_1819, ...)
 ]
 ---
 
-# Grafiken
+# Grafiken skalieren
 
 .pull-left4[
 
-Im Chunk werden Paramter für die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken festgelegt. 
-Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;chunk&lt;/mono&gt;-Optionen angpasst werden.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Grafikoptionen beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
   &lt;col width="40%"&gt;
@@ -95,7 +97,7 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.width() und fig.height()
+  &lt;mono&gt;fig.width&lt;/mono&gt; und &lt;mono&gt;fig.height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
@@ -103,7 +105,7 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.asp()
+  &lt;mono&gt;fig.asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
    &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
@@ -111,7 +113,7 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  fig.align()
+  &lt;mono&gt;fig.align&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Position&lt;/high&gt; der Abbildung ('center', 'left', 'right')
@@ -119,7 +121,7 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  dpi 
+  &lt;mono&gt;dpi&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
@@ -132,6 +134,7 @@ Viele dieser Einstellungen beginnen mit &lt;highm&gt;fig.*&lt;/highm&gt;.
 
 ````Markdown
 {r fig.width = 6}
+ggplot(airbnb_1819, ...)
 ````
 ![](Markdown2_slides_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
 ]
