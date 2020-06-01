@@ -145,26 +145,29 @@ cap = "<center>Figure 2. Neueinstellungen pro Bezirk</center>"
 </tr>
 </table>
 
+------
+
+
 ### Preis
 
 Der durchschnittliche Preis der Neueinstellungen beträgt `r round(mean(airbnb_1819 %>% pull(Preis)),1)` €. Im Vergleich zum Vorjahr sind die Preise der Neueinstellungen um `r m <- mean(airbnb_1819 %>% filter(year(Erstellungsdatum) == 2019) %>% pull(Preis))/mean(airbnb_1819 %>% filter(year(Erstellungsdatum) == 2018) %>% pull(Preis)) ; round(m, 3) * 100 - 100`% gestiegen.
 
-#### Der Einfluss der Austattung
+#### Der Einfluss der Ausstattung
 
 ```{r, echo = FALSE}
 
-austattung_var = c('Küche','Wifi','TV','Kaffeemaschine','Geschirrspüler','Terrasse_Balkon','Check_in_24h')
+ausstattung_var = c('Küche','Wifi','TV','Kaffeemaschine','Geschirrspüler','Terrasse_Balkon','Check_in_24h')
 
-austattung <- airbnb_1819 %>% 
-  select(all_of(austattung_var), Preis) %>%
+ausstattung <- airbnb_1819 %>% 
+  select(all_of(ausstattung_var), Preis) %>%
   pivot_longer(-Preis,
-             names_to = 'Austattung',
-             values_to = 'Austattung_vorhanden') %>% 
-  group_by(Austattung) %>% 
-  summarize(Nicht_vorhanden = mean(Preis[!Austattung_vorhanden]),
-            Vorhanden = mean(Preis[Austattung_vorhanden]),
+             names_to = 'Ausstattung',
+             values_to = 'Ausstattung_vorhanden') %>% 
+  group_by(Ausstattung) %>% 
+  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
+            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
             Differenz = Vorhanden - Nicht_vorhanden, 
-            Prozent_vorhanden = mean(Austattung_vorhanden) * 100) %>% 
+            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %>% 
   arrange(desc(Differenz)) 
 
 
@@ -177,7 +180,7 @@ austattung <- airbnb_1819 %>%
 <col width = 65%>
 <tr>
   <td>
-  Das Austattungsmerkmal mit dem grössten Unterschied im Preis ist `r austattung %>% pull(Austattung) %>% first()` (`r austattung %>% pull(Differenz) %>% first() %>% round(1)`), das Austattungsmerkmal mit dem kleinsten Unterschied im Preis ist `r austattung %>% pull(Austattung) %>% last()` (`r austattung %>% pull(Differenz) %>% last() %>% round(1)`). 
+  Das Ausstattungsmerkmal mit dem grössten Unterschied im Preis ist `r ausstattung %>% pull(Ausstattung) %>% first()` (`r ausstattung %>% pull(Differenz) %>% first() %>% round(1)`), das Ausstattungsmerkmal mit dem kleinsten Unterschied im Preis ist `r ausstattung %>% pull(Ausstattung) %>% last()` (`r ausstattung %>% pull(Differenz) %>% last() %>% round(1)`). 
   
   <b>Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.</b>  
   </td>
@@ -187,7 +190,7 @@ austattung <- airbnb_1819 %>%
 
 ```{r message = F, echo = F, fig.asp=.5, fig.align="center"}
 
-austattung %>% 
+ausstattung %>% 
   mutate_if(is.numeric, function(x) {
     cell_spec(round(x,1), bold = T, 
               font_size = spec_font_size(x, begin=10, end=16))}) %>%
@@ -210,13 +213,13 @@ austattung %>%
 #### Regressionsmodell
 
 ```{r, echo = FALSE}
-austattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
+ausstattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
 
-austattung <- airbnb_1819 %>% 
+ausstattung <- airbnb_1819 %>% 
   mutate(Hotel = Unterkunftsart %in% c('Boutique hotel','Hotel')) %>% 
-  select(Preis, Hotel, all_of(austattung_var))
+  select(Preis, Hotel, all_of(ausstattung_var))
 
-austattung_mod <- lm(Preis ~ ., data = austattung)
+ausstattung_mod <- lm(Preis ~ ., data = ausstattung)
 ```
 
 <table width=100%>
@@ -232,7 +235,7 @@ austattung_mod <- lm(Preis ~ ., data = austattung)
   
   <b>Überraschenderweise ist der Effekt eines 24h Check-ins, welcher deskriptiv am grössten ausfiel, nicht signifikant. Dies ist ebenfalls auf den Zusammen zur Unterkunftsart zurückzuführen</b>
   
-  Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Hotels haben eine um `r coefficients(austattung_mod)['HotelTRUE'] %>% round(1)`€ höheren Preis als Unterkünfte die keine Hotels sind.  
+  Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Hotels haben eine um `r coefficients(ausstattung_mod)['HotelTRUE'] %>% round(1)`€ höheren Preis als Unterkünfte die keine Hotels sind.  
   
 ```{r, echo = FALSE}
 
@@ -253,9 +256,9 @@ Hotel <- airbnb_1819 %>%
   <td>
 
 ```{r message = F, echo = F, fig.asp=.5}
-tab <- sjPlot::tab_model(austattung_mod,
-                  pred.labels = c('Achsenabschnitt', names(austattung)[-1]),
-                  title = 'Table 2. Regression des Preises auf die Austattung.',
+tab <- sjPlot::tab_model(ausstattung_mod,
+                  pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
+                  title = 'Table 2. Regression des Preises auf die Ausstattung.',
                   CSS = list(css.caption = "font-weight:500", css.table="width: auto; margin-right: 0px;margin-left: auto;"))
 tab
 ```
