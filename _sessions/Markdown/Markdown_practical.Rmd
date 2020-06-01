@@ -57,21 +57,18 @@ library(tidyverse)
 
 ## Überblick
 
-In diesem Practical übst du, (dynamische) Dashboards in Markdown zu erstellen. Genauer wirst du [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) Dashboard erstellen.
+In diesem Practical machst du deine ersten Schritte mit R Markdown. 
 
 Am Ende des Practicals wirst du wissen wie man:
 
-1. Dashboard-Layouts bestimmt.
-2. Die einzelnen Komponenten mit Inhalt füllt.
-3. Ein Storyboard erstellt.
-4. Karten mit `leaflet` plottet.
-5. Grafiken mit `plotly` aufpeppt.
+1. Chunks erstellt und einstellt.
+2. ...
 
 ## Aufgaben
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelistet sind, in deinem `1_Data` Ordner hast. 
+1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data`, `2_Assets`, und `3_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelistet sind, in deinem `1_Data` Ordner hast. 
 
 2. Öffne ein neues RMarkdown Skript und wähle das Template "Flex Dashboard" aus (siehe screenshot unten).
 
