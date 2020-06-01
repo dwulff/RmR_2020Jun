@@ -1,0 +1,23 @@
+table td {
+  vertical-align: top;
+}
+
+@font-face {
+font-family: 'Campton Semibold';
+src: url('Campton-SemiBold.eot');
+src: url('Campton-SemiBold.eot?#iefix') format('embedded-opentype'),
+url('Campton-SemiBold.woff') format('woff'),
+url('Campton-SemiBold.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+h3, h4 {
+  font-weight: 500;
+  color: #555555;
+}
+
+a, a:hover {
+  color: #007D8C;
+}
+

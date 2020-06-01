@@ -250,3 +250,17 @@ table(a$mp_year)
 length(table(a$cm_name))
 
 
+
+# ```{r echo = F}
+# ggmap(berlin) + 
+#   theme(axis.title = element_blank(),
+#         axis.line = element_blank(),
+#         axis.text = element_blank(),
+#         axis.ticks = element_blank()) +
+#   coord_map(ylim=c(52.45,52.58)) +
+#   geom_point(airbnb %>% filter(Erstellungsdatum > "2018-01-01", 
+#                                Erstellungsdatum < "2019-12-31"), 
+#              mapping = aes(x = Längengrad, y = Breitengrad, col = year(Erstellungsdatum)),size=.1) + 
+#   theme(legend.position = 'none')
+# ```
+

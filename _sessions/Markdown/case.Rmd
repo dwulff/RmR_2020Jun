@@ -1,8 +1,10 @@
 ---
 output:
   html_document:
+    theme: lumen
     toc: true
     toc_depth: 5
+    css: 2_Assets/airbnb.css
     includes:
       in_header: 2_Assets/header.Rhtml
 ---
@@ -11,40 +13,48 @@ output:
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 library(tidyverse)
-library(raster)
-library(ggmap)
-library(rgdal)
-require(mapproj)
-require(knitr)
-require(patchwork)
-require(lubridate)
+library(knitr)
+library(lubridate)
+library(kableExtra)
 
-airbnb <- read_csv('1_Data/airbnb.csv')
+airbnb_1819 <- read_csv('1_Data/airbnb.csv') %>% 
+  filter(Erstellungsdatum > "2018-01-01", 
+         Erstellungsdatum < "2019-12-31")
+  
 berlin <- readRDS('1_Data/berlin.RDS')
 
 theme_set(theme_minimal())
+ggplot <- function(...) ggplot2::ggplot(...) + 
+  scale_fill_gradientn(colors = c('#555555','#6BB7B9')) + 
+  scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
+
+cols = "https://www.colourlovers.com/palette/3498539/airbnb"
+
 ```
 
+<!--## {.tabset}--->
 
 ### Neueinstellungen
 
 #### Entwicklung
 
-:::::: {.columns style="display: flex;"}
-::: {.column width="40%"}
-Seit `r strftime(min(airbnb$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin `r nrow(airbnb)` Airbnb Wohnungen eingestellt. Von diesen Wohnungn weisen aktuell `r round(mean(airbnb$Verfügbarkeit_90Tage > 0) * 100)`% Verfügbarkeiten von durchschnittlich `r round(mean(airbnb$Verfügbarkeit_90Tage[airbnb$Verfügbarkeit_90Tage>0]),1)` Tagen für die nächsten 3 Monate auf.
+<table>
+<col width = 40%>
+<col width = 10%>
+<col width = 50%>
+<tr>
+  <td>
+  
+Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin `r nrow(airbnb_1819)` Airbnb Wohnungen eingestellt. Von diesen Wohnungn weisen aktuell `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen für die nächsten 3 Monate auf.
 
-**Einstellungen von AirBnB Wohnungen haben über die letzten Jahre rasant zugenommen.** 
-:::
+**Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt wohingegend im Jahr 2018 nur `r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von `r (round(n_2019/n_2018, 2) - 1)*100`%.**
+  </td>
+  <td>
+  </td>
+  <td>
 
-::: {.column width="5%"}
-:::
-
-::: {.column width="55%"}
-
-```{r message = F, echo = F, fig.asp=.3}
-ggplot(airbnb %>% filter(Erstellungsdatum > "2018-01-01", 
-                         Erstellungsdatum < "2019-12-31") %>% 
+```{r message = F, echo = F, fig.asp=.5, fig.cap=cap}
+ggplot(airbnb_1819 %>% 
          group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
          summarize(
            Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
@@ -52,68 +62,158 @@ ggplot(airbnb %>% filter(Erstellungsdatum > "2018-01-01",
        aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
   geom_bar(stat='identity', position='dodge') + 
   theme(legend.position = 'none',
-        axis.text.x = element_text(angle = 45, hjust = 1))
+        axis.text.x = element_text(angle = 45, hjust = 1)) 
+
+cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
 
 ```
-
-:::
-::::::
+</td>
+</tr>
+</table>
 
 #### Stadteile
 
-:::::: {.columns style="display: flex;"}
-::: {.column width="40%"}
+<table>
+<col width = 40%>
+<col width = 10%>
+<col width = 50%>
+<tr>
+  <td>
 
-The figure on the left-hand side shows the `cars` data.
+```{r, echo = FALSE}
+Stadtteile <- airbnb_1819 %>% 
+         group_by(Stadtteil, 
+                  Jahr = year(Erstellungsdatum)) %>% 
+         summarize(Wohnungen = n()) %>% 
+  ungroup() %>% 
+  arrange(desc(Jahr), Wohnungen) %>% 
+  mutate(Stadtteil = as_factor(Stadtteil))
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur.
 
-:::
-::: {.column width="5%"}
-:::
 
-::: {.column width="55%"}
-```{r message = F, echo = F, fig.asp=.3}
+```
 
-ggplot(airbnb %>% filter(Erstellungsdatum > "2018-01-01", 
-                         Erstellungsdatum < "2019-12-31") %>% 
-         group_by(Stadtteil, Jahr = year(Erstellungsdatum)) %>% 
-         summarize(Wohnungen = n()), 
+Neueinstellungen fallen nach wie vor sehr unterschiedlich in den Bezirke aus. Die meisten Neueinstellungen im Jahr 2019 gab es in `r Stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()`, die wenigsten in `r Stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`.   
+ 
+```{r, echo = FALSE}
+Zuwachs = Stadtteile %>% 
+  group_by(Stadtteil) %>% 
+  summarize(Zuwachs = 100 * round(Wohnungen[Jahr == 2019]/Wohnungen[Jahr == 2018]-1,2))
+
+min_stadtteil = Zuwachs %>% 
+  slice(which.min(Zuwachs)) %>% 
+  pull(Stadtteil)
+
+max_stadtteil = Zuwachs %>% 
+  slice(which.min(Zuwachs)) %>% 
+  pull(Stadtteil)
+
+min_veränderung = Zuwachs %>% 
+  slice(which.min(Zuwachs)) %>% 
+  pull(Zuwachs)
+
+max_veränderung = Zuwachs %>% 
+  slice(which.min(Zuwachs)) %>% 
+  pull(Zuwachs)
+
+```
+
+**Die grössten Veränderungen gab es in `r min_stadtteil` und `r max_stadtteil`. In `r min_stadtteil` `r ifelse(min_veränderung > 0, "wuchsen", "schrumpften")` die Neueinstellungen um `r min_veränderung`%, in `r max_stadtteil` `r ifelse(max_veränderung > 0, "wuchsen", "schrumpften")` die Neueinstellungen um `r max_veränderung`%.**
+
+
+</td>
+<td>
+</td>
+<td>
+```{r stadtteile, message = F, echo = F, fig.asp=.5, fig.cap = cap}
+
+ggplot(Stadtteile, 
        aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
   geom_bar(stat='identity', position='dodge') + 
-  theme(legend.position = 'none')
+  theme(legend.position = 'none') + labs(y='')
 
+cap = "<center>Figure 2. Neueinstellungen pro Bezirk</center>"
 ```
 
 
-```{r echo = F}
-ggmap(berlin) + 
-  theme(axis.title = element_blank(),
-        axis.line = element_blank(),
-        axis.text = element_blank(),
-        axis.ticks = element_blank()) +
-  coord_map(ylim=c(52.45,52.58)) +
-  geom_point(airbnb %>% filter(Erstellungsdatum > "2018-01-01", 
-                         Erstellungsdatum < "2019-12-31"), 
-             mapping = aes(x = Längengrad, y = Breitengrad, col = year(Erstellungsdatum)),size=.1) + 
-  theme(legend.position = 'none')
-```
 
-
-:::
-
-::::::
+</td>
+</tr>
+</table>
 
 ### Preis
 
-#### Prädiktoren
+#### Der Einfluss der Austattung
+
+<table>
+<col width = 40%>
+<col width = 10%>
+<col width = 50%>
+<tr>
+  <td>
+  </td>
+  <td>
+  </td>
+  <td>
 
 
+```{r message = F, echo = F, fig.asp=.5}
 
+austattung_var = c('Küche','Wifi','TV','Kaffeemaschine','Geschirrspüler','Terrasse_Balkon','Check_in_24h')
+airbnb_1819 %>% 
+  select(all_of(austattung_var), Preis) %>%
+  pivot_longer(-Preis,
+             names_to = 'Austattung',
+             values_to = 'Vorhanden') %>% 
+  group_by(Austattung) %>% 
+  summarize(Prozent = mean(Vorhanden) * 100,
+            Nicht_vorhanden = mean(Preis[!Vorhanden]),
+            Vorhanden = mean(Preis[Vorhanden])) %>% 
+  arrange(desc(Prozent)) %>% 
+  mutate_if(is.numeric, function(x) {
+    cell_spec(round(x,1), bold = T, 
+              font_size = spec_font_size(x, begin=10, end=16))}) %>%
+  kable(digits = 2,
+        format='html', 
+        caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis', 
+        col.names = c('', 'Prozent', 'Preis<br>Nicht-vorhanden', 'Preis<br>Vorhanden'),
+        escape = FALSE,
+        align="lccc") %>% 
+  column_spec(c(2,3,4), width = "1.2in")
 
+```
 
+</td>
+</tr>
+</table>
+
+#### Regressionsmodell
+
+<table width=100%>
+<col width = 40%>
+<col width = 10%>
+<col width = 50%>
+<tr>
+  <td>
+  </td>
+  <td>
+  </td>
+  <td style="float:right">
+
+```{r message = F, echo = F, fig.asp=.5}
+
+austattung_var <- c('Küche','Wifi','TV','Kaffeemaschine','Geschirrspüler','Terrasse_Balkon','Check_in_24h')
+austattung <- airbnb_1819 %>% 
+  select(Preis, all_of(austattung_var))
+
+mod <- lm(Preis ~ ., data = austattung)
+tab <- sjPlot::tab_model(mod, 
+                  pred.labels = names(austattung),
+                  title = 'Table 2. Regression des Preises auf die Austattung.',
+                  CSS = list(css.caption = "font-weight:500", css.table="width: auto; margin-right: 0px;margin-left: auto;"))
+tab
+```
+
+</td>
+</tr>
+</table>

@@ -36,6 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
+  pdftitle={test},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
@@ -57,60 +58,66 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-<html>
-  <div style="text-align:center;width=100%;background-color:#F7F7F7;border-bottom:4px solid #c2c2c2;font-family:Helvetica">
-  <table style="width:100%">
-  <col 70%>
-  <col 30%>
-  <tr>
-    <td align="left">
-      <p style="font-size:90px;padding-left:20px;padding-top:30px;line-height:60%"><b>Berlin</b><br><font style="font-size:40px">Jährlicher Bericht</font></p>
-    </td>
-    <td align="right">
-      <img src="2_Assets/airbnb.png" style="width:240px;padding:20px"></img>
-    </td>
-  </tr>
-  </table>
-  </div>
-</html>
+\newenvironment{columns}[1][]{}{}
 
+\newenvironment{column}[1]{\begin{minipage}{#1}\ignorespaces}{%
+\end{minipage}
+\ifhmode\unskip\fi
+\aftergroup\useignorespacesandallpars}
+
+\def\useignorespacesandallpars#1\ignorespaces\fi{%
+#1\fi\ignorespacesandallpars}
+
+\makeatletter
+\def\ignorespacesandallpars{%
+  \@ifnextchar\par
+    {\expandafter\ignorespacesandallpars\@gobble}%
+    {}%
+}
+\makeatother
+
+\title{test}
 \author{}
 \date{\vspace{-2.5em}}
 
 \begin{document}
+\maketitle
+
+\hypertarget{neueinstellungen}{%
+\subsubsection{Neueinstellungen}\label{neueinstellungen}}
 
 \hypertarget{entwicklung}{%
-\subsubsection{Entwicklung}\label{entwicklung}}
-
-\hypertarget{zeitlicher-verlauf}{%
-\paragraph{Zeitlicher Verlauf}\label{zeitlicher-verlauf}}
-
-Seit 18.08.2009 wurden in Berlin 9868 Airbnb Wohnungen eingestellt. Von
-diesen Wohnungn weisen aktuell 76\% Verfügbarkeiten von durchschnittlich
-47.4 Tagen für die nächsten 3 Monate auf.
-
-Einstellungen von AirBnB Wohnungen haben über die letzten Jahre rasant
-zugenommen.
-
-\includegraphics{case_files/figure-latex/unnamed-chunk-1-1.pdf}
-
-\hypertarget{ruxe4umliche-verteilung}{%
-\subsubsection{Räumliche Verteilung}\label{ruxe4umliche-verteilung}}
-
-\hypertarget{stadteile}{%
-\paragraph{Stadteile}\label{stadteile}}
+\paragraph{Entwicklung}\label{entwicklung}}
 
 \begin{columns}
 
 \begin{column}
 
-\includegraphics{case_files/figure-latex/unnamed-chunk-2-1.pdf}
+Seit 18.08.2009 wurden in Berlin 9868 Airbnb Wohnungen eingestellt. Von
+diesen Wohnungn weisen aktuell 76\% Verfügbarkeiten von durchschnittlich
+47.4 Tagen für die nächsten 3 Monate auf.
+
+\textbf{Einstellungen von AirBnB Wohnungen haben über die letzten Jahre
+rasant zugenommen.}
 
 \end{column}
 
 \begin{column}
 
 \end{column}
+
+\begin{column}
+
+\includegraphics{case_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\end{column}
+
+\end{columns}
+
+\hypertarget{stadteile}{%
+\paragraph{Stadteile}\label{stadteile}}
+
+\begin{columns}
 
 \begin{column}
 
@@ -124,18 +131,24 @@ velit esse cillum dolore eu fugiat nulla pariatur.
 
 \end{column}
 
+\begin{column}
+
+\end{column}
+
+\begin{column}
+
+\includegraphics{case_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\end{column}
+
 \end{columns}
 
-\hypertarget{stadteile-uxfcber-die-zeit}{%
-\paragraph{Stadteile über die Zeit}\label{stadteile-uxfcber-die-zeit}}
+\hypertarget{preis}{%
+\subsubsection{Preis}\label{preis}}
 
-\includegraphics{case_files/figure-latex/unnamed-chunk-3-1.pdf}
+\hypertarget{pruxe4diktoren}{%
+\paragraph{Prädiktoren}\label{pruxe4diktoren}}
 
-\hypertarget{karte}{%
-\paragraph{Karte}\label{karte}}
-
-You can also embed plots, for example:
-
-\includegraphics{case_files/figure-latex/unnamed-chunk-4-1.pdf}
+c(`K')
 
 \end{document}
