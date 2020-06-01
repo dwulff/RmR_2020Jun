@@ -112,6 +112,13 @@ airbnb_1819 <- airbnb %>%
          Erstellungsdatum < "2019-12-31")
 ```
 
+
+<style>
+pre code,  .md:not(.use-csslab) pre code {
+  white-space: pre-wrap;
+  }
+</style>
+
 ### B - Präambel
 
 1. Unter den `setup` chunk, setze eine Überschrift auf drittem level (`###`) mit Titel `Präambel`. 
@@ -122,7 +129,7 @@ airbnb_1819 <- airbnb %>%
 
 2. Unter die Überschrift setze den folgenden Text. 
 
-````{r results = 'asis'}
+````wrap
 Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. Er wurde zum Zwecke der Übung auf Basis öffentlich verfügbarer Daten erstellt und repräsentiert einzig die Position der Autoren. Es besteht keine Beziehung zu AirBnB.  
 ````
 
@@ -138,16 +145,29 @@ Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen
 
 2. Füge nun diesn Text ein. Er enthält einige Werte, die du gleich durch in-line Code ersetzen wirst.
 
-````{r results ="asis"}
+
+````wrap
 Seit 02.01.2018 wurden in Berlin 5007 Airbnb Wohnungen eingestellt. Von diesen Wohnungn weisen aktuell 73% Verfügbarkeiten von durchschnittlich 47.5 Tagen für die nächsten 3 Monate auf.
+
 Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt 3274 neue Wohnungen eingestellt wohingegend im Jahr 2018 nur 1733 Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von 89%.
 ````
 
-3. Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen in-line Code aus.
+3. Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen in-line Code aus. Nicht vergessen, der Code muss innerhalb zweier Ticks gesetzt werden. Knitte das Dokument.  
 
-````markdown
-`r min(airbnb_1819$Erstellungsdatum)` 
+````text
+r min(airbnb_1819$Erstellungsdatum)
 ````
+
+4. Jetzt sollte der Text ein Datum enthalten, welches aber noch nicht ganz richtig formatiert ist. Hier hilft die `strftime()` Funktion. Versuche den folgenden erwarteten in-line Code um das Datum in das richtige Format zu bringen.   
+
+````text
+r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")
+````
+5. Als nächstes ersetze die Anzahl der Wohnungen durch `nrow(airbnb_1819)`. Nicht das `r` am Anfang vergessen. 
+
+6. Ersetze nun Prozentsatz der Wohnungen durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)` und die durchschnittliche Verfügbarkeit durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)`. Jetzt sollten alle Zahlen des ersten Paragraphen durch Code ersetzt worden sein. Überprüfe ob alles stimmt. 
+
+7. Ersetze nun Prozentsatz der Wohnungen durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)` und die durchschnittliche Verfügbarkeit durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)`. Jetzt sollten alle Zahlen des ersten Paragraphen durch Code ersetzt worden sein. Überprüfe ob alles stimmt. 
 
 
 

@@ -240,6 +240,11 @@ airbnb &lt;- read_csv(&quot;../1_Data/airbnb.csv&quot;)</code></pre>
 airbnb_1819 &lt;- airbnb %&gt;% 
   filter(Erstellungsdatum &gt; &quot;2018-01-01&quot;, 
          Erstellungsdatum &lt; &quot;2019-12-31&quot;)</code></pre>
+<style>
+pre code,  .md:not(.use-csslab) pre code {
+  white-space: pre-wrap;
+  }
+</style>
 </div>
 <div id="b---präambel" class="section level3">
 <h3>B - Präambel</h3>
@@ -248,8 +253,11 @@ airbnb_1819 &lt;- airbnb %&gt;%
 </ol>
 <pre class="markdown"><code>### Präambel</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Unter die Überschrift setze den folgenden Text.</p></li>
-<li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
+<li>Unter die Überschrift setze den folgenden Text.</li>
+</ol>
+<pre class="wrap"><code>Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. Er wurde zum Zwecke der Übung auf Basis öffentlich verfügbarer Daten erstellt und repräsentiert einzig die Position der Autoren. Es besteht keine Beziehung zu AirBnB.  </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</li>
 </ol>
 </div>
 <div id="c---neueinstellungen" class="section level3">
@@ -259,10 +267,15 @@ airbnb_1819 &lt;- airbnb %&gt;%
 </ol>
 <pre class="markdown"><code>### Präambel</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Füge nun diesn Text ein. Er enthält einige Werte, die du gleich durch in-line Code ersetzen wirst.</p></li>
-<li><p>Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen in-line Code aus.</p></li>
+<li>Füge nun diesn Text ein. Er enthält einige Werte, die du gleich durch in-line Code ersetzen wirst.</li>
 </ol>
-<pre class="markdown"><code>2018-01-02 </code></pre>
+<pre class="wrap"><code>Seit 02.01.2018 wurden in Berlin 5007 Airbnb Wohnungen eingestellt. Von diesen Wohnungn weisen aktuell 73% Verfügbarkeiten von durchschnittlich 47.5 Tagen für die nächsten 3 Monate auf.
+
+Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt 3274 neue Wohnungen eingestellt wohingegend im Jahr 2018 nur 1733 Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von 89%.</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen in-line Code aus. Nicht vergessen, der Code muss innerhalb zweier Ticks “`” gesetzt werden.</li>
+</ol>
+<pre class="text"><code>r min(airbnb_1819$Erstellungsdatum)</code></pre>
 </div>
 </div>
 <div id="datensatz" class="section level2">
