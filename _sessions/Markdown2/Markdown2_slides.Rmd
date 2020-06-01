@@ -93,7 +93,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Was sind die Eigenschaften der Wohnungen?
 
 - Figure scaling (aspect ratio / dpi)
--Tabelle
+- Tabelle
  - Kable + crazy stuff (farbig?)
  - sjPlot
 

@@ -61,7 +61,6 @@ options(digits = 4)
 # Load packages
 require(tidyverse)
 require(knitr)
-require(stargazer)
 
 # load color set
 source("../../_materials/palette/therbootcamp_palettes.R")
@@ -89,93 +88,72 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 # HTML
 
 .pull-left4[
+
 <ul>
-  <li class="m1"><span>HTML = Hyper Text <high>Markup</high> Language</span></li>
-  <li class="m2"><span>Struktur wird mit <high>Tags</high> beschrieben</span></li> 
-  <li class="m3"><span>Im <high>Browser</high> wird eine Seite gerendert darsgestellt (vgl. Knit)</span></li> 
-</ul>
+  <li class="m1"><span><high>Hypertext Markup Language</high> beschreibt Struktur des Textes mit <high>Tags<high></span></li> 
+    <li class="m2"><span>Im <high>Browser</high> wird HTML gerendert und dargestellt</span></li> 
+  </ul>
 
-````html
-<!DOCTYPE html>
-<html>
-<head>
-<title>Seitentitel</title>
-</head>
-<body>
-<h1>Erste Überschrift</h1>
-Lorem ipsum ...
-</body>
-</html>
-````
-
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Tag</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>h1, h2,...</mono> </td>
+  <td bgcolor="white">
+  <high>Überschrift</high> Level 1, 2,...
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>br</mono>
+  </td>
+  <td bgcolor="white">
+   <high>Neue Zeile</high>    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>b</mono>
+  </td>
+  <td bgcolor="white">
+  <high>fett</high> 
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>i</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>kursiv
+  </td> 
+</tr>
+</table>
 ]
 
 .pull-right5[
 
-<html>
-<head>
-<title>Seitentitel</title>
-</head>
-<body>
-
-<h1>Erste Überschrift</h1>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-</body>
-</html>
-
-]
-
----
-
-# HTML Tags
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>Beschreiben <high>Formatierung</high> des Inhalts</span></li>
-  <li class="m2"><span>In Paaren mit <high>Start und End </high> Tag</span></li> 
-  <li class="m3"><span>Das end Tag enthält einen <high>/</high></span></li> 
-</ul>
-
 ````html
-<tag start>Inhalt</tag end>
-
-<h1>Überschrift 1. Ebene</h1>
-  <h2>Überschrift 2. Ebene</h2>
-  
-<b>Fett</b>
-
-<i>Kursiv</i>
-
-<br> Neue Zeile (Ausnahme!)
-
-<a href="therbootcamp.github.io">
-  Ein Link</a>
-
+<h1>Präambel</h1>
+Dieser <i>Bericht</i> evaluiert 
+<b>Veränderungen</b> in den ...
+<br>
+Er wurde zum Zwecke der <b>Übung</b> auf ... 
 ````
 
-]
-
-.pull-right5[
-
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-
-<h1>Überschrift 1. Ebene</h1>
-  <h2>Überschrift 2. Ebene</h2>
-  
-  
-<b>Fett</b>
+<h1>Präambel</h1>
+Dieser <i>Bericht</i> evaluiert 
+<b>Veränderungen</b> in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. 
 <br>
-<i>Kursiv</i>
-<br>
-<br>
-<a href="https://therbootcamp.github.io">Ein Link</a>
-</body>
-</html>
+Er wurde zum Zwecke der <b>Übung</b> auf Basis öffentlich verfügbarer Daten erstellt und repräsentiert einzig die Position der Autoren
 
 ]
 
@@ -184,145 +162,85 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 # CSS
 
 .pull-left4[
+
 <ul>
-  <li class="m1"><span>CSS = Cascading <high>Style Sheets</high></span></li>
-  <li class="m2"><span>Beschreibt <high>wie</high> Tags in HTML angezeigt werden sollen</span></li>
-  <li class="m3"><span>Jedem HTML Tag können <high>Styles</high> zugewiesen werden</span></li> 
-  <li class="m4"><span>Dafür wird der CSS <high>Selector</high> (z.B. h1) mit verschiedenen <high>Deklarationen</high> (zB: color: blue) erweitert</span></li> 
-</ul>
+  <li class="m1"><span>Cascading <high>Style Sheets</high> beschreiben <high>wie</high> HTML Tags angezeigt werden</span></li> 
+  <li class="m2"><span>Der <high>CSS Selector</high> (z.B. h1) mit verschiedenen <high>Deklarationen</high> (zB: color: blue) erweitert</span></li> 
+  </ul>
 
-````html
-<h1 style = "color: blue;">
-Überschrift 1. Ebene</h1>
-
-<p style = "color: red;
-   text_align: center">
-   Text fett in rot</p>
-````
-
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Element</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>style</mono> </td>
+  <td bgcolor="white">
+  Beschreibung der <high>Darstellung</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>color</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Farbwahl</high> <mono>blue, red, ...</mono> oder #6BB7B9
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>font-size</mono> und
+    <mono>font-family</mono>
+  </td>
+  <td bgcolor="white">
+  Schriftgrösse und -art
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>div</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Kontainer</high> für beliebigen Inhalt
+  </td> 
+</tr>
+</table>
 ]
 
 .pull-right5[
 
-<html>
-<head>
+````html
+<h1 style = "color: #6BB5B9">Präambel</h1>
+<div style = "font-family: Arial; 
+font-size: 25px">
+Dieser <i>Bericht</i> evaluiert 
+<b>Veränderungen</b> in den 
+Neueinstellungen ... .</div> 
 
-<title>Page Title</title>
-</head>
-<body>
+````
 
-<h1 style="color:blue;">Überschrift 1. Ebene</h1>
-
-<p style = "color: red;
-    font-weight: bold;">
-   Text fett in rot</p>
-
-</body>
-</html>
-
+<h1 style = "color: #6BB5B9">Präambel</h1>
+<div style = "font-family: Arial; font-size: 25px">
+Dieser <i>Bericht</i> evaluiert <b>Veränderungen</b> in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. 
 ]
 
 ---
 
-# CSS einbinden
+# CSS
 
 .pull-left4[
+
 <ul>
-  <li class="m1"><span><high>inline</high> direkt im HTML tag </span></li> 
-</ul>
-
-````html
-<h1 style="color:blue;
-           text-align:center;">
-           Meine Überschrift</h1>
-           
-<p style="font-size: 40px;">
-          Mein grosser Absatz</p>
-          
-<div style="font-size: 40px;
-            font-family: Arial;">
-          Mein grosser Absatz in 
-          Arial</div>
-````
-
-]
-
-.pull-right5[
-
-<h1 style="color:blue;
-           text-align:center;">
-           Meine Überschrift</h1>
-           
-<p style="font-size: 40px;">
-          Mein grosser Absatz</p>
-
-<div style="font-size: 40px;
-            font-family: Arial;">
-          Mein grosser Absatz in Arial</div>
-
-
-
-]
-
----
-
-# CSS einbinden
-
-.pull-left4[
-<ul>
- <li class="m1"><span><high>inline</high> direkt im HTML tag </span></li> 
-</ul>
-
-````html
-Normaler Text
-
-<p style = 
-"background-color:lightblue; 
-padding: 10px;">
-Wichtige Schlussfolgerung
-</p>
-
-<p style = 
-"font-weight: bold">
-Fetter Text
-</p>
-````
-
-]
-
-.pull-right5[
-
-Normaler Text
-
-<p style = "background-color:lightblue; 
-        padding: 10px;">
-        Wichtige Schlussfolgerung
-        </p>
-
-<p style = "font-weight: bold">
-        Fetter Text
-        </p>
-]
-
----
-
-# CSS einbinden
-
-.pull-left4[
-<ul>
-  <li class="m1"><span><high>inline</high> direkt im HTML tag </span></li> 
-  <li class="m2"><span>Für globale Anpassung aller Tags eines Dokumentes bietet sich 
-  ein <high>externes</high> .css file an</span></li>
-</ul>
-
-````html
-title: "Meine Demo"
-author: "MSM"
-date: "5/28/2020"
-output:
-  html_document:
-    css: ["mystyle.css"]
-````
+  <li class="m1"><span>Cascading <high>Style Sheets</high> können auch global definiert werden</span></li> 
+  <li class="m2"><span>Dafür wird ein <high>externes</high> file <mono>*.css</mono> erstellt und in Markdown eingebunden </span></li> 
+  </ul>
 
 ]
 
@@ -330,26 +248,191 @@ output:
 
 mystyle.css
 ````html
+h3, h4 {
+  font-weight: 500;
+  color: #555555;
+}
+
+table td {
+  vertical-align: top;
+}
+
+a, a:hover {
+  color: #007D8C;
+}
+
 body {
-  background-color: lightgrey;
+  background-image: url(watermark.svg);
+  background-repeat: repeat-y;
+  background-size: contain;
 }
+````
+]
 
-h1 {
-  color: green;
-  text-align: center;
-}
+---
 
-p {
-  color: red;
-  font-weight: bold;
-}
+# YAML
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Jedes Markdown Dokument beginnt mit einem <high>YAML header</high></span></li> 
+  <li class="m2"><span>YAML ist ein rekursives Akronym: <high>YAML Ain't Markup Language</high></span></li> 
+  <li class="m3"><span>Als Default sind hier immer <high>Titel</high>, <high>Autor</high> und <high>Datum</high>
+  <li class="m4"><span>Diese 3 Angaben werden <high>als Erstes</high> im HTML Dokument <high>angezeigt</high></span></li>  
+  </ul>
+
+]
+
+.pull-right5[
+
+````html
+---
+title: "Dokument Titel"
+author: "MSM"
+date: "6/1/2020"
+output: html_document
+---
 ````
 
 ]
 
 ---
 
+# Inhaltsverzeichnis
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Aus den Überschriften kann mit <mono>toc: true</mono> ein Inhaltsverzeichnis erstellt werden</span></li>
+  <li class="m2"><span>Dabei wird mit <mono>toc_depth</mono></li> die <high>Tiefe</high> bestimmt</span></li> 
+</ul>
+
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Element</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc</mono> </td>
+  <td bgcolor="white">
+  Inhaltsverzeichnis anzeigen <mono>TRUE</mono> oder <mono>FALSE</mono>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc_depth</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Tiefe</high> des Inhaltzverzeichnis, default = 1 (nur Überschriften Level 1)
+  </td> 
+</tr>
+
+</table>
+]
+
+.pull-right5[
+
+````markdown
+date: "6/1/2020"
+output:
+  html_document:
+    toc: true
+    toc_depth: 5
+````
+]
+
+---
+
 # Footer und Header
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Fixe Elemtente können als Header und Footer angezeigt werden</span></li> 
+  <li class="m2"><span>Beide Elemente werden als externes HTML file gespeichert</span></li>
+  <li class="m3"><span>Die HTML files werden dann im YAML header geladen</span></li>
+  </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Element</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>after_body</mono> </td>
+  <td bgcolor="white">
+
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>before_body</mono>
+  </td>
+  <td bgcolor="white">
+
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>in_header</mono> und
+    <mono>font-family</mono>
+  </td>
+  <td bgcolor="white">
+  </td> 
+</tr>
+
+</table>
+]
+
+.pull-right5[
+
+````html
+date: "5/28/2020"
+output: 
+  html_document:
+    includes:
+      in_header: ../2_Assets/header.Rhtml
+````
+
+````html
+<html>
+  <div style="text-align:center;width=100%;background-color:rgba(0,125,140,.3);border-bottom:4px solid #007D8C;font-family:Helvetica;margin-bottom:20px">
+  <table style="width:100%">
+  <col 70%>
+  <col 30%>
+  <tr>
+    <td align="left">
+      <p style="color: #007D8C;font-size:100px;padding-left:20px;padding-top:40px;line-height:50%"><b>Berlin</b><br><font style="font-size:40px;color:white;padding-left:6px">Bericht 18/19</font></p>
+    </td>
+    <td align="right">
+      <img src="../2_Assets/airbnb.png" style="width:240px;padding:20px"></img>
+    </td>
+  </tr>
+  </table>
+  </div>
+</html>
+````
+
+]
+
+---
+
 
 .pull-left4[
 <ul>

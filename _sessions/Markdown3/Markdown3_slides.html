@@ -51,93 +51,72 @@ layout: true
 # HTML
 
 .pull-left4[
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;HTML = Hyper Text &lt;high&gt;Markup&lt;/high&gt; Language&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Struktur wird mit &lt;high&gt;Tags&lt;/high&gt; beschrieben&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Im &lt;high&gt;Browser&lt;/high&gt; wird eine Seite gerendert darsgestellt (vgl. Knit)&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Hypertext Markup Language&lt;/high&gt; beschreibt Struktur des Textes mit &lt;high&gt;Tags&lt;high&gt;&lt;/span&gt;&lt;/li&gt; 
+    &lt;li class="m2"&gt;&lt;span&gt;Im &lt;high&gt;Browser&lt;/high&gt; wird HTML gerendert und dargestellt&lt;/span&gt;&lt;/li&gt; 
+  &lt;/ul&gt;
 
-````html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Seitentitel&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h1&gt;Erste Überschrift&lt;/h1&gt;
-Lorem ipsum ...
-&lt;/body&gt;
-&lt;/html&gt;
-````
-
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Tag&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;h1, h2,...&lt;/mono&gt; &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Überschrift&lt;/high&gt; Level 1, 2,...
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;br&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Neue Zeile&lt;/high&gt;    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;b&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;fett&lt;/high&gt; 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;i&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;kursiv
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
 ]
 
 .pull-right5[
 
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Seitentitel&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;h1&gt;Erste Überschrift&lt;/h1&gt;
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-&lt;/body&gt;
-&lt;/html&gt;
-
-]
-
----
-
-# HTML Tags
-
-.pull-left4[
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Beschreiben &lt;high&gt;Formatierung&lt;/high&gt; des Inhalts&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;In Paaren mit &lt;high&gt;Start und End &lt;/high&gt; Tag&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Das end Tag enthält einen &lt;high&gt;/&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
 ````html
-&lt;tag start&gt;Inhalt&lt;/tag end&gt;
-
-&lt;h1&gt;Überschrift 1. Ebene&lt;/h1&gt;
-  &lt;h2&gt;Überschrift 2. Ebene&lt;/h2&gt;
-  
-&lt;b&gt;Fett&lt;/b&gt;
-
-&lt;i&gt;Kursiv&lt;/i&gt;
-
-&lt;br&gt; Neue Zeile (Ausnahme!)
-
-&lt;a href="therbootcamp.github.io"&gt;
-  Ein Link&lt;/a&gt;
-
+&lt;h1&gt;Präambel&lt;/h1&gt;
+Dieser &lt;i&gt;Bericht&lt;/i&gt; evaluiert 
+&lt;b&gt;Veränderungen&lt;/b&gt; in den ...
+&lt;br&gt;
+Er wurde zum Zwecke der &lt;b&gt;Übung&lt;/b&gt; auf ... 
 ````
 
-]
-
-.pull-right5[
-
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Page Title&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;h1&gt;Überschrift 1. Ebene&lt;/h1&gt;
-  &lt;h2&gt;Überschrift 2. Ebene&lt;/h2&gt;
-  
-  
-&lt;b&gt;Fett&lt;/b&gt;
+&lt;h1&gt;Präambel&lt;/h1&gt;
+Dieser &lt;i&gt;Bericht&lt;/i&gt; evaluiert 
+&lt;b&gt;Veränderungen&lt;/b&gt; in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. 
 &lt;br&gt;
-&lt;i&gt;Kursiv&lt;/i&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;a href="https://therbootcamp.github.io"&gt;Ein Link&lt;/a&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+Er wurde zum Zwecke der &lt;b&gt;Übung&lt;/b&gt; auf Basis öffentlich verfügbarer Daten erstellt und repräsentiert einzig die Position der Autoren
 
 ]
 
@@ -146,145 +125,85 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 # CSS
 
 .pull-left4[
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;CSS = Cascading &lt;high&gt;Style Sheets&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Beschreibt &lt;high&gt;wie&lt;/high&gt; Tags in HTML angezeigt werden sollen&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;Jedem HTML Tag können &lt;high&gt;Styles&lt;/high&gt; zugewiesen werden&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m4"&gt;&lt;span&gt;Dafür wird der CSS &lt;high&gt;Selector&lt;/high&gt; (z.B. h1) mit verschiedenen &lt;high&gt;Deklarationen&lt;/high&gt; (zB: color: blue) erweitert&lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Cascading &lt;high&gt;Style Sheets&lt;/high&gt; beschreiben &lt;high&gt;wie&lt;/high&gt; HTML Tags angezeigt werden&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Der &lt;high&gt;CSS Selector&lt;/high&gt; (z.B. h1) mit verschiedenen &lt;high&gt;Deklarationen&lt;/high&gt; (zB: color: blue) erweitert&lt;/span&gt;&lt;/li&gt; 
+  &lt;/ul&gt;
 
-````html
-&lt;h1 style = "color: blue;"&gt;
-Überschrift 1. Ebene&lt;/h1&gt;
-
-&lt;p style = "color: red;
-   text_align: center"&gt;
-   Text fett in rot&lt;/p&gt;
-````
-
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Element&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;style&lt;/mono&gt; &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Beschreibung der &lt;high&gt;Darstellung&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;color&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Farbwahl&lt;/high&gt; &lt;mono&gt;blue, red, ...&lt;/mono&gt; oder #6BB7B9
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;font-size&lt;/mono&gt; und
+    &lt;mono&gt;font-family&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Schriftgrösse und -art
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;div&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Kontainer&lt;/high&gt; für beliebigen Inhalt
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
 ]
 
 .pull-right5[
 
-&lt;html&gt;
-&lt;head&gt;
+````html
+&lt;h1 style = "color: #6BB5B9"&gt;Präambel&lt;/h1&gt;
+&lt;div style = "font-family: Arial; 
+font-size: 25px"&gt;
+Dieser &lt;i&gt;Bericht&lt;/i&gt; evaluiert 
+&lt;b&gt;Veränderungen&lt;/b&gt; in den 
+Neueinstellungen ... .&lt;/div&gt; 
 
-&lt;title&gt;Page Title&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+````
 
-&lt;h1 style="color:blue;"&gt;Überschrift 1. Ebene&lt;/h1&gt;
-
-&lt;p style = "color: red;
-    font-weight: bold;"&gt;
-   Text fett in rot&lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-
+&lt;h1 style = "color: #6BB5B9"&gt;Präambel&lt;/h1&gt;
+&lt;div style = "font-family: Arial; font-size: 25px"&gt;
+Dieser &lt;i&gt;Bericht&lt;/i&gt; evaluiert &lt;b&gt;Veränderungen&lt;/b&gt; in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. 
 ]
 
 ---
 
-# CSS einbinden
+# CSS
 
 .pull-left4[
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;inline&lt;/high&gt; direkt im HTML tag &lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
-````html
-&lt;h1 style="color:blue;
-           text-align:center;"&gt;
-           Meine Überschrift&lt;/h1&gt;
-           
-&lt;p style="font-size: 40px;"&gt;
-          Mein grosser Absatz&lt;/p&gt;
-          
-&lt;div style="font-size: 40px;
-            font-family: Arial;"&gt;
-          Mein grosser Absatz in 
-          Arial&lt;/div&gt;
-````
-
-]
-
-.pull-right5[
-
-&lt;h1 style="color:blue;
-           text-align:center;"&gt;
-           Meine Überschrift&lt;/h1&gt;
-           
-&lt;p style="font-size: 40px;"&gt;
-          Mein grosser Absatz&lt;/p&gt;
-
-&lt;div style="font-size: 40px;
-            font-family: Arial;"&gt;
-          Mein grosser Absatz in Arial&lt;/div&gt;
-
-
-
-]
-
----
-
-# CSS einbinden
-
-.pull-left4[
-&lt;ul&gt;
- &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;inline&lt;/high&gt; direkt im HTML tag &lt;/span&gt;&lt;/li&gt; 
-&lt;/ul&gt;
-
-````html
-Normaler Text
-
-&lt;p style = 
-"background-color:lightblue; 
-padding: 10px;"&gt;
-Wichtige Schlussfolgerung
-&lt;/p&gt;
-
-&lt;p style = 
-"font-weight: bold"&gt;
-Fetter Text
-&lt;/p&gt;
-````
-
-]
-
-.pull-right5[
-
-Normaler Text
-
-&lt;p style = "background-color:lightblue; 
-        padding: 10px;"&gt;
-        Wichtige Schlussfolgerung
-        &lt;/p&gt;
-
-&lt;p style = "font-weight: bold"&gt;
-        Fetter Text
-        &lt;/p&gt;
-]
-
----
-
-# CSS einbinden
-
-.pull-left4[
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;inline&lt;/high&gt; direkt im HTML tag &lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Für globale Anpassung aller Tags eines Dokumentes bietet sich 
-  ein &lt;high&gt;externes&lt;/high&gt; .css file an&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-````html
-title: "Meine Demo"
-author: "MSM"
-date: "5/28/2020"
-output:
-  html_document:
-    css: ["mystyle.css"]
-````
+  &lt;li class="m1"&gt;&lt;span&gt;Cascading &lt;high&gt;Style Sheets&lt;/high&gt; können auch global definiert werden&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Dafür wird ein &lt;high&gt;externes&lt;/high&gt; file &lt;mono&gt;*.css&lt;/mono&gt; erstellt und in Markdown eingebunden &lt;/span&gt;&lt;/li&gt; 
+  &lt;/ul&gt;
 
 ]
 
@@ -292,26 +211,191 @@ output:
 
 mystyle.css
 ````html
+h3, h4 {
+  font-weight: 500;
+  color: #555555;
+}
+
+table td {
+  vertical-align: top;
+}
+
+a, a:hover {
+  color: #007D8C;
+}
+
 body {
-  background-color: lightgrey;
+  background-image: url(watermark.svg);
+  background-repeat: repeat-y;
+  background-size: contain;
 }
+````
+]
 
-h1 {
-  color: green;
-  text-align: center;
-}
+---
 
-p {
-  color: red;
-  font-weight: bold;
-}
+# YAML
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Jedes Markdown Dokument beginnt mit einem &lt;high&gt;YAML header&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;YAML ist ein rekursives Akronym: &lt;high&gt;YAML Ain't Markup Language&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;Als Default sind hier immer &lt;high&gt;Titel&lt;/high&gt;, &lt;high&gt;Autor&lt;/high&gt; und &lt;high&gt;Datum&lt;/high&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;Diese 3 Angaben werden &lt;high&gt;als Erstes&lt;/high&gt; im HTML Dokument &lt;high&gt;angezeigt&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+  &lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+````html
+---
+title: "Dokument Titel"
+author: "MSM"
+date: "6/1/2020"
+output: html_document
+---
 ````
 
 ]
 
 ---
 
+# Inhaltsverzeichnis
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Aus den Überschriften kann mit &lt;mono&gt;toc: true&lt;/mono&gt; ein Inhaltsverzeichnis erstellt werden&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Dabei wird mit &lt;mono&gt;toc_depth&lt;/mono&gt;&lt;/li&gt; die &lt;high&gt;Tiefe&lt;/high&gt; bestimmt&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Element&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc&lt;/mono&gt; &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Inhaltsverzeichnis anzeigen &lt;mono&gt;TRUE&lt;/mono&gt; oder &lt;mono&gt;FALSE&lt;/mono&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;toc_depth&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Tiefe&lt;/high&gt; des Inhaltzverzeichnis, default = 1 (nur Überschriften Level 1)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+````markdown
+date: "6/1/2020"
+output:
+  html_document:
+    toc: true
+    toc_depth: 5
+````
+]
+
+---
+
 # Footer und Header
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Fixe Elemtente können als Header und Footer angezeigt werden&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Beide Elemente werden als externes HTML file gespeichert&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Die HTML files werden dann im YAML header geladen&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Element&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;after_body&lt;/mono&gt; &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;before_body&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;in_header&lt;/mono&gt; und
+    &lt;mono&gt;font-family&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+
+&lt;/table&gt;
+]
+
+.pull-right5[
+
+````html
+date: "5/28/2020"
+output: 
+  html_document:
+    includes:
+      in_header: ../2_Assets/header.Rhtml
+````
+
+````html
+&lt;html&gt;
+  &lt;div style="text-align:center;width=100%;background-color:rgba(0,125,140,.3);border-bottom:4px solid #007D8C;font-family:Helvetica;margin-bottom:20px"&gt;
+  &lt;table style="width:100%"&gt;
+  &lt;col 70%&gt;
+  &lt;col 30%&gt;
+  &lt;tr&gt;
+    &lt;td align="left"&gt;
+      &lt;p style="color: #007D8C;font-size:100px;padding-left:20px;padding-top:40px;line-height:50%"&gt;&lt;b&gt;Berlin&lt;/b&gt;&lt;br&gt;&lt;font style="font-size:40px;color:white;padding-left:6px"&gt;Bericht 18/19&lt;/font&gt;&lt;/p&gt;
+    &lt;/td&gt;
+    &lt;td align="right"&gt;
+      &lt;img src="../2_Assets/airbnb.png" style="width:240px;padding:20px"&gt;&lt;/img&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/html&gt;
+````
+
+]
+
+---
+
 
 .pull-left4[
 &lt;ul&gt;
