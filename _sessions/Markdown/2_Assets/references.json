@@ -1,34 +1,6 @@
 {
-    "schema": "https://github.com/citation-style-language/schema/raw/master/csl-citation.json",
-    "citationID": "12rsus7rlj",
-    "citationItems": [
-        {
-            "id": "ITEM-1",
-            "itemData": {
-                "id": "ITEM-1",
-                "issued": {
-                    "date-parts": [
-                        [
-                            "2007"
-                        ]
-                    ]
-                },
-                "title": "My paper",
-                "type": "journal-article"
-            },
-            "locator": "21",
-            "label": "page",
-            "uris": [
-                "http://www.mendeley.com/documents/?uuid=970e7ce0-8a21-482e-b7d6-e77794a2d37d",
-                "http://www.zotero.org/uniqueDocumentId"
-            ]
-        }
-    ],
-    "mendeley": {
-        "previouslyFormattedCitation": "(2007)",
-        "manualFormatting": "2007b"
-    },
-    "properties": {
-        "noteIndex": 1
-    }
+     "id":"unique_string-1219205",
+     "type":"book",
+     "title":"Book Title",
+     "arbitraryField":"An example arbitrary field with arbitrary data. This field will be ignored by the CSL Processor."
 }
