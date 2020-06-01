@@ -1,12 +1,6 @@
 ---
-output:
-  html_document:
-    theme: lumen
-    toc: true
-    toc_depth: 5
-    css: ../2_Assets/airbnb.css
-    includes:
-      in_header: ../2_Assets/header.Rhtml
+title: Bericht Berlin 2018/2019
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -26,16 +20,6 @@ airbnb_1819 <- read_csv('../1_Data/airbnb.csv') %>%
   filter(Erstellungsdatum > "2018-01-01", 
          Erstellungsdatum < "2019-12-31")
 
-# Ändere Thema zu minimal
-theme_set(theme_minimal())
-theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
-             plot.background = element_rect(fill = "transparent", colour = NA))
-
-# Setze defaults in ggplot
-ggplot <- function(...) ggplot2::ggplot(...) + 
-  scale_fill_gradientn(colors = c('#555555','#6BB7B9')) + 
-  scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
-
 ```
 
 ### Präambel
@@ -46,22 +30,10 @@ Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen
 
 #### Entwicklung
 
-<table>
-  <col width = 40%>
-  <col width = 10%>
-  <col width = 50%>
-  <tr>
-  <td>
-  
 Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin `r nrow(airbnb_1819)` Airbnb Wohnungeneingestellt. Von diesen Wohnungn weisen aktuell `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen für die nächsten 3 Monate auf.
 
 **Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt wohingegend im Jahr 2018 nur `r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von `r (round(n_2019/n_2018, 2) - 1)*100`%.**
-  
-  </td>
-  <td>
-  
-  </td>
-  <td>
+
 
 ```{r fig.asp = .5, fig.cap = cap, background = 'transparent'}
 
@@ -82,18 +54,8 @@ cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
 
 ```
 
-  </td>
-  </tr>
-</table>
-
 #### Stadtteile
 
-<table>
-<col width = 40%>
-<col width = 10%>
-<col width = 50%>
-<tr>
-  <td>
 
 ```{r}
 # Berechne Häufigkeiten über die Bezirke
@@ -137,12 +99,6 @@ max_stadtteil = veränderung %>%
 
 **Die grössten Veränderungen gab es in `r min_stadtteil` und `r max_stadtteil`. In `r min_stadtteil` `r ifelse(min_veränderung > 0, "wuchsen", "schrumpften")` die Neueinstellungen um `r min_veränderung`%, in `r max_stadtteil` `r ifelse(max_veränderung > 0, "wuchsen", "schrumpften")` die Neueinstellungen um `r max_veränderung`%.**
 
-
-  </td>
-  <td>
-  </td>
-  <td>
-
 ```{r fig.asp=.5, fig.cap = cap}
 # Plotte Häufigkeieten der Stadtteile
 ggplot(stadtteile, 
@@ -153,10 +109,6 @@ ggplot(stadtteile,
 # Ergänze caption
 cap = "<center>Figure 2. Neueinstellungen pro Bezirk</center>"
 ```
-
-  </td>
-  </tr>
-</table>
 
 ### Preis
 
@@ -183,23 +135,11 @@ ausstattung <- airbnb_1819 %>%
             Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %>% 
   arrange(desc(Differenz)) 
 ```
-
-<table width=100%>
-<col width = 25%>
-<col width = 10%>
-<col width = 65%>
-<tr>
-  <td>
   
 Das Ausstattungsmerkmal mit dem grössten Unterschied im Preis ist `r ausstattung %>% pull(Ausstattung) %>% first()` (`r ausstattung %>% pull(Differenz) %>% first() %>% round(1)`), das Ausstattungsmerkmal mit dem kleinsten Unterschied im Preis ist `r ausstattung %>% pull(Ausstattung) %>% last()` (`r ausstattung %>% pull(Differenz) %>% last() %>% round(1)`). 
   
 <b>Der stark negative Effekt der Küche überrascht. Er könnte durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.</b>  
   
-  </td>
-  <td>
-  </td>
-  <td>
-
 ```{r}
 # Plotte Tabelle mit Austattungsmerkmalen
 ausstattung %>% 
@@ -216,10 +156,6 @@ ausstattung %>%
   column_spec(c(2,3,4,5), width = "1.2in") 
 ```
 
-  </td>
-  </tr>
-</table>
-
 #### Regressionsmodell
 
 ```{r, echo = FALSE}
@@ -232,13 +168,6 @@ ausstattung_mod <- airbnb_1819 %>%
   select(Preis, Hotel, all_of(ausstattung_var)) %>% 
   lm(formula = Preis ~ .)
 ```
-
-<table width=100%>
-<col width = 50%>
-<col width = 10%>
-<col width = 40%>
-<tr>
-  <td>
   
 Die Regression legt nahe, dass Küche, TV und Terrasse oder Balkon den grössten Einfluss auf den Preis in den letzten beiden Jahren hatten. 
   
@@ -257,21 +186,11 @@ hotel <- airbnb_1819 %>%
 
 <b>Der Anteil von Hotels ist von `r ((hotel$Anteil[1]-1)*100) %>% round(1)`% im Jahre 2018 auf `r (hotel$Anteil[2]*100) %>% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. 
 
-  
-  </td>
-  <td>
-  </td>
-  <td>
 
 ```{r message = F, echo = F, fig.asp=.5}
 # Tabelle mit ergebnissen der Regression
 sjPlot::tab_model(ausstattung_mod,
                   pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
-                  title = 'Table 2. Regression des Preises auf die Ausstattung.',
-                  CSS = list(css.caption = "font-weight:500", 
-                             css.table = "width: auto; margin-right: 0px;margin-left: auto;"))
+                  title = 'Table 2. Regression des Preises auf die Ausstattung.')
 ```
 
-  </td>
-  </tr>
-</table>
