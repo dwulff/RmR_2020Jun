@@ -1,5 +1,5 @@
 ---
-title: "Mit Chunks umgehen"
+title: "Markdown II"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
@@ -48,9 +48,9 @@ library(kableExtra)
 ```
 
 <p align="center" width="100%">
-  <img src="image/nestle_chunks.jpg" alt="Chunks" style="width:50%">
+  <img src="image/flat_crop.png" alt="Chunks" style="width:100%">
   <br>
-  <font style="font-size:10px">from <a href="">www.nestle.com</a></font>
+  <font style="font-size:10px">from <a href="https://www.airbnb.ca/rooms/1347514/photos/13227297?guests=4&s=4fFl&source_impression_id=p3_1591077094_V6VkyaMzWmptgznT&adults=1">airbnb.ca</a></font>
 </p>
  
 
@@ -58,238 +58,65 @@ library(kableExtra)
 
 ## Überblick
 
-In diesem Practical wirst Du verschiedene Chunk Einstellungen mit dem AirBnB Datensatz üben. 
+In diesem Practical wirst du... 
 
 Am Ende des Practicals kannst du:
 
-1. Chunks nach deinen Wünschen konfigurieren
-2. Verschiedene Arten von Inhaltsverzeichnissen einbauen 
-3. Tabellen erstellen und gestalten
+1. ...
+2. ...
+3. ...
 
 ## Aufgaben
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelistet sind, in deinem `1_Data` Ordner hast. 
+1. Öffne dein `TheRBootcamp` R Projekt und öffne `airbnb_level_one.Rmd`, welches das ferteige Produkt am Ende des ersten Markdown Practicals enthält. 
 
-2. Öffne ein neues RMarkdown Skript und wähle das Template "Document" aus (siehe screenshot unten).
-
-<p align="center" width="100%">
-  <img src="image/Markdown_Document.png" alt="New Markdown Document" style="width:50%">
-</p>
-
-3. Trage bei Title "Chunk Pactical" und deinen Namen ein.
-
-4. Speichere das neue Skript unter dem Namen `markdown2_practical.Rmd` im `2_Code` Ordner.
-
-5. Lösche alles unterhalb des `setup` R chunks.
+### B - Preise
 
 
-### B - `airbnb` Datensatz und Inhaltsverzeichnis anzeigen
 
-1. Wir wollen ein Inhaltsverzeichnis angezeigt bekommen. Im YAML header müssen  
-wir also die Option `toc` auf TRUE setzen
+## Datensatz
 
-````Markdown
-output:
-  html_document:
-    toc: XXX
-````
+Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv) Datensatz enthält Zahlen zu 9868 Berliner Airbnbs 
 
-2. Füge im `setup` chunk die libraries `tidyverse()` und `kableExtra()` ein
-
-````Markdown
-{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(XXX)
-library(XXX)
-````
-
-3. Lade den Datensatz `airbnb.csv` als Objekt `airbnb` im `setup` chunk aus dem Ordner 1_Data.
-
-````Markdown
-{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(XXX)
-library(XXX)
-airbnb <- read_csv("../XXX/XXX")
-````
-
-4. Erstelle einen neuen Chunk und zeige mit Hilfe der `summary()` Funktion eine Zusammenfassung des `airbnb` Datensatzes an. Es soll die Funktion und das Output angezeigt werden!
-````Markdown
-{r}
-summary(XXX)
-````
-
-### C - Die richtige Wohnung finden
-
-1. Wir wollen nun herausfinden welche Wohnung eine Kaffeemaschine, einen Geschirrspüler und Wifi hat (alles was man zum Leben braucht). Dafür wählen wir zuerst die drei Variablen aus (Kaffeemaschine, Geschirrspüler, Wifi).
-````Markdown
-{r}
-XXX %>%
-  select(XXX, XXX, XXX)
-````
-
-2. Jetzt erstellen wir eine neue Variable `hat_alles` in der wir die drei Variablen addieren.
-````Markdown
-{r}
-XXX %>%
-  select(XXX, XXX, XXX) %>%
-  mutate(hat_alles = Kaffeemaschine + Geschirrspüler + Wifi)
-````
-
-3. Schliesslich wollen wir nur das Ergebnis im HTML file sehen (ohne Code)
-````Markdown
-{r echo = XXX}
-XXX %>%
-  select(XXX, XXX, XXX) %>%
-  mutate(hat_alles = XXX + XXX + XXX)
-````
-
-4. Wieviele Wohnungen mit allen 3 Annehmlichkeiten gibt es? Code und Ergebnisse anzeigen!
-````Markdown
-{r echo = XXX}
-XXX %>%
-  select(XXX, XXX, XXX) %>%
-  mutate(hat_alles = XXX + XXX + XXX) %>%
-  count(hat_alles)
-````
-
-5. Nun wollen wir noch die Darstellung verbessern. Dazu speichern wir unseren dataframe 
-zuerst in ein neues Objekt `vorhanden` ab. Dann schicken wir dieses Objekt in die Funktion
-`kable()`
-
-````Markdown
-{r echo = XXX}
-vorhanden <- 
-XXX %>%
-  select(XXX, XXX, XXX) %>%
-  mutate(hat_alles = XXX + XXX + XXX) %>%
-  count(hat_alles)
-  
-kable(vorhanden)  
-````
-
-6. Im nächsten Schritt werden wir die Namen der Spalten von `hat_alles` und `n` in 
-etwas sinnvollerers ändern. Die Spalten sollen neu: `Kriterium` und `Anzahl` heissen.
- 
-````Markdown
-kable(vorhanden,
-      col.names = c('XXX', 'XXX'),
-      )
-````
-
-7. Jetzt noch die Breite der Tabelle reduzieren und die Schriftgrösse erhöhen - hier
-ist `kable_styling` hilfreich.
- 
-````Markdown
-kable(vorhanden,
-      col.names = c('XXX', 'XXX'),
-      ) %>%
-kable_styling(full_width = XXX, font_size = XXX)
-````
-
-## Beispiele
-
-```{r, eval = FALSE, echo = TRUE}
-library(tidyverse) 
-library(cstab)
-library(dbscan)
-library(mclust, mask.ok = F)
-
-# Beispieldatensatz
-data(mpg)
-
-# Verarbeitung des Datensatzes
-mpg <- mpg %>% select_if(is.numeric)
-mpg_stand <- mpg  %>% 
-  scale %>%         # Standardisieren
-  as_tibble()
-
-# k-means -----
-
-# Finde Cluster
-mpg_km <- kmeans(mpg_stand, 
-                 centers = 3)
-
-# Zeige Zentroide
-mpg_km$centers
-
-# k-selection -----
-
-# Zeige Binnenvarianz Verlauf
-km_verlauf <- purrr::map(2:20, kmeans, x = mpg_stand)
-binnenvarianz <- purrr::map_dbl(km_verlauf, 
-                               `[[`, i = 'tot.withinss')
-
-# Plotte die Binnenvarianz
-plot(binnenvarianz)
-
-# Gap & Slope Statistik
-k_est <- cDistance(as.matrix(mpg_stand), 
-                   kseq = 2:20) 
-k_est$k__Gap
-k_est$k_Slope
-
-# Cluster stability
-k_est <- cStability(as.matrix(mpg_stand), 
-                    kseq = 2:20) 
-k_est$k_instab
-  
-# DBSCAN -----
-
-# Finde Cluster
-mpg_dbscan <- dbscan(mpg_stand, eps = 1)
-
-# Zeige Zentroide
-mpg %>% 
-  mutate(cl = mpg_dbscan$cluster) %>%
-  group_by(cl) %>% 
-  summarize_all(mean)
-
-# Gaussian Mixtures -----
-
-# Finde Cluster
-mpg_gm <- Mclust(mpg)
-
-# Zeige Zentroide
-mpg %>% 
-  mutate(cl = mpg_gm$classification) %>%
-  group_by(cl) %>% 
-  summarize_all(mean)
-
-# Plotte Cluster
-plot(mpg_gm, what = 'classification')
-
-# Vergleiche Cluster -----
-
-table(mpg_km$cluster, mpg_dbscan$cluster)
-table(mpg_km$cluster, mpg_gm$classification)
-table(mpg_dbscan$cluster, mpg_gm$classification)
-
-```
-
-
-## Datensätze
-
-|Datei | Zeilen | Spalten | 
-|:----|:-----|:------|
-|[airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_sessions/Markdown2/1_Data/airbnb.csv | 9868 | 33 | 
-
-#### airbnb.csv
-
-Der `airbnb` .... XXX Datensatz ist ein Ausschnitt des Öffentlich verfügbaren [*Credit Card Dataset*](https://www.kaggle.com/arjunbhasin2013/ccdata). Der Datensatz beinhaltet 8 Features, die einen Auschnitt des Verhaltens von 8636 Kreditkartenkunden beschreiben.  
 
 |Variable | Beschreibung |
 |:-------------|:-------------------------------------|
-|BALANCE| Verfügbares Guthaben  |
-|BALANCE_FREQUENCY| Änderungsfrequenz des Guthabens (1 = häufig, 0 = selten) |
-|PURCHASES| Summe der Einkäufe |
-|CREDITLIMIT| Kreditlimit der Karte |
-|ONEOFFPURCHASES| Betrag der grössten einmaligen Zahlung |
-|MINIMUM_PAYMENTS| Minimale Konto-Ausgleichszahlung  |
-|PRCFULLPAYMENT| Prozent vollständige Konto-Ausgleichszahlung  |
-|TENURE| Dauer des Kundenverhältnisses   |
+|Preis| Preis pro Nacht|
+ |Erstellungsdatum| Eröffnungsdatum des Airbnbs |
+ |Unterkunftsart| Appartement, Loft, House, etc.|
+ |Schlafplätze| Anzahl Schlafplätze |
+ |Schlafzimmer| Anzahl Schlafzimmer |
+ |Badezimmer| Anzahl Badezimmer |
+ |Reinigungsgebühr| Reinigungsgebühr |
+ |Verfügbarkeit_90Tage| |
+ |Viertel| In welchem Viertel befindet sich das Airbnb |
+ |Stadtteil| In welchem Stadtteil befindet sich das Airbnb |
+ |Breitengrad| Breitengrad|
+ |Längengrad| Längengrad |
+ |Host_id| Host id |
+ |Host_seit| Erfahrung des Hosts |
+ |Host_antwortzeit| Host Antwortzeit|
+ |Host_antwortrate| Host Antwortrate |
+ |Host_superhost| Superhost Ja/Nein |
+ |Host_anzahl| Anzahl Gäste |
+ |Rating_gesamt| Gesamtrating |
+ |Rating_genauigkeit| Genauigkeitsrating |
+ |Rating_sauberkeit| Sauberkeitsrating |
+ |Rating_checkin| Checkinrating |
+ |Rating_kommunikation| Kommunikationsrating |
+ |Rating_lage| Lagerating |
+ |Rating_wertigkeit| Wertigkeitsrating |
+ |Küche| Küche vorhanden TRUE/FALSE |
+ |Wifi| WLAN vorhanden TRUE/FALSE |
+ |TV| TV vorhanden TRUE/FALSE |
+ |Kaffeemaschine| Kaffeemaschine vorhanden TRUE/FALSE|
+ |Geschirrspüler| Geschirrspüler vorhanden TRUE/FALSE|
+ |Terrasse_Balkon| Terrasse/Balkon vorhanden TRUE/FALSE|
+ |Badewanne| Badewanne vorhanden TRUE/FALSE|
+ |Check_in_24h| 24h Check-In vorhanden TRUE/FALSE|
+
 
 
 ## Funktionen
@@ -299,27 +126,20 @@ Der `airbnb` .... XXX Datensatz ist ein Ausschnitt des Öffentlich verfügbaren 
 |Paket| Installation|
 |:------|:------|
 |`tidyverse`|`install.packages("tidyverse")`|
+|``|``|
+
 
 ### Funktionen
 
-*Clustering*
 
 | Funktion| Paket | Beschreibung |
 |:---|:------|:---------------------------------------------|
-| `kmeans()`|`stats`| Clustere die Daten mit *k*-means | 
-| `dbscan()`|`dbscan`| Clustere die Daten mit DBSCAN | 
-| `Mclust()`|`mclust`| Clustere die Daten mit Gaussian Mixtures | 
+| ``|``|  | 
 
-*k-selection*
-
-| Funktion| Paket | Beschreibung |
-|:---|:------|:---------------------------------------------|
-| `cDistance()`|`cstab`| Identifiziere *k* mit distanzbasierten Methoden, z.B., der Gap Statistik.  | 
-| `cStability()`|`cstab`| Identifiziere *k* mit stabilitätsbasierten Methoden. | 
 
 
 ## Materialien
 
-### Dokumentation
+- ...
+- ...
 
-- Eine gutes [**Tutorial**](https://www.r-bloggers.com/the-complete-guide-to-clustering-analysis-k-means-and-hierarchical-clustering-by-hand-and-in-r/) über *k*-means und hierarchisches Clustering.
