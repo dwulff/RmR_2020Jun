@@ -73,11 +73,180 @@ Am Ende des Practicals wirst du wissen wie man:
 
 ### B - YAML
 
-1. ergänze toc
+1. ergänze toc. Knitten.
 
-2. toc depth
+2. toc depth. Knitten.
+
+4. ergänze includes: in_header: ../2_Assets/header.Rhtml. Knitten.
+
+5. ergänze theme: lusine
+
+### C - Grafiken
+
+1. ergänze folgendes im setup
+
+```R
+theme_set(theme_minimal())
+```
+
+2. ergänze folgendes im setup
+
+```R
+ggplot <- function(...) ggplot2::ggplot(...) + 
+  scale_fill_gradientn(colors = c('#555555','#6BB7B9')) + 
+  scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
+```
 
 3. 
+
+### D - CSS
+
+1. setze center um die beiden cap definition: 
+
+```R
+"<center>Abbildung 1. Neueinstellungen pro Monat</center>"
+"<center>Abbildung 2. Neueinstellungen pro Bezirk</center>"
+```
+
+2. im sjplot table ergänze `CSS = list(css.caption = "font-weight:500")`
+
+3. ergänze auch `css.table = "width: auto; margin-right: 0px;margin-left: auto;"`
+
+
+### E - Columns
+
+1. Ergänze folgendes zwischen `#### Entwicklung` und pargraph danach. Nicht Knitten!!
+
+```R
+<table>
+  <col width = 40%>
+  <col width = 10%>
+  <col width = 50%>
+  <tr>
+  <td>
+```
+2. Ergänze zwischen zweitem paragprah und chunk
+
+```R
+  </td>
+  <td>
+  
+  </td>
+  <td>
+```
+
+3. Ergänze zwischen chunk und `#### Stadtteile`
+
+```R
+  </td>
+  </tr>
+</table>
+```
+
+4. Jetzt knitten...
+
+5. Ergänze  zwischen chunk nach  `#### Stadtteile` und chunk danach. Nicht Knitten!!
+
+```R
+<table>
+  <col width = 40%>
+  <col width = 10%>
+  <col width = 50%>
+  <tr>
+  <td>
+```
+6. Ergänze zwischen zweitem paragprah und chunk
+
+```R
+  </td>
+  <td>
+  
+  </td>
+  <td>
+```
+
+7. Ergänze zwischen chunk und `### Preis`
+
+```R
+  </td>
+  </tr>
+</table>
+```
+
+8. Jetzt knitten
+
+9. Ergänze  nach chunk nach  `#### Der Einfluss der Ausstattung` und vor ersten paragraph danach. Nicht Knitten!!
+
+```R
+<table width=100%>
+<col width = 25%>
+<col width = 10%>
+<col width = 65%>
+<tr>
+  <td>
+```
+10. Ergänze zwischen zweitem paragprah und chunk
+
+```R
+  </td>
+  <td>
+  
+  </td>
+  <td>
+```
+
+11. Ergänze zwischen chunk und `#### Regressionsmodell`
+
+```R
+  </td>
+  </tr>
+</table>
+```
+
+12. Jetzt knitten
+
+13. Setze den viertel table alleine mit widths 50, 10, 40
+
+### F - CSS
+
+1. Kreiere `my_airbnb.css` und speichere sie in `2_Assets`
+
+2. in YAML ergänze `css: ../2_Assets/airbnb.css`
+
+3. ergänze in `my_airbnb.css` und knitte
+
+```
+table td {
+  vertical-align: top;
+  }
+```
+
+4. ergänze in `my_airbnb.css` und knitte
+
+```
+h3, h4 {
+  font-weight: 500;
+  color: #555555;
+}
+```
+
+5. ergänze in `my_airbnb.css` und knitte
+
+```
+a, a:hover {
+  color: #007D8C;
+  }
+```
+
+6. ergänze in `my_airbnb.css` und knitte
+
+```
+body {
+  background-image: url(watermark.svg);
+  background-repeat: repeat-y;
+  background-size: contain;
+  }
+```
 
 
 ## Datensatz

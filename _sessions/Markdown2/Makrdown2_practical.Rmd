@@ -84,7 +84,15 @@ Am Ende des Practicals kannst du:
 
 ### B - Neueinstellungen: Grafiken
 
+1. Aspect ratio des ersten plots auf .5. Knitten
 
+2. `fig.cap = cap` im ersten plot.
+
+3. `cap = Abbildung 1. Neueinstellungen pro Monat.` im chunk des ersten plots am ende
+
+4. aspect ratio auf .5 und `fig.cap = cap` für zweiten plot. 
+
+5. `cap = Abbildung 2. Neueinstellungen pro Bezirk.` im chunk des ersten plots am ende
 
 ### C - Preise: Text pt. 1
 
@@ -101,7 +109,7 @@ Der durchschnittliche Preis der Neueinstellungen beträgt 80.8 €. Im Vergleic
 4. knitten. passt?
 
 
-### C - Preise: Text pt. 2
+### D - Preise: Text pt. 2
 
 1. header level 4 einfluss austattung
 
@@ -141,7 +149,7 @@ Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die
 
 6. bold
 
-### D - Preise: Tabelle pt. 1
+### E - Preise: Tabelle pt. 1
 
 1. code chunk
 
@@ -171,7 +179,7 @@ mutate_if(is.numeric, function(x) {
 8. passt alles?
 
 
-### E - Preise: Text pt. 3
+### F - Preise: Text pt. 3
 
 1. header level 4 Regressionsmodell
 
@@ -217,7 +225,7 @@ hotel <- airbnb_1819 %>%
 
 7. passt alles?
 
-### F - Preise: Tabelle pt. 2
+### G - Preise: Tabelle pt. 2
 
 1. code chunk
 
