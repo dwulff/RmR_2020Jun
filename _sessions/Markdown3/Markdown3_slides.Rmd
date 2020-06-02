@@ -349,7 +349,7 @@ output:
 ````
 
 <p align="center" width="100%">
-  <img src="image/TOC_Level5.png" alt="TOC" style="width:120%">
+  <img src="image/TOC_Level5.png" alt="TOC" style="width:50%">
 </p>
 ]
 
@@ -360,8 +360,8 @@ output:
 .pull-left4[
 
 <ul>
-  <li class="m1"><span><high>Header</high> werden in externe HTML files gespeichertd</span></li> 
-  <li class="m2"><span>Die HTML files werden dann im YAML header geladen</span></li>
+  <li class="m1"><span><high>Header</high> werden in externe HTML files gespeichert</span></li> 
+  <li class="m2"><span>Die HTML files werden dann im <high>YAML header</high> geladen</span></li>
   </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -379,7 +379,7 @@ output:
   <td bgcolor="white">
   <mono>after_body</mono> </td>
   <td bgcolor="white">
-
+direkt nach dem <mono>body</mono> Tag - als Footer eingefügt
   </td> 
 </tr>
 <tr>
@@ -387,18 +387,16 @@ output:
   <mono>before_body</mono>
   </td>
   <td bgcolor="white">
-
+direkt nach dem <mono>body</mono> Tag - als Header eingefügt
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>in_header</mono> und
-    <mono>font-family</mono>
+  <mono>in_header</mono> 
   </td>
-  <td bgcolor="white">
+  <td bgcolor="white">in das <mono>head</mono> Tag eingefügt
   </td> 
 </tr>
-
 </table>
 ]
 
@@ -409,7 +407,7 @@ date: "5/28/2020"
 output: 
   html_document:
     includes:
-      in_header: ../2_Assets/header.Rhtml
+      in_header: header.html
 ````
 
 ````html
@@ -435,40 +433,6 @@ output:
 
 ---
 
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>Um einen Footer/Header zu erstellen brauchen wir ein <high>externes HTML file</high> </li>
-  <li class="m2"><span>Diese File wird dann mit <high>includes: after_body</high> (bzw <highm> before_body</highm>) eingebunden </li>
-</ul>
-
-````markdown
-title: "Meine Demo"
-author: "MSM"
-date: "5/28/2020"
-output: 
-  html_document:
-    includes:
-      after_body: footer.html
-```` 
-
-]
-
-.pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/Footer.png" alt="Footer" style="width:120%">
-</p>
-
-<p align="center" width="100%">
-  <img src="image/Footer_Screenshot.png" alt="Footer" style="width:120%">
-</p>
-
-ich weiss ... das sieht scheisse aus ... HTML Document einbinden .. Ideas?
-]
-
----
-
 # Themes und Highlight
 
 .pull-left4[
@@ -477,28 +441,59 @@ ich weiss ... das sieht scheisse aus ... HTML Document einbinden .. Ideas?
   <li class="m2"><span>Beides wird im YAML <high>header<high> festgelegt</span></li>
 </ul>
 
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Element</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>theme</mono> </td>
+  <td bgcolor="white">
+cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, yeti
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>highlight</mono>
+  </td>
+  <td bgcolor="white">
+tango, pygments, kate, monochrome, espresso, zenburn, haddock, textmate
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+
 ````markdown
 title: "Meine Demo"
 author: "MSM"
 date: "5/28/2020"
 output: 
   html_document:
-    theme: sandstone
+    theme: lumen
     highlight: espresso
 ```` 
-]
 
-.pull-right5[
 
 <p align="center" width="100%">
   <img src="image/Theme.png" alt="Footer" style="width:120%">
 </p>
 
-Themes: "default", "cerulean", "journal", "flatly", "darkly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", "yeti"
-
-Highlight: "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock", "textmate"
-
 ]
+
+---
+
+#wkhtmltopdf
+
 
 ---
 

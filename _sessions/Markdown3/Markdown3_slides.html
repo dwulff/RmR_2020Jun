@@ -312,7 +312,7 @@ output:
 ````
 
 &lt;p align="center" width="100%"&gt;
-  &lt;img src="image/TOC_Level5.png" alt="TOC" style="width:120%"&gt;
+  &lt;img src="image/TOC_Level5.png" alt="TOC" style="width:50%"&gt;
 &lt;/p&gt;
 ]
 
@@ -323,8 +323,8 @@ output:
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Header&lt;/high&gt; werden in externe HTML files gespeichertd&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Die HTML files werden dann im YAML header geladen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Header&lt;/high&gt; werden in externe HTML files gespeichert&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Die HTML files werden dann im &lt;high&gt;YAML header&lt;/high&gt; geladen&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -342,7 +342,7 @@ output:
   &lt;td bgcolor="white"&gt;
   &lt;mono&gt;after_body&lt;/mono&gt; &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-
+direkt nach dem &lt;mono&gt;body&lt;/mono&gt; Tag - als Footer eingefügt
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -350,18 +350,16 @@ output:
   &lt;mono&gt;before_body&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-
+direkt nach dem &lt;mono&gt;body&lt;/mono&gt; Tag - als Header eingefügt
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;in_header&lt;/mono&gt; und
-    &lt;mono&gt;font-family&lt;/mono&gt;
+  &lt;mono&gt;in_header&lt;/mono&gt; 
   &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
+  &lt;td bgcolor="white"&gt;in das &lt;mono&gt;head&lt;/mono&gt; Tag eingefügt
   &lt;/td&gt; 
 &lt;/tr&gt;
-
 &lt;/table&gt;
 ]
 
@@ -372,7 +370,7 @@ date: "5/28/2020"
 output: 
   html_document:
     includes:
-      in_header: ../2_Assets/header.Rhtml
+      in_header: header.html
 ````
 
 ````html
@@ -398,40 +396,6 @@ output:
 
 ---
 
-
-.pull-left4[
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Um einen Footer/Header zu erstellen brauchen wir ein &lt;high&gt;externes HTML file&lt;/high&gt; &lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Diese File wird dann mit &lt;high&gt;includes: after_body&lt;/high&gt; (bzw &lt;highm&gt; before_body&lt;/highm&gt;) eingebunden &lt;/li&gt;
-&lt;/ul&gt;
-
-````markdown
-title: "Meine Demo"
-author: "MSM"
-date: "5/28/2020"
-output: 
-  html_document:
-    includes:
-      after_body: footer.html
-```` 
-
-]
-
-.pull-right5[
-
-&lt;p align="center" width="100%"&gt;
-  &lt;img src="image/Footer.png" alt="Footer" style="width:120%"&gt;
-&lt;/p&gt;
-
-&lt;p align="center" width="100%"&gt;
-  &lt;img src="image/Footer_Screenshot.png" alt="Footer" style="width:120%"&gt;
-&lt;/p&gt;
-
-ich weiss ... das sieht scheisse aus ... HTML Document einbinden .. Ideas?
-]
-
----
-
 # Themes und Highlight
 
 .pull-left4[
@@ -440,28 +404,59 @@ ich weiss ... das sieht scheisse aus ... HTML Document einbinden .. Ideas?
   &lt;li class="m2"&gt;&lt;span&gt;Beides wird im YAML &lt;high&gt;header&lt;high&gt; festgelegt&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Element&lt;/b&gt;   
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;theme&lt;/mono&gt; &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, yeti
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;highlight&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+tango, pygments, kate, monochrome, espresso, zenburn, haddock, textmate
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
 ````markdown
 title: "Meine Demo"
 author: "MSM"
 date: "5/28/2020"
 output: 
   html_document:
-    theme: sandstone
+    theme: lumen
     highlight: espresso
 ```` 
-]
 
-.pull-right5[
 
 &lt;p align="center" width="100%"&gt;
   &lt;img src="image/Theme.png" alt="Footer" style="width:120%"&gt;
 &lt;/p&gt;
 
-Themes: "default", "cerulean", "journal", "flatly", "darkly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", "yeti"
-
-Highlight: "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock", "textmate"
-
 ]
+
+---
+
+#wkhtmltopdf
+
 
 ---
 
