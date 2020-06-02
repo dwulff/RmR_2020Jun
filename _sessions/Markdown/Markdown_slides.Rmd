@@ -90,6 +90,7 @@ basel <- read.csv("1_Data/basel.csv")
     <li><span>Listen</span></li>  
     <li><span>Überschriften</span></li> 
     <li><span>Links</span></li>
+    <li><span>Bilder</span></li>
   </ul>
 </ul>
 
@@ -113,11 +114,13 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Verwendet Markdown zum gestalten dynamischer Dokumente mit eingebetteten...</span></li> 
-  <ul>
-    <li><span>Code chunks</span></li>   
-    <li><span>Staistischen Outputs</span></li>  
-    <li><span>Visualisierungen</span></li> 
+  <li class="m1"><span>Verwendet Markdown zum <high>Gestalten dynamischer Dokumente</high> mit eingebetteten...</span></li> 
+  <ul><br>
+    <li><span>R code chunks</span></li>
+    <li><span>R in-line code</span></li>   
+    <li><span>Statistischen Outputs</span></li>
+    <li><span>Tabellen</span></li>
+    <li><span>Visualisierungen</span></li>
   </ul>
 </ul>
 
@@ -126,21 +129,84 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-right5[
 
 <p align = "center">
-  <img src="image/HR_dashboard.png" width=125%><br>
-  <font style="font-size:10px">from <a href="https://towardsdatascience.com/building-an-hr-dashboard-in-r-using-flexdashboard-76d14ed3f32">towardsdatascience.com</a></font>
+  <img src="image/hex.png" height=300><br>
+  <font style="font-size:10px">from <a href="https://rmarkdown.rstudio.com/docs/">rmarkdown.rstudio.com</a></font>
 </p>
 
 ]
 
 ---
 
-# Kinds of documents
+.pull-left3[
+
+# Arten des Berichts
+
+slides
+
+]
+
+.pull-right6[
+
+<br><br><br>
+<p align = "center">
+  <img src="image/types.png">
+</p>
+
+]
 
 ---
 
-# Two Paths
+# Pipeline
 
+.pull-left4[
 
+slides
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/pipeline.png">
+</p>
+
+]
+
+---
+
+# Pipeline
+
+.pull-left4[
+
+slides
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/pipeline2.png">
+</p>
+
+]
+
+---
+
+# R Markdown
+
+.pull-left4[
+
+slides
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/pipeline2.png">
+</p>
+
+]
 
 
 ---
