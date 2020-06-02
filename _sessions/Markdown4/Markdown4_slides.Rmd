@@ -1,5 +1,5 @@
 ---
-title: "Slides und Word Export"
+title: "Slides und Export"
 author: "Reporting mit R<br>
   <a href='https://therbootcamp.github.io'>
     The R Bootcamp
@@ -82,38 +82,40 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ```
 
-# HTML / Power Point Slides | Export nach Word und Power Point
-
-Direkt Word und Power Point Dateien mit R erstellen.
+# Präsentationen
 
 ---
 
-# Neue Markdown Datei - Präsentation
+# Präsentationen
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>New File - R Markdown</span></li>
+  <li class="m1"><span>New File - R Markdown - Presentation</span></li>
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Element</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>output</mono> </td>
+  <td bgcolor="white">
+  <high>ioslides_presentation</high>  
+  </td> 
+</tr>
+</table>
 
 ]
 
 .pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/Word_New.png" alt="Word New" style="width:80%">
-</p>
- 
-]
-
----
-
-# Neue Markdown Datei - Präsentation
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>New File - R Markdown</span></li>
-  <li class="m2"><span>Presentation - HTML (ioslides)</span></li>
-</ul>
 
 ````markdown
 title: "Meine Präsentation"
@@ -121,10 +123,6 @@ author: "MSM"
 date: "5/25/2020"
 output: ioslides_presentation
 ````
-
-]
-
-.pull-right5[
 
 <p align="center" width="100%">
   <img src="image/Presentation_New.png" alt="Word New" style="width:80%">
@@ -134,12 +132,67 @@ output: ioslides_presentation
 
 ---
 
-# Präsentation formatieren
-
 .pull-left4[
+# Präsentation
 <ul>
-  <li class="m1"><span><high>Formatierung</high> von Abschnitten mit # - automatisch auf <high>neuem Slide</high></span></li>
+  <li class="m1"><span><high>Unterschiede</high> in der Formatierung der Elemente</span></li>
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Element</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#</mono> </td>
+  <td bgcolor="white">
+  <high>Neuer Abschnitt</high> mit Abschnitt-Überschrift
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>##</mono>
+  </td>
+  <td bgcolor="white">
+<high>Neuer Slide</high> mit Slide Überschrift
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-</mono>
+  </td>
+  <td bgcolor="white">
+<high>Bullet</high> points
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>>-</mono>
+  </td>
+  <td bgcolor="white">
+Bullet points <high>inkrementell</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>1., 2. ...</mono>
+  </td>
+  <td bgcolor="white">
+<high>Liste</high> mit Nummerierung
+  </td> 
+</tr>
+</table>
+
+]
+<br>
+.pull-right5[
 
 ````markdown
 title: "Meine Präsentation"
@@ -148,160 +201,15 @@ date: "5/25/2020"
 output: ioslides_presentation
 
 # Erster Abschnitt
+## Titel auf Slide 1
 
-# Zweiter Abschnitt
-
+- Bullet 1
+- Bullet 2
 ````
 
-]
-
-.pull-right5[
-
 <p align="center" width="100%">
-  <img src="image/P_Front.png" alt="" style="width:50%">
   <img src="image/P_Abschnitt1.png" alt="" style="width:50%">
-  <img src="image/P_Abschnitt2.png" alt="" style="width:50%">
-</p>
- 
-]
-
----
-
-# Präsentation formatieren
-
-.pull-left4[
-<ul>
-  <li class="m1"><span><high>Formatierung</high> von Abschnitten mit # - automatisch auf <high>neuem Slide</high></span></li>
-  <li class="m2"><span><high>Titel</high> für Slides werden mit ## erstellt</span></li>
-</ul>
-
-````markdown
-title: "Meine Präsentation"
-author: "MSM"
-date: "5/25/2020"
-output: ioslides_presentation
-
-## Titel auf Slide 1
-Lorem Ipsum ...
-
-## Titel auf Slide 2
-Lorem Ipsum ...
-
-````
-
-]
-
-.pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/P_Titel1.png" alt="P_Titel1" style="width:50%">
-  <img src="image/P_Titel2.png" alt="P_Titel2" style="width:50%">
-</p>
- 
-]
-
----
-
-# Präsentation formatieren
-
-.pull-left4[
-<ul>
-  <li class="m1"><span><high>Formatierung</high> von Abschnitten mit # - automatisch auf <high>neuem Slide</high></span></li>
-  <li class="m2"><span><high>Titel</high> für Slides werden mit ## erstellt</span></li>
-  <li class="m2"><span>Explizit <high>neuen Slide einfügen </high> (ohne extra Titel) mit --- </span></li>
-</ul>
-
-````markdown
-title: "Meine Präsentation"
-author: "MSM"
-date: "5/25/2020"
-output: ioslides_presentation
-
-# Erster Abschnitt
-
-## Titel auf Slide 1
-Lorem Ipsum ...
-
- ---
-
-Lorem Ipsum ...
-
-````
-
-]
-
-.pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/P_Titel1.png" alt="P_Titel1" style="width:50%">
-  <img src="image/P_ohneTitel.png" alt="P_ohneTitel" style="width:50%">
-</p>
- 
-]
-
----
-
-# Präsentation gestalten
-
-.pull-left4[
-<ul>
-  <li class="m1"><span><high>Bullet Points</high> mit - einfügen</span></li>
-</ul>
-
-````markdown
-title: "Meine Präsentation"
-author: "MSM"
-date: "5/25/2020"
-output: ioslides_presentation
-
-## Slide mit Bullet Points
-
-- Liste 1. Punkt
-- Liste 2. Punkt
-- Liste 3. Punkt
-````
-
-]
-
-.pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/P_Bullet.png" alt="P_Bullet" style="width:80%">
-</p>
- 
-]
-
----
-
-# Präsentation gestalten
-
-.pull-left4[
-<ul>
-  <li class="m1"><span><high>Bullet Points</high> mit - einfügen</span></li>
-  <li class="m1"><span>Bullet Points, die <high>inkrementell</high> dargestellt werden sollen mit > - kennzeichnen</span></li>
-</ul>
-
-````markdown
-title: "Meine Präsentation"
-author: "MSM"
-date: "5/25/2020"
-output: ioslides_presentation
-
-## Slide mit Bullet Points
-
-> - Liste 1. Punkt
-> - Liste 2. Punkt
-> - Liste 3. Punkt
-````
-
-]
-
-.pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/P_Bullet_i1.png" alt="P_Bullet" style="width:50%">
-  <img src="image/P_Bullet_i2.png" alt="P_Bullet" style="width:50%">
-  <img src="image/P_Bullet_i3.png" alt="P_Bullet" style="width:50%">
+  <img src="image/P_Titel1.png" alt="" style="width:50%">
 </p>
  
 ]
@@ -342,29 +250,33 @@ data-background-size=cover}
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>New File - R Markdown</span></li>
+  <li class="m1"><span>New File - R Markdown - Word</span></li>
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Element</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>output</mono> </td>
+  <td bgcolor="white">
+  <high>word_document</high>  
+  </td> 
+</tr>
+</table>
 
 
 ]
 
 .pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/Word_New.png" alt="Word New" style="width:80%">
-</p>
- 
-]
-
----
-
-# Neue Markdown Datei - Word
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>New File - R Markdown</span></li>
-  <li class="m2"><span>Word</span></li>
-</ul>
 
 ````markdown
 title: "Mein Dokument"
@@ -373,20 +285,15 @@ date: "5/25/2020"
 output: word_document
 ````
 
-]
-
-.pull-right5[
-
 <p align="center" width="100%">
   <img src="image/Word_Select.png" alt="Word New" style="width:80%">
 </p>
  
 ]
 
-
 ---
 
-# Externes Word Template Formatieren
+# Externes Word Template
 
 .pull-left4[
 <ul>
@@ -418,7 +325,7 @@ output:
 
 ---
 
-# Externes Word Template Formatieren
+# Externes Word Template
 
 .pull-left4[
 <ul>
