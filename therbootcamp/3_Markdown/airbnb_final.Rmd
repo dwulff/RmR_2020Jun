@@ -41,7 +41,7 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 ### Präambel
 
-Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. Er wurde zum Zwecke der Übung auf Basis öffentlich verfügbarer Daten^[Daten wurde heruntergeladen von http://insideairbnb.com/get-the-data.html] erstellt und repräsentiert einzig die Position der Autoren. Es besteht keine Beziehung zu AirBnB.   
+Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. Er wurde zum Zwecke der Übung auf Basis öffentlich verfügbarer Daten^[Daten wurde heruntergeladen von [insideairbnb.com](http://insideairbnb.com/get-the-data.html).] erstellt und repräsentiert einzig die Position der Autoren. Es besteht keine Beziehung zu AirBnB.   
 
 ### Neueinstellungen
 

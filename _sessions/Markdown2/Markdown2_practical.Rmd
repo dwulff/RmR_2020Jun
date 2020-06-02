@@ -82,7 +82,13 @@ Am Ende des Practicals kannst du:
 
 2. Lade zusätzlich die Pakete `knitr`, `kableExtra` `sjPlot` im `setup` chunk. 
 
-### B - Neueinstellungen: Grafiken
+### B - Präambel: Fussnote
+
+1. Ergänze die Fussnote nach Daten `^[Daten wurde heruntergeladen von [insideairbnb.com](http://insideairbnb.com/get-the-data.html)]`
+
+2. Knitte dokument
+
+### C - Neueinstellungen: Grafiken
 
 1. Aspect ratio des ersten plots auf .5. Knitten
 
@@ -94,7 +100,7 @@ Am Ende des Practicals kannst du:
 
 5. `cap = Abbildung 2. Neueinstellungen pro Bezirk.` im chunk des ersten plots am ende
 
-### C - Preise: Text pt. 1
+### D - Preise: Text pt. 1
 
 1. header level 3 preis
 
@@ -109,7 +115,7 @@ Der durchschnittliche Preis der Neueinstellungen beträgt 80.8 €. Im Vergleic
 4. knitten. passt?
 
 
-### D - Preise: Text pt. 2
+### E - Preise: Text pt. 2
 
 1. header level 4 einfluss austattung
 
@@ -149,7 +155,7 @@ Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die
 
 6. bold
 
-### E - Preise: Tabelle pt. 1
+### F - Preise: Tabelle pt. 1
 
 1. code chunk
 
@@ -179,7 +185,7 @@ mutate_if(is.numeric, function(x) {
 8. passt alles?
 
 
-### F - Preise: Text pt. 3
+### G - Preise: Text pt. 3
 
 1. header level 4 Regressionsmodell
 
@@ -225,7 +231,7 @@ hotel <- airbnb_1819 %>%
 
 7. passt alles?
 
-### G - Preise: Tabelle pt. 2
+### H - Preise: Tabelle pt. 2
 
 1. code chunk
 
