@@ -192,21 +192,221 @@ slides
 
 ---
 
-# R Markdown
+# R Markdown basics
 
-.pull-left4[
+.pull-left3[
 
 slides
 
 ]
 
-.pull-right5[
+.pull-right6[
 
+<br>
 <p align = "center">
-  <img src="image/pipeline2.png">
+  <img src="image/markdown_trans.png">
 </p>
 
 ]
+
+---
+
+# R Markdown basics
+
+.pull-left3[
+
+slides
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_2.png">
+</p>
+
+]
+
+
+---
+
+# R Markdown basics
+
+.pull-left3[
+
+slides
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_3.png">
+</p>
+
+]
+
+---
+
+# R Markdown basics
+
+.pull-left3[
+
+slides
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_4.png">
+</p>
+
+]
+
+
+---
+
+# R Markdown basics
+
+.pull-left3[
+
+slides
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_5.png">
+</p>
+
+]
+
+
+---
+
+# R Markdown basics
+
+.pull-left3[
+
+slides
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_6.png">
+</p>
+
+]
+
+
+---
+
+# R Markdown basics
+
+.pull-left3[
+
+slides
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_7.png">
+</p>
+
+]
+
+
+---
+
+# R Markdown basics
+
+.pull-left3[
+
+slides
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_8.png">
+</p>
+
+]
+
+
+
+---
+
+# R Markdown basics
+
+.pull-left3[
+
+slides
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_9.png">
+</p>
+
+]
+
+
+---
+
+# R Markdown basics
+
+.pull-left3[
+
+slides
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_10.png">
+</p>
+
+]
+
+---
+
+# Environment
+
+.pull-left3[
+
+slides
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_10.png">
+</p>
+
+]
+
 
 
 ---
