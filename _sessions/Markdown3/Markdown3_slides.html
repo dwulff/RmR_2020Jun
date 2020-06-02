@@ -53,8 +53,8 @@ layout: true
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Hypertext Markup Language&lt;/high&gt; beschreibt Struktur des Textes mit &lt;high&gt;Tags&lt;high&gt;&lt;/span&gt;&lt;/li&gt; 
-    &lt;li class="m2"&gt;&lt;span&gt;Im &lt;high&gt;Browser&lt;/high&gt; wird HTML gerendert und dargestellt&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Hypertext Markup Language&lt;/high&gt; graphische Gestaltung eines Textes mit &lt;high&gt;Tags&lt;high&gt;&lt;/span&gt;&lt;/li&gt; 
+    &lt;li class="m2"&gt;&lt;span&gt;Im &lt;high&gt;Browser&lt;/high&gt; wird HTML gerendert (übersetzt) und dargestellt&lt;/span&gt;&lt;/li&gt; 
   &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -109,7 +109,7 @@ layout: true
 Dieser &lt;i&gt;Bericht&lt;/i&gt; evaluiert 
 &lt;b&gt;Veränderungen&lt;/b&gt; in den ...
 &lt;br&gt;
-Er wurde zum Zwecke der &lt;b&gt;Übung&lt;/b&gt; auf ... 
+Er wurde zum Zwecke der &lt;b&gt;Übung&lt;/b&gt; ...
 ````
 
 &lt;h1&gt;Präambel&lt;/h1&gt;
@@ -127,8 +127,8 @@ Er wurde zum Zwecke der &lt;b&gt;Übung&lt;/b&gt; auf Basis öffentlich verfügb
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Cascading &lt;high&gt;Style Sheets&lt;/high&gt; beschreiben &lt;high&gt;wie&lt;/high&gt; HTML Tags angezeigt werden&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Der &lt;high&gt;CSS Selector&lt;/high&gt; (z.B. h1) mit verschiedenen &lt;high&gt;Deklarationen&lt;/high&gt; (zB: color: blue) erweitert&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Cascading &lt;high&gt;Style Sheets&lt;/high&gt; beschreiben &lt;high&gt;wie&lt;/high&gt; HTML Tags formatiert werden&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Der &lt;high&gt;CSS Selector&lt;/high&gt; (z.B. h1) mit verschiedenen &lt;high&gt;Deklarationen&lt;/high&gt; (zB: color: blue) erweitern&lt;/span&gt;&lt;/li&gt; 
   &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -154,7 +154,7 @@ Er wurde zum Zwecke der &lt;b&gt;Übung&lt;/b&gt; auf Basis öffentlich verfügb
   &lt;mono&gt;color&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Farbwahl&lt;/high&gt; &lt;mono&gt;blue, red, ...&lt;/mono&gt; oder #6BB7B9
+  &lt;high&gt;Farbwahl&lt;/high&gt; &lt;mono&gt;blue, red, #6BB7B9&lt;/mono&gt; 
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -163,7 +163,7 @@ Er wurde zum Zwecke der &lt;b&gt;Übung&lt;/b&gt; auf Basis öffentlich verfügb
     &lt;mono&gt;font-family&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  Schriftgrösse und -art
+  &lt;high&gt;Schrift&lt;/high&gt;grösse und -art
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -184,8 +184,7 @@ Er wurde zum Zwecke der &lt;b&gt;Übung&lt;/b&gt; auf Basis öffentlich verfügb
 &lt;div style = "font-family: Arial; 
 font-size: 25px"&gt;
 Dieser &lt;i&gt;Bericht&lt;/i&gt; evaluiert 
-&lt;b&gt;Veränderungen&lt;/b&gt; in den 
-Neueinstellungen ... .&lt;/div&gt; 
+&lt;b&gt;Veränderungen&lt;/b&gt; ... .&lt;/div&gt; 
 
 ````
 
@@ -202,14 +201,14 @@ Dieser &lt;i&gt;Bericht&lt;/i&gt; evaluiert &lt;b&gt;Veränderungen&lt;/b&gt; in
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Cascading &lt;high&gt;Style Sheets&lt;/high&gt; können auch global definiert werden&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Dafür wird ein &lt;high&gt;externes&lt;/high&gt; file &lt;mono&gt;*.css&lt;/mono&gt; erstellt und in Markdown eingebunden &lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Dafür wird ein &lt;high&gt;externes&lt;/high&gt; file &lt;mono&gt;*.css&lt;/mono&gt; erstellt und in Markdown &lt;high&gt;eingebunden&lt;/high&gt; &lt;/span&gt;&lt;/li&gt; 
   &lt;/ul&gt;
 
 ]
 
 .pull-right5[
 
-mystyle.css
+airbnb.css
 ````html
 h3, h4 {
   font-weight: 500;
@@ -241,7 +240,7 @@ body {
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Jedes Markdown Dokument beginnt mit einem &lt;high&gt;YAML header&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;YAML ist ein rekursives Akronym: &lt;high&gt;YAML Ain't Markup Language&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Als Default sind hier immer &lt;high&gt;Titel&lt;/high&gt;, &lt;high&gt;Autor&lt;/high&gt; und &lt;high&gt;Datum&lt;/high&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Als Default müssen immer &lt;high&gt;Titel&lt;/high&gt;, &lt;high&gt;Autor&lt;/high&gt; und &lt;high&gt;Datum&lt;/high&gt; gesetzt werden
   &lt;li class="m4"&gt;&lt;span&gt;Diese 3 Angaben werden &lt;high&gt;als Erstes&lt;/high&gt; im HTML Dokument &lt;high&gt;angezeigt&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
   &lt;/ul&gt;
 
@@ -267,8 +266,8 @@ output: html_document
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Aus den Überschriften kann mit &lt;mono&gt;toc: true&lt;/mono&gt; ein Inhaltsverzeichnis erstellt werden&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Dabei wird mit &lt;mono&gt;toc_depth&lt;/mono&gt;&lt;/li&gt; die &lt;high&gt;Tiefe&lt;/high&gt; bestimmt&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Aus den Überschriften (#, ##) kann mit &lt;mono&gt;toc: true&lt;/mono&gt; ein &lt;high&gt;Inhaltsverzeichnis&lt;/high&gt; erstellt werden&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Dabei wird mit &lt;mono&gt;toc_depth&lt;/mono&gt; die &lt;high&gt;Tiefe&lt;/high&gt; bestimmt&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 
@@ -287,7 +286,7 @@ output: html_document
   &lt;td bgcolor="white"&gt;
   &lt;mono&gt;toc&lt;/mono&gt; &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  Inhaltsverzeichnis anzeigen &lt;mono&gt;TRUE&lt;/mono&gt; oder &lt;mono&gt;FALSE&lt;/mono&gt;
+  Inhaltsverzeichnis &lt;high&gt;anzeigen&lt;/high&gt; &lt;mono&gt;TRUE&lt;/mono&gt; oder &lt;mono&gt;FALSE&lt;/mono&gt;
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -295,7 +294,7 @@ output: html_document
   &lt;mono&gt;toc_depth&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Tiefe&lt;/high&gt; des Inhaltzverzeichnis, default = 1 (nur Überschriften Level 1)
+  mit 2: Überschriften Level 1 + Level 2
   &lt;/td&gt; 
 &lt;/tr&gt;
 
@@ -311,6 +310,10 @@ output:
     toc: true
     toc_depth: 5
 ````
+
+&lt;p align="center" width="100%"&gt;
+  &lt;img src="image/TOC_Level5.png" alt="TOC" style="width:120%"&gt;
+&lt;/p&gt;
 ]
 
 ---
@@ -320,9 +323,8 @@ output:
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Fixe Elemtente können als Header und Footer angezeigt werden&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Beide Elemente werden als externes HTML file gespeichert&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;Die HTML files werden dann im YAML header geladen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Header&lt;/high&gt; werden in externe HTML files gespeichertd&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Die HTML files werden dann im YAML header geladen&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;

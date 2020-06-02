@@ -90,8 +90,8 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 .pull-left4[
 
 <ul>
-  <li class="m1"><span><high>Hypertext Markup Language</high> beschreibt Struktur des Textes mit <high>Tags<high></span></li> 
-    <li class="m2"><span>Im <high>Browser</high> wird HTML gerendert und dargestellt</span></li> 
+  <li class="m1"><span><high>Hypertext Markup Language</high> graphische Gestaltung eines Textes mit <high>Tags<high></span></li> 
+    <li class="m2"><span>Im <high>Browser</high> wird HTML gerendert (übersetzt) und dargestellt</span></li> 
   </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -146,7 +146,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 Dieser <i>Bericht</i> evaluiert 
 <b>Veränderungen</b> in den ...
 <br>
-Er wurde zum Zwecke der <b>Übung</b> auf ... 
+Er wurde zum Zwecke der <b>Übung</b> ...
 ````
 
 <h1>Präambel</h1>
@@ -164,8 +164,8 @@ Er wurde zum Zwecke der <b>Übung</b> auf Basis öffentlich verfügbarer Daten e
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Cascading <high>Style Sheets</high> beschreiben <high>wie</high> HTML Tags angezeigt werden</span></li> 
-  <li class="m2"><span>Der <high>CSS Selector</high> (z.B. h1) mit verschiedenen <high>Deklarationen</high> (zB: color: blue) erweitert</span></li> 
+  <li class="m1"><span>Cascading <high>Style Sheets</high> beschreiben <high>wie</high> HTML Tags formatiert werden</span></li> 
+  <li class="m2"><span>Der <high>CSS Selector</high> (z.B. h1) mit verschiedenen <high>Deklarationen</high> (zB: color: blue) erweitern</span></li> 
   </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -191,7 +191,7 @@ Er wurde zum Zwecke der <b>Übung</b> auf Basis öffentlich verfügbarer Daten e
   <mono>color</mono>
   </td>
   <td bgcolor="white">
-  <high>Farbwahl</high> <mono>blue, red, ...</mono> oder #6BB7B9
+  <high>Farbwahl</high> <mono>blue, red, #6BB7B9</mono> 
   </td> 
 </tr>
 <tr>
@@ -200,7 +200,7 @@ Er wurde zum Zwecke der <b>Übung</b> auf Basis öffentlich verfügbarer Daten e
     <mono>font-family</mono>
   </td>
   <td bgcolor="white">
-  Schriftgrösse und -art
+  <high>Schrift</high>grösse und -art
   </td> 
 </tr>
 <tr>
@@ -221,8 +221,7 @@ Er wurde zum Zwecke der <b>Übung</b> auf Basis öffentlich verfügbarer Daten e
 <div style = "font-family: Arial; 
 font-size: 25px">
 Dieser <i>Bericht</i> evaluiert 
-<b>Veränderungen</b> in den 
-Neueinstellungen ... .</div> 
+<b>Veränderungen</b> ... .</div> 
 
 ````
 
@@ -239,14 +238,14 @@ Dieser <i>Bericht</i> evaluiert <b>Veränderungen</b> in den Neueinstellungen un
 
 <ul>
   <li class="m1"><span>Cascading <high>Style Sheets</high> können auch global definiert werden</span></li> 
-  <li class="m2"><span>Dafür wird ein <high>externes</high> file <mono>*.css</mono> erstellt und in Markdown eingebunden </span></li> 
+  <li class="m2"><span>Dafür wird ein <high>externes</high> file <mono>*.css</mono> erstellt und in Markdown <high>eingebunden</high> </span></li> 
   </ul>
 
 ]
 
 .pull-right5[
 
-mystyle.css
+airbnb.css
 ````html
 h3, h4 {
   font-weight: 500;
@@ -278,7 +277,7 @@ body {
 <ul>
   <li class="m1"><span>Jedes Markdown Dokument beginnt mit einem <high>YAML header</high></span></li> 
   <li class="m2"><span>YAML ist ein rekursives Akronym: <high>YAML Ain't Markup Language</high></span></li> 
-  <li class="m3"><span>Als Default sind hier immer <high>Titel</high>, <high>Autor</high> und <high>Datum</high>
+  <li class="m3"><span>Als Default müssen immer <high>Titel</high>, <high>Autor</high> und <high>Datum</high> gesetzt werden
   <li class="m4"><span>Diese 3 Angaben werden <high>als Erstes</high> im HTML Dokument <high>angezeigt</high></span></li>  
   </ul>
 
@@ -304,8 +303,8 @@ output: html_document
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Aus den Überschriften kann mit <mono>toc: true</mono> ein Inhaltsverzeichnis erstellt werden</span></li>
-  <li class="m2"><span>Dabei wird mit <mono>toc_depth</mono></li> die <high>Tiefe</high> bestimmt</span></li> 
+  <li class="m1"><span>Aus den Überschriften (#, ##) kann mit <mono>toc: true</mono> ein <high>Inhaltsverzeichnis</high> erstellt werden</span></li>
+  <li class="m2"><span>Dabei wird mit <mono>toc_depth</mono> die <high>Tiefe</high> bestimmt</span></li> 
 </ul>
 
 
@@ -324,7 +323,7 @@ output: html_document
   <td bgcolor="white">
   <mono>toc</mono> </td>
   <td bgcolor="white">
-  Inhaltsverzeichnis anzeigen <mono>TRUE</mono> oder <mono>FALSE</mono>
+  Inhaltsverzeichnis <high>anzeigen</high> <mono>TRUE</mono> oder <mono>FALSE</mono>
   </td> 
 </tr>
 <tr>
@@ -332,7 +331,7 @@ output: html_document
   <mono>toc_depth</mono>
   </td>
   <td bgcolor="white">
-  <high>Tiefe</high> des Inhaltzverzeichnis, default = 1 (nur Überschriften Level 1)
+  mit 2: Überschriften Level 1 + Level 2
   </td> 
 </tr>
 
@@ -348,6 +347,10 @@ output:
     toc: true
     toc_depth: 5
 ````
+
+<p align="center" width="100%">
+  <img src="image/TOC_Level5.png" alt="TOC" style="width:120%">
+</p>
 ]
 
 ---
@@ -357,9 +360,8 @@ output:
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Fixe Elemtente können als Header und Footer angezeigt werden</span></li> 
-  <li class="m2"><span>Beide Elemente werden als externes HTML file gespeichert</span></li>
-  <li class="m3"><span>Die HTML files werden dann im YAML header geladen</span></li>
+  <li class="m1"><span><high>Header</high> werden in externe HTML files gespeichertd</span></li> 
+  <li class="m2"><span>Die HTML files werden dann im YAML header geladen</span></li>
   </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
