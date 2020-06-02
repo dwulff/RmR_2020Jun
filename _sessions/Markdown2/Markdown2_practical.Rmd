@@ -66,74 +66,91 @@ library(sjPlot)
 
 ## Überblick
 
-In diesem Practical wirst du... 
-
 Am Ende des Practicals kannst du:
 
-1. ...
-2. ...
-3. ...
+1. Plots einfügen und formatieren
+2. Berechnungen mit inline code durchführen und im Text die Ergebnisse ausgeben
+3. Datentabellen einfügen und formatieren
+4. Ergebnisse eines Regressionsmodells einfügen und formatieren
 
 ## Aufgaben
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R Projekt und öffne `airbnb_level_one.Rmd`, welches das fertige Produkt am Ende des ersten Markdown Practicals enthält. 
+1. Öffne dein `TheRBootcamp` R Projekt sowie `airbnb_level_one.Rmd`, das fertige Produkt am Ende des ersten Markdown Practicals. 
 
 2. Lade zusätzlich die Pakete `knitr`, `kableExtra` `sjPlot` im `setup` chunk. 
 
-### B - Präambel: Fussnote
+### B - Präambel: Fussnote einfügen
 
 1. Ergänze die Fussnote nach Daten `^[Daten wurde heruntergeladen von [insideairbnb.com](http://insideairbnb.com/get-the-data.html)]`
 
-2. Knitte dokument
+2. Knitte Dokument - alles wie gewünscht?
 
-### C - Neueinstellungen: Grafiken
+### C - Neueinstellungen: Plots
 
-1. Aspect ratio des ersten plots auf .5. Knitten
+Für beide Plots die Darstellung verbessern und Captions einfügen
 
-2. `fig.cap = cap` im ersten plot.
+1. Die aspect ratio des ersten Plots auf .5. setzen(`fig.asp = .5`).
 
-3. `cap = Abbildung 1. Neueinstellungen pro Monat.` im chunk des ersten plots am ende
+2. `fig.cap = cap` im Chunk des ersten Plot einfügen.
 
-4. aspect ratio auf .5 und `fig.cap = cap` für zweiten plot. 
+3. Am Ende des Plot Chunks `cap = Abbildung 1. Neueinstellungen pro Monat.` einfügen.
 
-5. `cap = Abbildung 2. Neueinstellungen pro Bezirk.` im chunk des ersten plots am ende
+4. Für den zweiten Plot die aspect ratio auf .5 setzen und `fig.cap = cap` einfügen.
 
-### D - Preise: Text pt. 1
+5. Am Ende des zweiten Plot Chunks `cap = Abbildung 2. Neueinstellungen pro Bezirk.` einfügen.
 
-1. header level 3 preis
+6. Knitte Dokument - alles wie gewünscht?
 
-2. einfügen
+### D - Preise: Neuer Texteil
+
+1. `Preis` als Level 3 Header einfügen
+
+2. Text einfügen
 
 ````wrap
 Der durchschnittliche Preis der Neueinstellungen beträgt 80.8 €. Im Vergleich zum Vorjahr sind die Preise der Neueinstellungen um 1.7% gestiegen.
 ````
 
-3. in line code
+3. Den durchschnittlichen Preis aus dem `airbnb_1819` Datensatz mit inline code berechnen.
 
-4. knitten. passt?
+```{r echo = TRUE}
+round(mean(airbnb_1819 %>% pull(Preis)),1)
+```
 
+4. Die prozentuelle Steigerung der Preise aus dem `airbnb_1819` Datensatz mit folgendem inline code berechnen und einsetzen.
 
-### E - Preise: Text pt. 2
+```{r echo = TRUE}
+m <- mean(airbnb_1819 %>% 
+          filter(year(Erstellungsdatum) == 2019) %>% 
+          pull(Preis))/mean(airbnb_1819 %>% 
+          filter(year(Erstellungsdatum) == 2018) %>% 
+          pull(Preis))
+round(m, 3) * 100 - 100
+```
 
-1. header level 4 einfluss austattung
+5. Knitte Dokument - alles wie gewünscht?
 
-2. code chunk
+### E - Preise: Neuer Texteil
+
+1. `Einfluss Ausstattsung` als Level 4 Header einfügen
+
+2. In einem eigenem Code Chunk berechnen wie sich Ausstattung auf die gemittelten Preise auswirkt. Diesen Chunk nicht augeben!
 
 ```R
-# Veltor mit Ausstatttungsmerkmalen
+# Vektor mit Ausstatttungsmerkmalen
 ausstattung_var = c('Küche','Wifi','TV','Kaffeemaschine',
                     'Geschirrspüler','Terrasse_Balkon',
                     'Check_in_24h')
 
 # Bestimme Preise als Funktion der Ausstatttungsmerkmale
 ausstattung <- airbnb_1819 %>% 
-  select(all_of(ausstattung_var), Preis) %>%
-  pivot_longer(-Preis,
-             names_to = 'Ausstattung',
-             values_to = 'Ausstattung_vorhanden') %>% 
-  group_by(Ausstattung) %>% 
+               select(all_of(ausstattung_var), Preis) %>%
+               pivot_longer(-Preis,
+               names_to = 'Ausstattung',
+               values_to = 'Ausstattung_vorhanden') %>% 
+              group_by(Ausstattung) %>% 
   summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
             Vorhanden = mean(Preis[Ausstattung_vorhanden]),
             Differenz = Vorhanden - Nicht_vorhanden, 
@@ -141,40 +158,55 @@ ausstattung <- airbnb_1819 %>%
   arrange(desc(Differenz)) 
 ```
 
-3. einfügen
+3. Text einfügen
 
 ````wrap
 Das Austattungsmerkmal mit dem grössten Unterschied im Preis ist Check_in_24h (72.9), das Austattungsmerkmal mit dem kleinsten Unterschied im Preis ist Küche (-88.9).
+````
 
+4. Variablename (und Wert in Klammer) der den grössten Unterschied im Preis ausmacht mit folgendem inline code berechnen und einsetzen.
+```{r echo = TRUE}
+ausstattung %>% pull(Ausstattung) %>% first()
+ausstattung %>% pull(Differenz) %>% first() %>% round(1)
+```
+
+5. Variablename (und Wert in Klammer) der den kleinsten Unterschied im Preis ausmacht mit folgendem inline code berechnen und einsetzen.
+```{r echo = TRUE}
+ausstattung %>% pull(Ausstattung) %>% last()
+ausstattung %>% pull(Differenz) %>% last() %>% round(1)
+```
+
+6. Text einfügen und mittels HTML Tag `<b>` fett hervorheben.
+
+````wrap
 Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.
 ````
 
-4. in-line code 
+7. Knitte Dokument - alles wie gewünscht?
 
-5. ...     
+### F - Preis: Tabelle 1 erzeugen
 
-6. bold
-
-### F - Preise: Tabelle pt. 1
-
-1. code chunk
+1. Neuen Code Chunk mit der Tabelle Ausstattung und `kable()` erstellen.
 
 ```R
 # Plotte Tabelle mit Austattungsmerkmalen
 ausstattung %>% kable(format = 'html')
 ```
 
-2. ergänze `digits = 2`
+2. Anzahl Nachkommastellen mit `digits = 2` auf zwei beschränken.
 
-3. ergänze `caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'`
+3. Caption mit `caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'` einfügen.
 
-4. `col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.')`
+4. Die Namen der Spalten anpassen: `col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.')`
 
-5. `escape = FALSE` und `align="lcccc"`
+5. Spezielle Schriftzeichen direkt einfügen `escape = FALSE` 
 
-6. `column_spec(c(2,3,4,5), width = "1.2in")`
+6. Das Alginment der Zellen festlegen mit `align="lcccc"`
 
-7. ergänze vor kable
+7. Die Breite der Spalten fixieren mit `column_spec(c(2,3,4,5), width = "1.2in")`
+
+8. Die Schrifgrösse der Zellen in Abhängigkeit ihrer Grösse verändern. Dafür vor 
+dem `kable` Abschnitt folgenden Code einfügen und mit einer Pipe (%>%) verbinden.
 
 ```R
 mutate_if(is.numeric, function(x) {
@@ -182,14 +214,13 @@ mutate_if(is.numeric, function(x) {
               font_size = spec_font_size(x, begin=10, end=16))})
 ```
 
-8. passt alles?
+9. Knitte Dokument - alles wie gewünscht?
 
+### G - Preise: Text Teil
 
-### G - Preise: Text pt. 3
+1. `Regressionsmodell` als Level 4 Header einfügen
 
-1. header level 4 Regressionsmodell
-
-2. code chunk
+2. In einem eigenem Code Chunk eine Regression berechnen in der `Preis` mit verschiednen Ausstattungsmerkmalen vorhergesagt wird sowie mittleren Anteil der Hotels berechnen. Diesen Chunk nicht augeben!
 
 ```R
 # Reduzierter Vektor mit Ausstattungsmerkmalen
@@ -200,9 +231,14 @@ ausstattung_mod <- airbnb_1819 %>%
   mutate(Hotel = Unterkunftsart %in% c('Boutique hotel', 'Hotel')) %>% 
   select(Preis, Hotel, all_of(ausstattung_var)) %>% 
   lm(formula = Preis ~ .)
+  
+# Bestimme Anteil Hotels in 2018 und 2019
+hotel <- airbnb_1819 %>% 
+  group_by(year(Erstellungsdatum)) %>% 
+  summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel')))   
 ```
 
-3. ergänze
+3. Folgenden Textblock einfügen
 
 `````wrap
 Die Regression legt nahe, dass Küche, TV und Terrasse oder Balkon den grössten Einfluss auf den Preis in denletztene beiden Jahren hatten.
@@ -216,35 +252,30 @@ Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Ho
 Der Anteil von Hotels ist von -98.9% im Jahre 2018 auf 1.4% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht.
 `````
 
-4. ergänze zwischen 4. und 5. paragraphen
+4. Den Koeffizienten aus dem Regressionsmodell im 4. Absatz (Hotels haben einen um ... höheren Preis) mit folgendem inline code berechnen und einsetzen.
 
-```R
-# Bestimme Anteil Hotels in 2018 und 2019
-hotel <- airbnb_1819 %>% 
-  group_by(year(Erstellungsdatum)) %>% 
-  summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel'))) 
+```{r echo = TRUE}
+coefficients(ausstattung_mod)['HotelTRUE'] %>% round(1)
 ```
 
-5. in line code im 4. paragraphen
+5. Mittels HTML Tag `<b>` den 2. (`Überraschenderweise ...`) und 4. Absatz (`Der Anteil ...`) fett hervorheben.
 
-6. bold setzen von paragraph 2 und 4
+6. Knitte Dokument - alles wie gewünscht?
 
-7. passt alles?
+### H - Preise: Regressionstabelle
 
-### H - Preise: Tabelle pt. 2
-
-1. code chunk
+1. Die Regressionsergebnisse mit `sjPlot::tab_model` ausgeben
 
 ```R
 # Tabelle mit ergebnissen der Regression
 tab_model(ausstattung_mod)
 ```
 
-2. `pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])`
+2. Intercept mit `Achsenabschnitt` in der Tabelle ersetzen `pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])`
 
-3. `title = 'Table 2. Regression des Preises auf die Ausstattung.'`
+3. Tabellentitel einfügen: `title = 'Table 2. Regression des Preises auf die Ausstattung.'`
 
-4. passt alles?
+4. Knitte Dokument - alles wie gewünscht?
 
 
 ## Datensatz
@@ -297,8 +328,10 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 |Paket| Installation|
 |:------|:------|
 |`tidyverse`|`install.packages("tidyverse")`|
-|``|``|
-
+|`lubridate`|`install.packages("tidyverse")`|
+|`knitr`|`install.packages("knitr")`|
+|`sjPlot`|`install.packages("sjPlot")`|
+|`kabelExtra`|`install.packages("kableExtra")`|
 
 ### Funktionen
 
