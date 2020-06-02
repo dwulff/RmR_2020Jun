@@ -66,8 +66,6 @@ library(sjPlot)
 
 ## Überblick
 
-In diesem Practical wirst du... 
-
 Am Ende des Practicals kannst du:
 
 1. Plots einfügen und formatieren
