@@ -70,9 +70,10 @@ In diesem Practical wirst du...
 
 Am Ende des Practicals kannst du:
 
-1. ...
-2. ...
-3. ...
+1. Plots einfügen und formatieren
+2. Berechnungen mit inline code durchführen und im Text die Ergebnisse ausgeben
+3. Datentabellen einfügen und formatieren
+4. Ergebnisse eines Regressionsmodells einfügen und formatieren
 
 ## Aufgaben
 
@@ -329,8 +330,10 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 |Paket| Installation|
 |:------|:------|
 |`tidyverse`|`install.packages("tidyverse")`|
-|``|``|
-
+|`lubridate`|`install.packages("tidyverse")`|
+|`knitr`|`install.packages("knitr")`|
+|`sjPlot`|`install.packages("sjPlot")`|
+|`kabelExtra`|`install.packages("kableExtra")`|
 
 ### Funktionen
 
