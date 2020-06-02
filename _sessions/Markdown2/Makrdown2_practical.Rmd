@@ -82,7 +82,11 @@ Am Ende des Practicals kannst du:
 
 2. Lade zusätzlich die Pakete `knitr`, `kableExtra` `sjPlot` im `setup` chunk. 
 
-### B - Preise: Text pt. 1
+### B - Neueinstellungen: Grafiken
+
+
+
+### C - Preise: Text pt. 1
 
 1. header level 3 preis
 
