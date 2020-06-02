@@ -73,8 +73,9 @@ In diesem Practical machst du deine ersten Schritte mit R Markdown.
 
 Am Ende des Practicals wirst du wissen wie man:
 
-1. Chunks erstellt und einstellt.
-2. ...
+1. Text ins Dokument einfügt.
+2. In-line Code im Text verwendet. 
+3. Chunks erstellt 
 
 ## Aufgaben
 
@@ -200,11 +201,13 @@ ggplot(airbnb_1819 %>%
 
 <p align="center"><img src="image/chunk2.png" height=60px></img></p>
 
-2. Das Dokument sollte nun den Code in dem `chunk` nicht mehr zeigen. Mache nun dieses Setting rückgängig, d.h., lösche `echo = FALSE`.   
+2. Das Dokument sollte nun den Code in dem `chunk` nicht mehr zeigen. Mache nun dieses Setting rückgängig, d.h., lösche `echo = FALSE`, es gibt nämlich einen zweiten Weg diesen und alle zukünftigen Code `chunk`s zu verstecken. Knitte das Dokument nachdem du das `echo = FALSE` entfernt hast. 
+
+3. Gehe nun zum Setup `chunk` ganz am Anfang es Dokuments (unter dem YAML head). Dort siehst du folgende Code Zeile `knitr::opts_chunk$set(echo = TRUE)`, die aktuell impliziert, dass alle Code `chunk`s per default angezeigt werden. Setze nun hier `echo = FALSE` und knitte das Dokument. Der Code `chunk` sollte nun wieder versteckt sein.    
 
 ### F - Neueinstellungen: Text pt. 2
 
-1. Setze eine weitere Überschrift auf vierter Ebene (`####`) mit dem Titel `Stadtteile`.
+1. Setze unten im Script eine weitere Überschrift auf vierter Ebene (`####`) mit dem Titel `Stadtteile`.
 
 2. Unter die Überschrift setze den folgenden Text.
 
@@ -228,7 +231,7 @@ stadtteile <- airbnb_1819 %>%
 ```
 4. Erstze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()` und `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`. Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden. 
 
-5. Kreiere einen neuen Chunk zwischen den beiden Paragraphen mit dem folgenden Code. 
+5. Kreiere einen neuen Chunk zwischen den beiden Paragraphen mit dem folgenden Code, welcher einige Objekte erstellt, die die in-line Ergänzungen im darauf folgenden Paragraphen erleichtern werden.  
 
 ```
 # Veränderung über die Stadtteile
@@ -257,7 +260,25 @@ max_stadtteil = veränderung %>%
   pull(Stadtteil)
 ```
 
+6. Ersetze die ersten beiden Stadtteil-Nennungen in beiden Sätzen durch `min_stadtteil` und `max_stadtteil` und knitte das Dokument.
+
+7. Ersetze nun `schrumpften` und `wuchsen` durch `ifelse(min_veränderung > 0, "wuchsen", "schrumpften")` und `ifelse(max_veränderung > 0, "wuchsen", "schrumpften")`. Die beiden Codestücke können dann selbst entscheiden, ob die Veränderung eine positive oder negative ist und das jeweils richtige Wort einsetzen. 
+
+8. Abschliessend ersetze die beiden numerischen Werte durch `min_veränderung` und `max_veränderung`. Knitte das Dokument und überprüfe, ob alles in Ordnung ist.
+
 ### G - Neueinstellungen: Grafikchunk pt. 2
+
+1. Erstelle einen neuen `chunk` mit dem folgenden Code für die zweite Abbildung.
+
+```R
+# Plotte Häufigkeieten der Stadtteile
+ggplot(stadtteile, 
+       aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
+  geom_bar(stat = 'identity', position = 'dodge') + 
+  theme(legend.position = 'none') + labs(y='')
+```
+
+2. Knitte das Dokument. Der erste Teil ist hiermit abgeschlossen. 
 
 
 ## Datensatz

@@ -314,13 +314,20 @@ ggplot(airbnb_1819 %&gt;%
 <div id="e---chunk-optionen" class="section level3">
 <h3>E - <code>Chunk</code> Optionen</h3>
 <ol style="list-style-type: decimal">
-<li>Aktuell zeigt dein “geknittetes” Dokument sowohl den Code für den Plot als auch den Plot selbst. Das Dokument soll aber nur den Plot zeigen. Ergänze in den Chunk Optionen, d.h., innerhalb der geschwungenen Klammern nach</li>
+<li>Aktuell zeigt dein “geknittetes” Dokument sowohl den Code für den Plot als auch den Plot selbst. Das Dokument soll aber nur den Plot zeigen. Ergänze in den <code>chunk</code> Optionen, d.h., innerhalb der geschwungenen Klammern nach dem <code>r</code>, <code>echo = FALSE</code>. Danach knitte das Dokument nocheinmal.</li>
+</ol>
+<p align="center">
+<img src="image/chunk2.png" height=60px></img>
+</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Das Dokument sollte nun den Code in dem <code>chunk</code> nicht mehr zeigen. Mache nun dieses Setting rückgängig, d.h., lösche <code>echo = FALSE</code>, es gibt nämlich einen zweiten Weg diesen und alle zukünftigen Code <code>chunk</code>s zu verstecken. Knitte das Dokument nachdem du das <code>echo = FALSE</code> entfernt hast.</p></li>
+<li><p>Gehe nun zum Setup <code>chunk</code> ganz am Anfang es Dokuments (unter dem YAML head). Dort siehst du folgende Code Zeile <code>knitr::opts_chunk$set(echo = TRUE)</code>, die aktuell impliziert, dass alle Code <code>chunk</code>s per default angezeigt werden. Setze nun hier <code>echo = FALSE</code> und knitte das Dokument. Der Code <code>chunk</code> sollte nun wieder versteckt sein.</p></li>
 </ol>
 </div>
 <div id="f---neueinstellungen-text-pt.-2" class="section level3">
 <h3>F - Neueinstellungen: Text pt. 2</h3>
 <ol style="list-style-type: decimal">
-<li><p>Setze eine weitere Überschrift auf vierter Ebene (<code>####</code>) mit dem Titel <code>Stadtteile</code>.</p></li>
+<li><p>Setze unten im Script eine weitere Überschrift auf vierter Ebene (<code>####</code>) mit dem Titel <code>Stadtteile</code>.</p></li>
 <li><p>Unter die Überschrift setze den folgenden Text.</p></li>
 </ol>
 <pre class="wrap"><code>Neueinstellungen fallen nach wie vor sehr unterschiedlich in den Bezirke aus. Die meisten Neueinstellungen im Jahr 2019 gab es in Friedrichshain-Kreuzberg, die wenigsten in Marzahn - Hellersdorf.
@@ -339,7 +346,7 @@ stadtteile &lt;- airbnb_1819 %&gt;%
   mutate(Stadtteil = as_factor(Stadtteil))</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Erstze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch <code>stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% last()</code> und <code>stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% first()</code>. Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden.</p></li>
-<li><p>Kreiere einen neuen Chunk zwischen den beiden Paragraphen mit dem folgenden Code.</p></li>
+<li><p>Kreiere einen neuen Chunk zwischen den beiden Paragraphen mit dem folgenden Code, welcher einige Objekte erstellt, die die in-line Ergänzungen im darauf folgenden Paragraphen erleichtern werden.</p></li>
 </ol>
 <pre><code># Veränderung über die Stadtteile
 veränderung = stadtteile %&gt;% 
@@ -365,9 +372,25 @@ max_veränderung = veränderung %&gt;%
 max_stadtteil = veränderung %&gt;% 
   slice(which.max(veränderung)) %&gt;% 
   pull(Stadtteil)</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Ersetze die ersten beiden Stadtteil-Nennungen in beiden Sätzen durch <code>min_stadtteil</code> und <code>max_stadtteil</code> und knitte das Dokument.</p></li>
+<li><p>Ersetze nun <code>schrumpften</code> und <code>wuchsen</code> durch <code>ifelse(min_veränderung &gt; 0, "wuchsen", "schrumpften")</code> und <code>ifelse(max_veränderung &gt; 0, "wuchsen", "schrumpften")</code>. Die beiden Codestücke können dann selbst entscheiden, ob die Veränderung eine positive oder negative ist und das jeweils richtige Wort einsetzen.</p></li>
+<li><p>Abschliessend ersetze die beiden numerischen Werte durch <code>min_veränderung</code> und <code>max_veränderung</code>. Knitte das Dokument und überprüfe, ob alles in Ordnung ist.</p></li>
+</ol>
 </div>
 <div id="g---neueinstellungen-grafikchunk-pt.-2" class="section level3">
 <h3>G - Neueinstellungen: Grafikchunk pt. 2</h3>
+<ol style="list-style-type: decimal">
+<li>Erstelle einen neuen <code>chunk</code> mit dem folgenden Code für die zweite Abbildung.</li>
+</ol>
+<pre class="r"><code># Plotte Häufigkeieten der Stadtteile
+ggplot(stadtteile, 
+       aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
+  geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) + 
+  theme(legend.position = &#39;none&#39;) + labs(y=&#39;&#39;)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Knitte das Dokument. Der erste Teil ist hiermit abgeschlossen.</li>
+</ol>
 </div>
 </div>
 <div id="datensatz" class="section level2">
