@@ -75,7 +75,7 @@ Am Ende des Practicals wirst du wissen wie man:
 
 1. Text ins Dokument einfügt.
 2. In-line Code im Text verwendet. 
-3. Chunks erstellt 
+3. Chunks erstellen und einstellen. 
 
 ## Aufgaben
 
@@ -331,7 +331,7 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 |Paket| Installation|
 |:------|:------|
 |`tidyverse`|`install.packages("tidyverse")`|
-|``|``|
+|`lubridate`|`install.packages("lubridate")`|
 
 
 ### Funktionen
@@ -339,7 +339,7 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 
 | Funktion| Paket | Beschreibung |
 |:---|:------|:---------------------------------------------|
-| ``|``|  | 
+| `strftime`|`lubridate`| Formartierung von Daten | 
 
 
 
