@@ -194,6 +194,11 @@ summary {
 </div>
 
 
+<style>
+pre code,  .md:not(.use-csslab) pre code {
+  white-space: pre-wrap;
+  }
+</style>
 <p align="center" width="100%">
 <img src="image/flat_crop.png" alt="Chunks" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://www.airbnb.ca/rooms/1347514/photos/13227297?guests=4&s=4fFl&source_impression_id=p3_1591077094_V6VkyaMzWmptgznT&adults=1">airbnb.ca</a></font>
 </p>
@@ -201,12 +206,12 @@ summary {
 <h1></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
-<p>In diesem Practical wirst Du verschiedene Chunk Einstellungen mit dem AirBnB Datensatz üben.</p>
+<p>In diesem Practical wirst du…</p>
 <p>Am Ende des Practicals kannst du:</p>
 <ol style="list-style-type: decimal">
-<li>Chunks nach deinen Wünschen konfigurieren</li>
-<li>Verschiedene Arten von Inhaltsverzeichnissen einbauen</li>
-<li>Tabellen erstellen und gestalten</li>
+<li>…</li>
+<li>…</li>
+<li>…</li>
 </ol>
 </div>
 <div id="aufgaben" class="section level2">
@@ -214,212 +219,136 @@ summary {
 <div id="a---setup" class="section level3">
 <h3>A - Setup</h3>
 <ol style="list-style-type: decimal">
-<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelistet sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
-<li><p>Öffne ein neues RMarkdown Skript und wähle das Template “Document” aus (siehe screenshot unten).</p></li>
-</ol>
-<p align="center" width="100%">
-<img src="image/Markdown_Document.png" alt="New Markdown Document" style="width:50%">
-</p>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Trage bei Title “Chunk Pactical” und deinen Namen ein.</p></li>
-<li><p>Speichere das neue Skript unter dem Namen <code>markdown2_practical.Rmd</code> im <code>2_Code</code> Ordner.</p></li>
-<li><p>Lösche alles unterhalb des <code>setup</code> R chunks.</p></li>
+<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt und öffne <code>airbnb_level_one.Rmd</code>, welches das ferteige Produkt am Ende des ersten Markdown Practicals enthält.</p></li>
+<li><p>Lade zusätzlich die Pakete <code>knitr</code>, <code>kableExtra</code> <code>sjPlot</code> im <code>setup</code> chunk.</p></li>
 </ol>
 </div>
-<div id="b---airbnb-datensatz-und-inhaltsverzeichnis-anzeigen" class="section level3">
-<h3>B - <code>airbnb</code> Datensatz und Inhaltsverzeichnis anzeigen</h3>
+<div id="b---preise-text-pt.-1" class="section level3">
+<h3>B - Preise: Text pt. 1</h3>
 <ol style="list-style-type: decimal">
-<li>Wir wollen ein Inhaltsverzeichnis angezeigt bekommen. Im YAML header müssen<br />
-wir also die Option <code>toc</code> auf TRUE setzen</li>
+<li><p>header level 3 preis</p></li>
+<li><p>einfügen</p></li>
 </ol>
-<pre class="markdown"><code>output:
-  html_document:
-    toc: XXX</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Füge im <code>setup</code> chunk die libraries <code>tidyverse()</code> und <code>kableExtra()</code> ein</li>
-</ol>
-<pre class="markdown"><code>{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(XXX)
-library(XXX)</code></pre>
+<pre class="wrap"><code>Der durchschnittliche Preis der Neueinstellungen beträgt 80.8 €. Im Vergleich zum Vorjahr sind die Preise der Neueinstellungen um 1.7% gestiegen.</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Lade den Datensatz <code>airbnb.csv</code> als Objekt <code>airbnb</code> im <code>setup</code> chunk aus dem Ordner 1_Data.</li>
+<li><p>in line code</p></li>
+<li><p>knitten. passt?</p></li>
 </ol>
-<pre class="markdown"><code>{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(XXX)
-library(XXX)
-airbnb &lt;- read_csv(&quot;../XXX/XXX&quot;)</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>Erstelle einen neuen Chunk und zeige mit Hilfe der <code>summary()</code> Funktion eine Zusammenfassung des <code>airbnb</code> Datensatzes an. Es soll die Funktion und das Output angezeigt werden!</li>
-</ol>
-<pre class="markdown"><code>{r}
-summary(XXX)</code></pre>
 </div>
-<div id="c---die-richtige-wohnung-finden" class="section level3">
-<h3>C - Die richtige Wohnung finden</h3>
+<div id="c---preise-text-pt.-2" class="section level3">
+<h3>C - Preise: Text pt. 2</h3>
 <ol style="list-style-type: decimal">
-<li>Wir wollen nun herausfinden welche Wohnung eine Kaffeemaschine, einen Geschirrspüler und Wifi hat (alles was man zum Leben braucht). Dafür wählen wir zuerst die drei Variablen aus (Kaffeemaschine, Geschirrspüler, Wifi).</li>
+<li><p>header level 4 einfluss austattung</p></li>
+<li><p>code chunk</p></li>
 </ol>
-<pre class="markdown"><code>{r}
-XXX %&gt;%
-  select(XXX, XXX, XXX)</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Jetzt erstellen wir eine neue Variable <code>hat_alles</code> in der wir die drei Variablen addieren.</li>
-</ol>
-<pre class="markdown"><code>{r}
-XXX %&gt;%
-  select(XXX, XXX, XXX) %&gt;%
-  mutate(hat_alles = Kaffeemaschine + Geschirrspüler + Wifi)</code></pre>
+<pre class="r"><code># Veltor mit Ausstatttungsmerkmalen
+ausstattung_var = c(&#39;Küche&#39;,&#39;Wifi&#39;,&#39;TV&#39;,&#39;Kaffeemaschine&#39;,
+                    &#39;Geschirrspüler&#39;,&#39;Terrasse_Balkon&#39;,
+                    &#39;Check_in_24h&#39;)
+
+# Bestimme Preise als Funktion der Ausstatttungsmerkmale
+ausstattung &lt;- airbnb_1819 %&gt;% 
+  select(all_of(ausstattung_var), Preis) %&gt;%
+  pivot_longer(-Preis,
+             names_to = &#39;Ausstattung&#39;,
+             values_to = &#39;Ausstattung_vorhanden&#39;) %&gt;% 
+  group_by(Ausstattung) %&gt;% 
+  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
+            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
+            Differenz = Vorhanden - Nicht_vorhanden, 
+            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %&gt;% 
+  arrange(desc(Differenz)) </code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Schliesslich wollen wir nur das Ergebnis im HTML file sehen (ohne Code)</li>
+<li>einfügen</li>
 </ol>
-<pre class="markdown"><code>{r echo = XXX}
-XXX %&gt;%
-  select(XXX, XXX, XXX) %&gt;%
-  mutate(hat_alles = XXX + XXX + XXX)</code></pre>
+<pre class="wrap"><code>Das Austattungsmerkmal mit dem grössten Unterschied im Preis ist Check_in_24h (72.9), das Austattungsmerkmal mit dem kleinsten Unterschied im Preis ist Küche (-88.9).
+
+Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Wieviele Wohnungen mit allen 3 Annehmlichkeiten gibt es? Code und Ergebnisse anzeigen!</li>
+<li><p>in-line code</p></li>
+<li><p>…</p></li>
+<li><p>bold</p></li>
 </ol>
-<pre class="markdown"><code>{r echo = XXX}
-XXX %&gt;%
-  select(XXX, XXX, XXX) %&gt;%
-  mutate(hat_alles = XXX + XXX + XXX) %&gt;%
-  count(hat_alles)</code></pre>
+</div>
+<div id="d---preise-tabelle-pt.-1" class="section level3">
+<h3>D - Preise: Tabelle pt. 1</h3>
+<ol style="list-style-type: decimal">
+<li>code chunk</li>
+</ol>
+<pre class="r"><code># Plotte Tabelle mit Austattungsmerkmalen
+ausstattung %&gt;% kable(format = &#39;html&#39;)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>ergänze <code>digits = 2</code></p></li>
+<li><p>ergänze <code>caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'</code></p></li>
+<li><p><code>col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 'Preis&lt;br&gt;vorh.','Differenz','Prozent&lt;br&gt;vorh.')</code></p></li>
+<li><p><code>escape = FALSE</code> und <code>align="lcccc"</code></p></li>
+<li><p><code>column_spec(c(2,3,4,5), width = "1.2in")</code></p></li>
+<li><p>ergänze vor kable</p></li>
+</ol>
+<pre class="r"><code>mutate_if(is.numeric, function(x) {
+    cell_spec(round(x,1), bold = T, 
+              font_size = spec_font_size(x, begin=10, end=16))})</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li>passt alles?</li>
+</ol>
+</div>
+<div id="e---preise-text-pt.-3" class="section level3">
+<h3>E - Preise: Text pt. 3</h3>
+<ol style="list-style-type: decimal">
+<li><p>header level 4 Regressionsmodell</p></li>
+<li><p>code chunk</p></li>
+</ol>
+<pre class="r"><code># Reduzierter Vektor mit Ausstattungsmerkmalen
+ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,&#39;Check_in_24h&#39;)
+
+# Rechne Regression des Preises auf Austattungsmerkmale und Hotel
+ausstattung_mod &lt;- airbnb_1819 %&gt;% 
+  mutate(Hotel = Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)) %&gt;% 
+  select(Preis, Hotel, all_of(ausstattung_var)) %&gt;% 
+  lm(formula = Preis ~ .)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>ergänze</li>
+</ol>
+<pre class="wrap"><code>Die Regression legt nahe, dass Küche, TV und Terrasse oder Balkon den grössten Einfluss auf den Preis in denletztene beiden Jahren hatten.
+
+Der Einfluss der Küche ist gegenüber dem Unterschied in Tabelle 1 gesunken, jedoch nach wie vor signifikant.
+
+Überraschenderweise ist der Effekt eines 24h Check-ins, welcher deskriptiv am grössten ausfiel, nicht signifikant. Dies ist ebenfalls auf den Zusammen zur Unterkunftsart zurückzuführen
+
+Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Hotels haben eine um 437.3€ höheren Preis als Unterkünfte die keine Hotels sind.
+
+Der Anteil von Hotels ist von -98.9% im Jahre 2018 auf 1.4% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht.</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>ergänze zwischen 4. und 5. paragraphen</li>
+</ol>
+<pre class="r"><code># Bestimme Anteil Hotels in 2018 und 2019
+hotel &lt;- airbnb_1819 %&gt;% 
+  group_by(year(Erstellungsdatum)) %&gt;% 
+  summarize(Anteil = mean(Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;))) </code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>Nun wollen wir noch die Darstellung verbessern. Dazu speichern wir unseren dataframe zuerst in ein neues Objekt <code>vorhanden</code> ab. Dann schicken wir dieses Objekt in die Funktion <code>kable()</code></li>
+<li><p>in line code im 4. paragraphen</p></li>
+<li><p>bold setzen von paragraph 2 und 4</p></li>
+<li><p>passt alles?</p></li>
 </ol>
-<pre class="markdown"><code>{r echo = XXX}
-vorhanden &lt;- 
-XXX %&gt;%
-  select(XXX, XXX, XXX) %&gt;%
-  mutate(hat_alles = XXX + XXX + XXX) %&gt;%
-  count(hat_alles)
-  
-kable(vorhanden)  </code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li>Im nächsten Schritt werden wir die Namen der Spalten von <code>hat_alles</code> und <code>n</code> in etwas sinnvollerers ändern. Die Spalten sollen neu: <code>Kriterium</code> und <code>Anzahl</code> heissen.</li>
+</div>
+<div id="f---preise-tabelle-pt.-2" class="section level3">
+<h3>F - Preise: Tabelle pt. 2</h3>
+<ol style="list-style-type: decimal">
+<li>code chunk</li>
 </ol>
-<pre class="markdown"><code>kable(vorhanden,
-      col.names = c(&#39;XXX&#39;, &#39;XXX&#39;),
-      )</code></pre>
-<ol start="7" style="list-style-type: decimal">
-<li>Jetzt noch die Breite der Tabelle reduzieren und die Schriftgrösse erhöhen - hier ist <code>kable_styling</code> hilfreich.</li>
+<pre class="r"><code># Tabelle mit ergebnissen der Regression
+tab_model(ausstattung_mod)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p><code>pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])</code></p></li>
+<li><p><code>title = 'Table 2. Regression des Preises auf die Ausstattung.'</code></p></li>
+<li><p>passt alles?</p></li>
 </ol>
-<pre class="markdown"><code>kable(vorhanden,
-      col.names = c(&#39;XXX&#39;, &#39;XXX&#39;),
-      ) %&gt;%
-kable_styling(full_width = XXX, font_size = XXX)</code></pre>
 </div>
 </div>
-<div id="beispiele" class="section level2">
-<h2>Beispiele</h2>
-<pre class="r"><code>library(tidyverse) 
-library(cstab)
-library(dbscan)
-library(mclust, mask.ok = F)
-
-# Beispieldatensatz
-data(mpg)
-
-# Verarbeitung des Datensatzes
-mpg &lt;- mpg %&gt;% select_if(is.numeric)
-mpg_stand &lt;- mpg  %&gt;% 
-  scale %&gt;%         # Standardisieren
-  as_tibble()
-
-# k-means -----
-
-# Finde Cluster
-mpg_km &lt;- kmeans(mpg_stand, 
-                 centers = 3)
-
-# Zeige Zentroide
-mpg_km$centers
-
-# k-selection -----
-
-# Zeige Binnenvarianz Verlauf
-km_verlauf &lt;- purrr::map(2:20, kmeans, x = mpg_stand)
-binnenvarianz &lt;- purrr::map_dbl(km_verlauf, 
-                               `[[`, i = &#39;tot.withinss&#39;)
-
-# Plotte die Binnenvarianz
-plot(binnenvarianz)
-
-# Gap &amp; Slope Statistik
-k_est &lt;- cDistance(as.matrix(mpg_stand), 
-                   kseq = 2:20) 
-k_est$k__Gap
-k_est$k_Slope
-
-# Cluster stability
-k_est &lt;- cStability(as.matrix(mpg_stand), 
-                    kseq = 2:20) 
-k_est$k_instab
-  
-# DBSCAN -----
-
-# Finde Cluster
-mpg_dbscan &lt;- dbscan(mpg_stand, eps = 1)
-
-# Zeige Zentroide
-mpg %&gt;% 
-  mutate(cl = mpg_dbscan$cluster) %&gt;%
-  group_by(cl) %&gt;% 
-  summarize_all(mean)
-
-# Gaussian Mixtures -----
-
-# Finde Cluster
-mpg_gm &lt;- Mclust(mpg)
-
-# Zeige Zentroide
-mpg %&gt;% 
-  mutate(cl = mpg_gm$classification) %&gt;%
-  group_by(cl) %&gt;% 
-  summarize_all(mean)
-
-# Plotte Cluster
-plot(mpg_gm, what = &#39;classification&#39;)
-
-# Vergleiche Cluster -----
-
-table(mpg_km$cluster, mpg_dbscan$cluster)
-table(mpg_km$cluster, mpg_gm$classification)
-table(mpg_dbscan$cluster, mpg_gm$classification)</code></pre>
-</div>
-<div id="datensätze" class="section level2">
-<h2>Datensätze</h2>
+<div id="datensatz" class="section level2">
+<h2>Datensatz</h2>
+<p>Der <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv">airbnb.csv</a> Datensatz enthält Zahlen zu 9868 Berliner Airbnbs</p>
 <table>
-<colgroup>
-<col width="27%" />
-<col width="33%" />
-<col width="38%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Datei</th>
-<th align="left">Zeilen</th>
-<th align="left">Spalten</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><a href="#airbnb.csv">airbnb.csv</a>(<a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_sessions/Markdown2/1_Data/airbnb.csv" class="uri">https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_sessions/Markdown2/1_Data/airbnb.csv</a></td>
-<td align="left">9868</td>
-<td align="left">33</td>
-</tr>
-</tbody>
-</table>
-<div id="airbnb.csv" class="section level4">
-<h4>airbnb.csv</h4>
-<p>Der <code>airbnb</code> …. XXX Datensatz ist ein Ausschnitt des Öffentlich verfügbaren <a href="https://www.kaggle.com/arjunbhasin2013/ccdata"><em>Credit Card Dataset</em></a>. Der Datensatz beinhaltet 8 Features, die einen Auschnitt des Verhaltens von 8636 Kreditkartenkunden beschreiben.</p>
-<table>
-<colgroup>
-<col width="26%" />
-<col width="73%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Variable</th>
@@ -428,40 +357,139 @@ table(mpg_dbscan$cluster, mpg_gm$classification)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">BALANCE</td>
-<td align="left">Verfügbares Guthaben</td>
+<td align="left">Preis</td>
+<td align="left">Preis pro Nacht</td>
 </tr>
 <tr class="even">
-<td align="left">BALANCE_FREQUENCY</td>
-<td align="left">Änderungsfrequenz des Guthabens (1 = häufig, 0 = selten)</td>
+<td align="left">Erstellungsdatum</td>
+<td align="left">Eröffnungsdatum des Airbnbs</td>
 </tr>
 <tr class="odd">
-<td align="left">PURCHASES</td>
-<td align="left">Summe der Einkäufe</td>
+<td align="left">Unterkunftsart</td>
+<td align="left">Appartement, Loft, House, etc.</td>
 </tr>
 <tr class="even">
-<td align="left">CREDITLIMIT</td>
-<td align="left">Kreditlimit der Karte</td>
+<td align="left">Schlafplätze</td>
+<td align="left">Anzahl Schlafplätze</td>
 </tr>
 <tr class="odd">
-<td align="left">ONEOFFPURCHASES</td>
-<td align="left">Betrag der grössten einmaligen Zahlung</td>
+<td align="left">Schlafzimmer</td>
+<td align="left">Anzahl Schlafzimmer</td>
 </tr>
 <tr class="even">
-<td align="left">MINIMUM_PAYMENTS</td>
-<td align="left">Minimale Konto-Ausgleichszahlung</td>
+<td align="left">Badezimmer</td>
+<td align="left">Anzahl Badezimmer</td>
 </tr>
 <tr class="odd">
-<td align="left">PRCFULLPAYMENT</td>
-<td align="left">Prozent vollständige Konto-Ausgleichszahlung</td>
+<td align="left">Reinigungsgebühr</td>
+<td align="left">Reinigungsgebühr</td>
 </tr>
 <tr class="even">
-<td align="left">TENURE</td>
-<td align="left">Dauer des Kundenverhältnisses</td>
+<td align="left">Verfügbarkeit_90Tage</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Viertel</td>
+<td align="left">In welchem Viertel befindet sich das Airbnb</td>
+</tr>
+<tr class="even">
+<td align="left">Stadtteil</td>
+<td align="left">In welchem Stadtteil befindet sich das Airbnb</td>
+</tr>
+<tr class="odd">
+<td align="left">Breitengrad</td>
+<td align="left">Breitengrad</td>
+</tr>
+<tr class="even">
+<td align="left">Längengrad</td>
+<td align="left">Längengrad</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_id</td>
+<td align="left">Host id</td>
+</tr>
+<tr class="even">
+<td align="left">Host_seit</td>
+<td align="left">Erfahrung des Hosts</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_antwortzeit</td>
+<td align="left">Host Antwortzeit</td>
+</tr>
+<tr class="even">
+<td align="left">Host_antwortrate</td>
+<td align="left">Host Antwortrate</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_superhost</td>
+<td align="left">Superhost Ja/Nein</td>
+</tr>
+<tr class="even">
+<td align="left">Host_anzahl</td>
+<td align="left">Anzahl Gäste</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_gesamt</td>
+<td align="left">Gesamtrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_genauigkeit</td>
+<td align="left">Genauigkeitsrating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_sauberkeit</td>
+<td align="left">Sauberkeitsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_checkin</td>
+<td align="left">Checkinrating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_kommunikation</td>
+<td align="left">Kommunikationsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_lage</td>
+<td align="left">Lagerating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_wertigkeit</td>
+<td align="left">Wertigkeitsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Küche</td>
+<td align="left">Küche vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Wifi</td>
+<td align="left">WLAN vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">TV</td>
+<td align="left">TV vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Kaffeemaschine</td>
+<td align="left">Kaffeemaschine vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">Geschirrspüler</td>
+<td align="left">Geschirrspüler vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Terrasse_Balkon</td>
+<td align="left">Terrasse/Balkon vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">Badewanne</td>
+<td align="left">Badewanne vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Check_in_24h</td>
+<td align="left">24h Check-In vorhanden TRUE/FALSE</td>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 <div id="funktionen" class="section level2">
 <h2>Funktionen</h2>
@@ -479,12 +507,15 @@ table(mpg_dbscan$cluster, mpg_gm$classification)</code></pre>
 <td align="left"><code>tidyverse</code></td>
 <td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
+<tr class="even">
+<td align="left"><code>|</code></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div id="funktionen-1" class="section level3">
 <h3>Funktionen</h3>
-<p><em>Clustering</em></p>
 <table>
 <thead>
 <tr class="header">
@@ -495,46 +526,9 @@ table(mpg_dbscan$cluster, mpg_gm$classification)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>kmeans()</code></td>
-<td align="left"><code>stats</code></td>
-<td align="left">Clustere die Daten mit <em>k</em>-means</td>
-</tr>
-<tr class="even">
-<td align="left"><code>dbscan()</code></td>
-<td align="left"><code>dbscan</code></td>
-<td align="left">Clustere die Daten mit DBSCAN</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>Mclust()</code></td>
-<td align="left"><code>mclust</code></td>
-<td align="left">Clustere die Daten mit Gaussian Mixtures</td>
-</tr>
-</tbody>
-</table>
-<p><em>k-selection</em></p>
-<table>
-<colgroup>
-<col width="7%" />
-<col width="12%" />
-<col width="80%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Funktion</th>
-<th align="left">Paket</th>
-<th align="left">Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>cDistance()</code></td>
-<td align="left"><code>cstab</code></td>
-<td align="left">Identifiziere <em>k</em> mit distanzbasierten Methoden, z.B., der Gap Statistik.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>cStability()</code></td>
-<td align="left"><code>cstab</code></td>
-<td align="left">Identifiziere <em>k</em> mit stabilitätsbasierten Methoden.</td>
+<td align="left"><code>|</code></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
@@ -542,12 +536,10 @@ table(mpg_dbscan$cluster, mpg_gm$classification)</code></pre>
 </div>
 <div id="materialien" class="section level2">
 <h2>Materialien</h2>
-<div id="dokumentation" class="section level3">
-<h3>Dokumentation</h3>
 <ul>
-<li>Eine gutes <a href="https://www.r-bloggers.com/the-complete-guide-to-clustering-analysis-k-means-and-hierarchical-clustering-by-hand-and-in-r/"><strong>Tutorial</strong></a> über <em>k</em>-means und hierarchisches Clustering.</li>
+<li>…</li>
+<li>…</li>
 </ul>
-</div>
 </div>
 </div>
 

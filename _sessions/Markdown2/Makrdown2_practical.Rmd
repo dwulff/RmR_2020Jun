@@ -30,6 +30,12 @@ output:
     self_contained: no
 ---
 
+<style>
+pre code,  .md:not(.use-csslab) pre code {
+  white-space: pre-wrap;
+  }
+</style>
+
 ```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(comment = NA, 
                       fig.width = 6, 
@@ -43,8 +49,10 @@ options(digits = 3)
 
 # Load packages
 library(tidyverse)
+library(lubridate)
 library(knitr)
 library(kableExtra)
+library(sjPlot)
 ```
 
 <p align="center" width="100%">
@@ -70,10 +78,155 @@ Am Ende des Practicals kannst du:
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R Projekt und öffne `airbnb_level_one.Rmd`, welches das ferteige Produkt am Ende des ersten Markdown Practicals enthält. 
+1. Öffne dein `TheRBootcamp` R Projekt und öffne `airbnb_level_one.Rmd`, welches das fertige Produkt am Ende des ersten Markdown Practicals enthält. 
 
-### B - Preise
+2. Lade zusätzlich die Pakete `knitr`, `kableExtra` `sjPlot` im `setup` chunk. 
 
+### B - Preise: Text pt. 1
+
+1. header level 3 preis
+
+2. einfügen
+
+````wrap
+Der durchschnittliche Preis der Neueinstellungen beträgt 80.8 €. Im Vergleich zum Vorjahr sind die Preise der Neueinstellungen um 1.7% gestiegen.
+````
+
+3. in line code
+
+4. knitten. passt?
+
+
+### C - Preise: Text pt. 2
+
+1. header level 4 einfluss austattung
+
+2. code chunk
+
+```R
+# Veltor mit Ausstatttungsmerkmalen
+ausstattung_var = c('Küche','Wifi','TV','Kaffeemaschine',
+                    'Geschirrspüler','Terrasse_Balkon',
+                    'Check_in_24h')
+
+# Bestimme Preise als Funktion der Ausstatttungsmerkmale
+ausstattung <- airbnb_1819 %>% 
+  select(all_of(ausstattung_var), Preis) %>%
+  pivot_longer(-Preis,
+             names_to = 'Ausstattung',
+             values_to = 'Ausstattung_vorhanden') %>% 
+  group_by(Ausstattung) %>% 
+  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
+            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
+            Differenz = Vorhanden - Nicht_vorhanden, 
+            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %>% 
+  arrange(desc(Differenz)) 
+```
+
+3. einfügen
+
+````wrap
+Das Austattungsmerkmal mit dem grössten Unterschied im Preis ist Check_in_24h (72.9), das Austattungsmerkmal mit dem kleinsten Unterschied im Preis ist Küche (-88.9).
+
+Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.
+````
+
+4. in-line code 
+
+5. ...     
+
+6. bold
+
+### D - Preise: Tabelle pt. 1
+
+1. code chunk
+
+```R
+# Plotte Tabelle mit Austattungsmerkmalen
+ausstattung %>% kable(format = 'html')
+```
+
+2. ergänze `digits = 2`
+
+3. ergänze `caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'`
+
+4. `col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.')`
+
+5. `escape = FALSE` und `align="lcccc"`
+
+6. `column_spec(c(2,3,4,5), width = "1.2in")`
+
+7. ergänze vor kable
+
+```R
+mutate_if(is.numeric, function(x) {
+    cell_spec(round(x,1), bold = T, 
+              font_size = spec_font_size(x, begin=10, end=16))})
+```
+
+8. passt alles?
+
+
+### E - Preise: Text pt. 3
+
+1. header level 4 Regressionsmodell
+
+2. code chunk
+
+```R
+# Reduzierter Vektor mit Ausstattungsmerkmalen
+ausstattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
+
+# Rechne Regression des Preises auf Austattungsmerkmale und Hotel
+ausstattung_mod <- airbnb_1819 %>% 
+  mutate(Hotel = Unterkunftsart %in% c('Boutique hotel', 'Hotel')) %>% 
+  select(Preis, Hotel, all_of(ausstattung_var)) %>% 
+  lm(formula = Preis ~ .)
+```
+
+3. ergänze
+
+`````wrap
+Die Regression legt nahe, dass Küche, TV und Terrasse oder Balkon den grössten Einfluss auf den Preis in denletztene beiden Jahren hatten.
+
+Der Einfluss der Küche ist gegenüber dem Unterschied in Tabelle 1 gesunken, jedoch nach wie vor signifikant.
+
+Überraschenderweise ist der Effekt eines 24h Check-ins, welcher deskriptiv am grössten ausfiel, nicht signifikant. Dies ist ebenfalls auf den Zusammen zur Unterkunftsart zurückzuführen
+
+Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Hotels haben eine um 437.3€ höheren Preis als Unterkünfte die keine Hotels sind.
+
+Der Anteil von Hotels ist von -98.9% im Jahre 2018 auf 1.4% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht.
+`````
+
+4. ergänze zwischen 4. und 5. paragraphen
+
+```R
+# Bestimme Anteil Hotels in 2018 und 2019
+hotel <- airbnb_1819 %>% 
+  group_by(year(Erstellungsdatum)) %>% 
+  summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel'))) 
+```
+
+5. in line code im 4. paragraphen
+
+6. bold setzen von paragraph 2 und 4
+
+7. passt alles?
+
+### F - Preise: Tabelle pt. 2
+
+1. code chunk
+
+```R
+# Tabelle mit ergebnissen der Regression
+tab_model(ausstattung_mod)
+```
+
+2. `pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])`
+
+3. `title = 'Table 2. Regression des Preises auf die Ausstattung.'`
+
+4. passt alles?
 
 
 ## Datensatz

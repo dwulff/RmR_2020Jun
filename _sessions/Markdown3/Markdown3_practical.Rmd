@@ -1,5 +1,5 @@
 ---
-title: "Styling"
+title: "Markdown III"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
@@ -47,9 +47,9 @@ library(tidyverse)
 ```
 
 <p align="center" width="100%">
-  <img src="image/styles.png" alt="Style" style="width:50%">
+  <img src="image/design.png" alt="Style" style="width:100%">
   <br>
-  <font style="font-size:10px">from <a href="">www.insider.com</a></font>
+  <font style="font-size:10px">from <a href="https://dvisiondesign.net/2019/09/25/what-does-design-mean/">dvisiondesign.net</a></font>
 </p>
 
 
@@ -57,229 +57,70 @@ library(tidyverse)
 
 ## Überblick
 
-In diesem Practical wirst du lernen Markdown Dokumente zu formatieren. 
+In diesem Practical ...
 
 Am Ende des Practicals wirst du wissen wie man:
 
-1. Formatierungen in einem HTML Dokument verändern kann
-2. Einen CSS Style Sheet erstellen und einbindet
-3. Verschiedene Themes in einem Dokument verwendet
+1. ...
+2. ...
+3. ...
 
 ## Aufgaben
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelistet sind, in deinem `1_Data` Ordner hast. 
+1. Öffne dein `TheRBootcamp` R Projekt und öffne `airbnb_level_two.Rmd`, welches das fertige Produkt am Ende des zweiten Markdown Practicals enthält. 
 
-2. Öffne ein neues RMarkdown Skript und wähle das Template "Document" aus (siehe screenshot unten).
+### B - YAML
 
-<p align="center" width="100%">
-  <img src="image/Markdown_Document.png" alt="New Markdown Document" style="width:50%">
-</p>
+1. ergänze toc
 
-3. Trage bei Title "Styling Pactical" und deinen Namen ein.
+2. toc depth
 
-4. Speichere das neue Skript unter dem Namen `markdown3_styling.Rmd` im `2_Code` Ordner.
-
-5. Lösche alles unterhalb des `setup` R chunks.
-
-### B - Lade den `airbnb` Datensatz 
-
-1. Lade das `tidyverse` package und den Datensatz `airbnb.csv` als Objekt `airbnb` im `setup` chunk aus dem Ordner 1_Data.
-
-````Markdown
-{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(XXX)
-airbnb <- read_csv("../XXX/XXX")
-````
-
-2. Erstelle eine Überschrift erster Ordnung für die Analyse die blau und zentriert ist
-````Makrdown
-<hXXX style="color:XXX; 
-           text-align:XXX;">
-           XXX</h1>
-````
-3. Erstelle eine Überschrift zweiter Ordnung für die Analyse die blau und zentriert ist
-````Makrdown
-<hXXX style="color:XXX; 
-           text-align:XXX;">
-           XXX</h1>
-````
-3. Füge eine Tabelle mit den ersten 20 Zeile des `airbnb` Datensates ein
+3. 
 
 
-### C - Eigene Header und Footer Datei einfügen
+## Datensatz
 
-1. Erstelle eine `header.html' Datei und speichere Sie in deinem `2_Code` Verzeichnis ab.
+Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv) Datensatz enthält Zahlen zu 9868 Berliner Airbnbs 
 
-2. Füge den Text `Mein Dokument Header` in blauem Font ein
-
-```html
-<!DOCTYPE html>
-<div style: "font-color: XXX">XXX</div>
-```
-
-3. Zentriere den Header 
-
-```html
-<!DOCTYPE html>
-<div style: "font-color: XXX; text-align: XXX">XXX</div>
-```
-
-4. Füge eine horizontale Linie unter dem Text ein 
-
-```html
-<!DOCTYPE html>
-<div style: "font-color: XXX; text-align: XXX">XXX</div>
-<XXX />
-```
-
-5. Erstelle eine `footer.html' Datei und speichere Sie in deinem `2_Code` Verzeichnis ab.
-
-6. Diese Datei soll zuerst eine horizontale Linie beinhalten und dann zentriert deinen Namen und einen link zu (d)einer Webseite
-
-```html
-<!DOCTYPE html>
-<XXX />
-<p style="text-align: XXX;">
-XXX XXX
-<XXX>
-<a href="XXX">XXX</a>
-</p>
-```
-
-7. Füge im YAML header deine beiden Dateien (header.html und footer.html) ein
-
-````html
-output: 
-  html_document:
-    includes:
-      after_body: XXX.html
-      before_body: XXX.html
-````
-
-
-### X - Challenges: Modellselektion Gaussian mixtures
-
-
-
-## Beispiele
-
-```{r, eval = FALSE, echo = TRUE}
-library(tidyverse) 
-library(cstab)
-library(dbscan)
-library(mclust, mask.ok = F)
-
-# Beispieldatensatz
-data(mpg)
-
-# Verarbeitung des Datensatzes
-mpg <- mpg %>% select_if(is.numeric)
-mpg_stand <- mpg  %>% 
-  scale %>%         # Standardisieren
-  as_tibble()
-
-# k-means -----
-
-# Finde Cluster
-mpg_km <- kmeans(mpg_stand, 
-                 centers = 3)
-
-# Zeige Zentroide
-mpg_km$centers
-
-# k-selection -----
-
-# Zeige Binnenvarianz Verlauf
-km_verlauf <- purrr::map(2:20, kmeans, x = mpg_stand)
-binnenvarianz <- purrr::map_dbl(km_verlauf, 
-                               `[[`, i = 'tot.withinss')
-
-# Plotte die Binnenvarianz
-plot(binnenvarianz)
-
-# Gap & Slope Statistik
-k_est <- cDistance(as.matrix(mpg_stand), 
-                   kseq = 2:20) 
-k_est$k__Gap
-k_est$k_Slope
-
-# Cluster stability
-k_est <- cStability(as.matrix(mpg_stand), 
-                    kseq = 2:20) 
-k_est$k_instab
-  
-# DBSCAN -----
-
-# Finde Cluster
-mpg_dbscan <- dbscan(mpg_stand, eps = 1)
-
-# Zeige Zentroide
-mpg %>% 
-  mutate(cl = mpg_dbscan$cluster) %>%
-  group_by(cl) %>% 
-  summarize_all(mean)
-
-# Gaussian Mixtures -----
-
-# Finde Cluster
-mpg_gm <- Mclust(mpg)
-
-# Zeige Zentroide
-mpg %>% 
-  mutate(cl = mpg_gm$classification) %>%
-  group_by(cl) %>% 
-  summarize_all(mean)
-
-# Plotte Cluster
-plot(mpg_gm, what = 'classification')
-
-# Vergleiche Cluster -----
-
-table(mpg_km$cluster, mpg_dbscan$cluster)
-table(mpg_km$cluster, mpg_gm$classification)
-table(mpg_dbscan$cluster, mpg_gm$classification)
-
-```
-
-
-## Datensätze
-
-|Datei | Zeilen | Spalten | 
-|:----|:-----|:------|
-|[gap.csv](https://raw.githubusercontent.com/therbootcamp/ML_2020Apr/master/_sessions/Unsupervised/1_Data/gap.csv) | 1692 | 6 | 
-|[credit.csv](https://raw.githubusercontent.com/therbootcamp/ML_2020Apr/master/_sessions/Unsupervised/1_Data/credit.csv) | 8636 | 8 | 
-
-#### gap.csv
-
-Der `gap` Datensatz basiert auf dem [Gapminder](https://www.gapminder.org/) Projekt und stammt aus dem R Paket [gapminder](https://cran.r-project.org/web/packages/gapminder/README.html).  
 
 |Variable | Beschreibung |
 |:-------------|:-------------------------------------|
-|Land| Name des Landes  |
-|Kontinent| Name des Kontinents |
-|Jahr| Jahr |
-|Lebenserwartung| in Jahren |
-|Population| Anzahl Einwohner des Landes |
-|BIP pro Kopf| Bruttoinlandsprodukt pro Einwohner|
+|Preis| Preis pro Nacht|
+ |Erstellungsdatum| Eröffnungsdatum des Airbnbs |
+ |Unterkunftsart| Appartement, Loft, House, etc.|
+ |Schlafplätze| Anzahl Schlafplätze |
+ |Schlafzimmer| Anzahl Schlafzimmer |
+ |Badezimmer| Anzahl Badezimmer |
+ |Reinigungsgebühr| Reinigungsgebühr |
+ |Verfügbarkeit_90Tage| |
+ |Viertel| In welchem Viertel befindet sich das Airbnb |
+ |Stadtteil| In welchem Stadtteil befindet sich das Airbnb |
+ |Breitengrad| Breitengrad|
+ |Längengrad| Längengrad |
+ |Host_id| Host id |
+ |Host_seit| Erfahrung des Hosts |
+ |Host_antwortzeit| Host Antwortzeit|
+ |Host_antwortrate| Host Antwortrate |
+ |Host_superhost| Superhost Ja/Nein |
+ |Host_anzahl| Anzahl Gäste |
+ |Rating_gesamt| Gesamtrating |
+ |Rating_genauigkeit| Genauigkeitsrating |
+ |Rating_sauberkeit| Sauberkeitsrating |
+ |Rating_checkin| Checkinrating |
+ |Rating_kommunikation| Kommunikationsrating |
+ |Rating_lage| Lagerating |
+ |Rating_wertigkeit| Wertigkeitsrating |
+ |Küche| Küche vorhanden TRUE/FALSE |
+ |Wifi| WLAN vorhanden TRUE/FALSE |
+ |TV| TV vorhanden TRUE/FALSE |
+ |Kaffeemaschine| Kaffeemaschine vorhanden TRUE/FALSE|
+ |Geschirrspüler| Geschirrspüler vorhanden TRUE/FALSE|
+ |Terrasse_Balkon| Terrasse/Balkon vorhanden TRUE/FALSE|
+ |Badewanne| Badewanne vorhanden TRUE/FALSE|
+ |Check_in_24h| 24h Check-In vorhanden TRUE/FALSE|
 
-
-#### credit.csv
-
-Der `credit` Datensatz ist ein Ausschnitt des Öffentlich verfügbaren [*Credit Card Dataset*](https://www.kaggle.com/arjunbhasin2013/ccdata). Der Datensatz beinhaltet 8 Features, die einen Auschnitt des Verhaltens von 8636 Kreditkartenkunden beschreiben.  
-
-|Variable | Beschreibung |
-|:-------------|:-------------------------------------|
-|BALANCE| Verfügbares Guthaben  |
-|BALANCE_FREQUENCY| Änderungsfrequenz des Guthabens (1 = häufig, 0 = selten) |
-|PURCHASES| Summe der Einkäufe |
-|CREDITLIMIT| Kreditlimit der Karte |
-|ONEOFFPURCHASES| Betrag der grössten einmaligen Zahlung |
-|MINIMUM_PAYMENTS| Minimale Konto-Ausgleichszahlung  |
-|PRCFULLPAYMENT| Prozent vollständige Konto-Ausgleichszahlung  |
-|TENURE| Dauer des Kundenverhältnisses   |
 
 
 ## Funktionen
@@ -289,30 +130,19 @@ Der `credit` Datensatz ist ein Ausschnitt des Öffentlich verfügbaren [*Credit 
 |Paket| Installation|
 |:------|:------|
 |`tidyverse`|`install.packages("tidyverse")`|
-|`cstab`|`install.packages("cstab")`|
-|`dbscan`|`install.packages("dbscan")`|
-|`mclust`|`install.packages("mclust")`|
+|``|``|
+
 
 ### Funktionen
 
-*Clustering*
 
 | Funktion| Paket | Beschreibung |
 |:---|:------|:---------------------------------------------|
-| `kmeans()`|`stats`| Clustere die Daten mit *k*-means | 
-| `dbscan()`|`dbscan`| Clustere die Daten mit DBSCAN | 
-| `Mclust()`|`mclust`| Clustere die Daten mit Gaussian Mixtures | 
+| ``|``|  | 
 
-*k-selection*
-
-| Funktion| Paket | Beschreibung |
-|:---|:------|:---------------------------------------------|
-| `cDistance()`|`cstab`| Identifiziere *k* mit distanzbasierten Methoden, z.B., der Gap Statistik.  | 
-| `cStability()`|`cstab`| Identifiziere *k* mit stabilitätsbasierten Methoden. | 
 
 
 ## Materialien
 
-### Dokumentation
-
-- Eine gutes [**Tutorial**](https://www.r-bloggers.com/the-complete-guide-to-clustering-analysis-k-means-and-hierarchical-clustering-by-hand-and-in-r/) über *k*-means und hierarchisches Clustering.
+- ...
+- ...
