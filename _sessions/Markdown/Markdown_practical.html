@@ -267,7 +267,7 @@ airbnb_1819 &lt;- airbnb %&gt;%
 </ol>
 <pre class="markdown"><code>### Präambel</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Füge nun diesn Text ein. Er enthält einige Werte, die du gleich durch in-line Code ersetzen wirst.</li>
+<li>Füge nun diesen Text ein. Er enthält einige Werte, die du gleich durch in-line Code ersetzen wirst.</li>
 </ol>
 <pre class="wrap"><code>Seit 02.01.2018 wurden in Berlin 5007 Airbnb Wohnungen eingestellt. Von diesen Wohnungn weisen aktuell 73% Verfügbarkeiten von durchschnittlich 47.5 Tagen für die nächsten 3 Monate auf.
 
@@ -283,7 +283,6 @@ Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Ja
 <ol start="5" style="list-style-type: decimal">
 <li><p>Als nächstes ersetze die Anzahl der Wohnungen durch <code>nrow(airbnb_1819)</code>. Nicht das <code>r</code> am Anfang vergessen.</p></li>
 <li><p>Ersetze nun Prozentsatz der Wohnungen durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage &gt; 0) * 100)</code> und die durchschnittliche Verfügbarkeit durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage&gt;0]),1)</code>. Jetzt sollten alle Zahlen des ersten Paragraphen durch Code ersetzt worden sein. Überprüfe ob alles stimmt.</p></li>
-<li><p>Ersetze nun Prozentsatz der Wohnungen durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage &gt; 0) * 100)</code> und die durchschnittliche Verfügbarkeit durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage&gt;0]),1)</code>. Jetzt sollten alle Zahlen des ersten Paragraphen durch Code ersetzt worden sein. Überprüfe ob alles stimmt.</p></li>
 <li><p>Im nächsten Paragraphen ersetze die ersten beiden Zahlen durch <code>n_2019 &lt;- sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019</code> und <code>n_2018 &lt;- sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018</code>. In diesen beiden Fällen siehst du, dass auch Zuweisungen in in-line Code möglich sind.</p></li>
 <li><p>Ersetze nun die Zuwachsangabe am Ende des Paragraphen durch <code>(round(n_2019/n_2018, 2) - 1)*100</code>, was , wie du siehst, auf die beiden zuvor im in-line Code definierten Objekte zurückgreift. Knitte das Dokument und überprüfe, ob nun alle Zahlen einwandfrei wiedergegeben werden.</p></li>
 <li><p>Zuletzt verwende <code>**</code> um den gesamten zweiten Paragraphen Fett zu setzen. Setze hierfür einmal die zwei Sterne vor das erste und nach dem letzten Wort des Paragraphen. Nun alles wie im Zieldokument?</p></li>
@@ -292,7 +291,13 @@ Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Ja
 <div id="d---neueinstellungen-grafikchunk-pt.-1" class="section level3">
 <h3>D - Neueinstellungen: Grafikchunk pt. 1</h3>
 <ol style="list-style-type: decimal">
-<li>Erstelle einen neuen R <code>chunk</code>.</li>
+<li>Erstelle einen neuen R <code>chunk</code>. Einen <code>chunk</code> erstellst du mit zunächst drei Ticks, dann direkt danach in der selben Zeile <code>{r}</code> und anschliessend nocheinmal drei Ticks in einer Zeile darunter. Wie in der Abbildung unten sollte sich der Hintergrund automatisch grau einfärben.</li>
+</ol>
+<p align="center">
+<img src="image/chunk.png" height=60px></img>
+</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Kopiere in den <code>chunk</code>, d.h., zwischen die zwei Zeilen mit den drei Ticks, den Code unten, welcher eine erste Version der ersten Abbildung im Bericht generiert.</li>
 </ol>
 <pre class="r"><code># Plotte Häufigkeiten
 ggplot(airbnb_1819 %&gt;% 
@@ -306,11 +311,63 @@ ggplot(airbnb_1819 %&gt;%
   theme(legend.position = &#39;none&#39;,
         axis.text.x = element_text(angle = 45, hjust = 1)) </code></pre>
 </div>
-<div id="e---neueinstellungen-text-pt.-2" class="section level3">
-<h3>E - Neueinstellungen: Text pt. 2</h3>
+<div id="e---chunk-optionen" class="section level3">
+<h3>E - <code>Chunk</code> Optionen</h3>
+<ol style="list-style-type: decimal">
+<li>Aktuell zeigt dein “geknittetes” Dokument sowohl den Code für den Plot als auch den Plot selbst. Das Dokument soll aber nur den Plot zeigen. Ergänze in den Chunk Optionen, d.h., innerhalb der geschwungenen Klammern nach</li>
+</ol>
 </div>
-<div id="f---neueinstellungen-grafikchunk-pt.-2" class="section level3">
-<h3>F - Neueinstellungen: Grafikchunk pt. 2</h3>
+<div id="f---neueinstellungen-text-pt.-2" class="section level3">
+<h3>F - Neueinstellungen: Text pt. 2</h3>
+<ol style="list-style-type: decimal">
+<li><p>Setze eine weitere Überschrift auf vierter Ebene (<code>####</code>) mit dem Titel <code>Stadtteile</code>.</p></li>
+<li><p>Unter die Überschrift setze den folgenden Text.</p></li>
+</ol>
+<pre class="wrap"><code>Neueinstellungen fallen nach wie vor sehr unterschiedlich in den Bezirke aus. Die meisten Neueinstellungen im Jahr 2019 gab es in Friedrichshain-Kreuzberg, die wenigsten in Marzahn - Hellersdorf.
+
+Die grössten Veränderungen gab es in Marzahn - Hellersdorf und Treptow - Köpenick. In Marzahn - Hellersdorf schrumpften die Neueinstellungen um -13.3%, in Treptow - Köpenick wuchsen die Neueinstellungen um 137.8%.</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Vor den Text setze den folgenden <code>chunk</code>, welcher die Häufigkeiten der Neueinstellungen über die Stadtteile berechnet und im Objekt <code>stadtteile</code> speichert.</li>
+</ol>
+<pre class="r"><code># Berechne Häufigkeiten über die Bezirke
+stadtteile &lt;- airbnb_1819 %&gt;% 
+         group_by(Stadtteil, 
+                  Jahr = year(Erstellungsdatum)) %&gt;% 
+         summarize(Wohnungen = n()) %&gt;% 
+  ungroup() %&gt;% 
+  arrange(desc(Jahr), Wohnungen) %&gt;% 
+  mutate(Stadtteil = as_factor(Stadtteil))</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Erstze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch <code>stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% last()</code> und <code>stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% first()</code>. Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden.</p></li>
+<li><p>Kreiere einen neuen Chunk zwischen den beiden Paragraphen mit dem folgenden Code.</p></li>
+</ol>
+<pre><code># Veränderung über die Stadtteile
+veränderung = stadtteile %&gt;% 
+  group_by(Stadtteil) %&gt;% 
+  summarize(veränderung = (100 * (Wohnungen[Jahr == 2019]/Wohnungen[Jahr == 2018] - 1)) %&gt;% round(1))
+
+# Geringsten Veränderung
+min_veränderung = veränderung %&gt;% 
+  slice(which.min(veränderung)) %&gt;% 
+  pull(veränderung)
+
+# Stadteil mit der geringsten Veränderung
+min_stadtteil = veränderung %&gt;% 
+  slice(which.min(veränderung)) %&gt;% 
+  pull(Stadtteil)
+
+# Grösste Veränderung
+max_veränderung = veränderung %&gt;% 
+  slice(which.max(veränderung)) %&gt;% 
+  pull(veränderung)
+
+# Stadteil mit der grössten Veränderung
+max_stadtteil = veränderung %&gt;% 
+  slice(which.max(veränderung)) %&gt;% 
+  pull(Stadtteil)</code></pre>
+</div>
+<div id="g---neueinstellungen-grafikchunk-pt.-2" class="section level3">
+<h3>G - Neueinstellungen: Grafikchunk pt. 2</h3>
 </div>
 </div>
 <div id="datensatz" class="section level2">
@@ -475,6 +532,10 @@ ggplot(airbnb_1819 %&gt;%
 <td align="left"><code>tidyverse</code></td>
 <td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
+<tr class="even">
+<td align="left"><code>|</code></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -490,9 +551,9 @@ ggplot(airbnb_1819 %&gt;%
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>gauge()</code></td>
-<td align="left"><code>flexdashboard</code></td>
-<td align="left">Erstelle einen gauge.</td>
+<td align="left"><code>|</code></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
@@ -500,6 +561,10 @@ ggplot(airbnb_1819 %&gt;%
 </div>
 <div id="materialien" class="section level2">
 <h2>Materialien</h2>
+<ul>
+<li>…</li>
+<li>…</li>
+</ul>
 </div>
 </div>
 

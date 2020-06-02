@@ -18,6 +18,7 @@ knitr::opts_chunk$set(echo = FALSE,
 # Lade Pakete
 library(tidyverse)
 library(knitr)
+library(sjPlot)
 library(kableExtra)
 library(lubridate)
 
@@ -265,11 +266,11 @@ hotel <- airbnb_1819 %>%
 
 ```{r message = F, echo = F, fig.asp=.5}
 # Tabelle mit ergebnissen der Regression
-sjPlot::tab_model(ausstattung_mod,
-                  pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
-                  title = 'Table 2. Regression des Preises auf die Ausstattung.',
-                  CSS = list(css.caption = "font-weight:500", 
-                             css.table = "width: auto; margin-right: 0px;margin-left: auto;"))
+tab_model(ausstattung_mod,
+          pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
+          title = 'Table 2. Regression des Preises auf die Ausstattung.',
+          CSS = list(css.caption = "font-weight:500", 
+                     css.table = "width: auto; margin-right: 0px;margin-left: auto;"))
 ```
 
   </td>

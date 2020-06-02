@@ -248,6 +248,11 @@ body {
   }
 ```
 
+7. add to `knitr::opts_chunk$set`
+
+```R
+dev.args = list(bg = "transparent")
+```
 
 ## Datensatz
 

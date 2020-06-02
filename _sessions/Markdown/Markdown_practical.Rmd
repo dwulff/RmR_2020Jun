@@ -54,7 +54,7 @@ library(kableExtra)
 library(lubridate)
 
 # Lade Daten
-airbnb <- read_csv('1_Data/airbnb.csv') 
+# airbnb <- read_csv('1_Data/airbnb.csv') 
 
 ```
 
@@ -104,21 +104,19 @@ library(lubridate)
 
 6. Lade den `airbnb` Datensatz mit `read_csv()` ebenfalls im `setup` chunk mit Code unten.
 
-```{r echo = TRUE, eval = F}
+```{r echo = TRUE}
 # Lade airbnb Datensatz
 airbnb <- read_csv("../1_Data/airbnb.csv")
 ```
 
 7. Verwende den Code unten um nur die beiden Jahre `2018` und `2019` aus den Daten auszuwählen und ein neues Objekt mit Namen `airbnb_1819` zu erstellen.
 
-```{r echo = TRUE, eval  = TRUE}
+```{r echo = TRUE}
 # Wähle Jahre 2018 und 2019 aus
 airbnb_1819 <- airbnb %>% 
   filter(Erstellungsdatum > "2018-01-01", 
          Erstellungsdatum < "2019-12-31")
 ```
-
-
 
 
 ### B - Präambel
@@ -176,7 +174,11 @@ r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")
 
 ### D - Neueinstellungen: Grafikchunk pt. 1
 
-1. Erstelle einen neuen R `chunk`. In den `chunk` kopiere den Code unten, welcher eine erste Version der ersten Abbildung im Bericht generiert. 
+1. Erstelle einen neuen R `chunk`. Einen `chunk` erstellst du mit zunächst drei Ticks, dann direkt danach in der selben Zeile `{r}` und anschliessend nocheinmal drei Ticks in einer Zeile darunter. Wie in der Abbildung unten sollte sich der Hintergrund automatisch grau einfärben. 
+
+<p align="center"><img src="image/chunk.png" height=60px></img></p>
+
+2. Kopiere in den `chunk`, d.h., zwischen die zwei Zeilen mit den drei Ticks, den Code unten, welcher eine erste Version der ersten Abbildung im Bericht generiert. 
 
 ```R
 # Plotte Häufigkeiten
@@ -192,10 +194,70 @@ ggplot(airbnb_1819 %>%
         axis.text.x = element_text(angle = 45, hjust = 1)) 
 ```
 
+### E - `Chunk` Optionen 
 
-### E - Neueinstellungen: Text pt. 2
+1. Aktuell zeigt dein "geknittetes" Dokument sowohl den Code für den Plot als auch den Plot selbst. Das Dokument soll aber nur den Plot zeigen. Ergänze in den `chunk` Optionen, d.h., innerhalb der geschwungenen Klammern nach dem `r`, `echo = FALSE`. Danach knitte das Dokument nocheinmal.  
 
-### F - Neueinstellungen: Grafikchunk pt. 2
+<p align="center"><img src="image/chunk2.png" height=60px></img></p>
+
+2. Das Dokument sollte nun den Code in dem `chunk` nicht mehr zeigen. Mache nun dieses Setting rückgängig, d.h., lösche `echo = FALSE`.   
+
+### F - Neueinstellungen: Text pt. 2
+
+1. Setze eine weitere Überschrift auf vierter Ebene (`####`) mit dem Titel `Stadtteile`.
+
+2. Unter die Überschrift setze den folgenden Text.
+
+```wrap
+Neueinstellungen fallen nach wie vor sehr unterschiedlich in den Bezirke aus. Die meisten Neueinstellungen im Jahr 2019 gab es in Friedrichshain-Kreuzberg, die wenigsten in Marzahn - Hellersdorf.
+
+Die grössten Veränderungen gab es in Marzahn - Hellersdorf und Treptow - Köpenick. In Marzahn - Hellersdorf schrumpften die Neueinstellungen um -13.3%, in Treptow - Köpenick wuchsen die Neueinstellungen um 137.8%.
+```
+
+3. Vor den Text setze den folgenden `chunk`, welcher die Häufigkeiten der Neueinstellungen über die Stadtteile berechnet und im Objekt `stadtteile` speichert.
+
+```R
+# Berechne Häufigkeiten über die Bezirke
+stadtteile <- airbnb_1819 %>% 
+         group_by(Stadtteil, 
+                  Jahr = year(Erstellungsdatum)) %>% 
+         summarize(Wohnungen = n()) %>% 
+  ungroup() %>% 
+  arrange(desc(Jahr), Wohnungen) %>% 
+  mutate(Stadtteil = as_factor(Stadtteil))
+```
+4. Erstze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()` und `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`. Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden. 
+
+5. Kreiere einen neuen Chunk zwischen den beiden Paragraphen mit dem folgenden Code. 
+
+```
+# Veränderung über die Stadtteile
+veränderung = stadtteile %>% 
+  group_by(Stadtteil) %>% 
+  summarize(veränderung = (100 * (Wohnungen[Jahr == 2019]/Wohnungen[Jahr == 2018] - 1)) %>% round(1))
+
+# Geringsten Veränderung
+min_veränderung = veränderung %>% 
+  slice(which.min(veränderung)) %>% 
+  pull(veränderung)
+
+# Stadteil mit der geringsten Veränderung
+min_stadtteil = veränderung %>% 
+  slice(which.min(veränderung)) %>% 
+  pull(Stadtteil)
+
+# Grösste Veränderung
+max_veränderung = veränderung %>% 
+  slice(which.max(veränderung)) %>% 
+  pull(veränderung)
+
+# Stadteil mit der grössten Veränderung
+max_stadtteil = veränderung %>% 
+  slice(which.max(veränderung)) %>% 
+  pull(Stadtteil)
+```
+
+### G - Neueinstellungen: Grafikchunk pt. 2
 
 
 ## Datensatz
