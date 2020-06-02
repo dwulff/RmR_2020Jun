@@ -217,11 +217,11 @@ mutate_if(is.numeric, function(x) {
 
 9. Knitte Dokument - alles wie gewünscht?
 
-### G - Preise: Text pt. 3
+### G - Preise: Text Teil
 
 1. `Regressionsmodell` als Level 4 Header einfügen
 
-2. In einem eigenem Code Chunk eine Regression berechnen in der `Preis` mit verschiednen Ausstattungsmerkmalen vorhergesagt wird. Diesen Chunk nicht augeben!
+2. In einem eigenem Code Chunk eine Regression berechnen in der `Preis` mit verschiednen Ausstattungsmerkmalen vorhergesagt wird sowie mittleren Anteil der Hotels berechnen. Diesen Chunk nicht augeben!
 
 ```R
 # Reduzierter Vektor mit Ausstattungsmerkmalen
@@ -232,6 +232,11 @@ ausstattung_mod <- airbnb_1819 %>%
   mutate(Hotel = Unterkunftsart %in% c('Boutique hotel', 'Hotel')) %>% 
   select(Preis, Hotel, all_of(ausstattung_var)) %>% 
   lm(formula = Preis ~ .)
+  
+# Bestimme Anteil Hotels in 2018 und 2019
+hotel <- airbnb_1819 %>% 
+  group_by(year(Erstellungsdatum)) %>% 
+  summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel')))   
 ```
 
 3. Folgenden Textblock einfügen
@@ -248,35 +253,30 @@ Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Ho
 Der Anteil von Hotels ist von -98.9% im Jahre 2018 auf 1.4% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht.
 `````
 
-4. ergänze zwischen 4. und 5. paragraphen
+4. Den Koeffizienten aus dem Regressionsmodell im 4. Absatz (Hotels haben einen um ... höheren Preis) mit folgendem inline code berechnen und einsetzen.
 
-```R
-# Bestimme Anteil Hotels in 2018 und 2019
-hotel <- airbnb_1819 %>% 
-  group_by(year(Erstellungsdatum)) %>% 
-  summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel'))) 
+```{r echo = TRUE}
+coefficients(ausstattung_mod)['HotelTRUE'] %>% round(1)
 ```
 
-5. in line code im 4. paragraphen
+5. Mittels HTML Tag `<b>` den 2. (`Überraschenderweise ...`) und 4. Absatz (`Der Anteil ...`) fett hervorheben.
 
-6. bold setzen von paragraph 2 und 4
+6. Knitte Dokument - alles wie gewünscht?
 
-7. passt alles?
+### H - Preise: Regressionstabelle
 
-### H - Preise: Tabelle pt. 2
-
-1. code chunk
+1. Die Regressionsergebnisse mit `sjPlot::tab_model` ausgeben
 
 ```R
 # Tabelle mit ergebnissen der Regression
 tab_model(ausstattung_mod)
 ```
 
-2. `pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])`
+2. Intercept mit `Achsenabschnitt` in der Tabelle ersetzen `pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])`
 
-3. `title = 'Table 2. Regression des Preises auf die Ausstattung.'`
+3. Tabellentitel einfügen: `title = 'Table 2. Regression des Preises auf die Ausstattung.'`
 
-4. passt alles?
+4. Knitte Dokument - alles wie gewünscht?
 
 
 ## Datensatz

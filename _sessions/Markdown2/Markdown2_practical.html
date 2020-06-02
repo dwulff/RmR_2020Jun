@@ -334,11 +334,11 @@ ausstattung %&gt;% kable(format = &#39;html&#39;)</code></pre>
 <li>Knitte Dokument - alles wie gewünscht?</li>
 </ol>
 </div>
-<div id="g---preise-text-pt.-3" class="section level3">
-<h3>G - Preise: Text pt. 3</h3>
+<div id="g---preise-text-teil" class="section level3">
+<h3>G - Preise: Text Teil</h3>
 <ol style="list-style-type: decimal">
 <li><p><code>Regressionsmodell</code> als Level 4 Header einfügen</p></li>
-<li><p>In einem eigenem Code Chunk eine Regression berechnen in der <code>Preis</code> mit verschiednen Ausstattungsmerkmalen vorhergesagt wird. Diesen Chunk nicht augeben!</p></li>
+<li><p>In einem eigenem Code Chunk eine Regression berechnen in der <code>Preis</code> mit verschiednen Ausstattungsmerkmalen vorhergesagt wird sowie mittleren Anteil der Hotels berechnen. Diesen Chunk nicht augeben!</p></li>
 </ol>
 <pre class="r"><code># Reduzierter Vektor mit Ausstattungsmerkmalen
 ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,&#39;Check_in_24h&#39;)
@@ -347,7 +347,12 @@ ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,
 ausstattung_mod &lt;- airbnb_1819 %&gt;% 
   mutate(Hotel = Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)) %&gt;% 
   select(Preis, Hotel, all_of(ausstattung_var)) %&gt;% 
-  lm(formula = Preis ~ .)</code></pre>
+  lm(formula = Preis ~ .)
+  
+# Bestimme Anteil Hotels in 2018 und 2019
+hotel &lt;- airbnb_1819 %&gt;% 
+  group_by(year(Erstellungsdatum)) %&gt;% 
+  summarize(Anteil = mean(Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)))   </code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Folgenden Textblock einfügen</li>
 </ol>
@@ -361,29 +366,25 @@ Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Ho
 
 Der Anteil von Hotels ist von -98.9% im Jahre 2018 auf 1.4% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht.</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>ergänze zwischen 4. und 5. paragraphen</li>
+<li>Den Koeffizienten aus dem Regressionsmodell im 4. Absatz (Hotels haben einen um … höheren Preis) mit folgendem inline code berechnen und einsetzen.</li>
 </ol>
-<pre class="r"><code># Bestimme Anteil Hotels in 2018 und 2019
-hotel &lt;- airbnb_1819 %&gt;% 
-  group_by(year(Erstellungsdatum)) %&gt;% 
-  summarize(Anteil = mean(Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;))) </code></pre>
+<pre class="r"><code>coefficients(ausstattung_mod)[&#39;HotelTRUE&#39;] %&gt;% round(1)</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li><p>in line code im 4. paragraphen</p></li>
-<li><p>bold setzen von paragraph 2 und 4</p></li>
-<li><p>passt alles?</p></li>
+<li><p>Mittels HTML Tag <code>&lt;b&gt;</code> den 2. (<code>Überraschenderweise ...</code>) und 4. Absatz (<code>Der Anteil ...</code>) fett hervorheben.</p></li>
+<li><p>Knitte Dokument - alles wie gewünscht?</p></li>
 </ol>
 </div>
-<div id="h---preise-tabelle-pt.-2" class="section level3">
-<h3>H - Preise: Tabelle pt. 2</h3>
+<div id="h---preise-regressionstabelle" class="section level3">
+<h3>H - Preise: Regressionstabelle</h3>
 <ol style="list-style-type: decimal">
-<li>code chunk</li>
+<li>Die Regressionsergebnisse mit <code>sjPlot::tab_model</code> ausgeben</li>
 </ol>
 <pre class="r"><code># Tabelle mit ergebnissen der Regression
 tab_model(ausstattung_mod)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p><code>pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])</code></p></li>
-<li><p><code>title = 'Table 2. Regression des Preises auf die Ausstattung.'</code></p></li>
-<li><p>passt alles?</p></li>
+<li><p>Intercept mit <code>Achsenabschnitt</code> in der Tabelle ersetzen <code>pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])</code></p></li>
+<li><p>Tabellentitel einfügen: <code>title = 'Table 2. Regression des Preises auf die Ausstattung.'</code></p></li>
+<li><p>Knitte Dokument - alles wie gewünscht?</p></li>
 </ol>
 </div>
 </div>
