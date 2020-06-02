@@ -219,101 +219,126 @@ pre code,  .md:not(.use-csslab) pre code {
 <div id="a---setup" class="section level3">
 <h3>A - Setup</h3>
 <ol style="list-style-type: decimal">
-<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt und öffne <code>airbnb_level_one.Rmd</code>, welches das fertige Produkt am Ende des ersten Markdown Practicals enthält.</p></li>
+<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt sowie <code>airbnb_level_one.Rmd</code>, das fertige Produkt am Ende des ersten Markdown Practicals.</p></li>
 <li><p>Lade zusätzlich die Pakete <code>knitr</code>, <code>kableExtra</code> <code>sjPlot</code> im <code>setup</code> chunk.</p></li>
 </ol>
 </div>
-<div id="b---präambel-fussnote" class="section level3">
-<h3>B - Präambel: Fussnote</h3>
+<div id="b---präambel-fussnote-einfügen" class="section level3">
+<h3>B - Präambel: Fussnote einfügen</h3>
 <ol style="list-style-type: decimal">
 <li><p>Ergänze die Fussnote nach Daten <code>^[Daten wurde heruntergeladen von [insideairbnb.com](http://insideairbnb.com/get-the-data.html)]</code></p></li>
-<li><p>Knitte dokument</p></li>
+<li><p>Knitte Dokument - alles wie gewünscht?</p></li>
 </ol>
 </div>
-<div id="c---neueinstellungen-grafiken" class="section level3">
-<h3>C - Neueinstellungen: Grafiken</h3>
+<div id="c---neueinstellungen-plots" class="section level3">
+<h3>C - Neueinstellungen: Plots</h3>
+<p>Für beide Plots die Darstellung verbessern und Captions einfügen</p>
 <ol style="list-style-type: decimal">
-<li><p>Aspect ratio des ersten plots auf .5. Knitten</p></li>
-<li><p><code>fig.cap = cap</code> im ersten plot.</p></li>
-<li><p><code>cap = Abbildung 1. Neueinstellungen pro Monat.</code> im chunk des ersten plots am ende</p></li>
-<li><p>aspect ratio auf .5 und <code>fig.cap = cap</code> für zweiten plot.</p></li>
-<li><p><code>cap = Abbildung 2. Neueinstellungen pro Bezirk.</code> im chunk des ersten plots am ende</p></li>
+<li><p>Die aspect ratio des ersten Plots auf .5. setzen(<code>fig.asp = .5</code>).</p></li>
+<li><p><code>fig.cap = cap</code> im Chunk des ersten Plot einfügen.</p></li>
+<li><p>Am Ende des Plot Chunks <code>cap = Abbildung 1. Neueinstellungen pro Monat.</code> einfügen.</p></li>
+<li><p>Für den zweiten Plot die aspect ratio auf .5 setzen und <code>fig.cap = cap</code> einfügen.</p></li>
+<li><p>Am Ende des zweiten Plot Chunks <code>cap = Abbildung 2. Neueinstellungen pro Bezirk.</code> einfügen.</p></li>
+<li><p>Knitte Dokument - alles wie gewünscht?</p></li>
 </ol>
 </div>
-<div id="d---preise-text-pt.-1" class="section level3">
-<h3>D - Preise: Text pt. 1</h3>
+<div id="d---preise-neuer-texteil" class="section level3">
+<h3>D - Preise: Neuer Texteil</h3>
 <ol style="list-style-type: decimal">
-<li><p>header level 3 preis</p></li>
-<li><p>einfügen</p></li>
+<li><p><code>Preis</code> als Level 3 Header einfügen</p></li>
+<li><p>Text einfügen</p></li>
 </ol>
 <pre class="wrap"><code>Der durchschnittliche Preis der Neueinstellungen beträgt 80.8 €. Im Vergleich zum Vorjahr sind die Preise der Neueinstellungen um 1.7% gestiegen.</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li><p>in line code</p></li>
-<li><p>knitten. passt?</p></li>
+<li>Den durchschnittlichen Preis aus dem <code>airbnb_1819</code> Datensatz mit inline code berechnen.</li>
+</ol>
+<pre class="r"><code>round(mean(airbnb_1819 %&gt;% pull(Preis)),1)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Die prozentuelle Steigerung der Preise aus dem <code>airbnb_1819</code> Datensatz mit folgendem inline code berechnen und einsetzen.</li>
+</ol>
+<pre class="r"><code>m &lt;- mean(airbnb_1819 %&gt;% 
+          filter(year(Erstellungsdatum) == 2019) %&gt;% 
+          pull(Preis))/mean(airbnb_1819 %&gt;% 
+          filter(year(Erstellungsdatum) == 2018) %&gt;% 
+          pull(Preis))
+round(m, 3) * 100 - 100</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Knitte Dokument - alles wie gewünscht?</li>
 </ol>
 </div>
-<div id="e---preise-text-pt.-2" class="section level3">
-<h3>E - Preise: Text pt. 2</h3>
+<div id="e---preise-neuer-texteil" class="section level3">
+<h3>E - Preise: Neuer Texteil</h3>
 <ol style="list-style-type: decimal">
-<li><p>header level 4 einfluss austattung</p></li>
-<li><p>code chunk</p></li>
+<li><p><code>Einfluss Ausstattsung</code> als Level 4 Header einfügen</p></li>
+<li><p>In einem eigenem Code Chunk berechnen wie sich Ausstattung auf die gemittelten Preise auswirkt. Diesen Chunk nicht augeben!</p></li>
 </ol>
-<pre class="r"><code># Veltor mit Ausstatttungsmerkmalen
+<pre class="r"><code># Vektor mit Ausstatttungsmerkmalen
 ausstattung_var = c(&#39;Küche&#39;,&#39;Wifi&#39;,&#39;TV&#39;,&#39;Kaffeemaschine&#39;,
                     &#39;Geschirrspüler&#39;,&#39;Terrasse_Balkon&#39;,
                     &#39;Check_in_24h&#39;)
 
 # Bestimme Preise als Funktion der Ausstatttungsmerkmale
 ausstattung &lt;- airbnb_1819 %&gt;% 
-  select(all_of(ausstattung_var), Preis) %&gt;%
-  pivot_longer(-Preis,
-             names_to = &#39;Ausstattung&#39;,
-             values_to = &#39;Ausstattung_vorhanden&#39;) %&gt;% 
-  group_by(Ausstattung) %&gt;% 
+               select(all_of(ausstattung_var), Preis) %&gt;%
+               pivot_longer(-Preis,
+               names_to = &#39;Ausstattung&#39;,
+               values_to = &#39;Ausstattung_vorhanden&#39;) %&gt;% 
+              group_by(Ausstattung) %&gt;% 
   summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
             Vorhanden = mean(Preis[Ausstattung_vorhanden]),
             Differenz = Vorhanden - Nicht_vorhanden, 
             Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %&gt;% 
   arrange(desc(Differenz)) </code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>einfügen</li>
+<li>Text einfügen</li>
 </ol>
-<pre class="wrap"><code>Das Austattungsmerkmal mit dem grössten Unterschied im Preis ist Check_in_24h (72.9), das Austattungsmerkmal mit dem kleinsten Unterschied im Preis ist Küche (-88.9).
-
-Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.</code></pre>
+<pre class="wrap"><code>Das Austattungsmerkmal mit dem grössten Unterschied im Preis ist Check_in_24h (72.9), das Austattungsmerkmal mit dem kleinsten Unterschied im Preis ist Küche (-88.9).</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li><p>in-line code</p></li>
-<li><p>…</p></li>
-<li><p>bold</p></li>
+<li>Variablename (und Wert in Klammer) der den grössten Unterschied im Preis ausmacht mit folgendem inline code berechnen und einsetzen.</li>
+</ol>
+<pre class="r"><code>ausstattung %&gt;% pull(Ausstattung) %&gt;% first()
+ausstattung %&gt;% pull(Differenz) %&gt;% first() %&gt;% round(1)</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Variablename (und Wert in Klammer) der den kleinsten Unterschied im Preis ausmacht mit folgendem inline code berechnen und einsetzen.</li>
+</ol>
+<pre class="r"><code>ausstattung %&gt;% pull(Ausstattung) %&gt;% last()
+ausstattung %&gt;% pull(Differenz) %&gt;% last() %&gt;% round(1)</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Text einfügen und mittels HTML Tag <code>&lt;b&gt;</code> fett hervorheben.</li>
+</ol>
+<pre class="wrap"><code>Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Knitte Dokument - alles wie gewünscht?</li>
 </ol>
 </div>
-<div id="f---preise-tabelle-pt.-1" class="section level3">
-<h3>F - Preise: Tabelle pt. 1</h3>
+<div id="f---preis-tabelle-1-erzeugen" class="section level3">
+<h3>F - Preis: Tabelle 1 erzeugen</h3>
 <ol style="list-style-type: decimal">
-<li>code chunk</li>
+<li>Neuen Code Chunk mit der Tabelle Ausstattung und <code>kable()</code> erstellen.</li>
 </ol>
 <pre class="r"><code># Plotte Tabelle mit Austattungsmerkmalen
 ausstattung %&gt;% kable(format = &#39;html&#39;)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p>ergänze <code>digits = 2</code></p></li>
-<li><p>ergänze <code>caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'</code></p></li>
-<li><p><code>col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 'Preis&lt;br&gt;vorh.','Differenz','Prozent&lt;br&gt;vorh.')</code></p></li>
-<li><p><code>escape = FALSE</code> und <code>align="lcccc"</code></p></li>
-<li><p><code>column_spec(c(2,3,4,5), width = "1.2in")</code></p></li>
-<li><p>ergänze vor kable</p></li>
+<li><p>Anzahl Nachkommastellen mit <code>digits = 2</code> auf zwei beschränken.</p></li>
+<li><p>Caption mit <code>caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'</code> einfügen.</p></li>
+<li><p>Die Namen der Spalten anpassen: <code>col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 'Preis&lt;br&gt;vorh.','Differenz','Prozent&lt;br&gt;vorh.')</code></p></li>
+<li><p>Spezielle Schriftzeichen direkt einfügen <code>escape = FALSE</code></p></li>
+<li><p>Das Alginment der Zellen festlegen mit <code>align="lcccc"</code></p></li>
+<li><p>Die Breite der Spalten fixieren mit <code>column_spec(c(2,3,4,5), width = "1.2in")</code></p></li>
+<li><p>Die Schrifgrösse der Zellen in Abhängigkeit ihrer Grösse verändern. Dafür vor dem <code>kable</code> Abschnitt folgenden Code einfügen und mit einer Pipe (%&gt;%) verbinden.</p></li>
 </ol>
 <pre class="r"><code>mutate_if(is.numeric, function(x) {
     cell_spec(round(x,1), bold = T, 
               font_size = spec_font_size(x, begin=10, end=16))})</code></pre>
-<ol start="8" style="list-style-type: decimal">
-<li>passt alles?</li>
+<ol start="9" style="list-style-type: decimal">
+<li>Knitte Dokument - alles wie gewünscht?</li>
 </ol>
 </div>
 <div id="g---preise-text-pt.-3" class="section level3">
 <h3>G - Preise: Text pt. 3</h3>
 <ol style="list-style-type: decimal">
-<li><p>header level 4 Regressionsmodell</p></li>
-<li><p>code chunk</p></li>
+<li><p><code>Regressionsmodell</code> als Level 4 Header einfügen</p></li>
+<li><p>In einem eigenem Code Chunk eine Regression berechnen in der <code>Preis</code> mit verschiednen Ausstattungsmerkmalen vorhergesagt wird. Diesen Chunk nicht augeben!</p></li>
 </ol>
 <pre class="r"><code># Reduzierter Vektor mit Ausstattungsmerkmalen
 ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,&#39;Check_in_24h&#39;)
@@ -324,7 +349,7 @@ ausstattung_mod &lt;- airbnb_1819 %&gt;%
   select(Preis, Hotel, all_of(ausstattung_var)) %&gt;% 
   lm(formula = Preis ~ .)</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>ergänze</li>
+<li>Folgenden Textblock einfügen</li>
 </ol>
 <pre class="wrap"><code>Die Regression legt nahe, dass Küche, TV und Terrasse oder Balkon den grössten Einfluss auf den Preis in denletztene beiden Jahren hatten.
 
