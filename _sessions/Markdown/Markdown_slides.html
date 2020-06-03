@@ -81,13 +81,14 @@ layout: true
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Verwendet Markdown zum &lt;high&gt;Gestalten dynamischer Dokumente&lt;/high&gt; mit eingebetteten...&lt;/span&gt;&lt;/li&gt; 
-  &lt;ul&gt;&lt;br&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Verwendet Markdown zum &lt;high&gt;Gestalten dynamischer Dokumente&lt;/high&gt; mit eingebetteten...&lt;/span&gt;&lt;/li&gt;&lt;br&gt; 
+  &lt;ul&gt;
     &lt;li&gt;&lt;span&gt;R code chunks&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;R in-line code&lt;/span&gt;&lt;/li&gt;   
+    &lt;li&gt;&lt;span&gt;R inline code&lt;/span&gt;&lt;/li&gt;   
     &lt;li&gt;&lt;span&gt;Statistischen Outputs&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;Tabellen&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;Visualisierungen&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;etc.&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/ul&gt;
 
@@ -108,7 +109,17 @@ layout: true
 
 # Arten des Berichts
 
-slides
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown ermöglicht Erstellung und Gestaltung unterschiedlichter &lt;high&gt;Berichttypen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;span&gt;Dokumente&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Präsentationen&lt;/span&gt;&lt;/li&gt;   
+    &lt;li&gt;&lt;span&gt;Dashboards (Cockpits)&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Bücher&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Webseiten&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;etc.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -123,11 +134,90 @@ slides
 
 ---
 
+# R Markdown components
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown Skripte bestehen aus mehreren &lt;high&gt;Komponenten&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Komponente&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;YAML&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;b&gt;Y&lt;/b&gt;AML &lt;b&gt;A&lt;/b&gt;in't &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage&lt;br&gt;&lt;br&gt;
+  &lt;high&gt;Dokumenteinstellungen&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;Setup chunk&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Chunks&lt;/high&gt; einstellen&lt;br&gt;
+  &lt;high&gt;Pakete&lt;/high&gt; laden&lt;br&gt;
+  &lt;high&gt;Daten&lt;/high&gt; laden
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;Markdowm&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Überschriften&lt;/high&gt;&lt;br&gt;
+  &lt;high&gt;Text&lt;/high&gt; mit Hervorhebungen
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;Code chunk&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  R &lt;high&gt;Code&lt;/high&gt;&lt;br&gt;
+  R &lt;high&gt;Outputs&lt;high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_templ.png" height=400px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
 # Pipeline
 
 .pull-left4[
 
-slides
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown kann in verschiedene &lt;high&gt;Dateitypen&lt;/high&gt; übersetzt werden.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;ul&gt;
+    &lt;li&gt;&lt;span&gt;PDF&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;HTML&lt;/span&gt;&lt;/li&gt;   
+    &lt;li&gt;&lt;span&gt;Word&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;PowerPoint&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Für die Übersetzung wird &lt;high&gt;RMarkdown mehrfach übersetzt&lt;/high&gt;, was gewisse Einschränkungen mit sich bringt.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -141,11 +231,14 @@ slides
 
 ---
 
-# Pipeline
+# HTML Pipeline
 
 .pull-left4[
 
-slides
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;HTML ist der &lt;high&gt;universelle Framework&lt;/high&gt; für Dokumente, Präsentationen, und v.a. Dashboards.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Export zu PDF&lt;/high&gt; ist, mit minimalen Einschränkungen, möglich.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -153,6 +246,811 @@ slides
 
 &lt;p align = "center"&gt;
   &lt;img src="image/pipeline2.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# HTML
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;H&lt;/b&gt;yper&lt;b&gt;T&lt;/b&gt;ext &lt;b&gt;M&lt;/b&gt;arkup &lt;b&gt;L&lt;/b&gt;anguage.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Das Format des &lt;high&gt;World Wide Webs&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Kann komfortabel durch &lt;high&gt;CSS&lt;/high&gt; (Cascading Style Sheets) formartiert werden.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_templ_html.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# R Markdown
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;HTML ist der &lt;high&gt;universelle Framework&lt;/high&gt; für Dokumente, Präsentationen, und v.a. Dashboards.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Export zu PDF&lt;/high&gt; ist, mit minimalen Einschränkungen, möglich.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Überschriften
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Überschriften verschiedener &lt;high&gt;Ebenen&lt;/high&gt; werden durch verschieden viele &lt;mono&gt;#&lt;/mono&gt; ausgedrückt.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;# text&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Ebene 1
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## text&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Ebene 2
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;...&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  ...
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;##### txt&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Ebene 5
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_2.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Überschriften
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Überschriften verschiedener &lt;high&gt;Ebenen&lt;/high&gt; werden durch verschieden viele &lt;mono&gt;#&lt;/mono&gt; ausgedrückt.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;# text&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Ebene 1
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## text&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Ebene 2
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;...&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  ...
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;##### txt&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Ebene 5
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_3.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Hervorhebung
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Verschiedene Zeichen erlauben &lt;high&gt;text- und code-bezogene&lt;/high&gt; Hervorhebungen.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Kursiv
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Fett
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Kursiv und Fett 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;text&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;r "text"&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  inline Code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_5.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Hervorhebung
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Verschiedene Zeichen erlauben &lt;high&gt;text- und code-bezogene&lt;/high&gt; Hervorhebungen.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Kursiv
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Fett
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Kursiv und Fett 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;text&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;r "text"&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  inline Code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_4.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Hervorhebung
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Verschiedene Zeichen erlauben &lt;high&gt;text- und code-bezogene&lt;/high&gt; Hervorhebungen.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%&gt;
+  &lt;col width="50%"&gt;
+  &lt;col width="50%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Kursiv
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Fett
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;ast;&amp;ast;&amp;ast;&lt;mono&gt;text&lt;/mono&gt;&amp;ast;&amp;ast;&amp;ast;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Kursiv und Fett 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;text&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &amp;grave;&lt;mono&gt;r "text"&lt;/mono&gt;&amp;grave;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  inline Code
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_6.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Inline Code
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Zahlen und Wörter&lt;/high&gt; im Text können durch inline Code parametrisiert werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;inline Code kann wie ein &lt;high&gt;Code &lt;mono&gt;chunks&lt;/mono&gt;&lt;/high&gt; beliebigen R Code enthalten.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_7.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Chunks
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Zahlen und Wörter&lt;/high&gt; im Text können durch inline Code parametrisiert werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;inline Code kann wie ein &lt;high&gt;Code &lt;mono&gt;chunks&lt;/mono&gt;&lt;/high&gt; beliebigen R Code enthalten.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_8_0.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Chunks
+
+.pull-left3[
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%&gt;
+  &lt;col width="60%"&gt;
+  &lt;col width="40%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;echo=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Zeige/Verstecke &lt;high&gt;Code&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;eval=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code&lt;/high&gt; ausführen/nicht-ausf.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;include=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Inkludiere/exkludiere &lt;high&gt;allen Output&lt;/high&gt; 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;message=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Inkludiere/exkludiere &lt;highm&gt;messages&lt;/highm&gt; im Output
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;warning=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Inkludiere/exkludiere &lt;highm&gt;warnings&lt;/highm&gt; im Output
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p align="center" style="font-size:12px;padding-top:10px"&gt;&lt;mono&gt;T/F = TRUE/FALSE&lt;/mono&gt;&lt;/p&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_8.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+
+---
+
+# Chunks
+
+.pull-left3[
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%&gt;
+  &lt;col width="60%"&gt;
+  &lt;col width="40%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;echo=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Zeige/Verstecke &lt;high&gt;Code&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;eval=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code&lt;/high&gt; ausführen/nicht-ausf.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;include=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Inkludiere/exkludiere &lt;high&gt;allen Output&lt;/high&gt; 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;message=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Inkludiere/exkludiere &lt;highm&gt;messages&lt;/highm&gt; im Output
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;warning=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Inkludiere/exkludiere &lt;highm&gt;warnings&lt;/highm&gt; im Output
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p align="center" style="font-size:12px;padding-top:10px"&gt;&lt;mono&gt;T/F = TRUE/FALSE&lt;/mono&gt;&lt;/p&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_9.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Chunks
+
+.pull-left3[
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%&gt;
+  &lt;col width="60%"&gt;
+  &lt;col width="40%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markdown&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;echo=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Zeige/Verstecke &lt;high&gt;Code&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;eval=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Code&lt;/high&gt; ausführen/nicht-ausf.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;include=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Inkludiere/exkludiere &lt;high&gt;allen Output&lt;/high&gt; 
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;message=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Inkludiere/exkludiere &lt;highm&gt;messages&lt;/highm&gt; im Output
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;warning=T/F&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Inkludiere/exkludiere &lt;highm&gt;warnings&lt;/highm&gt; im Output
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p align="center" style="font-size:12px;padding-top:10px"&gt;&lt;mono&gt;T/F = TRUE/FALSE&lt;/mono&gt;&lt;/p&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_10.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Setup-Chunk
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Weiterführende Funktionen verfügbar.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_11.png"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Setup-Chunk
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Weiterführende Funktionen verfügbar.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_12.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Setup-Chunk
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Weiterführende Funktionen verfügbar.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_13.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Setup-Chunk
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Weiterführende Funktionen verfügbar.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_14.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Setup-Chunk
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Weiterführende Funktionen verfügbar.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/markdown_trans_15.png" height=420px&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left4[
+
+
+# Ziel
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Airbnb-Bericht&lt;/high&gt; für Berlin in 2018 und 2019.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Evaluiert&lt;/span&gt;&lt;/li&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;span&gt;Wohnungs-&lt;high&gt;Neuinstellungen&lt;/high&gt; über die Zeit und Stadtteile.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Entwicklung der &lt;high&gt;Preise&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Einfluss von &lt;high&gt;Ausstattungsmerkmalen&lt;/high&gt; auf den Preis.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/ziel.png" height=590px&gt;
 &lt;/p&gt;
 
 ]
