@@ -201,7 +201,7 @@ summary {
 <h1></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
-<p>In diesem Practical wirst du das Dashboard der letzten Aufgabe weiter ausbauen und interaktiver und dynamischer gestalten. Am Ende wirst du <a href="https://mdsteiner.shinyapps.io/berlindashboard2/">dieses</a> Dashboard erstellen.</p>
+<p>In diesem Practical wirst du das Dashboard der letzten Aufgabe weiter ausbauen und interaktiver und dynamischer gestalten. Am Ende wirst du <a href="https://therbootcamp.shinyapps.io/berlindashboard2/">dieses</a> Dashboard erstellen.</p>
 <p>Am Ende des Practicals wirst du wissen wie man:</p>
 <ol style="list-style-type: decimal">
 <li>In leaflet Popupfenster einfügt</li>
@@ -214,29 +214,29 @@ summary {
 <div id="a---setup" class="section level3">
 <h3>A - Setup</h3>
 <ol style="list-style-type: decimal">
-<li><p>Öffne dein <code>TheRBootcamp</code> R project. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelisted sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
-<li><p>Lade <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/app/BerlinDashboard.Rmd">dieses</a> Markdown Skript herunter und speichere es in deinen <code>2_Code</code> Ordner.</p></li>
+<li><p>Öffne dein <code>TheRBootcamp</code> R project. Es sollte die Ordner <code>1_Data</code> und <code>3_Markdown</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelisted sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
+<li><p>Lade <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/app/BerlinDashboard.Rmd">dieses</a> Markdown Skript herunter und speichere es in deinen <code>3_Markdown</code> Ordner.</p></li>
 <li><p>Öffne das eben heruntergeladene Markdown file. Es enthält das fertige Dashboard der vorherigen Aufgabe. Wir werden hier mit diesem File weiterarbeiten, um sicherzustellen, dass alle auf dem gleichen Stand sind. Wenn du möchtest, kannst du natürlich auch mit deinem zuvor erstellten File weiterarbeiten; allerdings auf eigene Gefahr… :-)</p></li>
 </ol>
 </div>
 <div id="b---shiny" class="section level3">
 <h3>B - <code>shiny</code></h3>
 <ol style="list-style-type: decimal">
-<li><p>Wir wandeln das Markdown Dokument als erstes direkt in eine <code>shiny</code> App um. Füge dazu <code>runtime: shiny</code> im YAML Code, direkt unter <code>social: [&quot;twitter&quot;, &quot;facebook&quot;]</code> hinzu und speichere.</p></li>
+<li><p>Wir wandeln das Markdown Dokument als erstes direkt in eine <code>shiny</code> App um. Füge dazu <code>runtime: shiny</code> im YAML Code, direkt unter <code>social: ["twitter", "facebook"]</code> hinzu und speichere.</p></li>
 <li><p>So, dieser Schritt hat bereits dein Dokument umgewandelt. Dein “Knit” Button wurde jetzt automatisch in einen “Run-Document” Button umgewandelt. Das heisst, dass ab jetzt kein stand-alone HTML-Dokument erstellt wird, sondern beim Rendern eine App geöffnet wird, die eure R-Session als Server verwendet.</p></li>
 <li><p>Im allerersten R chunk deines Dokuments, ändere das <code>setup</code> in der chunk Definition um in <code>global</code>. Damit wird aller Code, der in diesem chunk enthalten ist, nur einmal am beim Aufstarten der App geladen, was deren Performanz verbessert.</p></li>
 <li><p>Ist die App jetzt bereits dynamisch und reaktiv?</p></li>
 <li><p>Nein, wir müssen zuerst Inputs definieren. Dazu verwenden wir eine Sidebar, indem alle User Inputs gemacht werden. Füge dazu noch vor dem Titel der ersten Seite (also vor <code>Übersicht der Airbnbs in Berlin {data-orientation=rows}</code>) eine neue Seite ein und nenne diese <code>Inputs</code> (erinnere, dass man Seiten mit einem Titel und einer Zeile Gleichheitszeichen definiert).</p></li>
 <li><p>Hinter das <code>Inputs</code> (aber auf derselben Zeile), schreibe <code>{.sidebar}</code>. Damit wird eine Sidebar definiert, die über alle drei Seiten der App fix auf der linken Seite bestehen bleibt.</p></li>
 <li><p>Zeit, die neu erstellte Sidebar zu füllen. Erstelle dazu unterhalb des <code>Inputs</code> Titels (also auch unterhalb der Gleichheitszeichen) einen neuen R chunk.</p></li>
-<li><p>In diesen Chunk füllen wir jetzt nach und nach vier Inputmöglichkeiten. Füge mit dem untenstehenden Code einen Slider ein. In das erste Argument wird die <code>inputID</code> spezifiziert, unter welcher der Input, also der mit dem Slider ausgewählte Wert, nachher ansteuerbar ist. Das zweite Argument spezifiziert das <code>label</code>, also den Titel des Sliders. Setze die <code>inputID</code> auf <code>&quot;Schlafzimmer&quot;</code>, und das <code>label</code> auf <code>&quot;Minimum Anzahl Schlafzimmer&quot;</code>. Die anderen Argumente spezifizieren Minimum, Maximum, und Standardwert.</p></li>
+<li><p>In diesen Chunk füllen wir jetzt nach und nach vier Inputmöglichkeiten. Füge mit dem untenstehenden Code einen Slider ein. In das erste Argument wird die <code>inputID</code> spezifiziert, unter welcher der Input, also der mit dem Slider ausgewählte Wert, nachher ansteuerbar ist. Das zweite Argument spezifiziert das <code>label</code>, also den Titel des Sliders. Setze die <code>inputID</code> auf <code>"Schlafzimmer"</code>, und das <code>label</code> auf <code>"Minimum Anzahl Schlafzimmer"</code>. Die anderen Argumente spezifizieren Minimum, Maximum, und Standardwert.</p></li>
 </ol>
 <pre class="r"><code># Auswahl Airbnbs über Schlafzimmer
 sliderInput(&quot;XXX&quot;, &quot;XXX&quot;, 
             min = 0, max = 12,
             value = 0)</code></pre>
 <ol start="9" style="list-style-type: decimal">
-<li>Direkt darunter, spezifiziere einen zweiten Slider, mit dem der Maximale Preis pro Nacht gesteuert wird. Da die Preisverteilung sehr schief ist, wird hier der 10er Logarithmus verwendet. Setze die <code>inputID</code> auf <code>&quot;Preis&quot;</code>, und das <code>label</code> auf <code>&quot;Max Preis pro Nacht (log):&quot;</code>. Das zusätzliche <code>step</code> Argument spezifiziert die minimalen Schritte, in denen der Slider bewegt werden kann. Setze es auf <code>.01</code>.</li>
+<li>Direkt darunter, spezifiziere einen zweiten Slider, mit dem der Maximale Preis pro Nacht gesteuert wird. Da die Preisverteilung sehr schief ist, wird hier der 10er Logarithmus verwendet. Setze die <code>inputID</code> auf <code>"Preis"</code>, und das <code>label</code> auf <code>"Max Preis pro Nacht (log):"</code>. Das zusätzliche <code>step</code> Argument spezifiziert die minimalen Schritte, in denen der Slider bewegt werden kann. Setze es auf <code>.01</code>.</li>
 </ol>
 <pre class="r"><code># Preis pro Nacht
 sliderInput(&quot;XXX&quot;, &quot;XXX&quot;, 
@@ -244,14 +244,14 @@ sliderInput(&quot;XXX&quot;, &quot;XXX&quot;,
             value = ceiling(max(log10(airbnb$Preis), na.rm = TRUE)),
             step = XXX)</code></pre>
 <ol start="10" style="list-style-type: decimal">
-<li>Als drittes, spezifiziere Checkboxen, mit denen die Stadtteile ausgewählt werden können. Verwende dazu die <code>checkboxGroupInput()</code> Funktion. Setze die <code>inputID</code> auf <code>&quot;Stadtteile&quot;</code>, und das <code>label</code> auf <code>&quot;Wähle Stadtteile:&quot;</code>. Das <code>choices</code> Argument definiert, wie viele Checkboxes angezeigt werden sollen, und welche Werte diese annehmen können. Im <code>selected</code> Argument wird definiert, welche Checkboxes standardmässig angewählt werden (hier alle).</li>
+<li>Als drittes, spezifiziere Checkboxen, mit denen die Stadtteile ausgewählt werden können. Verwende dazu die <code>checkboxGroupInput()</code> Funktion. Setze die <code>inputID</code> auf <code>"Stadtteile"</code>, und das <code>label</code> auf <code>"Wähle Stadtteile:"</code>. Das <code>choices</code> Argument definiert, wie viele Checkboxes angezeigt werden sollen, und welche Werte diese annehmen können. Im <code>selected</code> Argument wird definiert, welche Checkboxes standardmässig angewählt werden (hier alle).</li>
 </ol>
 <pre class="r"><code># Auswahl der zu Plottenden Stadtteile
 checkboxGroupInput(&quot;XXX&quot;, &quot;XXX&quot;,
                    choices = sort(unique(airbnb$Stadtteil)),
                    selected = sort(unique(airbnb$Stadtteil)))</code></pre>
 <ol start="11" style="list-style-type: decimal">
-<li>Füge zum Schluss noch einen Auswahlinput ein. Mit der Funktion <code>selectInput</code> wird ein Dropdownmenu erstellt, aus dem ein Wert ausgewählt wird. <code>choices</code> definiert wiederum die möglichen Werte, <code>selected</code> den Standardwert. Setze die Werte <code>&quot;viridis&quot;</code>, <code>&quot;cividis&quot;</code>, <code>&quot;magma&quot;</code>, und <code>&quot;inferno&quot;</code>, beim <code>choices</code> Argument ein. Das sind die Namen vierer Farbpaletten. Definiere <code>&quot;viridis&quot;</code> als Standardwert.</li>
+<li>Füge zum Schluss noch einen Auswahlinput ein. Mit der Funktion <code>selectInput</code> wird ein Dropdownmenu erstellt, aus dem ein Wert ausgewählt wird. <code>choices</code> definiert wiederum die möglichen Werte, <code>selected</code> den Standardwert. Setze die Werte <code>"viridis"</code>, <code>"cividis"</code>, <code>"magma"</code>, und <code>"inferno"</code>, beim <code>choices</code> Argument ein. Das sind die Namen vierer Farbpaletten. Definiere <code>"viridis"</code> als Standardwert.</li>
 </ol>
 <pre class="r"><code># Farbpalette
 selectInput(&quot;Farbpalette&quot;, &quot;Wähle Farbpalette:&quot;,
@@ -366,7 +366,7 @@ pal &lt;- colorFactor(farben_dynamic(),
   # Füge Legende hinzu
   addLegend(pal = pal, values = ~Stadtteil, opacity = 1)</code></pre>
 <ol start="6" style="list-style-type: decimal">
-<li>Das wars schon, jetzt haben wir auch die Legende. Der letzte Schritt sind die Popupfenster, die Informationen über die Airbnbs anzeigen. Dazu musst du den Code an zwei Stellen anpassen. Zuerst musst du zwischen <code>airbnb_dynamic() %&gt;%</code> und <code>leaflet() %&gt;%</code> eine Zeile mit dem untenstehenden Code einfügen. Der erste Teil erstellt dabei eine Variable <code>superhost</code>, die <code>&quot;Ja&quot;</code> und <code>&quot;Nein&quot;</code> anstelle von <code>TRUE</code> und <code>FALSE</code> angibt. Der zweite Teil erstellt eine Variable <code>info</code>, die Informationen aus unterschiedlichen Variablen mithilfe der <code>paste0()</code> Funktion zusammenfügt. Dabei wird etwas HTML verwendet, damit die Infos nachher schön formatiert untereinander dargestellt werden.</li>
+<li>Das wars schon, jetzt haben wir auch die Legende. Der letzte Schritt sind die Popupfenster, die Informationen über die Airbnbs anzeigen. Dazu musst du den Code an zwei Stellen anpassen. Zuerst musst du zwischen <code>airbnb_dynamic() %&gt;%</code> und <code>leaflet() %&gt;%</code> eine Zeile mit dem untenstehenden Code einfügen. Der erste Teil erstellt dabei eine Variable <code>superhost</code>, die <code>"Ja"</code> und <code>"Nein"</code> anstelle von <code>TRUE</code> und <code>FALSE</code> angibt. Der zweite Teil erstellt eine Variable <code>info</code>, die Informationen aus unterschiedlichen Variablen mithilfe der <code>paste0()</code> Funktion zusammenfügt. Dabei wird etwas HTML verwendet, damit die Infos nachher schön formatiert untereinander dargestellt werden.</li>
 </ol>
 <pre class="r"><code>  mutate(
     superhost = case_when(isTRUE(Host_superhost) ~ &quot;Ja&quot;,
@@ -377,7 +377,7 @@ pal &lt;- colorFactor(farben_dynamic(),
                   &quot;&lt;/b&gt;&lt;br&gt;Preis pro Nacht: &lt;b&gt;&quot;, Preis, &quot;&amp;euro;&lt;/b&gt;&quot;)
   ) %&gt;% </code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li><p>Die neu erstellte Variable <code>info</code> muss jetzt noch in <code>addCircleMarkers()</code> aufgerufen werden, und der angezeigte Text etwas vergrössert werden. Füge dazu die Argumente <code>label = ~lapply(info, HTML)</code> und <code>labelOptions = labelOptions(textsize = &quot;15px&quot;)</code> in der <code>addCircleMarkers()</code> Funktion hinzu. <code>lapply(info, HTML)</code> wendet die <code>HTML()</code> Funktion auf jedes Element von <code>info</code> an, was nötig ist, das der Text von <code>leaflet</code> als HTML gerendert wird.</p></li>
+<li><p>Die neu erstellte Variable <code>info</code> muss jetzt noch in <code>addCircleMarkers()</code> aufgerufen werden, und der angezeigte Text etwas vergrössert werden. Füge dazu die Argumente <code>label = ~lapply(info, HTML)</code> und <code>labelOptions = labelOptions(textsize = "15px")</code> in der <code>addCircleMarkers()</code> Funktion hinzu. <code>lapply(info, HTML)</code> wendet die <code>HTML()</code> Funktion auf jedes Element von <code>info</code> an, was nötig ist, das der Text von <code>leaflet</code> als HTML gerendert wird.</p></li>
 <li><p>Führe die App erneut aus. Jetzt sollte alles klappen. Fancy oder?</p></li>
 </ol>
 </div>
@@ -550,31 +550,31 @@ pal &lt;- colorFactor(farben_dynamic(),
 <tbody>
 <tr class="odd">
 <td align="left"><code>tidyverse</code></td>
-<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>flexdashboard</code></td>
-<td align="left"><code>install.packages(&quot;flexdashboard&quot;)</code></td>
+<td align="left"><code>install.packages("flexdashboard")</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>plotly</code></td>
-<td align="left"><code>install.packages(&quot;plotly&quot;)</code></td>
+<td align="left"><code>install.packages("plotly")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>leaflet</code></td>
-<td align="left"><code>install.packages(&quot;leaflet&quot;)</code></td>
+<td align="left"><code>install.packages("leaflet")</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>viridis</code></td>
-<td align="left"><code>install.packages(&quot;viridis&quot;)</code></td>
+<td align="left"><code>install.packages("viridis")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>htmltools</code></td>
-<td align="left"><code>install.packages(&quot;htmltools&quot;)</code></td>
+<td align="left"><code>install.packages("htmltools")</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>shiny</code></td>
-<td align="left"><code>install.packages(&quot;shiny&quot;)</code></td>
+<td align="left"><code>install.packages("shiny")</code></td>
 </tr>
 </tbody>
 </table>

@@ -5,8 +5,6 @@ account: mdsteiner
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2306498
-bundleId: 3155650
+bundleId: 3224301
 url: https://mdsteiner.shinyapps.io/berlindashboard2/
-when: 1589650822.73178
-asMultiple: FALSE
-asStatic: FALSE
+when: 1591205503.89793
