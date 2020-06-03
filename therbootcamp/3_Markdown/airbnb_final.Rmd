@@ -79,7 +79,7 @@ ggplot(airbnb_1819 %>%
         axis.text.x = element_text(angle = 45, hjust = 1)) 
 
 # Ergänze caption
-cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
+cap = "<center>Figure 1. Neueinstellungen pro Monat.</center>"
 
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: "Markdown 2"
+title: "Markdown II"
 author: "Reporting mit R<br>
   <a href='https://therbootcamp.github.io'>
     The R Bootcamp
@@ -82,65 +82,40 @@ airbnb_1819 <- read_csv('1_Data/airbnb.csv') %>%
          Erstellungsdatum < "2019-12-31")
 
 theme_set(theme_minimal())
-ggplot <- function(...) ggplot2::ggplot(...) + 
-  scale_fill_gradientn(colors = c('#555555','#6BB7B9')) + 
-  scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
 
 cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 ```
 
-# Was sind die Eigenschaften der Wohnungen?
+.pull-left3[
 
-- Figure scaling (aspect ratio / dpi)
-- Tabelle
- - Kable + crazy stuff (farbig?)
- - sjPlot
+# Nächste Schritte
 
-- Links 
-- References
+<ul>
+  <li class="m1"><span>Abbildungen skalieren.</span></li>
+  <li class="m2"><span>Tabellen</span></li>
+  <li class="m3"><span>Fussnoten & Links</span></li>
+</ul>
 
+]
+
+.pull-right6[
+
+<p align = "center">
+  <img src="image/missing1.png" height=590px>
+</p>
+
+]
 
 ---
-
-# Grafiken
 
 .pull-left4[
-
-Die Standardausgabe von Grafiken in Markdown ist oft unscharf und/oder falsch skaliert. 
-
-]
-
-.pull-right5[
-````Markdown
-{r}
-ggplot(airbnb_1819, ...)
-````
-
-```{r message = F, echo = F, fig.height = 5, fig.width = 7}
-ggplot(airbnb_1819 %>% 
-         group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
-         summarize(
-           Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
-           Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen)) + 
-  geom_bar(stat='identity', position='dodge') + 
-  theme(legend.position = 'none',
-        axis.text.x = element_text(angle = 45, hjust = 1)) 
-
-cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
-
-```
-]
----
 
 # Grafiken skalieren
 
-.pull-left4[
-
 <ul>
-  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>chunk</mono>-Optionen angpasst werden.</span></li> 
-  <li class="m2"><span>Grafikoptionen beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
+  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angpasst werden.</span></li> 
+  <li class="m2"><span>Die Argumente beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -156,7 +131,7 @@ cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>fig.width</mono> und <mono>fig.height</mono>
+  <mono>fig.width</mono>, <mono>fig.height</mono>
   </td>
   <td bgcolor="white">
   <high>Breite</high> und <high>Höhe</high> in inches
@@ -167,7 +142,7 @@ cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
   <mono>fig.asp</mono>
   </td>
   <td bgcolor="white">
-   <high>Aspect Ratio</high> basierend auf der Breite   
+   <high>Seitenverhältnis</high>: Höhe relativ zur Breite.   
   </td> 
 </tr>
 <tr>
@@ -175,7 +150,7 @@ cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
   <mono>fig.align</mono>
   </td>
   <td bgcolor="white">
-  <high>Position</high> der Abbildung (<mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>)
+  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>
   </td> 
 </tr>
 <tr>
@@ -183,41 +158,29 @@ cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
   <mono>dpi</mono> 
   </td>
   <td bgcolor="white">
-  <high>Dichte</high> der gedruckten Punkte (dots per inch)
+  <high>Auflösung</high> der Abbildung (dots per inch)
   </td> 
 </tr>
 </table>
 ]
 
 .pull-right5[
+<br>
+<p align = "center">
+  <img src="image/plot_1.png" height=520px>
+</p>
 
-````Markdown
-{r fig.width = 5}
-ggplot(airbnb_1819, ...)
-````
-```{r message = F, echo = F, fig.height = 5, fig.width = 5}
-ggplot(airbnb_1819 %>% 
-         group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
-         summarize(
-           Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
-           Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen)) + 
-  geom_bar(stat='identity', position='dodge') + 
-  theme(legend.position = 'none',
-        axis.text.x = element_text(angle = 45, hjust = 1)) 
-```
 ]
 
 ---
 
-
-# Grafiken
-
 .pull-left4[
 
+# Grafiken skalieren
+
 <ul>
-  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>chunk</mono>-Optionen angpasst werden.</span></li> 
-  <li class="m2"><span>Grafikoptionen beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
+  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angpasst werden.</span></li> 
+  <li class="m2"><span>Die Argumente beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -233,7 +196,7 @@ ggplot(airbnb_1819 %>%
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>fig.width</mono> und <mono>fig.height</mono>
+  <mono>fig.width</mono>, <mono>fig.height</mono>
   </td>
   <td bgcolor="white">
   <high>Breite</high> und <high>Höhe</high> in inches
@@ -244,7 +207,7 @@ ggplot(airbnb_1819 %>%
   <mono>fig.asp</mono>
   </td>
   <td bgcolor="white">
-   <high>Aspect Ratio</high> basierend auf der Breite   
+   <high>Seitenverhältnis</high>: Höhe relativ zur Breite.   
   </td> 
 </tr>
 <tr>
@@ -252,7 +215,7 @@ ggplot(airbnb_1819 %>%
   <mono>fig.align</mono>
   </td>
   <td bgcolor="white">
-  <high>Position</high> der Abbildung (<mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>)
+  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>
   </td> 
 </tr>
 <tr>
@@ -260,40 +223,29 @@ ggplot(airbnb_1819 %>%
   <mono>dpi</mono> 
   </td>
   <td bgcolor="white">
-  <high>Dichte</high> der gedruckten Punkte (dots per inch)
+  <high>Auflösung</high> der Abbildung (dots per inch)
   </td> 
 </tr>
 </table>
 ]
 
 .pull-right5[
+<br>
+<p align = "center">
+  <img src="image/plot_2.png" height=520px>
+</p>
 
-````Markdown
-{r fig.width = 5, fig.asp = .5}
-ggplot(airbnb_1819, ...)
-````
-```{r message = F, echo = F, fig.height = 5, fig.width = 5, fig.asp = .5}
-ggplot(airbnb_1819 %>% 
-         group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
-         summarize(
-           Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
-           Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen)) + 
-  geom_bar(stat='identity', position='dodge') + 
-  theme(legend.position = 'none',
-        axis.text.x = element_text(angle = 45, hjust = 1)) 
-```
 ]
 
 ---
 
-# Grafiken
-
 .pull-left4[
 
+# Grafiken skalieren
+
 <ul>
-  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>chunk</mono>-Optionen angpasst werden.</span></li> 
-  <li class="m2"><span>Grafikoptionen beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
+  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angpasst werden.</span></li> 
+  <li class="m2"><span>Die Argumente beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -309,7 +261,7 @@ ggplot(airbnb_1819 %>%
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>fig.width</mono> und <mono>fig.height</mono>
+  <mono>fig.width</mono>, <mono>fig.height</mono>
   </td>
   <td bgcolor="white">
   <high>Breite</high> und <high>Höhe</high> in inches
@@ -320,7 +272,7 @@ ggplot(airbnb_1819 %>%
   <mono>fig.asp</mono>
   </td>
   <td bgcolor="white">
-   <high>Aspect Ratio</high> basierend auf der Breite   
+   <high>Seitenverhältnis</high>: Höhe relativ zur Breite.   
   </td> 
 </tr>
 <tr>
@@ -328,7 +280,7 @@ ggplot(airbnb_1819 %>%
   <mono>fig.align</mono>
   </td>
   <td bgcolor="white">
-  <high>Position</high> der Abbildung (<mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>)
+  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>
   </td> 
 </tr>
 <tr>
@@ -336,41 +288,29 @@ ggplot(airbnb_1819 %>%
   <mono>dpi</mono> 
   </td>
   <td bgcolor="white">
-  <high>Dichte</high> der gedruckten Punkte (dots per inch)
+  <high>Auflösung</high> der Abbildung (dots per inch)
   </td> 
 </tr>
 </table>
 ]
 
 .pull-right5[
+<br>
+<p align = "center">
+  <img src="image/plot_3.png" height=520px>
+</p>
 
-````Markdown
-{r fig.width = 5, fig.asp = .5, 
-   fig.align = 'center'}
-ggplot(airbnb_1819, ...)
-````
-```{r message = F, echo = F, fig.height = 5, fig.width = 5, fig.asp = .5, fig.align = 'center'}
-ggplot(airbnb_1819 %>% 
-         group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
-         summarize(
-           Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
-           Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen)) + 
-  geom_bar(stat='identity', position='dodge') + 
-  theme(legend.position = 'none',
-        axis.text.x = element_text(angle = 45, hjust = 1)) 
-```
 ]
 
 ---
 
-# Grafiken
-
 .pull-left4[
 
+# Grafiken skalieren
+
 <ul>
-  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>chunk</mono>-Optionen angpasst werden.</span></li> 
-  <li class="m2"><span>Grafikoptionen beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
+  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angpasst werden.</span></li> 
+  <li class="m2"><span>Die Argumente beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -386,7 +326,7 @@ ggplot(airbnb_1819 %>%
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>fig.width</mono> und <mono>fig.height</mono>
+  <mono>fig.width</mono>, <mono>fig.height</mono>
   </td>
   <td bgcolor="white">
   <high>Breite</high> und <high>Höhe</high> in inches
@@ -397,7 +337,7 @@ ggplot(airbnb_1819 %>%
   <mono>fig.asp</mono>
   </td>
   <td bgcolor="white">
-   <high>Aspect Ratio</high> basierend auf der Breite   
+   <high>Seitenverhältnis</high>: Höhe relativ zur Breite.   
   </td> 
 </tr>
 <tr>
@@ -405,7 +345,7 @@ ggplot(airbnb_1819 %>%
   <mono>fig.align</mono>
   </td>
   <td bgcolor="white">
-  <high>Position</high> der Abbildung (<mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>)
+  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>
   </td> 
 </tr>
 <tr>
@@ -413,31 +353,108 @@ ggplot(airbnb_1819 %>%
   <mono>dpi</mono> 
   </td>
   <td bgcolor="white">
-  <high>Dichte</high> der gedruckten Punkte (dots per inch)
+  <high>Auflösung</high> der Abbildung (dots per inch)
   </td> 
 </tr>
 </table>
 ]
 
 .pull-right5[
+<br>
+<p align = "center">
+  <img src="image/plot_4.png" height=520px>
+</p>
 
-````Markdown
-{r fig.width = 5, fig.asp = .5, 
-   fig.align = 'center', dpi = 300}
-ggplot(airbnb_1819, ...)
-````
-```{r message = F, echo = F, fig.height = 55, fig.width = 5, fig.asp = .5, fig.align = 'center', dpi = 300}
-ggplot(airbnb_1819 %>% 
-         group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
-         summarize(
-           Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
-           Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen)) + 
-  geom_bar(stat='identity', position='dodge') + 
-  theme(legend.position = 'none',
-        axis.text.x = element_text(angle = 45, hjust = 1)) 
-```
 ]
+
+---
+
+.pull-left4[
+
+# Grafiken skalieren
+
+<ul>
+  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angpasst werden.</span></li> 
+  <li class="m2"><span>Die Argumente beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Funktion</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>fig.width</mono>, <mono>fig.height</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Breite</high> und <high>Höhe</high> in inches
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>fig.asp</mono>
+  </td>
+  <td bgcolor="white">
+   <high>Seitenverhältnis</high>: Höhe relativ zur Breite.   
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>fig.align</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>dpi</mono> 
+  </td>
+  <td bgcolor="white">
+  <high>Auflösung</high> der Abbildung (dots per inch)
+  </td> 
+</tr>
+</table>
+]
+
+.pull-right5[
+<br>
+<p align = "center">
+  <img src="image/plot_5.png" height=520px>
+</p>
+
+]
+
+
+---
+
+.pull-left4[
+
+# Bildunterschrift
+
+<ul>
+  <li class="m1"><span>Bildunterschriften können durch <mono>fig.cap</mono> gesetzt.</span></li> 
+  <li class="m2"><span>Der Text kann innherlab des Chunks definiert werden.</span></li> 
+</ul>
+
+
+]
+
+.pull-right5[
+<br>
+<p align = "center">
+  <img src="image/plot_7.png" height=520px>
+</p>
+
+]
+
 
 ---
 
@@ -1098,7 +1115,7 @@ ausstattung <- airbnb_1819 %>%
   mutate(Hotel = Unterkunftsart %in% c('Boutique hotel','Hotel')) %>% 
   select(Preis, Hotel, Küche, TV, Terrasse_Balkon, Check_in_24h)
 
-ausstattung_modell <- lm(Preis ~ ., data = ausstattung)
+ausstattung_mod <- lm(Preis ~ ., data = ausstattung)
 summary(ausstattung_mod)
 ```
 ]
@@ -1158,7 +1175,7 @@ summary(ausstattung_mod)
 .pull-right5[
 
 ```{r echo = TRUE}
-sjPlot::tab_model(ausstattung_modell,
+sjPlot::tab_model(ausstattung_mod,
 title = 'Table 2. Regression der Ausstattung 
 auf den Preis.')
 ```
@@ -1219,7 +1236,7 @@ auf den Preis.')
 .pull-right5[
 <br>
 ```{r echo = TRUE}
-sjPlot::tab_model(ausstattung_modell,
+sjPlot::tab_model(ausstattung_mod,
 title = 'Table 2. Regression der Ausstattung 
 auf den Preis.',
 pred.labels = c('Achsenabschnitt', 
@@ -1288,6 +1305,7 @@ CSS = list(css.caption = "font-weight:500",
                       margin-right: 0px;
                       margin-left: auto;"))
 ```
+
 ```{r}
 sjPlot::tab_model(ausstattung_mod,
                   pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),

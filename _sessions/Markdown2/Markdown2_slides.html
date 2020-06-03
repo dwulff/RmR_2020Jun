@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Markdown 2</title>
+    <title>Markdown II</title>
     <meta charset="utf-8" />
     <meta name="author" content="Reporting mit R   The R Bootcamp" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
@@ -12,7 +12,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Markdown 2
+# Markdown II
 ### Reporting mit R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp </a> <br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
 ### Juni 2020
 
@@ -45,44 +45,35 @@ layout: true
 
 
 
-# Was sind die Eigenschaften der Wohnungen?
+.pull-left3[
 
-- Figure scaling (aspect ratio / dpi)
--Tabelle
- - Kable + crazy stuff (farbig?)
- - sjPlot
+# Nächste Schritte
 
-- Links 
-- References
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Abbildungen skalieren.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Tabellen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Fussnoten &amp; Links&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
+]
+
+.pull-right6[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/missing1.png" height=590px&gt;
+&lt;/p&gt;
+
+]
 
 ---
-
-# Grafiken
 
 .pull-left4[
-
-Die Standardausgabe von Grafiken in Markdown ist oft unscharf und/oder falsch skaliert. 
-
-]
-
-.pull-right5[
-````Markdown
-{r}
-ggplot(airbnb_1819, ...)
-````
-
-![](Markdown2_slides_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
-]
----
 
 # Grafiken skalieren
 
-.pull-left4[
-
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;chunk&lt;/mono&gt;-Optionen angpasst werden.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Grafikoptionen beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;Chunk&lt;/mono&gt;-Settings angpasst werden.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Die Argumente beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -98,7 +89,7 @@ ggplot(airbnb_1819, ...)
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt; und &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
@@ -109,7 +100,7 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;fig.asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
+   &lt;high&gt;Seitenverhältnis&lt;/high&gt;: Höhe relativ zur Breite.   
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -117,7 +108,7 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;fig.align&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; der Abbildung (&lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;)
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -125,31 +116,29 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;dpi&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
+  &lt;high&gt;Auflösung&lt;/high&gt; der Abbildung (dots per inch)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
 ]
 
 .pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_1.png" height=520px&gt;
+&lt;/p&gt;
 
-````Markdown
-{r fig.width = 5}
-ggplot(airbnb_1819, ...)
-````
-![](Markdown2_slides_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
 ]
 
 ---
 
-
-# Grafiken
-
 .pull-left4[
 
+# Grafiken skalieren
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;chunk&lt;/mono&gt;-Optionen angpasst werden.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Grafikoptionen beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;Chunk&lt;/mono&gt;-Settings angpasst werden.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Die Argumente beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -165,7 +154,7 @@ ggplot(airbnb_1819, ...)
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt; und &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
@@ -176,7 +165,7 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;fig.asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
+   &lt;high&gt;Seitenverhältnis&lt;/high&gt;: Höhe relativ zur Breite.   
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -184,7 +173,7 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;fig.align&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; der Abbildung (&lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;)
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -192,30 +181,29 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;dpi&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
+  &lt;high&gt;Auflösung&lt;/high&gt; der Abbildung (dots per inch)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
 ]
 
 .pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_2.png" height=520px&gt;
+&lt;/p&gt;
 
-````Markdown
-{r fig.width = 5, fig.asp = .5}
-ggplot(airbnb_1819, ...)
-````
-![](Markdown2_slides_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
 ]
 
 ---
 
-# Grafiken
-
 .pull-left4[
 
+# Grafiken skalieren
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;chunk&lt;/mono&gt;-Optionen angpasst werden.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Grafikoptionen beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;Chunk&lt;/mono&gt;-Settings angpasst werden.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Die Argumente beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -231,7 +219,7 @@ ggplot(airbnb_1819, ...)
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt; und &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
@@ -242,7 +230,7 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;fig.asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
+   &lt;high&gt;Seitenverhältnis&lt;/high&gt;: Höhe relativ zur Breite.   
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -250,7 +238,7 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;fig.align&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; der Abbildung (&lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;)
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -258,31 +246,29 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;dpi&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
+  &lt;high&gt;Auflösung&lt;/high&gt; der Abbildung (dots per inch)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
 ]
 
 .pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_3.png" height=520px&gt;
+&lt;/p&gt;
 
-````Markdown
-{r fig.width = 5, fig.asp = .5, 
-   fig.align = 'center'}
-ggplot(airbnb_1819, ...)
-````
-&lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
 
-# Grafiken
-
 .pull-left4[
 
+# Grafiken skalieren
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;chunk&lt;/mono&gt;-Optionen angpasst werden.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Grafikoptionen beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;Chunk&lt;/mono&gt;-Settings angpasst werden.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Die Argumente beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -298,7 +284,7 @@ ggplot(airbnb_1819, ...)
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;fig.width&lt;/mono&gt; und &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
@@ -309,7 +295,7 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;fig.asp&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-   &lt;high&gt;Aspect Ratio&lt;/high&gt; basierend auf der Breite   
+   &lt;high&gt;Seitenverhältnis&lt;/high&gt;: Höhe relativ zur Breite.   
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -317,7 +303,7 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;fig.align&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Position&lt;/high&gt; der Abbildung (&lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;)
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -325,21 +311,108 @@ ggplot(airbnb_1819, ...)
   &lt;mono&gt;dpi&lt;/mono&gt; 
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Dichte&lt;/high&gt; der gedruckten Punkte (dots per inch)
+  &lt;high&gt;Auflösung&lt;/high&gt; der Abbildung (dots per inch)
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
 ]
 
 .pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_4.png" height=520px&gt;
+&lt;/p&gt;
 
-````Markdown
-{r fig.width = 5, fig.asp = .5, 
-   fig.align = 'center', dpi = 300}
-ggplot(airbnb_1819, ...)
-````
-&lt;img src="Markdown2_slides_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
 ]
+
+---
+
+.pull-left4[
+
+# Grafiken skalieren
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Darstellung&lt;/high&gt; von Grafiken kann in den &lt;mono&gt;Chunk&lt;/mono&gt;-Settings angpasst werden.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Die Argumente beginnen (meist) mit &lt;highm&gt;fig.*&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Funktion&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.width&lt;/mono&gt;, &lt;mono&gt;fig.height&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Breite&lt;/high&gt; und &lt;high&gt;Höhe&lt;/high&gt; in inches
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.asp&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Seitenverhältnis&lt;/high&gt;: Höhe relativ zur Breite.   
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;fig.align&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Position&lt;/high&gt; der Abbildung: &lt;mono&gt;'center'&lt;/mono&gt;, &lt;mono&gt;'left'&lt;/mono&gt;, &lt;mono&gt;'right'&lt;/mono&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;dpi&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;high&gt;Auflösung&lt;/high&gt; der Abbildung (dots per inch)
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_5.png" height=520px&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left4[
+
+# Bildunterschrift
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Bildunterschriften können durch &lt;mono&gt;fig.cap&lt;/mono&gt; gesetzt.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Der Text kann innherlab des Chunks definiert werden.&lt;/span&gt;&lt;/li&gt; 
+&lt;/ul&gt;
+
+
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/plot_7.png" height=520px&gt;
+&lt;/p&gt;
+
+]
+
 
 ---
 
@@ -1530,7 +1603,7 @@ F-statistic: 80.1 on 5 and 5001 DF,  p-value: &lt;2e-16
 
 
 ```r
-sjPlot::tab_model(ausstattung_modell,
+sjPlot::tab_model(ausstattung_mod,
 title = 'Table 2. Regression der Ausstattung 
 auf den Preis.')
 ```
@@ -1652,7 +1725,7 @@ auf den Preis.&lt;/caption&gt;
 &lt;br&gt;
 
 ```r
-sjPlot::tab_model(ausstattung_modell,
+sjPlot::tab_model(ausstattung_mod,
 title = 'Table 2. Regression der Ausstattung 
 auf den Preis.',
 pred.labels = c('Achsenabschnitt', 
@@ -1782,6 +1855,7 @@ CSS = list(css.caption = "font-weight:500",
                       margin-right: 0px;
                       margin-left: auto;"))
 ```
+
 &lt;table style="width: auto; margin-right: 0px;margin-left: auto;"&gt;
 &lt;caption style="font-weight:500"&gt;Table 2. Regression des Preises auf die Ausstattung.&lt;/caption&gt;
 &lt;tr&gt;
