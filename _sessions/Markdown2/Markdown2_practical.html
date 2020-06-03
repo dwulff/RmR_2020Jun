@@ -206,12 +206,11 @@ pre code,  .md:not(.use-csslab) pre code {
 <h1></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
-<p>Am Ende des Practicals kannst du:</p>
+<p>Aufbauend auf Practical 1 wirst du nun die Grafiken in deinem Dokument gestalten und weitere Textbausteine einfügen.</p>
 <ol style="list-style-type: decimal">
-<li>Plots einfügen und formatieren</li>
-<li>Berechnungen mit inline code durchführen und im Text die Ergebnisse ausgeben</li>
-<li>Datentabellen einfügen und formatieren</li>
-<li>Ergebnisse eines Regressionsmodells einfügen und formatieren</li>
+<li>Grafiken formatieren.</li>
+<li>Datentabellen einfügen und im Detail gestalten</li>
+<li>Ergebnisse eines Regressionsmodells einbinden.</li>
 </ol>
 </div>
 <div id="aufgaben" class="section level2">
@@ -219,42 +218,43 @@ pre code,  .md:not(.use-csslab) pre code {
 <div id="a---setup" class="section level3">
 <h3>A - Setup</h3>
 <ol style="list-style-type: decimal">
-<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt sowie <code>airbnb_level_one.Rmd</code>, das fertige Produkt am Ende des ersten Markdown Practicals.</p></li>
-<li><p>Lade zusätzlich die Pakete <code>knitr</code>, <code>kableExtra</code> <code>sjPlot</code> im <code>setup</code> chunk.</p></li>
+<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code>, <code>2_Assets</code>, und <code>3_Markdown</code> enthalten.</p></li>
+<li><p>Lade die <code>airbnb_level_one.Rmd</code> Datei, das fertige Produkt am Ende des ersten Markdown Practicals.</p></li>
+<li><p>Zusätzlich lade die Pakete <code>knitr</code>, <code>kableExtra</code> <code>sjPlot</code> im <code>setup</code> chunk.</p></li>
 </ol>
 </div>
 <div id="b---präambel-fussnote-einfügen" class="section level3">
 <h3>B - Präambel: Fussnote einfügen</h3>
 <ol style="list-style-type: decimal">
-<li><p>Ergänze die Fussnote nach Daten <code>^[Daten wurde heruntergeladen von [insideairbnb.com](http://insideairbnb.com/get-the-data.html)]</code></p></li>
-<li><p>Knitte Dokument - alles wie gewünscht?</p></li>
+<li><p>Ergänze eine Fussnote nach dem Texteil ‘verfügbarer Daten’ <code>^[Daten wurde heruntergeladen von [insideairbnb.com](http://insideairbnb.com/get-the-data.html)]</code></p></li>
+<li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
 </ol>
 </div>
 <div id="c---neueinstellungen-plots" class="section level3">
 <h3>C - Neueinstellungen: Plots</h3>
-<p>Für beide Plots die Darstellung verbessern und Captions einfügen</p>
+<p>Für beide Grafiken wirst du nun die Darstellung verbessern und Captions einfügen</p>
 <ol style="list-style-type: decimal">
-<li><p>Die aspect ratio des ersten Plots auf .5. setzen(<code>fig.asp = .5</code>).</p></li>
-<li><p><code>fig.cap = cap</code> im Chunk des ersten Plot einfügen.</p></li>
-<li><p>Am Ende des Plot Chunks <code>cap = Abbildung 1. Neueinstellungen pro Monat.</code> einfügen.</p></li>
-<li><p>Für den zweiten Plot die aspect ratio auf .5 setzen und <code>fig.cap = cap</code> einfügen.</p></li>
-<li><p>Am Ende des zweiten Plot Chunks <code>cap = Abbildung 2. Neueinstellungen pro Bezirk.</code> einfügen.</p></li>
-<li><p>Knitte Dokument - alles wie gewünscht?</p></li>
+<li><p>Setze die aspect ratio der ersten Grafik auf .5 (<code>fig.asp = .5</code>).</p></li>
+<li><p>Füge <code>fig.cap = cap</code> im Chunk der ersten Grafik ein.</p></li>
+<li><p>Am Ende des Grafik Chunks definiere den Text der Caption: <code>cap = Abbildung 1. Neueinstellungen pro Monat.</code></p></li>
+<li><p>Setze nun die aspect ratio für die zweite Grafik auf .5.</p></li>
+<li><p>Am Ende des zweiten Grafik Chunks <code>cap = Abbildung 2. Neueinstellungen pro Bezirk.</code> einfügen.</p></li>
+<li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
 </ol>
 </div>
 <div id="d---preise-neuer-texteil" class="section level3">
 <h3>D - Preise: Neuer Texteil</h3>
 <ol style="list-style-type: decimal">
-<li><p><code>Preis</code> als Level 3 Header einfügen</p></li>
-<li><p>Text einfügen</p></li>
+<li><p>Für einen neuen Abschnitt füge <code>Preis</code> als Level 3 Header ein.</p></li>
+<li><p>Nun den folgenden Text integrieren.</p></li>
 </ol>
 <pre class="wrap"><code>Der durchschnittliche Preis der Neueinstellungen beträgt 80.8 €. Im Vergleich zum Vorjahr sind die Preise der Neueinstellungen um 1.7% gestiegen.</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Den durchschnittlichen Preis aus dem <code>airbnb_1819</code> Datensatz mit inline code berechnen.</li>
+<li>In diesem Text werden die Zahlen nicht berechnet - füge inline Code für den durschschnittlichen Preis aus dem Datensatz <code>airbnb_1819</code> direkt im Text ein.</li>
 </ol>
 <pre class="r"><code>round(mean(airbnb_1819 %&gt;% pull(Preis)),1)</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Die prozentuelle Steigerung der Preise aus dem <code>airbnb_1819</code> Datensatz mit folgendem inline code berechnen und einsetzen.</li>
+<li>Wähle die gleiche Vorgangsweise für die prozentuelle Steigerung der Preise verwende folgenden Code für die Berechnung.</li>
 </ol>
 <pre class="r"><code>m &lt;- mean(airbnb_1819 %&gt;% 
           filter(year(Erstellungsdatum) == 2019) %&gt;% 
@@ -263,14 +263,14 @@ pre code,  .md:not(.use-csslab) pre code {
           pull(Preis))
 round(m, 3) * 100 - 100</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>Knitte Dokument - alles wie gewünscht?</li>
+<li><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</li>
 </ol>
 </div>
 <div id="e---preise-neuer-texteil" class="section level3">
 <h3>E - Preise: Neuer Texteil</h3>
 <ol style="list-style-type: decimal">
-<li><p><code>Einfluss Ausstattsung</code> als Level 4 Header einfügen</p></li>
-<li><p>In einem eigenem Code Chunk berechnen wie sich Ausstattung auf die gemittelten Preise auswirkt. Diesen Chunk nicht augeben!</p></li>
+<li><p>Erstelle ein neues Unterkapitel mit der Überschrift: <code>Einfluss Ausstattsung</code> (als Level 4 Header).</p></li>
+<li><p>Berechne als erster Schritt in einem eigenem Code Chunk wie sich die verschiednen Ausstattungsmerkmale (Küche, Wifi, …) auf die durchschnittlichen Preise auswirken. Diesen Chunk nicht ausgeben!</p></li>
 </ol>
 <pre class="r"><code># Vektor mit Ausstatttungsmerkmalen
 ausstattung_var = c(&#39;Küche&#39;,&#39;Wifi&#39;,&#39;TV&#39;,&#39;Kaffeemaschine&#39;,
@@ -290,55 +290,55 @@ ausstattung &lt;- airbnb_1819 %&gt;%
             Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %&gt;% 
   arrange(desc(Differenz)) </code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Text einfügen</li>
+<li>Füge einen neuen Textteil ein</li>
 </ol>
 <pre class="wrap"><code>Das Austattungsmerkmal mit dem grössten Unterschied im Preis ist Check_in_24h (72.9), das Austattungsmerkmal mit dem kleinsten Unterschied im Preis ist Küche (-88.9).</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Variablename (und Wert in Klammer) der den grössten Unterschied im Preis ausmacht mit folgendem inline code berechnen und einsetzen.</li>
+<li>Auch hier wieder den Variablenamen und den numerischen Wert in Klammer (grösster Unterschied im Preis) mit folgendem inline code berechnen und einsetzen.</li>
 </ol>
 <pre class="r"><code>ausstattung %&gt;% pull(Ausstattung) %&gt;% first()
 ausstattung %&gt;% pull(Differenz) %&gt;% first() %&gt;% round(1)</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>Variablename (und Wert in Klammer) der den kleinsten Unterschied im Preis ausmacht mit folgendem inline code berechnen und einsetzen.</li>
+<li>Variablename und numerischen Wert in Klammer (kleinster Unterschied im Preis) berechnen und einsetzen.</li>
 </ol>
 <pre class="r"><code>ausstattung %&gt;% pull(Ausstattung) %&gt;% last()
 ausstattung %&gt;% pull(Differenz) %&gt;% last() %&gt;% round(1)</code></pre>
 <ol start="6" style="list-style-type: decimal">
-<li>Text einfügen und mittels HTML Tag <code>&lt;b&gt;</code> fett hervorheben.</li>
+<li>Der folgenden Textabschnitt fasst die Ergebnisse der Tabelle zusammen und soll daher hervorgehoben werden. Kennzeichne den Textabschnitt mit dem HTML Tag <code>&lt;b&gt; ... &lt;/b&gt;</code> und setze ihn damit in fetter Schriftart.</li>
 </ol>
 <pre class="wrap"><code>Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.</code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li>Knitte Dokument - alles wie gewünscht?</li>
+<li><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</li>
 </ol>
 </div>
 <div id="f---preis-tabelle-1-erzeugen" class="section level3">
 <h3>F - Preis: Tabelle 1 erzeugen</h3>
 <ol style="list-style-type: decimal">
-<li>Neuen Code Chunk mit der Tabelle Ausstattung und <code>kable()</code> erstellen.</li>
+<li>Erstelle einen neuen Code Chunk mit einer Tabelle basierend auf <code>ausstattung</code>. Verwende dafür die <code>kable()</code> Funktion.</li>
 </ol>
 <pre class="r"><code># Plotte Tabelle mit Austattungsmerkmalen
 ausstattung %&gt;% kable(format = &#39;html&#39;)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Anzahl Nachkommastellen mit <code>digits = 2</code> auf zwei beschränken.</p></li>
-<li><p>Caption mit <code>caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'</code> einfügen.</p></li>
-<li><p>Die Namen der Spalten anpassen: <code>col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 'Preis&lt;br&gt;vorh.','Differenz','Prozent&lt;br&gt;vorh.')</code></p></li>
-<li><p>Spezielle Schriftzeichen direkt einfügen <code>escape = FALSE</code></p></li>
-<li><p>Das Alginment der Zellen festlegen mit <code>align="lcccc"</code></p></li>
-<li><p>Die Breite der Spalten fixieren mit <code>column_spec(c(2,3,4,5), width = "1.2in")</code></p></li>
-<li><p>Die Schrifgrösse der Zellen in Abhängigkeit ihrer Grösse verändern. Dafür vor dem <code>kable</code> Abschnitt folgenden Code einfügen und mit einer Pipe (%&gt;%) verbinden.</p></li>
+<li><p>Beschrännke die Anzahl Nachkommastellen mit <code>digits = 2</code> auf zwei.</p></li>
+<li><p>Füge eine Caption mit <code>caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'</code> ein.</p></li>
+<li><p>Passe die Namen der Spalten an, inklusive neuer Zeilenumbrüche mit <code>&lt;br&gt;</code>: <code>col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 'Preis&lt;br&gt;vorh.','Differenz','Prozent&lt;br&gt;vorh.')</code></p></li>
+<li><p><code>Knitte</code> das Dokument. Die Spaltenbeschriftung wird nicht korrekt übersetzt. Füge <code>escape = FALSE</code> um dieses Problem zu korrigieren.</p></li>
+<li><p>Lege die Ausrichtung der Zellen mit <code>align="lcccc"</code> fest.</p></li>
+<li><p>Nun fixiere die Breite der Spalten mit <code>column_spec(c(2,3,4,5), width = "1.2in")</code>.</p></li>
+<li><p>Die Schrifgrösse der Zellen soll in Abhängigkeit der Grösse der abgebildeten Zahl unterschiedlich sein. Füge dafür vor dem <code>kable</code> Abschnitt folgenden Code ein und verbinde die beiden Teile mit einer Pipe <code>%&gt;%</code>.</p></li>
 </ol>
 <pre class="r"><code>mutate_if(is.numeric, function(x) {
     cell_spec(round(x,1), bold = T, 
               font_size = spec_font_size(x, begin=10, end=16))})</code></pre>
 <ol start="9" style="list-style-type: decimal">
-<li>Knitte Dokument - alles wie gewünscht?</li>
+<li><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</li>
 </ol>
 </div>
 <div id="g---preise-text-teil" class="section level3">
 <h3>G - Preise: Text Teil</h3>
 <ol style="list-style-type: decimal">
-<li><p><code>Regressionsmodell</code> als Level 4 Header einfügen</p></li>
-<li><p>In einem eigenem Code Chunk eine Regression berechnen in der <code>Preis</code> mit verschiednen Ausstattungsmerkmalen vorhergesagt wird sowie mittleren Anteil der Hotels berechnen. Diesen Chunk nicht augeben!</p></li>
+<li><p>Erstelle ein neues Unterkapitel mit der Überschrift: <code>Regressionsmodell</code> als Level 4 Header</p></li>
+<li><p>Berechne eine Regression in der <code>Preis</code> mit verschiednen Ausstattungsmerkmalen vorhergesagt wird sowie den durchschnittlichen Anteil der Hotels. Diesen Chunk nicht augeben!</p></li>
 </ol>
 <pre class="r"><code># Reduzierter Vektor mit Ausstattungsmerkmalen
 ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,&#39;Check_in_24h&#39;)
@@ -354,7 +354,7 @@ hotel &lt;- airbnb_1819 %&gt;%
   group_by(year(Erstellungsdatum)) %&gt;% 
   summarize(Anteil = mean(Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)))   </code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Folgenden Textblock einfügen</li>
+<li>Füge folgenden Textblock ein.</li>
 </ol>
 <pre class="wrap"><code>Die Regression legt nahe, dass Küche, TV und Terrasse oder Balkon den grössten Einfluss auf den Preis in denletztene beiden Jahren hatten.
 
@@ -366,25 +366,25 @@ Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Ho
 
 Der Anteil von Hotels ist von -98.9% im Jahre 2018 auf 1.4% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht.</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Den Koeffizienten aus dem Regressionsmodell im 4. Absatz (Hotels haben einen um … höheren Preis) mit folgendem inline code berechnen und einsetzen.</li>
+<li>Berechne den Koeffizienten aus dem Regressionsmodell im 4. Absatz (Hotels haben einen um … höheren Preis) mit folgendem inline code und zeige das Ergebnis im Satz an.</li>
 </ol>
 <pre class="r"><code>coefficients(ausstattung_mod)[&#39;HotelTRUE&#39;] %&gt;% round(1)</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li><p>Mittels HTML Tag <code>&lt;b&gt;</code> den 2. (<code>Überraschenderweise ...</code>) und 4. Absatz (<code>Der Anteil ...</code>) fett hervorheben.</p></li>
-<li><p>Knitte Dokument - alles wie gewünscht?</p></li>
+<li><p>Hebe den 2. (<code>Überraschenderweise ...</code>) und 4. Absatz (<code>Der Anteil ...</code>) fett hervor.</p></li>
+<li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
 </ol>
 </div>
 <div id="h---preise-regressionstabelle" class="section level3">
 <h3>H - Preise: Regressionstabelle</h3>
 <ol style="list-style-type: decimal">
-<li>Die Regressionsergebnisse mit <code>sjPlot::tab_model</code> ausgeben</li>
+<li>Zeige die Regressionsergebnisse in einer Tablle mit <code>sjPlot::tab_model</code> an.</li>
 </ol>
 <pre class="r"><code># Tabelle mit ergebnissen der Regression
 tab_model(ausstattung_mod)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Intercept mit <code>Achsenabschnitt</code> in der Tabelle ersetzen <code>pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])</code></p></li>
-<li><p>Tabellentitel einfügen: <code>title = 'Table 2. Regression des Preises auf die Ausstattung.'</code></p></li>
-<li><p>Knitte Dokument - alles wie gewünscht?</p></li>
+<li><p>Ersetze <code>Intercept</code> mit <code>Achsenabschnitt</code> in der Tabelle: <code>pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])</code></p></li>
+<li><p>Füge einen neune Tabellentitel ein: <code>title = 'Table 2. Regression des Preises auf die Ausstattung.'</code></p></li>
+<li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
 </ol>
 </div>
 </div>
