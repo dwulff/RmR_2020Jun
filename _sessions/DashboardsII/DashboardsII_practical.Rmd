@@ -57,7 +57,7 @@ library(tidyverse)
 
 ## Überblick
 
-In diesem Practical wirst du das Dashboard der letzten Aufgabe weiter ausbauen und interaktiver und dynamischer gestalten. Am Ende wirst du [dieses](https://mdsteiner.shinyapps.io/berlindashboard2/) Dashboard erstellen.
+In diesem Practical wirst du das Dashboard der letzten Aufgabe weiter ausbauen und interaktiver und dynamischer gestalten. Am Ende wirst du [dieses](https://therbootcamp.shinyapps.io/berlindashboard2/) Dashboard erstellen.
 
 Am Ende des Practicals wirst du wissen wie man:
 
@@ -69,9 +69,9 @@ Am Ende des Practicals wirst du wissen wie man:
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
+1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `3_Markdown` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
 
-2. Lade [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/app/BerlinDashboard.Rmd) Markdown Skript herunter und speichere es in deinen `2_Code` Ordner.
+2. Lade [dieses](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/app/BerlinDashboard.Rmd) Markdown Skript herunter und speichere es in deinen `3_Markdown` Ordner.
 
 3. Öffne das eben heruntergeladene Markdown file. Es enthält das fertige Dashboard der vorherigen Aufgabe. Wir werden hier mit diesem File weiterarbeiten, um sicherzustellen, dass alle auf dem gleichen Stand sind. Wenn du möchtest, kannst du natürlich auch mit deinem zuvor erstellten File weiterarbeiten; allerdings auf eigene Gefahr... :-)
 

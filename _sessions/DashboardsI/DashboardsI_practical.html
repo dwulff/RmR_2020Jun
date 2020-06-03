@@ -194,6 +194,11 @@ summary {
 </div>
 
 
+<style>
+pre code,  .md:not(.use-csslab) pre code {
+  white-space: pre-wrap;
+  }
+</style>
 <p align="center" width="100%">
 <img src="image/dashboard_comic2.png" alt="Trulli" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://dilbert.com/">https://dilbert.com/</a></font>
 </p>
@@ -216,14 +221,14 @@ summary {
 <div id="a---setup" class="section level3">
 <h3>A - Setup</h3>
 <ol style="list-style-type: decimal">
-<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelistet sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
+<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code> und <code>3_Markdown</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelistet sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
 <li><p>Öffne ein neues RMarkdown Skript und wähle das Template “Flex Dashboard” aus (siehe screenshot unten).</p></li>
 </ol>
 <p align="center" width="100%">
 <img src="image/screenshot_template.PNG" alt="Trulli" style="width:50%">
 </p>
 <ol start="3" style="list-style-type: decimal">
-<li><p>Speichere das neue Skript unter dem Namen <code>dashboards_I_practical.Rmd</code> im <code>2_Code</code> Ordner.</p></li>
+<li><p>Speichere das neue Skript unter dem Namen <code>dashboards_I_practical.Rmd</code> im <code>3_Markdown</code> Ordner.</p></li>
 <li><p>Schreibe als Titel “Dashboards I Practical” hinein.</p></li>
 <li><p>Lösche alles unterhalb des <code>setup</code> R chunks.</p></li>
 </ol>
@@ -288,36 +293,27 @@ library(htmltools)</code></pre>
 <pre class="r"><code># berechne die Anzahl Superhosts im airbnb Datensatz
 n_superhosts &lt;- sum(airbnb$Host_superhost)</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Erstelle nun eine value Box mit der <code>valueBox()</code> Funktion und zwar direkt unterhalb des Codes der Aufgabe D2. Gebe dabei als erstes Argument <code>n_superhosts</code> ein und setze <code>caption</code> auf <code>&quot;Superhost&quot;</code>.</li>
+<li>Erstelle nun eine value Box mit der <code>valueBox()</code> Funktion und zwar direkt unterhalb des Codes der Aufgabe D2. Gebe dabei als erstes Argument <code>n_superhosts</code> ein und setze <code>caption</code> auf <code>"Superhost"</code>.</li>
 </ol>
 <pre class="r"><code># Erstelle valueBox
 valueBox(XXX, caption = &quot;XXX&quot;)</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Funktioniert das schon so?</p></li>
-<li><p>Funktioniert, aber ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die <code>valueBox()</code> Funktion ein Argument <code>color</code> ein und setze dieses auf <code>&quot;#008489&quot;</code>.</p></li>
+<li><p>Funktioniert, aber ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die <code>valueBox()</code> Funktion ein Argument <code>color</code> ein und setze dieses auf <code>"#00A699"</code>.</p></li>
 <li><p>Passt es jetzt?</p></li>
-<li><p>Bisher ist noch kein Icon vorhanden. Füge in die <code>valueBox()</code> Funktion ein weiteres Argument <code>icon</code> ein und setze dieses auf <code>&quot;fa-medal&quot;</code>.</p></li>
-<li><p>Fast geschafft; der Titel ist noch etwas zu klein. Um das zu fixen, ersetze <code>&quot;Superhost&quot;</code> im <code>caption</code> Argument mit <code>&quot;&lt;h3 style='color: white;'&gt;Superhost&lt;/h3&gt;&quot;</code>. Damit passt nun alles. Um die anderen beiden value Boxen kümmern wir uns später.</p></li>
+<li><p>Bisher ist noch kein Icon vorhanden. Füge in die <code>valueBox()</code> Funktion ein weiteres Argument <code>icon</code> ein und setze dieses auf <code>"fa-medal"</code>.</p></li>
+<li><p>Fast geschafft; der Titel ist noch etwas zu klein. Um das zu fixen, ersetze <code>"Superhost"</code> im <code>caption</code> Argument mit <code>"&lt;h3 style='color: white;'&gt;Superhost&lt;/h3&gt;"</code>. Damit passt nun alles. Um die anderen beiden value Boxen kümmern wir uns später.</p></li>
 <li><p>So, das war es für den Moment für diese Seite; die interaktiven Grafiken erstellen wir weiter unten. Gehe im Code zur zweiten Seite. Dort werden wir den Text erstellen.</p></li>
 <li><p>Schaue dir den Text in der rechten Spalte des <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html">Dashboards</a> an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen (du darfst copy-pasten um nicht alles abschreiben zu müssen).</p></li>
-<li><p>Du kannst deinen Text mit dem untenstehenden Text, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen (<strong>Hinweis:</strong> Die einfachen Zeilenumbrüche sind nur eingefügt, um alles ohne seitwärts scrollen zu müssen anzeigen zu können). Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?</p></li>
+<li><p>Du kannst deinen Text mit dem untenstehenden Text, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen. Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?</p></li>
 </ol>
-<pre class="markdown"><code>**Airbnbs in Berlin**
+<pre class="wrap"><code>**Airbnbs in Berlin**
 
-Das erste Airbnb in Berlin öffnete 2009 im Stadtteil
-[Pankow](https://de.wikipedia.org/wiki/Berlin-Pankow) 
-(siehe auch [Übersichtskarte](#page-1)). Von da an war ein 
-rascher Anstieg zu verzeichnen. Bereits 6 Jahre später gab 
-es in Berlin-Pankow alleine `r round(10**2.3)` Airbnbs. 
-Mittlerweile ist diese Zahl auf rund `r round(10**3.2 / 100) * 100` angestiegen.
+Das erste Airbnb in Berlin öffnete 2009 im Stadtteil [Pankow](https://de.wikipedia.org/wiki/Berlin-Pankow)  (siehe auch [Übersichtskarte](#page-1)). Von da an war ein  rascher Anstieg zu verzeichnen. Bereits 6 Jahre später gab  es in Berlin-Pankow alleine `r round(10**2.3)` Airbnbs.  Mittlerweile ist diese Zahl auf rund `r round(10**3.2 / 100) * 100` angestiegen.
 
-Das teuerste heute verfügbare Airbnb kostet dabei `r max(airbnb$Preis)` 
-pro Nacht; für die meisten Leute nicht gerade ein Schnäppchen. Dabei
-handelt es sich um ein `r airbnb$Unterkunftsart[max(airbnb$Preis)]` 
-im Stadtteil `r airbnb$Stadtteil[max(airbnb$Preis)]`.
+Das teuerste heute verfügbare Airbnb kostet dabei `r max(airbnb$Preis)` pro Nacht; für die meisten Leute nicht gerade ein Schnäppchen. Dabei handelt es sich um ein `r airbnb$Unterkunftsart[max(airbnb$Preis)]` im Stadtteil `r airbnb$Stadtteil[max(airbnb$Preis)]`.
 
-Insgesamt wurden über die Jahre in Berlin `r as.integer(sum(airbnb$Host_anzahl))`
-Gäste in Airbnbs empfangen.
+Insgesamt wurden über die Jahre in Berlin `r as.integer(sum(airbnb$Host_anzahl))` Gäste in Airbnbs empfangen.
 </code></pre>
 <ol start="12" style="list-style-type: decimal">
 <li><p>Das war es schon für diese Seite. Den Plot erstellen wir wiederum später. Gehe nun in deinem Dokument zur dritten Seite zum Titel “Gesamtrating” (Titel dritter Ordnung).</p></li>
@@ -373,8 +369,8 @@ gauge(XXX,
         danger = c(0, 49)
         ))</code></pre>
 <ol start="18" style="list-style-type: decimal">
-<li><p>Wenn du das Dokument jetzt knittest, siehst du, dass die Dimensionen in der Kommentarspalte noch falsch sind. Das ist, weil der <code>gauge</code> noch zu gross ist. Um das zu beheben, kannst du <code>fig.width=3,fig.height=1.5, fig.align=&quot;center&quot;</code> in die R chunk Optionen des chunks einfügen, welcher den <code>gauge</code> erstellt.</p></li>
-<li><p>Füge nun unterhalb des R chunks, der den <code>gauge</code> definiert, den folgenden Text ein (der Teil <code>&lt;p style=&quot;font-size: 20px;&quot;&gt;</code> ist HTML Syntax, mit der die Textgrösse etwas vergrössert wird; mit <code>&lt;/p&gt;</code> wird die Syntax abgeschlossen): (<strong>Hinweis:</strong> Die Zeilenumbrüche sind nur eingefügt, um alles ohne seitwärts scrollen zu müssen anzeigen zu können)</p></li>
+<li><p>Wenn du das Dokument jetzt knittest, siehst du, dass die Dimensionen in der Kommentarspalte noch falsch sind. Das ist, weil der <code>gauge</code> noch zu gross ist. Um das zu beheben, kannst du <code>fig.width=3,fig.height=1.5, fig.align="center"</code> in die R chunk Optionen des chunks einfügen, welcher den <code>gauge</code> erstellt.</p></li>
+<li><p>Füge nun unterhalb des R chunks, der den <code>gauge</code> definiert, den folgenden Text ein (der Teil <code>&lt;p style="font-size: 20px;"&gt;</code> ist HTML Syntax, mit der die Textgrösse etwas vergrössert wird; mit <code>&lt;/p&gt;</code> wird die Syntax abgeschlossen): (<strong>Hinweis:</strong> Die Zeilenumbrüche sind nur eingefügt, um alles ohne seitwärts scrollen zu müssen anzeigen zu können)</p></li>
 </ol>
 <pre class="markdown"><code>&lt;p style=&quot;font-size: 20px;&quot;&gt;Die Berliner Airbnbs scheinen allgemein in einem
 sehr guten Zustand zu sein. Zumindest lassen die hohen Gesamtratings darauf
@@ -406,7 +402,8 @@ airbnb %&gt;%
     lng = ~Längengrad,
     lat = ~Breitengrad,
     radius = 4,
-    stroke = FALSE, fillOpacity = 0.5
+    stroke = FALSE, fillOpacity = 0.5,
+    color = &quot;#00A699&quot;
   )</code></pre>
 </div>
 <div id="f---plotly" class="section level3">
@@ -477,7 +474,7 @@ Verlauf</code></pre>
 <ol style="list-style-type: decimal">
 <li><p>Nur noch wenige Schritte fehlen. Passe das <code>theme</code> des Dashboards an, indem du im YAML code unter <code>vertical_layout: fill</code> und auf der gleichen Ebene <code>theme: lumen</code> spezifizierst.</p></li>
 <li><p>Im vorgegebenen Dashboard kann der Source Code angezeigt werden, wenn man oben rechts draufklickt. Um das zu ermöglichen, musst du lediglich auf der gleichen Ebene wie eben bei G1 <code>source_code: embed</code> im YAML code eingeben.</p></li>
-<li><p>Schliesslich kannst du links zu Social Media Plattformen wie zum Beispiel Twitter und Facebook hinzufügen. Wiederum auf derselben Ebene wie vorhin, füge <code>social: [&quot;twitter&quot;, &quot;facebook&quot;]</code> im YAML hinzu.</p></li>
+<li><p>Schliesslich kannst du links zu Social Media Plattformen wie zum Beispiel Twitter und Facebook hinzufügen. Wiederum auf derselben Ebene wie vorhin, füge <code>social: ["twitter", "facebook"]</code> im YAML hinzu.</p></li>
 </ol>
 </div>
 <div id="x---challenges" class="section level3">
@@ -498,15 +495,15 @@ allstar &lt;- airbnb %&gt;%
   # Zähle die Anzahl verbliebener Zeilen
   summarise(n())</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Verwende den <code>valueBox</code> Code den du in Teil D erstellt hast als Template um die value Box der Anzahl Allstars zu erstellen. Ersetze dazu <code>n_superhosts</code> durch <code>allstar</code> und ändere das <code>&quot;Superhost&quot;</code> im caption Argument zu <code>&quot;Allstars&quot;</code>.</p></li>
-<li><p>Diese value Box sieht aber noch nicht ganz gleich aus wie im vorgegebenen Dashboard. Zum Einen ist die Farbe noch grün statt gold, zum Anderen ist das Icon noch falsch. Ändere zunächst die Farbe (das <code>color</code> Argument) von <code>&quot;#008489&quot;</code> zu <code>&quot;#f5d142&quot;</code>.</p></li>
-<li><p>Nun ändere den Input zum <code>icon</code> Argument von <code>&quot;fa-medal&quot;</code> zu <code>&quot;fa-gem&quot;</code>. Dabei spezifiziert das “fa-”, dass das Icon aus der <a href="https://fontawesome.com/icons?d=gallery">Font Awesome</a> Sammlung stammt. “medal” und “gem” geben dann den Namen des Icons an.</p></li>
+<li><p>Verwende den <code>valueBox</code> Code den du in Teil D erstellt hast als Template um die value Box der Anzahl Allstars zu erstellen. Ersetze dazu <code>n_superhosts</code> durch <code>allstar</code> und ändere das <code>"Superhost"</code> im caption Argument zu <code>"Allstars"</code>.</p></li>
+<li><p>Diese value Box sieht aber noch nicht ganz gleich aus wie im vorgegebenen Dashboard. Zum Einen ist die Farbe noch grün statt gold, zum Anderen ist das Icon noch falsch. Ändere zunächst die Farbe (das <code>color</code> Argument) von <code>"#008489"</code> zu <code>"#f5d142"</code>.</p></li>
+<li><p>Nun ändere den Input zum <code>icon</code> Argument von <code>"fa-medal"</code> zu <code>"fa-gem"</code>. Dabei spezifiziert das “fa-”, dass das Icon aus der <a href="https://fontawesome.com/icons?d=gallery">Font Awesome</a> Sammlung stammt. “medal” und “gem” geben dann den Namen des Icons an.</p></li>
 <li><p>Nun zur dritten value Box, die die Anzahl preiswerter Airbnbs - definiert als weniger als 100 Euro pro Nacht - angibt. Berechne dazu zunächst die Anzahl mit dem untenstehenden Code in einem R chunk unterhalb des “Preiswert” Titels.</p></li>
 </ol>
 <pre class="r"><code># Berechne die Anzahl preiswerter Airbnbs
 preiswert &lt;- sum(airbnb$Preis &lt; 100)</code></pre>
 <ol start="6" style="list-style-type: decimal">
-<li><p>Verwende wiederum den <code>valueBox</code> Code von Aufgaben im Teil D als Template um nun die value Box zu erstellen. Ersetze dazu <code>n_superhosts</code> durch <code>preiswert</code> und ersetze das <code>&quot;Superhost&quot;</code> durch <code>&quot;Preiswert&quot;</code>. Ändere ausserdem das <code>icon</code> zu <code>&quot;fa-money-bill-wave&quot;</code> und die Farbe zu <code>&quot;#85a95d&quot;</code>.</p></li>
+<li><p>Verwende wiederum den <code>valueBox</code> Code von Aufgaben im Teil D als Template um nun die value Box zu erstellen. Ersetze dazu <code>n_superhosts</code> durch <code>preiswert</code> und ersetze das <code>"Superhost"</code> durch <code>"Preiswert"</code>. Ändere ausserdem das <code>icon</code> zu <code>"fa-money-bill-wave"</code> und die Farbe zu <code>"#85a95d"</code>.</p></li>
 <li><p>Auf Seite 3 sind noch zwei Seiten des Storyboards leer. Fülle diese mit Inhalt; du kannst dich dabei and das vorgegebene Dashboard halten (siehe Aufgaben im Abschnitt D für Hilfestellungen), oder eigene Dinge ausprobieren.</p></li>
 </ol>
 </div>
@@ -671,31 +668,31 @@ preiswert &lt;- sum(airbnb$Preis &lt; 100)</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left"><code>tidyverse</code></td>
-<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>flexdashboard</code></td>
-<td align="left"><code>install.packages(&quot;flexdashboard&quot;)</code></td>
+<td align="left"><code>install.packages("flexdashboard")</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>plotly</code></td>
-<td align="left"><code>install.packages(&quot;plotly&quot;)</code></td>
+<td align="left"><code>install.packages("plotly")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>leaflet</code></td>
-<td align="left"><code>install.packages(&quot;leaflet&quot;)</code></td>
+<td align="left"><code>install.packages("leaflet")</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>viridis</code></td>
-<td align="left"><code>install.packages(&quot;viridis&quot;)</code></td>
+<td align="left"><code>install.packages("viridis")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>htmltools</code></td>
-<td align="left"><code>install.packages(&quot;htmltools&quot;)</code></td>
+<td align="left"><code>install.packages("htmltools")</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>patchwork</code></td>
-<td align="left"><code>install.packages(&quot;patchwork&quot;)</code></td>
+<td align="left"><code>install.packages("patchwork")</code></td>
 </tr>
 </tbody>
 </table>

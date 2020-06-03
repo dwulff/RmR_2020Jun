@@ -103,7 +103,7 @@ library(tidyverse)
 library(lubridate)
 ```
 
-6. Lade den `airbnb` Datensatz mit `read_csv()` ebenfalls im `setup` chunk mit Code unten.
+6. Lade den `airbnb` Datensatz mit `read_csv()` ebenfalls im `setup` chunk mit dem Code unten.
 
 ```{r echo = TRUE}
 # Lade airbnb Datensatz

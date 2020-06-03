@@ -30,6 +30,12 @@ output:
     self_contained: no
 ---
 
+<style>
+pre code,  .md:not(.use-csslab) pre code {
+  white-space: pre-wrap;
+  }
+</style>
+
 ```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(comment = NA, 
                       fig.width = 6, 
@@ -37,12 +43,15 @@ knitr::opts_chunk$set(comment = NA,
                       fig.align = 'center',
                       echo = TRUE, 
                       eval = FALSE, 
-                      warning = FALSE)
+                      warning = FALSE,
+                      tidy.opts=list(width.cutoff=40))
 
 options(digits = 3)
 
 # Load packages
 library(tidyverse)
+library(knitr)
+library(kableExtra)
 
 ```
 
@@ -71,7 +80,7 @@ Am Ende des Practicals wirst du wissen wie man:
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelistet sind, in deinem `1_Data` Ordner hast. 
+1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data` und `3_Markdown` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelistet sind, in deinem `1_Data` Ordner hast. 
 
 2. Öffne ein neues RMarkdown Skript und wähle das Template "Flex Dashboard" aus (siehe screenshot unten).
 
@@ -80,7 +89,7 @@ Am Ende des Practicals wirst du wissen wie man:
 </p>
 
 
-3. Speichere das neue Skript unter dem Namen `dashboards_I_practical.Rmd` im `2_Code` Ordner.
+3. Speichere das neue Skript unter dem Namen `dashboards_I_practical.Rmd` im `3_Markdown` Ordner.
 
 4. Schreibe als Titel "Dashboards I Practical" hinein.
 
@@ -187,7 +196,7 @@ valueBox(XXX, caption = "XXX")
 
 4. Funktioniert das schon so?
 
-5. Funktioniert, aber ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die `valueBox()` Funktion ein Argument `color` ein und setze dieses auf `"#008489"`.
+5. Funktioniert, aber ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die `valueBox()` Funktion ein Argument `color` ein und setze dieses auf `"#00A699"`.
 
 6. Passt es jetzt?
 
@@ -199,25 +208,16 @@ valueBox(XXX, caption = "XXX")
 
 10. Schaue dir den Text in der rechten Spalte des [Dashboards](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen (du darfst copy-pasten um nicht alles abschreiben zu müssen).
 
-11. Du kannst deinen Text mit dem untenstehenden Text, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen (**Hinweis:** Die einfachen Zeilenumbrüche sind nur eingefügt, um alles ohne seitwärts scrollen zu müssen anzeigen zu können). Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?
+11. Du kannst deinen Text mit dem untenstehenden Text, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen. Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?
 
-````markdown
+````wrap
 **Airbnbs in Berlin**
 
-Das erste Airbnb in Berlin öffnete 2009 im Stadtteil
-[Pankow](https://de.wikipedia.org/wiki/Berlin-Pankow) 
-(siehe auch [Übersichtskarte](#page-1)). Von da an war ein 
-rascher Anstieg zu verzeichnen. Bereits 6 Jahre später gab 
-es in Berlin-Pankow alleine `r knitr::inline_expr("round(10**2.3)")` Airbnbs. 
-Mittlerweile ist diese Zahl auf rund `r knitr::inline_expr("round(10**3.2 / 100) * 100")` angestiegen.
+Das erste Airbnb in Berlin öffnete 2009 im Stadtteil [Pankow](https://de.wikipedia.org/wiki/Berlin-Pankow)  (siehe auch [Übersichtskarte](#page-1)). Von da an war ein  rascher Anstieg zu verzeichnen. Bereits 6 Jahre später gab  es in Berlin-Pankow alleine `r knitr::inline_expr("round(10**2.3)")` Airbnbs.  Mittlerweile ist diese Zahl auf rund `r knitr::inline_expr("round(10**3.2 / 100) * 100")` angestiegen.
 
-Das teuerste heute verfügbare Airbnb kostet dabei `r knitr::inline_expr("max(airbnb$Preis)")` 
-pro Nacht; für die meisten Leute nicht gerade ein Schnäppchen. Dabei
-handelt es sich um ein `r knitr::inline_expr("airbnb$Unterkunftsart[max(airbnb$Preis)]")` 
-im Stadtteil `r knitr::inline_expr("airbnb$Stadtteil[max(airbnb$Preis)]")`.
+Das teuerste heute verfügbare Airbnb kostet dabei `r knitr::inline_expr("max(airbnb$Preis)")` pro Nacht; für die meisten Leute nicht gerade ein Schnäppchen. Dabei handelt es sich um ein `r knitr::inline_expr("airbnb$Unterkunftsart[max(airbnb$Preis)]")` im Stadtteil `r knitr::inline_expr("airbnb$Stadtteil[max(airbnb$Preis)]")`.
 
-Insgesamt wurden über die Jahre in Berlin `r knitr::inline_expr("as.integer(sum(airbnb$Host_anzahl))")`
-Gäste in Airbnbs empfangen.
+Insgesamt wurden über die Jahre in Berlin `r knitr::inline_expr("as.integer(sum(airbnb$Host_anzahl))")` Gäste in Airbnbs empfangen.
 
 ````
 
@@ -323,7 +323,8 @@ airbnb %>%
     lng = ~Längengrad,
     lat = ~Breitengrad,
     radius = 4,
-    stroke = FALSE, fillOpacity = 0.5
+    stroke = FALSE, fillOpacity = 0.5,
+    color = "#00A699"
   )
 ```
 

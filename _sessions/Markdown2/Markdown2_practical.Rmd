@@ -66,60 +66,62 @@ library(sjPlot)
 
 ## Überblick
 
-Am Ende des Practicals kannst du:
+Aufbauend auf Practical 1 wirst du nun die Grafiken in deinem Dokument gestalten 
+und weitere Textbausteine einfügen.
 
-1. Plots einfügen und formatieren
-2. Berechnungen mit inline code durchführen und im Text die Ergebnisse ausgeben
-3. Datentabellen einfügen und formatieren
-4. Ergebnisse eines Regressionsmodells einfügen und formatieren
+1. Grafiken formatieren.
+3. Datentabellen einfügen und im Detail gestalten
+4. Ergebnisse eines Regressionsmodells einbinden.
 
 ## Aufgaben
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R Projekt sowie `airbnb_level_one.Rmd`, das fertige Produkt am Ende des ersten Markdown Practicals. 
+1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data`, `2_Assets`, und `3_Markdown` enthalten. 
 
-2. Lade zusätzlich die Pakete `knitr`, `kableExtra` `sjPlot` im `setup` chunk. 
+2. Lade die `airbnb_level_one.Rmd` Datei, das fertige Produkt am Ende des ersten Markdown Practicals. 
+
+3. Zusätzlich lade die Pakete `knitr`, `kableExtra` `sjPlot` im `setup` chunk. 
 
 ### B - Präambel: Fussnote einfügen
 
-1. Ergänze die Fussnote nach Daten `^[Daten wurde heruntergeladen von [insideairbnb.com](http://insideairbnb.com/get-the-data.html)]`
+1. Ergänze eine Fussnote nach dem Texteil 'verfügbarer Daten' `^[Daten wurde heruntergeladen von [insideairbnb.com](http://insideairbnb.com/get-the-data.html)]`
 
-2. Knitte Dokument - alles wie gewünscht?
+2. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
 ### C - Neueinstellungen: Plots
 
-Für beide Plots die Darstellung verbessern und Captions einfügen
+Für beide Grafiken wirst du nun die Darstellung verbessern und Captions einfügen
 
-1. Die aspect ratio des ersten Plots auf .5. setzen(`fig.asp = .5`).
+1. Setze die aspect ratio der ersten Grafik auf .5 (`fig.asp = .5`).
 
-2. `fig.cap = cap` im Chunk des ersten Plot einfügen.
+2. Füge `fig.cap = cap` im Chunk der ersten Grafik ein.
 
-3. Am Ende des Plot Chunks `cap = Abbildung 1. Neueinstellungen pro Monat.` einfügen.
+3. Am Ende des Grafik Chunks definiere den Text der Caption: `cap = Abbildung 1. Neueinstellungen pro Monat.`
 
-4. Für den zweiten Plot die aspect ratio auf .5 setzen und `fig.cap = cap` einfügen.
+4. Setze nun die aspect ratio für die zweite Grafik auf .5.
 
-5. Am Ende des zweiten Plot Chunks `cap = Abbildung 2. Neueinstellungen pro Bezirk.` einfügen.
+5. Am Ende des zweiten Grafik Chunks `cap = Abbildung 2. Neueinstellungen pro Bezirk.` einfügen.
 
-6. Knitte Dokument - alles wie gewünscht?
+6. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
 ### D - Preise: Neuer Texteil
 
-1. `Preis` als Level 3 Header einfügen
+1. Für einen neuen Abschnitt füge `Preis` als Level 3 Header ein.
 
-2. Text einfügen
+2. Nun den folgenden Text integrieren.
 
 ````wrap
 Der durchschnittliche Preis der Neueinstellungen beträgt 80.8 €. Im Vergleich zum Vorjahr sind die Preise der Neueinstellungen um 1.7% gestiegen.
 ````
 
-3. Den durchschnittlichen Preis aus dem `airbnb_1819` Datensatz mit inline code berechnen.
+3. In diesem Text werden die Zahlen nicht berechnet - füge inline Code für den durschschnittlichen Preis aus dem Datensatz `airbnb_1819` direkt im Text ein.
 
 ```{r echo = TRUE}
 round(mean(airbnb_1819 %>% pull(Preis)),1)
 ```
 
-4. Die prozentuelle Steigerung der Preise aus dem `airbnb_1819` Datensatz mit folgendem inline code berechnen und einsetzen.
+4. Wähle die gleiche Vorgangsweise für die prozentuelle Steigerung der Preise verwende folgenden Code für die Berechnung.
 
 ```{r echo = TRUE}
 m <- mean(airbnb_1819 %>% 
@@ -130,13 +132,13 @@ m <- mean(airbnb_1819 %>%
 round(m, 3) * 100 - 100
 ```
 
-5. Knitte Dokument - alles wie gewünscht?
+5. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
 ### E - Preise: Neuer Texteil
 
-1. `Einfluss Ausstattsung` als Level 4 Header einfügen
+1. Erstelle ein neues Unterkapitel mit der Überschrift: `Einfluss Ausstattsung` (als Level 4 Header).
 
-2. In einem eigenem Code Chunk berechnen wie sich Ausstattung auf die gemittelten Preise auswirkt. Diesen Chunk nicht augeben!
+2. Berechne als erster Schritt in einem eigenem Code Chunk wie sich die verschiednen Ausstattungsmerkmale (Küche, Wifi, ...) auf die durchschnittlichen Preise auswirken. Diesen Chunk nicht ausgeben!
 
 ```R
 # Vektor mit Ausstatttungsmerkmalen
@@ -158,55 +160,56 @@ ausstattung <- airbnb_1819 %>%
   arrange(desc(Differenz)) 
 ```
 
-3. Text einfügen
+3. Füge einen neuen Textteil ein
 
 ````wrap
 Das Austattungsmerkmal mit dem grössten Unterschied im Preis ist Check_in_24h (72.9), das Austattungsmerkmal mit dem kleinsten Unterschied im Preis ist Küche (-88.9).
 ````
 
-4. Variablename (und Wert in Klammer) der den grössten Unterschied im Preis ausmacht mit folgendem inline code berechnen und einsetzen.
+4. Auch hier wieder den Variablenamen und den numerischen Wert in Klammer (grösster Unterschied im Preis) mit folgendem inline code berechnen und einsetzen.
 ```{r echo = TRUE}
 ausstattung %>% pull(Ausstattung) %>% first()
 ausstattung %>% pull(Differenz) %>% first() %>% round(1)
 ```
 
-5. Variablename (und Wert in Klammer) der den kleinsten Unterschied im Preis ausmacht mit folgendem inline code berechnen und einsetzen.
+5. Variablename und numerischen Wert in Klammer (kleinster Unterschied im Preis) berechnen und einsetzen.
 ```{r echo = TRUE}
 ausstattung %>% pull(Ausstattung) %>% last()
 ausstattung %>% pull(Differenz) %>% last() %>% round(1)
 ```
 
-6. Text einfügen und mittels HTML Tag `<b>` fett hervorheben.
+6. Der folgenden Textabschnitt fasst die Ergebnisse der Tabelle zusammen und soll daher hervorgehoben werden. Kennzeichne den Textabschnitt mit dem HTML Tag `<b> ... </b>` und setze ihn damit in fetter Schriftart.
 
 ````wrap
 Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.
 ````
 
-7. Knitte Dokument - alles wie gewünscht?
+7. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
 ### F - Preis: Tabelle 1 erzeugen
 
-1. Neuen Code Chunk mit der Tabelle Ausstattung und `kable()` erstellen.
+1. Erstelle einen neuen Code Chunk mit einer Tabelle basierend auf `ausstattung`. Verwende dafür die `kable()` Funktion.
 
 ```R
 # Plotte Tabelle mit Austattungsmerkmalen
 ausstattung %>% kable(format = 'html')
 ```
 
-2. Anzahl Nachkommastellen mit `digits = 2` auf zwei beschränken.
+2. Beschrännke die Anzahl Nachkommastellen mit `digits = 2` auf zwei.
 
-3. Caption mit `caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'` einfügen.
+3. Füge eine Caption mit `caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'` ein.
 
-4. Die Namen der Spalten anpassen: `col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.')`
+4. Passe die Namen der Spalten an, inklusive neuer Zeilenumbrüche mit `<br>`: `col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.')`
 
-5. Spezielle Schriftzeichen direkt einfügen `escape = FALSE` 
+5. `Knitte` das Dokument. Die Spaltenbeschriftung wird nicht korrekt übersetzt. 
+Füge `escape = FALSE` um dieses Problem zu korrigieren. 
 
-6. Das Alginment der Zellen festlegen mit `align="lcccc"`
+6. Lege die Ausrichtung der Zellen mit `align="lcccc"` fest.
 
-7. Die Breite der Spalten fixieren mit `column_spec(c(2,3,4,5), width = "1.2in")`
+7. Nun fixiere die Breite der Spalten mit `column_spec(c(2,3,4,5), width = "1.2in")`.
 
-8. Die Schrifgrösse der Zellen in Abhängigkeit ihrer Grösse verändern. Dafür vor 
-dem `kable` Abschnitt folgenden Code einfügen und mit einer Pipe (%>%) verbinden.
+8. Die Schrifgrösse der Zellen soll in Abhängigkeit der Grösse der abgebildeten Zahl unterschiedlich sein. 
+Füge dafür vor dem `kable` Abschnitt folgenden Code ein und verbinde die beiden Teile mit einer Pipe `%>%`.
 
 ```R
 mutate_if(is.numeric, function(x) {
@@ -214,13 +217,13 @@ mutate_if(is.numeric, function(x) {
               font_size = spec_font_size(x, begin=10, end=16))})
 ```
 
-9. Knitte Dokument - alles wie gewünscht?
+9. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
 ### G - Preise: Text Teil
 
-1. `Regressionsmodell` als Level 4 Header einfügen
+1. Erstelle ein neues Unterkapitel mit der Überschrift: `Regressionsmodell` als Level 4 Header
 
-2. In einem eigenem Code Chunk eine Regression berechnen in der `Preis` mit verschiednen Ausstattungsmerkmalen vorhergesagt wird sowie mittleren Anteil der Hotels berechnen. Diesen Chunk nicht augeben!
+2. Berechne eine Regression in der `Preis` mit verschiednen Ausstattungsmerkmalen vorhergesagt wird sowie den  durchschnittlichen Anteil der Hotels. Diesen Chunk nicht augeben!
 
 ```R
 # Reduzierter Vektor mit Ausstattungsmerkmalen
@@ -238,7 +241,7 @@ hotel <- airbnb_1819 %>%
   summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel')))   
 ```
 
-3. Folgenden Textblock einfügen
+3. Füge folgenden Textblock ein.
 
 `````wrap
 Die Regression legt nahe, dass Küche, TV und Terrasse oder Balkon den grössten Einfluss auf den Preis in denletztene beiden Jahren hatten.
@@ -252,30 +255,30 @@ Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Ho
 Der Anteil von Hotels ist von -98.9% im Jahre 2018 auf 1.4% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht.
 `````
 
-4. Den Koeffizienten aus dem Regressionsmodell im 4. Absatz (Hotels haben einen um ... höheren Preis) mit folgendem inline code berechnen und einsetzen.
+4. Berechne den Koeffizienten aus dem Regressionsmodell im 4. Absatz (Hotels haben einen um ... höheren Preis) mit folgendem inline code und zeige das Ergebnis im Satz an.
 
 ```{r echo = TRUE}
 coefficients(ausstattung_mod)['HotelTRUE'] %>% round(1)
 ```
 
-5. Mittels HTML Tag `<b>` den 2. (`Überraschenderweise ...`) und 4. Absatz (`Der Anteil ...`) fett hervorheben.
+5. Hebe den 2. (`Überraschenderweise ...`) und 4. Absatz (`Der Anteil ...`) fett hervor.
 
-6. Knitte Dokument - alles wie gewünscht?
+6. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
 ### H - Preise: Regressionstabelle
 
-1. Die Regressionsergebnisse mit `sjPlot::tab_model` ausgeben
+1. Zeige die Regressionsergebnisse in einer Tablle mit `sjPlot::tab_model` an.
 
 ```R
 # Tabelle mit ergebnissen der Regression
 tab_model(ausstattung_mod)
 ```
 
-2. Intercept mit `Achsenabschnitt` in der Tabelle ersetzen `pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])`
+2. Ersetze `Intercept` mit `Achsenabschnitt` in der Tabelle: `pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])`
 
-3. Tabellentitel einfügen: `title = 'Table 2. Regression des Preises auf die Ausstattung.'`
+3. Füge einen neune Tabellentitel ein: `title = 'Table 2. Regression des Preises auf die Ausstattung.'`
 
-4. Knitte Dokument - alles wie gewünscht?
+4. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
 
 ## Datensatz
@@ -338,8 +341,8 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 
 | Funktion| Paket | Beschreibung |
 |:---|:------|:---------------------------------------------|
-| ``|``|  | 
-
+| `pull`|`dplyr`|Extrahieren eines Vektors| 
+| `pivot_longer`|`tidyr`|Extrahieren eines Vektors| 
 
 
 ## Materialien
