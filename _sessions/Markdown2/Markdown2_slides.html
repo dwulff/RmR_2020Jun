@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Markdown 2</title>
+    <title>Markdown II</title>
     <meta charset="utf-8" />
     <meta name="author" content="Reporting mit R   The R Bootcamp" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
@@ -12,7 +12,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Markdown 2
+# Markdown II
 ### Reporting mit R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp </a> <br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
 ### Juni 2020
 
@@ -48,7 +48,7 @@ layout: true
 # Was sind die Eigenschaften der Wohnungen?
 
 - Figure scaling (aspect ratio / dpi)
--Tabelle
+- Tabelle
  - Kable + crazy stuff (farbig?)
  - sjPlot
 
@@ -1530,7 +1530,7 @@ F-statistic: 80.1 on 5 and 5001 DF,  p-value: &lt;2e-16
 
 
 ```r
-sjPlot::tab_model(ausstattung_modell,
+sjPlot::tab_model(ausstattung_mod,
 title = 'Table 2. Regression der Ausstattung 
 auf den Preis.')
 ```
@@ -1652,7 +1652,7 @@ auf den Preis.&lt;/caption&gt;
 &lt;br&gt;
 
 ```r
-sjPlot::tab_model(ausstattung_modell,
+sjPlot::tab_model(ausstattung_mod,
 title = 'Table 2. Regression der Ausstattung 
 auf den Preis.',
 pred.labels = c('Achsenabschnitt', 
@@ -1782,6 +1782,7 @@ CSS = list(css.caption = "font-weight:500",
                       margin-right: 0px;
                       margin-left: auto;"))
 ```
+
 &lt;table style="width: auto; margin-right: 0px;margin-left: auto;"&gt;
 &lt;caption style="font-weight:500"&gt;Table 2. Regression des Preises auf die Ausstattung.&lt;/caption&gt;
 &lt;tr&gt;

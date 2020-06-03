@@ -1,5 +1,5 @@
 ---
-title: "Markdown 2"
+title: "Markdown II"
 author: "Reporting mit R<br>
   <a href='https://therbootcamp.github.io'>
     The R Bootcamp
@@ -1098,7 +1098,7 @@ ausstattung <- airbnb_1819 %>%
   mutate(Hotel = Unterkunftsart %in% c('Boutique hotel','Hotel')) %>% 
   select(Preis, Hotel, Küche, TV, Terrasse_Balkon, Check_in_24h)
 
-ausstattung_modell <- lm(Preis ~ ., data = ausstattung)
+ausstattung_mod <- lm(Preis ~ ., data = ausstattung)
 summary(ausstattung_mod)
 ```
 ]
@@ -1158,7 +1158,7 @@ summary(ausstattung_mod)
 .pull-right5[
 
 ```{r echo = TRUE}
-sjPlot::tab_model(ausstattung_modell,
+sjPlot::tab_model(ausstattung_mod,
 title = 'Table 2. Regression der Ausstattung 
 auf den Preis.')
 ```
@@ -1219,7 +1219,7 @@ auf den Preis.')
 .pull-right5[
 <br>
 ```{r echo = TRUE}
-sjPlot::tab_model(ausstattung_modell,
+sjPlot::tab_model(ausstattung_mod,
 title = 'Table 2. Regression der Ausstattung 
 auf den Preis.',
 pred.labels = c('Achsenabschnitt', 
@@ -1288,6 +1288,7 @@ CSS = list(css.caption = "font-weight:500",
                       margin-right: 0px;
                       margin-left: auto;"))
 ```
+
 ```{r}
 sjPlot::tab_model(ausstattung_mod,
                   pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
