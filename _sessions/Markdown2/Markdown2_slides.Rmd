@@ -458,48 +458,180 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 ---
 
-# Tabellen
-
 .pull-left4[
 
-Die Standardausgabe eines Dataframes ist gut für die Konsole geeignet, aber weniger schön für einen Bericht.
+# Deskriptive Tabellen
 
-Hier berechnen wir für jedes Ausstattungsmerkmal (vorhanden / nicht vorahnden) den Mittelwert des Preises.
+<ul>
+  <li class="m1"><span>.</span></li> 
+  <li class="m2"><span>.</span></li> 
+</ul>
+
+
 ]
 
 .pull-right5[
-
-```{r message = F, echo = F}
-Ausstattung_var = c('Küche','Wifi','TV','Kaffeemaschine','Geschirrspüler','Terrasse_Balkon','Check_in_24h')
-
-Ausstattung <- airbnb_1819 %>% 
-  select(all_of(Ausstattung_var), Preis) %>%
-  pivot_longer(-Preis,
-             names_to = 'Ausstattung',
-             values_to = 'Ausstattung_vorhanden') %>% 
-  group_by(Ausstattung) %>% 
-  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
-            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
-            Differenz = Vorhanden - Nicht_vorhanden, 
-            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %>% 
-  arrange(desc(Differenz)) 
-```
-
-```{r}
-airbnb_1819 %>% 
-  select(all_of(Ausstattung_var), Preis) %>%
-  pivot_longer(-Preis,
-             names_to = 'Ausstattung',
-             values_to = 'Ausstattung_vorhanden') %>% 
-  group_by(Ausstattung) %>% 
-  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
-            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
-            Differenz = Vorhanden - Nicht_vorhanden, 
-            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %>% 
-  arrange(desc(Differenz)) 
-```
+<br>
+<p align = "center">
+  <img src="image/atab_1.png" height=520px>
+</p>
 
 ]
+
+---
+
+.pull-left4[
+
+# Deskriptive Tabellen
+
+<ul>
+  <li class="m1"><span>.</span></li> 
+  <li class="m2"><span>.</span></li> 
+</ul>
+
+
+]
+
+.pull-right5[
+<br>
+<p align = "center">
+  <img src="image/atab_2.png" height=520px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Deskriptive Tabellen
+
+<ul>
+  <li class="m1"><span>.</span></li> 
+  <li class="m2"><span>.</span></li> 
+</ul>
+
+
+]
+
+.pull-right5[
+<br>
+<p align = "center">
+  <img src="image/atab_3.png" height=520px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Deskriptive Tabellen
+
+<ul>
+  <li class="m1"><span>.</span></li> 
+  <li class="m2"><span>.</span></li> 
+</ul>
+
+
+]
+
+.pull-right5[
+<br>
+<p align = "center">
+  <img src="image/atab_4.png" height=520px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Deskriptive Tabellen
+
+<ul>
+  <li class="m1"><span>.</span></li> 
+  <li class="m2"><span>.</span></li> 
+</ul>
+
+
+]
+
+.pull-right5[
+<br>
+<p align = "center">
+  <img src="image/atab_5.png" height=520px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Deskriptive Tabellen
+
+<ul>
+  <li class="m1"><span>.</span></li> 
+  <li class="m2"><span>.</span></li> 
+</ul>
+
+
+]
+
+.pull-right5[
+<br>
+<p align = "center">
+  <img src="image/atab_6.png" height=520px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Deskriptive Tabellen
+
+<ul>
+  <li class="m1"><span>.</span></li> 
+  <li class="m2"><span>.</span></li> 
+</ul>
+
+
+]
+
+.pull-right5[
+<br>
+<p align = "center">
+  <img src="image/atab_7.png" height=520px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Deskriptive Tabellen
+
+<ul>
+  <li class="m1"><span>.</span></li> 
+  <li class="m2"><span>.</span></li> 
+</ul>
+
+
+]
+
+.pull-right5[
+<br>
+<p align = "center">
+  <img src="image/atab_8.png" height=520px>
+</p>
+
+]
+
 
 ---
 
@@ -565,531 +697,6 @@ airbnb_1819 %>%
 
 
 ```{r kable_format, echo = TRUE}
-Ausstattung %>% kable(format = 'html')
-```
-
-]
-
----
-
-# Tabellen
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Der Befehl <mono>kable()</mono> hilft bei der  
-  <high>Gestaltung</high> von <high>HTML Tabellen</high></span></li> 
-  <li class="m2"><span><mono>kable()</mono> erwartet eine <high>Matrize</high> oder <high>Tabelle</high> als Eingabe</span></li> 
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Funktion</b>
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>format</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Ausgabeformat</high> (<mono>'html', 'markdown', 'latex')</mono>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>col.names</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Spaltennamen</high> mit Vektor bestimmen   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>escape</mono> 
-  </td>
-  <td bgcolor="white">
-  Ignoriert <high>spezielle Zeichen</high> wie \ oder $ 
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>align</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Ausrichtung</high> der Spalten (<mono>'(c)enter'</mono>, <mono>'(l)eft'</mono>, <mono>'(r)ight'</mono>)
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-
-```{r kable_col, echo = TRUE}
-Ausstattung %>% kable(format = 'html',
-col.names = c('', 'Preis<br>Nicht-vorh.', 
-              'Preis<br>vorh.','Differenz',
-              'Prozent<br>vorh.'))
-```
-
-]
-
----
-
-# Tabellen
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Der Befehl <mono>kable()</mono> hilft bei der  
-  <high>Gestaltung</high> von <high>HTML Tabellen</high></span></li> 
-  <li class="m2"><span><mono>kable()</mono> erwartet eine <high>Matrize</high> oder <high>Tabelle</high> als Eingabe</span></li> 
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Funktion</b>
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>format</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Ausgabeformat</high> (<mono>'html', 'markdown', 'latex')</mono>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>col.names</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Spaltennamen</high> mit Vektor bestimmen   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>escape</mono> 
-  </td>
-  <td bgcolor="white">
-  Ignoriert <high>spezielle Zeichen</high> wie \ oder $ 
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>align</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Ausrichtung</high> der Spalten (<mono>'(c)enter'</mono>, <mono>'(l)eft'</mono>, <mono>'(r)ight'</mono>)
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-
-```{r kable_escape, echo = TRUE}
-Ausstattung %>% kable(format = 'html',
-col.names = c('', 'Preis<br>Nicht-vorh.', 
-              'Preis<br>vorh.','Differenz',
-              'Prozent<br>vorh.'),
-escape = FALSE)
-```
-
-]
-
----
-
-# Tabellen
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Der Befehl <mono>kable()</mono> hilft bei der  
-  <high>Gestaltung</high> von <high>HTML Tabellen</high></span></li> 
-  <li class="m2"><span><mono>kable()</mono> erwartet eine <high>Matrize</high> oder <high>Tabelle</high> als Eingabe</span></li> 
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Funktion</b>
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>format</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Ausgabeformat</high> (<mono>'html', 'markdown', 'latex')</mono>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>col.names</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Spaltennamen</high> mit Vektor bestimmen   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>escape</mono> 
-  </td>
-  <td bgcolor="white">
-  Ignoriert <high>spezielle Zeichen</high> wie \ oder $ 
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>align</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Ausrichtung</high> der Spalten (<mono>'(c)enter'</mono>, <mono>'(l)eft'</mono>, <mono>'(r)ight'</mono>)
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-
-```{r kable_align, echo = TRUE}
-Ausstattung %>% kable(format = 'html',
-col.names = c('', 'Preis<br>Nicht-vorh.', 
-              'Preis<br>vorh.','Differenz',
-              'Prozent<br>vorh.'),
-escape = FALSE, align = 'lcccc')
-```
-
-]
-
----
-
-# Tabellen
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Zur <high>Verfeinerung</high> der Formatierung gibt es zusätzlicher Befehle</span></li>
-  <li class="m2"><span><mono>cell_spec</mono> und <mono>column_spec</mono> werden vor- bzw nachgeschalten</span> </li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Funktion</b>
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>caption</mono>
-  </td>
-  <td bgcolor="white">Einfügen eines <high>Grafiktitels</high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>digits</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Anzahl</high> Nachkommastellen   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>cell_spec</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Zellformatierung</high> gestalten (<mono>font_size</mono>)
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>column_spec</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Spaltenformatierung</high> gestalten (<mono>background</mono>)
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-
-```{r echo = TRUE, eval = FALSE}
-...
-caption = 'Tabelle 1. Ausstattung und 
-Einfluss auf den Preis')
-```
-
-```{r kable_caption, echo = FALSE, eval = TRUE}
-Ausstattung %>% kable(format = 'html',
-col.names = c('', 'Preis<br>Nicht-vorh.', 
-              'Preis<br>vorh.','Differenz',
-              'Prozent<br>vorh.'),
-escape = FALSE, align = 'lcccc',
-caption = 'Tabelle 1. Ausstattung und Einfluss auf den Preis')
-```
-
-]
-
----
-
-# Tabellen
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Zur <high>Verfeinerung</high> der Formatierung gibt es zusätzlicher Befehle</span></li>
-  <li class="m2"><span><mono>cell_spec</mono> und <mono>column_spec</mono> werden vor- bzw nachgeschalten</span> </li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Funktion</b>
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>caption</mono>
-  </td>
-  <td bgcolor="white">Einfügen eines <high>Grafiktitels</high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>digits</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Anzahl</high> Nachkommastellen   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>cell_spec</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Zellformatierung</high> gestalten (<mono>font_size</mono>)
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>column_spec</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Spaltenformatierung</high> gestalten (<mono>background</mono>)
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-
-```{r echo = TRUE, eval = FALSE}
-...
-caption = 'Tabelle 1. Ausstattung und 
-Einfluss auf den Preis'),
-digits = 1
-```
-
-```{r kable_digits, echo = FALSE, eval = TRUE}
-Ausstattung %>% kable(format = 'html',
-col.names = c('', 'Preis<br>Nicht-vorh.', 
-              'Preis<br>vorh.','Differenz',
-              'Prozent<br>vorh.'),
-escape = FALSE, align = 'lcccc',
-caption = 'Tabelle 1. Ausstattung und Einfluss auf den Preis',
-digits = 1) 
-```
-
-]
-
-
----
-
-# Tabellen
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>Zur <high>Verfeinerung</high> der Formatierung gibt es zusätzlicher Befehle</span></li>
-  <li class="m2"><span><mono>cell_spec</mono> und <mono>column_spec</mono> werden vor- bzw nachgeschalten</span> </li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Funktion</b>
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>caption</mono>
-  </td>
-  <td bgcolor="white">Einfügen eines <high>Grafiktitels</high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>digits</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Anzahl</high> Nachkommastellen   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>cell_spec</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Zellformatierung</high> gestalten (<mono>font_size</mono>)
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>column_spec</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Spaltenformatierung</high> gestalten (<mono>background</mono>)
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-```{r echo = TRUE, eval = FALSE}
-Ausstattung %>% 
-mutate_if(is.numeric, function(x) {
-cell_spec(round(x,1), bold = T, 
-font_size = spec_font_size(x, 
-            begin=10, end=16))}) %>% ...
-```
-
-
-```{r kable_cell, echo = FALSE, eval = TRUE}
-Ausstattung %>%
-mutate_if(is.numeric, function(x) {
-      cell_spec(round(x,1), bold = T, 
-      font_size = spec_font_size(x, 
-      begin=10, end=16))})%>%
-kable(format = 'html',
-col.names = c('', 'Preis<br>Nicht-vorh.', 
-              'Preis<br>vorh.','Differenz',
-              'Prozent<br>vorh.'),
-escape = FALSE, align = 'lcccc',
-caption = 'Tabelle 1. Ausstattung und Einfluss auf den Preis',
-digits = 1)
-```
-
-]
----
-
-# Tabellen
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Zur <high>Verfeinerung</high> der Formatierung gibt es zusätzlicher Befehle</span></li>
-  <li class="m2"><span><mono>cell_spec</mono> und <mono>column_spec</mono> werden vor- bzw nachgeschalten</span> </li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Funktion</b>
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>caption</mono>
-  </td>
-  <td bgcolor="white">Einfügen eines <high>Grafiktitels</high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>digits</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Anzahl</high> Nachkommastellen   
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>cell_spec</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Zellformatierung</high> gestalten (<mono>font_size</mono>)
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>column_spec</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Spaltenformatierung</high> gestalten (<mono>background</mono>)
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-
-```{r echo = TRUE, eval = FALSE}
-... %>%
-column_spec(c(4), background = '#6BB7B9'))
-```
-
-```{r kable_padding, echo = FALSE, eval = TRUE}
-Ausstattung %>% 
-  mutate_if(is.numeric, function(x) {
-      cell_spec(round(x,1), bold = T, 
-      font_size = spec_font_size(x, 
-      begin=10, end=16))})%>%
-  kable(format = 'html',
-col.names = c('', 'Preis<br>Nicht-vorh.', 
-              'Preis<br>vorh.','Differenz',
-              'Prozent<br>vorh.'),
-escape = FALSE, align = 'lcccc',
-caption = 'Tabelle 1. Ausstattung und Einfluss auf den Preis',
-digits = 1) %>%
-column_spec(c(4), background = '#6BB7B9')
 ```
 
 ]

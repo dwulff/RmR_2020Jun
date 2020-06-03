@@ -8,6 +8,8 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 8, fig.height = 8)
 
 library(tidyverse)
 library(lubridate)
+library(knitr)
+library(kableExtra)
 
 # load data
 airbnb_1819 <- read_csv('1_Data/airbnb.csv') %>% 
@@ -32,19 +34,22 @@ ausstattung <- airbnb_1819 %>%
             Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %>% 
   arrange(desc(Differenz)) 
 
-ausstattung %>% 
-  mutate_if(is.numeric, function(x) {
-    cell_spec(round(x,1), bold = T, 
-              font_size = spec_font_size(x, begin=10, end=16))}) %>%
-  kable(digits = 2,
-        format='html', 
-        caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis', 
-        col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.'),
-        escape = FALSE,
-        align="lcccc",
-        padding = 0) %>% 
-  column_spec(c(2,3,4,5), width = "1.2in") 
+# ausstattung %>% 
+#   mutate_if(is.numeric, function(x) {
+#     cell_spec(x, bold = T, 
+#               font_size = spec_font_size(x, begin=10, end=16))}) %>%
+#   kable(digits = 2,
+#         format='html', 
+#         caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis', 
+#         col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.'),
+#         escape = FALSE,
+#         align="lcccc",
+#         padding = 0) %>% 
+#   column_spec(c(2,3,4,5), width = "1.2in") 
 
+name_vec = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.')
+
+caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'
 ```
 
 
@@ -64,26 +69,31 @@ ausstattung %>%
 
 ## Überschrift
 
-Text vor der Abbildung.
+Text vor der Tabelle.
 
 <div class="chunk" width=100%>
-&grave;&grave;&grave;{r fig.asp = .5, dpi = 300, fig.cap = cap}<br>
-ggplot<br>
-cap <- "Abbildung 1. Neueinstellungen pro Monat."<br>
+&grave;&grave;&grave;{r}<br>
+ausstattung %>% mutate_if(is.numeric, function(x) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cell_spec(round(x, 2), bold = T,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;font_size = spec_font_size(x, begin=10, end=16))}) %>% <br>
+&nbsp;&nbsp;&nbsp;&nbsp;kable(...)<br>
 &grave;&grave;&grave;
 </div>
 
-
-```{r echo = FALSE, fig.asp = .52, dpi=300, fig.cap = cap}
-airbnb_plot 
-cap <- "Abbildung 1. Neueinstellungen pro Monat."
+```{r echo = FALSE}
+ausstattung %>% 
+  mutate_if(is.numeric, function(x) {
+     cell_spec(round(x,2), bold = T, 
+               font_size = spec_font_size(x, begin=10, end=16))}) %>% 
+  kable("html", digit = 2,
+                      col.names = name_vec, escape = FALSE,
+                      align="lcccc",caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis') %>% 
+column_spec(c(2,3,4,5), width = "1.2in") 
 ```
 
-Text nach der Abbildung.
+<br>Text nach der Tabelle
 
-
-
-
+#####################################################################################################################
 
 
 
