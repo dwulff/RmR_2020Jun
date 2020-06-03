@@ -194,6 +194,11 @@ summary {
 </div>
 
 
+<style>
+pre code,  .md:not(.use-csslab) pre code {
+  white-space: pre-wrap;
+  }
+</style>
 <p align="center" width="100%">
 <img src="image/dashboard_comic2.png" alt="Trulli" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://dilbert.com/">https://dilbert.com/</a></font>
 </p>
@@ -300,24 +305,15 @@ valueBox(XXX, caption = &quot;XXX&quot;)</code></pre>
 <li><p>Fast geschafft; der Titel ist noch etwas zu klein. Um das zu fixen, ersetze <code>"Superhost"</code> im <code>caption</code> Argument mit <code>"&lt;h3 style='color: white;'&gt;Superhost&lt;/h3&gt;"</code>. Damit passt nun alles. Um die anderen beiden value Boxen kümmern wir uns später.</p></li>
 <li><p>So, das war es für den Moment für diese Seite; die interaktiven Grafiken erstellen wir weiter unten. Gehe im Code zur zweiten Seite. Dort werden wir den Text erstellen.</p></li>
 <li><p>Schaue dir den Text in der rechten Spalte des <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html">Dashboards</a> an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen (du darfst copy-pasten um nicht alles abschreiben zu müssen).</p></li>
-<li><p>Du kannst deinen Text mit dem untenstehenden Text, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen (<strong>Hinweis:</strong> Die einfachen Zeilenumbrüche sind nur eingefügt, um alles ohne seitwärts scrollen zu müssen anzeigen zu können). Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?</p></li>
+<li><p>Du kannst deinen Text mit dem untenstehenden Text, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen. Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?</p></li>
 </ol>
-<pre class="markdown"><code>**Airbnbs in Berlin**
+<pre class="wrap"><code>**Airbnbs in Berlin**
 
-Das erste Airbnb in Berlin öffnete 2009 im Stadtteil
-[Pankow](https://de.wikipedia.org/wiki/Berlin-Pankow) 
-(siehe auch [Übersichtskarte](#page-1)). Von da an war ein 
-rascher Anstieg zu verzeichnen. Bereits 6 Jahre später gab 
-es in Berlin-Pankow alleine `r round(10**2.3)` Airbnbs. 
-Mittlerweile ist diese Zahl auf rund `r round(10**3.2 / 100) * 100` angestiegen.
+Das erste Airbnb in Berlin öffnete 2009 im Stadtteil [Pankow](https://de.wikipedia.org/wiki/Berlin-Pankow)  (siehe auch [Übersichtskarte](#page-1)). Von da an war ein  rascher Anstieg zu verzeichnen. Bereits 6 Jahre später gab  es in Berlin-Pankow alleine `r round(10**2.3)` Airbnbs.  Mittlerweile ist diese Zahl auf rund `r round(10**3.2 / 100) * 100` angestiegen.
 
-Das teuerste heute verfügbare Airbnb kostet dabei `r max(airbnb$Preis)` 
-pro Nacht; für die meisten Leute nicht gerade ein Schnäppchen. Dabei
-handelt es sich um ein `r airbnb$Unterkunftsart[max(airbnb$Preis)]` 
-im Stadtteil `r airbnb$Stadtteil[max(airbnb$Preis)]`.
+Das teuerste heute verfügbare Airbnb kostet dabei `r max(airbnb$Preis)` pro Nacht; für die meisten Leute nicht gerade ein Schnäppchen. Dabei handelt es sich um ein `r airbnb$Unterkunftsart[max(airbnb$Preis)]` im Stadtteil `r airbnb$Stadtteil[max(airbnb$Preis)]`.
 
-Insgesamt wurden über die Jahre in Berlin `r as.integer(sum(airbnb$Host_anzahl))`
-Gäste in Airbnbs empfangen.
+Insgesamt wurden über die Jahre in Berlin `r as.integer(sum(airbnb$Host_anzahl))` Gäste in Airbnbs empfangen.
 </code></pre>
 <ol start="12" style="list-style-type: decimal">
 <li><p>Das war es schon für diese Seite. Den Plot erstellen wir wiederum später. Gehe nun in deinem Dokument zur dritten Seite zum Titel “Gesamtrating” (Titel dritter Ordnung).</p></li>
