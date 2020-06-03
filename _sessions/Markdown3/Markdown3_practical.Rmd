@@ -57,7 +57,8 @@ library(tidyverse)
 
 ## Überblick
 
-In diesem Practical ...
+Aufbauend auf Practical 1 wirst du nun die Grafiken in deinem Dokument gestalten 
+und weitere Textbausteine einfügen.
 
 Am Ende des Practicals wirst du wissen wie man:
 
@@ -69,27 +70,39 @@ Am Ende des Practicals wirst du wissen wie man:
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R Projekt und öffne `airbnb_level_two.Rmd`, welches das fertige Produkt am Ende des zweiten Markdown Practicals enthält. 
+1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data`, `2_Assets`, und `3_Markdown` enthalten. 
 
-### B - YAML
+2. Lade die `airbnb_level_two.Rmd` Datei, das fertige Produkt am Ende des ersten Markdown Practicals. 
 
-1. ergänze toc. Knitten.
+### B - YAML header erweitern
 
-2. toc depth. Knitten.
+Definiere nun weitere, generelle Merkmale im YAML header 
 
-4. ergänze includes: in_header: ../2_Assets/header.Rhtml. Knitten.
+1. Füge mit `toc: true` ein Inhaltsverzeichnis ein. 
 
-5. ergänze theme: lusine
+2. Um alle Überschriften Levels anzuzeigen definiere die `toc_depth = 5`. 
+
+3. `Knitte` das Dokument. Wird der Abschnitt Neueinstellungen mit zwei Unterkapiteln Entwicklung und Stadteile angezeigt? 
+
+4. Füge jeweils auf einer neuen Zeile: `includes:` und dann `in_header: ../2_Assets/header.Rhtml` ein. Diese Befehle werden eine Vorlage für den header Hintergrund laden. 
+
+4. `Knitte` das Dokument. Hat sich die Anzeige des Titels und Untertitels verändert? Ist das AirBnB Logo zu sehen?
+
+5. Als letztes Gestaltungselement lade das `theme: lumen`  
+
+4. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
 ### C - Grafiken
 
-1. ergänze folgendes im setup
+Füge spezifische Einstellungen für alle Grafiken in deinem Dokument in diesem Schritt ein.
+
+1. Im `setup` Chunk setze das Theme der ggplot Grafiken auf `theme_minimal`
 
 ```R
 theme_set(theme_minimal())
 ```
 
-2. ergänze folgendes im setup
+2. Gleich darunter, im `setup` Chunk, stelle die Farbpaletten der ggplot Grafiken auf die AirBnB Farben ein.
 
 ```R
 ggplot <- function(...) ggplot2::ggplot(...) + 
@@ -97,7 +110,7 @@ ggplot <- function(...) ggplot2::ggplot(...) +
   scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
 ```
 
-3. 
+3. `Knitte` das Dokument. Hat sich der Hintergrund und die Farbpalette der Grafiken verändert?  
 
 ### D - CSS
 
