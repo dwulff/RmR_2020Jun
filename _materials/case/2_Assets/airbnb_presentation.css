@@ -1,0 +1,48 @@
+title {
+  color: #007D8C;
+  font-family:Helvetica 
+}
+
+h1 {
+  font-weight: 500;
+  color: #858585;
+  font-family:Helvetica
+}
+
+h2 {
+  font-weight: 500;
+  color: #858585;
+  font-family:Helvetica
+}
+
+a, a:hover {
+  color: #007D8C;
+}
+
+body {
+  font-family:Helvetica
+  color: #858585;
+}
+
+.title-slide hgroup h1 {
+  color: #007D8C;
+  font-family: Helvetica;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.title-slide hgroup h2 {
+    font-size: 34px;
+    font-family: Helvetica;
+    color: darkgrey;
+    font-weight: inherit;
+}
+
+
+aside.gdbar img {
+    width: 85px;
+    height: 80px;
+    position: absolute;
+    right: 0;
+    margin: 8px 15px;
+}
