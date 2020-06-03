@@ -3,17 +3,21 @@ title: "Markdown"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#### Überschrift
+## Überschrift
 
-Zwei plus zwei ergibt `r 2 + 2`.
+Dies ist ein ****Block**** mit Text.
 
-```{r, include = FALSE}
+```{r}
 summary(cars)
 ```
+
+
+
+
 
 
 

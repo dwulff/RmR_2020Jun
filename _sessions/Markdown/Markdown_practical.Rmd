@@ -74,7 +74,7 @@ In diesem Practical machst du deine ersten Schritte mit R Markdown.
 Am Ende des Practicals wirst du wissen wie man:
 
 1. Text ins Dokument einfügt.
-2. In-line Code im Text verwendet. 
+2. Inline Code im Text verwendet. 
 3. Chunks erstellen und einstellen. 
 
 ## Aufgaben
@@ -144,7 +144,7 @@ Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen
 ### Präambel
 ````
 
-2. Füge nun diesen Text ein. Er enthält einige Werte, die du gleich durch in-line Code ersetzen wirst.
+2. Füge nun diesen Text ein. Er enthält einige Werte, die du gleich durch inline Code ersetzen wirst.
 
 ````wrap
 Seit 02.01.2018 wurden in Berlin 5007 Airbnb Wohnungen eingestellt. Von diesen Wohnungn weisen aktuell 73% Verfügbarkeiten von durchschnittlich 47.5 Tagen für die nächsten 3 Monate auf.
@@ -152,13 +152,13 @@ Seit 02.01.2018 wurden in Berlin 5007 Airbnb Wohnungen eingestellt. Von diesen W
 Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt 3274 neue Wohnungen eingestellt wohingegend im Jahr 2018 nur 1733 Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von 89%.
 ````
 
-3. Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen in-line Code aus. Nicht vergessen, der Code muss innerhalb zweier Ticks gesetzt werden. Knitte das Dokument.  
+3. Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen inline Code aus. Nicht vergessen, der Code muss innerhalb zweier Ticks gesetzt werden. Knitte das Dokument.  
 
 ````text
 r min(airbnb_1819$Erstellungsdatum)
 ````
 
-4. Jetzt sollte der Text ein Datum enthalten, welches aber noch nicht ganz richtig formatiert ist. Hier hilft die `strftime()` Funktion. Versuche den folgenden erwarteten in-line Code um das Datum in das richtige Format zu bringen.   
+4. Jetzt sollte der Text ein Datum enthalten, welches aber noch nicht ganz richtig formatiert ist. Hier hilft die `strftime()` Funktion. Versuche den folgenden erwarteten inline Code um das Datum in das richtige Format zu bringen.   
 
 ````text
 r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")
@@ -167,9 +167,9 @@ r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")
 
 6. Ersetze nun Prozentsatz der Wohnungen durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)` und die durchschnittliche Verfügbarkeit durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)`. Jetzt sollten alle Zahlen des ersten Paragraphen durch Code ersetzt worden sein. Überprüfe ob alles stimmt. 
 
-7. Im nächsten Paragraphen ersetze die ersten beiden Zahlen durch `n_2019 <- sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` und `n_2018 <- sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018`. In diesen beiden Fällen siehst du, dass auch Zuweisungen in in-line Code möglich sind. 
+7. Im nächsten Paragraphen ersetze die ersten beiden Zahlen durch `n_2019 <- sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` und `n_2018 <- sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018`. In diesen beiden Fällen siehst du, dass auch Zuweisungen in inline Code möglich sind. 
 
-8. Ersetze nun die Zuwachsangabe am Ende des Paragraphen durch `(round(n_2019/n_2018, 2) - 1)*100`, was , wie du siehst, auf die beiden zuvor im in-line Code definierten Objekte zurückgreift. Knitte das Dokument und überprüfe, ob nun alle Zahlen einwandfrei wiedergegeben werden.
+8. Ersetze nun die Zuwachsangabe am Ende des Paragraphen durch `(round(n_2019/n_2018, 2) - 1)*100`, was , wie du siehst, auf die beiden zuvor im inline Code definierten Objekte zurückgreift. Knitte das Dokument und überprüfe, ob nun alle Zahlen einwandfrei wiedergegeben werden.
 
 9. Zuletzt verwende `**` um den gesamten zweiten Paragraphen Fett zu setzen. Setze hierfür einmal die zwei Sterne vor das erste und nach dem letzten Wort des Paragraphen. Nun alles wie im Zieldokument?
 
@@ -231,7 +231,7 @@ stadtteile <- airbnb_1819 %>%
 ```
 4. Erstze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()` und `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`. Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden. 
 
-5. Kreiere einen neuen Chunk zwischen den beiden Paragraphen mit dem folgenden Code, welcher einige Objekte erstellt, die die in-line Ergänzungen im darauf folgenden Paragraphen erleichtern werden.  
+5. Kreiere einen neuen Chunk zwischen den beiden Paragraphen mit dem folgenden Code, welcher einige Objekte erstellt, die die inline Ergänzungen im darauf folgenden Paragraphen erleichtern werden.  
 
 ```
 # Veränderung über die Stadtteile

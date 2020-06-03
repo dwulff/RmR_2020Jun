@@ -114,13 +114,14 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Verwendet Markdown zum <high>Gestalten dynamischer Dokumente</high> mit eingebetteten...</span></li> 
-  <ul><br>
+  <li class="m1"><span>Verwendet Markdown zum <high>Gestalten dynamischer Dokumente</high> mit eingebetteten...</span></li><br> 
+  <ul>
     <li><span>R code chunks</span></li>
-    <li><span>R in-line code</span></li>   
+    <li><span>R inline code</span></li>   
     <li><span>Statistischen Outputs</span></li>
     <li><span>Tabellen</span></li>
     <li><span>Visualisierungen</span></li>
+    <li><span>etc.</span></li>
   </ul>
 </ul>
 
@@ -141,7 +142,17 @@ basel <- read.csv("1_Data/basel.csv")
 
 # Arten des Berichts
 
-slides
+<ul>
+  <li class="m1"><span>RMarkdown ermöglicht Erstellung und Gestaltung unterschiedlichter <high>Berichttypen</high>.</span></li><br>
+  <ul>
+    <li><span>Dokumente</span></li>
+    <li><span>Präsentationen</span></li>   
+    <li><span>Dashboards (Cockpits)</span></li>
+    <li><span>Bücher</span></li>
+    <li><span>Webseiten</span></li>
+    <li><span>etc.</span></li>
+  </ul>
+</ul>
 
 ]
 
@@ -156,11 +167,90 @@ slides
 
 ---
 
+# R Markdown components
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>RMarkdown Skripte bestehen aus mehreren <high>Komponenten</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Komponente</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>YAML</mono>
+  </td>
+  <td bgcolor="white">
+  <b>Y</b>AML <b>A</b>in't <b>M</b>arkup <b>L</b>anguage<br><br>
+  <high>Dokumenteinstellungen</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>Setup chunk</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Chunks</high> einstellen<br>
+  <high>Pakete</high> laden<br>
+  <high>Daten</high> laden
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>Markdowm</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Überschriften</high><br>
+  <high>Text</high> mit Hervorhebungen
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>Code chunk</mono>
+  </td>
+  <td bgcolor="white">
+  R <high>Code</high><br>
+  R <high>Outputs<high>
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/markdown_templ.png" height=400px>
+</p>
+
+]
+
+---
+
 # Pipeline
 
 .pull-left4[
 
-slides
+<ul>
+  <li class="m1"><span>RMarkdown kann in verschiedene <high>Dateitypen</high> übersetzt werden.</span></li><br>
+    <ul>
+    <li><span>PDF</span></li>
+    <li><span>HTML</span></li>   
+    <li><span>Word</span></li>
+    <li><span>PowerPoint</span></li>
+  </ul><br>
+  <li class="m2"><span>Für die Übersetzung wird <high>RMarkdown mehrfach übersetzt</high>, was gewisse Einschränkungen mit sich bringt.</span></li><br>
+</ul>
 
 ]
 
@@ -174,11 +264,14 @@ slides
 
 ---
 
-# Pipeline
+# HTML Pipeline
 
 .pull-left4[
 
-slides
+<ul>
+  <li class="m1"><span>HTML ist der <high>universelle Framework</high> für Dokumente, Präsentationen, und v.a. Dashboards.</span></li>
+  <li class="m2"><span><high>Export zu PDF</high> ist, mit minimalen Einschränkungen, möglich.</span></li><br>
+</ul>
 
 ]
 
@@ -192,11 +285,37 @@ slides
 
 ---
 
-# R Markdown basics
+# HTML
 
 .pull-left3[
 
-slides
+<ul>
+  <li class="m1"><span><b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage.</span></li>
+  <li class="m2"><span>Das Format des <high>World Wide Webs</high>.</span></li>
+  <li class="m3"><span>Kann komfortabel durch <high>CSS</high> (Cascading Style Sheets) formartiert werden.</span></li>
+</ul>
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_templ_html.png">
+</p>
+
+]
+
+---
+
+# R Markdown
+
+.pull-left3[
+
+<ul>
+  <li class="m1"><span>HTML ist der <high>universelle Framework</high> für Dokumente, Präsentationen, und v.a. Dashboards.</span></li>
+  <li class="m2"><span><high>Export zu PDF</high> ist, mit minimalen Einschränkungen, möglich.</span></li><br>
+</ul>
 
 ]
 
@@ -211,11 +330,58 @@ slides
 
 ---
 
-# R Markdown basics
+# Überschriften
 
 .pull-left3[
 
-slides
+<ul>
+  <li class="m1"><span>Überschriften verschiedener <high>Ebenen</high> werden durch verschieden viele <mono>#</mono> ausgedrückt.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono># text</mono>
+  </td>
+  <td bgcolor="white">
+  Ebene 1
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## text</mono>
+  </td>
+  <td bgcolor="white">
+  Ebene 2
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>...</mono>
+  </td>
+  <td bgcolor="white">
+  ...
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>##### txt</mono>
+  </td>
+  <td bgcolor="white">
+  Ebene 5
+  </td> 
+</tr>
+</table>
 
 ]
 
@@ -228,14 +394,60 @@ slides
 
 ]
 
-
 ---
 
-# R Markdown basics
+# Überschriften
 
 .pull-left3[
 
-slides
+<ul>
+  <li class="m1"><span>Überschriften verschiedener <high>Ebenen</high> werden durch verschieden viele <mono>#</mono> ausgedrückt.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono># text</mono>
+  </td>
+  <td bgcolor="white">
+  Ebene 1
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## text</mono>
+  </td>
+  <td bgcolor="white">
+  Ebene 2
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>...</mono>
+  </td>
+  <td bgcolor="white">
+  ...
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>##### txt</mono>
+  </td>
+  <td bgcolor="white">
+  Ebene 5
+  </td> 
+</tr>
+</table>
 
 ]
 
@@ -250,11 +462,140 @@ slides
 
 ---
 
-# R Markdown basics
+# Hervorhebung
 
 .pull-left3[
 
-slides
+<ul>
+  <li class="m1"><span>Verschiedene Zeichen erlauben <high>text- und code-bezogene</high> Hervorhebungen.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
+  <col width="50%">
+  <col width="50%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &ast;<mono>text</mono>&ast;
+  </td>
+  <td bgcolor="white">
+  Kursiv
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &ast;&ast;<mono>text</mono>&ast;&ast;
+  </td>
+  <td bgcolor="white">
+  Fett
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &ast;&ast;&ast;<mono>text</mono>&ast;&ast;&ast;
+  </td>
+  <td bgcolor="white">
+  Kursiv und Fett 
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &grave;<mono>text</mono>&grave;
+  </td>
+  <td bgcolor="white">
+  Code
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &grave;<mono>r "text"</mono>&grave;
+  </td>
+  <td bgcolor="white">
+  inline Code
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_5.png">
+</p>
+
+]
+
+---
+
+# Hervorhebung
+
+.pull-left3[
+
+<ul>
+  <li class="m1"><span>Verschiedene Zeichen erlauben <high>text- und code-bezogene</high> Hervorhebungen.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
+  <col width="50%">
+  <col width="50%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &ast;<mono>text</mono>&ast;
+  </td>
+  <td bgcolor="white">
+  Kursiv
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &ast;&ast;<mono>text</mono>&ast;&ast;
+  </td>
+  <td bgcolor="white">
+  Fett
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &ast;&ast;&ast;<mono>text</mono>&ast;&ast;&ast;
+  </td>
+  <td bgcolor="white">
+  Kursiv und Fett 
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &grave;<mono>text</mono>&grave;
+  </td>
+  <td bgcolor="white">
+  Code
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &grave;<mono>r "text"</mono>&grave;
+  </td>
+  <td bgcolor="white">
+  inline Code
+  </td> 
+</tr>
+</table>
 
 ]
 
@@ -270,33 +611,69 @@ slides
 
 ---
 
-# R Markdown basics
+# Hervorhebung
 
 .pull-left3[
 
-slides
+<ul>
+  <li class="m1"><span>Verschiedene Zeichen erlauben <high>text- und code-bezogene</high> Hervorhebungen.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:20px" width=100%>
+  <col width="50%">
+  <col width="50%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &ast;<mono>text</mono>&ast;
+  </td>
+  <td bgcolor="white">
+  Kursiv
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &ast;&ast;<mono>text</mono>&ast;&ast;
+  </td>
+  <td bgcolor="white">
+  Fett
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &ast;&ast;&ast;<mono>text</mono>&ast;&ast;&ast;
+  </td>
+  <td bgcolor="white">
+  Kursiv und Fett 
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &grave;<mono>text</mono>&grave;
+  </td>
+  <td bgcolor="white">
+  Code
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  &grave;<mono>r "text"</mono>&grave;
+  </td>
+  <td bgcolor="white">
+  inline Code
+  </td> 
+</tr>
+</table>
 
 ]
 
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/markdown_trans_5.png">
-</p>
-
-]
-
-
----
-
-# R Markdown basics
-
-.pull-left3[
-
-slides
-
-]
 
 .pull-right6[
 
@@ -310,11 +687,14 @@ slides
 
 ---
 
-# R Markdown basics
+# Inline Code
 
 .pull-left3[
 
-slides
+<ul>
+  <li class="m1"><span><high>Zahlen und Wörter</high> im Text können durch inline Code parametrisiert werden.</span></li>
+  <li class="m2"><span>inline Code kann wie ein <high>Code <mono>chunks</mono></high> beliebigen R Code enthalten.</span></li>
+</ul>
 
 ]
 
@@ -327,14 +707,88 @@ slides
 
 ]
 
-
 ---
 
-# R Markdown basics
+# Chunks
 
 .pull-left3[
 
-slides
+<ul>
+  <li class="m1"><span><high>Zahlen und Wörter</high> im Text können durch inline Code parametrisiert werden.</span></li>
+  <li class="m2"><span>inline Code kann wie ein <high>Code <mono>chunks</mono></high> beliebigen R Code enthalten.</span></li>
+</ul>
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_8_0.png">
+</p>
+
+]
+
+---
+
+# Chunks
+
+.pull-left3[
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%>
+  <col width="60%">
+  <col width="40%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>echo=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Zeige/Verstecke <high>Code</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>eval=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Code</high> ausführen/nicht-ausf.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>include=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Inkludiere/exkludiere <high>allen Output</high> 
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>message=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Inkludiere/exkludiere <highm>messages</highm> im Output
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>warning=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Inkludiere/exkludiere <highm>warnings</highm> im Output
+  </td> 
+</tr>
+</table>
+
+<p align="center" style="font-size:12px;padding-top:10px"><mono>T/F = TRUE/FALSE</mono></p>
 
 ]
 
@@ -351,11 +805,64 @@ slides
 
 ---
 
-# R Markdown basics
+# Chunks
 
 .pull-left3[
 
-slides
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%>
+  <col width="60%">
+  <col width="40%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>echo=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Zeige/Verstecke <high>Code</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>eval=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Code</high> ausführen/nicht-ausf.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>include=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Inkludiere/exkludiere <high>allen Output</high> 
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>message=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Inkludiere/exkludiere <highm>messages</highm> im Output
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>warning=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Inkludiere/exkludiere <highm>warnings</highm> im Output
+  </td> 
+</tr>
+</table>
+
+<p align="center" style="font-size:12px;padding-top:10px"><mono>T/F = TRUE/FALSE</mono></p>
 
 ]
 
@@ -371,11 +878,64 @@ slides
 
 ---
 
-# R Markdown basics
+# Chunks
 
 .pull-left3[
 
-slides
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:60px" width=100%>
+  <col width="60%">
+  <col width="40%">
+<tr>
+  <td bgcolor="white">
+    <b>Markdown</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>echo=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Zeige/Verstecke <high>Code</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>eval=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  <high>Code</high> ausführen/nicht-ausf.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>include=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Inkludiere/exkludiere <high>allen Output</high> 
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>message=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Inkludiere/exkludiere <highm>messages</highm> im Output
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>warning=T/F</mono>
+  </td>
+  <td bgcolor="white">
+  Inkludiere/exkludiere <highm>warnings</highm> im Output
+  </td> 
+</tr>
+</table>
+
+<p align="center" style="font-size:12px;padding-top:10px"><mono>T/F = TRUE/FALSE</mono></p>
 
 ]
 
@@ -390,11 +950,14 @@ slides
 
 ---
 
-# Environment
+# Setup-Chunk
 
 .pull-left3[
 
-slides
+<ul>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high>.</span></li>
+  <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
+</ul>
 
 ]
 
@@ -402,7 +965,125 @@ slides
 
 <br>
 <p align = "center">
-  <img src="image/markdown_trans_10.png">
+  <img src="image/markdown_trans_11.png">
+</p>
+
+]
+
+---
+
+# Setup-Chunk
+
+.pull-left3[
+
+<ul>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high>.</span></li>
+  <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
+</ul>
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/markdown_trans_12.png">
+</p>
+
+]
+
+
+---
+
+# Setup-Chunk
+
+.pull-left3[
+
+<ul>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high>.</span></li>
+  <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
+</ul>
+
+]
+
+.pull-right6[
+
+
+<p align = "center">
+  <img src="image/markdown_trans_13.png">
+</p>
+
+]
+
+
+---
+
+# Setup-Chunk
+
+.pull-left3[
+
+<ul>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high>.</span></li>
+  <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
+</ul>
+
+]
+
+.pull-right6[
+
+
+<p align = "center">
+  <img src="image/markdown_trans_14.png">
+</p>
+
+]
+
+
+---
+
+# Setup-Chunk
+
+.pull-left3[
+
+<ul>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high>.</span></li>
+  <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
+</ul>
+
+]
+
+.pull-right6[
+
+<p align = "center">
+  <img src="image/markdown_trans_15.png" height=420px>
+</p>
+
+]
+
+
+---
+
+.pull-left4[
+
+
+# Ziel
+
+<ul>
+  <li class="m1"><span><high>Airbnb-Bericht</high> für Berlin in 2018 und 2019.</span></li>
+  <li class="m2"><span>Evaluiert</span></li>
+  <ul>
+    <li><span>Wohnungs-<high>Neuinstellungen</high> über die Zeit und Stadtteile.</span></li>
+    <li><span>Entwicklung der <high>Preise</high>.</span></li>
+    <li><span>Einfluss von <high>Ausstattungsmerkmalen</high> auf den Preis.</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right5[
+
+<p align = "center">
+  <img src="image/ziel.png" height=590px>
 </p>
 
 ]
