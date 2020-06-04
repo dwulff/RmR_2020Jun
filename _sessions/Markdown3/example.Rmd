@@ -1,0 +1,54 @@
+---
+output: 
+  html_document:
+    theme: lumen
+    toc: true
+    toc_depth: 4
+    includes:
+      in_header: header.Rhtml
+---
+
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 8, fig.height = 8)
+
+library(tidyverse)
+library(lubridate)
+
+# load data
+airbnb_1819 <- read_csv('1_Data/airbnb.csv') %>% 
+  filter(Erstellungsdatum > "2018-01-01", 
+         Erstellungsdatum < "2019-12-31")
+
+airbnb_plot <- ggplot(airbnb_1819 %>% 
+         group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
+         summarize(
+           Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
+           Wohnungen = n()), 
+       aes(x = Monat, y = Wohnungen)) + 
+  geom_bar(stat='identity', position='dodge') + 
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+# Überschrift 1
+
+Die ist ein Text Block.
+
+## Überschrift 2
+
+Die ist ein Text Block.
+
+#### Überschrift 4
+
+Die ist ein Text Block.
+
+
+
+
+
+
+
+
+
+
+
