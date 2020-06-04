@@ -93,8 +93,8 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 <ul>
   <li class="m1"><span>Abbildungen skalieren.</span></li>
-  <li class="m2"><span>Tabellen</span></li>
-  <li class="m3"><span>Fussnoten & Links</span></li>
+  <li class="m2"><span>Tabellen.</span></li>
+  <li class="m3"><span>Fussnoten & Links.</span></li>
 </ul>
 
 ]
@@ -134,7 +134,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>fig.width</mono>, <mono>fig.height</mono>
   </td>
   <td bgcolor="white">
-  <high>Breite</high> und <high>Höhe</high> in inches
+  <high>Breite</high> und <high>Höhe</high> in inches.
   </td> 
 </tr>
 <tr>
@@ -150,7 +150,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>fig.align</mono>
   </td>
   <td bgcolor="white">
-  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>
+  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>.
   </td> 
 </tr>
 <tr>
@@ -158,7 +158,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>dpi</mono> 
   </td>
   <td bgcolor="white">
-  <high>Auflösung</high> der Abbildung (dots per inch)
+  <high>Auflösung</high> der Abbildung (dots per inch).
   </td> 
 </tr>
 </table>
@@ -199,7 +199,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>fig.width</mono>, <mono>fig.height</mono>
   </td>
   <td bgcolor="white">
-  <high>Breite</high> und <high>Höhe</high> in inches
+  <high>Breite</high> und <high>Höhe</high> in inches.
   </td> 
 </tr>
 <tr>
@@ -215,7 +215,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>fig.align</mono>
   </td>
   <td bgcolor="white">
-  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>
+  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>.
   </td> 
 </tr>
 <tr>
@@ -223,7 +223,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>dpi</mono> 
   </td>
   <td bgcolor="white">
-  <high>Auflösung</high> der Abbildung (dots per inch)
+  <high>Auflösung</high> der Abbildung (dots per inch).
   </td> 
 </tr>
 </table>
@@ -264,7 +264,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>fig.width</mono>, <mono>fig.height</mono>
   </td>
   <td bgcolor="white">
-  <high>Breite</high> und <high>Höhe</high> in inches
+  <high>Breite</high> und <high>Höhe</high> in inches.
   </td> 
 </tr>
 <tr>
@@ -280,7 +280,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>fig.align</mono>
   </td>
   <td bgcolor="white">
-  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>
+  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>.
   </td> 
 </tr>
 <tr>
@@ -288,7 +288,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>dpi</mono> 
   </td>
   <td bgcolor="white">
-  <high>Auflösung</high> der Abbildung (dots per inch)
+  <high>Auflösung</high> der Abbildung (dots per inch).
   </td> 
 </tr>
 </table>
@@ -329,7 +329,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>fig.width</mono>, <mono>fig.height</mono>
   </td>
   <td bgcolor="white">
-  <high>Breite</high> und <high>Höhe</high> in inches
+  <high>Breite</high> und <high>Höhe</high> in inches.
   </td> 
 </tr>
 <tr>
@@ -345,7 +345,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>fig.align</mono>
   </td>
   <td bgcolor="white">
-  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>
+  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>.
   </td> 
 </tr>
 <tr>
@@ -353,7 +353,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>dpi</mono> 
   </td>
   <td bgcolor="white">
-  <high>Auflösung</high> der Abbildung (dots per inch)
+  <high>Auflösung</high> der Abbildung (dots per inch).
   </td> 
 </tr>
 </table>
@@ -394,7 +394,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>fig.width</mono>, <mono>fig.height</mono>
   </td>
   <td bgcolor="white">
-  <high>Breite</high> und <high>Höhe</high> in inches
+  <high>Breite</high> und <high>Höhe</high> in inches.
   </td> 
 </tr>
 <tr>
@@ -410,7 +410,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>fig.align</mono>
   </td>
   <td bgcolor="white">
-  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>
+  <high>Position</high> der Abbildung: <mono>'center'</mono>, <mono>'left'</mono>, <mono>'right'</mono>.
   </td> 
 </tr>
 <tr>
@@ -418,7 +418,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>dpi</mono> 
   </td>
   <td bgcolor="white">
-  <high>Auflösung</high> der Abbildung (dots per inch)
+  <high>Auflösung</high> der Abbildung (dots per inch).
   </td> 
 </tr>
 </table>
@@ -1039,7 +1039,6 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 </p>
 
 ]
-
 ---
 
 .pull-left4[
@@ -1047,8 +1046,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Statistische Modelle
 
 <ul>
-  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span>
- </li>
+  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -1067,7 +1065,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>pred.labels</mono> 
   </td>
   <td bgcolor="white">
-  <high>Namen</high> der Prädiktoren anpassen</td>.
+  <high>Namen</high> der Prädiktoren anpassen.</td>.
 </tr>
 <tr>
   <td bgcolor="white">
@@ -1107,7 +1105,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
  </li>
 </ul>
 
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px; width=100%">
   <col width="40%">
   <col width="60%">
 <tr>
@@ -1123,7 +1121,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>pred.labels</mono> 
   </td>
   <td bgcolor="white">
-  <high>Namen</high> der Prädiktoren anpassen</td>.
+  <high>Namen</high> der Prädiktoren anpassen.</td>.
 </tr>
 <tr>
   <td bgcolor="white">
@@ -1159,11 +1157,10 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Statistische Modelle
 
 <ul>
-  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span>
- </li>
+  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span></li>
 </ul>
 
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px; width=100%">
   <col width="40%">
   <col width="60%">
 <tr>
@@ -1179,7 +1176,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>pred.labels</mono> 
   </td>
   <td bgcolor="white">
-  <high>Namen</high> der Prädiktoren anpassen</td>.
+  <high>Namen</high> der Prädiktoren anpassen.</td>.
 </tr>
 <tr>
   <td bgcolor="white">
@@ -1275,5 +1272,5 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/_Markdown2/Markdown2_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown2/Markdown2_practical.html">Practical</a></h1>
 
