@@ -21,7 +21,7 @@ a, a:hover {
 
 body {
   font-family:Helvetica
-  color: #858585;
+  color:#858585;
 }
 
 .title-slide hgroup h1 {
@@ -38,11 +38,13 @@ body {
     font-weight: inherit;
 }
 
+.gdbar img {
+  width: 200px !important;
+  height: 150px !important;
+  margin: 8px 8px;
+}
 
-aside.gdbar img {
-    width: 85px;
-    height: 80px;
-    position: absolute;
-    right: 0;
-    margin: 8px 15px;
+.gdbar {
+  width: 400px !important;
+  height: 170px !important;
 }
