@@ -441,7 +441,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 <ul>
   <li class="m1"><span>Bildunterschriften können durch <highm>fig.cap</highm> gesetzt.</span></li> 
-  <li class="m2"><span>Der Text kann <high>innheralb des Chunks</high> definiert werden.</span></li> 
+  <li class="m2"><span>Der Text kann <high>innerhalb des Chunks</high> definiert werden.</span></li> 
 </ul>
 
 
@@ -506,7 +506,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>escape</mono> 
   </td>
   <td bgcolor="white">
-  Spaltenamen <b>nicht</b> als HTML interpretieren.
+  Spaltennamen <b>nicht</b> als HTML interpretieren.
   </td> 
 </tr>
 <tr>
@@ -588,7 +588,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>escape</mono> 
   </td>
   <td bgcolor="white">
-  Spaltenamen <b>nicht</b> als HTML interpretieren.
+  Spaltnenamen <b>nicht</b> als HTML interpretieren.
   </td> 
 </tr>
 <tr>
@@ -670,7 +670,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>escape</mono> 
   </td>
   <td bgcolor="white">
-  Spaltenamen <b>nicht</b> als HTML interpretieren.
+  Spaltennamen <b>nicht</b> als HTML interpretieren.
   </td> 
 </tr>
 <tr>
@@ -752,7 +752,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>escape</mono> 
   </td>
   <td bgcolor="white">
-  Spaltenamen <b>nicht</b> als HTML interpretieren.
+  Spaltennamen <b>nicht</b> als HTML interpretieren.
   </td> 
 </tr>
 <tr>
@@ -834,7 +834,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>escape</mono> 
   </td>
   <td bgcolor="white">
-  Spaltenamen <b>nicht</b> als HTML interpretieren.
+  Spaltennamen <b>nicht</b> als HTML interpretieren.
   </td> 
 </tr>
 <tr>
@@ -889,7 +889,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>colum_spec</mono>
+  <mono>column_spec</mono>
   </td>
   <td bgcolor="white">
   Formatierung der Spalten, e.g., <mono>width</mono>.
@@ -1072,7 +1072,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>title</mono>
   </td>
   <td bgcolor="white">
-  Tabllenüberschrift.
+  Tabellenüberschrift.
   </td> 
 </tr>
 <tr>
@@ -1128,7 +1128,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>title</mono>
   </td>
   <td bgcolor="white">
-  Tabllenüberschrift.
+  Tabellenüberschrift.
   </td> 
 </tr>
 <tr>
@@ -1183,7 +1183,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>title</mono>
   </td>
   <td bgcolor="white">
-  Tabllenüberschrift.
+  Tabellenüberschrift.
   </td> 
 </tr>
 <tr>
