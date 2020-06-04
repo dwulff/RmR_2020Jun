@@ -160,8 +160,7 @@ theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
              text = element_text(size=19))
 ```
 
-
-4. ggplot color
+4. Für die `ggplot` Grafiken wirst du nun noch die Farben an die AirBnB Palette anpassen.
 
 ```R
 # Setze defaults in ggplot
@@ -170,10 +169,7 @@ ggplot <- function(...) ggplot2::ggplot(...) +
   scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
 ```
 
-
-5. knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
-
-### D - First couple of slides
+### D - Nun gehts an die Slides
 
 1. new zwischenslide `# wekfj`
 
