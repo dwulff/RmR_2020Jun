@@ -112,28 +112,63 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ---
 
-.pull-left3[
+.pull-left4[
 
 # YAML
 
 <ul>
-  <li class="m1"><span>YAML</span></li>
-  <ul><br>
-    <li><span>Header</span></li>
-    <li><span>Inhaltsverzeichnis</span></li>
-    <li><span>Themes</span></li>
-  </ul><br>
-  <li class="m2"><span>Styling</span></li>
-  <ul><br>
-    <li><span>Grafiken</span></li>
-    <li><span>CSS</span></li>
-    <li><span>Columns</span></li>
-  </ul>
+  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
+  <li class="m2"><span>Erlaubt die Definition der <high>Eigenschaften des Dokuments</high> einschliesslich Inklusionen.<span></li>
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc</mono> 
+  </td>
+  <td bgcolor="white">
+  <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc_depth</mono> 
+  </td>
+  <td bgcolor="white">
+  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>theme</mono> 
+  </td>
+  <td bgcolor="white">
+  Eigenschaften des Textbilds.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>includes</mono> 
+  </td>
+  <td bgcolor="white">
+  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  </td> 
+</tr>
+</table>
 
 ]
 
-.pull-right6[
+.pull-right5[
 
 <br>
 <p align = "center">
@@ -145,28 +180,63 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ---
 
-.pull-left3[
+.pull-left4[
 
 # YAML
 
 <ul>
-  <li class="m1"><span>YAML</span></li>
-  <ul><br>
-    <li><span>Header</span></li>
-    <li><span>Inhaltsverzeichnis</span></li>
-    <li><span>Themes</span></li>
-  </ul><br>
-  <li class="m2"><span>Styling</span></li>
-  <ul><br>
-    <li><span>Grafiken</span></li>
-    <li><span>CSS</span></li>
-    <li><span>Columns</span></li>
-  </ul>
+  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
+  <li class="m2"><span>Erlaubt die Definition der <high>Eigenschaften des Dokuments</high> einschliesslich Inklusionen.<span></li>
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc</mono> 
+  </td>
+  <td bgcolor="white">
+  <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc_depth</mono> 
+  </td>
+  <td bgcolor="white">
+  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>theme</mono> 
+  </td>
+  <td bgcolor="white">
+  Eigenschaften des Textbilds.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>includes</mono> 
+  </td>
+  <td bgcolor="white">
+  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  </td> 
+</tr>
+</table>
 
 ]
 
-.pull-right6[
+.pull-right5[
 
 <br>
 <p align = "center">
@@ -177,28 +247,63 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ---
 
-.pull-left3[
+.pull-left4[
 
 # YAML
 
 <ul>
-  <li class="m1"><span>YAML</span></li>
-  <ul><br>
-    <li><span>Header</span></li>
-    <li><span>Inhaltsverzeichnis</span></li>
-    <li><span>Themes</span></li>
-  </ul><br>
-  <li class="m2"><span>Styling</span></li>
-  <ul><br>
-    <li><span>Grafiken</span></li>
-    <li><span>CSS</span></li>
-    <li><span>Columns</span></li>
-  </ul>
+  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
+  <li class="m2"><span>Erlaubt die Definition der <high>Eigenschaften des Dokuments</high> einschliesslich Inklusionen.<span></li>
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc</mono> 
+  </td>
+  <td bgcolor="white">
+  <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc_depth</mono> 
+  </td>
+  <td bgcolor="white">
+  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>theme</mono> 
+  </td>
+  <td bgcolor="white">
+  Eigenschaften des Textbilds.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>includes</mono> 
+  </td>
+  <td bgcolor="white">
+  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  </td> 
+</tr>
+</table>
 
 ]
 
-.pull-right6[
+.pull-right5[
 
 <br>
 <p align = "center">
@@ -209,28 +314,63 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ---
 
-.pull-left3[
+.pull-left4[
 
 # YAML
 
 <ul>
-  <li class="m1"><span>YAML</span></li>
-  <ul><br>
-    <li><span>Header</span></li>
-    <li><span>Inhaltsverzeichnis</span></li>
-    <li><span>Themes</span></li>
-  </ul><br>
-  <li class="m2"><span>Styling</span></li>
-  <ul><br>
-    <li><span>Grafiken</span></li>
-    <li><span>CSS</span></li>
-    <li><span>Columns</span></li>
-  </ul>
+  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
+  <li class="m2"><span>Erlaubt die Definition der <high>Eigenschaften des Dokuments</high> einschliesslich Inklusionen.<span></li>
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc</mono> 
+  </td>
+  <td bgcolor="white">
+  <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc_depth</mono> 
+  </td>
+  <td bgcolor="white">
+  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>theme</mono> 
+  </td>
+  <td bgcolor="white">
+  Eigenschaften des Textbilds.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>includes</mono> 
+  </td>
+  <td bgcolor="white">
+  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  </td> 
+</tr>
+</table>
 
 ]
 
-.pull-right6[
+.pull-right5[
 
 <br>
 <p align = "center">
@@ -241,28 +381,63 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ---
 
-.pull-left3[
+.pull-left4[
 
 # YAML
 
 <ul>
-  <li class="m1"><span>YAML</span></li>
-  <ul><br>
-    <li><span>Header</span></li>
-    <li><span>Inhaltsverzeichnis</span></li>
-    <li><span>Themes</span></li>
-  </ul><br>
-  <li class="m2"><span>Styling</span></li>
-  <ul><br>
-    <li><span>Grafiken</span></li>
-    <li><span>CSS</span></li>
-    <li><span>Columns</span></li>
-  </ul>
+  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
+  <li class="m2"><span>Erlaubt die Definition der <high>Eigenschaften des Dokuments</high> einschliesslich Inklusionen.<span></li>
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc</mono> 
+  </td>
+  <td bgcolor="white">
+  <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc_depth</mono> 
+  </td>
+  <td bgcolor="white">
+  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>theme</mono> 
+  </td>
+  <td bgcolor="white">
+  Eigenschaften des Textbilds.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>includes</mono> 
+  </td>
+  <td bgcolor="white">
+  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  </td> 
+</tr>
+</table>
 
 ]
 
-.pull-right6[
+.pull-right5[
 
 <br>
 <p align = "center">
@@ -273,28 +448,63 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ---
 
-.pull-left3[
+.pull-left4[
 
 # YAML
 
 <ul>
-  <li class="m1"><span>YAML</span></li>
-  <ul><br>
-    <li><span>Header</span></li>
-    <li><span>Inhaltsverzeichnis</span></li>
-    <li><span>Themes</span></li>
-  </ul><br>
-  <li class="m2"><span>Styling</span></li>
-  <ul><br>
-    <li><span>Grafiken</span></li>
-    <li><span>CSS</span></li>
-    <li><span>Columns</span></li>
-  </ul>
+  <li class="m1"><span><b>Y</b>AML <b>A</b>'int <b>M</b>arkup <b>L</b>anguage.<span></li>
+  <li class="m2"><span>Erlaubt die Definition der <high>Eigenschaften des Dokuments</high> einschliesslich Inklusionen.<span></li>
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc</mono> 
+  </td>
+  <td bgcolor="white">
+  <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>toc_depth</mono> 
+  </td>
+  <td bgcolor="white">
+  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>theme</mono> 
+  </td>
+  <td bgcolor="white">
+  Eigenschaften des Textbilds.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>includes</mono> 
+  </td>
+  <td bgcolor="white">
+  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  </td> 
+</tr>
+</table>
 
 ]
 
-.pull-right6[
+.pull-right5[
 
 <br>
 <p align = "center">
@@ -307,43 +517,11 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 .pull-left3[
 
-# YAML
-
-<ul>
-  <li class="m1"><span>YAML</span></li>
-  <ul><br>
-    <li><span>Header</span></li>
-    <li><span>Inhaltsverzeichnis</span></li>
-    <li><span>Themes</span></li>
-  </ul><br>
-  <li class="m2"><span>Styling</span></li>
-  <ul><br>
-    <li><span>Grafiken</span></li>
-    <li><span>CSS</span></li>
-    <li><span>Columns</span></li>
-  </ul>
-</ul>
-
-]
-
-.pull-right6[
-
-<br>
-<p align = "center">
-  <img src="image/html_1.png" height=540px>
-</p>
-
-]
-
----
-
 # HTML
 
-.pull-left4[
 
 <ul>
-  <li class="m1"><span><high>Hypertext Markup Language</high> graphische Gestaltung eines Textes mit <high>Tags<high></span></li> 
-    <li class="m2"><span>Im <high>Browser</high> wird HTML gerendert (übersetzt) und dargestellt</span></li> 
+  <li class="m1"><span><b>H</b>ypertext <b>M</b>arkup <b>L</b>anguage ermöglicht die Organization von Text und Inhalten mittels <high>HTML-Tags<high>.</span></li> 
   </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -359,393 +537,471 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>h1, h2,...</mono> </td>
+  <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
   <td bgcolor="white">
-  <high>Überschrift</high> Level 1, 2,...
+  Überschrift Level 1, 2,...
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>br</mono>
+  <mono>&lt;br&gt;</mono>
   </td>
   <td bgcolor="white">
-   <high>Neue Zeile</high>    
+   Neue Zeile.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>b</mono>
+  <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
   </td>
   <td bgcolor="white">
-  <high>fett</high> 
+  Fett, Kursiv, Unterstrichen.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>i</mono> 
+  <mono>&lt;div&gt;, &lt;p&gt;</mono> 
   </td>
   <td bgcolor="white">
-  <high>kursiv
+  Abschnitt, Textabschnitt
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;table&gt;</mono> 
+  </td>
+  <td bgcolor="white">
+  Tabelle, Spalten
   </td> 
 </tr>
 </table>
+
 ]
 
-.pull-right5[
+.pull-right6[
 
-````html
-<h1>Präambel</h1>
-Dieser <i>Bericht</i> evaluiert 
-<b>Veränderungen</b> in den ...
 <br>
-Er wurde zum Zwecke der <b>Übung</b> ...
-````
-
-<h1>Präambel</h1>
-Dieser <i>Bericht</i> evaluiert 
-<b>Veränderungen</b> in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. 
-<br>
-Er wurde zum Zwecke der <b>Übung</b> auf Basis öffentlich verfügbarer Daten erstellt und repräsentiert einzig die Position der Autoren
-
-]
-
----
-
-# CSS
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Cascading <high>Style Sheets</high> beschreiben <high>wie</high> HTML Tags formatiert werden</span></li> 
-  <li class="m2"><span>Der <high>CSS Selector</high> (z.B. h1) mit verschiedenen <high>Deklarationen</high> (zB: color: blue) erweitern</span></li> 
-  </ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Element</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>style</mono> </td>
-  <td bgcolor="white">
-  Beschreibung der <high>Darstellung</high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>color</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Farbwahl</high> <mono>blue, red, #6BB7B9</mono> 
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>font-size</mono> und
-    <mono>font-family</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Schrift</high>grösse und -art
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>div</mono> 
-  </td>
-  <td bgcolor="white">
-  <high>Kontainer</high> für beliebigen Inhalt
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-
-````html
-<h1 style = "color: #6BB5B9">Präambel</h1>
-<div style = "font-family: Arial; 
-font-size: 25px">
-Dieser <i>Bericht</i> evaluiert 
-<b>Veränderungen</b> ... .</div> 
-
-````
-
-<h1 style = "color: #6BB5B9">Präambel</h1>
-<div style = "font-family: Arial; font-size: 25px">
-Dieser <i>Bericht</i> evaluiert <b>Veränderungen</b> in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. 
-]
-
----
-
-# CSS
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Cascading <high>Style Sheets</high> können auch global definiert werden</span></li> 
-  <li class="m2"><span>Dafür wird ein <high>externes</high> file <mono>*.css</mono> erstellt und in Markdown <high>eingebunden</high> </span></li> 
-  </ul>
-
-]
-
-.pull-right5[
-
-airbnb.css
-````html
-h3, h4 {
-  font-weight: 500;
-  color: #555555;
-}
-
-table td {
-  vertical-align: top;
-}
-
-a, a:hover {
-  color: #007D8C;
-}
-
-body {
-  background-image: url(watermark.svg);
-  background-repeat: repeat-y;
-  background-size: contain;
-}
-````
-]
-
----
-
-# YAML
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Jedes Markdown Dokument beginnt mit einem <high>YAML header</high></span></li> 
-  <li class="m2"><span>YAML ist ein rekursives Akronym: <high>YAML Ain't Markup Language</high></span></li> 
-  <li class="m3"><span>Als Default müssen immer <high>Titel</high>, <high>Autor</high> und <high>Datum</high> gesetzt werden
-  <li class="m4"><span>Diese 3 Angaben werden <high>als Erstes</high> im HTML Dokument <high>angezeigt</high></span></li>  
-  </ul>
-
-]
-
-.pull-right5[
-
-````html
----
-title: "Dokument Titel"
-author: "MSM"
-date: "6/1/2020"
-output: html_document
----
-````
-
-]
-
----
-
-# Inhaltsverzeichnis
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Aus den Überschriften (#, ##) kann mit <mono>toc: true</mono> ein <high>Inhaltsverzeichnis</high> erstellt werden</span></li>
-  <li class="m2"><span>Dabei wird mit <mono>toc_depth</mono> die <high>Tiefe</high> bestimmt</span></li> 
-</ul>
-
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Element</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc</mono> </td>
-  <td bgcolor="white">
-  Inhaltsverzeichnis <high>anzeigen</high> <mono>TRUE</mono> oder <mono>FALSE</mono>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>toc_depth</mono>
-  </td>
-  <td bgcolor="white">
-  mit 2: Überschriften Level 1 + Level 2
-  </td> 
-</tr>
-
-</table>
-]
-
-.pull-right5[
-
-````markdown
-date: "6/1/2020"
-output:
-  html_document:
-    toc: true
-    toc_depth: 5
-````
-
-<p align="center" width="100%">
-  <img src="image/TOC_Level5.png" alt="TOC" style="width:50%">
-</p>
-]
-
----
-
-# Footer und Header
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span><high>Header</high> werden in externe HTML files gespeichert</span></li> 
-  <li class="m2"><span>Die HTML files werden dann im <high>YAML header</high> geladen</span></li>
-  </ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Element</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>after_body</mono> </td>
-  <td bgcolor="white">
-direkt nach dem <mono>body</mono> Tag - als Footer eingefügt
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>before_body</mono>
-  </td>
-  <td bgcolor="white">
-direkt nach dem <mono>body</mono> Tag - als Header eingefügt
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>in_header</mono> 
-  </td>
-  <td bgcolor="white">in das <mono>head</mono> Tag eingefügt
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-
-````html
-date: "5/28/2020"
-output: 
-  html_document:
-    includes:
-      in_header: header.html
-````
-
-````html
-<html>
-  <div style="text-align:center;width=100%;background-color:rgba(0,125,140,.3);border-bottom:4px solid #007D8C;font-family:Helvetica;margin-bottom:20px">
-  <table style="width:100%">
-  <col 70%>
-  <col 30%>
-  <tr>
-    <td align="left">
-      <p style="color: #007D8C;font-size:100px;padding-left:20px;padding-top:40px;line-height:50%"><b>Berlin</b><br><font style="font-size:40px;color:white;padding-left:6px">Bericht 18/19</font></p>
-    </td>
-    <td align="right">
-      <img src="../2_Assets/airbnb.png" style="width:240px;padding:20px"></img>
-    </td>
-  </tr>
-  </table>
-  </div>
-</html>
-````
-
-]
-
----
-
-# Themes und Highlight
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>Direkt <high>vorgefertigte Themes und Code Highlights</high>  einbinden </span></li>
-  <li class="m2"><span>Beides wird im YAML <high>header<high> festgelegt</span></li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Element</b>   
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>theme</mono> </td>
-  <td bgcolor="white">
-cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, yeti
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>highlight</mono>
-  </td>
-  <td bgcolor="white">
-tango, pygments, kate, monochrome, espresso, zenburn, haddock, textmate
-  </td> 
-</tr>
-</table>
-
-]
-
-.pull-right5[
-
-````markdown
-title: "Meine Demo"
-author: "MSM"
-date: "5/28/2020"
-output: 
-  html_document:
-    theme: lumen
-    highlight: espresso
-```` 
-
-
-<p align="center" width="100%">
-  <img src="image/Theme.png" alt="Footer" style="width:120%">
+<p align = "center">
+  <img src="image/html_1.png" height=540px>
 </p>
 
 ]
 
 ---
 
-#wkhtmltopdf
+.pull-left3[
 
+# HTML
+
+
+<ul>
+  <li class="m1"><span><b>H</b>ypertext <b>M</b>arkup <b>L</b>anguage ermöglicht die Organization von Text und Inhalten mittels <high>HTML-Tags<high>.</span></li> 
+  </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Tag</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
+  <td bgcolor="white">
+  Überschrift Level 1, 2,...
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;br&gt;</mono>
+  </td>
+  <td bgcolor="white">
+   Neue Zeile.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
+  </td>
+  <td bgcolor="white">
+  Fett, Kursiv, Unterstrichen.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;div&gt;, &lt;p&gt;</mono> 
+  </td>
+  <td bgcolor="white">
+  Abschnitt, Textabschnitt
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;table&gt;</mono> 
+  </td>
+  <td bgcolor="white">
+  Tabelle, Spalten
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right6[
+
+<br><br><br>
+<p align = "center">
+  <img src="image/html_2.png" height=440px>
+</p>
+
+]
+
+
+---
+
+.pull-left3[
+
+# HTML
+
+
+<ul>
+  <li class="m1"><span><b>H</b>ypertext <b>M</b>arkup <b>L</b>anguage ermöglicht die Organization von Text und Inhalten mittels <high>HTML-Tags<high>.</span></li> 
+  </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Tag</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
+  <td bgcolor="white">
+  Überschrift Level 1, 2,...
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;br&gt;</mono>
+  </td>
+  <td bgcolor="white">
+   Neue Zeile.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
+  </td>
+  <td bgcolor="white">
+  Fett, Kursiv, Unterstrichen.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;div&gt;, &lt;p&gt;</mono> 
+  </td>
+  <td bgcolor="white">
+  Abschnitt, Textabschnitt
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;table&gt;</mono> 
+  </td>
+  <td bgcolor="white">
+  Tabelle, Spalten
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right6[
+
+<br><br>
+<p align = "center">
+  <img src="image/html_3.png" height=480px>
+</p>
+
+]
+
+
+---
+
+.pull-left3[
+
+# HTML
+
+
+<ul>
+  <li class="m1"><span><b>H</b>ypertext <b>M</b>arkup <b>L</b>anguage ermöglicht die Organization von Text und Inhalten mittels <high>HTML-Tags<high>.</span></li> 
+  </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Tag</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
+  <td bgcolor="white">
+  Überschrift Level 1, 2,...
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;br&gt;</mono>
+  </td>
+  <td bgcolor="white">
+   Neue Zeile.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
+  </td>
+  <td bgcolor="white">
+  Fett, Kursiv, Unterstrichen.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;div&gt;, &lt;p&gt;</mono> 
+  </td>
+  <td bgcolor="white">
+  Abschnitt, Textabschnitt
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;table&gt;</mono> 
+  </td>
+  <td bgcolor="white">
+  Tabelle, Spalten
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right6[
+
+<br><br>
+<p align = "center">
+  <img src="image/html_4.png" height=480px>
+</p>
+
+]
+
+---
+
+.pull-left3[
+
+# HTML
+
+
+<ul>
+  <li class="m1"><span><b>H</b>ypertext <b>M</b>arkup <b>L</b>anguage ermöglicht die Organization von Text und Inhalten mittels <high>HTML-Tags<high>.</span></li> 
+  </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Tag</b>   
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
+  <td bgcolor="white">
+  Überschrift Level 1, 2,...
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;br&gt;</mono>
+  </td>
+  <td bgcolor="white">
+   Neue Zeile.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
+  </td>
+  <td bgcolor="white">
+  Fett, Kursiv, Unterstrichen.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;div&gt;, &lt;p&gt;</mono> 
+  </td>
+  <td bgcolor="white">
+  Abschnitt, Textabschnitt
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lt;table&gt;</mono> 
+  </td>
+  <td bgcolor="white">
+  Tabelle, Spalten
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right6[
+
+<br><br>
+<p align = "center">
+  <img src="image/html_5.png" height=480px>
+</p>
+
+]
+
+---
+
+.pull-left3[
+
+# CSS
+
+<ul>
+  <li class="m1"><span>Mit <b>C</b>ascading <b>S</b>tyle <b>S</b>sheets können alle <high>asthetischen Charakteristika von HTML</high> Dokumenten über eine externe Datei bestimmt werden.</span></li>
+  <li class="m2"><span>CSS erlaubt komplexe <high>Vererbungen des Stils</high> zwischen HTMl tags.</span></li> 
+</ul>
+
+]
+
+.pull-right6[
+
+<br><br>
+<p align = "center">
+  <img src="image/css_1.png" height=480px>
+</p>
+
+]
+
+---
+
+
+# Grafiken
+
+.pull-left3[
+
+<ul>
+  <li class="m1"><span>Die Gestaltung des Berichts beinhaltet auch die <high>Gestaltung der Abbildungen</high>.</span></li> 
+  <li class="m2"><span>Im <mono>ggplot2</mono> Pakets lässt sich die Gestaltung von Grafiken durch <mono>theme</mono>s bestimmen.</span></li>
+  <li class="m2"><span>Mit etwas Kreativität lassen sich ebenfalls die <high>Default-Farben</high> bestimmen.</span></li> 
+</ul>
+
+]
+
+.pull-right6[
+
+```{r include =F}
+# Lade Pakete
+library(tidyverse)
+library(knitr)
+library(sjPlot)
+library(kableExtra)
+library(lubridate)
+
+# Lade Daten
+airbnb_1819 <- read_csv('1_Data/airbnb.csv') %>% 
+  filter(Erstellungsdatum > "2018-01-01", 
+         Erstellungsdatum < "2019-12-31")
+```
+
+
+```{r eval = TRUE, echo  =TRUE, message = F, warning = F}
+
+# Ändere Thema zu minimal
+theme_set(theme_minimal())
+theme_update(panel.background = 
+               element_rect(fill = "transparent",
+                            colour = NA),
+             plot.background = 
+               element_rect(fill = "transparent",
+                            colour = NA))
+
+# Setze defaults in ggplot
+ggplot <- function(...) {
+  ggplot2::ggplot(...) + 
+    scale_fill_gradientn(colors = c('#555555',
+                                    '#6BB7B9')) + 
+    scale_colour_gradientn(colors = c('#555555',
+                                      '#6BB7B9'))
+  }
+
+```
+
+
+</p>
+
+]
+
+---
+
+
+# Grafiken
+
+.pull-left3[
+
+<ul>
+  <li class="m1"><span>Die Gestaltung des Berichts beinhaltet auch die <high>Gestaltung der Abbildungen</high>.</span></li> 
+  <li class="m2"><span>Im <mono>ggplot2</mono> Pakets lässt sich die Gestaltung von Grafiken durch <mono>theme</mono>s bestimmen.</span></li>
+  <li class="m2"><span>Mit etwas Kreativität lassen sich ebenfalls die <high>Default-Farben</high> bestimmen.</span></li> 
+</ul>
+
+]
+
+.pull-right6[
+
+
+```{r eval = TRUE, echo  =FALSE, message = F, warning = F}
+
+airbnb_plot <- ggplot(airbnb_1819 %>% 
+         group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
+         summarize(
+           Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
+           Wohnungen = n()), 
+       aes(x = Monat, y = Wohnungen,fill = Jahr)) + 
+  geom_bar(stat='identity', position='dodge') + 
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r,echo=T, fig.width=4, fig.height=4, fig.asp = .65}
+airbnb_plot
+```
+
+]
 
 ---
 
