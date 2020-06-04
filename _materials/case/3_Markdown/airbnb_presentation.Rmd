@@ -1,19 +1,14 @@
 ---
 title: "Berlin"
 subtitle: "Bericht 18/19"
-author: ""
-date: ""
 output: 
   ioslides_presentation:
     logo: ../2_Assets/airbnb.png
     css: ../2_Assets/airbnb_presentation.css
-    toc: true
-    toc_depth: 5
-    transition: faster
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(tidyverse)
 library(lubridate)
 library(sjPlot)
@@ -24,6 +19,7 @@ library(kableExtra)
 airbnb_1819 <- read_csv('../1_Data/airbnb.csv') %>% 
   filter(Erstellungsdatum > "2018-01-01", 
          Erstellungsdatum < "2019-12-31")
+
 # Ändere Thema zu minimal
 theme_set(theme_minimal())
 theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
@@ -44,16 +40,15 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin:
 
->- `r nrow(airbnb_1819)` Airbnb Wohnungen eingestellt
->- `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% haben Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen
+> - `r nrow(airbnb_1819)` Airbnb Wohnungen eingestellt
+> - `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% haben Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen
 > - 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt
 > - 2018 nur `r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt
 > - Zuwachs: `r (round(n_2019/n_2018, 2) - 1)*100`%
 
 ## Entwicklung
 
-<div class="centered">
-```{r  background = 'transparent', fig.asp=.6, fig.cap = cap}
+```{r  fig.asp=.6, fig.cap = cap}
 # Plotte Häufigkeiten
 ggplot(airbnb_1819 %>% 
          group_by(Jahr = year(Erstellungsdatum), 
@@ -69,11 +64,10 @@ ggplot(airbnb_1819 %>%
 # Ergänze caption
 cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
 ```
-</div>
 
 ## Stadteile
 
-```{r echo = FALSE}
+```{r}
 # Berechne Häufigkeiten über die Bezirke
 stadtteile <- airbnb_1819 %>% 
          group_by(Stadtteil, 
@@ -116,7 +110,7 @@ max_stadtteil = veränderung %>%
 
 ## Stadteile
 
-```{r fig.asp=.6,fig.cap = cap}
+```{r fig.asp=.6, fig.cap = cap}
 # Plotte Häufigkeieten der Stadtteile
 ggplot(stadtteile, 
        aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
@@ -131,7 +125,7 @@ cap = "<center>Figure 2. Neueinstellungen pro Bezirk</center>"
 
 ## Einfluss der Ausstattung
 
-```{r echo = FALSE, eval = TRUE}
+```{r}
 # Vector mit Ausstatttungsmerkmalen
 ausstattung_var <- c('Küche','Wifi','TV','Kaffeemaschine',
                     'Geschirrspüler','Terrasse_Balkon',
@@ -180,14 +174,14 @@ ausstattung %>%
 
 ## Regressionsmodell
 
-```{r, echo = FALSE}
+```{r}
 # Bestimme Anteil Hotels in 2018 und 2019
 hotel <- airbnb_1819 %>% 
   group_by(year(Erstellungsdatum)) %>% 
   summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel'))) 
 ```
 
-```{r, echo = FALSE}
+```{r}
 # Reduzierter Vektor mit Ausstattungsmerkmalen
 ausstattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
 
@@ -198,13 +192,13 @@ ausstattung_mod <- airbnb_1819 %>%
   lm(formula = Preis ~ .)
 ```
 
-```{r message = F, echo = F, fig.asp=.5}
+```{r fig.asp=.5}
 # Tabelle mit Ergebnissen der Regression
-sjPlot::tab_model(ausstattung_mod,
-                  pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
-                  title = 'Tabelle 2. Regression des Preises auf die Ausstattung.',
-                  CSS = list(css.caption = "font-weight:500", 
-                             css.table = "width: 100%;font-size:.6em"))
+tab_model(ausstattung_mod,
+          pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
+          title = 'Tabelle 2. Regression des Preises auf die Ausstattung.',
+          CSS = list(css.caption = "font-weight:500", 
+                     css.table = "width: 100%;font-size:.6em"))
 ```
 <br>
 <b>Der Anteil von Hotels ist von `r (hotel$Anteil[1]*100) %>% round(1)`% im Jahre 2018 auf `r (hotel$Anteil[2]*100) %>% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. 
