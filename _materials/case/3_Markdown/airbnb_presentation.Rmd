@@ -28,7 +28,8 @@ airbnb_1819 <- read_csv('../1_Data/airbnb.csv') %>%
 theme_set(theme_minimal())
 theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
              plot.background = element_rect(fill = "transparent", colour = NA),
-             text = element_text(size=20))
+             axis.title.x = element_text(size = 16), 
+             text = element_text(size=19))
 
 # Setze defaults in ggplot
 ggplot <- function(...) ggplot2::ggplot(...) + 
@@ -52,7 +53,7 @@ Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berli
 ## Entwicklung
 
 <div class="centered">
-```{r  background = 'transparent', fig.asp=.5, fig.cap = cap}
+```{r  background = 'transparent', fig.asp=.6, fig.cap = cap}
 # Plotte Häufigkeiten
 ggplot(airbnb_1819 %>% 
          group_by(Jahr = year(Erstellungsdatum), 
@@ -115,7 +116,7 @@ max_stadtteil = veränderung %>%
 
 ## Stadteile
 
-```{r fig.asp=.5, fig.cap = cap}
+```{r fig.asp=.6, fig.cap = cap}
 # Plotte Häufigkeieten der Stadtteile
 ggplot(stadtteile, 
        aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
@@ -195,16 +196,17 @@ ausstattung_mod <- airbnb_1819 %>%
   select(Preis, Hotel, all_of(ausstattung_var)) %>% 
   lm(formula = Preis ~ .)
 ```
-<div class="centered">
+
 ```{r message = F, echo = F, fig.asp=.5}
-# Tabelle mit ergebnissen der Regression
+# Tabelle mit Ergebnissen der Regression
 sjPlot::tab_model(ausstattung_mod,
                   pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
                   title = 'Tabelle 2. Regression des Preises auf die Ausstattung.',
                   CSS = list(css.caption = "font-weight:500", 
-                             css.table = "width: auto;"))
+                             css.table = "width: auto;",
+                             css.table = "height: 100;"))
 ```
-</div>
+
 ## Regressionsmodell
 
 <b>Der Anteil von Hotels ist von `r (hotel$Anteil[1]*100) %>% round(1)`% im Jahre 2018 auf `r (hotel$Anteil[2]*100) %>% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. 
