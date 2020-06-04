@@ -43,7 +43,6 @@ options(digits = 3)
 
 # Load packages
 library(tidyverse)
-
 ```
 
 <p align="center" width="100%">
@@ -58,13 +57,13 @@ library(tidyverse)
 ## Überblick
 
 Aufbauend auf Practical 1 wirst du nun die Grafiken in deinem Dokument gestalten 
-und weitere Textbausteine einfügen.
+und den Text in zwei Spalten layoutieren.
 
 Am Ende des Practicals wirst du wissen wie man:
 
-1. ...
-2. ...
-3. ...
+1. Den YAML header mit einem Inhaltsverzeichnis und einem neuen Theme ergänzen.
+2. Ein zwei Spalten Layout erstellen, dass den Text in der linken und die Grafiken/Tabellen in der rechten Spalte anzeigt.
+3. Eine CSS Datei erstellen und in deine Dokument einbinden.
 
 ## Aufgaben
 
@@ -228,7 +227,7 @@ Nicht Knitten!!
 
 Globale Gestaltungsmkermale der HTML Datei werden in einem eigenen CSS file abgelegt. Erstelle nun das CSS file und passe es wie folgt an.
 
-1. Kreiere die Datei `my_airbnb.css` und speichere sie in `2_Assets` ab.
+1. Erstelle die Datei `my_airbnb.css` und speichere sie in `2_Assets` ab. Du kannst die Datei direkt in RStudio erstellen und mit `.css` als Extentsion speichern. 
 
 2. Binde nun die leere Datei im YAML Header deines Airbnb Markdown Dokumentes ein. Dafür ergänze `css: ../2_Assets/airbnb.css` unter `html_document:`
 
@@ -240,7 +239,7 @@ table td {
   }
 ```
 
-4. ergänze in `my_airbnb.css` und knitte
+4. Im nächsten Schritt wirst du die Schriftart und Farbe der beiden Überschriftenlevel anpassen. Den Code in `my_airbnb.css` ergänzen. Die .css Datei speichern und `knitten`. 
 
 ```
 h3, h4 {
@@ -249,7 +248,7 @@ h3, h4 {
 }
 ```
 
-5. ergänze in `my_airbnb.css` und knitte
+5. Um einen Mouseover Effekt (Link verändert sich, wenn der Mauscursor auf den Link zeigt) zu erzeugen ergänze in `my_airbnb.css` den folgenden Code und `knitte` deine Datei.
 
 ```
 a, a:hover {
@@ -257,7 +256,7 @@ a, a:hover {
   }
 ```
 
-6. ergänze in `my_airbnb.css` und knitte
+6. Als letztes Designelement wirst du nun ein Wasserzeichen als Hintergrundbild einfügen. Ergänze dafür den folgenden code in deiner `my_airbnb.css` Datei und `knitte` dein Dokument.
 
 ```
 body {
@@ -267,7 +266,7 @@ body {
   }
 ```
 
-7. add to `knitr::opts_chunk$set`
+7. Schliesslich ergänze  `knitr::opts_chunk$set`  in deiner `my_airbnb.css` und `knitte` dein Dokument.
 
 ```R
 dev.args = list(bg = "transparent")
@@ -323,7 +322,7 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 |Paket| Installation|
 |:------|:------|
 |`tidyverse`|`install.packages("tidyverse")`|
-|``|``|
+
 
 
 ### Funktionen

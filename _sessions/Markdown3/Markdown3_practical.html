@@ -342,29 +342,30 @@ summary {
 </div>
 <div id="f---css" class="section level3">
 <h3>F - CSS</h3>
+<p>Globale Gestaltungsmkermale der HTML Datei werden in einem eigenen CSS file abgelegt. Erstelle nun das CSS file und passe es wie folgt an.</p>
 <ol style="list-style-type: decimal">
-<li><p>Kreiere <code>my_airbnb.css</code> und speichere sie in <code>2_Assets</code></p></li>
-<li><p>in YAML ergänze <code>css: ../2_Assets/airbnb.css</code></p></li>
-<li><p>ergänze in <code>my_airbnb.css</code> und knitte</p></li>
+<li><p>Erstelle die Datei <code>my_airbnb.css</code> und speichere sie in <code>2_Assets</code> ab. Du kannst die Datei direkt in RStudio erstellen und mit <code>.css</code> als Extentsion speichern.</p></li>
+<li><p>Binde nun die leere Datei im YAML Header deines Airbnb Markdown Dokumentes ein. Dafür ergänze <code>css: ../2_Assets/airbnb.css</code> unter <code>html_document:</code></p></li>
+<li><p>Ergänze die Ausrichtung der Tabellen in <code>my_airbnb.css</code>, speichere die Datei und <code>knitte</code> dein Markdown Dokument.</p></li>
 </ol>
 <pre><code>table td {
   vertical-align: top;
   }</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>ergänze in <code>my_airbnb.css</code> und knitte</li>
+<li>Im nächsten Schritt wirst du die Schriftart und Farbe der beiden Überschriftenlevel anpassen. Den Code in <code>my_airbnb.css</code> ergänzen. Die .css Datei speichern und <code>knitten</code>.</li>
 </ol>
 <pre><code>h3, h4 {
   font-weight: 500;
   color: #555555;
 }</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>ergänze in <code>my_airbnb.css</code> und knitte</li>
+<li>Um einen Mouseover Effekt (Link verändert sich, wenn der Mauscursor auf den Link zeigt) zu erzeugen ergänze in <code>my_airbnb.css</code> den folgenden Code und <code>knitte</code> deine Datei.</li>
 </ol>
 <pre><code>a, a:hover {
   color: #007D8C;
   }</code></pre>
 <ol start="6" style="list-style-type: decimal">
-<li>ergänze in <code>my_airbnb.css</code> und knitte</li>
+<li>Als letztes Designelement wirst du nun ein Wasserzeichen als Hintergrundbild einfügen. Ergänze dafür den folgenden code in deiner <code>my_airbnb.css</code> Datei und <code>knitte</code> dein Dokument.</li>
 </ol>
 <pre><code>body {
   background-image: url(watermark.svg);
@@ -372,7 +373,7 @@ summary {
   background-size: contain;
   }</code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li>add to <code>knitr::opts_chunk$set</code></li>
+<li>Schliesslich ergänze <code>knitr::opts_chunk$set</code> in deiner <code>my_airbnb.css</code> und <code>knitte</code> dein Dokument.</li>
 </ol>
 <pre class="r"><code>dev.args = list(bg = &quot;transparent&quot;)</code></pre>
 </div>
