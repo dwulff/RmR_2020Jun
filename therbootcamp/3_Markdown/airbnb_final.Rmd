@@ -228,9 +228,11 @@ ausstattung %>%
 ausstattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
 
 # Rechne Regression des Preises auf Austattungsmerkmale und Hotel
-ausstattung_mod <- airbnb_1819 %>% 
+ausstattung <- airbnb_1819 %>% 
   mutate(Hotel = Unterkunftsart %in% c('Boutique hotel', 'Hotel')) %>% 
-  select(Preis, Hotel, all_of(ausstattung_var)) %>% 
+  select(Preis, Hotel, all_of(ausstattung_var)) 
+
+ausstattung_mod <- ausstattung %>% 
   lm(formula = Preis ~ .)
 ```
 

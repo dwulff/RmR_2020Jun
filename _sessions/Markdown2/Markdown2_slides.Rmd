@@ -123,7 +123,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <col width="60%">
 <tr>
   <td bgcolor="white">
-    <b>Funktion</b>
+    <b>Argument</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -188,7 +188,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <col width="60%">
 <tr>
   <td bgcolor="white">
-    <b>Funktion</b>
+    <b>Argument</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -253,7 +253,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <col width="60%">
 <tr>
   <td bgcolor="white">
-    <b>Funktion</b>
+    <b>Argument</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -318,7 +318,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <col width="60%">
 <tr>
   <td bgcolor="white">
-    <b>Funktion</b>
+    <b>Argument</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -383,7 +383,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <col width="60%">
 <tr>
   <td bgcolor="white">
-    <b>Funktion</b>
+    <b>Argument</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -440,8 +440,8 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Bildunterschrift
 
 <ul>
-  <li class="m1"><span>Bildunterschriften können durch <mono>fig.cap</mono> gesetzt.</span></li> 
-  <li class="m2"><span>Der Text kann innherlab des Chunks definiert werden.</span></li> 
+  <li class="m1"><span>Bildunterschriften können durch <highm>fig.cap</highm> gesetzt.</span></li> 
+  <li class="m2"><span>Der Text kann <high>innheralb des Chunks</high> definiert werden.</span></li> 
 </ul>
 
 
@@ -463,9 +463,69 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Deskriptive Tabellen
 
 <ul>
-  <li class="m1"><span>.</span></li> 
-  <li class="m2"><span>.</span></li> 
+  <li class="m1"><span>Mit <mono>knitr</mono> und <mono>kableExtra</mono> können <high><mono>tibbles</mono> als Tabellen</high> inkludiert werden.</span></li> 
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>format</mono>
+  </td>
+  <td bgcolor="white">
+  <mono>"html"</mon>, <mono>"latex"</mono>, etc.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>digit</mono>
+  </td>
+  <td bgcolor="white">
+   Anzahl Nachkommastellen.   
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>col.names</mono>
+  </td>
+  <td bgcolor="white">
+  Spaltennamen.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>escape</mono> 
+  </td>
+  <td bgcolor="white">
+  Spaltenamen <b>nicht</b> als HTML interpretieren.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>align</mono> 
+  </td>
+  <td bgcolor="white">
+  Ausrichtung der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>caption</mono> 
+  </td>
+  <td bgcolor="white">
+  Tabellenüberschrift. 
+  </td> 
+</tr>
+</table>
 
 
 ]
@@ -485,9 +545,69 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Deskriptive Tabellen
 
 <ul>
-  <li class="m1"><span>.</span></li> 
-  <li class="m2"><span>.</span></li> 
+  <li class="m1"><span>Mit <mono>knitr</mono> und <mono>kableExtra</mono> können <high><mono>tibbles</mono> als Tabellen</high> inkludiert werden.</span></li> 
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>format</mono>
+  </td>
+  <td bgcolor="white">
+  <mono>"html"</mon>, <mono>"latex"</mono>, etc.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>digit</mono>
+  </td>
+  <td bgcolor="white">
+   Anzahl Nachkommastellen.   
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>col.names</mono>
+  </td>
+  <td bgcolor="white">
+  Spaltennamen.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>escape</mono> 
+  </td>
+  <td bgcolor="white">
+  Spaltenamen <b>nicht</b> als HTML interpretieren.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>align</mono> 
+  </td>
+  <td bgcolor="white">
+  Ausrichtung der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>caption</mono> 
+  </td>
+  <td bgcolor="white">
+  Tabellenüberschrift. 
+  </td> 
+</tr>
+</table>
 
 
 ]
@@ -507,9 +627,69 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Deskriptive Tabellen
 
 <ul>
-  <li class="m1"><span>.</span></li> 
-  <li class="m2"><span>.</span></li> 
+  <li class="m1"><span>Mit <mono>knitr</mono> und <mono>kableExtra</mono> können <high><mono>tibbles</mono> als Tabellen</high> inkludiert werden.</span></li> 
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>format</mono>
+  </td>
+  <td bgcolor="white">
+  <mono>"html"</mon>, <mono>"latex"</mono>, etc.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>digit</mono>
+  </td>
+  <td bgcolor="white">
+   Anzahl Nachkommastellen.   
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>col.names</mono>
+  </td>
+  <td bgcolor="white">
+  Spaltennamen.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>escape</mono> 
+  </td>
+  <td bgcolor="white">
+  Spaltenamen <b>nicht</b> als HTML interpretieren.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>align</mono> 
+  </td>
+  <td bgcolor="white">
+  Ausrichtung der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>caption</mono> 
+  </td>
+  <td bgcolor="white">
+  Tabellenüberschrift. 
+  </td> 
+</tr>
+</table>
 
 
 ]
@@ -529,9 +709,69 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Deskriptive Tabellen
 
 <ul>
-  <li class="m1"><span>.</span></li> 
-  <li class="m2"><span>.</span></li> 
+  <li class="m1"><span>Mit <mono>knitr</mono> und <mono>kableExtra</mono> können <high><mono>tibbles</mono> als Tabellen</high> inkludiert werden.</span></li> 
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>format</mono>
+  </td>
+  <td bgcolor="white">
+  <mono>"html"</mon>, <mono>"latex"</mono>, etc.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>digit</mono>
+  </td>
+  <td bgcolor="white">
+   Anzahl Nachkommastellen.   
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>col.names</mono>
+  </td>
+  <td bgcolor="white">
+  Spaltennamen.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>escape</mono> 
+  </td>
+  <td bgcolor="white">
+  Spaltenamen <b>nicht</b> als HTML interpretieren.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>align</mono> 
+  </td>
+  <td bgcolor="white">
+  Ausrichtung der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>caption</mono> 
+  </td>
+  <td bgcolor="white">
+  Tabellenüberschrift. 
+  </td> 
+</tr>
+</table>
 
 
 ]
@@ -551,9 +791,69 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Deskriptive Tabellen
 
 <ul>
-  <li class="m1"><span>.</span></li> 
-  <li class="m2"><span>.</span></li> 
+  <li class="m1"><span>Mit <mono>knitr</mono> und <mono>kableExtra</mono> können <high><mono>tibbles</mono> als Tabellen</high> inkludiert werden.</span></li> 
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>format</mono>
+  </td>
+  <td bgcolor="white">
+  <mono>"html"</mon>, <mono>"latex"</mono>, etc.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>digit</mono>
+  </td>
+  <td bgcolor="white">
+   Anzahl Nachkommastellen.   
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>col.names</mono>
+  </td>
+  <td bgcolor="white">
+  Spaltennamen.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>escape</mono> 
+  </td>
+  <td bgcolor="white">
+  Spaltenamen <b>nicht</b> als HTML interpretieren.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>align</mono> 
+  </td>
+  <td bgcolor="white">
+  Ausrichtung der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>caption</mono> 
+  </td>
+  <td bgcolor="white">
+  Tabellenüberschrift. 
+  </td> 
+</tr>
+</table>
 
 
 ]
@@ -573,9 +873,45 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Deskriptive Tabellen
 
 <ul>
-  <li class="m1"><span>.</span></li> 
-  <li class="m2"><span>.</span></li> 
+  <li class="m1"><span>Mit <mono>knitr</mono> und <mono>kableExtra</mono> können <high><mono>tibbles</mono> als Tabellen</high> inkludiert werden.</span></li> 
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>colum_spec</mono>
+  </td>
+  <td bgcolor="white">
+  Formatierung der Spalten, e.g., <mono>width</mono>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>cell_spec</mono>
+  </td>
+  <td bgcolor="white">
+  Formatierung der Zellen, e.g., <mono>bold</mono> und <mono>font_size</mono>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>spec_font_size</mono>
+  </td>
+  <td bgcolor="white">
+  Helferfunktion für <mono>font_size</mono>.
+  </td> 
+</tr>
+</table>
 
 
 ]
@@ -595,9 +931,45 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Deskriptive Tabellen
 
 <ul>
-  <li class="m1"><span>.</span></li> 
-  <li class="m2"><span>.</span></li> 
+  <li class="m1"><span>Mit <mono>knitr</mono> und <mono>kableExtra</mono> können <high><mono>tibbles</mono> als Tabellen</high> inkludiert werden.</span></li> 
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>colum_spec</mono>
+  </td>
+  <td bgcolor="white">
+  Formatierung der Spalten, e.g., <mono>width</mono>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>cell_spec</mono>
+  </td>
+  <td bgcolor="white">
+  Formatierung der Zellen, e.g., <mono>bold</mono> und <mono>font_size</mono>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>spec_font_size</mono>
+  </td>
+  <td bgcolor="white">
+  Helferfunktion für <mono>font_size</mono>.
+  </td> 
+</tr>
+</table>
 
 
 ]
@@ -617,9 +989,45 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Deskriptive Tabellen
 
 <ul>
-  <li class="m1"><span>.</span></li> 
-  <li class="m2"><span>.</span></li> 
+  <li class="m1"><span>Mit <mono>knitr</mono> und <mono>kableExtra</mono> können <high><mono>tibbles</mono> als Tabellen</high> inkludiert werden.</span></li> 
 </ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>colum_spec</mono>
+  </td>
+  <td bgcolor="white">
+  Formatierung der Spalten, e.g., <mono>width</mono>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>cell_spec</mono>
+  </td>
+  <td bgcolor="white">
+  Formatierung der Zellen, e.g., <mono>bold</mono> und <mono>font_size</mono>.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>spec_font_size</mono>
+  </td>
+  <td bgcolor="white">
+  Helferfunktion für <mono>font_size</mono>.
+  </td> 
+</tr>
+</table>
 
 
 ]
@@ -632,101 +1040,6 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 ]
 
-
----
-
-# Tabellen
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Der Befehl <mono>kable()</mono> hilft bei der  
-  <high>Gestaltung</high> von <high>HTML Tabellen</high></span></li> 
-  <li class="m2"><span><mono>kable()</mono> erwartet eine <high>Matrize</high> oder <high>Tabelle</high> als Eingabe</span></li> 
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Funktion</b>
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>format</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Ausgabeformat</high> (<mono>'html', 'markdown', 'latex')</mono>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>col.names</mono>
-  </td>
-  <td bgcolor="white">
-   <high>Spaltennamen</high> mit Vektor bestimmen   
-  </td> 
-</tr>
-
-<tr>
-  <td bgcolor="white">
-  <mono>escape</mono> 
-  </td>
-  <td bgcolor="white">
-  Ignoriert <high>spezielle Zeichen</high> wie \ oder $ 
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>align</mono>
-  </td>
-  <td bgcolor="white">
-  <high>Ausrichtung</high> der Spalten (<mono>'(c)enter'</mono>, <mono>'(l)eft'</mono>, <mono>'(r)ight'</mono>)
-  </td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-
-
-
-```{r kable_format, echo = TRUE}
-```
-
-]
-
----
-
-# Statistische Modelle
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span>Die Standardausgabe eines <high>statistischen Modells</high> ist nur auf der Konsole sinnvoll</span>
-
- </li>
-</ul>
-
-]
-
-.pull-right5[
-
-```{r}
-ausstattung <- airbnb_1819 %>% 
-  mutate(Hotel = Unterkunftsart %in% c('Boutique hotel','Hotel')) %>% 
-  select(Preis, Hotel, Küche, TV, Terrasse_Balkon, Check_in_24h)
-
-ausstattung_mod <- lm(Preis ~ ., data = ausstattung)
-summary(ausstattung_mod)
-```
-]
-
 ---
 
 .pull-left4[
@@ -734,8 +1047,7 @@ summary(ausstattung_mod)
 # Statistische Modelle
 
 <ul>
-  <li class="m1"><span>Mit dem <mono>sjPlot</mono> Package lassen sich <high>statistische Modelle</high> als HTML ausgeben</span>
-  <li class="m2"><span>Die <high>abhängige Variable</high> wird als Spaltenkopf gesetzt und Konfidenzintervalle und p-Werte angezeigt</span></li>
+  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span>
  </li>
 </ul>
 
@@ -744,121 +1056,54 @@ summary(ausstattung_mod)
   <col width="60%">
 <tr>
   <td bgcolor="white">
-    <b>Funktion</b>
+    <b>Argument</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
   </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>tab_model</mono>
-  </td>
-  <td bgcolor="white">Ausgabe eines <high>Regressionsmodells</high> in HTML</td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>title</mono>
-  </td>
-  <td bgcolor="white">Tabellen Beschriftung</td> 
 </tr>
 <tr>
   <td bgcolor="white">
   <mono>pred.labels</mono> 
   </td>
   <td bgcolor="white">
-  <high>Namen</high> der Koeffizienten anpassen</td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-   <mono>CSS</mono>
-  </td>
-  <td bgcolor="white">
-  Feintuning mit CSS</td> 
-</tr>
-</table>
-]
-
-.pull-right5[
-
-```{r echo = TRUE}
-sjPlot::tab_model(ausstattung_mod,
-title = 'Table 2. Regression der Ausstattung 
-auf den Preis.')
-```
-]
-
----
-
-.pull-left4[
-
-# Statistische Modelle
-
-<ul>
-  <li class="m1"><span>Mit dem <mono>sjPlot</mono> Package lassen sich <high>statistische Modelle</high> als HTML ausgeben</span>
-  <li class="m2"><span>Die <high>abhängige Variable</high> wird als Spaltenkopf gesetzt und Konfidenzintervalle und p-Werte angezeigt</span></li>
- </li>
-</ul>
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
-  <col width="40%">
-  <col width="60%">
-<tr>
-  <td bgcolor="white">
-    <b>Funktion</b>
-  </td>
-  <td bgcolor="white">
-    <b>Beschreibung</b>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>tab_model</mono>
-  </td>
-  <td bgcolor="white">Ausgabe eines <high>Regressionsmodells</high> in HTML</td> 
+  <high>Namen</high> der Prädiktoren anpassen</td>.
 </tr>
 <tr>
   <td bgcolor="white">
   <mono>title</mono>
   </td>
-  <td bgcolor="white">Tabellen Beschriftung</td> 
+  <td bgcolor="white">
+  Tabllenüberschrift.
+  </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>pred.labels</mono> 
+  <mono>show.*</mono>
   </td>
   <td bgcolor="white">
-  <high>Namen</high> der Koeffizienten anpassen</td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-   <mono>CSS</mono>
-  </td>
-  <td bgcolor="white">
-  Feintuning mit CSS</td> 
+  Bestimme <high>welche Werte</high> dargestellt werden.
+  </td> 
 </tr>
 </table>
 ]
 
 .pull-right5[
 <br>
-```{r echo = TRUE}
-sjPlot::tab_model(ausstattung_mod,
-title = 'Table 2. Regression der Ausstattung 
-auf den Preis.',
-pred.labels = c('Achsenabschnitt', 
-                names(ausstattung)[-1]))
-```
+<p align = "center">
+  <img src="image/btab_1.png" height=520px>
+</p>
+
 ]
 
 ---
 
 .pull-left4[
+
 # Statistische Modelle
 
 <ul>
-  <li class="m1"><span>Mit dem <mono>sjPlot</mono> Package lassen sich <high>statistische Modelle</high> als HTML ausgeben</span>
-  <li class="m2"><span>Die <high>abhängige Variable</high> wird als Spaltenkopf gesetzt und Konfidenzintervalle und p-Werte angezeigt</span></li>
+  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span>
  </li>
 </ul>
 
@@ -867,7 +1112,7 @@ pred.labels = c('Achsenabschnitt',
   <col width="60%">
 <tr>
   <td bgcolor="white">
-    <b>Funktion</b>
+    <b>Argument</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -875,61 +1120,47 @@ pred.labels = c('Achsenabschnitt',
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>tab_model</mono>
+  <mono>pred.labels</mono> 
   </td>
-  <td bgcolor="white">Ausgabe eines <high>Regressionsmodells</high> in HTML</td> 
+  <td bgcolor="white">
+  <high>Namen</high> der Prädiktoren anpassen</td>.
 </tr>
 <tr>
   <td bgcolor="white">
   <mono>title</mono>
   </td>
-  <td bgcolor="white">Tabellen Beschriftung</td> 
+  <td bgcolor="white">
+  Tabllenüberschrift.
+  </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>pred.labels</mono> 
+  <mono>show.*</mono>
   </td>
   <td bgcolor="white">
-  <high>Namen</high> der Koeffizienten anpassen</td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-   <mono>CSS</mono>
-  </td>
-  <td bgcolor="white">
-  Feintuning mit CSS</td> 
+  Bestimme <high>welche Werte</high> dargestellt werden.
+  </td> 
 </tr>
 </table>
 ]
 
 .pull-right5[
-
 <br>
-
-```{r echo = TRUE, eval = FALSE}
-CSS = list(css.caption = "font-weight:500", 
-           css.table="width: auto; 
-                      margin-right: 0px;
-                      margin-left: auto;"))
-```
-
-```{r}
-sjPlot::tab_model(ausstattung_mod,
-                  pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
-                  title = 'Table 2. Regression des Preises auf die Ausstattung.',
-                  CSS = list(css.caption = "font-weight:500", css.table="width: auto; margin-right: 0px;margin-left: auto;"))
-```
+<p align = "center">
+  <img src="image/btab_2.png" height=520px>
+</p>
 
 ]
 
 ---
 
-# Links und Fussnoten
-
 .pull-left4[
 
+# Statistische Modelle
+
 <ul>
-  <li class="m1"><span>Zur Vervollständigung unseres Dokumentes fehlen uns noch Quellenangaben</span></li>
+  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span>
+ </li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -937,7 +1168,7 @@ sjPlot::tab_model(ausstattung_mod,
   <col width="60%">
 <tr>
   <td bgcolor="white">
-    <b>Funktion</b>
+    <b>Argument</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -945,17 +1176,73 @@ sjPlot::tab_model(ausstattung_mod,
 </tr>
 <tr>
   <td bgcolor="white">
-  Links
+  <mono>pred.labels</mono> 
   </td>
-  <td bgcolor="white">Können einfach eingefügt werden: https://therbootcamp.github.io
+  <td bgcolor="white">
+  <high>Namen</high> der Prädiktoren anpassen</td>.
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>title</mono>
+  </td>
+  <td bgcolor="white">
+  Tabllenüberschrift.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  Fussnoten
+  <mono>show.*</mono>
   </td>
   <td bgcolor="white">
-   Im Text mit <mono>^[]</mono> einfügen   
+  Bestimme <high>welche Werte</high> dargestellt werden.
+  </td> 
+</tr>
+</table>
+]
+
+.pull-right5[
+<br>
+<p align = "center">
+  <img src="image/btab_3.png" height=520px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Links, Fussnoten
+
+<ul>
+  <li class="m1"><span>Zum Einbinden von Links und Fussnote gibt es ebenfalls spezielle  <high>Markdown Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&lsqb;Name&rsqb;(URL)</mono>
+  </td>
+  <td bgcolor="white">
+  Link. Name erscheint im Text, URL nicht.
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>^&lsqb;Text&rsqb;</mono>
+  </td>
+  <td bgcolor="white">
+   Fussnoten werden unten am Text angehängt.    
   </td> 
 </tr>
 <tr>
@@ -973,11 +1260,15 @@ sjPlot::tab_model(ausstattung_mod,
   </td> 
 </tr>
 </table>
+
 ]
 
 .pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/links.png">
+</p>
 
-Er wurde zum Zwecke der Übung auf Basis öffentlich verfügbarer Daten[^Daten wurde heruntergeladen von http://insideairbnb.com/get-the-data.html] erstellt und repräsentiert einzig die Position der Autoren. 
 ]
 
 ---
