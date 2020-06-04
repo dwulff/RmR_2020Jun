@@ -104,7 +104,19 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
 
 ---
 
-# Data Science Wheel
+.pull-left3[
+
+# Der Data Science Kreislauf
+
+]
+
+.pull-right7[
+<br>
+<p align = "center">
+<img src="http://sudeep.co/images/post_images/2018-02-09-Understanding-the-Data-Science-Lifecycle/chart.png" height="540"><br>
+<font style="font-size:10px">from <a href="http://sudeep.co/">http://sudeep.co/</a></font>
+</p>
+]
 
 
 ---
