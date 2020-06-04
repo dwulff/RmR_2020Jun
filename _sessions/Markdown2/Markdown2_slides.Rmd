@@ -1046,7 +1046,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Statistische Modelle
 
 <ul>
-  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span></li>
+  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> Pakets lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -1065,7 +1065,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>pred.labels</mono> 
   </td>
   <td bgcolor="white">
-  <high>Namen</high> der Prädiktoren anpassen.</td>.
+  <high>Namen</high> der Prädiktoren anpassen.</td>
 </tr>
 <tr>
   <td bgcolor="white">
@@ -1101,7 +1101,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Statistische Modelle
 
 <ul>
-  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span>
+  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> Pakets lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span>
  </li>
 </ul>
 
@@ -1121,7 +1121,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>pred.labels</mono> 
   </td>
   <td bgcolor="white">
-  <high>Namen</high> der Prädiktoren anpassen.</td>.
+  <high>Namen</high> der Prädiktoren anpassen.</td>
 </tr>
 <tr>
   <td bgcolor="white">
@@ -1157,7 +1157,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Statistische Modelle
 
 <ul>
-  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span></li>
+  <li class="m1"><span>Mit der <mono>tab_model</mono> Funktion des <mono>sjPlot</mono> Pakets lassen sich <high>statistische Modelle</high> als (HTML) Tabellen ausgeben.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px; width=100%">
@@ -1176,7 +1176,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>pred.labels</mono> 
   </td>
   <td bgcolor="white">
-  <high>Namen</high> der Prädiktoren anpassen.</td>.
+  <high>Namen</high> der Prädiktoren anpassen.</td>
 </tr>
 <tr>
   <td bgcolor="white">
@@ -1212,7 +1212,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Links, Fussnoten
 
 <ul>
-  <li class="m1"><span>Zum Einbinden von Links und Fussnote gibt es ebenfalls spezielle  <high>Markdown Syntax</high>.</span></li>
+  <li class="m1"><span>Zum Einbinden von Links und Fussnoten gibt es ebenfalls spezielle  <high>Markdown Syntax</high>.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
