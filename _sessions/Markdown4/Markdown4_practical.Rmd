@@ -56,13 +56,12 @@ library(tidyverse)
 
 ## Überblick
 
-...
+In diesem Practical wirst aus deinem fertigen HTML RMarkdown Dokument eine Präsentation erstellen. 
+Am Ende des Practicals kann du: 
 
-Am Ende des Practicals wirst du wissen wie man:
-
-1. ...
-2. ...
-3. ...
+1. Eine HTML Präsentation mit `iosslides` erstellen und Inhalte mit RMarkdown Code einfügen.
+2. Ein Logo einfügen und das Layout der Präsentation anpassen.
+3. Du wirst HTML Tags und CSS (Cascading Style Sheets) für die Feinjustierung der Slides verwenden.
 
 ## Aufgaben
 
@@ -70,33 +69,107 @@ Am Ende des Practicals wirst du wissen wie man:
 
 1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data`, `2_Assets`, und `3_Markdown` enthalten. 
 
-2. New doc
+2. Öffne ein neues RMarkdown Skript und wähle das Presentation - Template "HTML" aus (siehe screenshot unten).
 
-screenshot wizard (same layout as in practical 1)
+<p align="center" width="100%">
+  <img src="image/markdown_presentation.menu.png" alt="Trulli" style="height:200px">
+</p>
 
-3. Call it berlin
+3. Trage als Titel `Berlin` ein.
 
-4. delete everything below setup
+4. Lösche alles unterhalb des `setup` R chunks.
+
+5. Speichere das neue Markdown Skript unter dem Namen `presentation_practical.Rmd` im `3_Markdown` Ordner ab.
 
 ### B - YAML
 
-1. subtitle 
+Im YAML header wirst du nun die generellen Einstellungen des Dokumentes anpassen.
 
-2. logo
+1. Füge unter `title: Berlin`, in einer neuen Zeilte, einen Untertitel ein.
 
-3. css
+```R
+subtitle: "Bericht: 18/19"
+```
 
-4. knitten. all good?
+2. Um ein Logo automatisch auf dem Titelslide und in der Fussnote jedes Slides anzuzeigen, gib an wo das Logo abgelegt ist.
+
+```R
+logo: ../2_Assets/airbnb.png
+```
+
+3. Um das Layout (Schrift, genaue Position der Komponenten) im Detail zu gestalten, füge den Link zu einem CSS file in der nächsten Zeile ein.
+
+```R
+css: ../2_Assets/airbnb_presentation.css
+```
+
+4. Achte auf die korrekten Einrückungen! Der YAML Header sollte so aussehen:
+
+```R
+---
+title: "Berlin"
+subtitle: "Bericht 18/19"
+output: 
+  ioslides_presentation:
+    logo: ../2_Assets/airbnb.png
+    css: ../2_Assets/airbnb_presentation.css
+---
+```
+
+
+5. `Knitte` das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rote, AirBnB Logo. 
 
 ### C - Setup chunk
 
-1. include packages
+Nun wirst du im `Setup` Chunk die notwendigen Pakete laden, Daten laden und verschiedenen Einstellungen vornehmen.
 
-2. daten
+1. Ersetze in `knitr::opts_chunk$set` `include=FALSE` mit folgenden Einstellungen:
 
-3. theme
+```R
+echo = FALSE, message = FALSE, warning = FALSE
+```
+
+2. Lade die folgenden Pakete:
+
+```R
+library(tidyverse)
+library(lubridate)
+library(sjPlot)
+library(knitr)
+library(kableExtra)
+```
+
+2. Integriere die Daten aus dem AirBnB Datensatz für den Zeitraum 2018-2019.
+
+```R
+# Lade Daten
+airbnb_1819 <- read_csv('../1_Data/airbnb.csv') %>% 
+  filter(Erstellungsdatum > "2018-01-01", 
+         Erstellungsdatum < "2019-12-31")
+```
+
+3. Passe das Grafik Theme für `ggplot` an. Damit veränderst du den Hintergrund aller Grafiken 
+und optimierst die Schriftgrösse der Grafiken.
+
+```R
+# Ändere Thema zu minimal
+theme_set(theme_minimal())
+theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
+             plot.background = element_rect(fill = "transparent", colour = NA),
+             axis.title.x = element_text(size = 16), 
+             text = element_text(size=19))
+```
+
 
 4. ggplot color
+
+```R
+# Setze defaults in ggplot
+ggplot <- function(...) ggplot2::ggplot(...) + 
+  scale_fill_gradientn(colors = c('#555555','#6BB7B9')) + 
+  scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
+```
+
 
 5. knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 

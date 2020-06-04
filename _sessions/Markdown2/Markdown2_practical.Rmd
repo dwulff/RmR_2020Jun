@@ -4,7 +4,7 @@ author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
       <font style='font-style:normal'>Reporting mit R</font><br>
-      <a href='https://therbootcamp.github.io/SmR_2020Jun/'>
+      <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -70,7 +70,7 @@ Aufbauend auf Practical 1 wirst du nun die Grafiken in deinem Dokument gestalten
 und weitere Textbausteine einfügen.
 
 1. Grafiken formatieren.
-3. Datentabellen einfügen und im Detail gestalten
+3. Datentabellen einfügen und im Detail gestalten.
 4. Ergebnisse eines Regressionsmodells einbinden.
 
 ## Aufgaben
@@ -121,7 +121,7 @@ Der durchschnittliche Preis der Neueinstellungen beträgt 80.8 €. Im Vergleic
 round(mean(airbnb_1819 %>% pull(Preis)),1)
 ```
 
-4. Wähle die gleiche Vorgangsweise für die prozentuelle Steigerung der Preise verwende folgenden Code für die Berechnung.
+4. Wähle die gleiche Vorgangsweise für die prozentuelle Steigerung der Preise. Verwende folgenden Code für die Berechnung.
 
 ```{r echo = TRUE}
 m <- mean(airbnb_1819 %>% 
@@ -136,17 +136,17 @@ round(m, 3) * 100 - 100
 
 ### E - Preise: Neuer Texteil
 
-1. Erstelle ein neues Unterkapitel mit der Überschrift: `Einfluss Ausstattsung` (als Level 4 Header).
+1. Erstelle ein neues Unterkapitel mit der Überschrift: `Einfluss Ausstattung` (als Level 4 Header).
 
 2. Berechne als erster Schritt in einem eigenem Code Chunk wie sich die verschiednen Ausstattungsmerkmale (Küche, Wifi, ...) auf die durchschnittlichen Preise auswirken. Diesen Chunk nicht ausgeben!
 
 ```R
-# Vektor mit Ausstatttungsmerkmalen
+# Vektor mit Ausstattungsmerkmalen
 ausstattung_var = c('Küche','Wifi','TV','Kaffeemaschine',
                     'Geschirrspüler','Terrasse_Balkon',
                     'Check_in_24h')
 
-# Bestimme Preise als Funktion der Ausstatttungsmerkmale
+# Bestimme Preise als Funktion der Ausstattungsmerkmale
 ausstattung <- airbnb_1819 %>% 
                select(all_of(ausstattung_var), Preis) %>%
                pivot_longer(-Preis,
@@ -197,7 +197,7 @@ ausstattung %>% kable(format = 'html')
 
 2. Beschrännke die Anzahl Nachkommastellen mit `digits = 2` auf zwei.
 
-3. Füge eine Caption mit `caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'` ein.
+3. Füge eine Caption mit `caption = 'Tabelle 1. Austattung und Einfluss auf den Preis'` ein.
 
 4. Passe die Namen der Spalten an, inklusive neuer Zeilenumbrüche mit `<br>`: `col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.')`
 
@@ -223,7 +223,7 @@ mutate_if(is.numeric, function(x) {
 
 1. Erstelle ein neues Unterkapitel mit der Überschrift: `Regressionsmodell` als Level 4 Header
 
-2. Berechne eine Regression in der `Preis` mit verschiednen Ausstattungsmerkmalen vorhergesagt wird sowie den  durchschnittlichen Anteil der Hotels. Diesen Chunk nicht augeben!
+2. Berechne eine Regression in der `Preis` mit verschiednen Ausstattungsmerkmalen vorhergesagt wird sowie den  durchschnittlichen Anteil der Hotels. Diesen Chunk nicht ausgeben!
 
 ```R
 # Reduzierter Vektor mit Ausstattungsmerkmalen
@@ -261,7 +261,7 @@ Der Anteil von Hotels ist von -98.9% im Jahre 2018 auf 1.4% im Jahre 2019 gestie
 coefficients(ausstattung_mod)['HotelTRUE'] %>% round(1)
 ```
 
-5. Hebe den 2. (`Überraschenderweise ...`) und 4. Absatz (`Der Anteil ...`) fett hervor.
+5. Hebe den 2. ("Überraschenderweise ...") und 4. Absatz ("Der Anteil ...") fett hervor.
 
 6. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
@@ -270,20 +270,20 @@ coefficients(ausstattung_mod)['HotelTRUE'] %>% round(1)
 1. Zeige die Regressionsergebnisse in einer Tablle mit `sjPlot::tab_model` an.
 
 ```R
-# Tabelle mit ergebnissen der Regression
+# Tabelle mit Ergebnissen der Regression
 tab_model(ausstattung_mod)
 ```
 
 2. Ersetze `Intercept` mit `Achsenabschnitt` in der Tabelle: `pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])`
 
-3. Füge einen neune Tabellentitel ein: `title = 'Table 2. Regression des Preises auf die Ausstattung.'`
+3. Füge einen neuen Tabellentitel ein: `title = 'Table 2. Regression des Preises auf die Ausstattung.'`
 
 4. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
 
 ## Datensatz
 
-Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv) Datensatz enthält Zahlen zu 9868 Berliner Airbnbs 
+Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_materials/case/1_Data/airbnb.csv) Datensatz enthält Zahlen zu 9868 Berliner Airbnbs 
 
 
 |Variable | Beschreibung |
@@ -347,6 +347,7 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 
 ## Materialien
 
-- ...
-- ...
-
+- Allgemeiner Einstieg in [**RMarkdown**](https://rmarkdown.rstudio.com/lesson-1.html).
+- [**DIE Referenz**](https://bookdown.org/yihui/rmarkdown/) für RMarkdown bis ins letzte Detail.
+- [**Rmarkdowb**](https://cran.r-project.org/web/packages/rmarkdown/index.html) Dokumentation und Befehlsreferenz.
+- [**CSS**](https://www.w3schools.com/css/) Dokumentation.

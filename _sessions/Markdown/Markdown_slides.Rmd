@@ -143,7 +143,7 @@ basel <- read.csv("1_Data/basel.csv")
 # Arten des Berichts
 
 <ul>
-  <li class="m1"><span>RMarkdown ermöglicht Erstellung und Gestaltung unterschiedlichter <high>Berichttypen</high>.</span></li><br>
+  <li class="m1"><span>RMarkdown ermöglicht Erstellung und Gestaltung unterschiedlicher <high>Berichttypen</high>.</span></li><br>
   <ul>
     <li><span>Dokumente</span></li>
     <li><span>Präsentationen</span></li>   
@@ -207,7 +207,7 @@ basel <- read.csv("1_Data/basel.csv")
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>Markdowm</mono>
+  <mono>Markdown</mono>
   </td>
   <td bgcolor="white">
   <high>Überschriften</high><br>
@@ -955,7 +955,7 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high>.</span></li>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high> definiert werden.</span></li>
   <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
 </ul>
 

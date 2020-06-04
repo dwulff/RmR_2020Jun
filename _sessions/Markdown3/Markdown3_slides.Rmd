@@ -1007,5 +1007,5 @@ airbnb_plot
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/_Markdown3/Markdown3_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown3/Markdown3_practical.html">Practical</a></h1>
 

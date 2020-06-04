@@ -183,7 +183,7 @@ summary {
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/SmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -209,7 +209,7 @@ pre code,  .md:not(.use-csslab) pre code {
 <p>Aufbauend auf Practical 1 wirst du nun die Grafiken in deinem Dokument gestalten und weitere Textbausteine einfügen.</p>
 <ol style="list-style-type: decimal">
 <li>Grafiken formatieren.</li>
-<li>Datentabellen einfügen und im Detail gestalten</li>
+<li>Datentabellen einfügen und im Detail gestalten.</li>
 <li>Ergebnisse eines Regressionsmodells einbinden.</li>
 </ol>
 </div>
@@ -254,7 +254,7 @@ pre code,  .md:not(.use-csslab) pre code {
 </ol>
 <pre class="r"><code>round(mean(airbnb_1819 %&gt;% pull(Preis)),1)</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Wähle die gleiche Vorgangsweise für die prozentuelle Steigerung der Preise verwende folgenden Code für die Berechnung.</li>
+<li>Wähle die gleiche Vorgangsweise für die prozentuelle Steigerung der Preise. Verwende folgenden Code für die Berechnung.</li>
 </ol>
 <pre class="r"><code>m &lt;- mean(airbnb_1819 %&gt;% 
           filter(year(Erstellungsdatum) == 2019) %&gt;% 
@@ -269,15 +269,15 @@ round(m, 3) * 100 - 100</code></pre>
 <div id="e---preise-neuer-texteil" class="section level3">
 <h3>E - Preise: Neuer Texteil</h3>
 <ol style="list-style-type: decimal">
-<li><p>Erstelle ein neues Unterkapitel mit der Überschrift: <code>Einfluss Ausstattsung</code> (als Level 4 Header).</p></li>
+<li><p>Erstelle ein neues Unterkapitel mit der Überschrift: <code>Einfluss Ausstattung</code> (als Level 4 Header).</p></li>
 <li><p>Berechne als erster Schritt in einem eigenem Code Chunk wie sich die verschiednen Ausstattungsmerkmale (Küche, Wifi, …) auf die durchschnittlichen Preise auswirken. Diesen Chunk nicht ausgeben!</p></li>
 </ol>
-<pre class="r"><code># Vektor mit Ausstatttungsmerkmalen
+<pre class="r"><code># Vektor mit Ausstattungsmerkmalen
 ausstattung_var = c(&#39;Küche&#39;,&#39;Wifi&#39;,&#39;TV&#39;,&#39;Kaffeemaschine&#39;,
                     &#39;Geschirrspüler&#39;,&#39;Terrasse_Balkon&#39;,
                     &#39;Check_in_24h&#39;)
 
-# Bestimme Preise als Funktion der Ausstatttungsmerkmale
+# Bestimme Preise als Funktion der Ausstattungsmerkmale
 ausstattung &lt;- airbnb_1819 %&gt;% 
                select(all_of(ausstattung_var), Preis) %&gt;%
                pivot_longer(-Preis,
@@ -320,7 +320,7 @@ ausstattung %&gt;% pull(Differenz) %&gt;% last() %&gt;% round(1)</code></pre>
 ausstattung %&gt;% kable(format = &#39;html&#39;)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Beschrännke die Anzahl Nachkommastellen mit <code>digits = 2</code> auf zwei.</p></li>
-<li><p>Füge eine Caption mit <code>caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis'</code> ein.</p></li>
+<li><p>Füge eine Caption mit <code>caption = 'Tabelle 1. Austattung und Einfluss auf den Preis'</code> ein.</p></li>
 <li><p>Passe die Namen der Spalten an, inklusive neuer Zeilenumbrüche mit <code>&lt;br&gt;</code>: <code>col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 'Preis&lt;br&gt;vorh.','Differenz','Prozent&lt;br&gt;vorh.')</code></p></li>
 <li><p><code>Knitte</code> das Dokument. Die Spaltenbeschriftung wird nicht korrekt übersetzt. Füge <code>escape = FALSE</code> um dieses Problem zu korrigieren.</p></li>
 <li><p>Lege die Ausrichtung der Zellen mit <code>align="lcccc"</code> fest.</p></li>
@@ -338,7 +338,7 @@ ausstattung %&gt;% kable(format = &#39;html&#39;)</code></pre>
 <h3>G - Preise: Text Teil</h3>
 <ol style="list-style-type: decimal">
 <li><p>Erstelle ein neues Unterkapitel mit der Überschrift: <code>Regressionsmodell</code> als Level 4 Header</p></li>
-<li><p>Berechne eine Regression in der <code>Preis</code> mit verschiednen Ausstattungsmerkmalen vorhergesagt wird sowie den durchschnittlichen Anteil der Hotels. Diesen Chunk nicht augeben!</p></li>
+<li><p>Berechne eine Regression in der <code>Preis</code> mit verschiednen Ausstattungsmerkmalen vorhergesagt wird sowie den durchschnittlichen Anteil der Hotels. Diesen Chunk nicht ausgeben!</p></li>
 </ol>
 <pre class="r"><code># Reduzierter Vektor mit Ausstattungsmerkmalen
 ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,&#39;Check_in_24h&#39;)
@@ -370,7 +370,7 @@ Der Anteil von Hotels ist von -98.9% im Jahre 2018 auf 1.4% im Jahre 2019 gestie
 </ol>
 <pre class="r"><code>coefficients(ausstattung_mod)[&#39;HotelTRUE&#39;] %&gt;% round(1)</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li><p>Hebe den 2. (<code>Überraschenderweise ...</code>) und 4. Absatz (<code>Der Anteil ...</code>) fett hervor.</p></li>
+<li><p>Hebe den 2. (“Überraschenderweise …”) und 4. Absatz (“Der Anteil …”) fett hervor.</p></li>
 <li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
 </ol>
 </div>
@@ -379,18 +379,18 @@ Der Anteil von Hotels ist von -98.9% im Jahre 2018 auf 1.4% im Jahre 2019 gestie
 <ol style="list-style-type: decimal">
 <li>Zeige die Regressionsergebnisse in einer Tablle mit <code>sjPlot::tab_model</code> an.</li>
 </ol>
-<pre class="r"><code># Tabelle mit ergebnissen der Regression
+<pre class="r"><code># Tabelle mit Ergebnissen der Regression
 tab_model(ausstattung_mod)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Ersetze <code>Intercept</code> mit <code>Achsenabschnitt</code> in der Tabelle: <code>pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])</code></p></li>
-<li><p>Füge einen neune Tabellentitel ein: <code>title = 'Table 2. Regression des Preises auf die Ausstattung.'</code></p></li>
+<li><p>Füge einen neuen Tabellentitel ein: <code>title = 'Table 2. Regression des Preises auf die Ausstattung.'</code></p></li>
 <li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
 </ol>
 </div>
 </div>
 <div id="datensatz" class="section level2">
 <h2>Datensatz</h2>
-<p>Der <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv">airbnb.csv</a> Datensatz enthält Zahlen zu 9868 Berliner Airbnbs</p>
+<p>Der <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_materials/case/1_Data/airbnb.csv">airbnb.csv</a> Datensatz enthält Zahlen zu 9868 Berliner Airbnbs</p>
 <table>
 <thead>
 <tr class="header">
@@ -597,8 +597,10 @@ tab_model(ausstattung_mod)</code></pre>
 <div id="materialien" class="section level2">
 <h2>Materialien</h2>
 <ul>
-<li>…</li>
-<li>…</li>
+<li>Allgemeiner Einstieg in <a href="https://rmarkdown.rstudio.com/lesson-1.html"><strong>RMarkdown</strong></a>.</li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/"><strong>DIE Referenz</strong></a> für RMarkdown bis ins letzte Detail.</li>
+<li><a href="https://cran.r-project.org/web/packages/rmarkdown/index.html"><strong>Rmarkdowb</strong></a> Dokumentation und Befehlsreferenz.</li>
+<li><a href="https://www.w3schools.com/css/"><strong>CSS</strong></a> Dokumentation.</li>
 </ul>
 </div>
 </div>
