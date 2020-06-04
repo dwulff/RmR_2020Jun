@@ -165,7 +165,7 @@ Der durchschnittliche Preis der Neueinstellungen beträgt `r round(mean(airbnb_1
 #### Der Einfluss der Ausstattung
 
 ```{r}
-# Veltor mit Ausstatttungsmerkmalen
+# Vektor mit Ausstatttungsmerkmalen
 ausstattung_var = c('Küche','Wifi','TV','Kaffeemaschine',
                     'Geschirrspüler','Terrasse_Balkon',
                     'Check_in_24h')

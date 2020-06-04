@@ -201,7 +201,7 @@ summary {
 <h1></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
-<p>In diesem Practical …</p>
+<p>Aufbauend auf Practical 1 wirst du nun die Grafiken in deinem Dokument gestalten und weitere Textbausteine einfügen.</p>
 <p>Am Ende des Practicals wirst du wissen wie man:</p>
 <ol style="list-style-type: decimal">
 <li>…</li>
@@ -214,50 +214,57 @@ summary {
 <div id="a---setup" class="section level3">
 <h3>A - Setup</h3>
 <ol style="list-style-type: decimal">
-<li>Öffne dein <code>TheRBootcamp</code> R Projekt und öffne <code>airbnb_level_two.Rmd</code>, welches das fertige Produkt am Ende des zweiten Markdown Practicals enthält.</li>
+<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code>, <code>2_Assets</code>, und <code>3_Markdown</code> enthalten.</p></li>
+<li><p>Lade die <code>airbnb_level_two.Rmd</code> Datei, das fertige Produkt am Ende des ersten Markdown Practicals.</p></li>
 </ol>
 </div>
-<div id="b---yaml" class="section level3">
-<h3>B - YAML</h3>
+<div id="b---yaml-header-erweitern" class="section level3">
+<h3>B - YAML header erweitern</h3>
+<p>Definiere nun weitere, generelle Merkmale im YAML header</p>
 <ol style="list-style-type: decimal">
-<li><p>ergänze toc. Knitten.</p></li>
-<li><p>toc depth. Knitten.</p></li>
-<li><p>ergänze includes: in_header: ../2_Assets/header.Rhtml. Knitten.</p></li>
-<li><p>ergänze theme: lusine</p></li>
+<li><p>Füge mit <code>toc: true</code> ein Inhaltsverzeichnis ein.</p></li>
+<li><p>Um alle Überschriften Levels anzuzeigen definiere die <code>toc_depth = 5</code>.</p></li>
+<li><p><code>Knitte</code> das Dokument. Wird der Abschnitt Neueinstellungen mit zwei Unterkapiteln Entwicklung und Stadteile angezeigt?</p></li>
+<li><p>Füge jeweils auf einer neuen Zeile: <code>includes:</code> und dann <code>in_header: ../2_Assets/header.Rhtml</code> ein. Diese Befehle werden eine Vorlage für den header Hintergrund laden.</p></li>
+<li><p><code>Knitte</code> das Dokument. Hat sich die Anzeige des Titels und Untertitels verändert? Ist das AirBnB Logo zu sehen?</p></li>
+<li><p>Als letztes Gestaltungselement lade das <code>theme: lumen</code></p></li>
+<li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
 </ol>
 </div>
 <div id="c---grafiken" class="section level3">
 <h3>C - Grafiken</h3>
+<p>Füge spezifische Einstellungen für alle Grafiken in deinem Dokument in diesem Schritt ein.</p>
 <ol style="list-style-type: decimal">
-<li>ergänze folgendes im setup</li>
+<li>Im <code>setup</code> Chunk setze das Theme der ggplot Grafiken auf <code>theme_minimal</code></li>
 </ol>
 <pre class="r"><code>theme_set(theme_minimal())</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>ergänze folgendes im setup</li>
+<li>Gleich darunter, im <code>setup</code> Chunk, stelle die Farbpaletten der ggplot Grafiken auf die AirBnB Farben ein.</li>
 </ol>
 <pre class="r"><code>ggplot &lt;- function(...) ggplot2::ggplot(...) + 
   scale_fill_gradientn(colors = c(&#39;#555555&#39;,&#39;#6BB7B9&#39;)) + 
   scale_colour_gradientn(colors = c(&#39;#555555&#39;,&#39;#6BB7B9&#39;))</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li></li>
+<li><code>Knitte</code> das Dokument. Hat sich der Hintergrund und die Farbpalette der Grafiken verändert?</li>
 </ol>
 </div>
-<div id="d---css" class="section level3">
-<h3>D - CSS</h3>
+<div id="d---css-funktionen-anpassen" class="section level3">
+<h3>D - CSS Funktionen anpassen</h3>
 <ol style="list-style-type: decimal">
-<li>setze center um die beiden cap definition:</li>
+<li>Die Bildunterschriften sind noch nicht zentriert. Setze das HTML Tag <code>center</code> um die beiden <code>cap</code> Definitionen der Grafiken:</li>
 </ol>
 <pre class="r"><code>&quot;&lt;center&gt;Abbildung 1. Neueinstellungen pro Monat&lt;/center&gt;&quot;
 &quot;&lt;center&gt;Abbildung 2. Neueinstellungen pro Bezirk&lt;/center&gt;&quot;</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li><p>im sjplot table ergänze <code>CSS = list(css.caption = "font-weight:500")</code></p></li>
-<li><p>ergänze auch <code>css.table = "width: auto; margin-right: 0px;margin-left: auto;"</code></p></li>
+<li><p>In der Regressions Tabelle, die Du mit sjPlot erstellt hast, ergänze <code>CSS = list(css.caption = "font-weight:500")</code> um die Schrift anzupassen</p></li>
+<li><p>In der gleichen Tabelle füge <code>css.table = "width: auto; margin-right: 0px;margin-left: auto;"</code> ein, um die letzten beiden Zeilen der Aussgae zu zentrieren.</p></li>
 </ol>
 </div>
-<div id="e---columns" class="section level3">
-<h3>E - Columns</h3>
+<div id="e---layout-in-2-spalten-setzen" class="section level3">
+<h3>E - Layout in 2 Spalten setzen</h3>
+<p>Setze folgenden HTML Code im Abschnitt Entwicklung ein - damit positionierst du den Text in die linke Spalte und die Grafik in die rechte Spalte.</p>
 <ol style="list-style-type: decimal">
-<li>Ergänze folgendes zwischen <code>#### Entwicklung</code> und pargraph danach. Nicht Knitten!!</li>
+<li>Zwischen <code>#### Entwicklung</code> und dem ersten Absatz “Seit …” fügen folgenden HTML Code ein. Nicht Knitten!!</li>
 </ol>
 <pre class="r"><code>&lt;table&gt;
   &lt;col width = 40%&gt;
@@ -266,7 +273,7 @@ summary {
   &lt;tr&gt;
   &lt;td&gt;</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Ergänze zwischen zweitem paragprah und chunk</li>
+<li>Ergänze zwischen dem zweitem Absatz und dem Grafik chunk den folgenden Code. Nicht Knitten!!</li>
 </ol>
 <pre class="r"><code>  &lt;/td&gt;
   &lt;td&gt;
@@ -274,14 +281,14 @@ summary {
   &lt;/td&gt;
   &lt;td&gt;</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Ergänze zwischen chunk und <code>#### Stadtteile</code></li>
+<li>Schliesslich, ergänze zwischen dem Grafik Chunk und <code>#### Stadtteile</code> den Abschluss der HTML Tabelle.</li>
 </ol>
 <pre class="r"><code>  &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li><p>Jetzt knitten…</p></li>
-<li><p>Ergänze zwischen chunk nach <code>#### Stadtteile</code> und chunk danach. Nicht Knitten!!</p></li>
+<li><p><code>Knitte</code> das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt?</p></li>
+<li><p>Für die weiteren Abschnitte gehe gleich vor. Zwischen <code>#### Stadtteile</code> und dem Code Chunk für die Berechnung der Häufigkeiten über die Bezirke fügen den folgnden HTML Code ein. Nicht Knitten!!</p></li>
 </ol>
 <pre class="r"><code>&lt;table&gt;
   &lt;col width = 40%&gt;
@@ -290,7 +297,7 @@ summary {
   &lt;tr&gt;
   &lt;td&gt;</code></pre>
 <ol start="6" style="list-style-type: decimal">
-<li>Ergänze zwischen zweitem paragprah und chunk</li>
+<li>Nach dem Fett gesetzten Absatz “Die grösste Veränderung…” und dem Grafik Chunkg füge den folgenden Code ein. Nicht Knitten!!</li>
 </ol>
 <pre class="r"><code>  &lt;/td&gt;
   &lt;td&gt;
@@ -298,14 +305,14 @@ summary {
   &lt;/td&gt;
   &lt;td&gt;</code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li>Ergänze zwischen chunk und <code>### Preis</code></li>
+<li>Schliesslich nach dem Grafik Chunk und vor <code>### Preis</code> schliesst der folgende HTML code die Tabelle ab.</li>
 </ol>
 <pre class="r"><code>  &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 <ol start="8" style="list-style-type: decimal">
-<li><p>Jetzt knitten</p></li>
-<li><p>Ergänze nach chunk nach <code>#### Der Einfluss der Ausstattung</code> und vor ersten paragraph danach. Nicht Knitten!!</p></li>
+<li><p><code>Knitte</code> das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt?</p></li>
+<li><p>Für den Abschnitt <code>###Preis</code> gehe gleich vor. Ergänze nach dem ersten Code Chunk mit Berechnungen zur Ausstattung und vor dem ersten Absatz den folgenden Code. Nicht Knitten!!</p></li>
 </ol>
 <pre class="r"><code>&lt;table width=100%&gt;
 &lt;col width = 25%&gt;
@@ -314,7 +321,7 @@ summary {
 &lt;tr&gt;
   &lt;td&gt;</code></pre>
 <ol start="10" style="list-style-type: decimal">
-<li>Ergänze zwischen zweitem paragprah und chunk</li>
+<li>Nach dem zweiten, fett gesetzten Absatz und dem Grafik Chunk füge folgenden Code ein. Nicht Knitten!!</li>
 </ol>
 <pre class="r"><code>  &lt;/td&gt;
   &lt;td&gt;
@@ -322,14 +329,15 @@ summary {
   &lt;/td&gt;
   &lt;td&gt;</code></pre>
 <ol start="11" style="list-style-type: decimal">
-<li>Ergänze zwischen chunk und <code>#### Regressionsmodell</code></li>
+<li>Ergänze nach dem Grafik Chunk und vor <code>#### Regressionsmodell</code> den Abschluss der Tabelle.</li>
 </ol>
 <pre class="r"><code>  &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 <ol start="12" style="list-style-type: decimal">
-<li><p>Jetzt knitten</p></li>
-<li><p>Setze den viertel table alleine mit widths 50, 10, 40</p></li>
+<li><p><code>Knitte</code> das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt?</p></li>
+<li><p>Setze dem letzten Abschnitt selbständig mit einer HTML Table (widths 50%, 10%, 40%) in 2 Spalten.</p></li>
+<li><p><code>Knitte</code> das Dokument. Der gesamte Text ist nun in 2 Spalten gesetzt mit den Textinhalten links und den Grafiken bzw. Tabellen rechts.</p></li>
 </ol>
 </div>
 <div id="f---css" class="section level3">

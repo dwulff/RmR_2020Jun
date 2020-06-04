@@ -112,53 +112,25 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 3. `Knitte` das Dokument. Hat sich der Hintergrund und die Farbpalette der Grafiken verändert?  
 
-### D - CSS
+### D - CSS Funktionen anpassen
 
-1. setze center um die beiden cap definition: 
+1. Die Bildunterschriften sind noch nicht zentriert. Setze das HTML Tag `center` um die beiden `cap` Definitionen der Grafiken: 
 
 ```R
 "<center>Abbildung 1. Neueinstellungen pro Monat</center>"
 "<center>Abbildung 2. Neueinstellungen pro Bezirk</center>"
 ```
 
-2. im sjplot table ergänze `CSS = list(css.caption = "font-weight:500")`
+2. In der Regressions Tabelle, die Du mit sjPlot erstellt hast, ergänze `CSS = list(css.caption = "font-weight:500")` um die Schrift anzupassen
 
-3. ergänze auch `css.table = "width: auto; margin-right: 0px;margin-left: auto;"`
+3. In der gleichen Tabelle füge `css.table = "width: auto; margin-right: 0px;margin-left: auto;"` ein, um die letzten beiden Zeilen der Aussgae zu zentrieren.
 
 
-### E - Columns
+### E - Layout in 2 Spalten setzen
 
-1. Ergänze folgendes zwischen `#### Entwicklung` und pargraph danach. Nicht Knitten!!
+Setze folgenden HTML Code im Abschnitt Entwicklung ein - damit positionierst du den Text in die linke Spalte und die Grafik in die rechte Spalte. 
 
-```R
-<table>
-  <col width = 40%>
-  <col width = 10%>
-  <col width = 50%>
-  <tr>
-  <td>
-```
-2. Ergänze zwischen zweitem paragprah und chunk
-
-```R
-  </td>
-  <td>
-  
-  </td>
-  <td>
-```
-
-3. Ergänze zwischen chunk und `#### Stadtteile`
-
-```R
-  </td>
-  </tr>
-</table>
-```
-
-4. Jetzt knitten...
-
-5. Ergänze  zwischen chunk nach  `#### Stadtteile` und chunk danach. Nicht Knitten!!
+1. Zwischen `#### Entwicklung` und dem ersten Absatz "Seit ..." fügen folgenden HTML Code ein. Nicht Knitten!!
 
 ```R
 <table>
@@ -168,7 +140,37 @@ ggplot <- function(...) ggplot2::ggplot(...) +
   <tr>
   <td>
 ```
-6. Ergänze zwischen zweitem paragprah und chunk
+2. Ergänze zwischen dem zweitem Absatz und dem Grafik chunk den folgenden Code.
+Nicht Knitten!!
+```R
+  </td>
+  <td>
+  
+  </td>
+  <td>
+```
+
+3. Schliesslich, ergänze zwischen dem Grafik Chunk und `#### Stadtteile` den Abschluss der HTML Tabelle. 
+
+```R
+  </td>
+  </tr>
+</table>
+```
+
+4. `Knitte` das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt?  
+
+5. Für die weiteren Abschnitte gehe gleich vor. Zwischen `#### Stadtteile` und dem Code Chunk für die Berechnung der Häufigkeiten über die Bezirke fügen den folgnden HTML Code ein. Nicht Knitten!!
+
+```R
+<table>
+  <col width = 40%>
+  <col width = 10%>
+  <col width = 50%>
+  <tr>
+  <td>
+```
+6. Nach dem Fett gesetzten Absatz "Die grösste Veränderung..." und dem Grafik Chunkg füge den folgenden Code ein. Nicht Knitten!!
 
 ```R
   </td>
@@ -178,7 +180,7 @@ ggplot <- function(...) ggplot2::ggplot(...) +
   <td>
 ```
 
-7. Ergänze zwischen chunk und `### Preis`
+7. Schliesslich nach dem Grafik Chunk und vor `### Preis` schliesst der folgende HTML code die Tabelle ab.
 
 ```R
   </td>
@@ -186,9 +188,9 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 </table>
 ```
 
-8. Jetzt knitten
+8. `Knitte` das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt? 
 
-9. Ergänze  nach chunk nach  `#### Der Einfluss der Ausstattung` und vor ersten paragraph danach. Nicht Knitten!!
+9. Für den Abschnitt `###Preis` gehe gleich vor. Ergänze nach dem ersten Code Chunk mit Berechnungen zur Ausstattung und vor dem ersten Absatz den folgenden Code. Nicht Knitten!!
 
 ```R
 <table width=100%>
@@ -198,7 +200,7 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 <tr>
   <td>
 ```
-10. Ergänze zwischen zweitem paragprah und chunk
+10. Nach dem zweiten, fett gesetzten Absatz und dem Grafik Chunk füge folgenden Code ein. Nicht Knitten!!
 
 ```R
   </td>
@@ -208,7 +210,7 @@ ggplot <- function(...) ggplot2::ggplot(...) +
   <td>
 ```
 
-11. Ergänze zwischen chunk und `#### Regressionsmodell`
+11. Ergänze nach dem Grafik Chunk und vor `#### Regressionsmodell` den Abschluss der Tabelle. 
 
 ```R
   </td>
@@ -216,17 +218,21 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 </table>
 ```
 
-12. Jetzt knitten
+12. `Knitte` das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt? 
 
-13. Setze den viertel table alleine mit widths 50, 10, 40
+13. Setze dem letzten Abschnitt selbständig mit einer HTML Table (widths 50%, 10%, 40%) in 2 Spalten. 
+
+12. `Knitte` das Dokument. Der gesamte Text ist nun in 2 Spalten gesetzt mit den Textinhalten links und den Grafiken bzw. Tabellen rechts. 
 
 ### F - CSS
 
-1. Kreiere `my_airbnb.css` und speichere sie in `2_Assets`
+Globale Gestaltungsmkermale der HTML Datei werden in einem eigenen CSS file abgelegt. Erstelle nun das CSS file und passe es wie folgt an.
 
-2. in YAML ergänze `css: ../2_Assets/airbnb.css`
+1. Kreiere die Datei `my_airbnb.css` und speichere sie in `2_Assets` ab.
 
-3. ergänze in `my_airbnb.css` und knitte
+2. Binde nun die leere Datei im YAML Header deines Airbnb Markdown Dokumentes ein. Dafür ergänze `css: ../2_Assets/airbnb.css` unter `html_document:`
+
+3. Ergänze die Ausrichtung der Tabellen in `my_airbnb.css`, speichere die Datei und `knitte` dein Markdown Dokument. 
 
 ```
 table td {
