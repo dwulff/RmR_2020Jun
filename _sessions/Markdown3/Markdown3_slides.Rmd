@@ -81,7 +81,36 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ```
 
-# Kleiner Ausflug nach HTML und CSS
+.pull-left3[
+
+# Nächste Schritte
+
+<ul>
+  <li class="m1"><span>YAML</span></li>
+  <ul><br>
+    <li><span>Header</span></li>
+    <li><span>Inhaltsverzeichnis</span></li>
+    <li><span>Themes</span></li>
+  </ul><br>
+  <li class="m2"><span>Styling</span></li>
+  <ul><br>
+    <li><span>Grafiken</span></li>
+    <li><span>CSS</span></li>
+    <li><span>Columns</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right6[
+
+<p align = "center">
+  <img src="image/missing2.png" height=590px>
+</p>
+
+]
+
+
 
 ---
 
