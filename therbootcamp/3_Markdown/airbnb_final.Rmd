@@ -223,7 +223,7 @@ ausstattung %>%
 
 #### Regressionsmodell
 
-```{r, echo = FALSE}
+```{r}
 # Reduzierter Vektor mit Ausstattungsmerkmalen
 ausstattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
 
@@ -266,8 +266,8 @@ hotel <- airbnb_1819 %>%
   </td>
   <td>
 
-```{r message = F, echo = F, fig.asp=.5}
-# Tabelle mit ergebnissen der Regression
+```{r fig.asp=.5}
+# Tabelle mit Ergebnissen der Regression
 tab_model(ausstattung_mod,
           pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
           title = 'Table 2. Regression des Preises auf die Ausstattung.',

@@ -157,7 +157,7 @@ ausstattung %>%
 
 #### Regressionsmodell
 
-```{r, echo = FALSE}
+```{r}
 # Reduzierter Vektor mit Ausstattungsmerkmalen
 ausstattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
 
@@ -176,7 +176,7 @@ Der Einfluss der Küche ist gegenüber dem Unterschied in Tabelle 1 gesunken, je
   
 Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Hotels haben eine um `r coefficients(ausstattung_mod)['HotelTRUE'] %>% round(1)`€ höheren Preis als Unterkünfte die keine Hotels sind.  
   
-```{r, echo = FALSE}
+```{r}
 # Bestimme Anteil Hotels in 2018 und 2019
 hotel <- airbnb_1819 %>% 
   group_by(year(Erstellungsdatum)) %>% 
@@ -186,8 +186,8 @@ hotel <- airbnb_1819 %>%
 <b>Der Anteil von Hotels ist von `r (hotel$Anteil[1]*100) %>% round(1)`% im Jahre 2018 auf `r (hotel$Anteil[2]*100) %>% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. 
 
 
-```{r message = F, echo = F, fig.asp=.5}
-# Tabelle mit ergebnissen der Regression
+```{rfig.asp=.5}
+# Tabelle mit Ergebnissen der Regression
 tab_model(ausstattung_mod,
           pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
           title = 'Table 2. Regression des Preises auf die Ausstattung.')

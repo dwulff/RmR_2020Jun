@@ -1,11 +1,11 @@
 ---
-title: "Statistics with R"
+title: "Reporting mit R"
 subtitle: ""
 author: "
       <a href='https://therbootcamp.github.io'>
         <i class='fas fa-home' style='font-size:1em;'></i>
       </a>
-      <a href='https://therbootcamp.github.io/SwR_2019Apr/'>
+      <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
         <i class='fas fa-clock' style='font-size:1em;' ></i>
       </a>
       <a href='mailto:therbootcamp@gmail.com'>
@@ -18,8 +18,7 @@ author: "
         <font style='font-style:normal;font-size:20px;padding-left:5px'>Basel R Bootcamp</font>
       </a>
       <br>
-      <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style= 'height:16.7px;vertical-align:baseline'/><font style='font-style:normal;font-size:20px;padding-left:9.3px'>April 2019</font>
-      "
+      <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style= 'height:16.7px;vertical-align:baseline'/><font style='font-style:normal;font-size:20px;padding-left:9.3px'>Juni 2020</font>"
 output:
   html_document:
     css: index.css
@@ -31,20 +30,19 @@ output:
 
 ### Links
 
-##### [Wifi](https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/wifi_instruct.png) 
-##### [Data sets ](https://therbootcamp.github.io/SwR_2019Apr/1_Data/BaselRBootcamp.zip)
-#####  [PDFs](https://therbootcamp.github.io/SwR_2019Apr/_sessions/_pdf/StatisticsWithR_slide_pdfs.zip) <!---<font style="font-size:12px">(made available later)</font>--->
+##### [Projekt](https://www.dropbox.com/s/jomqnkoz9jucf7v/TheRBootcamp.zip?dl=1)
 
 <br>
 
-### Materials
-|  | Day 1<br>Basics| Day 2<br> Advanced| 
+### Materialien
+
+|  | Tag 1 | Tag 2 | 
 |:--|:-------------|:-------------|
-|0| Welcome!<br>[slides](https://therbootcamp.github.io/SwR_2019Apr/_sessions/Welcome/Welcome.html) | Recap<br>[slides](https://therbootcamp.github.io/SwR_2019Apr/_sessions/Recap/Recap.html) |
-|1| Intro to Stats<br>[slides](https://therbootcamp.github.io/SwR_2019Apr/_sessions/Intro2Stats/Intro2Stats.html#1)| Mixed Models<br>[slides](https://therbootcamp.github.io/SwR_2019Apr/_sessions/MixedModels/MixedModels.html), [practical](https://therbootcamp.github.io/SwR_2019Apr/_sessions/MixedModels/MixedModels_practical.html) |
-|2| R for Stats<br>[slides](https://therbootcamp.github.io/SwR_2019Apr/_sessions/RforStats/RforStats.html)  | Robust statistics<br>[slides](https://therbootcamp.github.io/SwR_2019Apr/_sessions/RobustStats/RobustStats.html), [practical](https://therbootcamp.github.io/SwR_2019Apr/_sessions/RobustStats/RobustStats_practical.html) |
-|3| Linear Models I<br>[slides](https://therbootcamp.github.io/SwR_2019Apr/_sessions/LinearModelsI/LinearModelsI.html), [practical](https://therbootcamp.github.io/SwR_2019Apr/_sessions/LinearModelsI/LinearModelsI_practical.html)| New statistics <br>[slides](https://therbootcamp.github.io/SwR_2019Apr/_sessions/NewStats/NewStats.html), [practical](https://therbootcamp.github.io/SwR_2019Apr/_sessions/NewStats/NewStats_practical.html)|
-|4| Linear Models II<br>[slides](https://therbootcamp.github.io/SwR_2019Apr/_sessions/LinearModelsII/LinearModelsII.html), [practical](https://therbootcamp.github.io/SwR_2019Apr/_sessions/LinearModelsII/LinearModelsII_practical.html)  | Look ahead <br>[slides](https://therbootcamp.github.io/SwR_2019Apr/_sessions/NextSteps/NextSteps.html) |
+|0| Willkommen!<br>[slides](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Welcome/Welcome.html) | Wiederholung |
+|1|Markdown<br>[slides](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown/Markdown_slides.html), [practical](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown/Markdown_practical.html) | Slides |
+|2|Markdown II<br>[slides](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown2/Markdown2_slides.html), [practical](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown2/Markdown2_practical.html) | Dashboards |
+|3|Styling<br>[slides](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown3/Markdown3_slides.html), [practical](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown3/Markdown3_practical.html) | Dashboards II |
+|4| | Ausblick |
 <br>
 
 
@@ -66,5 +64,5 @@ output:
 
 
 <p align="left"><br>
-    <img border="0" alt="Apr2019Schedule" src="https://therbootcamp.github.io/SwR_2019Apr/_sessions/Welcome/image/schedule.png" style="width:410px">
+    <img border="0" alt="Apr2019Schedule" src="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Welcome/image/schedule.png" style="width:410px">
 </p>

@@ -1,5 +1,5 @@
 ---
-title: "Markdown IV"
+title: "Slides"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
@@ -45,10 +45,10 @@ options(digits = 3)
 library(tidyverse)
 ```
 
-<p align="center" width="100%">
-  <img src="image/design.png" alt="Style" style="width:100%">
+<p align="center">
+  <img src="image/pp.png" alt="Style" style="width:100%">
   <br>
-  <font style="font-size:10px">from <a href="https://dvisiondesign.net/2019/09/25/what-does-design-mean/">dvisiondesign.net</a></font>
+  <font style="font-size:10px">from <a href="https://unsplash.com/photos/ewGMqs2tmJI">Edwin Andrade @ unsplash.com</a></font>
 </p>
 
 
