@@ -1065,24 +1065,28 @@ basel <- read.csv("1_Data/basel.csv")
 
 # Relativer Pfad
 
-.pull-left4[
+.pull-left35[
 
 <ul>
-  <li class="m1"><span>Markdown Dokumente greifen nicht auf das übliche <high>working directory</high> zu.</span></li>
+  <li class="m1"><span>Markdown Dokumente greifen nicht auf das übliche <high>working directory</high> zu.</span></li><br>
   <li class="m2"><span>Pfade in RMarkdown müssen <high>relativ zur Position des .Rmd</high> Datei definiert werden.</span></li>
 </ul>
 
+<br>
 ```R
+# Lese Daten
 read_csv("../1_Data/daten.csv")
+
+# Lese CSS (mehr dazu später)
 css: "../2_Assets/styling.csv")
 ```
 
 ]
 
-.pull-right5[
+.pull-right55[
 <br>
 <p align = "center">
-  <img src="image/folder.png" height=260px>
+  <img src="image/folder.png" height=280px>
 </p>
 
 ]
