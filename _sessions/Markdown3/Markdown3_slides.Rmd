@@ -893,7 +893,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 <ul>
   <li class="m1"><span>Mit <b>C</b>ascading <b>S</b>tyle <b>S</b>sheets können alle <high>asthetischen Charakteristika von HTML</high> Dokumenten über eine externe Datei bestimmt werden.</span></li>
-  <li class="m2"><span>CSS erlaubt komplexe <high>Vererbungen des Stils</high> zwischen HTMl tags.</span></li> 
+  <li class="m2"><span>CSS erlaubt komplexe <high>Vererbungen des Stils</high> zwischen HTML Tags.</span></li> 
 </ul>
 
 ]
