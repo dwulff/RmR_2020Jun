@@ -1,9 +1,11 @@
 ---
-title: "Markdown"
 output: 
   html_document:
+    theme: lumen
+    toc: true
+    toc_depth: 4
     includes:
-      in_header: example.Rhtml
+      in_header: header.Rhtml
 ---
 
 ```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
@@ -28,9 +30,6 @@ airbnb_plot <- ggplot(airbnb_1819 %>%
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-
-
-
 # Überschrift 1
 
 Die ist ein Text Block.
@@ -39,7 +38,7 @@ Die ist ein Text Block.
 
 Die ist ein Text Block.
 
-### Überschrift 3
+#### Überschrift 4
 
 Die ist ein Text Block.
 
