@@ -1,18 +1,18 @@
 title {
   color: #007D8C;
-  font-family:Helvetica 
+  font-family: Helvetica 
 }
 
 h1 {
   font-weight: 500;
   color: #858585;
-  font-family:Helvetica
+  font-family: Helvetica
 }
 
 h2 {
   font-weight: 500;
   color: #858585;
-  font-family:Helvetica
+  font-family: Helvetica
 }
 
 a, a:hover {
@@ -20,8 +20,8 @@ a, a:hover {
 }
 
 body {
-  font-family:Helvetica
-  color:#858585;
+  font-family: Helvetica
+  color: #858585;
 }
 
 .title-slide hgroup h1 {
