@@ -114,7 +114,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Grafiken skalieren
 
 <ul>
-  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angpasst werden.</span></li> 
+  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angepasst werden.</span></li> 
   <li class="m2"><span>Die Argumente beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
 </ul>
 
@@ -179,7 +179,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Grafiken skalieren
 
 <ul>
-  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angpasst werden.</span></li> 
+  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angepasst werden.</span></li> 
   <li class="m2"><span>Die Argumente beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
 </ul>
 
@@ -244,7 +244,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Grafiken skalieren
 
 <ul>
-  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angpasst werden.</span></li> 
+  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angepasst werden.</span></li> 
   <li class="m2"><span>Die Argumente beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
 </ul>
 
@@ -309,7 +309,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Grafiken skalieren
 
 <ul>
-  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angpasst werden.</span></li> 
+  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angepasst werden.</span></li> 
   <li class="m2"><span>Die Argumente beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
 </ul>
 
@@ -374,7 +374,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 # Grafiken skalieren
 
 <ul>
-  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angpasst werden.</span></li> 
+  <li class="m1"><span>Die <high>Darstellung</high> von Grafiken kann in den <mono>Chunk</mono>-Settings angepasst werden.</span></li> 
   <li class="m2"><span>Die Argumente beginnen (meist) mit <highm>fig.*</highm>.</span></li> 
 </ul>
 
