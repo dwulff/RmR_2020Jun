@@ -110,7 +110,7 @@ layout: true
 # Arten des Berichts
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown ermöglicht Erstellung und Gestaltung unterschiedlichter &lt;high&gt;Berichttypen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;RMarkdown ermöglicht Erstellung und Gestaltung unterschiedlicher &lt;high&gt;Berichttypen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;span&gt;Dokumente&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;Präsentationen&lt;/span&gt;&lt;/li&gt;   
@@ -174,7 +174,7 @@ layout: true
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;Markdowm&lt;/mono&gt;
+  &lt;mono&gt;Markdown&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
   &lt;high&gt;Überschriften&lt;/high&gt;&lt;br&gt;
@@ -922,7 +922,7 @@ layout: true
 .pull-left3[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt; definiert werden vorgenommen werden.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;Weiterführende Funktionen verfügbar.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -944,7 +944,7 @@ layout: true
 .pull-left3[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt; vorgenommen werden.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;Weiterführende Funktionen verfügbar.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -967,7 +967,7 @@ layout: true
 .pull-left3[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt; vorgenommen werden.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;Weiterführende Funktionen verfügbar.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -990,7 +990,7 @@ layout: true
 .pull-left3[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt; vorgenommen werden.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;Weiterführende Funktionen verfügbar.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1013,7 +1013,7 @@ layout: true
 .pull-left3[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Im Setup-Chunk können &lt;high&gt;Settings für alle Chunks&lt;/high&gt; vorgenommen werden.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;Weiterführende Funktionen verfügbar.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1027,17 +1027,32 @@ layout: true
 
 ]
 
----
-
-# Do's Don'ts
-
 
 ---
 
-# &lt;mono&gt;.../&lt;/mono&gt;
+# Relativer Pfad
 
+.pull-left4[
 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Markdown Dokumente greifen nicht auf das übliche &lt;high&gt;working directory&lt;/high&gt; zu.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Pfade in RMarkdown müssen &lt;high&gt;relativ zur Position des .Rmd&lt;/high&gt; Datei definiert werden.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
+```R
+read_csv("../1_Data/daten.csv")
+css: "../2_Assets/styling.csv")
+```
+
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/folder.png" height=260px&gt;
+&lt;/p&gt;
+
+]
 
 ---
 

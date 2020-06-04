@@ -955,7 +955,7 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high> definiert werden.</span></li>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high> definiert werden vorgenommen werden.</span></li>
   <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
 </ul>
 
@@ -977,7 +977,7 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high>.</span></li>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high> vorgenommen werden.</span></li>
   <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
 </ul>
 
@@ -1000,7 +1000,7 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high>.</span></li>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high> vorgenommen werden.</span></li>
   <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
 </ul>
 
@@ -1023,7 +1023,7 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high>.</span></li>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high> vorgenommen werden.</span></li>
   <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
 </ul>
 
@@ -1046,7 +1046,7 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high>.</span></li>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high> vorgenommen werden.</span></li>
   <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
 </ul>
 
@@ -1060,17 +1060,32 @@ basel <- read.csv("1_Data/basel.csv")
 
 ]
 
----
-
-# Do's Don'ts
-
 
 ---
 
-# <mono>.../</mono>
+# Relativer Pfad
 
+.pull-left4[
 
+<ul>
+  <li class="m1"><span>Markdown Dokumente greifen nicht auf das übliche <high>working directory</high> zu.</span></li>
+  <li class="m2"><span>Pfade in RMarkdown müssen <high>relativ zur Position des .Rmd</high> Datei definiert werden.</span></li>
+</ul>
 
+```R
+read_csv("../1_Data/daten.csv")
+css: "../2_Assets/styling.csv")
+```
+
+]
+
+.pull-right5[
+<br>
+<p align = "center">
+  <img src="image/folder.png" height=260px>
+</p>
+
+]
 
 ---
 

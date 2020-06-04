@@ -121,8 +121,23 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
 
 ---
 
-# Example
+.pull-left4[
 
+# Reporting in R
+
+
+<ul>
+  <li class="m1"><span>Reporting Pakete gehören zu den <high>populärsten R Paketen</high> überhaupt.</span></li>
+  <li class="m2"><span>Reporting Pakete werden deutlich häufigerr runtergeladen als die bedeutendsten <high>Statistikpakete</high>.</span></li>
+</ul>
+
+]
+
+.pull-right5[
+<br><br>
+<p align="center"><img src="image/downloads.png"></p>
+
+]
 
 
 ---
