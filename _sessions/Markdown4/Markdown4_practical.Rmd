@@ -169,35 +169,39 @@ ggplot <- function(...) ggplot2::ggplot(...) +
   scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
 ```
 
-### D - Nun gehts an die Slides
+### D - Nun geht es an das Erstellen der Slides
 
-1. new zwischenslide `# wekfj`
+1. Füge nach dem `setup` Chunk in einer neuen Zeile `# Neueinstellungen` ein. Damit erstellst du deinen ersten Zwischenslide mit grauem Hintergrund.
 
-2. knitten ...
+2. `Knitte` das Dokument. Zu deinem Titelslide gibt es jetzt einen 2. Slide mit dem Titel Neueinstellungen. 
 
-3. new slide `##`
+3. Für den ersten Slide mit Inhalt füge in einer neuen Zeile `## Entwicklung` ein.
 
-4. Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin:
-
-5. include stuff
-
+4. Füge den folgenden Satz mit `inline code` in der nächsten Zeile ein:
 
 ```R
 Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin:
+```
 
+5. In einer Liste mit Bullet Points ergänze die folgenden zusammengefassten Informationen. Die `>` Zeichen vor dem `-` bewirken ein schrittweises Einblenden der Bullet Points.
+
+```R
 > - `r nrow(airbnb_1819)` Airbnb Wohnungen eingestellt
 > - `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% haben Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen
 > - 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt
 > - 2018 nur `r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt
 > - Zuwachs: `r (round(n_2019/n_2018, 2) - 1)*100`%
-
 ```
 
-6. knitten all good?
+2. `Knitte` das Dokument. Auf dem 3. Slide sind deine Bullet Points zu sehen!
 
-7. new slie `##`
+7. Füge einen neuen slide mit dem Titel "Entwicklung" ein.
 
-8. include chunk
+```{r}
+## Entwicklung
+```
+
+8. Auf diesem Slide soll die erste Grafik abgebildet werden. Füge dafür einen R Code Chunk mit der Grafik über die Neueinstellungen pro Monat ein.
 
 ```R
 ```{r  fig.asp=.6, fig.cap = cap}
@@ -214,11 +218,11 @@ ggplot(airbnb_1819 %>%
         axis.text.x = element_text(angle = 45, hjust = 1)) 
 
 # Ergänze caption
-cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
+cap = "<center>Abbildung 1. Neueinstellungen pro Monat</center>"
 ```
 ```
 
-9. knitten. all good.
+10. `Knitte` das Dokument. Der letzte Slide sollte die Grafik 1 enthalten.
 
 ### E - Second couple of slides
 

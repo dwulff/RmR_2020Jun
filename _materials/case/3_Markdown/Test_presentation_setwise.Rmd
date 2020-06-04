@@ -31,6 +31,36 @@ theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
 ggplot <- function(...) ggplot2::ggplot(...) + 
   scale_fill_gradientn(colors = c('#555555','#6BB7B9')) + 
   scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
-
-
 ```
+
+# Neueinstellungen
+
+## Entwicklung
+
+Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin:
+
+> - `r nrow(airbnb_1819)` Airbnb Wohnungen eingestellt
+> - `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% haben Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen
+> - 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt
+> - 2018 nur `r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt
+> - Zuwachs: `r (round(n_2019/n_2018, 2) - 1)*100`%
+
+## Entwicklung
+
+```{r  fig.asp=.6, fig.cap = cap}
+# Plotte Häufigkeiten
+ggplot(airbnb_1819 %>% 
+         group_by(Jahr = year(Erstellungsdatum), 
+                  Monat_tmp = month(Erstellungsdatum)) %>% 
+         summarize(
+           Monat = as_factor(paste(first(Jahr), first(Monat_tmp), sep = '-')),
+           Wohnungen = n()), 
+       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+  geom_bar(stat = 'identity', position = 'dodge') + 
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 45, hjust = 1)) 
+
+# Ergänze caption
+cap = "<center>Figure 1. Neueinstellungen pro Monat</center>"
+```
+
