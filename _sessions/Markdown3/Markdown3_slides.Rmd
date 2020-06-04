@@ -305,6 +305,38 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ---
 
+.pull-left3[
+
+# YAML
+
+<ul>
+  <li class="m1"><span>YAML</span></li>
+  <ul><br>
+    <li><span>Header</span></li>
+    <li><span>Inhaltsverzeichnis</span></li>
+    <li><span>Themes</span></li>
+  </ul><br>
+  <li class="m2"><span>Styling</span></li>
+  <ul><br>
+    <li><span>Grafiken</span></li>
+    <li><span>CSS</span></li>
+    <li><span>Columns</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right6[
+
+<br>
+<p align = "center">
+  <img src="image/html_1.png" height=540px>
+</p>
+
+]
+
+---
+
 # HTML
 
 .pull-left4[
