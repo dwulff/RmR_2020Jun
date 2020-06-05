@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Slides und Export</title>
+    <title>Slides</title>
     <meta charset="utf-8" />
     <meta name="author" content="Reporting mit R   The R Bootcamp" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
@@ -11,7 +11,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Slides und Export
+# Slides
 ### Reporting mit R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp </a> <br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
 ### Juni 2020
 
@@ -68,13 +68,15 @@ layout: true
 
 ]
 
+
 ---
 
-# Präsentationen
-
 .pull-left4[
+
+# YAML
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;New File - R Markdown - Presentation&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Wie in HTML Dokumenten, dient der YAML Head &lt;high&gt;allgemeinen Einstellungen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -82,7 +84,7 @@ layout: true
   &lt;col width="60%"&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Element&lt;/b&gt;   
+    &lt;b&gt;Komponente&lt;/b&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
     &lt;b&gt;Beschreibung&lt;/b&gt;
@@ -90,9 +92,26 @@ layout: true
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;output&lt;/mono&gt; &lt;/td&gt;
+  &lt;mono&gt;subtitle&lt;/mono&gt;
+  &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;ioslides_presentation&lt;/high&gt;  
+  Unterschrift auf Titelslide
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;logo&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Logo auf Titelslide und in Fusszeile
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;css&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Cascading style sheet
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
@@ -101,25 +120,21 @@ layout: true
 
 .pull-right5[
 
-````markdown
-title: "Meine Präsentation"
-author: "MSM"
-date: "5/25/2020"
-output: ioslides_presentation
-````
-
-&lt;p align="center" width="100%"&gt;
-  &lt;img src="image/Presentation_New.png" alt="Word New" style="width:80%"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/yaml_1.png" height=480px&gt;
 &lt;/p&gt;
- 
+
 ]
 
 ---
 
 .pull-left4[
-# Präsentation
+
+# YAML
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Unterschiede&lt;/high&gt; in der Formatierung der Elemente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Wie in HTML Dokumenten, dient der YAML Head &lt;high&gt;allgemeinen Einstellungen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -127,7 +142,7 @@ output: ioslides_presentation
   &lt;col width="60%"&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Element&lt;/b&gt;   
+    &lt;b&gt;Komponente&lt;/b&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
     &lt;b&gt;Beschreibung&lt;/b&gt;
@@ -135,106 +150,48 @@ output: ioslides_presentation
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;#&lt;/mono&gt; &lt;/td&gt;
+  &lt;mono&gt;subtitle&lt;/mono&gt;
+  &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;Neuer Abschnitt&lt;/high&gt; mit Abschnitt-Überschrift
+  Unterschrift auf Titelslide
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;##&lt;/mono&gt;
+  &lt;mono&gt;logo&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-&lt;high&gt;Neuer Slide&lt;/high&gt; mit Slide Überschrift
+  Logo auf Titelslide und in Fusszeile
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;-&lt;/mono&gt;
+  &lt;mono&gt;css&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-&lt;high&gt;Bullet&lt;/high&gt; points
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;&gt;-&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-Bullet points &lt;high&gt;inkrementell&lt;/high&gt;
-  &lt;/td&gt; 
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;1., 2. ...&lt;/mono&gt;
-  &lt;/td&gt;
-  &lt;td bgcolor="white"&gt;
-&lt;high&gt;Liste&lt;/high&gt; mit Nummerierung
+  Cascading style sheet
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
 
 ]
-&lt;br&gt;
+
 .pull-right5[
 
-````markdown
-title: "Meine Präsentation"
-author: "MSM"
-date: "5/25/2020"
-output: ioslides_presentation
-
-# Erster Abschnitt
-## Titel auf Slide 1
-
-- Bullet 1
-- Bullet 2
-````
-
-&lt;p align="center" width="100%"&gt;
-  &lt;img src="image/P_Abschnitt1.png" alt="" style="width:50%"&gt;
-  &lt;img src="image/P_Titel1.png" alt="" style="width:50%"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/yaml_2.png" height=480px&gt;
 &lt;/p&gt;
- 
 ]
 
 ---
 
-# Präsentation gestalten
-
 .pull-left4[
+
+# YAML
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Eigene &lt;high&gt;Hintergrundbilder&lt;/high&gt; einfügen mit &lt;highm&gt;data_background&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-````markdown
-title: "Meine Präsentation"
-author: "MSM"
-date: "5/25/2020"
-output: ioslides_presentation
-
-## Mein eigener Hintergrund 
-{data-background=xp.png 
-data-background-size=cover}
-````
-
-]
-
-.pull-right5[
-
-&lt;p align="center" width="100%"&gt;
-  &lt;img src="image/P_Background.png" alt="P_Background" style="width:80%"&gt;
-&lt;/p&gt;
- 
-]
-
----
-
-# Neue Markdown Datei - Word
-
-.pull-left4[
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;New File - R Markdown - Word&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Wie in HTML Dokumenten, dient der YAML Head &lt;high&gt;allgemeinen Einstellungen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
@@ -242,7 +199,7 @@ data-background-size=cover}
   &lt;col width="60%"&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-    &lt;b&gt;Element&lt;/b&gt;   
+    &lt;b&gt;Komponente&lt;/b&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
     &lt;b&gt;Beschreibung&lt;/b&gt;
@@ -250,93 +207,916 @@ data-background-size=cover}
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;mono&gt;output&lt;/mono&gt; &lt;/td&gt;
+  &lt;mono&gt;subtitle&lt;/mono&gt;
+  &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-  &lt;high&gt;word_document&lt;/high&gt;  
+  Unterschrift auf Titelslide
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;logo&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Logo auf Titelslide und in Fusszeile
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;css&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Cascading style sheet
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;/table&gt;
 
-
 ]
 
 .pull-right5[
 
-````markdown
-title: "Mein Dokument"
-author: "MSM"
-date: "5/25/2020"
-output: word_document
-````
-
-&lt;p align="center" width="100%"&gt;
-  &lt;img src="image/Word_Select.png" alt="Word New" style="width:80%"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/yaml_3.png" height=480px&gt;
 &lt;/p&gt;
- 
+
 ]
 
 ---
 
-# Externes Word Template
-
 .pull-left4[
+
+# YAML
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Word template erstellen&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Formatierung in Word anpassen&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;Als Vorlage in Markdown einbinden&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Wie in HTML Dokumenten, dient der YAML Head &lt;high&gt;allgemeinen Einstellungen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-````markdown
-title: "Mein Word Dokument"
-author: MSM
-date: 22/05/2020
-output: 
- word_document:
- reference_docx: Word_Template.docx
-````
-
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Komponente&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;subtitle&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Unterschrift auf Titelslide
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;logo&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Logo auf Titelslide und in Fusszeile
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;css&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Cascading style sheet
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
 
 ]
 
 .pull-right5[
-
-&lt;p align="center" width="100%"&gt;
-  &lt;img src="image/Word_StylePane.png" alt="Word Select" style="width:75%"&gt;
-  &lt;img src="image/Word_Styles.png" alt="Word Select" style="width:75%"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/yaml_4.png" height=480px&gt;
 &lt;/p&gt;
- 
+
+]
+
+
+
+---
+
+.pull-left4[
+
+# Slides
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;ioslides&lt;/mono&gt; erwarten eine leicht &lt;high&gt;veränderte Markup Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markup&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;#, ##&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Neue(r) Abschnitt, Folie
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Titel | &lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Untertitel
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;br&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Nicht-numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;1.&lt;br&gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;gt;-, &amp;gt;1.&lt;br&gt;&amp;gt;-, &amp;gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Gestaffelte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.flexbox, .build, .smaller}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Slideoptionen.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/slide_1.png" height=480px&gt;
+&lt;/p&gt;
+
 ]
 
 ---
 
-# Externes Word Template
-
 .pull-left4[
+
+# Slides
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Word template erstellen&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Formatierung in Word anpassen&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;Als Vorlage in Markdown einbinden&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;ioslides&lt;/mono&gt; erwarten eine leicht &lt;high&gt;veränderte Markup Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-````markdown
-title: "Mein Word Dokument"
-author: MSM
-date: 22/05/2020
-output: 
- word_document:
- reference_docx: Word_Template.docx
-````
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markup&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;#, ##&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Neue(r) Abschnitt, Folie
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Titel | &lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Untertitel
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;br&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Nicht-numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;1.&lt;br&gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;gt;-, &amp;gt;1.&lt;br&gt;&amp;gt;-, &amp;gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Gestaffelte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.flexbox, .build, .smaller}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Slideoptionen.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
 
 ]
 
 .pull-right5[
-
-&lt;p align="center" width="100%"&gt;
-  &lt;img src="image/Word_Fett.png" alt="Word Select" style="width:75%"&gt;
-  &lt;img src="image/Word_Normal_Unter.png" alt="Word Select" style="width:75%"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/slide_2.png" height=480px&gt;
 &lt;/p&gt;
- 
+
 ]
+
+---
+
+.pull-left4[
+
+# Slides
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;ioslides&lt;/mono&gt; erwarten eine leicht &lt;high&gt;veränderte Markup Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markup&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;#, ##&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Neue(r) Abschnitt, Folie
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Titel | &lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Untertitel
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;br&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Nicht-numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;1.&lt;br&gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;gt;-, &amp;gt;1.&lt;br&gt;&amp;gt;-, &amp;gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Gestaffelte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.flexbox, .build, .smaller}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Slideoptionen.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/slide_3.png" height=480px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# Slides
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;ioslides&lt;/mono&gt; erwarten eine leicht &lt;high&gt;veränderte Markup Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markup&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;#, ##&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Neue(r) Abschnitt, Folie
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Titel | &lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Untertitel
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;br&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Nicht-numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;1.&lt;br&gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;gt;-, &amp;gt;1.&lt;br&gt;&amp;gt;-, &amp;gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Gestaffelte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.flexbox, .build, .smaller}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Slideoptionen.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/slide_4.png" height=480px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# Slides
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;ioslides&lt;/mono&gt; erwarten eine leicht &lt;high&gt;veränderte Markup Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markup&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;#, ##&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Neue(r) Abschnitt, Folie
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Titel | &lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Untertitel
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;br&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Nicht-numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;1.&lt;br&gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;gt;-, &amp;gt;1.&lt;br&gt;&amp;gt;-, &amp;gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Gestaffelte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.flexbox, .build, .smaller}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Slideoptionen.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/slide_5.png" height=480px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# Slides
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;ioslides&lt;/mono&gt; erwarten eine leicht &lt;high&gt;veränderte Markup Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markup&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;#, ##&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Neue(r) Abschnitt, Folie
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Titel | &lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Untertitel
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;br&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Nicht-numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;1.&lt;br&gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;gt;-, &amp;gt;1.&lt;br&gt;&amp;gt;-, &amp;gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Gestaffelte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.flexbox, .build, .smaller}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Slideoptionen.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/slide_6.png" height=480px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# Slides
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;ioslides&lt;/mono&gt; erwarten eine leicht &lt;high&gt;veränderte Markup Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markup&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;#, ##&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Neue(r) Abschnitt, Folie
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Titel | &lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Untertitel
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;br&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Nicht-numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;1.&lt;br&gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;gt;-, &amp;gt;1.&lt;br&gt;&amp;gt;-, &amp;gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Gestaffelte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.flexbox, .build, .smaller}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Slideoptionen.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/slide_7.png" height=480px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left4[
+
+# Slides
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;ioslides&lt;/mono&gt; erwarten eine leicht &lt;high&gt;veränderte Markup Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markup&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;#, ##&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Neue(r) Abschnitt, Folie
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Titel | &lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Untertitel
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;br&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Nicht-numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;1.&lt;br&gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;gt;-, &amp;gt;1.&lt;br&gt;&amp;gt;-, &amp;gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Gestaffelte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.flexbox, .build, .smaller}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Slideoptionen.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/slide_8.png" height=480px&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left4[
+
+# Slides
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;ioslides&lt;/mono&gt; erwarten eine leicht &lt;high&gt;veränderte Markup Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markup&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;#, ##&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Neue(r) Abschnitt, Folie
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Titel | &lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Untertitel
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;br&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Nicht-numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;1.&lt;br&gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;gt;-, &amp;gt;1.&lt;br&gt;&amp;gt;-, &amp;gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Gestaffelte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.flexbox, .build, .smaller}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Slideoptionen.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/slide_9.png" height=480px&gt;&lt;br&gt;
+      &lt;font style="font-size:10px"&gt;from &lt;a href="https://twitter.com/hadleywickham"&gt;twitter.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+]
+
+
+---
+
+.pull-left4[
+
+# Slides
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;ioslides&lt;/mono&gt; erwarten eine leicht &lt;high&gt;veränderte Markup Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Markup&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;#, ##&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Neue(r) Abschnitt, Folie
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;## Titel | &lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Untertitel
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;-&lt;br&gt;-&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Nicht-numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;1.&lt;br&gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Numerierte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&amp;gt;-, &amp;gt;1.&lt;br&gt;&amp;gt;-, &amp;gt;2.&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Gestaffelte Bullets
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;{.flexbox, .build, .smaller}&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Slideoptionen.
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/slide_10.png" height=480px&gt;&lt;br&gt;
+    &lt;font style="font-size:10px"&gt;see &lt;a href="https://www.youtube.com/watch?v=s9aWmU0atlQ"&gt;youtube.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
 
 ---
 

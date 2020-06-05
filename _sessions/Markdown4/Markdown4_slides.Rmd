@@ -1,5 +1,5 @@
 ---
-title: "Slides und Export"
+title: "Slides"
 author: "Reporting mit R<br>
   <a href='https://therbootcamp.github.io'>
     The R Bootcamp
@@ -105,13 +105,15 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ]
 
+
 ---
 
-# Präsentationen
-
 .pull-left4[
+
+# YAML
+
 <ul>
-  <li class="m1"><span>New File - R Markdown - Presentation</span></li>
+  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Head <high>allgemeinen Einstellungen</high>.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -119,7 +121,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <col width="60%">
 <tr>
   <td bgcolor="white">
-    <b>Element</b>   
+    <b>Komponente</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -127,9 +129,26 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>output</mono> </td>
+  <mono>subtitle</mono>
+  </td>
   <td bgcolor="white">
-  <high>ioslides_presentation</high>  
+  Unterschrift auf Titelslide
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>logo</mono>
+  </td>
+  <td bgcolor="white">
+  Logo auf Titelslide und in Fusszeile
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>css</mono>
+  </td>
+  <td bgcolor="white">
+  Cascading style sheet
   </td> 
 </tr>
 </table>
@@ -138,25 +157,21 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 .pull-right5[
 
-````markdown
-title: "Meine Präsentation"
-author: "MSM"
-date: "5/25/2020"
-output: ioslides_presentation
-````
-
-<p align="center" width="100%">
-  <img src="image/Presentation_New.png" alt="Word New" style="width:80%">
+<br><br>
+<p align = "center">
+  <img src="image/yaml_1.png" height=480px>
 </p>
- 
+
 ]
 
 ---
 
 .pull-left4[
-# Präsentation
+
+# YAML
+
 <ul>
-  <li class="m1"><span><high>Unterschiede</high> in der Formatierung der Elemente</span></li>
+  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Head <high>allgemeinen Einstellungen</high>.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -164,7 +179,7 @@ output: ioslides_presentation
   <col width="60%">
 <tr>
   <td bgcolor="white">
-    <b>Element</b>   
+    <b>Komponente</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -172,106 +187,48 @@ output: ioslides_presentation
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>#</mono> </td>
+  <mono>subtitle</mono>
+  </td>
   <td bgcolor="white">
-  <high>Neuer Abschnitt</high> mit Abschnitt-Überschrift
+  Unterschrift auf Titelslide
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>##</mono>
+  <mono>logo</mono>
   </td>
   <td bgcolor="white">
-<high>Neuer Slide</high> mit Slide Überschrift
+  Logo auf Titelslide und in Fusszeile
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>-</mono>
+  <mono>css</mono>
   </td>
   <td bgcolor="white">
-<high>Bullet</high> points
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>>-</mono>
-  </td>
-  <td bgcolor="white">
-Bullet points <high>inkrementell</high>
-  </td> 
-</tr>
-<tr>
-  <td bgcolor="white">
-  <mono>1., 2. ...</mono>
-  </td>
-  <td bgcolor="white">
-<high>Liste</high> mit Nummerierung
+  Cascading style sheet
   </td> 
 </tr>
 </table>
 
 ]
-<br>
+
 .pull-right5[
 
-````markdown
-title: "Meine Präsentation"
-author: "MSM"
-date: "5/25/2020"
-output: ioslides_presentation
-
-# Erster Abschnitt
-## Titel auf Slide 1
-
-- Bullet 1
-- Bullet 2
-````
-
-<p align="center" width="100%">
-  <img src="image/P_Abschnitt1.png" alt="" style="width:50%">
-  <img src="image/P_Titel1.png" alt="" style="width:50%">
+<br><br>
+<p align = "center">
+  <img src="image/yaml_2.png" height=480px>
 </p>
- 
 ]
 
 ---
 
-# Präsentation gestalten
-
 .pull-left4[
+
+# YAML
+
 <ul>
-  <li class="m1"><span>Eigene <high>Hintergrundbilder</high> einfügen mit <highm>data_background</highm></span></li>
-</ul>
-
-````markdown
-title: "Meine Präsentation"
-author: "MSM"
-date: "5/25/2020"
-output: ioslides_presentation
-
-## Mein eigener Hintergrund 
-{data-background=xp.png 
-data-background-size=cover}
-````
-
-]
-
-.pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/P_Background.png" alt="P_Background" style="width:80%">
-</p>
- 
-]
-
----
-
-# Neue Markdown Datei - Word
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>New File - R Markdown - Word</span></li>
+  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Head <high>allgemeinen Einstellungen</high>.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -279,7 +236,7 @@ data-background-size=cover}
   <col width="60%">
 <tr>
   <td bgcolor="white">
-    <b>Element</b>   
+    <b>Komponente</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -287,93 +244,916 @@ data-background-size=cover}
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>output</mono> </td>
+  <mono>subtitle</mono>
+  </td>
   <td bgcolor="white">
-  <high>word_document</high>  
+  Unterschrift auf Titelslide
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>logo</mono>
+  </td>
+  <td bgcolor="white">
+  Logo auf Titelslide und in Fusszeile
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>css</mono>
+  </td>
+  <td bgcolor="white">
+  Cascading style sheet
   </td> 
 </tr>
 </table>
 
-
 ]
 
 .pull-right5[
 
-````markdown
-title: "Mein Dokument"
-author: "MSM"
-date: "5/25/2020"
-output: word_document
-````
-
-<p align="center" width="100%">
-  <img src="image/Word_Select.png" alt="Word New" style="width:80%">
+<br><br>
+<p align = "center">
+  <img src="image/yaml_3.png" height=480px>
 </p>
- 
+
 ]
 
 ---
 
-# Externes Word Template
-
 .pull-left4[
+
+# YAML
+
 <ul>
-  <li class="m1"><span>Word template erstellen</span></li>
-  <li class="m2"><span>Formatierung in Word anpassen</span></li>
-  <li class="m3"><span>Als Vorlage in Markdown einbinden</span></li>
+  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Head <high>allgemeinen Einstellungen</high>.</span></li>
 </ul>
 
-````markdown
-title: "Mein Word Dokument"
-author: MSM
-date: 22/05/2020
-output: 
- word_document:
- reference_docx: Word_Template.docx
-````
-
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Komponente</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>subtitle</mono>
+  </td>
+  <td bgcolor="white">
+  Unterschrift auf Titelslide
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>logo</mono>
+  </td>
+  <td bgcolor="white">
+  Logo auf Titelslide und in Fusszeile
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>css</mono>
+  </td>
+  <td bgcolor="white">
+  Cascading style sheet
+  </td> 
+</tr>
+</table>
 
 ]
 
 .pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/Word_StylePane.png" alt="Word Select" style="width:75%">
-  <img src="image/Word_Styles.png" alt="Word Select" style="width:75%">
+<br><br>
+<p align = "center">
+  <img src="image/yaml_4.png" height=480px>
 </p>
- 
+
+]
+
+
+
+---
+
+.pull-left4[
+
+# Slides
+
+<ul>
+  <li class="m1"><span><mono>ioslides</mono> erwarten eine leicht <high>veränderte Markup Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markup</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#, ##</mono>
+  </td>
+  <td bgcolor="white">
+  Neue(r) Abschnitt, Folie
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Titel | </mono>
+  </td>
+  <td bgcolor="white">
+  Untertitel
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-<br>-</mono>
+  </td>
+  <td bgcolor="white">
+  Nicht-numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>1.<br>2.</mono>
+  </td>
+  <td bgcolor="white">
+  Numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
+  </td>
+  <td bgcolor="white">
+  Gestaffelte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.flexbox, .build, .smaller}</mono>
+  </td>
+  <td bgcolor="white">
+  Slideoptionen.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/slide_1.png" height=480px>
+</p>
+
 ]
 
 ---
 
-# Externes Word Template
-
 .pull-left4[
+
+# Slides
+
 <ul>
-  <li class="m1"><span>Word template erstellen</span></li>
-  <li class="m2"><span>Formatierung in Word anpassen</span></li>
-  <li class="m3"><span>Als Vorlage in Markdown einbinden</span></li>
+  <li class="m1"><span><mono>ioslides</mono> erwarten eine leicht <high>veränderte Markup Syntax</high>.</span></li>
 </ul>
 
-````markdown
-title: "Mein Word Dokument"
-author: MSM
-date: 22/05/2020
-output: 
- word_document:
- reference_docx: Word_Template.docx
-````
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markup</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#, ##</mono>
+  </td>
+  <td bgcolor="white">
+  Neue(r) Abschnitt, Folie
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Titel | </mono>
+  </td>
+  <td bgcolor="white">
+  Untertitel
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-<br>-</mono>
+  </td>
+  <td bgcolor="white">
+  Nicht-numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>1.<br>2.</mono>
+  </td>
+  <td bgcolor="white">
+  Numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
+  </td>
+  <td bgcolor="white">
+  Gestaffelte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.flexbox, .build, .smaller}</mono>
+  </td>
+  <td bgcolor="white">
+  Slideoptionen.
+  </td> 
+</tr>
+</table>
 
 ]
 
 .pull-right5[
-
-<p align="center" width="100%">
-  <img src="image/Word_Fett.png" alt="Word Select" style="width:75%">
-  <img src="image/Word_Normal_Unter.png" alt="Word Select" style="width:75%">
+<br><br>
+<p align = "center">
+  <img src="image/slide_2.png" height=480px>
 </p>
- 
+
 ]
+
+---
+
+.pull-left4[
+
+# Slides
+
+<ul>
+  <li class="m1"><span><mono>ioslides</mono> erwarten eine leicht <high>veränderte Markup Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markup</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#, ##</mono>
+  </td>
+  <td bgcolor="white">
+  Neue(r) Abschnitt, Folie
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Titel | </mono>
+  </td>
+  <td bgcolor="white">
+  Untertitel
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-<br>-</mono>
+  </td>
+  <td bgcolor="white">
+  Nicht-numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>1.<br>2.</mono>
+  </td>
+  <td bgcolor="white">
+  Numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
+  </td>
+  <td bgcolor="white">
+  Gestaffelte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.flexbox, .build, .smaller}</mono>
+  </td>
+  <td bgcolor="white">
+  Slideoptionen.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/slide_3.png" height=480px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Slides
+
+<ul>
+  <li class="m1"><span><mono>ioslides</mono> erwarten eine leicht <high>veränderte Markup Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markup</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#, ##</mono>
+  </td>
+  <td bgcolor="white">
+  Neue(r) Abschnitt, Folie
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Titel | </mono>
+  </td>
+  <td bgcolor="white">
+  Untertitel
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-<br>-</mono>
+  </td>
+  <td bgcolor="white">
+  Nicht-numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>1.<br>2.</mono>
+  </td>
+  <td bgcolor="white">
+  Numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
+  </td>
+  <td bgcolor="white">
+  Gestaffelte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.flexbox, .build, .smaller}</mono>
+  </td>
+  <td bgcolor="white">
+  Slideoptionen.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/slide_4.png" height=480px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Slides
+
+<ul>
+  <li class="m1"><span><mono>ioslides</mono> erwarten eine leicht <high>veränderte Markup Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markup</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#, ##</mono>
+  </td>
+  <td bgcolor="white">
+  Neue(r) Abschnitt, Folie
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Titel | </mono>
+  </td>
+  <td bgcolor="white">
+  Untertitel
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-<br>-</mono>
+  </td>
+  <td bgcolor="white">
+  Nicht-numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>1.<br>2.</mono>
+  </td>
+  <td bgcolor="white">
+  Numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
+  </td>
+  <td bgcolor="white">
+  Gestaffelte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.flexbox, .build, .smaller}</mono>
+  </td>
+  <td bgcolor="white">
+  Slideoptionen.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/slide_5.png" height=480px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Slides
+
+<ul>
+  <li class="m1"><span><mono>ioslides</mono> erwarten eine leicht <high>veränderte Markup Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markup</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#, ##</mono>
+  </td>
+  <td bgcolor="white">
+  Neue(r) Abschnitt, Folie
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Titel | </mono>
+  </td>
+  <td bgcolor="white">
+  Untertitel
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-<br>-</mono>
+  </td>
+  <td bgcolor="white">
+  Nicht-numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>1.<br>2.</mono>
+  </td>
+  <td bgcolor="white">
+  Numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
+  </td>
+  <td bgcolor="white">
+  Gestaffelte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.flexbox, .build, .smaller}</mono>
+  </td>
+  <td bgcolor="white">
+  Slideoptionen.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/slide_6.png" height=480px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Slides
+
+<ul>
+  <li class="m1"><span><mono>ioslides</mono> erwarten eine leicht <high>veränderte Markup Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markup</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#, ##</mono>
+  </td>
+  <td bgcolor="white">
+  Neue(r) Abschnitt, Folie
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Titel | </mono>
+  </td>
+  <td bgcolor="white">
+  Untertitel
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-<br>-</mono>
+  </td>
+  <td bgcolor="white">
+  Nicht-numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>1.<br>2.</mono>
+  </td>
+  <td bgcolor="white">
+  Numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
+  </td>
+  <td bgcolor="white">
+  Gestaffelte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.flexbox, .build, .smaller}</mono>
+  </td>
+  <td bgcolor="white">
+  Slideoptionen.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/slide_7.png" height=480px>
+</p>
+
+]
+
+---
+
+.pull-left4[
+
+# Slides
+
+<ul>
+  <li class="m1"><span><mono>ioslides</mono> erwarten eine leicht <high>veränderte Markup Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markup</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#, ##</mono>
+  </td>
+  <td bgcolor="white">
+  Neue(r) Abschnitt, Folie
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Titel | </mono>
+  </td>
+  <td bgcolor="white">
+  Untertitel
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-<br>-</mono>
+  </td>
+  <td bgcolor="white">
+  Nicht-numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>1.<br>2.</mono>
+  </td>
+  <td bgcolor="white">
+  Numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
+  </td>
+  <td bgcolor="white">
+  Gestaffelte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.flexbox, .build, .smaller}</mono>
+  </td>
+  <td bgcolor="white">
+  Slideoptionen.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/slide_8.png" height=480px>
+</p>
+
+]
+
+
+---
+
+.pull-left4[
+
+# Slides
+
+<ul>
+  <li class="m1"><span><mono>ioslides</mono> erwarten eine leicht <high>veränderte Markup Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markup</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#, ##</mono>
+  </td>
+  <td bgcolor="white">
+  Neue(r) Abschnitt, Folie
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Titel | </mono>
+  </td>
+  <td bgcolor="white">
+  Untertitel
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-<br>-</mono>
+  </td>
+  <td bgcolor="white">
+  Nicht-numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>1.<br>2.</mono>
+  </td>
+  <td bgcolor="white">
+  Numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
+  </td>
+  <td bgcolor="white">
+  Gestaffelte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.flexbox, .build, .smaller}</mono>
+  </td>
+  <td bgcolor="white">
+  Slideoptionen.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/slide_9.png" height=480px><br>
+      <font style="font-size:10px">from <a href="https://twitter.com/hadleywickham">twitter.com</a></font>
+</p>
+
+
+]
+
+
+---
+
+.pull-left4[
+
+# Slides
+
+<ul>
+  <li class="m1"><span><mono>ioslides</mono> erwarten eine leicht <high>veränderte Markup Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Markup</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>#, ##</mono>
+  </td>
+  <td bgcolor="white">
+  Neue(r) Abschnitt, Folie
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>## Titel | </mono>
+  </td>
+  <td bgcolor="white">
+  Untertitel
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>-<br>-</mono>
+  </td>
+  <td bgcolor="white">
+  Nicht-numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>1.<br>2.</mono>
+  </td>
+  <td bgcolor="white">
+  Numerierte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
+  </td>
+  <td bgcolor="white">
+  Gestaffelte Bullets
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>{.flexbox, .build, .smaller}</mono>
+  </td>
+  <td bgcolor="white">
+  Slideoptionen.
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/slide_10.png" height=480px><br>
+    <font style="font-size:10px">see <a href="https://www.youtube.com/watch?v=s9aWmU0atlQ">youtube.com</a></font>
+</p>
+
+]
+
+
 
 ---
 
