@@ -348,7 +348,7 @@ ausstattung &lt;- airbnb_1819 %&gt;%
   select(Preis, Hotel, all_of(ausstattung_var)) 
 
 # Rechne Regression des Preises auf Austattungsmerkmale und Hotel
-austattung_mod &lt;-  ausstattung%&gt;% 
+ausstattung_mod &lt;-  ausstattung%&gt;% 
   lm(formula = Preis ~ .)
   
 # Bestimme Anteil Hotels in 2018 und 2019

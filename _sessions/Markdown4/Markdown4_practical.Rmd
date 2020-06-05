@@ -179,7 +179,7 @@ Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berli
 - Zuwachs: `wrap (round(n_2019/n_2018, 2) - 1)*100`%
 ```
 
-6. Ergänze nun vor jedem einzelnen Bullet ein grösser als Zeichen mit einem Leerzeichen, d.h. vor jeder Zeile sollte `> -` stehen. Damit tauchen die einzelnen Bullets gestaffelt nacheinander auf. 
+6. Ergänze nun vor jedem einzelnen Bullet ein grösser als Zeichen, d.h. vor jeder Zeile sollte `>-` stehen. Damit tauchen die einzelnen Bullets gestaffelt nacheinander auf. 
 
 7. Knitte das Dokument. Sind die Bullets nun gestaffelt?
 

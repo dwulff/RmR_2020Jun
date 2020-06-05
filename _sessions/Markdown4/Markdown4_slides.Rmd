@@ -82,7 +82,29 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ```
 
-# Präsentationen
+
+.pull-left3[
+
+# Nächste Schritte
+
+<ul>
+  <li class="m1"><span>Folien</span></li>
+  <ul><br>
+    <li><span>YAML</span></li>
+    <li><span>Slides kreieren</span></li>
+    <li><span>Themes</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right6[
+
+<p align = "center">
+  <img src="image/missing.png" height=590px>
+</p>
+
+]
 
 ---
 
