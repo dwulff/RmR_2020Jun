@@ -85,23 +85,32 @@ Definiere nun weitere, generelle Merkmale im YAML header
 
 4. Füge jeweils auf einer neuen Zeile: `includes:` und dann `in_header: ../2_Assets/header.Rhtml` ein. Diese Befehle werden eine Vorlage für den header Hintergrund laden. 
 
-4. `Knitte` das Dokument. Hat sich die Anzeige des Titels und Untertitels verändert? Ist das AirBnB Logo zu sehen?
+5. `Knitte` das Dokument. Hat sich die Anzeige des Titels und Untertitels verändert? Ist das AirBnB Logo zu sehen?
 
-5. Als letztes Gestaltungselement lade das `theme: lumen`  
+6. Als letztes Gestaltungselement lade das `theme: lumen`  
 
-4. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
+7. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
 ### C - Grafiken
 
 Füge spezifische Einstellungen für alle Grafiken in deinem Dokument in diesem Schritt ein.
 
-1. Im `setup` Chunk setze das Theme der ggplot Grafiken auf `theme_minimal`
+1. Im `setup` Chunk füge den folgenden Code ein um den Hintergrund der Code Chunks transparent zu setzen:
+
+```R
+knitr::opts_chunk$set(echo = FALSE, 
+                      message = FALSE, 
+                      warning = FALSE, 
+                      dev.args = list(bg = "transparent"))
+```
+
+2. Im `setup` Chunk setze das Theme der ggplot Grafiken auf `theme_minimal`
 
 ```R
 theme_set(theme_minimal())
 ```
 
-2. Gleich darunter, im `setup` Chunk, stelle die Farbpaletten der ggplot Grafiken auf die AirBnB Farben ein.
+3. Gleich darunter, im `setup` Chunk, stelle die Farbpaletten der ggplot Grafiken auf die AirBnB Farben ein.
 
 ```R
 ggplot <- function(...) ggplot2::ggplot(...) + 
@@ -109,7 +118,7 @@ ggplot <- function(...) ggplot2::ggplot(...) +
   scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
 ```
 
-3. `Knitte` das Dokument. Hat sich der Hintergrund und die Farbpalette der Grafiken verändert?  
+4. `Knitte` das Dokument. Hat sich der Hintergrund und die Farbpalette der Grafiken verändert?  
 
 ### D - CSS Funktionen anpassen
 
@@ -221,7 +230,7 @@ Nicht Knitten!!
 
 13. Setze dem letzten Abschnitt selbständig mit einer HTML Table (widths 50%, 10%, 40%) in 2 Spalten. 
 
-12. `Knitte` das Dokument. Der gesamte Text ist nun in 2 Spalten gesetzt mit den Textinhalten links und den Grafiken bzw. Tabellen rechts. 
+14. `Knitte` das Dokument. Der gesamte Text ist nun in 2 Spalten gesetzt mit den Textinhalten links und den Grafiken bzw. Tabellen rechts. 
 
 ### F - CSS
 
@@ -233,7 +242,7 @@ Globale Gestaltungsmkermale der HTML Datei werden in einem eigenen CSS file abge
 
 3. Ergänze die Ausrichtung der Tabellen in `my_airbnb.css`, speichere die Datei und `knitte` dein Markdown Dokument. 
 
-```
+```R
 table td {
   vertical-align: top;
   }
@@ -241,7 +250,7 @@ table td {
 
 4. Im nächsten Schritt wirst du die Schriftart und Farbe der beiden Überschriftenlevel anpassen. Den Code in `my_airbnb.css` ergänzen. Die .css Datei speichern und `knitten`. 
 
-```
+```R
 h3, h4 {
   font-weight: 500;
   color: #555555;
@@ -250,7 +259,7 @@ h3, h4 {
 
 5. Um einen Mouseover Effekt (Link verändert sich, wenn der Mauscursor auf den Link zeigt) zu erzeugen ergänze in `my_airbnb.css` den folgenden Code und `knitte` deine Datei.
 
-```
+```R
 a, a:hover {
   color: #007D8C;
   }
@@ -258,7 +267,7 @@ a, a:hover {
 
 6. Als letztes Designelement wirst du nun ein Wasserzeichen als Hintergrundbild einfügen. Ergänze dafür den folgenden code in deiner `my_airbnb.css` Datei und `knitte` dein Dokument.
 
-```
+```R
 body {
   background-image: url(watermark.svg);
   background-repeat: repeat-y;
@@ -266,11 +275,7 @@ body {
   }
 ```
 
-7. Schliesslich ergänze  `knitr::opts_chunk$set`  in deiner `my_airbnb.css` und `knitte` dein Dokument.
-
-```R
-dev.args = list(bg = "transparent")
-```
+7. `Knitte` dein Dokument. Das Layout sollte nun unserer Zielsetzung entsprechen!
 
 ## Datensatz
 
@@ -330,11 +335,13 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 
 | Funktion| Paket | Beschreibung |
 |:---|:------|:---------------------------------------------|
-| ``|``|  | 
-
+| `scale_fill_gradientn`|`ggplot`| Erstellt eine Farbpalette | 
+| `scale_colour_gradientn`|`ggplot`| Erstellt eine Farbpalette | 
+| `theme_set`|`ggplot`| Festlegung und Gestaltung von themes | 
 
 
 ## Materialien
-
-- ...
-- ...
+- [**HTML**](https://www.w3schools.com/html/default.asp) Referenz 
+- [**CSS**](https://www.w3schools.com/css/default.asp) Referenz 
+- [**DIE Referenz**](https://bookdown.org/yihui/rmarkdown/) für RMarkdown bis ins letzte Detail.
+- [**Rmarkdown**](https://cran.r-project.org/web/packages/rmarkdown/index.html) Dokumentation und Befehlsreferenz.
