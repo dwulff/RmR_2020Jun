@@ -1,0 +1,27 @@
+---
+title: "Berlin"
+subtitle: "Bericht 18/19"
+output: 
+  ioslides_presentation:
+    logo: 2_Assets/airbnb.png
+    css: 2_Assets/airbnb_presentation.css    
+---
+
+
+# Neuer Abschnitt
+## Neue Folie
+### Überschrift 3
+Dies ist ein Block mit Text.
+
+```{r}
+summary(cars)
+```
+
+
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```

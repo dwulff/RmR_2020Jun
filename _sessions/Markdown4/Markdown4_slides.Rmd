@@ -61,7 +61,6 @@ options(digits = 4)
 # Load packages
 require(tidyverse)
 require(knitr)
-require(stargazer)
 
 # load color set
 source("../../_materials/palette/therbootcamp_palettes.R")
@@ -92,7 +91,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <ul><br>
     <li><span>YAML</span></li>
     <li><span>Slides kreieren</span></li>
-    <li><span>Themes</span></li>
+    <li><span>Listen</span></li>
   </ul>
 </ul>
 
