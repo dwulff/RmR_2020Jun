@@ -167,7 +167,7 @@ basel <- read.csv("1_Data/basel.csv")
 
 ---
 
-# R Markdown components
+# R Markdown Komponenten
 
 .pull-left4[
 

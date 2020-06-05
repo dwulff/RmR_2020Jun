@@ -94,24 +94,22 @@ Am Ende des Practicals wirst du wissen wie man:
 
 ### C - Grafiken
 
-Füge spezifische Einstellungen für alle Grafiken in deinem Dokument in diesem Schritt ein.
+1. Als ersten Schritt um die Grafiken weiter anzupassen, ergänze in den allgemeinen Chunk-Optionen (`knitr::opts_chunk$set()`) im `setup` Chunk das zusätzliche Argument `dev.args = list(bg = "transparent")`.
 
-1. Im `setup` Chunk füge den folgenden Code ein um den Hintergrund der Code Chunks transparent zu setzen:
-
-```R
-knitr::opts_chunk$set(echo = FALSE, 
-                      message = FALSE, 
-                      warning = FALSE, 
-                      dev.args = list(bg = "transparent"))
-```
-
-2. Im `setup` Chunk setze das Theme der ggplot Grafiken auf `theme_minimal`
+2. Nun ergänze im `setup` Chunk folgenden Code, welcher das `theme` der `ggplot` Grafiken auf `theme_minimal` setzt. Knitte das Dokument. Hat sich was getan?
 
 ```R
 theme_set(theme_minimal())
 ```
 
-3. Gleich darunter, im `setup` Chunk, stelle die Farbpaletten der ggplot Grafiken auf die AirBnB Farben ein.
+3. Ergänze nun darunter folgenden Code um dafür zu sorgen, dass die Hintergründe der Grafiken transparent sind. 
+
+```R
+theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
+             plot.background = element_rect(fill = "transparent", colour = NA))
+```
+
+4. Gleich darunter, im `setup` Chunk, stelle mit folgendem Code die Farbpaletten der ggplot Grafiken auf die AirBnB Farben ein.
 
 ```R
 ggplot <- function(...) ggplot2::ggplot(...) + 
@@ -119,27 +117,26 @@ ggplot <- function(...) ggplot2::ggplot(...) +
   scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
 ```
 
-4. `Knitte` das Dokument. Hat sich der Hintergrund und die Farbpalette der Grafiken verändert?  
+5. `Knitte` das Dokument. Hat sich der Hintergrund und die Farbpalette der Grafiken verändert?  
 
 ### D - CSS Funktionen anpassen
 
-1. Die Bildunterschriften sind noch nicht zentriert. Setze das HTML Tag `center` um die beiden `cap` Definitionen der Grafiken: 
+1. Die Bildunterschriften sind noch nicht zentriert. Setze das HTML Tag `center` um die beiden `cap` Definitionen der Grafiken. Siehe Code. 
 
 ```R
 "<center>Abbildung 1. Neueinstellungen pro Monat</center>"
 "<center>Abbildung 2. Neueinstellungen pro Bezirk</center>"
 ```
 
-2. In der Regressions Tabelle, die Du mit sjPlot erstellt hast, ergänze `CSS = list(css.caption = "font-weight:500")` um die Schrift anzupassen
+2. In der Regressions-Tabelle, die Du mit `sjPlot` erstellt hast, ergänze `CSS = list(css.caption = "font-weight: 500")` um die Schrift anzupassen
 
-3. In der gleichen Tabelle füge `css.table = "width: auto; margin-right: 0px;margin-left: auto;"` ein, um die letzten beiden Zeilen der Aussgae zu zentrieren.
-
+3. Im gleichen Argument füge `css.table = "width: auto; margin-right: 0px;margin-left: auto;"` zusätzlich in die `list` ein, um die Tabelle rechts auszurichten.
 
 ### E - Layout in 2 Spalten setzen
 
 Setze folgenden HTML Code im Abschnitt Entwicklung ein - damit positionierst du den Text in die linke Spalte und die Grafik in die rechte Spalte. 
 
-1. Zwischen `#### Entwicklung` und dem ersten Absatz "Seit ..." fügen folgenden HTML Code ein. Nicht Knitten!!
+1. Um nun die Berichtinhalte in zwei Spalten zu trennen - Text links, Abbildung rechts - setze zwischen `#### Entwicklung` und dem ersten Absatz "Seit ..." folgenden HTML Code ein. Noch nicht Knitten!
 
 ```R
 <table>
@@ -149,8 +146,7 @@ Setze folgenden HTML Code im Abschnitt Entwicklung ein - damit positionierst du 
   <tr>
   <td>
 ```
-2. Ergänze zwischen dem zweitem Absatz und dem Grafik chunk den folgenden Code.
-Nicht Knitten!!
+2. Ergänze nun zwischen dem zweitem Absatz und dem Grafik-Chunk den folgenden Code. Noch nicht Knitten!
 ```R
   </td>
   <td>
@@ -159,7 +155,7 @@ Nicht Knitten!!
   <td>
 ```
 
-3. Schliesslich, ergänze zwischen dem Grafik Chunk und `#### Stadtteile` den Abschluss der HTML Tabelle. 
+3. Schliesslich ergänze zwischen dem Grafik-Chunk und `#### Stadtteile` den folgenden Code, welcher die HTML Tabelle abschliesst. 
 
 ```R
   </td>
@@ -167,9 +163,9 @@ Nicht Knitten!!
 </table>
 ```
 
-4. `Knitte` das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt?  
+4. Knitte jetzt das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt?  
 
-5. Für die weiteren Abschnitte gehe gleich vor. Zwischen `#### Stadtteile` und dem Code Chunk für die Berechnung der Häufigkeiten über die Bezirke fügen den folgnden HTML Code ein. Nicht Knitten!!
+5. Für die weiteren Abschnitte gehe gleich vor. Zwischen `#### Stadtteile` und dem Code-Chunk für die Berechnung der Häufigkeiten über die Bezirke fügen den folgnden HTML Code ein. Noch nicht Knitten!
 
 ```R
 <table>
@@ -179,7 +175,7 @@ Nicht Knitten!!
   <tr>
   <td>
 ```
-6. Nach dem Fett gesetzten Absatz "Die grösste Veränderung..." und dem Grafik Chunkg füge den folgenden Code ein. Nicht Knitten!!
+6. Nach dem in fett gesetzten Absatz "Die grösste Veränderung..." und dem Grafik-Chunk füge den folgenden Code ein. Noch nicht Knitten!
 
 ```R
   </td>
@@ -189,7 +185,7 @@ Nicht Knitten!!
   <td>
 ```
 
-7. Schliesslich nach dem Grafik Chunk und vor `### Preis` schliesst der folgende HTML code die Tabelle ab.
+7. Schliesslich ergänze nach dem Grafik-Chunk und vor `### Preis` folgende HTML code um die Tabelle abzuschliessen.
 
 ```R
   </td>
@@ -197,9 +193,9 @@ Nicht Knitten!!
 </table>
 ```
 
-8. `Knitte` das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt? 
+8. Knitte jetzt wieder das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt? 
 
-9. Für den Abschnitt `###Preis` gehe gleich vor. Ergänze nach dem ersten Code Chunk mit Berechnungen zur Ausstattung und vor dem ersten Absatz den folgenden Code. Nicht Knitten!!
+9. Für den Abschnitt `###Preis` gehe gleich vor. Ergänze nach dem ersten Code-Chunk mit Berechnungen zur Ausstattung und vor dem ersten Absatz den folgenden Code. Noch nicht Knitten!
 
 ```R
 <table width=100%>
@@ -209,7 +205,7 @@ Nicht Knitten!!
 <tr>
   <td>
 ```
-10. Nach dem zweiten, fett gesetzten Absatz und dem Grafik Chunk füge folgenden Code ein. Nicht Knitten!!
+10. Nach dem zweiten, fett gesetzten Absatz und dem Grafik Chunk füge folgenden Code ein. Noch nicht Knitten!
 
 ```R
   </td>
@@ -227,23 +223,21 @@ Nicht Knitten!!
 </table>
 ```
 
-12. `Knitte` das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt? 
+12. Knitte jetzt wieder das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt? 
 
-13. Setze dem letzten Abschnitt selbständig mit einer HTML Table (widths 50%, 10%, 40%) in 2 Spalten. 
+13. Setze den letzten Abschnitt selbständig mit einer HTML Table (widths 50%, 10%, 40%) in 2 Spalten. 
 
-14. `Knitte` das Dokument. Der gesamte Text ist nun in 2 Spalten gesetzt mit den Textinhalten links und den Grafiken bzw. Tabellen rechts. 
+14. Knitte wieder das Dokument. Der gesamte Text ist nun in 2 Spalten gesetzt mit den Textinhalten links und den Grafiken bzw. Tabellen rechts. 
 
 ### F - CSS
 
-Globale Gestaltungsmkermale der HTML Datei werden in einem eigenen CSS file abgelegt. Erstelle nun das CSS file und passe es wie folgt an.
+1. Um allgmeine Gestaltungsmkermale des gesamten HTML-Berichts zu ändern erstelle die Datei `my_airbnb.css` und speichere sie in `2_Assets` ab. Du kannst die Datei direkt in RStudio erstellen und mit `.css` als Extension speichern. 
 
-1. Erstelle die Datei `my_airbnb.css` und speichere sie in `2_Assets` ab. Du kannst die Datei direkt in RStudio erstellen und mit `.css` als Extentsion speichern. 
+2. Binde nun die leere Datei im YAML Header deines Airbnb Markdown Dokumentes ein. Dafür ergänze `css: ../2_Assets/airbnb.css` unter `html_document:` (selbe Ebene wie `toc: true`)
 
-2. Binde nun die leere Datei im YAML Header deines Airbnb Markdown Dokumentes ein. Dafür ergänze `css: ../2_Assets/airbnb.css` unter `html_document:`
+3. Füge den folgenden Code in `my_airbnb.css` hinzu um die vertikale Ausrichtung der Tabellen anzupassen. Speichere die `.css` Datei und knitte dein Markdown Dokument. 
 
-3. Ergänze die Ausrichtung der Tabellen in `my_airbnb.css`, speichere die Datei und `knitte` dein Markdown Dokument. 
-
-```R
+```CSS
 table td {
   vertical-align: top;
   }
@@ -251,7 +245,7 @@ table td {
 
 4. Im nächsten Schritt wirst du die Schriftart und Farbe der beiden Überschriftenlevel anpassen. Den Code in `my_airbnb.css` ergänzen. Die .css Datei speichern und `knitten`. 
 
-```R
+```CSS
 h3, h4 {
   font-weight: 500;
   color: #555555;
