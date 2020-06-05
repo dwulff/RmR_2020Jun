@@ -159,11 +159,13 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 3. In die nächste Zeile füge in einer neuen Zeile "## Entwicklung" ein, was einen ersten Slide mit Inhalt beginnt.
 
-4. Öffne das R Markdown Dokument, das wir gestern erstellt haben (`3_Markdown/airbnb_final.Rmd`). Übertrage aus dem Abschnitt "Entwicklung" 3-5 zentrale Punkte in eine Liste mit Bullet Points. Achte darauf, dass die einzelnen Punkte nicht zu lange werden und inline Code mit aktiven Berechnungen enthalten. In Markdown wird ein `-` in einen Bullet Point übersetzt.  
+## E - Inhalte einbinden
 
-5. Ergänze nun vor jedem einzelnen Bullet ein grösser als Zeichen, d.h. vor jeder Zeile sollte `>-` stehen. Damit tauchen die einzelnen Bullets gestaffelt nacheinander auf. 
+1. Öffne das R Markdown Dokument, das wir gestern erstellt haben (`3_Markdown/airbnb_final.Rmd`). Übertrage aus dem Abschnitt "Entwicklung" 3-5 zentrale Punkte in eine Liste mit Bullet Points. Achte darauf, dass die einzelnen Punkte nicht zu lange werden und inline Code mit aktiven Berechnungen enthalten. In Markdown wird ein `-` in einen Bullet Point übersetzt.  
 
-6. Knitte das Dokument. Sind die Bullets nun gestaffelt?
+2. Ergänze nun vor jedem einzelnen Bullet ein grösser als Zeichen, d.h. vor jeder Zeile sollte `>-` stehen. Damit tauchen die einzelnen Bullets gestaffelt nacheinander auf. 
+
+3. Knitte das Dokument. Sind die Bullets nun gestaffelt?
 
 ### E - Grafiken einbinden
 
@@ -185,7 +187,7 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 4. `Knitte` das Dokument. Werden die 2. Grafiken, die Bullets und die Tabelle korrekt angezeigt?
 
-### G - Tabelle
+### G - Deskriptive Tabelle
 
 1. Erstelle einen neuen Abschnitt "Preis" (ein `#`) und einen neuen Slide "Einfluss der Ausstattung" (zwei `##`) .
 
@@ -210,10 +212,10 @@ ausstattung %>%
   column_spec(c(2,3,4,5), width = "1.2in") 
 ```
 
-4. Verändere nun die `cell_spec` Funktion so, dass Zellen mit einer Zahl > 100 rot angezeigt werden.
-(Hint: `color = ifelse(x > 100, "red", "black")`)
-
 6. Auf dem gleichen Slide, unter der Tabelle, füge folgenden Text in fetter Schrift ein:
+
+5. Optional: Verändere nun die `cell_spec` Funktion so, dass Zellen mit einer Zahl > 100 rot angezeigt werden.
+(Hint: `color = ifelse(x > 100, "red", "black")`)
 
 ```R
 Der stark negative Effekt der Küche überrascht. 
@@ -242,10 +244,6 @@ ausstattung_mod <- airbnb_1819 %>%
 
 3. Füge die Ergebnisse der Regression, mit Hilfe der Funktion `tab_model` ein. 
 
-4. Mit dem Attribut `col.order` kannst du die Reihenfolge und Art der Ergebnisse festlegen. Verändere die Reihenfolge der Spalten, sodass zuerst "Konfidenzintervalle" (ci) und dann die "Estimates" angezeigt werden.
-
-5. Füge nun Sterne für signifikante Estimates ein (Hint: `p.style`)
-
 6. Inkludiere den folgenden Chunk um den Anteil Hotels zu bestimmen. 
 
 ```R
@@ -254,13 +252,15 @@ hotel <- airbnb_1819 %>%
   group_by(year(Erstellungsdatum)) %>% 
   summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel'))) 
 ```
-
 7. Ergänze in fetter Schriftart den Abschlusssatz ("Der Anteil ...)  unter der Regressionstabelle.
 
+4. Mit dem Attribut `col.order` kannst du die Reihenfolge und Art der Ergebnisse festlegen. Verändere die Reihenfolge der Spalten, sodass zuerst "Konfidenzintervalle" (ci) und dann die "Estimates" angezeigt werden.
+
+5. Füge nun Sterne für signifikante Estimates ein (Hint: `p.style`)
 
 ### H - Export
 
-1. Slides können sehr gut über einen Browser als PDF ausgegeben werden. Öffne hierzu die durch das Knitten erzeugte `.html` Datei in einem Browser (z.B., Chrome). 
+1. Slides können gut über einen Browser als PDF ausgegeben werden. Öffne hierzu die durch das Knitten erzeugte `.html` Datei in einem Browser (z.B., Chrome). 
 
 2. Dann drücke `Cmd + P` oder `Ctrl + P` um das Druckmenu zu öffnen wo du PDF als Output auswählen musst. 
 
