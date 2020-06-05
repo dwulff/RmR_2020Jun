@@ -94,24 +94,15 @@ Am Ende des Practicals wirst du wissen wie man:
 
 ### C - Grafiken
 
-Füge spezifische Einstellungen für alle Grafiken in deinem Dokument in diesem Schritt ein.
+1. Als ersten Schritt um die Grafiken weiter anzupassen, ergänze in den allgemeinen Chunk-Optionen (`knitr::opts_chunk$set()`) im `setup` Chunk das zusätzliche Argument `dev.args = list(bg = "transparent")`.
 
-1. Im `setup` Chunk füge den folgenden Code ein um den Hintergrund der Code Chunks transparent zu setzen:
-
-```R
-knitr::opts_chunk$set(echo = FALSE, 
-                      message = FALSE, 
-                      warning = FALSE, 
-                      dev.args = list(bg = "transparent"))
-```
-
-2. Im `setup` Chunk setze das Theme der ggplot Grafiken auf `theme_minimal`
+2. Nun ergänze im `setup` Chunk folgenden Code, welcher das `theme` der `ggplot` Grafiken auf `theme_minimal` setzt. Knitte das Dokument. Hat sich was getan?
 
 ```R
 theme_set(theme_minimal())
 ```
 
-3. Gleich darunter, im `setup` Chunk, stelle die Farbpaletten der ggplot Grafiken auf die AirBnB Farben ein.
+3. Gleich darunter, im `setup` Chunk, stelle mit folgendem Code die Farbpaletten der ggplot Grafiken auf die AirBnB Farben ein.
 
 ```R
 ggplot <- function(...) ggplot2::ggplot(...) + 

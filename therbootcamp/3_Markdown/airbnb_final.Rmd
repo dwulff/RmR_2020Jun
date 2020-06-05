@@ -10,7 +10,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, dev.args = list(bg = "transparent"))
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, dev.args = list(bg = "transparent"))
 
 # Lade Pakete
 library(tidyverse)
@@ -61,7 +61,7 @@ Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berli
   </td>
   <td>
 
-```{r fig.asp = .5, fig.cap = cap, background = 'transparent'}
+```{r fig.asp = .5, fig.cap = cap}
 
 # Plotte Häufigkeiten
 ggplot(airbnb_1819 %>% 
