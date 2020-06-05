@@ -1118,7 +1118,11 @@ css: "../2_Assets/styling.csv")
 
 ]
 
+---
 
+class: middle, center
+
+<h1><a href="https://www.dropbox.com/s/jomqnkoz9jucf7v/TheRBootcamp.zip?dl=1">Projekt</a></h1>
 
 ---
 
