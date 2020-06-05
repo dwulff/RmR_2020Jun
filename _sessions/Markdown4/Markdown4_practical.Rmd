@@ -30,6 +30,7 @@ output:
     self_contained: no
 ---
 
+
 ```{r setup, include  = FALSE}
 knitr::opts_chunk$set(comment = NA, 
                       fig.width = 6, 
@@ -83,7 +84,7 @@ Am Ende des Practicals kann du:
 
 ### B - YAML
 
-1. Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter `title: "Berlin"`, in einer neuen Zeilte, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?
+1. Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter `title: Berlin`, in einer neuen Zeilte, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?
 
 ```R
 subtitle: "Bericht: 18/19"
@@ -95,7 +96,7 @@ subtitle: "Bericht: 18/19"
 logo: ../2_Assets/airbnb.png
 ```
 
-3. Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt, um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.
+3. Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.
 
 ```R
 css: ../2_Assets/airbnb_presentation.css
@@ -114,7 +115,7 @@ output:
 ---
 ```
 
-5. Knitte das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rotem AirBnB Logo. 
+5. Knitte das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rote, AirBnB Logo. 
 
 ### C - Setup chunk
 
@@ -130,7 +131,7 @@ library(knitr)
 library(kableExtra)
 ```
 
-2. Inkludiere im Setup-Chunk den folgenden Code um die AirBnB Daten zu laden und auf den Zeitraum 2018-2019 zu limitieren.
+2. Inkludiere im Setup-Chunk den folgenden Code um die AirBnB Daten zu laden und Auf den Zeitraum 2018-2019 zu limitieren.
 
 ```R
 # Lade Daten
@@ -139,7 +140,7 @@ airbnb_1819 <- read_csv('../1_Data/airbnb.csv') %>%
          Erstellungsdatum < "2019-12-31")
 ```
 
-3. Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich `ggplot`, wie im gestrigen Dokument, anzupassen.
+3. Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich `ggplot` wie im gestrigen Dokument anzupassen.
 
 ```R
 # Ändere Thema zu minimal
@@ -159,15 +160,17 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 1. Füge nach dem `setup` Chunk in einer neuen Zeile `# Neueinstellungen` ein. Damit erstellst du deine erste Zwischenfolie mit grauem Hintergrund die den Abschnitt einleitet.
 
-2. Knitte das Dokument. Nach dem Titelslide sollte es jetzt einen 2. Slide mit dem Titel "Neueinstellungen" geben. 
+2. Knitte das Dokument. Nach dem Titelslide sollte es jetzt einen 2. Slide mit dem Titel Neueinstellungen geben. 
 
-3. In die nächste Zeile füge in einer neuen Zeile `## Entwicklung` ein, was einen ersten Slide mit Inhalt beginnt.
+3. In die nächste Zeile füge in einer neuen Zeile "## Entwicklung" ein, was einen ersten Slide mit Inhalt beginnt.
 
 4. Füge darunter den folgenden Satz mit inline Code in der nächsten Zeile ein:
 
-```markdown
-Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin:
-```
+<pre class="r">
+  <code class="hljs">
+Seit &grave;&#114; strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")&grave; wurden in Berlin:
+  </code>
+</pre>
 
 5. In einer Liste mit Bullet Points ergänze die folgenden, zusammengefassten Informationen. Das `-` ist Markup um eine Liste zu erstellen, also in diesem Fall Bullet Points. Knitte das Dokument. Tauchen die Bullets als Liste auf? 
 
@@ -265,7 +268,7 @@ max_stadtteil = veränderung %>%
 
 5. Darunter setze folgenden Code für die 2. Grafik in dein Markdown Dokument.
 
-```R
+```{r}
 # Plotte Häufigkeieten der Stadtteile
 ggplot(stadtteile, 
        aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
@@ -284,7 +287,7 @@ cap = "<center>Figure 2. Neueinstellungen pro Bezirk</center>"
 
 2. Füge einen Chunk mit dem folgenden Code zur Berechnung der Ausstattungsmerkmale ein.
 
-```R
+```{r}
 # Vector mit Ausstatttungsmerkmalen
 ausstattung_var <- c('Küche','Wifi','TV','Kaffeemaschine',
                     'Geschirrspüler','Terrasse_Balkon',
@@ -349,7 +352,7 @@ Hotels im Angebot enthalten sind.</b>
 
 10. Definiere die Liste der Ausstattungsmermale und sage den Preis mit diesen Ausstattungsmermalen und Hotel Ja/Nein in einer Regression vorher.
 
-```R
+```{r}
 # Reduzierter Vektor mit Ausstattungsmerkmalen
 ausstattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
 
@@ -362,7 +365,7 @@ ausstattung_mod <- airbnb_1819 %>%
 
 11. Füge die Ergebnisse der Regression, mit Hilfe der Funktion `tab_model` ein.
 
-```R
+```{r}
 # Tabelle mit Ergebnissen der Regression
 tab_model(ausstattung_mod,
           pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),

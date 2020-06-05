@@ -228,7 +228,7 @@ summary {
 <div id="b---yaml" class="section level3">
 <h3>B - YAML</h3>
 <ol style="list-style-type: decimal">
-<li>Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter <code>title: "Berlin"</code>, in einer neuen Zeilte, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?</li>
+<li>Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter <code>title: Berlin</code>, in einer neuen Zeilte, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?</li>
 </ol>
 <pre class="r"><code>subtitle: &quot;Bericht: 18/19&quot;</code></pre>
 <ol start="2" style="list-style-type: decimal">
@@ -236,7 +236,7 @@ summary {
 </ol>
 <pre class="r"><code>logo: ../2_Assets/airbnb.png</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt, um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.</li>
+<li>Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.</li>
 </ol>
 <pre class="r"><code>css: ../2_Assets/airbnb_presentation.css</code></pre>
 <ol start="4" style="list-style-type: decimal">
@@ -251,7 +251,7 @@ output:
     css: ../2_Assets/airbnb_presentation.css
 ---</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>Knitte das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rotem AirBnB Logo.</li>
+<li>Knitte das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rote, AirBnB Logo.</li>
 </ol>
 </div>
 <div id="c---setup-chunk" class="section level3">
@@ -266,14 +266,14 @@ library(sjPlot)
 library(knitr)
 library(kableExtra)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Inkludiere im Setup-Chunk den folgenden Code um die AirBnB Daten zu laden und auf den Zeitraum 2018-2019 zu limitieren.</li>
+<li>Inkludiere im Setup-Chunk den folgenden Code um die AirBnB Daten zu laden und Auf den Zeitraum 2018-2019 zu limitieren.</li>
 </ol>
 <pre class="r"><code># Lade Daten
 airbnb_1819 &lt;- read_csv(&#39;../1_Data/airbnb.csv&#39;) %&gt;% 
   filter(Erstellungsdatum &gt; &quot;2018-01-01&quot;, 
          Erstellungsdatum &lt; &quot;2019-12-31&quot;)</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich <code>ggplot</code>, wie im gestrigen Dokument, anzupassen.</li>
+<li>Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich <code>ggplot</code> wie im gestrigen Dokument anzupassen.</li>
 </ol>
 <pre class="r"><code># Ändere Thema zu minimal
 theme_set(theme_minimal())
@@ -291,9 +291,16 @@ ggplot &lt;- function(...) ggplot2::ggplot(...) +
 <h3>D - Slides erstellen</h3>
 <ol style="list-style-type: decimal">
 <li><p>Füge nach dem <code>setup</code> Chunk in einer neuen Zeile <code># Neueinstellungen</code> ein. Damit erstellst du deine erste Zwischenfolie mit grauem Hintergrund die den Abschnitt einleitet.</p></li>
-<li><p>Knitte das Dokument. Nach dem Titelslide sollte es jetzt einen 2. Slide mit dem Titel “Neueinstellungen” geben.</p></li>
-<li><p>In die nächste Zeile füge in einer neuen Zeile <code>## Entwicklung</code> ein, was einen ersten Slide mit Inhalt beginnt.</p></li>
+<li><p>Knitte das Dokument. Nach dem Titelslide sollte es jetzt einen 2. Slide mit dem Titel Neueinstellungen geben.</p></li>
+<li><p>In die nächste Zeile füge in einer neuen Zeile “## Entwicklung” ein, was einen ersten Slide mit Inhalt beginnt.</p></li>
 <li><p>Füge darunter den folgenden Satz mit inline Code in der nächsten Zeile ein:</p></li>
+</ol>
+<pre class="r">
+  <code class="hljs">
+Seit &grave;&#114; strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")&grave; wurden in Berlin:
+  </code>
+</pre>
+<ol start="5" style="list-style-type: decimal">
 <li><p>In einer Liste mit Bullet Points ergänze die folgenden, zusammengefassten Informationen. Das <code>-</code> ist Markup um eine Liste zu erstellen, also in diesem Fall Bullet Points. Knitte das Dokument. Tauchen die Bullets als Liste auf?</p></li>
 <li><p>Ergänze nun vor jedem einzelnen Bullet ein grösser als Zeichen, d.h. vor jeder Zeile sollte <code>&gt;-</code> stehen. Damit tauchen die einzelnen Bullets gestaffelt nacheinander auf.</p></li>
 <li><p>Knitte das Dokument. Sind die Bullets nun gestaffelt?</p></li>
@@ -316,17 +323,7 @@ ggplot &lt;- function(...) ggplot2::ggplot(...) +
 <li><p>Jetzt füge die folgende Liste mit Bullet Points als Inhalt für den Slide ein.</p></li>
 <li><p>Als nächstes kreiere einen neuen Slide mit dem Titel “Stadtteile”.</p></li>
 <li><p>Darunter setze folgenden Code für die 2. Grafik in dein Markdown Dokument.</p></li>
-</ol>
-<pre class="r"><code># Plotte Häufigkeieten der Stadtteile
-ggplot(stadtteile, 
-       aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
-  geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) + 
-  theme(legend.position = &#39;none&#39;) + labs(y=&#39;&#39;)
-
-# Ergänze caption
-cap = &quot;&lt;center&gt;Figure 2. Neueinstellungen pro Bezirk&lt;/center&gt;&quot;</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li><code>Knitte</code> das Dokument. Wird die 2. Bullets und Grafik korrekt angezeigt?</li>
+<li><p><code>Knitte</code> das Dokument. Wird die 2. Bullets und Grafik korrekt angezeigt?</p></li>
 </ol>
 </div>
 <div id="g---tabelle-und-regressionsergebnissen" class="section level3">
@@ -334,25 +331,6 @@ cap = &quot;&lt;center&gt;Figure 2. Neueinstellungen pro Bezirk&lt;/center&gt;&q
 <ol style="list-style-type: decimal">
 <li><p>Erstelle einen neuen Abschnitt <code># Preis</code> und einen neuen Slide <code>## Einfluss der Ausstattung</code>.</p></li>
 <li><p>Füge einen Chunk mit dem folgenden Code zur Berechnung der Ausstattungsmerkmale ein.</p></li>
-</ol>
-<pre class="r"><code># Vector mit Ausstatttungsmerkmalen
-ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;Wifi&#39;,&#39;TV&#39;,&#39;Kaffeemaschine&#39;,
-                    &#39;Geschirrspüler&#39;,&#39;Terrasse_Balkon&#39;,
-                    &#39;Check_in_24h&#39;)
-
-# Bestimme Preise als Funktion der Ausstatttungsmerkmale
-ausstattung &lt;- airbnb_1819 %&gt;% 
-  select(all_of(ausstattung_var), Preis) %&gt;%
-  pivot_longer(-Preis,
-             names_to = &#39;Ausstattung&#39;,
-             values_to = &#39;Ausstattung_vorhanden&#39;) %&gt;% 
-  group_by(Ausstattung) %&gt;% 
-  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
-            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
-            Differenz = Vorhanden - Nicht_vorhanden, 
-            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %&gt;% 
-  arrange(desc(Differenz)) </code></pre>
-<ol start="4" style="list-style-type: decimal">
 <li><p>Erstelle die folgende Liste gestaffelter Bulletpoints. Dann knitte die Slides. Bullets korrekt angezeigt?</p></li>
 <li><p>Füge nun einen neuen Slide mit dem Titel <code>Einfluss der Ausstattung</code> (zwei <code>##</code>) ein.</p></li>
 <li><p>Auf diesem Slide inkludiere die folgende Tabelle mit Austattungsmerkmalen.</p></li>
@@ -366,25 +344,7 @@ Hotels im Angebot enthalten sind.&lt;/b&gt;  </code></pre>
 <li><p>Knitte das Dokument. Werden die beiden neuen Slides mit der Tabelle korrekt angezeigt?</p></li>
 <li><p>Füge eine neuen Slide mit dem Titel <code>Regressionsmodell</code> ein.</p></li>
 <li><p>Definiere die Liste der Ausstattungsmermale und sage den Preis mit diesen Ausstattungsmermalen und Hotel Ja/Nein in einer Regression vorher.</p></li>
-</ol>
-<pre class="r"><code># Reduzierter Vektor mit Ausstattungsmerkmalen
-ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,&#39;Check_in_24h&#39;)
-
-# Rechne Regression des Preises auf Austattungsmerkmale und Hotel
-ausstattung_mod &lt;- airbnb_1819 %&gt;% 
-  mutate(Hotel = Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)) %&gt;% 
-  select(Preis, Hotel, all_of(ausstattung_var)) %&gt;% 
-  lm(formula = Preis ~ .)</code></pre>
-<ol start="11" style="list-style-type: decimal">
-<li>Füge die Ergebnisse der Regression, mit Hilfe der Funktion <code>tab_model</code> ein.</li>
-</ol>
-<pre class="r"><code># Tabelle mit Ergebnissen der Regression
-tab_model(ausstattung_mod,
-          pred.labels = c(&#39;Achsenabschnitt&#39;, names(ausstattung)[-1]),
-          title = &#39;Tabelle 2. Regression des Preises auf die Ausstattung.&#39;,
-          CSS = list(css.caption = &quot;font-weight:500&quot;, 
-                     css.table = &quot;width: 100%;font-size:.6em&quot;))</code></pre>
-<ol start="11" style="list-style-type: decimal">
+<li><p>Füge die Ergebnisse der Regression, mit Hilfe der Funktion <code>tab_model</code> ein.</p></li>
 <li><p>Inkludiere den folgenden Chunk um den Anteil Hotels zu besteimmen.</p></li>
 <li><p>Ergänze in fetter Schriftart die abschliessenden Sätze direkt unter der Regressionstabelle.</p></li>
 </ol>
