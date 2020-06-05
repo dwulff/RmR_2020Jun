@@ -220,24 +220,23 @@ summary {
 <img src="image/markdown_presentation_menu.png" alt="Trulli" style="height:200px">
 </p>
 <ol start="3" style="list-style-type: decimal">
-<li><p>Trage als Titel <code>Berlin</code> ein.</p></li>
-<li><p>Lösche alles unterhalb des <code>setup</code> R chunks.</p></li>
+<li><p>Trage als Titel <code>Berlin</code> ein und drücke OK.</p></li>
+<li><p>Lösche alles unterhalb des <code>setup</code> Chunks.</p></li>
 <li><p>Speichere das neue Markdown Skript unter dem Namen <code>presentation_practical.Rmd</code> im <code>3_Markdown</code> Ordner ab.</p></li>
 </ol>
 </div>
 <div id="b---yaml" class="section level3">
 <h3>B - YAML</h3>
-<p>Im YAML Header wirst du nun die generellen Einstellungen des Dokumentes anpassen.</p>
 <ol style="list-style-type: decimal">
-<li>Füge unter <code>title: Berlin</code>, in einer neuen Zeilte, einen Untertitel ein.</li>
+<li>Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter <code>title: Berlin</code>, in einer neuen Zeilte, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?</li>
 </ol>
 <pre class="r"><code>subtitle: &quot;Bericht: 18/19&quot;</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Um ein Logo automatisch auf dem Titelslide und in der Fusszeile jedes Slides anzuzeigen, gib an wo das Logo abgelegt ist und integriere es im YAML Header.</li>
+<li>Damit das Logo automatisch auf der Titelslide und in der Fusszeile jedes Slides angezeigt wird, ergänze zunächst einen Doppelpunkt hinter <code>ioslides</code> und dann darunter, eine Ebene weiter eingerückt, die Zeile unten, welche den Pfad zum Logo dem YAML Header bereitstellt. Knitte das Dokument und schaue wie R das Logo einbindet.</li>
 </ol>
 <pre class="r"><code>logo: ../2_Assets/airbnb.png</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Um das Layout (Schrift, genaue Position der Komponenten) im Detail zu gestalten, füge den Link zu einem CSS file in der nächsten Zeile ein.</li>
+<li>Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.</li>
 </ol>
 <pre class="r"><code>css: ../2_Assets/airbnb_presentation.css</code></pre>
 <ol start="4" style="list-style-type: decimal">
@@ -252,17 +251,13 @@ output:
     css: ../2_Assets/airbnb_presentation.css
 ---</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li><code>Knitte</code> das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rote, AirBnB Logo.</li>
+<li>Knitte das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rote, AirBnB Logo.</li>
 </ol>
 </div>
 <div id="c---setup-chunk" class="section level3">
 <h3>C - Setup chunk</h3>
 <p>Nun wirst du im <code>Setup</code> Chunk die notwendigen Pakete laden, Daten laden und verschiedenen Einstellungen vornehmen.</p>
 <ol style="list-style-type: decimal">
-<li>Ersetze in <code>knitr::opts_chunk$set</code> <code>include=FALSE</code> mit folgenden Einstellungen:</li>
-</ol>
-<pre class="r"><code>echo = FALSE, message = FALSE, warning = FALSE</code></pre>
-<ol start="2" style="list-style-type: decimal">
 <li>Lade die folgenden Pakete:</li>
 </ol>
 <pre class="r"><code>library(tidyverse)
@@ -271,182 +266,67 @@ library(sjPlot)
 library(knitr)
 library(kableExtra)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Integriere die Daten aus dem AirBnB Datensatz für den Zeitraum 2018-2019.</li>
+<li>Inkludiere im Setup-Chunk den folgenden Code um die AirBnB Daten zu laden und Auf den Zeitraum 2018-2019 zu limitieren.</li>
 </ol>
 <pre class="r"><code># Lade Daten
 airbnb_1819 &lt;- read_csv(&#39;../1_Data/airbnb.csv&#39;) %&gt;% 
   filter(Erstellungsdatum &gt; &quot;2018-01-01&quot;, 
          Erstellungsdatum &lt; &quot;2019-12-31&quot;)</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Passe das Grafik Theme für <code>ggplot</code> an. Damit veränderst du den Hintergrund aller Grafiken und optimierst die Schriftgrösse der Grafiken.</li>
+<li>Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich <code>ggplot</code> wie im gestrigen Dokument anzupassen.</li>
 </ol>
 <pre class="r"><code># Ändere Thema zu minimal
 theme_set(theme_minimal())
 theme_update(panel.background = element_rect(fill = &quot;transparent&quot;, colour = NA),
              plot.background = element_rect(fill = &quot;transparent&quot;, colour = NA),
              axis.title.x = element_text(size = 16), 
-             text = element_text(size=19))</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>Für die <code>ggplot</code> Grafiken wirst du nun noch die Farben an die AirBnB Palette anpassen.</li>
-</ol>
-<pre class="r"><code># Setze defaults in ggplot
+             text = element_text(size=19))
+             
+# Setze defaults in ggplot
 ggplot &lt;- function(...) ggplot2::ggplot(...) + 
   scale_fill_gradientn(colors = c(&#39;#555555&#39;,&#39;#6BB7B9&#39;)) + 
   scale_colour_gradientn(colors = c(&#39;#555555&#39;,&#39;#6BB7B9&#39;))</code></pre>
 </div>
-<div id="d---nun-geht-es-an-das-erstellen-der-slides" class="section level3">
-<h3>D - Nun geht es an das Erstellen der Slides</h3>
+<div id="d---slides-erstellen" class="section level3">
+<h3>D - Slides erstellen</h3>
 <ol style="list-style-type: decimal">
-<li><p>Füge nach dem <code>setup</code> Chunk in einer neuen Zeile “# Neueinstellungen” ein. Damit erstellst du deinen ersten Abschnitt mit grauem Hintergrund.</p></li>
-<li><p><code>Knitte</code> das Dokument. Zu deinem Titelslide gibt es jetzt einen 2. Slide mit dem Titel Neueinstellungen.</p></li>
-<li><p>Für den ersten Slide mit Inhalt füge in einer neuen Zeile “## Entwicklung” ein.</p></li>
-<li><p>Füge den folgenden Satz mit <code>inline code</code> in der nächsten Zeile ein:</p></li>
-</ol>
-<pre class="r"><code>Seit `r strftime(min(airbnb_1819$Erstellungsdatum), &quot;%d.%m.%Y&quot;)` wurden in Berlin:</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>In einer Liste mit Bullet Points ergänze die folgenden, zusammengefassten Informationen. Die <code>&gt;</code> Zeichen vor dem <code>-</code> bewirken ein schrittweises Einblenden der Bullet Points.</li>
-</ol>
-<pre class="r"><code>&gt; - `r nrow(airbnb_1819)` Airbnb Wohnungen eingestellt
-&gt; - `r round(mean(airbnb_1819$Verfügbarkeit_90Tage &gt; 0) * 100)`% haben Verfügbarkeiten von durchschnittlich ` round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage&gt;0]),1)` Tagen
-&gt; - 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt
-&gt; - 2018 nur `wrap n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt
-&gt; - Zuwachs: `wrap (round(n_2019/n_2018, 2) - 1)*100`%</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li><p><code>Knitte</code> das Dokument. Auf dem 3. Slide sind deine Bullet Points zu sehen!</p></li>
-<li><p>Füge einen neuen slide mit dem Titel “Entwicklung” ein.</p></li>
-<li><p>Auf diesem Slide soll die erste Grafik abgebildet werden. Füge dafür einen R Code Chunk mit der Grafik über die Neueinstellungen pro Monat ein.</p></li>
-</ol>
-<pre class="r"><code>{r  fig.asp=.6, fig.cap = cap}
-# Plotte Häufigkeiten
-ggplot(airbnb_1819 %&gt;% 
-         group_by(Jahr = year(Erstellungsdatum), 
-                  Monat_tmp = month(Erstellungsdatum)) %&gt;% 
-         summarize(
-           Monat = as_factor(paste(first(Jahr), first(Monat_tmp), sep = &#39;-&#39;)),
-           Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
-  geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) + 
-  theme(legend.position = &#39;none&#39;,
-        axis.text.x = element_text(angle = 45, hjust = 1)) 
-
-# Ergänze caption
-cap = &quot;&lt;center&gt;Abbildung 1. Neueinstellungen pro Monat&lt;/center&gt;&quot;</code></pre>
-<ol start="10" style="list-style-type: decimal">
-<li><code>Knitte</code> das Dokument. Enthält Slide 4/4 die Grafik 1?</li>
+<li><p>Füge nach dem <code>setup</code> Chunk in einer neuen Zeile <code># Neueinstellungen</code> ein. Damit erstellst du deine erste Zwischenfolie mit grauem Hintergrund die den Abschnitt einleitet.</p></li>
+<li><p>Knitte das Dokument. Nach dem Titelslide sollte es jetzt einen 2. Slide mit dem Titel Neueinstellungen geben.</p></li>
+<li><p>In die nächste Zeile füge in einer neuen Zeile “## Entwicklung” ein, was einen ersten Slide mit Inhalt beginnt.</p></li>
+<li><p>Füge darunter den folgenden Satz mit inline Code in der nächsten Zeile ein:</p></li>
+<li><p>In einer Liste mit Bullet Points ergänze die folgenden, zusammengefassten Informationen. Das <code>-</code> ist Markup um eine Liste zu erstellen, also in diesem Fall Bullet Points. Knitte das Dokument. Tauchen die Bullets als Liste auf?</p></li>
+<li><p>Ergänze nun vor jedem einzelnen Bullet</p></li>
+<li><p>Knitte das Dokument. Auf dem 3. Slide sind deine Bullet Points zu sehen!</p></li>
 </ol>
 </div>
-<div id="e---zwei-neue-slides-mit-bullet-points-und-grafik" class="section level3">
-<h3>E - Zwei neue Slides mit Bullet Points und Grafik</h3>
+<div id="e---grafiken-einbinden" class="section level3">
+<h3>E - Grafiken einbinden</h3>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Füge einen neuen slide mit dem Titel “Entwicklung” ein.</p></li>
+<li><p>Auf diesem Slide soll die erste Grafik abgebildet werden. Füge dafür einen R Code Chunk mit der Grafik über die Neueinstellungen pro Monat ein.</p></li>
+<li><p><code>Knitte</code> das Dokument. Enthält Slide 4/4 die Grafik 1?</p></li>
+</ol>
+</div>
+<div id="f---zwei-neue-slides-mit-bullet-points-und-grafik" class="section level3">
+<h3>F - Zwei neue Slides mit Bullet Points und Grafik</h3>
 <ol style="list-style-type: decimal">
 <li><p>Füge einen neuen slide mit dem Titel “Stadtteile” ein.</p></li>
 <li><p>In einem R Code Chunk ergänze die folgenden Berechnungen</p></li>
-</ol>
-<pre class="r"><code># Berechne Häufigkeiten über die Bezirke
-stadtteile &lt;- airbnb_1819 %&gt;% 
-         group_by(Stadtteil, 
-                  Jahr = year(Erstellungsdatum)) %&gt;% 
-         summarize(Wohnungen = n()) %&gt;% 
-  ungroup() %&gt;% 
-  arrange(desc(Jahr), Wohnungen) %&gt;% 
-  mutate(Stadtteil = as_factor(Stadtteil))
-
-# Veränderung über die Stadtteile
-veränderung = stadtteile %&gt;% 
-  group_by(Stadtteil) %&gt;% 
-  summarize(veränderung = (100 * (Wohnungen[Jahr == 2019]/Wohnungen[Jahr == 2018] - 1)) %&gt;% round(1))
-
-# Geringsten Veränderung
-min_veränderung = veränderung %&gt;% 
-  slice(which.min(veränderung)) %&gt;% 
-  pull(veränderung)
-
-# Stadteil mit der geringsten Veränderung
-min_stadtteil = veränderung %&gt;% 
-  slice(which.min(veränderung)) %&gt;% 
-  pull(Stadtteil)
-
-# Grösste Veränderung
-max_veränderung = veränderung %&gt;% 
-  slice(which.max(veränderung)) %&gt;% 
-  pull(veränderung)
-
-# Stadteil mit der grössten Veränderung
-max_stadtteil = veränderung %&gt;% 
-  slice(which.max(veränderung)) %&gt;% 
-  pull(Stadtteil)</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>Als Slide Inhalt füge eine Liste mit Bullet Points und diesen Informationen eine:</li>
-</ol>
-<pre class="r"><code>&gt; - Meisten Neueinstellungen: `r stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% last()`
-&gt; - Wenigste Neueinstellungen:  `r stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% first()`
-&gt; - Grössten Reduktion mit  `r min_veränderung`% in `r min_stadtteil` 
-&gt; - Grösster Zuwachs mit `r max_veränderung`% in `r max_stadtteil` </code></pre>
-<ol start="4" style="list-style-type: decimal">
+<li><p>Als Slide Inhalt füge eine Liste mit Bullet Points und diesen Informationen eine:</p></li>
 <li><p>Füge einen neuen slide mit dem Titel “Stadtteile” ein.</p></li>
 <li><p>Kopiere den folgenden Code für die 2. Grafik in dein Markdown Dokument.</p></li>
-</ol>
-<pre class="r"><code># Plotte Häufigkeieten der Stadtteile
-ggplot(stadtteile, 
-       aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
-  geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) + 
-  theme(legend.position = &#39;none&#39;) + labs(y=&#39;&#39;)
-
-# Ergänze caption
-cap = &quot;&lt;center&gt;Figure 2. Neueinstellungen pro Bezirk&lt;/center&gt;&quot;</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li><code>Knitte</code> das Dokument. Wird die 2. Grafik korrekt angezeigt?</li>
+<li><p><code>Knitte</code> das Dokument. Wird die 2. Grafik korrekt angezeigt?</p></li>
 </ol>
 </div>
-<div id="f---neuer-abschnitt-mit-tabelle-und-regressionsergebnissen" class="section level3">
-<h3>F - Neuer Abschnitt mit Tabelle und Regressionsergebnissen</h3>
+<div id="g---neuer-abschnitt-mit-tabelle-und-regressionsergebnissen" class="section level3">
+<h3>G - Neuer Abschnitt mit Tabelle und Regressionsergebnissen</h3>
 <ol style="list-style-type: decimal">
 <li><p>Erstelle einen neuen Abschnitt mit dem Titel “# Preis” und einen neuen Slide mit dem Titel “## Einfluss der Ausstattung”</p></li>
 <li><p>Füge einen R Chunk mit dem folgenden Code zur Berechnung der Ausstattungsmerkmale ein.</p></li>
-</ol>
-<pre class="r"><code># Vector mit Ausstatttungsmerkmalen
-ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;Wifi&#39;,&#39;TV&#39;,&#39;Kaffeemaschine&#39;,
-                    &#39;Geschirrspüler&#39;,&#39;Terrasse_Balkon&#39;,
-                    &#39;Check_in_24h&#39;)
-
-# Bestimme Preise als Funktion der Ausstatttungsmerkmale
-ausstattung &lt;- airbnb_1819 %&gt;% 
-  select(all_of(ausstattung_var), Preis) %&gt;%
-  pivot_longer(-Preis,
-             names_to = &#39;Ausstattung&#39;,
-             values_to = &#39;Ausstattung_vorhanden&#39;) %&gt;% 
-  group_by(Ausstattung) %&gt;% 
-  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
-            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
-            Differenz = Vorhanden - Nicht_vorhanden, 
-            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %&gt;% 
-  arrange(desc(Differenz)) </code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>Erstelle eine Liste mit Bulletpoints, die die folgenden Berechnungen enthält:</li>
-</ol>
-<pre class="r"><code>&gt; - Durchschnittliche Preis der Neueinstellungen `r round(mean(airbnb_1819 %&gt;% pull(Preis)),1)` €
-&gt; - Anstieg der Preise um `r m &lt;- mean(airbnb_1819 %&gt;% filter(year(Erstellungsdatum) == 2019) %&gt;% pull(Preis))/mean(airbnb_1819 %&gt;% filter(year(Erstellungsdatum) == 2018) %&gt;% pull(Preis)) ; round(m, 3) * 100 - 100`%
-&gt; - Grössten Unterschied im Preis `r ausstattung %&gt;% pull(Ausstattung) %&gt;% first()` (`r ausstattung %&gt;% pull(Differenz) %&gt;% first() %&gt;% round(1)`)
-&gt; - Kleinster Unterschied im Preis `r ausstattung %&gt;% pull(Ausstattung) %&gt;% last()` (`r ausstattung %&gt;% pull(Differenz) %&gt;% last() %&gt;% round(1)`)</code></pre>
-<ol start="5" style="list-style-type: decimal">
+<li><p>Erstelle eine Liste mit Bulletpoints, die die folgenden Berechnungen enthält:</p></li>
 <li><p>Füge einen neuen Slide mit dem Titel <code>Einfluss der Ausstattung</code> ein.</p></li>
 <li><p>Auf diesem Slide, zeige die Tabelle mit den Austattungsmerkmalen</p></li>
-</ol>
-<pre class="r"><code># Plotte Tabelle mit Austattungsmerkmalen
-ausstattung %&gt;% 
-  mutate_if(is.numeric, function(x) {
-    cell_spec(round(x,1), bold = T, 
-              font_size = spec_font_size(x, begin=14, end=22))}) %&gt;%
-  mutate(Ausstattung = cell_spec(Ausstattung, font_size=18)) %&gt;% 
-  kable(digits = 2,
-        format=&#39;html&#39;, 
-        caption = &#39;Tabelle 1. Ausstattung und Einfluss auf den Preis&#39;, 
-        col.names = c(&#39;&#39;, &#39;Preis&lt;br&gt;Nicht-vorh.&#39;, &#39;Preis&lt;br&gt;vorh.&#39;,&#39;Differenz&#39;,&#39;Prozent&lt;br&gt;vorh.&#39;),
-        escape = FALSE,
-        align=&quot;lcccc&quot;,
-        padding = 0) %&gt;% 
-  column_spec(c(2,3,4,5), width = &quot;1.2in&quot;) </code></pre>
-<ol start="7" style="list-style-type: decimal">
-<li>Auf dem gleichen Slide, unter der Tabelle, füge folgenden Text in fetter Schrift ein:</li>
+<li><p>Auf dem gleichen Slide, unter der Tabelle, füge folgenden Text in fetter Schrift ein:</p></li>
 </ol>
 <pre class="r"><code>&lt;br&gt;
 &lt;b&gt;Der stark negative Effekt der Küche überrascht. 
@@ -456,30 +336,10 @@ Hotels im Angebot enthalten sind.&lt;/b&gt;  </code></pre>
 <li><p><code>Knitte</code> das Dokument. Werden die beiden neuen Slides mit der Tabelle korrekt angezeigt?</p></li>
 <li><p>Füge eine neuen Slide mit dem Titel “Regressionsmodell” ein.</p></li>
 <li><p>Ergänze den folgenden Code für die Berechnung der durchschnittlichen Anteile der Hotels.</p></li>
-</ol>
-<pre class="r"><code># Bestimme Anteil Hotels in 2018 und 2019
-hotel &lt;- airbnb_1819 %&gt;% 
-  group_by(year(Erstellungsdatum)) %&gt;% 
-  summarize(Anteil = mean(Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;))) </code></pre>
-<ol start="9" style="list-style-type: decimal">
-<li>Definiere die Liste der Ausstattungsmermale und sage den Preis mit diesen Ausstattungsmermalen in einer Regression vorher.</li>
-</ol>
-<pre class="r"><code># Reduzierter Vektor mit Ausstattungsmerkmalen
-ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,&#39;Check_in_24h&#39;)
-
-# Rechne Regression des Preises auf Austattungsmerkmale und Hotel
-ausstattung_mod &lt;- airbnb_1819 %&gt;% 
-  mutate(Hotel = Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)) %&gt;% 
-  select(Preis, Hotel, all_of(ausstattung_var)) %&gt;% 
-  lm(formula = Preis ~ .)</code></pre>
-<ol start="10" style="list-style-type: decimal">
+<li><p>Definiere die Liste der Ausstattungsmermale und sage den Preis mit diesen Ausstattungsmermalen in einer Regression vorher.</p></li>
 <li><p>Füge die Ergebnisse der Regression, mit Hilfe der Funktion <code>tab_model</code> ein.</p></li>
 <li><p>Ergänze in fetter Schriftart die abschliessenden Sätze direkt unter der Regressionstafel.</p></li>
 </ol>
-<pre class="r"><code>&lt;br&gt;
-&lt;b&gt;Der Anteil von Hotels ist von `r (hotel$Anteil[1]*100) %&gt;% round(1)`% im Jahre 2018 auf 
-`(hotel$Anteil[2]*100) %&gt;% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der 
-Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. </code></pre>
 </div>
 </div>
 <div id="datensatz" class="section level2">

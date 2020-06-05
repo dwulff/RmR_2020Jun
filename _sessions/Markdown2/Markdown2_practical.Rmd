@@ -228,10 +228,13 @@ kable(...) %>% column_spec(...)
 # Reduzierter Vektor mit Ausstattungsmerkmalen
 ausstattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
 
-# Rechne Regression des Preises auf Austattungsmerkmale und Hotel
-ausstattung_mod <- airbnb_1819 %>% 
+# Bereit den Datensatz für die Regression vor
+ausstattung <- airbnb_1819 %>% 
   mutate(Hotel = Unterkunftsart %in% c('Boutique hotel', 'Hotel')) %>% 
-  select(Preis, Hotel, all_of(ausstattung_var)) %>% 
+  select(Preis, Hotel, all_of(ausstattung_var)) 
+
+# Rechne Regression des Preises auf Austattungsmerkmale und Hotel
+austattung_mod <-  ausstattung%>% 
   lm(formula = Preis ~ .)
   
 # Bestimme Anteil Hotels in 2018 und 2019

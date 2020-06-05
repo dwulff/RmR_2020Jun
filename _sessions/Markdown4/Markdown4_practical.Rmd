@@ -30,7 +30,7 @@ output:
     self_contained: no
 ---
 
-```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
+```{r setup, include  = FALSE}
 knitr::opts_chunk$set(comment = NA, 
                       fig.width = 6, 
                       fig.height = 6,
@@ -165,12 +165,13 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 4. Füge darunter den folgenden Satz mit inline Code in der nächsten Zeile ein:
 
-```R
+```{r}
 Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin:
 ```
+
 5. In einer Liste mit Bullet Points ergänze die folgenden, zusammengefassten Informationen. Das `-` ist Markup um eine Liste zu erstellen, also in diesem Fall Bullet Points. Knitte das Dokument. Tauchen die Bullets als Liste auf? 
 
-```R
+```{r}
 - `r nrow(airbnb_1819)` Airbnb Wohnungen eingestellt
 - `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% haben Verfügbarkeiten von durchschnittlich ` round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen
 - 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt
@@ -178,18 +179,17 @@ Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berli
 - Zuwachs: `wrap (round(n_2019/n_2018, 2) - 1)*100`%
 ```
 
-6. 
+6. Ergänze nun vor jedem einzelnen Bullet ein grösser als Zeichen mit einem Leerzeichen, d.h. vor jeder Zeile sollte `> -` stehen. Damit tauchen die einzelnen Bullets gestaffelt nacheinander auf. 
 
-
-6. `Knitte` das Dokument. Auf dem 3. Slide sind deine Bullet Points zu sehen!
+7. Knitte das Dokument. Sind die Bullets nun gestaffelt?
 
 ### E - Grafiken einbinden
 
-7. Füge einen neuen slide mit dem Titel "Entwicklung" ein.
+1. Füge einen neuen Slide mit dem Titel "Entwicklung" ein. Verwende zwei `#`.
 
-8. Auf diesem Slide soll die erste Grafik abgebildet werden. Füge dafür einen R Code Chunk mit der Grafik über die Neueinstellungen pro Monat ein.
+2. Auf diesem Slide soll die erste Grafik abgebildet werden. Füge dafür einen Code-Chunk mit der Grafik über die Neueinstellungen pro Monat ein.
 
-```R
+```{r}
 # Plotte Häufigkeiten
 ggplot(airbnb_1819 %>% 
          group_by(Jahr = year(Erstellungsdatum), 
@@ -206,15 +206,17 @@ ggplot(airbnb_1819 %>%
 cap = "<center>Abbildung 1. Neueinstellungen pro Monat</center>"
 ```
 
-10. `Knitte` das Dokument. Enthält Slide 4/4 die Grafik 1?
+3. Ergänze in den chunk Optionen `fig.cap = cap` damit die Bildunterschrift angezeigt wird.
 
-### F - Zwei neue Slides mit Bullet Points und Grafik
+4. `Knitte` das Dokument. Enthält Slide 4/4 die Abbilding 1?
 
-1. Füge einen neuen slide mit dem Titel "Stadtteile" ein.
+### F - Zwei neue Slides
 
-2. In einem R Code Chunk ergänze die folgenden Berechnungen
+1. Füge einen neuen slide mit dem Titel "Stadtteile" ein (zwei `#`).
 
-```{r echo = TRUE}
+2. In einem Code-Chunk inkludiere nun die folgenden Berechnungen. 
+
+```{r}
 # Berechne Häufigkeiten über die Bezirke
 stadtteile <- airbnb_1819 %>% 
          group_by(Stadtteil, 
@@ -250,20 +252,20 @@ max_stadtteil = veränderung %>%
   pull(Stadtteil)
 ```
 
-3. Als Slide Inhalt füge eine Liste mit Bullet Points und diesen Informationen eine:
+3. Jetzt füge die folgende Liste mit Bullet Points als Inhalt für den Slide ein.
 
-```{r echo = TRUE}
+```{r}
 > - Meisten Neueinstellungen: `r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()`
 > - Wenigste Neueinstellungen:  `r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`
 > - Grössten Reduktion mit  `r min_veränderung`% in `r min_stadtteil` 
 > - Grösster Zuwachs mit `r max_veränderung`% in `r max_stadtteil` 
 ```
 
-4. Füge einen neuen slide mit dem Titel "Stadtteile" ein.
+4. Als nächstes kreiere einen neuen Slide mit dem Titel "Stadtteile".
 
-5. Kopiere den folgenden Code für die 2. Grafik in dein Markdown Dokument.
+5. Darunter setze folgenden Code für die 2. Grafik in dein Markdown Dokument.
 
-```{r echo = TRUE}
+```{r}
 # Plotte Häufigkeieten der Stadtteile
 ggplot(stadtteile, 
        aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
@@ -274,15 +276,15 @@ ggplot(stadtteile,
 cap = "<center>Figure 2. Neueinstellungen pro Bezirk</center>"
 ```
 
-6. `Knitte` das Dokument. Wird die 2. Grafik korrekt angezeigt?
+6. `Knitte` das Dokument. Wird die 2. Bullets und Grafik korrekt angezeigt?
 
-### G - Neuer Abschnitt mit Tabelle und Regressionsergebnissen
+### G - Tabelle und Regressionsergebnissen
 
-1. Erstelle einen neuen Abschnitt mit dem Titel "# Preis" und einen neuen Slide mit dem Titel "## Einfluss der Ausstattung"
+1. Erstelle einen neuen Abschnitt `# Preis` und einen neuen Slide `## Einfluss der Ausstattung`.
 
-2. Füge einen R Chunk mit dem folgenden Code zur Berechnung der Ausstattungsmerkmale ein.
+2. Füge einen Chunk mit dem folgenden Code zur Berechnung der Ausstattungsmerkmale ein.
 
-```{r echo = TRUE}
+```{r}
 # Vector mit Ausstatttungsmerkmalen
 ausstattung_var <- c('Küche','Wifi','TV','Kaffeemaschine',
                     'Geschirrspüler','Terrasse_Balkon',
@@ -302,20 +304,20 @@ ausstattung <- airbnb_1819 %>%
   arrange(desc(Differenz)) 
 ```
 
-4. Erstelle eine Liste mit Bulletpoints, die die folgenden Berechnungen enthält: 
+4. Erstelle die folgende Liste gestaffelter Bulletpoints. Dann knitte die Slides. Bullets korrekt angezeigt? 
 
-```{r echo = TRUE}
+```{r}
 > - Durchschnittliche Preis der Neueinstellungen `r round(mean(airbnb_1819 %>% pull(Preis)),1)` €
 > - Anstieg der Preise um `r m <- mean(airbnb_1819 %>% filter(year(Erstellungsdatum) == 2019) %>% pull(Preis))/mean(airbnb_1819 %>% filter(year(Erstellungsdatum) == 2018) %>% pull(Preis)) ; round(m, 3) * 100 - 100`%
 > - Grössten Unterschied im Preis `r ausstattung %>% pull(Ausstattung) %>% first()` (`r ausstattung %>% pull(Differenz) %>% first() %>% round(1)`)
 > - Kleinster Unterschied im Preis `r ausstattung %>% pull(Ausstattung) %>% last()` (`r ausstattung %>% pull(Differenz) %>% last() %>% round(1)`)
 ```
 
-5. Füge einen neuen Slide mit dem Titel `Einfluss der Ausstattung` ein.
+5. Füge nun einen neuen Slide mit dem Titel `Einfluss der Ausstattung` (zwei `##`) ein.
 
-6. Auf diesem Slide, zeige die Tabelle mit den Austattungsmerkmalen
+6. Auf diesem Slide inkludiere die folgende Tabelle mit Austattungsmerkmalen. 
 
-```{r echo = TRUE}
+```{r}
 # Plotte Tabelle mit Austattungsmerkmalen
 ausstattung %>% 
   mutate_if(is.numeric, function(x) {
@@ -341,22 +343,13 @@ Er könnte durch die Art der Unterkunft moderiert werden, gegeben dass auch
 Hotels im Angebot enthalten sind.</b>  
 ```
 
-6. `Knitte` das Dokument. Werden die beiden neuen Slides mit der Tabelle korrekt angezeigt?
+8. Knitte das Dokument. Werden die beiden neuen Slides mit der Tabelle korrekt angezeigt?
 
-7. Füge eine neuen Slide mit dem Titel "Regressionsmodell" ein.
+9. Füge eine neuen Slide mit dem Titel `Regressionsmodell` ein.
 
-8. Ergänze den folgenden Code für die Berechnung der durchschnittlichen Anteile der Hotels.
+10. Definiere die Liste der Ausstattungsmermale und sage den Preis mit diesen Ausstattungsmermalen und Hotel Ja/Nein in einer Regression vorher.
 
-```{r echo = TRUE}
-# Bestimme Anteil Hotels in 2018 und 2019
-hotel <- airbnb_1819 %>% 
-  group_by(year(Erstellungsdatum)) %>% 
-  summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel'))) 
-```
-
-9. Definiere die Liste der Ausstattungsmermale und sage den Preis mit diesen Ausstattungsmermalen in einer Regression vorher.
-
-```{r echo = TRUE}
+```{r}
 # Reduzierter Vektor mit Ausstattungsmerkmalen
 ausstattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
 
@@ -367,9 +360,9 @@ ausstattung_mod <- airbnb_1819 %>%
   lm(formula = Preis ~ .)
 ```
 
-10. Füge die Ergebnisse der Regression, mit Hilfe der Funktion `tab_model` ein.
+11. Füge die Ergebnisse der Regression, mit Hilfe der Funktion `tab_model` ein.
 
-```{r fig.asp=.5}
+```{r}
 # Tabelle mit Ergebnissen der Regression
 tab_model(ausstattung_mod,
           pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
@@ -378,14 +371,28 @@ tab_model(ausstattung_mod,
                      css.table = "width: 100%;font-size:.6em"))
 ```
 
-11. Ergänze in fetter Schriftart die abschliessenden Sätze direkt unter der Regressionstafel.
+11. Inkludiere den folgenden Chunk um den Anteil Hotels zu besteimmen. 
 
-```{r echo = TRUE}
+```{r}
+# Bestimme Anteil Hotels in 2018 und 2019
+hotel <- airbnb_1819 %>% 
+  group_by(year(Erstellungsdatum)) %>% 
+  summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel'))) 
+```
+
+12. Ergänze in fetter Schriftart die abschliessenden Sätze direkt unter der Regressionstabelle.
+
+```{r}
 <br>
 <b>Der Anteil von Hotels ist von `r (hotel$Anteil[1]*100) %>% round(1)`% im Jahre 2018 auf 
 `(hotel$Anteil[2]*100) %>% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der 
 Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. 
 ```
+
+### H - Export
+
+1. Slides können sehr gut über eine Browser als PDF ausgegeben werden. Öffne hierzu das 
+
 
 ## Datensatz
 

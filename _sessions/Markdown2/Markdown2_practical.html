@@ -342,10 +342,13 @@ kable(...) %&gt;% column_spec(...)</code></pre>
 <pre class="r"><code># Reduzierter Vektor mit Ausstattungsmerkmalen
 ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,&#39;Check_in_24h&#39;)
 
-# Rechne Regression des Preises auf Austattungsmerkmale und Hotel
-ausstattung_mod &lt;- airbnb_1819 %&gt;% 
+# Bereit den Datensatz für die Regression vor
+ausstattung &lt;- airbnb_1819 %&gt;% 
   mutate(Hotel = Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)) %&gt;% 
-  select(Preis, Hotel, all_of(ausstattung_var)) %&gt;% 
+  select(Preis, Hotel, all_of(ausstattung_var)) 
+
+# Rechne Regression des Preises auf Austattungsmerkmale und Hotel
+austattung_mod &lt;-  ausstattung%&gt;% 
   lm(formula = Preis ~ .)
   
 # Bestimme Anteil Hotels in 2018 und 2019
