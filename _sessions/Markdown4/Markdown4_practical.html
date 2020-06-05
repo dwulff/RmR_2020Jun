@@ -194,8 +194,8 @@ summary {
 </div>
 
 
-<p align="center">
-<img src="image/pp.png" alt="Style" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://unsplash.com/photos/ewGMqs2tmJI">Edwin Andrade @ unsplash.com</a></font>
+<p align="center" width="100%">
+<img src="image/pp.png" alt="Style" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://dvisiondesign.net/2019/09/25/what-does-design-mean/">dvisiondesign.net</a></font>
 </p>
 <div id="section" class="section level1 tabset">
 <h1></h1>
@@ -217,7 +217,7 @@ summary {
 <li><p>Öffne ein neues RMarkdown Skript und wähle das Presentation - Template “HTML” aus (siehe screenshot unten).</p></li>
 </ol>
 <p align="center" width="100%">
-<img src="image/markdown_presentation.menu.png" alt="Trulli" style="height:200px">
+<img src="image/markdown_presentation_menu.png" alt="Trulli" style="height:500px">
 </p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Trage als Titel <code>Berlin</code> ein.</p></li>
@@ -227,13 +227,13 @@ summary {
 </div>
 <div id="b---yaml" class="section level3">
 <h3>B - YAML</h3>
-<p>Im YAML header wirst du nun die generellen Einstellungen des Dokumentes anpassen.</p>
+<p>Im YAML Header wirst du nun die generellen Einstellungen des Dokumentes anpassen.</p>
 <ol style="list-style-type: decimal">
 <li>Füge unter <code>title: Berlin</code>, in einer neuen Zeilte, einen Untertitel ein.</li>
 </ol>
 <pre class="r"><code>subtitle: &quot;Bericht: 18/19&quot;</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Um ein Logo automatisch auf dem Titelslide und in der Fussnote jedes Slides anzuzeigen, gib an wo das Logo abgelegt ist.</li>
+<li>Um ein Logo automatisch auf dem Titelslide und in der Fusszeile jedes Slides anzuzeigen, gib an wo das Logo abgelegt ist und integriere es im YAML Header.</li>
 </ol>
 <pre class="r"><code>logo: ../2_Assets/airbnb.png</code></pre>
 <ol start="3" style="list-style-type: decimal">
@@ -297,9 +297,9 @@ ggplot &lt;- function(...) ggplot2::ggplot(...) +
 <div id="d---nun-geht-es-an-das-erstellen-der-slides" class="section level3">
 <h3>D - Nun geht es an das Erstellen der Slides</h3>
 <ol style="list-style-type: decimal">
-<li><p>Füge nach dem <code>setup</code> Chunk in einer neuen Zeile <code># Neueinstellungen</code> ein. Damit erstellst du deinen ersten Abschnitt mit grauem Hintergrund.</p></li>
+<li><p>Füge nach dem <code>setup</code> Chunk in einer neuen Zeile “# Neueinstellungen” ein. Damit erstellst du deinen ersten Abschnitt mit grauem Hintergrund.</p></li>
 <li><p><code>Knitte</code> das Dokument. Zu deinem Titelslide gibt es jetzt einen 2. Slide mit dem Titel Neueinstellungen.</p></li>
-<li><p>Für den ersten Slide mit Inhalt füge in einer neuen Zeile <code>## Entwicklung</code> ein.</p></li>
+<li><p>Für den ersten Slide mit Inhalt füge in einer neuen Zeile “## Entwicklung” ein.</p></li>
 <li><p>Füge den folgenden Satz mit <code>inline code</code> in der nächsten Zeile ein:</p></li>
 </ol>
 <pre class="r"><code>Seit `r strftime(min(airbnb_1819$Erstellungsdatum), &quot;%d.%m.%Y&quot;)` wurden in Berlin:</code></pre>
@@ -311,13 +311,10 @@ ggplot &lt;- function(...) ggplot2::ggplot(...) +
 &gt; - 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt
 &gt; - 2018 nur `wrap n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt
 &gt; - Zuwachs: `wrap (round(n_2019/n_2018, 2) - 1)*100`%</code></pre>
-<ol start="2" style="list-style-type: decimal">
+<ol start="6" style="list-style-type: decimal">
 <li><p><code>Knitte</code> das Dokument. Auf dem 3. Slide sind deine Bullet Points zu sehen!</p></li>
 <li><p>Füge einen neuen slide mit dem Titel “Entwicklung” ein.</p></li>
-</ol>
-<pre class="r"><code>## Entwicklung</code></pre>
-<ol start="8" style="list-style-type: decimal">
-<li>Auf diesem Slide soll die erste Grafik abgebildet werden. Füge dafür einen R Code Chunk mit der Grafik über die Neueinstellungen pro Monat ein.</li>
+<li><p>Auf diesem Slide soll die erste Grafik abgebildet werden. Füge dafür einen R Code Chunk mit der Grafik über die Neueinstellungen pro Monat ein.</p></li>
 </ol>
 <pre class="r"><code>{r  fig.asp=.6, fig.cap = cap}
 # Plotte Häufigkeiten
@@ -341,11 +338,8 @@ cap = &quot;&lt;center&gt;Abbildung 1. Neueinstellungen pro Monat&lt;/center&gt;
 <div id="e---zwei-neue-slides-mit-bullet-points-und-grafik" class="section level3">
 <h3>E - Zwei neue Slides mit Bullet Points und Grafik</h3>
 <ol style="list-style-type: decimal">
-<li>Füge einen neuen slide mit dem Titel “Stadtteile” ein.</li>
-</ol>
-<pre class="r"><code>## Stadtteile</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>In einem R Code Chunk ergänze die folgenden Berechnungen</li>
+<li><p>Füge einen neuen slide mit dem Titel “Stadtteile” ein.</p></li>
+<li><p>In einem R Code Chunk ergänze die folgenden Berechnungen</p></li>
 </ol>
 <pre class="r"><code># Berechne Häufigkeiten über die Bezirke
 stadtteile &lt;- airbnb_1819 %&gt;% 
@@ -406,7 +400,7 @@ cap = &quot;&lt;center&gt;Figure 2. Neueinstellungen pro Bezirk&lt;/center&gt;&q
 <div id="f---neuer-abschnitt-mit-tabelle-und-regressionsergebnissen" class="section level3">
 <h3>F - Neuer Abschnitt mit Tabelle und Regressionsergebnissen</h3>
 <ol style="list-style-type: decimal">
-<li><p>Erstelle einen neuen Abschnitt mit dem Titel <code># Preis</code> und einen neuen Slide mit dem Titel <code>## Einfluss der Ausstattung</code></p></li>
+<li><p>Erstelle einen neuen Abschnitt mit dem Titel “# Preis” und einen neuen Slide mit dem Titel “## Einfluss der Ausstattung”</p></li>
 <li><p>Füge einen R Chunk mit dem folgenden Code zur Berechnung der Ausstattungsmerkmale ein.</p></li>
 </ol>
 <pre class="r"><code># Vector mit Ausstatttungsmerkmalen
@@ -455,7 +449,9 @@ ausstattung %&gt;%
 <li>Auf dem gleichen Slide, unter der Tabelle, füge folgenden Text in fetter Schrift ein:</li>
 </ol>
 <pre class="r"><code>&lt;br&gt;
-&lt;b&gt;Der stark negative Effekt der Küche überrascht. Er könnte durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.&lt;/b&gt;  </code></pre>
+&lt;b&gt;Der stark negative Effekt der Küche überrascht. 
+Er könnte durch die Art der Unterkunft moderiert werden, gegeben dass auch 
+Hotels im Angebot enthalten sind.&lt;/b&gt;  </code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li><p><code>Knitte</code> das Dokument. Werden die beiden neuen Slides mit der Tabelle korrekt angezeigt?</p></li>
 <li><p>Füge eine neuen Slide mit dem Titel “Regressionsmodell” ein.</p></li>
@@ -481,7 +477,9 @@ ausstattung_mod &lt;- airbnb_1819 %&gt;%
 <li><p>Ergänze in fetter Schriftart die abschliessenden Sätze direkt unter der Regressionstafel.</p></li>
 </ol>
 <pre class="r"><code>&lt;br&gt;
-&lt;b&gt;Der Anteil von Hotels ist von `r (hotel$Anteil[1]*100) %&gt;% round(1)`% im Jahre 2018 auf ` (hotel$Anteil[2]*100) %&gt;% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. </code></pre>
+&lt;b&gt;Der Anteil von Hotels ist von `r (hotel$Anteil[1]*100) %&gt;% round(1)`% im Jahre 2018 auf 
+`(hotel$Anteil[2]*100) %&gt;% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der 
+Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. </code></pre>
 </div>
 </div>
 <div id="datensatz" class="section level2">
@@ -644,7 +642,7 @@ ausstattung_mod &lt;- airbnb_1819 %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left"><code>tidyverse</code></td>
-<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
 </tbody>
 </table>

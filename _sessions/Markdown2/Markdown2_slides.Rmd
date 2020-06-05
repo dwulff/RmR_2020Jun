@@ -947,7 +947,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>colum_spec</mono>
+  <mono>column_spec</mono>
   </td>
   <td bgcolor="white">
   Formatierung der Spalten, e.g., <mono>width</mono>.
@@ -1005,7 +1005,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>colum_spec</mono>
+  <mono>column_spec</mono>
   </td>
   <td bgcolor="white">
   Formatierung der Spalten, e.g., <mono>width</mono>.
