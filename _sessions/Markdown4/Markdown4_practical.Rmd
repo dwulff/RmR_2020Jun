@@ -45,10 +45,10 @@ options(digits = 3)
 library(tidyverse)
 ```
 
-<p align="center">
+<p align="center" width="100%">
   <img src="image/pp.png" alt="Style" style="width:100%">
   <br>
-  <font style="font-size:10px">from <a href="https://unsplash.com/photos/ewGMqs2tmJI">Edwin Andrade @ unsplash.com</a></font>
+  <font style="font-size:10px">from <a href="https://dvisiondesign.net/2019/09/25/what-does-design-mean/">dvisiondesign.net</a></font>
 </p>
 
 
@@ -72,7 +72,7 @@ Am Ende des Practicals kann du:
 2. Öffne ein neues RMarkdown Skript und wähle das Presentation - Template "HTML" aus (siehe screenshot unten).
 
 <p align="center" width="100%">
-  <img src="image/markdown_presentation.menu.png" alt="Trulli" style="height:200px">
+  <img src="image/markdown_presentation_menu.png" alt="Trulli" style="height:500px">
 </p>
 
 3. Trage als Titel `Berlin` ein.
@@ -83,29 +83,29 @@ Am Ende des Practicals kann du:
 
 ### B - YAML
 
-Im YAML header wirst du nun die generellen Einstellungen des Dokumentes anpassen.
+Im YAML Header wirst du nun die generellen Einstellungen des Dokumentes anpassen.
 
 1. Füge unter `title: Berlin`, in einer neuen Zeilte, einen Untertitel ein.
 
-```{r echo = TRUE}
+```R
 subtitle: "Bericht: 18/19"
 ```
 
-2. Um ein Logo automatisch auf dem Titelslide und in der Fussnote jedes Slides anzuzeigen, gib an wo das Logo abgelegt ist.
+2. Um ein Logo automatisch auf dem Titelslide und in der Fusszeile jedes Slides anzuzeigen, gib an wo das Logo abgelegt ist und integriere es im YAML Header.
 
-```{r echo = TRUE}
+```R
 logo: ../2_Assets/airbnb.png
 ```
 
 3. Um das Layout (Schrift, genaue Position der Komponenten) im Detail zu gestalten, füge den Link zu einem CSS file in der nächsten Zeile ein.
 
-```{r echo = TRUE}
+```R
 css: ../2_Assets/airbnb_presentation.css
 ```
 
 4. Achte auf die korrekten Einrückungen! Der YAML Header sollte so aussehen:
 
-```{r echo = TRUE}
+```R
 ---
 title: "Berlin"
 subtitle: "Bericht 18/19"
@@ -131,7 +131,7 @@ echo = FALSE, message = FALSE, warning = FALSE
 
 2. Lade die folgenden Pakete:
 
-```{r echo = TRUE}
+```R
 library(tidyverse)
 library(lubridate)
 library(sjPlot)
@@ -141,17 +141,17 @@ library(kableExtra)
 
 2. Integriere die Daten aus dem AirBnB Datensatz für den Zeitraum 2018-2019.
 
-````{r echo = TRUE}
+```R
 # Lade Daten
 airbnb_1819 <- read_csv('../1_Data/airbnb.csv') %>% 
   filter(Erstellungsdatum > "2018-01-01", 
          Erstellungsdatum < "2019-12-31")
-````
+```
 
 3. Passe das Grafik Theme für `ggplot` an. Damit veränderst du den Hintergrund aller Grafiken 
 und optimierst die Schriftgrösse der Grafiken.
 
-```{r echo = TRUE}
+```R
 # Ändere Thema zu minimal
 theme_set(theme_minimal())
 theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
@@ -162,7 +162,7 @@ theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
 
 4. Für die `ggplot` Grafiken wirst du nun noch die Farben an die AirBnB Palette anpassen.
 
-```{r echo = TRUE}
+```R
 # Setze defaults in ggplot
 ggplot <- function(...) ggplot2::ggplot(...) + 
   scale_fill_gradientn(colors = c('#555555','#6BB7B9')) + 
@@ -171,11 +171,11 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 ### D - Nun geht es an das Erstellen der Slides
 
-1. Füge nach dem `setup` Chunk in einer neuen Zeile `# Neueinstellungen` ein. Damit erstellst du deinen ersten Abschnitt mit grauem Hintergrund.
+1. Füge nach dem `setup` Chunk in einer neuen Zeile "# Neueinstellungen" ein. Damit erstellst du deinen ersten Abschnitt mit grauem Hintergrund.
 
 2. `Knitte` das Dokument. Zu deinem Titelslide gibt es jetzt einen 2. Slide mit dem Titel Neueinstellungen. 
 
-3. Für den ersten Slide mit Inhalt füge in einer neuen Zeile `## Entwicklung` ein.
+3. Für den ersten Slide mit Inhalt füge in einer neuen Zeile "## Entwicklung" ein.
 
 4. Füge den folgenden Satz mit `inline code` in der nächsten Zeile ein:
 
@@ -193,13 +193,9 @@ Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berli
 > - Zuwachs: `wrap (round(n_2019/n_2018, 2) - 1)*100`%
 ```
 
-2. `Knitte` das Dokument. Auf dem 3. Slide sind deine Bullet Points zu sehen!
+6. `Knitte` das Dokument. Auf dem 3. Slide sind deine Bullet Points zu sehen!
 
 7. Füge einen neuen slide mit dem Titel "Entwicklung" ein.
-
-```{r echo = TRUE}
-## Entwicklung
-```
 
 8. Auf diesem Slide soll die erste Grafik abgebildet werden. Füge dafür einen R Code Chunk mit der Grafik über die Neueinstellungen pro Monat ein.
 
@@ -226,10 +222,6 @@ cap = "<center>Abbildung 1. Neueinstellungen pro Monat</center>"
 ### E - Zwei neue Slides mit Bullet Points und Grafik
 
 1. Füge einen neuen slide mit dem Titel "Stadtteile" ein.
-
-```{r echo = TRUE}
-## Stadtteile
-```
 
 2. In einem R Code Chunk ergänze die folgenden Berechnungen
 
@@ -297,7 +289,7 @@ cap = "<center>Figure 2. Neueinstellungen pro Bezirk</center>"
 
 ### F - Neuer Abschnitt mit Tabelle und Regressionsergebnissen
 
-1. Erstelle einen neuen Abschnitt mit dem Titel `# Preis` und einen neuen Slide mit dem Titel `## Einfluss der Ausstattung`
+1. Erstelle einen neuen Abschnitt mit dem Titel "# Preis" und einen neuen Slide mit dem Titel "## Einfluss der Ausstattung"
 
 2. Füge einen R Chunk mit dem folgenden Code zur Berechnung der Ausstattungsmerkmale ein.
 
@@ -353,9 +345,11 @@ ausstattung %>%
 
 7. Auf dem gleichen Slide, unter der Tabelle, füge folgenden Text in fetter Schrift ein:
 
-```{r echo = TRUE}
+```R
 <br>
-<b>Der stark negative Effekt der Küche überrascht. Er könnte durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.</b>  
+<b>Der stark negative Effekt der Küche überrascht. 
+Er könnte durch die Art der Unterkunft moderiert werden, gegeben dass auch 
+Hotels im Angebot enthalten sind.</b>  
 ```
 
 6. `Knitte` das Dokument. Werden die beiden neuen Slides mit der Tabelle korrekt angezeigt?
@@ -399,11 +393,10 @@ tab_model(ausstattung_mod,
 
 ```{r echo = TRUE}
 <br>
-<b>Der Anteil von Hotels ist von `r (hotel$Anteil[1]*100) %>% round(1)`% im Jahre 2018 auf ` (hotel$Anteil[2]*100) %>% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. 
-
+<b>Der Anteil von Hotels ist von `r (hotel$Anteil[1]*100) %>% round(1)`% im Jahre 2018 auf 
+`(hotel$Anteil[2]*100) %>% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der 
+Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. 
 ```
-
-
 
 ## Datensatz
 
