@@ -398,7 +398,7 @@ Verlauf
 
 1. Nur noch wenige Schritte fehlen. Passe das `theme` des Dashboards an, indem du im YAML code unter `vertical_layout: fill` und auf der gleichen Ebene `theme: lumen` spezifizierst.
 
-2. Im vorgegebenen Dashboard kann der Source Code angezeigt werden, wenn man oben rechts draufklickt. Um das zu ermöglichen, musst du lediglich auf der gleichen Ebene wie eben bei G1 `source_code: embed` im YAML code eingeben.
+2. Im vorgegebenen Dashboard kann der Source Code angezeigt werden, wenn man oben rechts draufklickt. Um das zu ermöglichen, musst du lediglich auf der gleichen Ebene wie eben bei G1 `source_code: embed` im YAML code eingeben. Knitte das Dokument und schaue dir den Source Code an. Cool oder?
 
 3. Schliesslich kannst du links zu Social Media Plattformen wie zum Beispiel Twitter und Facebook hinzufügen. Wiederum auf derselben Ebene wie vorhin, füge `social: ["twitter", "facebook"]` im YAML hinzu.
 
@@ -424,7 +424,7 @@ allstar <- airbnb %>%
 
 2. Verwende den `valueBox` Code den du in Teil D erstellt hast als Template um die value Box der Anzahl Allstars zu erstellen. Ersetze dazu `n_superhosts` durch `allstar` und ändere das `"Superhost"` im caption Argument zu `"Allstars"`.
 
-3. Diese value Box sieht aber noch nicht ganz gleich aus wie im vorgegebenen Dashboard. Zum Einen ist die Farbe noch grün statt gold, zum Anderen ist das Icon noch falsch. Ändere zunächst die Farbe (das `color` Argument) von `"#008489"` zu `"#f5d142"`.
+3. Diese value Box sieht aber noch nicht ganz gleich aus wie im vorgegebenen Dashboard. Zum Einen ist die Farbe noch grün statt gold, zum Anderen ist das Icon noch falsch. Ändere zunächst die Farbe (das `color` Argument) von `"#00A699"` zu `"#f5d142"`.
 
 4. Nun ändere den Input zum `icon` Argument von `"fa-medal"` zu `"fa-gem"`. Dabei spezifiziert das "fa-", dass das Icon aus der [Font Awesome](https://fontawesome.com/icons?d=gallery) Sammlung stammt. "medal" und "gem" geben dann den Namen des Icons an.
 
