@@ -128,7 +128,7 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
 
 <ul>
   <li class="m1"><span>Reporting Pakete gehören zu den <high>populärsten R Paketen</high> überhaupt.</span></li>
-  <li class="m2"><span>Reporting Pakete werden deutlich häufigerr runtergeladen als die bedeutendsten <high>Statistikpakete</high>.</span></li>
+  <li class="m2"><span>Reporting Pakete werden deutlich häufiger runtergeladen als die bedeutendsten <high>Statistikpakete</high>.</span></li>
 </ul>
 
 ]
@@ -152,7 +152,7 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
     <li><span>2 Blöcke Markdown Grundlagen</span></li>
     <li><span>1 Block zu Styling</span></li>
     <li><span>1 Block zu Slides</span></li>
-    <li><span>2 Blöck zu interaktiven Dashboards</span></li>
+    <li><span>2 Blöcke zu interaktiven Dashboards</span></li>
   </ul><br>
   <li class="m2"><span><high>Block</high>
   <ul class="level">
@@ -273,4 +273,4 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
 ---
 class: middle, center
 
-<h1><a href=https://therbootcamp.github.io/SmR_2020Mai/index.html>Agenda</a></h1>
+<h1><a href=https://therbootcamp.github.io/RmR_2020Jun/index.html>Agenda</a></h1>
