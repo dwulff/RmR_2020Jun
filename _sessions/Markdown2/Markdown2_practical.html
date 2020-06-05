@@ -263,7 +263,7 @@ pre code,  .md:not(.use-csslab) pre code {
 <div id="e---preise-neuer-texteil" class="section level3">
 <h3>E - Preise: Neuer Texteil</h3>
 <ol style="list-style-type: decimal">
-<li><p>Erstelle ein eneue Überschrift, <code>Einfluss Ausstattung</code>, als Level 4 Header.</p></li>
+<li><p>Erstelle eine neue Überschrift, <code>Einfluss Ausstattung</code>, als Level 4 Header.</p></li>
 <li><p>Berechne als ersten Schritt in einem eigenem Code Chunk wie sich die verschiedenen Ausstattungsmerkmale (Küche, Wifi, …) auf die durchschnittlichen Preise auswirken.</p></li>
 </ol>
 <pre class="r"><code># Vektor mit Ausstattungsmerkmalen
@@ -317,7 +317,7 @@ ausstattung %&gt;% kable(format = &#39;html&#39;)</code></pre>
 <li><p>Füge eine Tabellenüberschrift mit <code>caption = 'Tabelle 1. Austattung und Einfluss auf den Preis'</code> ein.</p></li>
 <li><p>Passe die Namen der Spalten an, inklusive neuer Zeilenumbrüche mit <code>&lt;br&gt;</code>: <code>col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 'Preis&lt;br&gt;vorh.','Differenz','Prozent&lt;br&gt;vorh.')</code></p></li>
 <li><p><code>Knitte</code> das Dokument. Du wirst bemerken, dass die Spaltenbeschriftung nicht korrekt übersetzt wird. Verwende als weiteres Argument <code>escape = FALSE</code> um dieses Problem zu korrigieren.</p></li>
-<li><p>Lege die Ausrichtung der Zellen mit <code>align = &quot;lcccc&quot;</code> fest. Jeder Buchstabe legt die Ausrichtung für eine Spalte fest. <code>l</code> bedeutet left und <code>c</code> center.</p></li>
+<li><p>Lege die Ausrichtung der Zellen mit <code>align = "lcccc"</code> fest. Jeder Buchstabe legt die Ausrichtung für eine Spalte fest. <code>l</code> bedeutet left und <code>c</code> center.</p></li>
 <li><p>Nun vergrössere die Breite der Spalten in dem du <code>column_spec()</code> hinter der <code>kable()</code> Funktion verwendest.</p></li>
 </ol>
 <pre class="r"><code>airbnb_18_19 %&gt;% kable(...) %&gt;% column_spec(c(2,3,4,5), width = &quot;1.2in&quot;)</code></pre>
@@ -547,23 +547,23 @@ tab_model(ausstattung_mod)</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left"><code>tidyverse</code></td>
-<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>lubridate</code></td>
-<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>knitr</code></td>
-<td align="left"><code>install.packages(&quot;knitr&quot;)</code></td>
+<td align="left"><code>install.packages("knitr")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>sjPlot</code></td>
-<td align="left"><code>install.packages(&quot;sjPlot&quot;)</code></td>
+<td align="left"><code>install.packages("sjPlot")</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>kabelExtra</code></td>
-<td align="left"><code>install.packages(&quot;kableExtra&quot;)</code></td>
+<td align="left"><code>install.packages("kableExtra")</code></td>
 </tr>
 </tbody>
 </table>
