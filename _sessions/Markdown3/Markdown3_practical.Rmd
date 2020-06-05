@@ -272,6 +272,14 @@ body {
 
 7. Knitte dein Dokument. Du solltest nun einen wohlformatierten AirBnB Bericht vor dir haben. 
 
+### G - Export als PDF
+
+1. Um den Bericht nun als PDF ausgeben und teilen zu können, kannst du `wk<html>topdf` verwenden (vorausgesetzt du hast die [Software](https://wkhtmltopdf.org/) installiert). Verwende hierzu den Befehl unten. Danach sollte sich ein PDF im ebenfalls im Markdown Ordner befinden. 
+
+```{r}
+
+```
+
 ## Datensatz
 
 Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv) Datensatz enthält Zahlen zu 9868 Berliner Airbnbs 
