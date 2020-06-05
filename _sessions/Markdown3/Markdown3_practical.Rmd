@@ -195,7 +195,7 @@ Setze folgenden HTML Code im Abschnitt Entwicklung ein - damit positionierst du 
 
 8. Knitte jetzt wieder das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt? 
 
-9. Für den Abschnitt `###Preis` gehe gleich vor. Ergänze nach dem ersten Code Chunk mit Berechnungen zur Ausstattung und vor dem ersten Absatz den folgenden Code. Nicht Knitten!!
+9. Für den Abschnitt `###Preis` gehe gleich vor. Ergänze nach dem ersten Code-Chunk mit Berechnungen zur Ausstattung und vor dem ersten Absatz den folgenden Code. Noch nicht Knitten!
 
 ```R
 <table width=100%>
@@ -223,23 +223,21 @@ Setze folgenden HTML Code im Abschnitt Entwicklung ein - damit positionierst du 
 </table>
 ```
 
-12. `Knitte` das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt? 
+12. Knitte jetzt wieder das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt? 
 
-13. Setze dem letzten Abschnitt selbständig mit einer HTML Table (widths 50%, 10%, 40%) in 2 Spalten. 
+13. Setze den letzten Abschnitt selbständig mit einer HTML Table (widths 50%, 10%, 40%) in 2 Spalten. 
 
-14. `Knitte` das Dokument. Der gesamte Text ist nun in 2 Spalten gesetzt mit den Textinhalten links und den Grafiken bzw. Tabellen rechts. 
+14. Knitte wieder das Dokument. Der gesamte Text ist nun in 2 Spalten gesetzt mit den Textinhalten links und den Grafiken bzw. Tabellen rechts. 
 
 ### F - CSS
 
-Globale Gestaltungsmkermale der HTML Datei werden in einem eigenen CSS file abgelegt. Erstelle nun das CSS file und passe es wie folgt an.
+1. Um allgmeine Gestaltungsmkermale des gesamten HTML-Berichts zu ändern erstelle die Datei `my_airbnb.css` und speichere sie in `2_Assets` ab. Du kannst die Datei direkt in RStudio erstellen und mit `.css` als Extension speichern. 
 
-1. Erstelle die Datei `my_airbnb.css` und speichere sie in `2_Assets` ab. Du kannst die Datei direkt in RStudio erstellen und mit `.css` als Extentsion speichern. 
+2. Binde nun die leere Datei im YAML Header deines Airbnb Markdown Dokumentes ein. Dafür ergänze `css: ../2_Assets/airbnb.css` unter `html_document:` (selbe Ebene wie `toc: true`)
 
-2. Binde nun die leere Datei im YAML Header deines Airbnb Markdown Dokumentes ein. Dafür ergänze `css: ../2_Assets/airbnb.css` unter `html_document:`
+3. Füge den folgenden Code in `my_airbnb.css` hinzu um die vertikale Ausrichtung der Tabellen anzupassen. Speichere die `.css` Datei und knitte dein Markdown Dokument. 
 
-3. Ergänze die Ausrichtung der Tabellen in `my_airbnb.css`, speichere die Datei und `knitte` dein Markdown Dokument. 
-
-```R
+```CSS
 table td {
   vertical-align: top;
   }
@@ -247,7 +245,7 @@ table td {
 
 4. Im nächsten Schritt wirst du die Schriftart und Farbe der beiden Überschriftenlevel anpassen. Den Code in `my_airbnb.css` ergänzen. Die .css Datei speichern und `knitten`. 
 
-```R
+```CSS
 h3, h4 {
   font-weight: 500;
   color: #555555;
