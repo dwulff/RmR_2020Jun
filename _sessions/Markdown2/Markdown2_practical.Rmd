@@ -129,7 +129,7 @@ m <- mean(airbnb_1819 %>% filter(year(Erstellungsdatum) == 2019) %>% pull(Preis)
 
 ### E - Preise: Neuer Texteil
 
-1. Erstelle ein eneue Überschrift, `Einfluss Ausstattung`, als Level 4 Header.
+1. Erstelle eine neue Überschrift, `Einfluss Ausstattung`, als Level 4 Header.
 
 2. Berechne als ersten Schritt in einem eigenem Code Chunk wie sich die verschiedenen Ausstattungsmerkmale (Küche, Wifi, ...) auf die durchschnittlichen Preise auswirken. 
 
