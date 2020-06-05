@@ -85,25 +85,27 @@ Am Ende des Practicals kann du:
 
 ### B - YAML
 
-1. Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter `title: Berlin`, in einer neuen Zeile, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?
+1. Entferne die `author:` und `date:` Angaben aus dem YAML header
+
+2. Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter `title: Berlin`, in einer neuen Zeile, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?
 
 ```R
 subtitle: "Bericht: 18/19"
 ```
 
-2. Damit das Logo automatisch auf der Titelslide und in der Fusszeile jedes Slides angezeigt wird, ergänze zunächst einen Doppelpunkt hinter `ioslides` und dann darunter, eine Ebene weiter eingerückt, die Zeile unten, welche den Pfad zum Logo dem YAML Header bereitstellt. Knitte das Dokument und schaue wie R das Logo einbindet.
+3. Damit das Logo automatisch auf der Titelslide und in der Fusszeile jedes Slides angezeigt wird, ergänze zunächst einen Doppelpunkt hinter `ioslides` und dann darunter, eine Ebene weiter eingerückt, die Zeile unten, welche den Pfad zum Logo dem YAML Header bereitstellt. Knitte das Dokument und schaue wie R das Logo einbindet.
 
 ```R
 logo: ../2_Assets/airbnb.png
 ```
 
-3. Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.
+4. Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.
 
 ```R
 css: ../2_Assets/airbnb_presentation.css
 ```
 
-4. Achte auf die korrekten Einrückungen! Der YAML Header sollte so aussehen:
+5. Achte auf die korrekten Einrückungen! Der YAML Header sollte so aussehen:
 
 ```R
 ---
@@ -122,15 +124,7 @@ output:
 
 Nun wirst du im `Setup` Chunk die notwendigen Pakete laden, Daten laden und verschiedenen Einstellungen vornehmen.
 
-1. Lade die folgenden Pakete:
-
-```R
-library(tidyverse)
-library(lubridate)
-library(sjPlot)
-library(knitr)
-library(kableExtra)
-```
+1. Lade die Pakete `tidyverse`, `lubridate`, `sjPlot`, `knitr` und `kableExtra`
 
 2. Inkludiere im Setup-Chunk den folgenden Code um die AirBnB Daten zu laden und Auf den Zeitraum 2018-2019 zu limitieren.
 
@@ -141,7 +135,7 @@ airbnb_1819 <- read_csv('../1_Data/airbnb.csv') %>%
          Erstellungsdatum < "2019-12-31")
 ```
 
-3. Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich `ggplot` wie im gestrigen Dokument anzupassen.
+3. Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich `ggplot`, wie im gestrigen Dokument, anzupassen.
 
 ```R
 # Ändere Thema zu minimal
@@ -165,169 +159,39 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 3. In die nächste Zeile füge in einer neuen Zeile "## Entwicklung" ein, was einen ersten Slide mit Inhalt beginnt.
 
-4. Füge darunter den folgenden Satz mit inline Code in der nächsten Zeile ein:
+4. Öffne das R Markdown Dokument, das wir gestern erstellt haben (`3_Markdown/airbnb_final.Rmd`). Übertrage aus dem Abschnitt "Entwicklung" 3-5 zentrale Punkte in eine Liste mit Bullet Points. Achte darauf, dass die einzelnen Punkte nicht zu lange werden und inline Code mit aktiven Berechnungen enthalten. In Markdown wird ein `-` in einen Bullet Point übersetzt.  
 
-<pre class="r">
-  <code class="hljs">
-Seit &grave;&#114; strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")&grave; wurden in Berlin:
-  </code>
-</pre>
+5. Ergänze nun vor jedem einzelnen Bullet ein grösser als Zeichen, d.h. vor jeder Zeile sollte `>-` stehen. Damit tauchen die einzelnen Bullets gestaffelt nacheinander auf. 
 
-5. In einer Liste mit Bullet Points, ergänze die folgenden, zusammengefassten Informationen. Das `-` ist Markup um eine Liste zu erstellen, also in diesem Fall Bullet Points. Knitte das Dokument. Tauchen die Bullets als Liste auf? 
-
-<pre class="r">
-  <code class="hljs">
-- &grave;r nrow(airbnb_1819)&grave; Airbnb Wohnungen eingestellt
-- &grave;r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)&grave;% haben Verfügbarkeiten von durchschnittlich&grave round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)&grave; Tagen
-- 2019 wurden insgesamt &grave;r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019&grave; neue Wohnungen eingestellt
-- 2018 nur &grave;r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018&grave Wohnungen eingestellt
-- Zuwachs: &grave;r (round(n_2019/n_2018, 2) - 1)*100&grave;%
-  </code>
-</pre>
-
-6. Ergänze nun vor jedem einzelnen Bullet ein grösser als Zeichen, d.h. vor jeder Zeile sollte `>-` stehen. Damit tauchen die einzelnen Bullets gestaffelt nacheinander auf. 
-
-7. Knitte das Dokument. Sind die Bullets nun gestaffelt?
+6. Knitte das Dokument. Sind die Bullets nun gestaffelt?
 
 ### E - Grafiken einbinden
 
 1. Füge einen neuen Slide mit dem Titel "Entwicklung" ein. Verwende zwei `#`.
 
-2. Auf diesem Slide soll die erste Grafik abgebildet werden. Füge dafür einen Code-Chunk mit der Grafik über die Neueinstellungen pro Monat ein.
-
-```R
-# Plotte Häufigkeiten
-ggplot(airbnb_1819 %>% 
-         group_by(Jahr = year(Erstellungsdatum), 
-                  Monat_tmp = month(Erstellungsdatum)) %>% 
-         summarize(
-           Monat = as_factor(paste(first(Jahr), first(Monat_tmp), sep = '-')),
-           Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
-  geom_bar(stat = 'identity', position = 'dodge') + 
-  theme(legend.position = 'none',
-        axis.text.x = element_text(angle = 45, hjust = 1)) 
-
-# Ergänze caption
-cap = "<center>Abbildung 1. Neueinstellungen pro Monat</center>"
-```
+2. Füge den relevanten Code für die Abbildung 1 (Neueinstellungen pro Monat) aus dem R Markdown Dokument ein. 
 
 3. Ergänze in den chunk Optionen `fig.cap = cap` damit die Bildunterschrift angezeigt wird.
 
 4. `Knitte` das Dokument. Enthält Slide 4/4 die Abbilding 1?
 
-### F - Zwei neue Slides
+### F - Zwei Slides zu den Stadtteilen
 
-1. Füge einen neuen slide mit dem Titel "Stadtteile" ein (zwei `#`).
+1. Füge einen neuen Slide mit dem Titel "Stadtteile" ein (zwei `#`).
 
-2. In einem Code-Chunk inkludiere nun die folgenden Berechnungen. 
+2. Ziel dieses Slides ist es auf der linken Seite die Neueinstellungen zu dokumentieren und auf der rechten Seite die prozentuelle Veränderung. Erstelle Dafür eine Tabelle in der du in der linken Spalte die Stadteile auflistest (mit `inline` Code berechnet) und in der rechten Spalte die Reduktion dokumentierst.
 
-```R
-# Berechne Häufigkeiten über die Bezirke
-stadtteile <- airbnb_1819 %>% 
-         group_by(Stadtteil, 
-                  Jahr = year(Erstellungsdatum)) %>% 
-         summarize(Wohnungen = n()) %>% 
-  ungroup() %>% 
-  arrange(desc(Jahr), Wohnungen) %>% 
-  mutate(Stadtteil = as_factor(Stadtteil))
+3. Stelle auf dem nächste Slide (gleicher Titel wie zuvor) die Abbildung 2 (Neueinstellungen pro Bezirk) als Grafik dar.
 
-# Veränderung über die Stadtteile
-veränderung = stadtteile %>% 
-  group_by(Stadtteil) %>% 
-  summarize(veränderung = (100 * (Wohnungen[Jahr == 2019]/Wohnungen[Jahr == 2018] - 1)) %>% round(1))
+4. `Knitte` das Dokument. Werden die 2. Grafiken, die Bullets und die Tabelle korrekt angezeigt?
 
-# Geringsten Veränderung
-min_veränderung = veränderung %>% 
-  slice(which.min(veränderung)) %>% 
-  pull(veränderung)
-
-# Stadteil mit der geringsten Veränderung
-min_stadtteil = veränderung %>% 
-  slice(which.min(veränderung)) %>% 
-  pull(Stadtteil)
-
-# Grösste Veränderung
-max_veränderung = veränderung %>% 
-  slice(which.max(veränderung)) %>% 
-  pull(veränderung)
-
-# Stadteil mit der grössten Veränderung
-max_stadtteil = veränderung %>% 
-  slice(which.max(veränderung)) %>% 
-  pull(Stadtteil)
-```
-
-3. Jetzt füge die folgende Liste mit Bullet Points als Inhalt für den Slide ein.
-
-<pre class="r">
-  <code class="hljs">
-> - Meisten Neueinstellungen: &grave;r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()&grave;
-> - Wenigste Neueinstellungen:  &grave;r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()&grave;
-> - Grössten Reduktion mit  &grave;r min_veränderung&grave;% in &grave;r min_stadtteil&grave; 
-> - Grösster Zuwachs mit &grave;r max_veränderung&grave;% in &grave;r max_stadtteil&grave; 
-  </code>
-</pre>
-
-4. Als nächstes kreiere einen neuen Slide mit dem Titel "Stadtteile".
-
-5. Darunter setze folgenden Code für die 2. Grafik in dein Markdown Dokument.
-
-```R
-# Plotte Häufigkeieten der Stadtteile
-ggplot(stadtteile, 
-       aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
-  geom_bar(stat = 'identity', position = 'dodge') + 
-  theme(legend.position = 'none') + labs(y='')
-
-# Ergänze caption
-cap = "<center>Figure 2. Neueinstellungen pro Bezirk</center>"
-```
-
-
-6. `Knitte` das Dokument. Werden die 2. Grafik und die Bullets korrekt angezeigt?
-
-### G - Tabelle und Regressionsergebnissen
+### G - Tabelle
 
 1. Erstelle einen neuen Abschnitt "Preis" (ein `#`) und einen neuen Slide "Einfluss der Ausstattung" (zwei `##`) .
 
-2. Füge einen Chunk mit dem folgenden Code zur Berechnung der Ausstattungsmerkmale ein.
+2. Füge einen Chunk mit dem Code zur Berechnung der Ausstattungsmerkmale ein.
 
-```R
-# Vector mit Ausstatttungsmerkmalen
-ausstattung_var <- c('Küche','Wifi','TV','Kaffeemaschine',
-                    'Geschirrspüler','Terrasse_Balkon',
-                    'Check_in_24h')
-
-# Bestimme Preise als Funktion der Ausstatttungsmerkmale
-ausstattung <- airbnb_1819 %>% 
-  select(all_of(ausstattung_var), Preis) %>%
-  pivot_longer(-Preis,
-             names_to = 'Ausstattung',
-             values_to = 'Ausstattung_vorhanden') %>% 
-  group_by(Ausstattung) %>% 
-  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
-            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
-            Differenz = Vorhanden - Nicht_vorhanden, 
-            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %>% 
-  arrange(desc(Differenz)) 
-```
-
-3. Erstelle die folgende Liste gestaffelter Bulletpoints. Dann knitte die Slides. Bullets korrekt angezeigt? 
-
-<pre class="r">
-  <code class="hljs">
-> - Durchschnittliche Preis der Neueinstellungen &grave;r round(mean(airbnb_1819 %>% pull(Preis)),1)&grave; €
-> - Anstieg der Preise um &grave;r m <- mean(airbnb_1819 %>% filter(year(Erstellungsdatum) == 2019) %>% pull(Preis))/mean(airbnb_1819 %>% filter(year(Erstellungsdatum) == 2018) %>% pull(Preis)) ; round(m, 3) * 100 - 100&grave;%
-> - Grössten Unterschied im Preis &grave;r ausstattung %>% pull(Ausstattung) %>% first()&grave; (&grave;r ausstattung %>% pull(Differenz) %>% first() %>% round(1)&grave;)
-> - Kleinster Unterschied im Preis &grave;r ausstattung %>% pull(Ausstattung) %>% last()&grave; (&grave;r ausstattung %>% pull(Differenz) %>% last() %>% round(1)&grave;)
- </code>
-</pre>
-
-
-4. Füge nun einen neuen Slide mit dem Titel "Einfluss der Ausstattung" (zwei `##`) ein.
-
-5. Auf diesem Slide inkludiere die folgende Tabelle mit Austattungsmerkmalen. 
+3. Auf diesem Slide inkludiere die Tabelle mit Austattungsmerkmalen. Veränder die Tabelle so, dass die Schriftgrösse in allen Zellen gleich gross ist.
 
 ```R
 # Plotte Tabelle mit Austattungsmerkmalen
@@ -346,20 +210,24 @@ ausstattung %>%
   column_spec(c(2,3,4,5), width = "1.2in") 
 ```
 
+4. Verändere nun die `cell_spec` Funktion so, dass Zellen mit einer Zahl > 100 rot angezeigt werden.
+(Hint: `color = ifelse(x > 100, "red", "black")`)
+
 6. Auf dem gleichen Slide, unter der Tabelle, füge folgenden Text in fetter Schrift ein:
 
 ```R
-<br>
-<b>Der stark negative Effekt der Küche überrascht. 
+Der stark negative Effekt der Küche überrascht. 
 Er könnte durch die Art der Unterkunft moderiert werden, gegeben dass auch 
-Hotels im Angebot enthalten sind.</b>  
+Hotels im Angebot enthalten sind. 
 ```
 
-7. Knitte das Dokument. Werden die beiden neuen Slides mit der Tabelle korrekt angezeigt?
+7. Knitte das Dokument. Wird die Tabelle korrekt angezeigt?
 
-8. Füge eine neuen Slide mit dem Titel `Regressionsmodell` ein.
+### H - Regressionsergebnisse
 
-9. Definiere die Liste der Ausstattungsmermale und sage den Preis mit diesen Ausstattungsmermalen und Hotel Ja/Nein in einer Regression vorher.
+1. Füge eine neuen Slide mit dem Titel `Regressionsmodell` ein.
+
+2. Definiere die Liste der Ausstattungsmermale und sage den Preis mit diesen Ausstattungsmermalen und Hotel Ja/Nein in einer Regression vorher.
 
 ```R
 # Reduzierter Vektor mit Ausstattungsmerkmalen
@@ -372,18 +240,13 @@ ausstattung_mod <- airbnb_1819 %>%
   lm(formula = Preis ~ .)
 ```
 
-10. Füge die Ergebnisse der Regression, mit Hilfe der Funktion `tab_model` ein.
+3. Füge die Ergebnisse der Regression, mit Hilfe der Funktion `tab_model` ein. 
 
-```R
-# Tabelle mit Ergebnissen der Regression
-tab_model(ausstattung_mod,
-          pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
-          title = 'Tabelle 2. Regression des Preises auf die Ausstattung.',
-          CSS = list(css.caption = "font-weight:500", 
-                     css.table = "width: 100%;font-size:.6em"))
-```
+4. Mit dem Attribut `col.order` kannst du die Reihenfolge und Art der Ergebnisse festlegen. Verändere die Reihenfolge der Spalten, sodass zuerst "Konfidenzintervalle" (ci) und dann die "Estimates" angezeigt werden.
 
-11. Inkludiere den folgenden Chunk um den Anteil Hotels zu bestimmen. 
+5. Füge nun Sterne für signifikante Estimates ein (Hint: `p.style`)
+
+6. Inkludiere den folgenden Chunk um den Anteil Hotels zu bestimmen. 
 
 ```R
 # Bestimme Anteil Hotels in 2018 und 2019
@@ -392,15 +255,8 @@ hotel <- airbnb_1819 %>%
   summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel'))) 
 ```
 
-12. Ergänze in fetter Schriftart die abschliessenden Sätze direkt unter der Regressionstabelle.
+7. Ergänze in fetter Schriftart den Abschlusssatz ("Der Anteil ...)  unter der Regressionstabelle.
 
-<pre class="r">
-  <code class="hljs">
-<b>Der Anteil von Hotels ist von &grave;r (hotel$Anteil[1]*100) %>% round(1)&grave;% im Jahre 2018 auf 
-&grave;(hotel$Anteil[2]*100) %>% round(1)&grave;% im Jahre 2019 gestiegen. Es liegt nahe, dass der 
-Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat.  </b>
-</code>
-</pre>
 
 ### H - Export
 
@@ -471,8 +327,8 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 | ``|``|  | 
 
 
-
 ## Materialien
-
-- ...
-- ...
+- [**HTML**](https://www.w3schools.com/html/default.asp) Referenz 
+- [**CSS**](https://www.w3schools.com/css/default.asp) Referenz 
+- [**DIE Referenz**](https://bookdown.org/yihui/rmarkdown/) für RMarkdown bis ins letzte Detail.
+- [**Rmarkdown**](https://cran.r-project.org/web/packages/rmarkdown/index.html) Dokumentation und Befehlsreferenz.

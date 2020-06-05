@@ -40,8 +40,8 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin:
 
-> - `r nrow(airbnb_1819)` Airbnb Wohnungen eingestellt
-> - `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% haben Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen
+> 1. `r nrow(airbnb_1819)` Airbnb Wohnungen eingestellt
+> 2. `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% haben Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen
 > - 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt
 > - 2018 nur `r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt
 > - Zuwachs: `r (round(n_2019/n_2018, 2) - 1)*100`%
@@ -154,9 +154,10 @@ ausstattung <- airbnb_1819 %>%
 
 ```{r}
 # Plotte Tabelle mit Austattungsmerkmalen
+
 ausstattung %>% 
   mutate_if(is.numeric, function(x) {
-    cell_spec(round(x,1), bold = T, 
+    cell_spec(round(x,1), bold = T, color = ifelse(x > 100, "red", "black"),
               font_size = spec_font_size(x, begin=14, end=22))}) %>%
   mutate(Ausstattung = cell_spec(Ausstattung, font_size=18)) %>% 
   kable(digits = 2,
@@ -167,6 +168,21 @@ ausstattung %>%
         align="lcccc",
         padding = 0) %>% 
   column_spec(c(2,3,4,5), width = "1.2in") 
+
+
+# ausstattung %>% 
+#   mutate_if(is.numeric, function(x) {
+#     cell_spec(round(x,1), bold = T, 
+#               font_size = spec_font_size(x, begin=14, end=22))}) %>%
+#   mutate(Ausstattung = cell_spec(Ausstattung, font_size=18)) %>% 
+#   kable(digits = 2,
+#         format='html', 
+#         caption = 'Tabelle 1. Ausstattung und Einfluss auf den Preis', 
+#         col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.'),
+#         escape = FALSE,
+#         align="lcccc",
+#         padding = 0) %>% 
+#   column_spec(c(2,3,4,5), width = "1.2in") 
 ```
 
 <br>
@@ -195,6 +211,8 @@ ausstattung_mod <- airbnb_1819 %>%
 ```{r fig.asp=.5}
 # Tabelle mit Ergebnissen der Regression
 tab_model(ausstattung_mod,
+            col.order = c("est", "ci" ),
+          p.style = c('stars'),
           pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),
           title = 'Tabelle 2. Regression des Preises auf die Ausstattung.',
           CSS = list(css.caption = "font-weight:500", 

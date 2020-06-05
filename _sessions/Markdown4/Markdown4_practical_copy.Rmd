@@ -85,25 +85,27 @@ Am Ende des Practicals kann du:
 
 ### B - YAML
 
-1. Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter `title: Berlin`, in einer neuen Zeilte, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?
+1. Entferne die `author:` und `date:` Angaben aus dem YAML header
+
+2. Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter `title: Berlin`, in einer neuen Zeilte, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?
 
 ```R
 subtitle: "Bericht: 18/19"
 ```
 
-2. Damit das Logo automatisch auf der Titelslide und in der Fusszeile jedes Slides angezeigt wird, ergänze zunächst einen Doppelpunkt hinter `ioslides` und dann darunter, eine Ebene weiter eingerückt, die Zeile unten, welche den Pfad zum Logo dem YAML Header bereitstellt. Knitte das Dokument und schaue wie R das Logo einbindet.
+3. Damit das Logo automatisch auf der Titelslide und in der Fusszeile jedes Slides angezeigt wird, ergänze zunächst einen Doppelpunkt hinter `ioslides` und dann darunter, eine Ebene weiter eingerückt, die Zeile unten, welche den Pfad zum Logo dem YAML Header bereitstellt. Knitte das Dokument und schaue wie R das Logo einbindet.
 
 ```R
 logo: ../2_Assets/airbnb.png
 ```
 
-3. Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.
+4. Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.
 
 ```R
 css: ../2_Assets/airbnb_presentation.css
 ```
 
-4. Achte auf die korrekten Einrückungen! Der YAML Header sollte so aussehen:
+5. Achte auf die korrekten Einrückungen! Der YAML Header sollte so aussehen:
 
 ```R
 ---
@@ -116,21 +118,13 @@ output:
 ---
 ```
 
-5. Knitte das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rote, AirBnB Logo. 
+6. Knitte das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rote, AirBnB Logo. 
 
 ### C - Setup chunk
 
 Nun wirst du im `Setup` Chunk die notwendigen Pakete laden, Daten laden und verschiedenen Einstellungen vornehmen.
 
-1. Lade die folgenden Pakete:
-
-```R
-library(tidyverse)
-library(lubridate)
-library(sjPlot)
-library(knitr)
-library(kableExtra)
-```
+1. Lade die Pakete `tidyverse`, `lubridate`, `sjPlot`, `knitr` und `kableExtra`
 
 2. Inkludiere im Setup-Chunk den folgenden Code um die AirBnB Daten zu laden und Auf den Zeitraum 2018-2019 zu limitieren.
 
@@ -141,7 +135,7 @@ airbnb_1819 <- read_csv('../1_Data/airbnb.csv') %>%
          Erstellungsdatum < "2019-12-31")
 ```
 
-3. Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich `ggplot` wie im gestrigen Dokument anzupassen.
+3. Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich `ggplot`, wie im gestrigen Dokument, anzupassen.
 
 ```R
 # Ändere Thema zu minimal
@@ -216,7 +210,7 @@ cap = "<center>Abbildung 1. Neueinstellungen pro Monat</center>"
 
 4. `Knitte` das Dokument. Enthält Slide 4/4 die Abbilding 1?
 
-### F - Zwei neue Slides
+### F - Slides über die Stadtteile
 
 1. Füge einen neuen slide mit dem Titel "Stadtteile" ein (zwei `#`).
 
