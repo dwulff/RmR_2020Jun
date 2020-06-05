@@ -284,11 +284,8 @@ ggplot(stadtteile,
 cap = "<center>Figure 2. Neueinstellungen pro Bezirk</center>"
 ```
 
-<<<<<<< HEAD
+
 6. `Knitte` das Dokument. Werden die 2. Grafik und die Bullets korrekt angezeigt?
-=======
-6. `Knitte` das Dokument. Werden die Bullets und 2. Grafik korrekt angezeigt?
->>>>>>> 0af0564b6a98c594671c6ab263772c5948cd7e6f
 
 ### G - Tabelle und Regressionsergebnissen
 
