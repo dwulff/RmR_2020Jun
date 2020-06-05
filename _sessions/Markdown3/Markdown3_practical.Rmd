@@ -330,11 +330,13 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 
 | Funktion| Paket | Beschreibung |
 |:---|:------|:---------------------------------------------|
-| ``|``|  | 
-
+| `scale_fill_gradientn`|`ggplot`| Erstellt eine Farbpalette | 
+| `scale_colour_gradientn`|`ggplot`| Erstellt eine Farbpalette | 
+| `theme_set`|`ggplot`| Festlegung und Gestaltung von themes | 
 
 
 ## Materialien
-
-- ...
-- ...
+- [**HTML**](https://www.w3schools.com/html/default.asp) Referenz 
+- [**CSS**](https://www.w3schools.com/css/default.asp) Referenz 
+- [**DIE Referenz**](https://bookdown.org/yihui/rmarkdown/) für RMarkdown bis ins letzte Detail.
+- [**Rmarkdown**](https://cran.r-project.org/web/packages/rmarkdown/index.html) Dokumentation und Befehlsreferenz.
