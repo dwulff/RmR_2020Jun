@@ -59,9 +59,9 @@ library(tidyverse)
 In diesem Practical wirst aus deinem fertigen HTML RMarkdown Dokument eine Präsentation erstellen. 
 Am Ende des Practicals kann du: 
 
-1. Eine HTML Präsentation mit `iosslides` erstellen und Inhalte mit RMarkdown Code einfügen.
+1. Eine HTML Präsentation mit `ioslides` erstellen und Inhalte mit RMarkdown Code einfügen.
 2. Ein Logo einfügen und das Layout der Präsentation anpassen.
-3. Du wirst HTML Tags und CSS (Cascading Style Sheets) für die Feinjustierung der Slides verwenden.
+3. HTML Tags und CSS für die Feinjustierung der Slides verwenden.
 
 ## Aufgaben
 
@@ -71,33 +71,31 @@ Am Ende des Practicals kann du:
 
 2. Öffne ein neues RMarkdown Skript und wähle das Presentation - Template "HTML" aus (siehe screenshot unten).
 
-<p align="center" width="100%">
-  <img src="image/markdown_presentation_menu.png" alt="Trulli" style="height:500px">
+<p align="center">
+  <img src="image/markdown_presentation_menu.png" alt="Trulli" style="height:200px">
 </p>
 
-3. Trage als Titel `Berlin` ein.
+3. Trage als Titel `Berlin` ein und drücke OK.
 
-4. Lösche alles unterhalb des `setup` R chunks.
+4. Lösche alles unterhalb des `setup` Chunks.
 
 5. Speichere das neue Markdown Skript unter dem Namen `presentation_practical.Rmd` im `3_Markdown` Ordner ab.
 
 ### B - YAML
 
-Im YAML Header wirst du nun die generellen Einstellungen des Dokumentes anpassen.
-
-1. Füge unter `title: Berlin`, in einer neuen Zeilte, einen Untertitel ein.
+1. Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter `title: Berlin`, in einer neuen Zeilte, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?
 
 ```R
 subtitle: "Bericht: 18/19"
 ```
 
-2. Um ein Logo automatisch auf dem Titelslide und in der Fusszeile jedes Slides anzuzeigen, gib an wo das Logo abgelegt ist und integriere es im YAML Header.
+2. Damit das Logo automatisch auf der Titelslide und in der Fusszeile jedes Slides angezeigt wird, ergänze zunächst einen Doppelpunkt hinter `ioslides` und dann darunter, eine Ebene weiter eingerückt, die Zeile unten, welche den Pfad zum Logo dem YAML Header bereitstellt. Knitte das Dokument und schaue wie R das Logo einbindet.
 
 ```R
 logo: ../2_Assets/airbnb.png
 ```
 
-3. Um das Layout (Schrift, genaue Position der Komponenten) im Detail zu gestalten, füge den Link zu einem CSS file in der nächsten Zeile ein.
+3. Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.
 
 ```R
 css: ../2_Assets/airbnb_presentation.css
@@ -116,20 +114,13 @@ output:
 ---
 ```
 
-
-5. `Knitte` das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rote, AirBnB Logo. 
+5. Knitte das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rote, AirBnB Logo. 
 
 ### C - Setup chunk
 
 Nun wirst du im `Setup` Chunk die notwendigen Pakete laden, Daten laden und verschiedenen Einstellungen vornehmen.
 
-1. Ersetze in `knitr::opts_chunk$set` `include=FALSE` mit folgenden Einstellungen:
-
-```{r echo = TRUE}
-echo = FALSE, message = FALSE, warning = FALSE
-```
-
-2. Lade die folgenden Pakete:
+1. Lade die folgenden Pakete:
 
 ```R
 library(tidyverse)
@@ -139,7 +130,7 @@ library(knitr)
 library(kableExtra)
 ```
 
-2. Integriere die Daten aus dem AirBnB Datensatz für den Zeitraum 2018-2019.
+2. Inkludiere im Setup-Chunk den folgenden Code um die AirBnB Daten zu laden und Auf den Zeitraum 2018-2019 zu limitieren.
 
 ```R
 # Lade Daten
@@ -148,8 +139,7 @@ airbnb_1819 <- read_csv('../1_Data/airbnb.csv') %>%
          Erstellungsdatum < "2019-12-31")
 ```
 
-3. Passe das Grafik Theme für `ggplot` an. Damit veränderst du den Hintergrund aller Grafiken 
-und optimierst die Schriftgrösse der Grafiken.
+3. Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich `ggplot` wie im gestrigen Dokument anzupassen.
 
 ```R
 # Ändere Thema zu minimal
@@ -158,49 +148,48 @@ theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
              plot.background = element_rect(fill = "transparent", colour = NA),
              axis.title.x = element_text(size = 16), 
              text = element_text(size=19))
-```
-
-4. Für die `ggplot` Grafiken wirst du nun noch die Farben an die AirBnB Palette anpassen.
-
-```R
+             
 # Setze defaults in ggplot
 ggplot <- function(...) ggplot2::ggplot(...) + 
   scale_fill_gradientn(colors = c('#555555','#6BB7B9')) + 
   scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
 ```
 
-### D - Nun geht es an das Erstellen der Slides
+### D - Slides erstellen
 
-1. Füge nach dem `setup` Chunk in einer neuen Zeile "# Neueinstellungen" ein. Damit erstellst du deinen ersten Abschnitt mit grauem Hintergrund.
+1. Füge nach dem `setup` Chunk in einer neuen Zeile `# Neueinstellungen` ein. Damit erstellst du deine erste Zwischenfolie mit grauem Hintergrund die den Abschnitt einleitet.
 
-2. `Knitte` das Dokument. Zu deinem Titelslide gibt es jetzt einen 2. Slide mit dem Titel Neueinstellungen. 
+2. Knitte das Dokument. Nach dem Titelslide sollte es jetzt einen 2. Slide mit dem Titel Neueinstellungen geben. 
 
-3. Für den ersten Slide mit Inhalt füge in einer neuen Zeile "## Entwicklung" ein.
+3. In die nächste Zeile füge in einer neuen Zeile "## Entwicklung" ein, was einen ersten Slide mit Inhalt beginnt.
 
-4. Füge den folgenden Satz mit `inline code` in der nächsten Zeile ein:
+4. Füge darunter den folgenden Satz mit inline Code in der nächsten Zeile ein:
 
-```{r echo = TRUE}
+```R
 Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin:
 ```
+5. In einer Liste mit Bullet Points ergänze die folgenden, zusammengefassten Informationen. Das `-` ist Markup um eine Liste zu erstellen, also in diesem Fall Bullet Points. Knitte das Dokument. Tauchen die Bullets als Liste auf? 
 
-5. In einer Liste mit Bullet Points ergänze die folgenden, zusammengefassten Informationen. Die `>` Zeichen vor dem `-` bewirken ein schrittweises Einblenden der Bullet Points.
-
-```{r echo = TRUE}
-> - `r nrow(airbnb_1819)` Airbnb Wohnungen eingestellt
-> - `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% haben Verfügbarkeiten von durchschnittlich ` round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen
-> - 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt
-> - 2018 nur `wrap n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt
-> - Zuwachs: `wrap (round(n_2019/n_2018, 2) - 1)*100`%
+```R
+- `r nrow(airbnb_1819)` Airbnb Wohnungen eingestellt
+- `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% haben Verfügbarkeiten von durchschnittlich ` round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen
+- 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt
+- 2018 nur `wrap n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt
+- Zuwachs: `wrap (round(n_2019/n_2018, 2) - 1)*100`%
 ```
 
+6. 
+
+
 6. `Knitte` das Dokument. Auf dem 3. Slide sind deine Bullet Points zu sehen!
+
+### E - Grafiken einbinden
 
 7. Füge einen neuen slide mit dem Titel "Entwicklung" ein.
 
 8. Auf diesem Slide soll die erste Grafik abgebildet werden. Füge dafür einen R Code Chunk mit der Grafik über die Neueinstellungen pro Monat ein.
 
-```{r echo = TRUE}
-{r  fig.asp=.6, fig.cap = cap}
+```R
 # Plotte Häufigkeiten
 ggplot(airbnb_1819 %>% 
          group_by(Jahr = year(Erstellungsdatum), 
@@ -219,7 +208,7 @@ cap = "<center>Abbildung 1. Neueinstellungen pro Monat</center>"
 
 10. `Knitte` das Dokument. Enthält Slide 4/4 die Grafik 1?
 
-### E - Zwei neue Slides mit Bullet Points und Grafik
+### F - Zwei neue Slides mit Bullet Points und Grafik
 
 1. Füge einen neuen slide mit dem Titel "Stadtteile" ein.
 
@@ -287,7 +276,7 @@ cap = "<center>Figure 2. Neueinstellungen pro Bezirk</center>"
 
 6. `Knitte` das Dokument. Wird die 2. Grafik korrekt angezeigt?
 
-### F - Neuer Abschnitt mit Tabelle und Regressionsergebnissen
+### G - Neuer Abschnitt mit Tabelle und Regressionsergebnissen
 
 1. Erstelle einen neuen Abschnitt mit dem Titel "# Preis" und einen neuen Slide mit dem Titel "## Einfluss der Ausstattung"
 
