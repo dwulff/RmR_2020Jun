@@ -103,10 +103,10 @@ max_stadtteil = veränderung %>%
   pull(Stadtteil)
 ```
 
-> - Meisten Neueinstellungen: `r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()`
-> - Wenigste Neueinstellungen:  `r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`
-> - Grössten Reduktion mit  `r min_veränderung`% in `r min_stadtteil` 
-> - Grösster Zuwachs mit `r max_veränderung`% in `r max_stadtteil` 
+>- Meisten Neueinstellungen: `r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()`
+>- Wenigste Neueinstellungen:  `r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`
+>- Grössten Reduktion mit  `r min_veränderung`% in `r min_stadtteil` 
+>- Grösster Zuwachs mit `r max_veränderung`% in `r max_stadtteil` 
 
 ## Stadteile
 
