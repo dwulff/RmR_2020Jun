@@ -235,16 +235,23 @@ summary {
 <h3>C - Grafiken</h3>
 <p>Füge spezifische Einstellungen für alle Grafiken in deinem Dokument in diesem Schritt ein.</p>
 <ol style="list-style-type: decimal">
+<li>Im <code>setup</code> Chunk füge den folgenden Code ein um den Hintergrund der Code Chunks transparent zu setzen:</li>
+</ol>
+<pre class="r"><code>knitr::opts_chunk$set(echo = FALSE, 
+                      message = FALSE, 
+                      warning = FALSE, 
+                      dev.args = list(bg = &quot;transparent&quot;))</code></pre>
+<ol start="2" style="list-style-type: decimal">
 <li>Im <code>setup</code> Chunk setze das Theme der ggplot Grafiken auf <code>theme_minimal</code></li>
 </ol>
 <pre class="r"><code>theme_set(theme_minimal())</code></pre>
-<ol start="2" style="list-style-type: decimal">
+<ol start="3" style="list-style-type: decimal">
 <li>Gleich darunter, im <code>setup</code> Chunk, stelle die Farbpaletten der ggplot Grafiken auf die AirBnB Farben ein.</li>
 </ol>
 <pre class="r"><code>ggplot &lt;- function(...) ggplot2::ggplot(...) + 
   scale_fill_gradientn(colors = c(&#39;#555555&#39;,&#39;#6BB7B9&#39;)) + 
   scale_colour_gradientn(colors = c(&#39;#555555&#39;,&#39;#6BB7B9&#39;))</code></pre>
-<ol start="3" style="list-style-type: decimal">
+<ol start="4" style="list-style-type: decimal">
 <li><code>Knitte</code> das Dokument. Hat sich der Hintergrund und die Farbpalette der Grafiken verändert?</li>
 </ol>
 </div>
@@ -348,34 +355,33 @@ summary {
 <li><p>Binde nun die leere Datei im YAML Header deines Airbnb Markdown Dokumentes ein. Dafür ergänze <code>css: ../2_Assets/airbnb.css</code> unter <code>html_document:</code></p></li>
 <li><p>Ergänze die Ausrichtung der Tabellen in <code>my_airbnb.css</code>, speichere die Datei und <code>knitte</code> dein Markdown Dokument.</p></li>
 </ol>
-<pre><code>table td {
+<pre class="r"><code>table td {
   vertical-align: top;
   }</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Im nächsten Schritt wirst du die Schriftart und Farbe der beiden Überschriftenlevel anpassen. Den Code in <code>my_airbnb.css</code> ergänzen. Die .css Datei speichern und <code>knitten</code>.</li>
 </ol>
-<pre><code>h3, h4 {
+<pre class="r"><code>h3, h4 {
   font-weight: 500;
   color: #555555;
 }</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Um einen Mouseover Effekt (Link verändert sich, wenn der Mauscursor auf den Link zeigt) zu erzeugen ergänze in <code>my_airbnb.css</code> den folgenden Code und <code>knitte</code> deine Datei.</li>
 </ol>
-<pre><code>a, a:hover {
+<pre class="r"><code>a, a:hover {
   color: #007D8C;
   }</code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>Als letztes Designelement wirst du nun ein Wasserzeichen als Hintergrundbild einfügen. Ergänze dafür den folgenden code in deiner <code>my_airbnb.css</code> Datei und <code>knitte</code> dein Dokument.</li>
 </ol>
-<pre><code>body {
+<pre class="r"><code>body {
   background-image: url(watermark.svg);
   background-repeat: repeat-y;
   background-size: contain;
   }</code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li>Schliesslich ergänze <code>knitr::opts_chunk$set</code> in deiner <code>my_airbnb.css</code> und <code>knitte</code> dein Dokument.</li>
+<li><code>Knitte</code> dein Dokument. Das Layout sollte nun unserer Zielsetzung entsprechen!</li>
 </ol>
-<pre class="r"><code>dev.args = list(bg = &quot;transparent&quot;)</code></pre>
 </div>
 </div>
 <div id="datensatz" class="section level2">
