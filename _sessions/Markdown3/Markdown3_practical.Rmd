@@ -56,14 +56,13 @@ library(tidyverse)
 
 ## Überblick
 
-Aufbauend auf Practical 1 wirst du nun die Grafiken in deinem Dokument gestalten 
-und den Text in zwei Spalten layoutieren.
+In diesem Practical wirst du die ästhetische Gestaltung deines Berichts angehen. 
 
 Am Ende des Practicals wirst du wissen wie man:
 
-1. Den YAML header mit einem Inhaltsverzeichnis und einem neuen Theme ergänzen.
+1. Den YAML header mit einem Inhaltsverzeichnis und einem neuen `Theme` ergänzen.
 2. Ein zwei Spalten Layout erstellen, dass den Text in der linken und die Grafiken/Tabellen in der rechten Spalte anzeigt.
-3. Eine CSS Datei erstellen und in deine Dokument einbinden.
+3. Eine CSS Datei erstellen und in deinen Bericht einbinden.
 
 ## Aufgaben
 
@@ -71,25 +70,27 @@ Am Ende des Practicals wirst du wissen wie man:
 
 1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data`, `2_Assets`, und `3_Markdown` enthalten. 
 
-2. Lade die `airbnb_level_two.Rmd` Datei, das fertige Produkt am Ende des ersten Markdown Practicals. 
+2. Lade die `airbnb_level_two.Rmd` Datei, das fertige Produkt am Ende des zweiten Markdown Practicals. 
 
-### B - YAML header erweitern
+### B - YAML erweitern
 
-Definiere nun weitere, generelle Merkmale im YAML header 
+1. Um Einstellungen des Dokuments vornehmen zu können füge zunächst hinter `html_document` im YAML Header einen Doppelpunkt hinzu. 
 
-1. Füge mit `toc: true` ein Inhaltsverzeichnis ein. 
+2. Füge nun in einer Zeiel darunter `toc: true` hinzu um ein Inhaltsverzeichnis zu ergänzen. Stelle sicher, dass `toc: true` gegenüber `html_document:` eingerückt ist. Knitte das Dokument. Siehst du alle Überschriften im Inhaltsverzeichnis?
 
-2. Um alle Überschriften Levels anzuzeigen definiere die `toc_depth = 5`. 
+3. Damit alle Überschriften Levels angezeigt werden ergänze in einer weiteren Zeile (selbe Ebene wie `toc: true`) den Befehl `toc_depth: 5`. 
 
-3. `Knitte` das Dokument. Wird der Abschnitt Neueinstellungen mit zwei Unterkapiteln Entwicklung und Stadteile angezeigt? 
+4. Knitte das Dokument. Wird der Abschnitt Neueinstellungen mit zwei Unterkapiteln Entwicklung und Stadteile angezeigt? 
 
-4. Füge jeweils auf einer neuen Zeile: `includes:` und dann `in_header: ../2_Assets/header.Rhtml` ein. Diese Befehle werden eine Vorlage für den header Hintergrund laden. 
+5. Füge in einer neuen Zeile: `includes:` hinzu und dann darunter eingrückt `in_header: ../2_Assets/header.Rhtml` ein. Damit lädst du eine kleine HTML Vorlage für den Kopf des Berichts. 
 
-5. `Knitte` das Dokument. Hat sich die Anzeige des Titels und Untertitels verändert? Ist das AirBnB Logo zu sehen?
+6. Knitte das Dokument. Hat sich die Anzeige des Titels und Untertitels verändert? Ist das AirBnB Logo zu sehen?
 
-6. Als letztes Gestaltungselement lade das `theme: lumen`  
+7. Entferne nun die Zeile mit `title:` aus dem YAML, da offensichtlich jetzt keinen Titel mehr benötigt.
 
-7. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
+8. Als letztes Gestaltungselement ergänze `theme: lumen` auf der selben Ebene wie `toc: true` oberhalb von `includes:`, womit verschiedene Eigenschaften des Schriftbilds angepasst werden. 
+
+9. Knitte das Dokument. Sieht alles in Ordnung aus?  
 
 ### C - Grafiken
 

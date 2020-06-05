@@ -10,10 +10,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, 
-                      message = FALSE, 
-                      warning = FALSE, 
-                      dev.args = list(bg = "transparent"))
+knitr::opts_chunk$set(echo = FALSE, dev.args = list(bg = "transparent"))
 
 # Lade Pakete
 library(tidyverse)
