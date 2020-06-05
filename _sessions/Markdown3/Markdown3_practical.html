@@ -318,7 +318,7 @@ summary {
 &lt;/table&gt;</code></pre>
 <ol start="8" style="list-style-type: decimal">
 <li><p>Knitte jetzt wieder das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt?</p></li>
-<li><p>Für den Abschnitt <code>###Preis</code> gehe gleich vor. Ergänze nach dem ersten Code Chunk mit Berechnungen zur Ausstattung und vor dem ersten Absatz den folgenden Code. Nicht Knitten!!</p></li>
+<li><p>Für den Abschnitt <code>###Preis</code> gehe gleich vor. Ergänze nach dem ersten Code-Chunk mit Berechnungen zur Ausstattung und vor dem ersten Absatz den folgenden Code. Noch nicht Knitten!</p></li>
 </ol>
 <pre class="r"><code>&lt;table width=100%&gt;
 &lt;col width = 25%&gt;
@@ -341,37 +341,36 @@ summary {
   &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 <ol start="12" style="list-style-type: decimal">
-<li><p><code>Knitte</code> das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt?</p></li>
-<li><p>Setze dem letzten Abschnitt selbständig mit einer HTML Table (widths 50%, 10%, 40%) in 2 Spalten.</p></li>
-<li><p><code>Knitte</code> das Dokument. Der gesamte Text ist nun in 2 Spalten gesetzt mit den Textinhalten links und den Grafiken bzw. Tabellen rechts.</p></li>
+<li><p>Knitte jetzt wieder das Dokument. Sind der Text und die Grafik nun in 2 Spalten gesetzt?</p></li>
+<li><p>Setze den letzten Abschnitt selbständig mit einer HTML Table (widths 50%, 10%, 40%) in 2 Spalten.</p></li>
+<li><p>Knitte wieder das Dokument. Der gesamte Text ist nun in 2 Spalten gesetzt mit den Textinhalten links und den Grafiken bzw. Tabellen rechts.</p></li>
 </ol>
 </div>
 <div id="f---css" class="section level3">
 <h3>F - CSS</h3>
-<p>Globale Gestaltungsmkermale der HTML Datei werden in einem eigenen CSS file abgelegt. Erstelle nun das CSS file und passe es wie folgt an.</p>
 <ol style="list-style-type: decimal">
-<li><p>Erstelle die Datei <code>my_airbnb.css</code> und speichere sie in <code>2_Assets</code> ab. Du kannst die Datei direkt in RStudio erstellen und mit <code>.css</code> als Extentsion speichern.</p></li>
-<li><p>Binde nun die leere Datei im YAML Header deines Airbnb Markdown Dokumentes ein. Dafür ergänze <code>css: ../2_Assets/airbnb.css</code> unter <code>html_document:</code></p></li>
-<li><p>Ergänze die Ausrichtung der Tabellen in <code>my_airbnb.css</code>, speichere die Datei und <code>knitte</code> dein Markdown Dokument.</p></li>
+<li><p>Um allgmeine Gestaltungsmkermale des gesamten HTML-Berichts zu ändern erstelle die Datei <code>my_airbnb.css</code> und speichere sie in <code>2_Assets</code> ab. Du kannst die Datei direkt in RStudio erstellen und mit <code>.css</code> als Extension speichern.</p></li>
+<li><p>Binde nun die leere Datei im YAML Header deines Airbnb Markdown Dokumentes ein. Dafür ergänze <code>css: ../2_Assets/airbnb.css</code> unter <code>html_document:</code> (selbe Ebene wie <code>toc: true</code>)</p></li>
+<li><p>Füge den folgenden Code in <code>my_airbnb.css</code> hinzu um die vertikale Ausrichtung der Tabellen anzupassen. Speichere die <code>.css</code> Datei und knitte dein Markdown Dokument.</p></li>
 </ol>
-<pre class="r"><code>table td {
+<pre class="css"><code>table td {
   vertical-align: top;
   }</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Im nächsten Schritt wirst du die Schriftart und Farbe der beiden Überschriftenlevel anpassen. Den Code in <code>my_airbnb.css</code> ergänzen. Die .css Datei speichern und <code>knitten</code>.</li>
+<li>Ergänze weiterhin folgenden Code <code>my_airbnb.css</code> um Schriftart und Farbe der beiden Überschriftenlevel anzupassen. Die <code>.css</code> Datei speichern und knitten.</li>
 </ol>
-<pre class="r"><code>h3, h4 {
+<pre class="css"><code>h3, h4 {
   font-weight: 500;
   color: #555555;
 }</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>Um einen Mouseover Effekt (Link verändert sich, wenn der Mauscursor auf den Link zeigt) zu erzeugen ergänze in <code>my_airbnb.css</code> den folgenden Code und <code>knitte</code> deine Datei.</li>
+<li>Um sowohl die Farbe des Links, als auch den Mouseover Effekt (Link verändert sich, wenn der Mauscursor auf den Link zeigt) an das Farbschema anzupassen ergänze folgenden Code in <code>my_airbnb.css</code> und knitte das Dokument.</li>
 </ol>
 <pre class="r"><code>a, a:hover {
   color: #007D8C;
   }</code></pre>
 <ol start="6" style="list-style-type: decimal">
-<li>Als letztes Designelement wirst du nun ein Wasserzeichen als Hintergrundbild einfügen. Ergänze dafür den folgenden code in deiner <code>my_airbnb.css</code> Datei und <code>knitte</code> dein Dokument.</li>
+<li>Als letztes Designelement wirst du nun ein Wasserzeichen als Hintergrundbild einfügen. Ergänze dafür den folgenden Code in deiner <code>my_airbnb.css</code> Datei und knitte das Dokument.</li>
 </ol>
 <pre class="r"><code>body {
   background-image: url(watermark.svg);
@@ -379,7 +378,7 @@ summary {
   background-size: contain;
   }</code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li><code>Knitte</code> dein Dokument. Das Layout sollte nun unserer Zielsetzung entsprechen!</li>
+<li>Knitte dein Dokument. Du solltest nun einen wohlformatierten AirBnB Bericht vor dir haben.</li>
 </ol>
 </div>
 </div>

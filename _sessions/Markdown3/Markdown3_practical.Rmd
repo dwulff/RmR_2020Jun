@@ -243,7 +243,7 @@ table td {
   }
 ```
 
-4. Im nächsten Schritt wirst du die Schriftart und Farbe der beiden Überschriftenlevel anpassen. Den Code in `my_airbnb.css` ergänzen. Die .css Datei speichern und `knitten`. 
+4. Ergänze weiterhin folgenden Code `my_airbnb.css` um Schriftart und Farbe der beiden Überschriftenlevel anzupassen. Die `.css` Datei speichern und knitten. 
 
 ```CSS
 h3, h4 {
@@ -252,7 +252,7 @@ h3, h4 {
 }
 ```
 
-5. Um einen Mouseover Effekt (Link verändert sich, wenn der Mauscursor auf den Link zeigt) zu erzeugen ergänze in `my_airbnb.css` den folgenden Code und `knitte` deine Datei.
+5. Um sowohl die Farbe des Links, als auch den Mouseover Effekt (Link verändert sich, wenn der Mauscursor auf den Link zeigt) an das Farbschema anzupassen ergänze folgenden Code in `my_airbnb.css` und knitte das Dokument.
 
 ```R
 a, a:hover {
@@ -260,7 +260,7 @@ a, a:hover {
   }
 ```
 
-6. Als letztes Designelement wirst du nun ein Wasserzeichen als Hintergrundbild einfügen. Ergänze dafür den folgenden code in deiner `my_airbnb.css` Datei und `knitte` dein Dokument.
+6. Als letztes Designelement wirst du nun ein Wasserzeichen als Hintergrundbild einfügen. Ergänze dafür den folgenden Code in deiner `my_airbnb.css` Datei und knitte das Dokument.
 
 ```R
 body {
@@ -270,7 +270,7 @@ body {
   }
 ```
 
-7. `Knitte` dein Dokument. Das Layout sollte nun unserer Zielsetzung entsprechen!
+7. Knitte dein Dokument. Du solltest nun einen wohlformatierten AirBnB Bericht vor dir haben. 
 
 ## Datensatz
 
