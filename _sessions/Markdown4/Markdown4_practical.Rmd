@@ -391,8 +391,11 @@ Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat.
 
 ### H - Export
 
-1. Slides können sehr gut über eine Browser als PDF ausgegeben werden. Öffne hierzu das 
+1. Slides können sehr gut über eine Browser als PDF ausgegeben werden. Öffne hierzu die durch das Knitten erzeugte `.html` Datei in einem Browser (z.B., Chrome). 
 
+2. Dann drücke `Cmd + P` oder `Ctrl + P` um das Druckmenu zu öffnen wo du PDF als Output auswählen musst. 
+
+3. Speichere das PDF auf deine Festplatte und schaue ob alles angemessen ausgegeben wurde.
 
 ## Datensatz
 
