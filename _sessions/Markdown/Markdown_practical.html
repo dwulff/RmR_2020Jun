@@ -323,7 +323,9 @@ ggplot(airbnb_1819 %&gt;%
 <ol start="2" style="list-style-type: decimal">
 <li><p>Das Dokument sollte nun den Code in dem Chunk nicht mehr zeigen. Mache nun dieses Setting rückgängig, d.h., lösche <code>echo = FALSE</code>, es gibt nämlich einen zweiten Weg diesen und alle zukünftigen Code Chunks zu verstecken. Knitte das Dokument nachdem du das <code>echo = FALSE</code> entfernt hast.</p></li>
 <li><p>Gehe nun zum Setup-Chunk ganz am Anfang es Dokuments (unter dem YAML head). Dort siehst du folgende Code Zeile <code>knitr::opts_chunk$set(echo = TRUE)</code>, die aktuell impliziert, dass alle Code Chunks per default angezeigt werden. Setze nun hier <code>echo = FALSE</code> und knitte das Dokument. Der Code Chunk sollte nun wieder versteckt sein. Behalte diese Einstellung auch für die weiteren Sessions bei.</p></li>
+<li><p>Ergänze nun zusätzlich in den allgemeinen Chunk-Optionen <code>message = FALSE</code> und <code>warning = FALSE</code>, was vollständig verhindert, dass Messages oder Warnings im Bericht auftauchen. Die finalen Settings sollten nun so aussehen.</p></li>
 </ol>
+<pre class="r"><code>knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)</code></pre>
 </div>
 <div id="f---neueinstellungen-text-pt.-2" class="section level3">
 <h3>F - Neueinstellungen: Text pt. 2</h3>
