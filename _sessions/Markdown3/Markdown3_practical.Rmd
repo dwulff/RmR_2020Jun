@@ -274,10 +274,10 @@ body {
 
 ### G - Export als PDF
 
-1. Um den Bericht nun als PDF ausgeben und teilen zu können, kannst du `wk<html>topdf` verwenden (vorausgesetzt du hast die [Software](https://wkhtmltopdf.org/) installiert). Verwende hierzu den Befehl unten. Danach sollte sich ein PDF im ebenfalls im Markdown Ordner befinden. 
+1. Um den Bericht nun als PDF ausgeben und teilen zu können, kannst du `wk<html>topdf` verwenden (vorausgesetzt du hast die [Software](https://wkhtmltopdf.org/) installiert). Verwende hierzu den Befehl unten in der `Console` (nicht im Markdown). Danach sollte sich im Markdown Ordner die Datei `markdown_practical.pdf` befinden, welche du öffnen und begutachten kannst.
 
 ```{r}
-
+"wkhtmltopdf --javascript-delay 1 1_Data/markdown_practical.html 1_Data/markdown_practical.pdf"
 ```
 
 ## Datensatz
