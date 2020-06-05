@@ -58,6 +58,7 @@ library(tidyverse)
 ## Überblick
 
 In diesem Practical wirst aus deinem fertigen HTML RMarkdown Dokument eine Präsentation erstellen. 
+
 Am Ende des Practicals kann du: 
 
 1. Eine HTML Präsentation mit `ioslides` erstellen und Inhalte mit RMarkdown Code einfügen.
