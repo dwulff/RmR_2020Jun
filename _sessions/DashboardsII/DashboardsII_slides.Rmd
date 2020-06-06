@@ -247,7 +247,7 @@ print2 <- function(x, nlines=10,...) {
 # Reaktivität
 
 <ul>
-  <li class="m1"><span><mono>input</mono> kann nur in <high>reaktiver Umwelt</high> gelesen werden (z.B., <mono>rende*</mono>).</span></li>
+  <li class="m1"><span><mono>input</mono> kann nur in <high>reaktiver Umwelt</high> gelesen werden (z.B., <mono>render*</mono>).</span></li>
   <li class="m2"><span>Reaktive Umwelten bzw. <high>reaktive Objekte</high> (eigentlich eine Funktion) können mit <mono>reactive()</mono> gesetzt werden.</span></li>  
   <li class="m3"><span>Jeder <high>Codeblock</high>, in dem reaktive Objekte verwendet werden, wird erneut ausgeführt wenn es eine Eingabe gibt.</span></li>
 </ul>
@@ -272,7 +272,7 @@ print2 <- function(x, nlines=10,...) {
 # Reaktivität
 
 <ul>
-  <li class="m1"><span><mono>input</mono> kann nur in <high>reaktiver Umwelt</high> gelesen werden (z.B., <mono>rende*</mono>).</span></li>
+  <li class="m1"><span><mono>input</mono> kann nur in <high>reaktiver Umwelt</high> gelesen werden (z.B., <mono>render*</mono>).</span></li>
   <li class="m2"><span>Reaktive Umwelten bzw. <high>reaktive Objekte</high> (eigentlich eine Funktion) können mit <mono>reactive()</mono> gesetzt werden.</span></li>  
   <li class="m3"><span>Jeder <high>Codeblock</high>, in dem reaktive Objekte verwendet werden, wird erneut ausgeführt wenn es eine Eingabe gibt.</span></li>
 </ul>
