@@ -316,7 +316,7 @@ checkboxGroupInput("MERKMAL", "TITEL", ...)
 # Reaktive Daten generieren
 DATEN_REAKTIV &lt;- reactive({
   DATEN %&gt;% 
-    filter(MERKMAL %in% input$MERKMAL)
+    filter(VARIABLE %in% input$MERKMAL)
 })
 
 # Verwende Reaktive Daten mit Klammern
