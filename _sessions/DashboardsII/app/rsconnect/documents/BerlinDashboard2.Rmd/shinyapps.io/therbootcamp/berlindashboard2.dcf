@@ -5,6 +5,8 @@ account: therbootcamp
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2402997
-bundleId: 3224312
+bundleId: 3235501
 url: https://therbootcamp.shinyapps.io/berlindashboard2/
-when: 1591205655.41458
+when: 1591433069.19525
+asMultiple: FALSE
+asStatic: FALSE

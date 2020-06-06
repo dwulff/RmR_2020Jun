@@ -80,7 +80,7 @@ Am Ende des Practicals wirst du wissen wie man:
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data` und `3_Markdown` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelistet sind, in deinem `1_Data` Ordner hast. 
+1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data`, `2_Assets` und `3_Markdown` enthalten. 
 
 2. Öffne ein neues RMarkdown Skript und wähle das Template "Flex Dashboard" aus (siehe screenshot unten).
 
@@ -111,7 +111,7 @@ library(htmltools)
 
 
 
-2. Lade den `airbnb` Datensatz mit `read_csv()` ebenfalls im `setup` chunk, so wie du das in den bisherigen Practicals auch gemacht hast (die beiden Punkte am Anfang verlegen den Pfad um einen Ordner zurück).
+2. Lade den `airbnb` Datensatz mit `read_csv()` ebenfalls im `setup` chunk, so wie du das in den bisherigen Practicals auch gemacht hast.
 
 ```{r echo = TRUE}
 airbnb <- read_csv("../XXX/XXX")
@@ -124,9 +124,9 @@ Beim Erstellen eines Dashboards ist es hilfreich, sich von Beginn an ein Layout 
 
 1.  Öffne den Link am besten in einem separaten Tab in deinem Browser. Wir werden während dieses Practicals immer wieder darauf verweisen.
 
-2. Schau dir das Dashboard genau an, um einen Eindruck zu erhalten, was du genau nachbauen sollst, wie das Layout aussieht und welche Komponenten verwendet werden. Wenn es dir hilft, mache dir eine Skizze vom Layout, sodass du eine Vorstellung der Ausrichtungen und Elemente erhälst.
+2. Schau dir das Dashboard genau an, um einen Eindruck zu erhalten, was du nachbauen sollst, wie das Layout aussieht und welche Komponenten verwendet werden. Wenn es dir hilft, mache dir eine Skizze vom Layout, sodass du eine Vorstellung der Ausrichtungen und Elemente erhältst.
 
-3. Setze zunächst das Seitenlayout des Dashboards auf. Nenne die drei Seiten "Übersicht der Airbnbs in Berlin", "Entwicklung über Zeit" und "Bewertungen der Airbnbs". Schreibe dazu die Titel in dein Markdown unterhalb des setup R chunks und füge eine Zeile von Gleichheitszeichen `========` unter jedem Titel ein (dies entspricht Titeln der ersten Stufe, also was du bisher mit einem `#` gekennzeichnet hast; siehe auch Template unten).  
+3. Setze zunächst das Seitenlayout des Dashboards auf. Nenne die drei Seiten "Übersicht der Airbnbs in Berlin", "Entwicklung über Zeit" und "Bewertungen der Airbnbs". Schreibe dazu die Titel in dein Markdown, unterhalb des R Setup chunks und füge eine Zeile von Gleichheitszeichen `========` unter jedem Titel ein (dies entspricht Titeln der ersten Stufe, also was du bisher mit einem `#` gekennzeichnet hast; siehe auch Template unten).  
 
 ````markdown
 TITEL
@@ -135,7 +135,7 @@ TITEL
 
 4. In `flexdashboards` sind Seiten standardmässig spaltenweise ausgerichtet. Schaue dir das [Dashboard](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) nochmals an. Sind alle drei Seiten spaltenweise ausgerichtet?
 
-5. Genau, nur die zweite Seite ist spaltenweise ausgerichtet. Die erste Seite ist zeilenweise ausgerichtet, und die dritte Seite ist ein Storyboard. In einem Dashboard mit mehreren Seiten, kannst du jeweils nach dem Titel die Seitenausrichtung bestimmen, indem du für eine spaltenweise Ausrichtung `{data-orientation=columns}`, für eine zeilenweise Ausrichtung `{data-orientation=rows}` und für ein Storyboard `{.storyboard}` nach dem Titel (aber auf derselben Zeile) schreibst. Füge die entsprechende Ausrichtung nach den drei Titeln ein.
+5. Nur die zweite Seite ist spaltenweise ausgerichtet! Die erste Seite ist zeilenweise ausgerichtet, und die dritte Seite ist ein Storyboard. In einem Dashboard mit mehreren Seiten, kannst du jeweils nach dem Titel die Seitenausrichtung bestimmen. Schreibe für spaltenweise Ausrichtung `{data-orientation=columns}`, für zeilenweise Ausrichtung `{data-orientation=rows}` und für ein Storyboard `{.storyboard}` jeweils nach dem Titel (aber auf derselben Zeile). Füge die entsprechende Ausrichtung nach den drei Titeln ein.
 
 6. Nun beginnen wir mit dem Layout der einzelnen Seiten. Wir starten mit Seite 1. Du siehst, dass es zwei Zeilen gibt, eine mit den value Boxes, und eine mit der fancy Karte. Die Zeilen (oder Spalten, bei spaltenweisem Layout) werden mit Titel zweiter Ordnung (mit `##`) definiert. Bei `flexdashboards` verwenden wir dazu eine Zeile Minuszeichen (`-----`; siehe Template unten), dies ist jedoch nur eine Konvention. Füge zwei Zeilen, mit dem Namen "Zeile 1" und "Zeile 2" ein (hier müssen keine sinnvollen Titel angegeben werden, da die Titel zweiter Ordnung nicht angezeigt werden). 
 
@@ -144,17 +144,17 @@ Zeile X
 ----------------------------------------------------------------------
 ````
 
-7. Wenn du das Dokument so knitten würdest, erhielten die beiden Zeilen gleich viel Platz. Die Karte soll jedoch mehr Platz erhalten. Füge dazu nach dem ersten Titel (`Zeile 1`, aber auf derselben Zeile im Code) folgenden Code ein: `{data-height = 400}`. Damit wird die Zeilenhöhe in Pixeln angegeben; Zeile 2 füllt dann den restlichen Platz aus (**Hinweis:** Die Platzverteilung erfolgt erst, wenn die Komponenten gefüllt werden; wenn du das Dokument jetzt renderst, wird also Zeile 1 im Moment noch gleich hoch sein, wie Zeile 2).
+7. Wenn du das Dokument so `knitten` würdest, erhielten die beiden Zeilen gleich viel Platz. Die Karte soll jedoch mehr Platz erhalten. Füge dazu nach dem ersten Titel (`Zeile 1`, aber auf derselben Zeile im Code) folgenden Code ein: `{data-height = 400}`. Damit wird die Zeilenhöhe in Pixeln angegeben; Zeile 2 füllt dann den restlichen Platz aus (**Hinweis:** Die Platzverteilung erfolgt erst, wenn die Komponenten gefüllt werden; wenn du das Dokument jetzt renderst, wird also Zeile 1 im Moment noch gleich hoch sein, wie Zeile 2).
 
 8. Zeile 1 mit den value Boxes, ist wiederum in drei Spalten unterteilt, eine für jede value Box. Verwende Titel dritter Ordnung um die Spalten mit den Namen "Superhosts", "Allstar", und "Preiswert" zu erstellen. Für diese Titel werden keine besonderen Zeichen verwendet, sondern wie gewohnt `###`.
 
-9. In Zeile 2 (also unterhalb des nächsten Titels zweiter Ordnung) musst du nur einen Titel einfügen, ohne Titel dritter Ordnung klappt nähmlich die automatische Grössenanpassung nicht. Gebe "Karte" als Titel an, und füge direkt dahinter `{.no-title}` ein; damit wird die Präsentation des Titels auf dem Dashboard unterdrückt.
+9. In Zeile 2 (also unterhalb des nächsten Titels zweiter Ordnung) musst du nur einen Titel einfügen, ohne Titel dritter Ordnung klappt die automatische Grössenanpassung nicht. Gib "Karte" als Titel an, und füge direkt dahinter `{.no-title}` ein; damit wird die Präsentation des Titels auf dem Dashboard unterdrückt.
 
 10. Seite 1 ist vom Layout her fertig. Zeit, Seite zwei vorzubereiten. Schaue sie dir dafür nochmals kurz an.
 
 11. Wie du wahrscheinlich gesehen hast, sind es diesmal zwei Spalten. Überlege dir, wie du diese definieren würdest.
 
-12. Genau, du kannst wie bei Aufgabe C6 Titel zweiter Ordnung hinzfügen. Füge die zwei Spalten, diesmal mit den Titeln "Spalte 1" und "Spalte 2", unter dem Titel der zweiten Seite hinzu (also nach der Zeile mit den Gleichheitszeichen).
+12. Du kannst wie bei Aufgabe C6 Titel zweiter Ordnung hinzfügen. Füge die zwei Spalten, diesmal mit den Titeln "Spalte 1" und "Spalte 2", unter dem Titel der zweiten Seite hinzu (also nach der Zeile mit den Gleichheitszeichen).
 
 13. Wie auf Seite 1, musst du auch hier noch die Spalten anpassen. Dort hattest du mit `{data-height = 400}` die Höhe einer Zeile festgelegt. Die Breite einer Spalte kann analog mit `{data-width = XXX}` festgelegt werden. Definiere, dass Spalte 2 200 Pixel breit ist; die Erste wird dann automatisch angepasst.
 
@@ -166,7 +166,7 @@ Zeile X
 
 17. In den Abschnitten des Storyboards soll es jeweils einen Hauptteil (links), sowie rechts eine schmalere Spalte mit Kommentaren haben. Definiere die Breite der kleineren Kommentarspalte, indem du nach jedem der drei Titel, aber auf derselben Zeile, `{data-commentary-width=300}` einfügst.
 
-18. Fast geschafft! Nur die Titel der Storyboardabschnitte sind noch etwas klein. Um sie zu vergrössern, musst du etwas HTML Syntax verwenden. Kopiere den untenstehenden Code und ersetze die Titel damit, und füge die Titelnamen von Aufgabe C16 in die `XXX` des Codes ein.
+18. Fast geschafft! Die Titel der Storyboardabschnitte sind noch etwas klein. Um sie zu vergrössern, musst du etwas HTML Syntax verwenden. Kopiere den untenstehenden Code und ersetze die Titel damit, und füge die Titelnamen von Aufgabe C16 in die `XXX` des Codes ein.
 
 ````markdown
 <span style="font-size: 20px;">XXX</span>
@@ -176,7 +176,7 @@ Zeile X
 
 Nun haben wir das Layout fertiggestellt und können die Komponenten einfüllen, also die anzuzeigenden Grafiken und Texte bestimmen.
 
-1. Wir beginnen mit den value Boxes auf Seite 1. Um die erste valueBox zu erstellen, erstelle nach dem "Superhost" Titel einen R chunk.
+1. Wir beginnen mit den value Boxes auf Seite 1. Um die erste value Box einzufügen, erstelle nach dem "Superhost" Titel einen R chunk.
 
 2. Berechne im erstellten R chunk zuerst die Anzahl im `airbnb` Datensatz vorhandener Superhosts. Verwende dazu den untenstehenden Code.
 
@@ -196,7 +196,7 @@ valueBox(XXX, caption = "XXX")
 
 4. Funktioniert das schon so?
 
-5. Funktioniert, aber ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die `valueBox()` Funktion ein Argument `color` ein und setze dieses auf `"#00A699"`.
+5. Funktioniert, aber ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die `valueBox()` Funktion ein Argument `color` ein und setze dieses auf `"#6BB7B9"`.
 
 6. Passt es jetzt?
 
@@ -206,9 +206,9 @@ valueBox(XXX, caption = "XXX")
 
 9. So, das war es für den Moment für diese Seite; die interaktiven Grafiken erstellen wir weiter unten. Gehe im Code zur zweiten Seite. Dort werden wir den Text erstellen.
 
-10. Schaue dir den Text in der rechten Spalte des [Dashboards](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen (du darfst copy-pasten um nicht alles abschreiben zu müssen).
+10. Schaue dir den Text in der rechten Spalte des [Dashboards](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen.
 
-11. Du kannst deinen Text mit dem untenstehenden Text, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen. Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?
+11. Du kannst deinen Text mit dem untenstehenden Code, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen. Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?
 
 ````wrap
 **Airbnbs in Berlin**
@@ -223,7 +223,7 @@ Insgesamt wurden über die Jahre in Berlin `r knitr::inline_expr("as.integer(sum
 
 12. Das war es schon für diese Seite. Den Plot erstellen wir wiederum später. Gehe nun in deinem Dokument zur dritten Seite zum Titel "Gesamtrating" (Titel dritter Ordnung).
 
-13. Erstelle unterhalb des Titels einen R chunk und füge den untenstehenden Code ein. Dieser erstellt die erste Grafik. Es fehlt leider die Zeit für genaue Erklärungen, aber der Code ist gut kommentiert, sodass du einen Eindruck der durchgeführten Aktionen erhalten solltest. Mehr über Plotting mit `ggplot2` kannst du in unserem Kurs zu explorativer Datenanalyse mit R lernen. 
+13. Erstelle unterhalb des Titels einen R chunk und füge den untenstehenden Code ein. Dieser erstellt die erste Grafik. 
 
 ```{r}
 ## Erstelle das Histogramm der Gesamtratings
@@ -265,7 +265,7 @@ gesamtrating <- airbnb %>%
     pull(Rating_gesamt) %>% mean(na.rm = TRUE) %>%  round(1)
 ```
 
-17. Mit diesem Objekt kannst du jetzt den `gauge` zu erstellen. Verwende das untenstehende Template und setze `gesamtrating` als erstes Argument ein.
+17. Mit diesem Objekt kannst du jetzt den `gauge` erstellen. Verwende das untenstehende Template und setze `gesamtrating` als erstes Argument ein.
 
 ```{r}
 
@@ -284,10 +284,10 @@ gauge(XXX,
         ))
 ```
 
-18. Wenn du das Dokument jetzt knittest, siehst du, dass die Dimensionen in der Kommentarspalte noch falsch sind. Das ist, weil der `gauge` noch zu gross ist. Um das zu beheben, kannst du `fig.width=3,fig.height=1.5, fig.align="center"` in die R chunk Optionen des chunks einfügen, welcher den `gauge` erstellt.
+18. Wenn du das Dokument jetzt knittest, siehst du, dass die Dimensionen in der Kommentarspalte noch falsch sind. Das ist, weil der `gauge` noch zu gross ist. Um das zu beheben, kannst du `fig.width=3, fig.height=1.5, fig.align="center"` in den R Chunk einfügen, welcher den `gauge` erstellt.
 
-19. Füge nun unterhalb des R chunks, der den `gauge` definiert, den folgenden Text ein (der Teil `<p style="font-size: 20px;">` ist HTML Syntax, mit der die Textgrösse etwas vergrössert wird; mit `</p>` wird die Syntax abgeschlossen):
-(**Hinweis:** Die Zeilenumbrüche sind nur eingefügt, um alles ohne seitwärts scrollen zu müssen anzeigen zu können)
+19. Füge nun unterhalb des R Chunks, der den `gauge` definiert, den folgenden Text ein:
+(**Hinweis:** Die Zeilenumbrüche sind hier eingefügt, um alles ohne seitwärts scrollen zu müssen anzeigen zu können)
 
 ````markdown
 <p style="font-size: 20px;">Die Berliner Airbnbs scheinen allgemein in einem
@@ -324,7 +324,7 @@ airbnb %>%
     lat = ~Breitengrad,
     radius = 4,
     stroke = FALSE, fillOpacity = 0.5,
-    color = "#00A699"
+    color = "#6BB7B9"
   )
 ```
 
@@ -390,9 +390,9 @@ Verlauf <- airbnb %>%
 Verlauf
 ```
 
-3. Der Code von Aufgabe F2 erstellt einen statischen Plot. Dieses `ggplot` Objekt kann jetzt ganz einfach an `ggplotly()`, einer `plotly` Funktion weitergegeben werden, um den Plot interaktiv zu gestalten. Dazu musst du nur das `Verlauf` am Ende des R chunks in `ggplotly(Verlauf)` umwandeln. Fertig...
+3. Der Code von Aufgabe F2 erstellt einen statischen Plot. Dieses `ggplot` Objekt kann jetzt ganz einfach an `ggplotly()`, einer `plotly` Funktion weitergegeben werden, um den Plot interaktiv zu gestalten. Dazu musst du nur das `Verlauf` am Ende des R chunks in `ggplotly(Verlauf)` umwandeln. Fertig!
 
-4. Bzw. fast fertig. Passe die Dimensionen des Plots (`fig.width` und `fig.height` R chunk Optionen) so an, dass die Spalte möglichst ausgefüllt wird. Dazu musst du evtl. ein paar Werte ausprobieren...
+4. Bzw. fast fertig. Passe die Dimensionen des Plots (`fig.width` und `fig.height` in den R Chunk Optionen) so an, dass die Spalte möglichst ausgefüllt wird. Dazu musst du evtl. ein paar Werte ausprobieren...
 
 ### G - Navigation Bar
 
@@ -405,7 +405,7 @@ Verlauf
 
 ### X - Challenges
 
-1. Bis jetzt ist erst eine value Box definiert. Für die Allstar `valueBox` musst du zuerst die Anzahl Airbnbs, welche überall Topratings haben berechnen. Verwende dazu den untenstehenden Code in einem R chunk, diesmal unterhalb des "Allstar" Titels. Wiederum ist hier leider nicht genügend Zeit vorhanden, den Code im Detail durchzugehen. Wenn du mehr darüber lernen möchtest, bieten wir im Kurs Explorative Datenanalyse mit R eine Einführung. 
+1. Bis jetzt ist erst eine value Box definiert. Für die Allstar `valueBox` musst du zuerst die Anzahl Airbnbs, welche überall Topratings haben berechnen. Verwende dazu den untenstehenden Code in einem R chunk, diesmal unterhalb des "Allstar" Titels.
 
 ```{r}
 # Berechne die Anzahl allstars, mit ausschliesslich top ratings
@@ -424,7 +424,7 @@ allstar <- airbnb %>%
 
 2. Verwende den `valueBox` Code den du in Teil D erstellt hast als Template um die value Box der Anzahl Allstars zu erstellen. Ersetze dazu `n_superhosts` durch `allstar` und ändere das `"Superhost"` im caption Argument zu `"Allstars"`.
 
-3. Diese value Box sieht aber noch nicht ganz gleich aus wie im vorgegebenen Dashboard. Zum Einen ist die Farbe noch grün statt gold, zum Anderen ist das Icon noch falsch. Ändere zunächst die Farbe (das `color` Argument) von `"#00A699"` zu `"#f5d142"`.
+3. Diese value Box sieht aber noch nicht ganz gleich aus wie im vorgegebenen Dashboard. Zum Einen ist die Farbe noch grün statt gold, zum Anderen ist das Icon noch falsch. Ändere zunächst die Farbe (das `color` Argument) von `"#6BB7B9"` zu `"#f5d142"`.
 
 4. Nun ändere den Input zum `icon` Argument von `"fa-medal"` zu `"fa-gem"`. Dabei spezifiziert das "fa-", dass das Icon aus der [Font Awesome](https://fontawesome.com/icons?d=gallery) Sammlung stammt. "medal" und "gem" geben dann den Namen des Icons an.
 
