@@ -322,7 +322,7 @@ Spalte 2
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Mit <highm>{.storyboard}</highm> wird eine Seite als Storyboard deviniert</span></li>
+  <li class="m1"><span>Mit <highm>{.storyboard}</highm> wird eine Seite als Storyboard definiert</span></li>
   <li class="m2"><span>In Storyboards sind keine Titel zweiter Ordnung nötig.</span></li> 
   <li class="m3"><span>Mit <highm>***</highm> wird eine Kommentarspalte definiert.</span></li> 
 
