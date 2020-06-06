@@ -229,7 +229,7 @@ summary {
 <div id="b---yaml" class="section level3">
 <h3>B - YAML</h3>
 <ol style="list-style-type: decimal">
-<li><p>Entferne die <code>author:</code> und <code>date:</code> Angaben aus dem YAML header</p></li>
+<li><p>Entferne die <code>author:</code> und <code>date:</code> Angaben aus dem YAML header (sofern diese vorliegen).</p></li>
 <li><p>Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter <code>title: Berlin</code>, in einer neuen Zeile, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?</p></li>
 </ol>
 <pre class="r"><code>subtitle: &quot;Bericht: 18/19&quot;</code></pre>
@@ -242,7 +242,7 @@ summary {
 </ol>
 <pre class="r"><code>css: ../2_Assets/airbnb_presentation.css</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>Achte auf die korrekten Einrückungen! Der YAML Header sollte so aussehen:</li>
+<li>Achte darafu, dass die Einrückungen korrekt sind. Der YAML Header sollte so aussehen:</li>
 </ol>
 <pre class="r"><code>---
 title: &quot;Berlin&quot;
@@ -253,15 +253,14 @@ output:
     css: ../2_Assets/airbnb_presentation.css
 ---</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>Knitte das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide mit rotem AirBnB Logo angezeigt werden.</li>
+<li>Knitte das Dokument. Es sollte ein in den AirBnB Farben gestalteter Titelslide mit rotem AirBnB Logo angezeigt werden.</li>
 </ol>
 </div>
 <div id="c---setup-chunk" class="section level3">
-<h3>C - Setup chunk</h3>
-<p>Nun wirst du im <code>Setup</code> Chunk die notwendigen Pakete laden, Daten laden und verschiedenen Einstellungen vornehmen.</p>
+<h3>C - Setup-Chunk</h3>
 <ol style="list-style-type: decimal">
-<li><p>Lade die Pakete <code>tidyverse</code>, <code>lubridate</code>, <code>sjPlot</code>, <code>knitr</code> und <code>kableExtra</code></p></li>
-<li><p>Inkludiere im Setup-Chunk den folgenden Code um die AirBnB Daten zu laden und auf den Zeitraum 2018-2019 zu limitieren.</p></li>
+<li><p>Lade im <code>setup</code> Chunk die notwendigen Pakete <code>tidyverse</code>, <code>lubridate</code>, <code>sjPlot</code>, <code>knitr</code> und <code>kableExtra</code>.</p></li>
+<li><p>Inkludiere im <code>setup</code> Chunk den folgenden Code um die AirBnB Daten zu laden und auf den Zeitraum 2018-2019 zu limitieren.</p></li>
 </ol>
 <pre class="r"><code># Lade Daten
 airbnb_1819 &lt;- read_csv(&#39;../1_Data/airbnb.csv&#39;) %&gt;% 
@@ -294,18 +293,17 @@ ggplot &lt;- function(...) ggplot2::ggplot(...) +
 <h3>E - Inhalte mit Bullet Points einbinden</h3>
 <ol style="list-style-type: decimal">
 <li><p>Öffne das R Markdown Dokument, das wir gestern erstellt haben (<code>3_Markdown/airbnb_final.Rmd</code>), verwende das Dokument als Quelle für Code Chunks und Text in den folgenden Abschnitten.</p></li>
-<li><p>Erstelle eine Bullet Point Liste. In Markdown wird ein <code>-</code> in einen Bullet Point übersetzt.</p></li>
-<li><p>Aus dem Abschnitt “Entwicklung” in <code>3_Markdown/airbnb_final.Rmd</code> übertrage die Anzahl der eingestellten Wohnungen in den ersten Bullet Point.</p></li>
+<li><p>Erstelle eine Bullet Point Liste in dem du <code>-</code> vor den jeweiligen Text setzt. Übertrage aus dem Abschnitt “Entwicklung” die Anzahl der eingestellten Wohnungen als Inhalt des ersten Bullet Points. Bie Listen ist darauf zu achten, dass der erste Bullet mindestens eine Zeile Abstand zum darüberliegenden Text hat.</p></li>
 <li><p>Erstelle einen weiteren Bullet Point mit den Wohnungseinstellungen für das Jahr 2018 sowie das Jahr 2019.</p></li>
-<li><p>Dokumentiere im vierten Bullet Point die durchschnittliche Verfügbarkeit in den nächsten 3 Monaten.</p></li>
+<li><p>Dokumentiere im dritten Bullet Point die durchschnittliche Verfügbarkeit in den nächsten 3 Monaten.</p></li>
 <li><p>Knitte das Dokument. Sind die Bullets nun gestaffelt?</p></li>
 </ol>
 </div>
 <div id="f---grafiken-einbinden" class="section level3">
 <h3>F - Grafiken einbinden</h3>
 <ol style="list-style-type: decimal">
-<li><p>Füge einen neuen Slide mit dem Titel “Entwicklung” ein. Verwende zwei <code>#</code>.</p></li>
-<li><p>Füge den relevanten Code für die Abbildung 1 (Neueinstellungen pro Monat) aus dem R Markdown Dokument ein.</p></li>
+<li><p>Füge einen neuen Slide ebenfalls mit dem Titel “Entwicklung” ein. Verwende zwei <code>#</code>.</p></li>
+<li><p>Füge den chunk für die Abbildung 1 (Neueinstellungen pro Monat) aus dem R Markdown Dokument ein so dass die Abbildung in den Slides angezeigt wird.</p></li>
 <li><p>Vergiss nicht in den Chunk Optionen <code>fig.cap = cap</code> anzugeben, damit die Bildunterschrift angezeigt wird!</p></li>
 <li><p><code>Knitte</code> das Dokument. Enthält der Slide die Abbildung 1?</p></li>
 </ol>
@@ -314,8 +312,8 @@ ggplot &lt;- function(...) ggplot2::ggplot(...) +
 <h3>G - Zwei Slides zu den Stadtteilen</h3>
 <ol style="list-style-type: decimal">
 <li><p>Füge einen neuen Slide mit dem Titel “Stadtteile” ein (zwei <code>#</code>).</p></li>
-<li><p>Mit Hilfe einer HTML Tabelle erstelle ein Layout mit 2 Spalten. Liste in der linken Spalte die Stadtteile auf (mit <code>inline</code> Code) und in der rechten Spalten die prozentuellen Veränderungen.</p></li>
-<li><p>Stelle auf dem nächste Slide (gleicher Titel wie zuvor) die Abbildung 2 (Neueinstellungen pro Bezirk) als Grafik dar. Achte darauf, dass alle R Chunks (auch jene mit Berechnungen) mitkopiert werden.</p></li>
+<li><p>Mit Hilfe einer HTML Tabelle (oder alternativer Methoden) erstelle ein Layout mit 2 Spalten. Liste in der linken Spalte die Stadtteile auf (mit <code>inline</code> Code) und in der rechten Spalten die prozentuellen Veränderungen.</p></li>
+<li><p>Stelle auf dem nächste Slide (gleicher Titel wie zuvor) die Abbildung 2 (Neueinstellungen pro Bezirk) als Grafik dar. Achte darauf, dass alle R Chunks (auch jene mit Berechnungen) vorhanden sind.</p></li>
 <li><p><code>Knitte</code> das Dokument. Werden die 2. Grafiken, die Bullets und die Tabelle korrekt angezeigt?</p></li>
 </ol>
 </div>
@@ -327,7 +325,7 @@ ggplot &lt;- function(...) ggplot2::ggplot(...) +
 <li><p>Auf diesem Slide inkludiere die Tabelle mit Austattungsmerkmalen.</p></li>
 <li><p>Auf dem gleichen Slide, unter der Tabelle, füge den letzten Satz des Abschnittes “Der Einfluss der Ausstattung” zum stark negativen Effekt der Küche ein. Füge HTML Code ein, der diesen die Schrift fett formatiert.</p></li>
 <li><p>Knitte das Dokument. Wird die Tabelle korrekt angezeigt?</p></li>
-<li><p>Optional: Verändere die Tabelle so, dass die Schriftgrösse in allen Zellen gleich gross ist und dass Zellen mit einer Zahl &gt; 100 rot angezeigt werden (Hinweis: <code>color = ifelse(x &gt; 100, &quot;red&quot;, &quot;black&quot;)</code>)</p></li>
+<li><p>Optional: Verändere die Tabelle so, dass die Schriftgrösse in allen Zellen gleich gross ist und dass Zellen mit einer Zahl &gt; 100 rot angezeigt werden (Hinweis: <code>color = ifelse(x &gt; 100, "red", "black")</code>)</p></li>
 </ol>
 </div>
 <div id="i---regressionsergebnisse" class="section level3">
@@ -338,14 +336,14 @@ ggplot &lt;- function(...) ggplot2::ggplot(...) +
 <li><p>Stelle die Ergebnisse der Regression, mit Hilfe der Funktion <code>tab_model</code> auf dem Slide dar.</p></li>
 <li><p>Inkludiere den R Chunk in dem der Anteil Hotels an allen Objekten berechnet wird.</p></li>
 <li><p>Ergänze in fetter Schriftart den Abschlusssatz (“Der Anteil …”) unter der Regressionstabelle.</p></li>
-<li><p>Optional: Mit dem Attribut <code>col.order</code> kannst du die Reihenfolge und Art der Ergebnisse in der Regressionstabelle festlegen. Verändere die Reihenfolge der Spalten, sodass zuerst “Konfidenzintervalle” (ci) und dann die “Estimates” angezeigt werden.</p></li>
-<li><p>Optional: Füge nun Sterne (anstatt der p-Werte) für signifikante Estimates ein (Hint: <code>p.style</code>)</p></li>
+<li><p>Optional: Mit dem Attribut <code>col.order</code> kannst du die Reihenfolge und Art der Ergebnisse in der Regressionstabelle festlegen. Verändere die Reihenfolge der Spalten, sodass zuerst Konfidenzintervalle (<code>ci</code>) und dann die Koeffizienten (<code>est</code>) angezeigt werden.</p></li>
+<li><p>Optional: Füge Sterne (anstatt der p-Werte) für signifikante Estimates ein (Tip: <code>p.style</code>).</p></li>
 </ol>
 </div>
 <div id="j---export" class="section level3">
 <h3>J - Export</h3>
 <ol style="list-style-type: decimal">
-<li><p>Slides können gut über einen Browser als PDF ausgegeben werden. Öffne hierzu die durch das Knitten erzeugte <code>.html</code> Datei in einem Browser (z.B., Chrome).</p></li>
+<li><p>Slides können je nach Inhalt mehr oder weniger gut über einen Browser als PDF ausgegeben werden. Öffne hierzu die durch das Knitten erzeugte <code>.html</code> Datei in einem Browser (z.B., Chrome).</p></li>
 <li><p>Dann drücke <code>Cmd + P</code> oder <code>Ctrl + P</code> um das Druckmenu zu öffnen wo du PDF als Output auswählen musst.</p></li>
 <li><p>Speichere das PDF auf deine Festplatte und schaue ob alles angemessen ausgegeben wurde.</p></li>
 </ol>
@@ -511,23 +509,23 @@ ggplot &lt;- function(...) ggplot2::ggplot(...) +
 <tbody>
 <tr class="odd">
 <td align="left"><code>tidyverse</code></td>
-<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>lubridate</code></td>
-<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>knitr</code></td>
-<td align="left"><code>install.packages(&quot;knitr&quot;)</code></td>
+<td align="left"><code>install.packages("knitr")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>sjPlot</code></td>
-<td align="left"><code>install.packages(&quot;sjPlot&quot;)</code></td>
+<td align="left"><code>install.packages("sjPlot")</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>kabelExtra</code></td>
-<td align="left"><code>install.packages(&quot;kableExtra&quot;)</code></td>
+<td align="left"><code>install.packages("kableExtra")</code></td>
 </tr>
 </tbody>
 </table>
