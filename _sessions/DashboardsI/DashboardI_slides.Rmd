@@ -151,11 +151,11 @@ basel <- read.csv("1_Data/basel.csv")
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Standardmässig spaltenweise; zeilenweise möglich.</span></li>  
-  <li class="m2"><span>Standardmässig eine Spalte; mehrere möglich.</span></li>
-  <li class="m3"><span>Headers bestimmen die Boxen und Seiten.</span></li>
-  <li class="m4"><span>Standardmässig eine Seite; scrollable und mehrere Seiten
+  <li class="m1"><span>Headers bestimmen die Boxen und Seiten.</span></li>  
+  <li class="m2"><span>Standardmässig eine Seite; scrollable und mehrere Seiten
   möglich.</span></li>
+  <li class="m3"><span>Standardmässig spaltenweise; zeilenweise möglich.</span></li>
+  <li class="m4"><span>Standardmässig eine Spalte; mehrere möglich.</span></li>
   <li class="m5"><span>Tabs möglich.</span></li>
 </ul>
 
