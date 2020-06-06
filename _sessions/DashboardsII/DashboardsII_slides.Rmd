@@ -73,7 +73,7 @@ print2 <- function(x, nlines=10,...) {
 
 ```
 
-# Dashboard aus dem letzten Practical
+# Unser Dashboard
 
 <p align = "center">
   <iframe src="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html" width="100%%" height="450" style="border:none;">
@@ -81,18 +81,18 @@ print2 <- function(x, nlines=10,...) {
   <font style="font-size:10px">from <a href="https://therbootcamp.github.io/">therbootcamp.com</a></font>
 </p>
 
-
 ---
 
-# Mehr Interaktivität? &#8594; <highm>shiny</highm>!
+# <mono>shiny</mono>
 
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Bisherige Dashboards konnten Daten in Fenstern <high>anzeigen</high>. </span></li>
-  <li class="m2"><span>Daten <high>filtern</high> oder Variablen <high>auswählen</high> war aber <high>nicht</high> möglich.
-</span></li>
-  <li class="m3"><span><highm>shiny</highm> ermöglicht genau diese Funktionalität.</span></li>
+  <li class="m1"><span><mono>flexdashboards</mono> zeigen <high>Daten in Fenstern</high>. </span></li>
+  <li class="m2"><span> Mit <mono>shiny</mono> können Dashboards um <high>interaktive Funktionen</high> erweitert werden. </span></li>
+  <ul>
+    <li><span>Daten <high>filtern</high></span></li>
+    <li><span>Variablen <high>auswählen</high></span></li> 
 </ul>
 
 ]
@@ -110,22 +110,20 @@ print2 <- function(x, nlines=10,...) {
 
 ---
 
-# Was ist <mono>shiny</mono>?
+# <mono>shiny</mono>
+
 
 .pull-left4[
 
-> Shiny is an R package that makes it easy to build interactive web applications (apps) straight from R. - RStudio
+<br>
 
-<ul>
-  <li class="m1"><span>Mit Shiny erstellt <high>interaktive Webseiten/Applikationen</high> erstellen.</span></li>  
-  <li class="m1"><span>Interaktive Applikationen bieten höchste <high>Flexibilität</high>.</span></li>  
-  <li class="m2"><span>Simple bis moderat komplexe Applikationen basieren auf <high>R und RMarkdown</high>.</span></li>
-</ul>
+> <mono>shiny</mono> is a framework for creating web applications using R code. It is designed primarily with data scientists in mind, and to that end, you can create pretty complicated Shiny apps with no knowledge of HTML, CSS, or JavaScript.<br><br><i>Hadley Wickham</i><br>in <a href="https://mastering-shiny.org/">Mastering Shiny</a>
+
 
 ]
 
 .pull-right5[
-
+<br>
 <p align = "center">
   <img src="image/shiny_vs_webl.png" >
 </p>
