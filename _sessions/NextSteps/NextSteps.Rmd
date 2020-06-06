@@ -60,7 +60,7 @@ knitr::opts_chunk$set(dpi = 300, echo = FALSE, warning = FALSE, fig.align = 'cen
 <br><br><br><br><br>
 #  Hallo Reporter!
 
-In 2 days, 8 sessions, and 16 hours you have come a long way.
+In 2 days, 6 sessions, and 16 hours you have come a long way.
 
 ]
 
