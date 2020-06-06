@@ -71,7 +71,7 @@ Am Ende des Practicals wirst du wissen wie man:
 
 1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data`, `2_Assets` und `3_Markdown` enthalten. 
 
-2. Lade [**dieses Markdown**](https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards1/app/BerlinDashboard.Rmd) Skript herunter und speichere es in deinen `3_Markdown` Ordner.
+2. Lade [**dieses Markdown**](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.Rmd) Skript herunter und speichere es in deinen `3_Markdown` Ordner.
 
 3. Öffne das eben heruntergeladene Markdown file. Es enthält das fertige Dashboard der vorherigen Aufgabe. Arbeite mit diesem File weiter, um sicherzustellen, dass alles korrekt implementiert ist. 
 
