@@ -42,7 +42,7 @@ valueBox(n_superhosts,
          # Wähle eine Medallie als Icon
          icon = "fa-medal",
          # Definiere die Färbung der valueBox (hier das Airbnb grün)
-         color = "#00A699")
+         color = "#6BB7B9")
 ```
 
 ### Allstar
@@ -96,7 +96,7 @@ airbnb %>%
     lat = ~Breitengrad,
     radius = 4,
     stroke = FALSE, fillOpacity = 0.5,
-    color = "#00A699"
+    color = "#6BB7B9"
   )
 
 ```

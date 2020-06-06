@@ -405,7 +405,7 @@ Verlauf
 
 ### X - Challenges
 
-1. Bis jetzt ist erst eine value Box definiert. Für die Allstar `valueBox` musst du zuerst die Anzahl Airbnbs, welche überall Topratings haben berechnen. Verwende dazu den untenstehenden Code in einem R chunk, diesmal unterhalb des "Allstar" Titels. Wiederum ist hier leider nicht genügend Zeit vorhanden, den Code im Detail durchzugehen. Wenn du mehr darüber lernen möchtest, bieten wir im Kurs Explorative Datenanalyse mit R eine Einführung. 
+1. Bis jetzt ist erst eine value Box definiert. Für die Allstar `valueBox` musst du zuerst die Anzahl Airbnbs, welche überall Topratings haben berechnen. Verwende dazu den untenstehenden Code in einem R chunk, diesmal unterhalb des "Allstar" Titels.
 
 ```{r}
 # Berechne die Anzahl allstars, mit ausschliesslich top ratings
