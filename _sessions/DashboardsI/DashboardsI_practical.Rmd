@@ -290,9 +290,9 @@ schliessen.</p>
 
 ### E - `leaflet`
 
-1. Wir starten mit der Karte auf Seite 1. Gehe in deinem Skript zur Syntax, welche die Zeile 2 auf der ersten Seite erstellt (die Zeile unterhalb der value Boxen).
+1. Nun geht es an die Karte auf Seite 1. Gehe in deinem Skript zur Syntax, welche die Zeile 2 auf der ersten Seite erstellt (die Zeile unterhalb der `valueBox`en).
 
-2. [leaflet](https://rstudio.github.io/leaflet/) bietet die Möglichkeit, sehr einfach interaktive Karten zu erstellen. Erstelle einen neuen R chunk mit dem folgenden Code unterhalb des "Karte" Titel:
+2. [leaflet](https://rstudio.github.io/leaflet/) bietet die Möglichkeit, sehr einfach interaktive Karten zu erstellen. Erstelle einen neuen Code chunk mit dem folgenden Code unterhalb des `Karte` Titel:
 
 ```{r}
 # Definiere Datensatz
@@ -305,7 +305,7 @@ airbnb %>%
   addTiles()
 ```
 
-3. Damit hast du bereits eine Karte von Berlin erstellt. Einfach oder? Um andere Städte auszuwählen müsste man lediglich die Längen- und Breitengradangaben in `setView` anpassen. Füge nun den folgenden Code unten hinzu (**Achtung**: ersetze dabei `addTiles()` in deinem Code mit dem untenstehenden Code), um die Airbnbs einzuzeichnen:
+3. Damit hast du bereits eine Karte von Berlin erstellt. Einfach oder? Um andere Städte auszuwählen müsste man lediglich die Längen- und Breitengradangaben in `setView` anpassen. Ersetze nun `addTiles()` in deinem Code mit dem untenstehenden Code, um die Airbnbs einzuzeichnen:
 
 ```{r}
   addTiles() %>%
@@ -321,7 +321,7 @@ airbnb %>%
 
 ### F - `plotly`
 
-1. Zeit den Plot auf Seite 2 hinzuzufügen. Gehe in deinem Skript zur Zeile, die den Titel "Entwicklung der Berliner Airbnbs seit 2009" in der linken Spalte auf der zweiten Seite erstellt:
+1. Zeit den Plot auf Seite 2 hinzuzufügen. Gehe in deinem Skript zur Zeile, die den Titel `Entwicklung der Berliner Airbnbs seit 2009` in der linken Spalte auf der zweiten Seite erstellt:
 
 ````mardown
 ### Entwicklung der Berliner Airbnbs seit 2009
@@ -330,7 +330,7 @@ HIER!
 
 ````
 
-2. Füge einen R chunk mit dem untenstehenden Code ein (Datenvorbereitung und Plotting ist nicht Teil dieses Kurses, aber wenn du Fragen zum Code hast helfen wir gerne weiter!). 
+2. Füge einen Code chunk mit dem untenstehenden Code ein. Datenvorbereitung und Plotting ist nicht Teil dieses Kurses, aber wenn du Fragen zum Code hast helfen wir gerne weiter!. 
 
 ```{r}
 ### Plot zum Verlauf über die Zeit
