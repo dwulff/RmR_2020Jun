@@ -132,7 +132,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>subtitle</mono>
   </td>
   <td bgcolor="white">
-  Unterschrift auf Titelslide
+  Unterschrift auf Titelslide.
   </td> 
 </tr>
 <tr>
@@ -140,7 +140,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>logo</mono>
   </td>
   <td bgcolor="white">
-  Logo auf Titelslide und in Fusszeile
+  Logo auf Titelslide und in Fusszeile.
   </td> 
 </tr>
 <tr>
@@ -148,7 +148,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>css</mono>
   </td>
   <td bgcolor="white">
-  Cascading style sheet
+  Cascading style sheet.
   </td> 
 </tr>
 </table>
@@ -190,7 +190,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>subtitle</mono>
   </td>
   <td bgcolor="white">
-  Unterschrift auf Titelslide
+  Unterschrift auf Titelslide.
   </td> 
 </tr>
 <tr>
@@ -198,7 +198,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>logo</mono>
   </td>
   <td bgcolor="white">
-  Logo auf Titelslide und in Fusszeile
+  Logo auf Titelslide und in Fusszeile.
   </td> 
 </tr>
 <tr>
@@ -206,7 +206,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>css</mono>
   </td>
   <td bgcolor="white">
-  Cascading style sheet
+  Cascading style sheet.
   </td> 
 </tr>
 </table>
@@ -247,7 +247,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>subtitle</mono>
   </td>
   <td bgcolor="white">
-  Unterschrift auf Titelslide
+  Unterschrift auf Titelslide.
   </td> 
 </tr>
 <tr>
@@ -255,7 +255,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>logo</mono>
   </td>
   <td bgcolor="white">
-  Logo auf Titelslide und in Fusszeile
+  Logo auf Titelslide und in Fusszeile.
   </td> 
 </tr>
 <tr>
@@ -263,7 +263,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>css</mono>
   </td>
   <td bgcolor="white">
-  Cascading style sheet
+  Cascading style sheet.
   </td> 
 </tr>
 </table>
@@ -305,7 +305,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>subtitle</mono>
   </td>
   <td bgcolor="white">
-  Unterschrift auf Titelslide
+  Unterschrift auf Titelslide.
   </td> 
 </tr>
 <tr>
@@ -313,7 +313,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>logo</mono>
   </td>
   <td bgcolor="white">
-  Logo auf Titelslide und in Fusszeile
+  Logo auf Titelslide und in Fusszeile.
   </td> 
 </tr>
 <tr>
@@ -321,7 +321,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>css</mono>
   </td>
   <td bgcolor="white">
-  Cascading style sheet
+  Cascading style sheet.
   </td> 
 </tr>
 </table>
@@ -364,7 +364,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie
+  Neue(r) Abschnitt, Folie.
   </td> 
 </tr>
 <tr>
@@ -372,7 +372,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>## Titel | </mono>
   </td>
   <td bgcolor="white">
-  Untertitel
+  Untertitel.
   </td> 
 </tr>
 <tr>
@@ -380,7 +380,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets
+  Nicht-numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -388,7 +388,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets
+  Numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -396,7 +396,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
   </td>
   <td bgcolor="white">
-  Gestaffelte Bullets
+  Gestaffelte Bullets.
   </td> 
 </tr>
 <tr>
@@ -445,7 +445,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie
+  Neue(r) Abschnitt, Folie.
   </td> 
 </tr>
 <tr>
@@ -453,7 +453,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>## Titel | </mono>
   </td>
   <td bgcolor="white">
-  Untertitel
+  Untertitel.
   </td> 
 </tr>
 <tr>
@@ -461,7 +461,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets
+  Nicht-numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -469,7 +469,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets
+  Numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -477,7 +477,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
   </td>
   <td bgcolor="white">
-  Gestaffelte Bullets
+  Gestaffelte Bullets.
   </td> 
 </tr>
 <tr>
@@ -526,7 +526,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie
+  Neue(r) Abschnitt, Folie.
   </td> 
 </tr>
 <tr>
@@ -534,7 +534,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>## Titel | </mono>
   </td>
   <td bgcolor="white">
-  Untertitel
+  Untertitel.
   </td> 
 </tr>
 <tr>
@@ -542,7 +542,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets
+  Nicht-numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -550,7 +550,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets
+  Numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -558,7 +558,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
   </td>
   <td bgcolor="white">
-  Gestaffelte Bullets
+  Gestaffelte Bullets.
   </td> 
 </tr>
 <tr>
@@ -607,7 +607,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie
+  Neue(r) Abschnitt, Folie.
   </td> 
 </tr>
 <tr>
@@ -615,7 +615,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>## Titel | </mono>
   </td>
   <td bgcolor="white">
-  Untertitel
+  Untertitel.
   </td> 
 </tr>
 <tr>
@@ -623,7 +623,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets
+  Nicht-numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -631,7 +631,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets
+  Numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -639,7 +639,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
   </td>
   <td bgcolor="white">
-  Gestaffelte Bullets
+  Gestaffelte Bullets.
   </td> 
 </tr>
 <tr>
@@ -688,7 +688,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie
+  Neue(r) Abschnitt, Folie.
   </td> 
 </tr>
 <tr>
@@ -696,7 +696,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>## Titel | </mono>
   </td>
   <td bgcolor="white">
-  Untertitel
+  Untertitel.
   </td> 
 </tr>
 <tr>
@@ -704,7 +704,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets
+  Nicht-numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -712,7 +712,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets
+  Numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -720,7 +720,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
   </td>
   <td bgcolor="white">
-  Gestaffelte Bullets
+  Gestaffelte Bullets.
   </td> 
 </tr>
 <tr>
@@ -769,7 +769,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie
+  Neue(r) Abschnitt, Folie.
   </td> 
 </tr>
 <tr>
@@ -777,7 +777,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>## Titel | </mono>
   </td>
   <td bgcolor="white">
-  Untertitel
+  Untertitel.
   </td> 
 </tr>
 <tr>
@@ -785,7 +785,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets
+  Nicht-numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -793,7 +793,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets
+  Numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -801,7 +801,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
   </td>
   <td bgcolor="white">
-  Gestaffelte Bullets
+  Gestaffelte Bullets.
   </td> 
 </tr>
 <tr>
@@ -850,7 +850,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie
+  Neue(r) Abschnitt, Folie.
   </td> 
 </tr>
 <tr>
@@ -858,7 +858,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>## Titel | </mono>
   </td>
   <td bgcolor="white">
-  Untertitel
+  Untertitel.
   </td> 
 </tr>
 <tr>
@@ -866,7 +866,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets
+  Nicht-numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -874,7 +874,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets
+  Numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -882,7 +882,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
   </td>
   <td bgcolor="white">
-  Gestaffelte Bullets
+  Gestaffelte Bullets.
   </td> 
 </tr>
 <tr>
@@ -931,7 +931,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie
+  Neue(r) Abschnitt, Folie.
   </td> 
 </tr>
 <tr>
@@ -939,7 +939,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>## Titel | </mono>
   </td>
   <td bgcolor="white">
-  Untertitel
+  Untertitel.
   </td> 
 </tr>
 <tr>
@@ -947,7 +947,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets
+  Nicht-numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -955,7 +955,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets
+  Numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -963,7 +963,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
   </td>
   <td bgcolor="white">
-  Gestaffelte Bullets
+  Gestaffelte Bullets.
   </td> 
 </tr>
 <tr>
@@ -1013,7 +1013,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie
+  Neue(r) Abschnitt, Folie.
   </td> 
 </tr>
 <tr>
@@ -1021,7 +1021,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>## Titel | </mono>
   </td>
   <td bgcolor="white">
-  Untertitel
+  Untertitel.
   </td> 
 </tr>
 <tr>
@@ -1029,7 +1029,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets
+  Nicht-numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -1037,7 +1037,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets
+  Numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -1045,7 +1045,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
   </td>
   <td bgcolor="white">
-  Gestaffelte Bullets
+  Gestaffelte Bullets.
   </td> 
 </tr>
 <tr>
@@ -1097,7 +1097,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie
+  Neue(r) Abschnitt, Folie.
   </td> 
 </tr>
 <tr>
@@ -1105,7 +1105,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>## Titel | </mono>
   </td>
   <td bgcolor="white">
-  Untertitel
+  Untertitel.
   </td> 
 </tr>
 <tr>
@@ -1113,7 +1113,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets
+  Nicht-numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -1121,7 +1121,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets
+  Numerierte Bullets.
   </td> 
 </tr>
 <tr>
@@ -1129,7 +1129,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&gt;-, &gt;1.<br>&gt;-, &gt;2.</mono>
   </td>
   <td bgcolor="white">
-  Gestaffelte Bullets
+  Gestaffelte Bullets.
   </td> 
 </tr>
 <tr>
