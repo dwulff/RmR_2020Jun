@@ -44,7 +44,7 @@ layout: true
 
 
 
-# Dashboard aus dem letzten Practical
+# Unser Dashboard
 
 &lt;p align = "center"&gt;
   &lt;iframe src="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html" width="100%%" height="450" style="border:none;"&gt;
@@ -52,18 +52,18 @@ layout: true
   &lt;font style="font-size:10px"&gt;from &lt;a href="https://therbootcamp.github.io/"&gt;therbootcamp.com&lt;/a&gt;&lt;/font&gt;
 &lt;/p&gt;
 
-
 ---
 
-# Mehr Interaktivität? &amp;#8594; &lt;highm&gt;shiny&lt;/highm&gt;!
+# &lt;mono&gt;shiny&lt;/mono&gt;
 
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Bisherige Dashboards konnten Daten in Fenstern &lt;high&gt;anzeigen&lt;/high&gt;. &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Daten &lt;high&gt;filtern&lt;/high&gt; oder Variablen &lt;high&gt;auswählen&lt;/high&gt; war aber &lt;high&gt;nicht&lt;/high&gt; möglich.
-&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;shiny&lt;/highm&gt; ermöglicht genau diese Funktionalität.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;flexdashboards&lt;/mono&gt; zeigen &lt;high&gt;Daten in Fenstern&lt;/high&gt;. &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt; Mit &lt;mono&gt;shiny&lt;/mono&gt; können Dashboards um &lt;high&gt;interaktive Funktionen&lt;/high&gt; erweitert werden. &lt;/span&gt;&lt;/li&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;span&gt;Daten &lt;high&gt;filtern&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Variablen &lt;high&gt;auswählen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ]
@@ -81,22 +81,20 @@ layout: true
 
 ---
 
-# Was ist &lt;mono&gt;shiny&lt;/mono&gt;?
+# &lt;mono&gt;shiny&lt;/mono&gt;
+
 
 .pull-left4[
 
-&gt; Shiny is an R package that makes it easy to build interactive web applications (apps) straight from R. - RStudio
+&lt;br&gt;
 
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Mit Shiny erstellt &lt;high&gt;interaktive Webseiten/Applikationen&lt;/high&gt; erstellen.&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m1"&gt;&lt;span&gt;Interaktive Applikationen bieten höchste &lt;high&gt;Flexibilität&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;Simple bis moderat komplexe Applikationen basieren auf &lt;high&gt;R und RMarkdown&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&gt; &lt;mono&gt;shiny&lt;/mono&gt; is a framework for creating web applications using R code. It is designed primarily with data scientists in mind, and to that end, you can create pretty complicated Shiny apps with no knowledge of HTML, CSS, or JavaScript.&lt;br&gt;&lt;br&gt;&lt;i&gt;Hadley Wickham&lt;/i&gt;&lt;br&gt;in &lt;a href="https://mastering-shiny.org/"&gt;Mastering Shiny&lt;/a&gt;
+
 
 ]
 
 .pull-right5[
-
+&lt;br&gt;
 &lt;p align = "center"&gt;
   &lt;img src="image/shiny_vs_webl.png" &gt;
 &lt;/p&gt;
@@ -220,7 +218,7 @@ layout: true
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Um Veränderungen durch reaktive Objekte zu ermöglichen, müssen die entsprechenden Outputs mit speziellen Funktionen &lt;high&gt;gerendert&lt;/high&gt; werden.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m1"&gt;&lt;span&gt;Um Veränderungen durch &lt;high&gt;reaktive Objekte&lt;/high&gt; zu ermöglichen, müssen die entsprechenden Outputs mit speziellen Funktionen &lt;high&gt;gerendert&lt;/high&gt; werden.&lt;/span&gt;&lt;/li&gt;  
   &lt;li class="m2"&gt;&lt;span&gt;Verschiedene &lt;highm&gt;renderXXX()&lt;/highm&gt; Funktionen existieren in &lt;mono&gt;shiny&lt;/mono&gt;, z.B.:&lt;/span&gt;&lt;/li&gt;
       &lt;ul class="level"&gt;
       &lt;li&gt;&lt;span&gt;&lt;mono&gt;renderPlot()&lt;/mono&gt;&lt;/li&gt;&lt;/span&gt;
@@ -228,7 +226,7 @@ layout: true
       &lt;li&gt;&lt;span&gt;&lt;mono&gt;renderText()&lt;/mono&gt;&lt;/li&gt;&lt;/span&gt;
       &lt;li&gt;&lt;span&gt;...&lt;/li&gt;&lt;/span&gt;
     &lt;/ul&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;Viele Pakete bieten eigene render Funktionen, z.B. &lt;mono&gt;renderLeaflet()&lt;/mono&gt; oder &lt;mono&gt;renderPlotly()&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Viele Pakete bieten &lt;high&gt;eigene&lt;/high&gt; render Funktionen, z.B. &lt;mono&gt;renderLeaflet()&lt;/mono&gt; oder &lt;mono&gt;renderPlotly()&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m4"&gt;&lt;span&gt;&lt;highm&gt;input$INPUT_ID&lt;/highm&gt; kann direkt in render Funktionen verwendet werden.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -253,7 +251,7 @@ layout: true
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Verwende &lt;highm&gt;{}&lt;/highm&gt; um mehrere &lt;high&gt;unabhängige&lt;/high&gt; Statements in einer &lt;mono&gt;reactive()&lt;/mono&gt; oder &lt;mono&gt;renderXXX()&lt;/mono&gt; Funktion.&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;Statements in &lt;highm&gt;{}&lt;/highm&gt; werden als Block ausgeführt und nur das letzte Statement wird zurückgegeben (kreierte Objekte werden aber gespeichert).&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;Statements in &lt;highm&gt;{}&lt;/highm&gt; werden als &lt;high&gt;Block&lt;/high&gt; ausgeführt und nur das &lt;high&gt;letzte Statement&lt;/high&gt; wird zurückgegeben (kreierte Objekte werden aber gespeichert).&lt;/span&gt;&lt;/li&gt;  
 &lt;/ul&gt;
 
 
@@ -302,9 +300,9 @@ renderPlot({
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Input definiert Merkmal.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m2"&gt;&lt;span&gt;Reaktiver Datensatz, gefiltert nach Input.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Verwendung des reaktiven Datensatzes in Plot&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Input definiert &lt;high&gt;Merkmal&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;Reaktiver Datensatz, &lt;high&gt;gefiltert&lt;/high&gt; nach Input.&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;Verwendung des reaktiven Datensatzes in &lt;high&gt;Plot&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ]
