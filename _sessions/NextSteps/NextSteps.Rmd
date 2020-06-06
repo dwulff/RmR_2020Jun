@@ -58,7 +58,7 @@ knitr::opts_chunk$set(dpi = 300, echo = FALSE, warning = FALSE, fig.align = 'cen
 
 .pull-left45[
 <br><br><br><br><br>
-#  Hallo Statistiker!
+#  Hallo Reporter!
 
 In 2 days, 8 sessions, and 16 hours you have come a long way.
 
@@ -66,194 +66,8 @@ In 2 days, 8 sessions, and 16 hours you have come a long way.
 
 .pull-right4[
 
-<img src="https://therbootcamp.github.io/SmR_2020Mai/_sessions/Welcome/image/schedule.png" height="580" align="center">
+<img src="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Welcome/image/schedule.png" height="580" align="center">
 ]
-
----
-
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:50px" width=90%>
-  <col width="42%">
-  <col width="5%">
-  <col width="42%">
-  <tr>
-  <td bgcolor="white" align="center">
-    <img src="image/box_fit.png" height = 300px style="border-radius:50px"><br>
-    <font style="font-size:10px"> from <a href="https://anomaly.io/about/">nomaly.io</a>
-  </td>
-  <td bgcolor="white" align="center">
-  </td>
-  <td bgcolor="white" align="center">
-    <img src="image/tukey_fit.png" height = 300px style="border-radius:50px"><br>
-    <font style="font-size:10px"> from <a     href="https://artsandculture.google.com/entity/m025r9k">artsandculture.google.com</a>
-  </td>  
-</tr>
-
-<tr>
-  <td bgcolor="white" align="center" width="50%">
-     <br><font style="font-size:22px"><high>"All models are wrong, but some are useful."</high></font>
-  </td>
-  <td bgcolor="white" align="center">
-  </td>
-  <td bgcolor="white" align="center">
-     <br><font style="font-size:22px"><high>"An approximate answer to the right problem is worth a good deal more than an exact answer to an approximate problem."</high></font><br><br>
-    
-  </td>  
-</tr>
-
-<tr>
-  <td bgcolor="white" align="center">
-     <font style="font-size:22px">George E. P. Box</font><br>
-     <font style="font-size:14px">1919-2013</font>
-  </td>
-  <td>
-  </td>
-  <td bgcolor="white" align="center">
-    <font style="font-size:22px">John W. Tukey</font><br>
-     <font style="font-size:14px">1915-2000</font>
-  </td>  
-</tr>
-
-</table>
-
----
-
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:50px" width=90%>
-  <col width="42%">
-  <col width="5%">
-  <col width="42%">
-  <tr>
-  <td bgcolor="white" align="center">
-    <img src="image/fisher_fit.png" height = 300px style="border-radius:50px"><br>
-    <font style="font-size:10px"> from <a href="https://www.hamhigh.co.uk/news/heritage/">hamhigh.co.uk</a>
-  </td>
-  <td bgcolor="white" align="center">
-  </td>
-  <td bgcolor="white" align="center">
-    <img src="image/lang_fit.png" height = 300px style="border-radius:50px"><br>
-    <font style="font-size:10px"> from <a     href="https://en.wikiquote.org/wiki/Andrew_Lang ">wikiquote.org</a>
-  </td>  
-</tr>
-
-<tr>
-  <td bgcolor="white" align="center" width="50%">
-     <br><font style="font-size:22px"><high>"To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of."</high></font>
-  </td>
-  <td bgcolor="white" align="center">
-  </td>
-  <td bgcolor="white" align="center">
-     <br><font style="font-size:22px"><high>"[He] uses statistics like a drunken man uses a lamp post, more for support than illumination."</high></font><br><br>
-    
-  </td>  
-</tr>
-
-<tr>
-  <td bgcolor="white" align="center">
-     <font style="font-size:22px">Ronald A. Fisher</font><br>
-     <font style="font-size:14px">1890-1962</font>
-  </td>
-  <td>
-  </td>
-  <td bgcolor="white" align="center">
-    <font style="font-size:22px">Andrew Lang</font><br>
-     <font style="font-size:14px">1844-1912</font>
-  </td>  
-</tr>
-
-</table>
-
----
-
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:50px" width=90%>
-  <col width="42%">
-  <col width="5%">
-  <col width="42%">
-  <tr>
-  <td bgcolor="white" align="center">
-    <img src="image/wells_fit.png" height = 300px style="border-radius:50px"><br>
-    <font style="font-size:10px"> from <a href="https://www.independent.co.uk/arts-entertainment/">independent.co.uk</a>
-  </td>
-  <td bgcolor="white" align="center">
-  </td>
-  <td bgcolor="white" align="center">
-    <img src="image/mosteller_fit.png" height = 300px style="border-radius:50px"><br>
-    <font style="font-size:10px"> from <a href="https://www.americanscientist.org/">americanscientist.org</a>
-  </td>  
-</tr>
-
-<tr>
-  <td bgcolor="white" align="center" width="50%">
-     <br><font style="font-size:22px"><high>"Statistical thinking will one day be as necessary a qualification for efficient citizenship as the ability to read and write."</high></font>
-  </td>
-  <td bgcolor="white" align="center">
-  </td>
-  <td bgcolor="white" align="center">
-     <br><font style="font-size:22px"><high>"It's easy to lie with statistics; it is easier to lie without them."</high></font><br><br>
-    
-  </td>  
-</tr>
-
-<tr>
-  <td bgcolor="white" align="center">
-     <font style="font-size:22px">H. G. Wells</font><br>
-     <font style="font-size:14px">1866-1946</font>
-  </td>
-  <td>
-  </td>
-  <td bgcolor="white" align="center">
-    <font style="font-size:22px">C. Frederick Mosteller</font><br>
-     <font style="font-size:14px">1916-2006</font>
-  </td>  
-</tr>
-
-</table>
-
----
-
-<table style="cellspacing:0; cellpadding:0; border:none; padding-top:50px" width=90%>
-  <col width="42%">
-  <col width="5%">
-  <col width="42%">
-  <tr>
-  <td bgcolor="white" align="center">
-    <img src="image/good_fit.png" height = 300px style="border-radius:50px"><br>
-    <font style="font-size:10px"> from <a href="http://www.bigear.org/CSMO/HTML/CS06/cs06p13.htm">bigear.org</a>
-  </td>
-  <td bgcolor="white" align="center">
-  </td>
-  <td bgcolor="white" align="center">
-    <img src="image/rutherford_fit.png" height = 300px style="border-radius:50px"><br>
-    <font style="font-size:10px"> from <a href="https://de.wikipedia.org/wiki/Ernest_Rutherford">wikipedia.org</a>
-  </td>  
-</tr>
-
-<tr>
-  <td bgcolor="white" align="center" width="50%">
-     <br><font style="font-size:22px"><high>"The subjectivist (i.e. Bayesian) states his judgements, whereas the objectivist sweeps them under the carpet by calling assumptions knowledge, and he basks in the glorious objectivity of science."</high></font>
-  </td>
-  <td bgcolor="white" align="center">
-  </td>
-  <td bgcolor="white" align="center">
-     <br><font style="font-size:22px"><high>"If your experiment needs statistics, you ought to have done a better experiment."</high></font><br><br>
-    
-  </td>  
-</tr>
-
-<tr>
-  <td bgcolor="white" align="center">
-     <font style="font-size:22px">I. J. Good</font><br>
-     <font style="font-size:14px">1916-2009</font>
-  </td>
-  <td>
-  </td>
-  <td bgcolor="white" align="center">
-    <font style="font-size:22px">Ernest Rutherford</font><br>
-     <font style="font-size:14px">1871-1937</font>
-  </td>  
-</tr>
-</table>
 
 ---
 
@@ -280,7 +94,7 @@ In 2 days, 8 sessions, and 16 hours you have come a long way.
 
 # Bücher  
 
-Hier ist eine unvollständige Liste guter Bücher über R lose geordnet nach vorausgesetzter Erfahrung.<br><br>
+Eine unvollständige Liste nützlicher Bücher lose geordnet nach vorausgesetzter Erfahrung und Thematik.<br><br>
 
 <table width="80%" style="cellspacing:0; cellpadding:0; border:none;">
 
@@ -299,15 +113,15 @@ Hier ist eine unvollständige Liste guter Bücher über R lose geordnet nach vor
   </td>
 
   <td>
-  <a href="https://www.springer.com/de/book/9783540799979"><img border="0" alt="W3Schools" src="https://images.springer.com/sgw/books/medium/9783540799979.jpg" height="180" ></a>
+  <a href="https://bookdown.org/yihui/rmarkdown/"><img border="0" alt="W3Schools" src="https://bookdown.org/yihui/rmarkdown/images/cover.png" height="180" ></a>
   </td>
   
   <td>
-  <a href="https://bookdown.org/ndphillips/YaRrr/"><img border="0" alt="W3Schools" src="https://bookdown.org/ndphillips/YaRrr/images/YaRrr_Cover.jpg" height="180" ></a>
+  <a href="https://mastering-shiny.org/"><img border="0" alt="W3Schools" src="image/shiny.png" height="180" ></a>
   </td>
   
   <td>
-  <a href="https://www.orellfuessli.ch/shop/home/artikeldetails/ID35367941.html?ProvID=10917736&gclid=Cj0KCQiAg_HhBRDNARIsAGHLV5238Q26gQmFttHRnYGjcAhz4CslStb-3qBegvuZS5gnCpWSLNlQvF0aAgfOEALw_wcB"><img border="0" alt="W3Schools" src="https://assets.thalia.media/img/35367941-00-00.jpg" height="180" ></a>
+  <a href="https://uk.sagepub.com/en-gb/eur/discovering-statistics-using-r/book236067"><img border="0" alt="W3Schools" src="https://uk.sagepub.com/sites/default/files/upm-assets/styles/sage_thumbnail_width_150px/dotfeed/73998_book_item_73998.jpg" height="180" ></a>
   </td>
   
   </tr>
@@ -444,10 +258,10 @@ Das Netz ist vll. der beste Ort für Informationen über R.
   <td>
     <p align="center">
       <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
-      <font style="font-size:20px;weight:700"><br>Reporting mit R<br></font><br>
+      <font style="font-size:20px;weight:700"><br>Explorative Datenanalyse<br></font><br>
       <br>
-      <img src="https://therbootcamp.github.io/img/courses/4.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>Juni 5/6, 2020</high><br><br><br>
+      <img src="https://therbootcamp.github.io/img/courses/1.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
+      <high>September 4/5, 2020</high><br><br><br>
       </a>
     </p>
   </td>
@@ -455,10 +269,10 @@ Das Netz ist vll. der beste Ort für Informationen über R.
   <td>
     <p align="center">
       <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
-      <font style="font-size:20px;weight:700"><br>Explorative Datenanalyse<br></font><br>
+      <font style="font-size:20px;weight:700"><br>Statistik mit R<br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/2.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>September 4/5, 2020</high><br><br><br>
+      <high>September 25/26, 2020</high><br><br><br>
       </a>
     </p>
   </td>
@@ -468,11 +282,13 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
       <font style="font-size:20px;weight:700"><br>Machine Learning mit R<br></font><br>
       <br>
-      <img src="https://therbootcamp.github.io/img/courses/1.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>Okt 23/24, 2020</high><br><br><br>
+      <img src="https://therbootcamp.github.io/img/courses/3.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
+      <high>Oktober 23/24, 2020</high><br><br><br>
       </a>
     </p>
   </td>
+  
+
   
   </tr>
 
