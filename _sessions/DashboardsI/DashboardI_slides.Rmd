@@ -82,35 +82,10 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Typischerweise einzelseitige <high>Präsentation</high> von Resultaten.</span></li> 
-  <li class="m2"><span>Präsentation zusammengehöriger <high>Analysen</high>.</span></li>  
-  <li class="m3"><span>Geben einfache <high>Übersicht</high> über wichtigste <high>Parameter/KPIs</high> (Key Performance Indicators).</span></li>
-  <li class="m4"><span>Können <high>dynamisch</high> und <high>interaktiv</high> sein.</span></li>
+  <li class="m1"><span>Einzel- oder mehrseitige <high>Präsentation</high> von Resultaten.</span></li> 
+  <li class="m2"><span><high>Übersicht</high> über wichtige Ergebnisse oder <high>Parameter</high> (z.B., KPIs = Key Performance Indicators).</span></li>
+  <li class="m3"><span>Können <high>dynamisch</high> und <high>interaktiv</high> sein.</span></li>
 </ul>
-
-]
-
-.pull-right5[
-
-<p align = "center">
-  <img src="image/HR_dashboard.png" width=125%><br>
-  <font style="font-size:10px">from <a href="https://towardsdatascience.com/building-an-hr-dashboard-in-r-using-flexdashboard-76d14ed3f32">towardsdatascience.com</a></font>
-</p>
-
-]
-
----
-
-# Dashboards bieten ...
-
-.pull-left4[
-<ul>
-  <li class="m1"><span>Einfache Übersicht.</span></li>  
-  <li class="m2"><span>Performance Masse.</span></li>
-  <li class="m3"><span>Storyboards.</span></li>
-  <li class="m4"><span>Dynamik und Interaktivität.</span></li>
-</ul>
-
 
 ]
 
@@ -152,11 +127,13 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left4[
 <ul>
   <li class="m1"><span><high>Headers</high> bestimmen die Boxen und Seiten.</span></li>  
-  <li class="m2"><span>Standard: <high>eine Seite</high>; scrollable und mehrere Seiten
-  möglich.</span></li>
-  <li class="m3"><span>Standard: <high>spaltenweise</high>; zeilenweise möglich.</span></li>
-  <li class="m4"><span>Standard: <high>eine Spalte</high>; mehrere möglich.</span></li>
-  <li class="m5"><span><high>Tabs</high> möglich.</span></li>
+  <li class="m2"><span>Standard</span></li>
+    <ul>
+    <li><span><high>eine Seite</high> (scrollable und mehrere Seiten
+  möglich).</span></li>
+    <li><span><high>eine Spalte</high> (mehrere möglich, auch zeilenweise).</span></li>
+  </ul>
+  <li class="m3"><span><high>Tabs</high> möglich.</span></li>
 </ul>
 
 
@@ -172,12 +149,12 @@ basel <- read.csv("1_Data/basel.csv")
 
 ---
 
-# Layout - Seiten
+# Seiten
 
 .pull-left4[
-<ul>
-  <li class="m1"><span><high>Seiten</high> werden mit Titel <high>erster Ordnung</high> definiert.</span></li> 
-  <li class="m2"><span>Konvention: Statt <highm>#</highm> wird <highm>=====</highm> verwendet.</span></li> 
+<ul style="padding-bottom:10px">
+  <li class="m1"><span>Seiten werden mit <high>Titel erster Ordnung</high> definiert.</span></li> 
+  <li class="m2"><span>Statt <mono>#</mono> wird <highm>=====</highm> verwendet um Bereiche zu definieren.</span></li> 
 
 </ul>
 
@@ -202,14 +179,15 @@ Seite 2
 
 ---
 
-# Layout - Spalten/ Zeilen
+# Spalten
 
 .pull-left4[
-<ul>
-  <li class="m1"><span><high>Spalten/Zeilen</high> werden mit Titel <high>zweiter Ordnung</high> definiert.</span></li> 
-  <li class="m2"><span>Konvention: Statt <highm>##</highm> wird <highm>----</highm> verwendet.</span></li> 
+<ul style="padding-bottom:10px">
+  <li class="m1"><span>Spalten/Zeilen werden mit <high>Titel zweiter Ordnung</high> definiert.</span></li> 
+  <li class="m2"><span>Statt <mono>##</mono> wird <highm>----</highm> verwendet.</span></li> 
 
 </ul>
+
 
 ````markdown
 Seite 1
@@ -236,14 +214,14 @@ Spalte 2
 
 ---
 
-# Layout - Spalten/ Zeilen
+# Blöcke
 
 .pull-left4[
-<ul>
-  <li class="m1"><span><high>Spalten/Zeilen</high> werden mit Titel <high>dritter Ordnung</high> weiter unterteilt.</span></li> 
-  <li class="m2"><span>Konvention: Hier wird ganz normal <highm>###</highm> verwendet.</span></li> 
-
+<ul style="padding-bottom:10px">
+  <li class="m1"><span>Mit Titel <high>dritter Ordnung</high> werden die Spalten (Zeilen) mit Blöcken gefüllt.</span></li> 
+  <li class="m2"><span>Blöcke werden mit <highm>###</highm> verwendet.</span></li> 
 </ul>
+
 
 ````markdown
 Seite 1
@@ -276,11 +254,11 @@ Spalte 2
 
 ---
 
-# Layout - Spalten/ Zeilen
+# Spaltenbreite
 
 .pull-left4[
-<ul>
-  <li class="m1"><span>Spaltenbreite/Zeilenhöhe kann mit <highm>{data-width = XXX}</highm> und <highm>{data-height = XXX}</highm> angepasst werden.</span></li> 
+<ul style="padding-bottom:4px">
+  <li class="m1"><span>Spaltenbreite (Zeilenhöhe) wird über <highm>Titel {data-width}</highm> definiert.</span></li> 
 
 </ul>
 
@@ -317,13 +295,13 @@ Spalte 2
 
 ---
 
-# Layout - Storyboard
+# Storyboard
 
 .pull-left4[
-<ul>
-  <li class="m1"><span>Mit <highm>{.storyboard}</highm> wird eine Seite als Storyboard definiert</span></li>
-  <li class="m2"><span>In Storyboards sind keine Titel zweiter Ordnung nötig.</span></li> 
-  <li class="m3"><span>Mit <highm>***</highm> wird eine Kommentarspalte definiert.</span></li> 
+<ul style="padding-bottom:6px">
+  <li class="m1"><span>Mit <highm>Titel {.storyboard}</highm> wird eine Seite als Storyboard definiert.</span></li>
+  <li class="m2"><span>Titel zweiter Ordnung nötig.</span></li> 
+  <li class="m3"><span><highm>***</highm> ergänzt eine Kommentarspalte.</span></li> 
 
 </ul>
 
@@ -385,8 +363,8 @@ Kommentar
 
 .pull-left5[
 
-<ul>
-  <li class="m1"><span>Zeige <high>wichtige Werte.</high></span></li>  
+<ul style="padding-bottom:10px">
+  <li class="m1"><span>Zur Hervorhebung <high>wichtiger Werte.</high></span></li>  
   <li class="m2"><span>Grosse Auswahl an Icons:</span></li>
   <ul class="level">
     <li><span><a href="https://fontawesome.com/">Font Awesome</a> Icons mit <mono>"fa-NAME"</mono>.</li></span>
@@ -397,6 +375,7 @@ Kommentar
 
 ```{r eval = FALSE, echo =TRUE}
 
+# Ergänze valueBox
 valueBox(WERT,
          caption = "TITEL",
          icon = "ICON",
@@ -423,13 +402,13 @@ valueBox(WERT,
 
 .pull-left5[
 
-<ul>
+<ul style="padding-bottom:10px">
   <li class="m1"><span>Zeige wichtige Werte in <high>Relation</high> zur Skala.</span></li>  
-  <li class="m2"><span><high>Balkenfarbe</high> kann nach Werten variieren.</span></li>
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
 
+# Ergänze gauge
 gauge(WERT, min = MIN, max = MAX,
       gaugeSectors(
         success = c(MIN_S, MAX),
@@ -438,7 +417,6 @@ gauge(WERT, min = MIN, max = MAX,
       ))
 
 ```
-
 
 ]
 
@@ -457,13 +435,13 @@ gauge(WERT, min = MIN, max = MAX,
 
 .pull-left5[
 
-<ul>
+<ul style="padding-bottom:10px">
   <li class="m1"><span>Zeige wichtige Werte in <high>Relation</high> zur Skala.</span></li>  
-  <li class="m2"><span><high>Balkenfarbe</high> kann nach Werten variieren.</span></li>
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
 
+# Ergänze gauge
 gauge(round(mean(basel$glueck), 2),
       min = 1, max = 10,
       gaugeSectors(
@@ -488,11 +466,11 @@ gauge(round(mean(basel$glueck), 2),
 
 ---
 
-# htmlwidgets - <mono>leaflet</mono>
+# htmlwidgets: <mono>leaflet</mono>
 
 .pull-left45[
 
-<ul>
+<ul style="padding-bottom:10px">
   <li class="m1"><span><high>Interface</high> zu JS library.</span></li>  
   <li class="m2"><span>Einfaches Erstellen <high>interaktiver Karten</high>.</span></li>
 </ul>
@@ -526,13 +504,12 @@ leaflet() %>%
 
 ---
 
-# htmlwidgets - <mono>leaflet</mono>
+# htmlwidgets: <mono>leaflet</mono>
 
 .pull-left45[
 
-<ul>
-  <li class="m1"><span><high>Interface</high> zu JS library.</span></li>  
-  <li class="m2"><span>Einfaches Erstellen <high>interaktiver Karten</high>.</span></li>
+<ul style="padding-bottom:10px">
+  <li class="m1"><span>Interface zur <mono>leaflet</mono> JS library zum Erstellen <high>interaktiver Karten</high>.</span></li>  
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
@@ -574,13 +551,12 @@ leaflet() %>%
 
 ---
 
-# htmlwidgets - <mono>leaflet</mono>
+# htmlwidgets: <mono>leaflet</mono>
 
 .pull-left45[
 
-<ul>
-  <li class="m1"><span><high>Interface</high> zu JS library.</span></li>  
-  <li class="m2"><span>Einfaches Erstellen <high>interaktiver Karten</high>.</span></li>
+<ul style="padding-bottom:10px">
+  <li class="m1"><span>Interface zur <mono>leaflet</mono> JS library zum Erstellen <high>interaktiver Karten</high>.</span></li>  
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
@@ -631,9 +607,9 @@ leaflet() %>%
 
 .pull-left45[
 
-<ul>
-  <li class="m1"><span><high>Interface</high> zu JS library.</span></li>  
-  <li class="m2"><span>Einfaches Erstellen <high>interaktiver Plots</high>, vor allem aus <mono>ggplot2</mono> Objekten.</span></li>
+<ul style="padding-bottom:10px">
+  <li class="m1"><span>Interface zur <mono>plotly</mono> JS library zum Erstellen <high>interaktiver Plots</high>.</span></li>  
+  <li class="m2"><span>Kann <highm>ggplot2</highm> Objekten verarbeiten.</span></li>
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
