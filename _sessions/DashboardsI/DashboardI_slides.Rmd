@@ -132,7 +132,7 @@ basel <- read.csv("1_Data/basel.csv")
     <li><span><high>eine Seite</high> (scrollable und mehrere Seiten
   möglich).</span></li>
     <li><span><high>eine Spalte</high> (mehrere möglich, auch zeilenweise).</span></li>
-  </ul>
+  </ul><br>
   <li class="m3"><span><high>Tabs</high> möglich.</span></li>
 </ul>
 
