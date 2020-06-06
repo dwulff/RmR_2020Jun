@@ -125,14 +125,14 @@ layout: true
 ---
 
 
-# Anatomie einer &lt;mono&gt;shiny&lt;/mono&gt; App
+# &lt;mono&gt;shiny&lt;/mono&gt; App
 
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Zwei Teile: &lt;high&gt;UI&lt;/high&gt; und &lt;high&gt;server&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;Der UI-Teil beinhaltet die angezeigte &lt;high&gt;Webseite&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;Der Server-Teil ist für die &lt;high&gt;Umsetzung des Inputs&lt;/high&gt; verantwortlich.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Eine shiny App besteht aus &lt;high&gt;zwei Teilen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;Das &lt;high&gt;UI&lt;/high&gt; (user interface) gestaltet die angezeigte Webseite.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Der &lt;high&gt;Server&lt;/high&gt;-Teil verarbeitet den Input durch den Nutzer.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -140,8 +140,7 @@ layout: true
 .pull-right5[
 
 &lt;p align = "center"&gt;
-  &lt;img src="image/what_is_shiny.png" &gt;&lt;br&gt;
-  &lt;font style="font-size:10px"&gt;from &lt;a href="http://juliawrobel.com/tutorials/shiny_tutorial_nba.html"&gt;juliawrobel.com&lt;/a&gt;&lt;/font&gt;
+  &lt;img src="image/anatomy.png" height=340px&gt;
 &lt;/p&gt;
 
 
@@ -149,23 +148,21 @@ layout: true
 
 ---
 
-# Benutzer Eingaben
-
 .pull-left4[
 
+# Interfaces
+
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Eingaben über &lt;high&gt;widgets&lt;/high&gt;:&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Die Interaktion mit der App erfolgt über &lt;high&gt;Widgets&lt;/high&gt;, z.B.:&lt;/span&gt;&lt;/li&gt; 
     &lt;ul class="level"&gt;
-      &lt;li&gt;&lt;span&gt;Slider.&lt;/li&gt;&lt;/span&gt;
-      &lt;li&gt;&lt;span&gt;Checkboxen.&lt;/li&gt;&lt;/span&gt;
-      &lt;li&gt;&lt;span&gt;Dropdown Menus.&lt;/li&gt;&lt;/span&gt;
-      &lt;li&gt;&lt;span&gt;...&lt;/li&gt;&lt;/span&gt;
-    &lt;/ul&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Eingabewerte werden in &lt;highm&gt;input&lt;/highm&gt; gespeichert.&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span&gt;Slider&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Checkboxen&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Dropdown Menus&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Widget-Eingaben werden server in einem &lt;highm&gt;input-R-Object&lt;/highm&gt; an den Server-Code weitergegeben.&lt;/span&gt;&lt;/li&gt;
     &lt;ul class="level"&gt;
-      &lt;li&gt;&lt;span&gt;Werte werden bei neuer Eingabe &lt;high&gt;upgedatet&lt;/high&gt;.&lt;/li&gt;&lt;/span&gt;
-      &lt;li&gt;&lt;span&gt;Werte werden mit &lt;highm&gt;input$INPUT_ID&lt;/highm&gt; angesteuert.&lt;/li&gt;&lt;/span&gt;
-      &lt;li&gt;&lt;span&gt;Eingaben kontrollieren auf der &lt;high&gt;Serverseite&lt;/high&gt; ausgeführte Aktionen.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;&lt;mono&gt;input&lt;/mono&gt; ist eine &lt;highm&gt;Liste&lt;/highm&gt; mit einem Element pro Widget. &lt;/li&gt;&lt;/span&gt;
+      &lt;li style="padding-top:10px"&gt;&lt;span&gt;Neue Eingabe = &lt;high&gt;Update&lt;/high&gt; von &lt;mono&gt;input&lt;/mono&gt;.&lt;/li&gt;&lt;/span&gt;
     &lt;/ul&gt;
 &lt;/ul&gt;
 
@@ -173,49 +170,103 @@ layout: true
 
 .pull-right5[
 
-&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
 &lt;p align = "center"&gt;
-  &lt;img src="image/shiny-inputs.png" &gt;&lt;br&gt;
-  &lt;font style="font-size:10px"&gt;from &lt;a href="https://deanattali.com/blog/building-shiny-apps-tutorial/"&gt;deanattali.com&lt;/a&gt;&lt;/font&gt;
+  &lt;img src="image/shiny-inputs2.png" &gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;adapted from &lt;a href="https://deanattali.com/blog/building-shiny-apps-tutorial/"&gt;deanattali.com&lt;/a&gt;&lt;/font&gt;
 &lt;/p&gt;
 
 
 ]
 
 ---
+
+.pull-left4[
+
+# &lt;mono&gt;input&lt;/mono&gt;
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die Interaktion mit der App erfolgt über &lt;high&gt;Widgets&lt;/high&gt;, z.B.:&lt;/span&gt;&lt;/li&gt; 
+    &lt;ul class="level"&gt;
+      &lt;li&gt;&lt;span&gt;Slider&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Checkboxen&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Dropdown Menus&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Widget-Eingaben werden server in einem &lt;highm&gt;input-R-Object&lt;/highm&gt; an den Server-Code weitergegeben.&lt;/span&gt;&lt;/li&gt;
+    &lt;ul class="level"&gt;
+      &lt;li&gt;&lt;span&gt;&lt;mono&gt;input&lt;/mono&gt; ist eine &lt;highm&gt;Liste&lt;/highm&gt; mit einem Element pro Widget. &lt;/li&gt;&lt;/span&gt;
+      &lt;li style="padding-top:10px"&gt;&lt;span&gt;Neue Eingabe = &lt;high&gt;Update&lt;/high&gt; von &lt;mono&gt;input&lt;/mono&gt;.&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/input_1.png" height="400px"&gt;&lt;br&gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+.pull-left4[
 
 # Reaktivität
 
-.pull-left4[
-
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Reaktive Objekte&lt;/high&gt; werden permanent getrackt.&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;Objekte verändern sich, wenn sich die &lt;high&gt;Eingabe verändert&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;input&lt;/mono&gt; kann nur in &lt;high&gt;reaktiver Umwelt&lt;/high&gt; gelesen werden.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m4"&gt;&lt;span&gt;Jeder &lt;high&gt;Codeblock&lt;/high&gt;, in dem die Objekte verwendet werden, wird erneut &lt;high&gt;ausgeführt&lt;/high&gt; wenn es eine Eingabe gibt.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m5"&gt;&lt;span&gt;Werden, wie eine &lt;high&gt;Funktion&lt;/high&gt;, mit &lt;high&gt;Klammern angesteuert&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;input&lt;/mono&gt; kann nur in &lt;high&gt;reaktiver Umwelt&lt;/high&gt; gelesen werden (z.B., &lt;mono&gt;rende*&lt;/mono&gt;).&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Reaktive Umwelten bzw. &lt;high&gt;reaktive Objekte&lt;/high&gt; (eigentlich eine Funktion) können mit &lt;mono&gt;reactive()&lt;/mono&gt; gesetzt werden.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m3"&gt;&lt;span&gt;Jeder &lt;high&gt;Codeblock&lt;/high&gt;, in dem reaktive Objekte verwendet werden, wird erneut ausgeführt wenn es eine Eingabe gibt.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-
 
 ]
 
 .pull-right5[
 
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;p align = "center"&gt;
-  &lt;img src="image/input_output.png" &gt;&lt;br&gt;
-  &lt;font style="font-size:10px"&gt;from &lt;a href="https://cyberhelp.sesync.org/basic-Shiny-lesson/2016/07/26/"&gt;cyberhelp.sesync.org&lt;/a&gt;&lt;/font&gt;
+  &lt;img src="image/input_2.png" height="400px"&gt;&lt;br&gt;
 &lt;/p&gt;
+
 
 
 ]
 
 ---
 
+.pull-left4[
 
-# &lt;highm&gt;renderXXX()&lt;/highm&gt; Funktionen
+# Reaktivität
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;input&lt;/mono&gt; kann nur in &lt;high&gt;reaktiver Umwelt&lt;/high&gt; gelesen werden (z.B., &lt;mono&gt;rende*&lt;/mono&gt;).&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Reaktive Umwelten bzw. &lt;high&gt;reaktive Objekte&lt;/high&gt; (eigentlich eine Funktion) können mit &lt;mono&gt;reactive()&lt;/mono&gt; gesetzt werden.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m3"&gt;&lt;span&gt;Jeder &lt;high&gt;Codeblock&lt;/high&gt;, in dem reaktive Objekte verwendet werden, wird erneut ausgeführt wenn es eine Eingabe gibt.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/input_3.png" height="400px"&gt;&lt;br&gt;
+&lt;/p&gt;
+
+
+
+]
+
+
+---
 
 .pull-left4[
+
+# &lt;mono&gt;render*()&lt;/mono&gt;
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Um Veränderungen durch &lt;high&gt;reaktive Objekte&lt;/high&gt; zu ermöglichen, müssen die entsprechenden Outputs mit speziellen Funktionen &lt;high&gt;gerendert&lt;/high&gt; werden.&lt;/span&gt;&lt;/li&gt;  
@@ -234,9 +285,9 @@ layout: true
 
 .pull-right5[
 
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;p align = "center"&gt;
-  &lt;img src="image/input_output.png" &gt;&lt;br&gt;
-  &lt;font style="font-size:10px"&gt;from &lt;a href="https://cyberhelp.sesync.org/basic-Shiny-lesson/2016/07/26/"&gt;cyberhelp.sesync.org&lt;/a&gt;&lt;/font&gt;
+  &lt;img src="image/input_3.png" height="400px"&gt;&lt;br&gt;
 &lt;/p&gt;
 
 
@@ -245,13 +296,13 @@ layout: true
 ---
 
 
-# Verwende &lt;highm&gt;FUNKTION({...})&lt;/highm&gt;
+# &lt;mono&gt;{...}&lt;/mono&gt;
 
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Verwende &lt;highm&gt;{}&lt;/highm&gt; um mehrere &lt;high&gt;unabhängige&lt;/high&gt; Statements in einer &lt;mono&gt;reactive()&lt;/mono&gt; oder &lt;mono&gt;renderXXX()&lt;/mono&gt; Funktion.&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;Statements in &lt;highm&gt;{}&lt;/highm&gt; werden als &lt;high&gt;Block&lt;/high&gt; ausgeführt und nur das &lt;high&gt;letzte Statement&lt;/high&gt; wird zurückgegeben (kreierte Objekte werden aber gespeichert).&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m1"&gt;&lt;span&gt;Mit geschweiften Klammern &lt;mono&gt;{}&lt;/mono&gt; können mehrere Zeilen Code als zusammenhängender &lt;high&gt;Code Block&lt;/high&gt; definiert werden.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;Verwende &lt;mono&gt;{}&lt;/mono&gt; innerhalb &lt;mono&gt;reactive()&lt;/mono&gt; und &lt;mono&gt;render*()&lt;/mono&gt; Funktionen.&lt;/span&gt;&lt;/li&gt;  
 &lt;/ul&gt;
 
 
@@ -263,21 +314,7 @@ layout: true
 
 
 ```r
-# Beispiel mehrere Statements in renderPlot()
-renderPlot({
-  n_colors &lt;- length(unique(basel$bildung))
-  farben &lt;- viridis(n_colors)
-  
-  ggplot(...) +
-    geom_point() +
-    scale_color_manual(values = farben)
-  
-})
-```
-
-
-
-```r
+# Beispiel Code Block
 {
   a &lt;- 1
   a
@@ -290,24 +327,38 @@ renderPlot({
 ```
 
 
+
+```r
+# Code Block in renderPlot()
+renderPlot({
+  n_colors &lt;- length(unique(basel$bildung))
+  farben &lt;- viridis(n_colors)
+  ggplot(...) +
+    geom_point() +
+    scale_color_manual(values = farben)
+  })
+```
+
+
 ]
 
 ---
 
+.pull-left4[
 
 # Beispiel
-
-.pull-left4[
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Input definiert &lt;high&gt;Merkmal&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt; 
   &lt;li class="m2"&gt;&lt;span&gt;Reaktiver Datensatz, &lt;high&gt;gefiltert&lt;/high&gt; nach Input.&lt;/span&gt;&lt;/li&gt; 
-  &lt;li class="m3"&gt;&lt;span&gt;Verwendung des reaktiven Datensatzes in &lt;high&gt;Plot&lt;/high&gt;&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m3"&gt;&lt;span&gt;Verwendung des reaktiven Datensatzes in zwei verschiedenen &lt;high&gt;Plots&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt; 
 &lt;/ul&gt;
 
 ]
 
 .pull-right5[
+
+&lt;br&gt;&lt;br&gt;
 
 
 ```r
@@ -318,7 +369,7 @@ checkboxGroupInput("MERKMAL", "TITEL", ...)
 DATEN_REAKTIV &lt;- reactive({
   DATEN %&gt;% 
     filter(VARIABLE %in% input$MERKMAL)
-})
+  })
 
 # Verwende Reaktive Daten mit Klammern
 # Plot 1
@@ -326,14 +377,14 @@ renderPlot({
   DATEN_REAKTIV() %&gt;% 
     ggplot(aes(...)) +
     geom_point()
-})
+  })
 
 # Plot 2
 renderPlot({
   DATEN_REAKTIV() %&gt;% 
     ggplot(aes(...)) +
     geom_histogram()
-})
+  })
 ```
 
 
@@ -341,25 +392,25 @@ renderPlot({
 
 ---
 
-# &lt;mono&gt;shiny&lt;/mono&gt;-Apps - Verschiedene Ansätze
+# Ansätze
 
 .pull-left4[
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;shiny&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;  
     &lt;ul class="level"&gt;
-      &lt;li&gt;&lt;span&gt;Pro: Volle Flexibilität.&lt;/li&gt;&lt;/span&gt;
-      &lt;li&gt;&lt;span&gt;Contra: Hohe Komplexität.&lt;/li&gt;&lt;/span&gt;
-    &lt;/ul&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;shinydasboard&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span&gt;&lt;b&gt;Pro&lt;/b&gt;: Volle Flexibilität.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;&lt;b&gt;Contra&lt;/b&gt;: Hohe Komplexität.&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;shinydashboard&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
     &lt;ul class="level"&gt;
-      &lt;li&gt;&lt;span&gt;Pro: Niedrigere Komplexität.&lt;/li&gt;&lt;/span&gt;
-      &lt;li&gt;&lt;span&gt;Contra: Weniger Flexibilität.&lt;/li&gt;&lt;/span&gt;
-    &lt;/ul&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;flexdashboard&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span&gt;&lt;b&gt;Pro&lt;/b&gt;: Niedrigere Komplexität.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;&lt;b&gt;Contra&lt;/b&gt;: Weniger Flexibilität.&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;flexdashboard&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
     &lt;ul class="level"&gt;
-      &lt;li&gt;&lt;span&gt;Pro: Sehr einfach, da Ausbau von Markdown.&lt;/li&gt;&lt;/span&gt;
-      &lt;li&gt;&lt;span&gt;Contra: Niedrige Flexibilität.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;&lt;b&gt;Pro&lt;/b&gt;: Sehr einfach, da Ausbau von Markdown.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;&lt;b&gt;Contra&lt;/b&gt;: Niedrige Flexibilität.&lt;/li&gt;&lt;/span&gt;
     &lt;/ul&gt;
 &lt;/ul&gt;
 
