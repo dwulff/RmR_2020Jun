@@ -300,7 +300,7 @@ Spalte 2
 .pull-left4[
 <ul style="padding-bottom:6px">
   <li class="m1"><span>Mit <highm>Titel {.storyboard}</highm> wird eine Seite als Storyboard definiert.</span></li>
-  <li class="m2"><span>Titel zweiter Ordnung nötig.</span></li> 
+  <li class="m2"><span>Keine Titel zweiter Ordnung nötig.</span></li> 
   <li class="m3"><span><highm>***</highm> ergänzt eine Kommentarspalte.</span></li> 
 
 </ul>
@@ -471,8 +471,7 @@ gauge(round(mean(basel$glueck), 2),
 .pull-left45[
 
 <ul style="padding-bottom:10px">
-  <li class="m1"><span><high>Interface</high> zu JS library.</span></li>  
-  <li class="m2"><span>Einfaches Erstellen <high>interaktiver Karten</high>.</span></li>
+  <li class="m1"><span>Interface zur <mono>leaflet</mono> JS library zum Erstellen <high>interaktiver Karten</high>.</span></li>  
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
@@ -603,7 +602,7 @@ leaflet() %>%
 
 ---
 
-# htmlwidgets - <mono>plotly</mono>
+# htmlwidgets: <mono>plotly</mono>
 
 .pull-left45[
 
@@ -628,10 +627,9 @@ ggplotly(p)
 
 .pull-right45[
 
-<div align = "center">
 
-```{r fig.width = 1.75, fig.height = 1.5}
-p <- ggplot(basel,
+```{r fig.width = 1.75, fig.height = 1.5, fig.align="center"}
+p <- ggplot(basel %>% slice(1:1000),
             aes(alter, arztbesuche,
                 col = geschlecht)) + 
   geom_point(alpha = .2) +
@@ -640,7 +638,7 @@ p <- ggplot(basel,
   
 ggplotly(p)
 ```
-</div>
+
 ]
 
 
