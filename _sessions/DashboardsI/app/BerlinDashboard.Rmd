@@ -112,7 +112,7 @@ Spalte 1
 
 ### Entwicklung der Berliner Airbnbs seit 2009
 
-```{r fig.width=12, fig.height=7}
+```{r}
 
 ### Plot zum Verlauf über die Zeit
 
@@ -163,7 +163,7 @@ ggplotly(Verlauf)
 
 ```
 
-Spalte 2 {data-width = 200}
+Spalte 2 {data-width=300}
 ----------------------------------------------------------------------
 
 ### Hintergründe
