@@ -85,7 +85,7 @@ Am Ende des Practicals kann du:
 
 ### B - YAML
 
-1. Entferne die `author:` und `date:` Angaben aus dem YAML header
+1. Entferne die `author:` und `date:` Angaben aus dem YAML header (sofern diese vorliegen). 
 
 2. Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter `title: Berlin`, in einer neuen Zeile, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?
 
@@ -105,7 +105,7 @@ logo: ../2_Assets/airbnb.png
 css: ../2_Assets/airbnb_presentation.css
 ```
 
-5. Achte auf die korrekten Einrückungen! Der YAML Header sollte so aussehen:
+5. Achte darafu, dass die Einrückungen korrekt sind. Der YAML Header sollte so aussehen:
 
 ```R
 ---
@@ -118,13 +118,11 @@ output:
 ---
 ```
 
-5. Knitte das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide mit rotem AirBnB Logo angezeigt werden. 
+5. Knitte das Dokument. Es sollte ein in den AirBnB Farben gestalteter Titelslide mit rotem AirBnB Logo angezeigt werden. 
 
 ### C - Setup chunk
 
-Nun wirst du im `Setup` Chunk die notwendigen Pakete laden, Daten laden und verschiedenen Einstellungen vornehmen.
-
-1. Lade die Pakete `tidyverse`, `lubridate`, `sjPlot`, `knitr` und `kableExtra`
+1. Lade im `setup` Chunk die notwendigen Pakete `tidyverse`, `lubridate`, `sjPlot`, `knitr` und `kableExtra`.
 
 2. Inkludiere im Setup-Chunk den folgenden Code um die AirBnB Daten zu laden und auf den Zeitraum 2018-2019 zu limitieren.
 

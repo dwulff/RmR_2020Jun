@@ -4,14 +4,15 @@ subtitle: "Bericht 18/19"
 output: 
   ioslides_presentation:
     logo: 2_Assets/airbnb.png
-    css: 2_Assets/airbnb_presentation.css    
+    css: 2_Assets/airbnb_presentation.css 
 ---
 
 
 # Neuer Abschnitt
 ## Neue Folie | Untertitel 
 
-<iframe src=https://www.youtube.com/embed/s9aWmU0atlQ?rel=0"/ style="height:400px">
+- Bullet 1
+- Bullet 2
 
 
 ```{r setup, include=FALSE}
