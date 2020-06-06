@@ -338,12 +338,18 @@ Kommentar
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Grafiken.</span></li>  
-  <li class="m2"><span>Tabellen.</span></li>
-  <li class="m3"><span><a href="http://stephanieevergreen.com/problem-with-dashboards/">Text</a>.</span></li>
-  <li class="m4"><span><mono>valueBoxe</mono>s.</span></li>
-  <li class="m5"><span><mono>gauge</mono>s.</span></li>
-  <li class="m6"><span>htmlwidgets.</span></li>
+  <li class="m1"><span>Bekannte Elemente</span></li>
+  <ul>
+  <li><span>Grafiken</span></li>  
+  <li><span>Tabellen</span></li>
+  <li><span><a href="http://stephanieevergreen.com/problem-with-dashboards/">Text</a></span></li>
+  </ul><br>
+  <li class="m2"><span>Neue Elemente</span></li>
+  <ul>
+  <li><span><mono>valueBoxe</mono>s</span></li>
+  <li><span><mono>gauge</mono>s</span></li>
+  <li><span><mono>htmlwidgets</mono></span></li>
+  </ul>
 </ul>
 
 
