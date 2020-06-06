@@ -201,7 +201,7 @@ summary {
 <h1></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
-<p>In diesem Practical wirst du das Dashboard der letzten Aufgabe weiter ausbauen und interaktiver und dynamischer gestalten. Am Ende wirst du <a href="https://therbootcamp.shinyapps.io/berlindashboard2/">dieses</a> Dashboard erstellen.</p>
+<p>In diesem Practical wirst du das Dashboard der letzten Aufgabe weiter ausbauen, interaktiver und dynamischer gestalten. Am Ende wirst du <a href="https://therbootcamp.shinyapps.io/berlindashboard2/">dieses</a> Dashboard erstellen.</p>
 <p>Am Ende des Practicals wirst du wissen wie man:</p>
 <ol style="list-style-type: decimal">
 <li>In leaflet Popupfenster einfügt</li>
@@ -214,51 +214,50 @@ summary {
 <div id="a---setup" class="section level3">
 <h3>A - Setup</h3>
 <ol style="list-style-type: decimal">
-<li><p>Öffne dein <code>TheRBootcamp</code> R project. Es sollte die Ordner <code>1_Data</code> und <code>3_Markdown</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelisted sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
-<li><p>Lade <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/app/BerlinDashboard.Rmd">dieses</a> Markdown Skript herunter und speichere es in deinen <code>3_Markdown</code> Ordner.</p></li>
-<li><p>Öffne das eben heruntergeladene Markdown file. Es enthält das fertige Dashboard der vorherigen Aufgabe. Wir werden hier mit diesem File weiterarbeiten, um sicherzustellen, dass alle auf dem gleichen Stand sind. Wenn du möchtest, kannst du natürlich auch mit deinem zuvor erstellten File weiterarbeiten; allerdings auf eigene Gefahr… :-)</p></li>
+<li><p>Öffne dein <code>TheRBootcamp</code> R project. Es sollte die Ordner <code>1_Data</code>, <code>2_Assets</code> und <code>3_Markdown</code> enthalten.</p></li>
+<li><p>Lade <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards1/app/BerlinDashboard.Rmd">dieses</a> Markdown Skript herunter und speichere es in deinen <code>3_Markdown</code> Ordner.</p></li>
+<li><p>Öffne das eben heruntergeladene Markdown file. Es enthält das fertige Dashboard der vorherigen Aufgabe. Wir werden hier mit diesem File weiterarbeiten, um sicherzustellen, dass alle auf dem gleichen Stand sind. Wenn du möchtest, kannst du natürlich auch mit deinem zuvor erstellten File weiterarbeiten.</p></li>
 </ol>
 </div>
 <div id="b---shiny" class="section level3">
 <h3>B - <code>shiny</code></h3>
 <ol style="list-style-type: decimal">
-<li><p>Wir wandeln das Markdown Dokument als erstes direkt in eine <code>shiny</code> App um. Füge dazu <code>runtime: shiny</code> im YAML Code, direkt unter <code>social: ["twitter", "facebook"]</code> hinzu und speichere.</p></li>
-<li><p>So, dieser Schritt hat bereits dein Dokument umgewandelt. Dein “Knit” Button wurde jetzt automatisch in einen “Run-Document” Button umgewandelt. Das heisst, dass ab jetzt kein stand-alone HTML-Dokument erstellt wird, sondern beim Rendern eine App geöffnet wird, die eure R-Session als Server verwendet.</p></li>
-<li><p>Im allerersten R chunk deines Dokuments, ändere das <code>setup</code> in der chunk Definition um in <code>global</code>. Damit wird aller Code, der in diesem chunk enthalten ist, nur einmal am beim Aufstarten der App geladen, was deren Performanz verbessert.</p></li>
+<li><p>Wandle das Markdown Dokument direkt in eine <code>shiny</code> App um, indem du <code>runtime: shiny</code> im YAML Header, direkt unter <code>social: ["twitter", "facebook"]</code> einfügst und speicherst. Ab jetzt wird beim Rendern eine App geöffnet, die deine R-Session als Server verwendet.</p></li>
+<li><p>Im ersten R Chunk deines Dokuments, ändere das <code>setup</code> in der Chunk Definition in <code>global</code>. Damit wird dein Code, der in diesem Chunk enthalten ist, nur einmal beim Starten der App geladen und so die Performanz verbessert.</p></li>
 <li><p>Ist die App jetzt bereits dynamisch und reaktiv?</p></li>
-<li><p>Nein, wir müssen zuerst Inputs definieren. Dazu verwenden wir eine Sidebar, indem alle User Inputs gemacht werden. Füge dazu noch vor dem Titel der ersten Seite (also vor <code>Übersicht der Airbnbs in Berlin {data-orientation=rows}</code>) eine neue Seite ein und nenne diese <code>Inputs</code> (erinnere, dass man Seiten mit einem Titel und einer Zeile Gleichheitszeichen definiert).</p></li>
+<li><p>Nein, du musst zuerst Inputs definieren. Dazu verwende die Sidebar, in der alle User Inputs gemacht werden. Füge dazu vor dem Titel der ersten Seite (vor <code>Übersicht der Airbnbs in Berlin {data-orientation=rows}</code>) eine neue Seite ein und nenne diese <code>Inputs</code> (Seiten definiert man mit einem Titel und einer Zeile Gleichheitszeichen).</p></li>
 <li><p>Hinter das <code>Inputs</code> (aber auf derselben Zeile), schreibe <code>{.sidebar}</code>. Damit wird eine Sidebar definiert, die über alle drei Seiten der App fix auf der linken Seite bestehen bleibt.</p></li>
-<li><p>Zeit, die neu erstellte Sidebar zu füllen. Erstelle dazu unterhalb des <code>Inputs</code> Titels (also auch unterhalb der Gleichheitszeichen) einen neuen R chunk.</p></li>
-<li><p>In diesen Chunk füllen wir jetzt nach und nach vier Inputmöglichkeiten. Füge mit dem untenstehenden Code einen Slider ein. In das erste Argument wird die <code>inputID</code> spezifiziert, unter welcher der Input, also der mit dem Slider ausgewählte Wert, nachher ansteuerbar ist. Das zweite Argument spezifiziert das <code>label</code>, also den Titel des Sliders. Setze die <code>inputID</code> auf <code>"Schlafzimmer"</code>, und das <code>label</code> auf <code>"Minimum Anzahl Schlafzimmer"</code>. Die anderen Argumente spezifizieren Minimum, Maximum, und Standardwert.</p></li>
+<li><p>Nun wirst du die neue Sidebar füllen. Erstelle dazu unterhalb des <code>Inputs</code> Titels (also auch unterhalb der Gleichheitszeichen) einen neuen R Chunk.</p></li>
+<li><p>In diesen Chunk fülle jetzt nach und nach vier Inputmöglichkeiten. Füge mit dem untenstehenden Code einen Slider ein. Im erste Argument wird die <code>inputID</code> spezifiziert, unter welcher der Input, also der mit dem Slider ausgewählte Wert, später ansteuerbar ist. Das zweite Argument spezifiziert das <code>label</code>, also den Titel des Sliders. Setze die <code>inputID</code> auf <code>"Schlafzimmer"</code>, und das <code>label</code> auf <code>"Minimum Anzahl Schlafzimmer"</code>. Die anderen Argumente spezifizieren Minimum, Maximum, und Standardwert.</p></li>
 </ol>
 <pre class="r"><code># Auswahl Airbnbs über Schlafzimmer
 sliderInput(&quot;XXX&quot;, &quot;XXX&quot;, 
             min = 0, max = 12,
             value = 0)</code></pre>
-<ol start="9" style="list-style-type: decimal">
-<li>Direkt darunter, spezifiziere einen zweiten Slider, mit dem der Maximale Preis pro Nacht gesteuert wird. Da die Preisverteilung sehr schief ist, wird hier der 10er Logarithmus verwendet. Setze die <code>inputID</code> auf <code>"Preis"</code>, und das <code>label</code> auf <code>"Max Preis pro Nacht (log):"</code>. Das zusätzliche <code>step</code> Argument spezifiziert die minimalen Schritte, in denen der Slider bewegt werden kann. Setze es auf <code>.01</code>.</li>
+<ol start="8" style="list-style-type: decimal">
+<li>Direkt darunter, spezifiziere einen zweiten Slider, mit dem der “Maximale Preis pro Nacht” gesteuert wird. Da die Preisverteilung schief ist, wird hier der 10er Logarithmus (<code>log10</code>) verwendet. Setze die <code>inputID</code> auf <code>"Preis"</code>, und das <code>label</code> auf <code>"Max Preis pro Nacht (log):"</code>. Das zusätzliche <code>step</code> Argument spezifiziert die minimalen Schritte, in denen der Slider bewegt werden kann. Setze es auf <code>.01</code>.</li>
 </ol>
 <pre class="r"><code># Preis pro Nacht
 sliderInput(&quot;XXX&quot;, &quot;XXX&quot;, 
             min = 0, max = ceiling(max(log10(airbnb$Preis), na.rm = TRUE)),
             value = ceiling(max(log10(airbnb$Preis), na.rm = TRUE)),
             step = XXX)</code></pre>
-<ol start="10" style="list-style-type: decimal">
-<li>Als drittes, spezifiziere Checkboxen, mit denen die Stadtteile ausgewählt werden können. Verwende dazu die <code>checkboxGroupInput()</code> Funktion. Setze die <code>inputID</code> auf <code>"Stadtteile"</code>, und das <code>label</code> auf <code>"Wähle Stadtteile:"</code>. Das <code>choices</code> Argument definiert, wie viele Checkboxes angezeigt werden sollen, und welche Werte diese annehmen können. Im <code>selected</code> Argument wird definiert, welche Checkboxes standardmässig angewählt werden (hier alle).</li>
+<ol start="9" style="list-style-type: decimal">
+<li>Als drittes, spezifiziere Checkboxen, mit denen die Stadtteile ausgewählt werden können. Verwende dazu die <code>checkboxGroupInput()</code> Funktion. Setze die <code>inputID</code> auf <code>"Stadtteile"</code>, und das <code>label</code> auf <code>"Wähle Stadtteile:"</code>. Das <code>choices</code> Argument definiert, wie viele Checkboxes angezeigt werden sollen, und welche Werte diese annehmen können. Im <code>selected</code> Argument wird definiere, welche Checkboxes standardmässig angewählt werden (hier alle).</li>
 </ol>
 <pre class="r"><code># Auswahl der zu Plottenden Stadtteile
 checkboxGroupInput(&quot;XXX&quot;, &quot;XXX&quot;,
                    choices = sort(unique(airbnb$Stadtteil)),
                    selected = sort(unique(airbnb$Stadtteil)))</code></pre>
-<ol start="11" style="list-style-type: decimal">
+<ol start="10" style="list-style-type: decimal">
 <li>Füge zum Schluss noch einen Auswahlinput ein. Mit der Funktion <code>selectInput</code> wird ein Dropdownmenu erstellt, aus dem ein Wert ausgewählt wird. <code>choices</code> definiert wiederum die möglichen Werte, <code>selected</code> den Standardwert. Setze die Werte <code>"viridis"</code>, <code>"cividis"</code>, <code>"magma"</code>, und <code>"inferno"</code>, beim <code>choices</code> Argument ein. Das sind die Namen vierer Farbpaletten. Definiere <code>"viridis"</code> als Standardwert.</li>
 </ol>
 <pre class="r"><code># Farbpalette
 selectInput(&quot;Farbpalette&quot;, &quot;Wähle Farbpalette:&quot;,
             choices = c(&quot;XXX&quot;, &quot;XXX&quot;, &quot;XXX&quot;, &quot;XXX&quot;),
             selected = &quot;XXX&quot;)</code></pre>
-<ol start="12" style="list-style-type: decimal">
-<li>Bevor du nun das Dokument ausführen kannst, musst du zuerst die Plots etwas anpassen. Und zwar ist es so, dass in <code>shiny</code> R outputs wie Plots explizit mit <code>renderXXX()</code> Funktionen gerendert werden müssen. Gehe zuerst zum R chunk, in dem sich der <code>leaflet</code> code befindet (den Code der value Boxen können wir so stehen lassen), und packe den gesamten Code dieses chunks in die <code>renderLeaflet({})</code> Funktion, zwischen die geschwungenen Klammern, wie unten angezeigt (mit den geschwungenen Klammern können mehrere, für sich stehende Zeilen und Funktionen zusammen gerendert werden; sie werden von den geschwungenen Klammern sozusagen gruppiert).</li>
+<ol start="11" style="list-style-type: decimal">
+<li>Bevor du nun das Dokument ausführen kannst, musst du zuerst die Plots anpassen. In <code>shiny</code> müssen R outputs, wie Plots, explizit mit der <code>renderXXX()</code> Funktionen gerendert werden. Gehe zuerst zum R Chunk, in dem sich der <code>leaflet</code> code befindet (den Code der value Boxen können wir so stehen lassen), und packe den gesamten Code dieses Chunks in die <code>renderLeaflet({})</code> Funktion, zwischen die geschwungenen Klammern, wie unten angezeigt (mit den geschwungenen Klammern können mehrere, für sich stehende Zeilen und Funktionen zusammen gerendert werden; sie werden von den geschwungenen Klammern gruppiert).</li>
 </ol>
 <pre class="r"><code>renderLeaflet({
   
@@ -267,8 +266,8 @@ selectInput(&quot;Farbpalette&quot;, &quot;Wähle Farbpalette:&quot;,
   LEAFLET CODE
   
 })</code></pre>
-<ol start="13" style="list-style-type: decimal">
-<li>Gehe nun zum nächsten R chunk, in dem die Häufigkeitsverteilung als <code>plotly</code> Grafik erstellt wird. Packe auch hier den Code des gesamten chunks diesmal in die <code>renderPlotly({})</code> Funktion.</li>
+<ol start="12" style="list-style-type: decimal">
+<li>Gehe nun zum nächsten R Chunk, in dem die Häufigkeitsverteilung als <code>plotly</code> Grafik erstellt wird. Packe auch hier den Code des gesamten Chunks in die <code>renderPlotly({})</code> Funktion.</li>
 </ol>
 <pre class="r"><code>renderPlotly({
   
@@ -277,8 +276,8 @@ selectInput(&quot;Farbpalette&quot;, &quot;Wähle Farbpalette:&quot;,
   PLOTLY CODE
   
 })</code></pre>
-<ol start="14" style="list-style-type: decimal">
-<li>Gehe zum nächsten R chunk, in dem das Histogram der Gesamtratings definiert wird. Wiederum, packe den Code des gesamten chunks diesmal in die <code>renderPlot({})</code> Funktion.</li>
+<ol start="13" style="list-style-type: decimal">
+<li>Gehe zum nächsten R Chunk, in dem das Histogram der Gesamtratings definiert wird. Wiederum, packe den Code des gesamten Chunks in die <code>renderPlot({})</code> Funktion.</li>
 </ol>
 <pre class="r"><code>renderPlot({
   
@@ -287,8 +286,8 @@ selectInput(&quot;Farbpalette&quot;, &quot;Wähle Farbpalette:&quot;,
   PLOT CODE
   
 })</code></pre>
-<ol start="15" style="list-style-type: decimal">
-<li>Gehe zum nächsten R chunk, in dem der <code>gauge</code> der mittleren Gesamtratings definiert wird. Wiederum, packe den Code des gesamten chunks diesmal in die <code>renderGauge({})</code> Funktion.</li>
+<ol start="14" style="list-style-type: decimal">
+<li>Gehe zum nächsten R Chunk, in dem der <code>gauge</code> der mittleren Gesamtratings definiert wird. Wiederum, packe den Code des gesamten Chunks in die <code>renderGauge({})</code> Funktion.</li>
 </ol>
 <pre class="r"><code>renderGauge({
   
@@ -297,16 +296,16 @@ selectInput(&quot;Farbpalette&quot;, &quot;Wähle Farbpalette:&quot;,
   GAUGE CODE
   
 })</code></pre>
-<ol start="16" style="list-style-type: decimal">
-<li><p>Wiederhole die Schritte B14 und B15 auch noch für die letzten chunks (zweimal die Plots und zweimal die Gauges, in abwechselnder Reihenfolge).</p></li>
-<li><p>So, jetzt kannst du dein Dokument ausführen. Passiert etwas, wenn du mit den Inputwerten herumspielst?</p></li>
-<li><p>Der Grund weshalb nichts passiert ist, dass zwar Inputs definiert werden, diese aber nirgends bei den Plots vorkommen. Wir müssen also den Code der Plots erst anpassen. Um jedoch, zum Beispiel, die Auswahl der Stadtteile nicht in jedem Plot durchführen zu müssen, können wir <em>reaktive Objekte</em> erstellen, also Objekte, die mit jeder Veränderung der Inputwerte upgedatet werden. Die grundsätzliche Syntax ist wiefolgt:</p></li>
+<ol start="15" style="list-style-type: decimal">
+<li><p>Wiederhole die Schritte B14 und B15 auch noch für die letzten Chunks (zweimal die Plots und zweimal die Gauges, in abwechselnder Reihenfolge).</p></li>
+<li><p>Nun kannst du dein Dokument ausführen. Passiert etwas, wenn du die Inputwerte veränderst?</p></li>
+<li><p>Der Grund weshalb nichts passiert ist, dass zwar Inputs definiert werden, diese aber bei den Plots nicht vorkommen. Du musst also den Code der Plots anpassen. Um, zum Beispiel, die Auswahl der Stadtteile nicht in jedem Plot durchführen zu müssen, können wir <em>reaktive Objekte</em> erstellen, also Objekte, die mit jeder Veränderung der Inputwerte upgedatet werden. Die grundsätzliche Syntax ist wie folgt:</p></li>
 </ol>
 <pre class="r"><code>DYNAMISCHES_OBJEKT &lt;- reactive({
   MANIPULATION EINES OBJEKTES BASIEREND AUF INPUT
 })</code></pre>
-<ol start="19" style="list-style-type: decimal">
-<li>Die <code>reactive()</code> Funktion erstellt also ein reaktives Objekt und führt den in der Funktion geschriebenen Code jedes Mal aus, wenn sich ein Inputwert verändert. Der untenstehende Code definiert zwei reaktive Objekte <code>airbnb_dynamic</code> - eine reaktive Version des <code>airbnb</code> Datensatzes, gefiltert nach <code>Stadtteil</code>, <code>Schlafzimmer</code>, und dem 10er Logarithmus von <code>Preis</code> - sowie <code>farben_dynamic</code> und ein reaktives Objekt, welches basierend auf der ausgewählten Farbpalette (aus dem <code>viridis</code> Paket) und der Anzahl ausgewählter Stadtteile einen Vektor von Farbwerten zurückgibt. Kopiere den Code und füge ihn ganz unten in den R chunk in dem die Inputs definiert werden (der zweite R chunk im Dokument) ein.</li>
+<ol start="18" style="list-style-type: decimal">
+<li>Die <code>reactive()</code> Funktion erstellt hier ein reaktives Objekt und führt den in der Funktion geschriebenen Code jedes Mal aus, wenn sich ein Inputwert verändert. Der untenstehende Code definiert zwei reaktive Objekte <code>airbnb_dynamic</code> - eine reaktive Version des <code>airbnb</code> Datensatzes, gefiltert nach <code>Stadtteil</code>, <code>Schlafzimmer</code>, und dem 10er Logarithmus von <code>Preis</code> - sowie <code>farben_dynamic</code> und ein reaktives Objekt, welches basierend auf der ausgewählten Farbpalette (aus dem <code>viridis</code> Paket) und der Anzahl ausgewählter Stadtteile einen Vektor von Farbwerten zurückgibt. Kopiere den Code und füge ihn ganz unten in den R Chunk in dem die Inputs definiert werden (der zweite R Chunk im Dokument) ein.</li>
 </ol>
 <pre class="r"><code># kreiere reaktives airbnb Objekt
 airbnb_dynamic &lt;- reactive({
@@ -330,9 +329,9 @@ farben_dynamic &lt;- reactive({
          magma = magma(n_stadtteile),
          inferno = inferno(n_stadtteile))
 })</code></pre>
-<ol start="20" style="list-style-type: decimal">
+<ol start="19" style="list-style-type: decimal">
 <li><p>Um die reaktive Version der <code>airbnb</code> Daten in den Plots und Gauges zu verwenden, ersetze <code>airbnb</code> in den Definitionen der Karte (dem <code>leaflet</code> Plot), der Häufigkeitsverteilung (dem <code>plotly</code> Plot), der Histogramme (dem <code>ggplot2</code> Plot), und der Gauges (also alle die Teile, die du vorhin in eine <code>renderXXX()</code> Funktion gepackt hast) durch <code>airbnb_dynamic()</code>. <strong>Achtung:</strong> Die Klammern nach <code>airbnb_dynamic</code> sind nötig; das ist eine spezielle Syntax der reaktiven Objekte.</p></li>
-<li><p>Da wir nun das <code>farben_dynamic()</code> Objekt oben definiert haben, wird das <code>farben</code> Objekt nicht mehr benötigt. Lösche dessen Definition oberhalb des Codes für die Häufigkeitsverteilung:</p></li>
+<li><p>Da du das <code>farben_dynamic()</code> Objekt vorgängig definiert hast, wird das <code>farben</code> Objekt nicht mehr benötigt. Lösche dessen Definition oberhalb des Codes für die Häufigkeitsverteilung:</p></li>
 </ol>
 <pre class="r"><code>### LÖSCHE ALLES VON HIER
 # Anzahl Stadtteile
@@ -340,9 +339,9 @@ n_stadtteile &lt;- length(unique(airbnb$Stadtteil))
 # Definiere n_stadtteile verschiedene Farben aus der viridis palette
 farben &lt;- viridis(n_stadtteile)
 ### BIS HIER</code></pre>
-<ol start="22" style="list-style-type: decimal">
+<ol start="21" style="list-style-type: decimal">
 <li><p>Ersetze ausserdem im Code der Häufigkeitsverteilung (dem <code>plotly</code> Plot) das Objekt <code>farben</code> durch <code>farben_dynamic()</code>. <strong>Tipp:</strong> Du findest das Objekt in der Zeile <code>scale_color_manual(values = farben) +</code>.</p></li>
-<li><p>Klicke auf “Run Document”. Nun solltest du steuern können, welche Daten welcher Stadtteile gezeigt werden, sowie welche Farbpalette im Plot auf Seite 2 verwendet wird. Cool oder?</p></li>
+<li><p>Klicke auf “Run Document”. Nun solltest du steuern können, welche Daten und welcher Stadtteile gezeigt werden, sowie welche Farbpalette im Plot auf Seite 2 verwendet wird. Cool oder?</p></li>
 </ol>
 </div>
 <div id="c---leaflet-2" class="section level3">
@@ -360,13 +359,13 @@ pal &lt;- colorFactor(farben_dynamic(),
 <ol start="3" style="list-style-type: decimal">
 <li><p>Das so erstellte <code>pal</code> Objekt kann jetzt in der <code>addCircleMarker()</code> Funktion verwendet werden. Allerdings wird hier eine etwas eigene Syntax verwendet. Füge ein neues Argument <code>color</code> in die <code>addCircleMarker()</code> Funktion ein und setze es auf <code>~pal(Stadtteil)</code> (<strong>Achtung:</strong> die Tilde <code>~</code> ersetzt das Gleichheitszeichen <strong>nicht</strong>, sondern gibt <code>leaflet</code> lediglich an, dass hier unterschiedliche Werte für die verschiedenen Airbnbs benutzt werden).</p></li>
 <li><p>Führe die App aus. Jetzt sollten die Punkte nach Stadtteil eingefärbt sein.</p></li>
-<li><p>Im Moment ist aber noch nicht ersichtlich, welche Farbe zu welchem Stadtteil gehört (und mit Ausnahme von Dirk weiss nicht jeder wo sich welcher Stadtteil befindet). Eine Legende muss her. Das geht in <code>leaflet</code> ganz einfach mit der <code>addLegend()</code> Funktion. Dabei muss eine mit <code>colorFactor()</code> erstellte Farbpalette, sowie die Werte nach denen die Marker eingefärbt werden sollen als Argumente spezifiziert werden. Füge den untenstehenden Code direkt nach der <code>addCircleMarker()</code> Funktion ein, sodass die Pipe (<code>%&gt;%</code>) direkt nach der schliessenden Klammer von <code>addCircleMarker()</code> (also auf derselben Zeile) steht.</p></li>
+<li><p>Im Moment ist aber noch nicht ersichtlich, welche Farbe zu welchem Stadtteil gehört (und mit Ausnahme von Dirk weiss nicht jeder wo sich welcher Stadtteil befindet). Es braucht eine Legende. Das geht in <code>leaflet</code> ganz einfach mit der <code>addLegend()</code> Funktion. Dabei muss eine mit <code>colorFactor()</code> erstellte Farbpalette, sowie die Werte nach denen die Marker eingefärbt werden sollen, als Argumente spezifiziert werden. Füge den untenstehenden Code direkt nach der <code>addCircleMarker()</code> Funktion ein, sodass die Pipe (<code>%&gt;%</code>) direkt nach der schliessenden Klammer von <code>addCircleMarker()</code> (also auf derselben Zeile) steht.</p></li>
 </ol>
 <pre class="r"><code> %&gt;% 
   # Füge Legende hinzu
   addLegend(pal = pal, values = ~Stadtteil, opacity = 1)</code></pre>
 <ol start="6" style="list-style-type: decimal">
-<li>Das wars schon, jetzt haben wir auch die Legende. Der letzte Schritt sind die Popupfenster, die Informationen über die Airbnbs anzeigen. Dazu musst du den Code an zwei Stellen anpassen. Zuerst musst du zwischen <code>airbnb_dynamic() %&gt;%</code> und <code>leaflet() %&gt;%</code> eine Zeile mit dem untenstehenden Code einfügen. Der erste Teil erstellt dabei eine Variable <code>superhost</code>, die <code>"Ja"</code> und <code>"Nein"</code> anstelle von <code>TRUE</code> und <code>FALSE</code> angibt. Der zweite Teil erstellt eine Variable <code>info</code>, die Informationen aus unterschiedlichen Variablen mithilfe der <code>paste0()</code> Funktion zusammenfügt. Dabei wird etwas HTML verwendet, damit die Infos nachher schön formatiert untereinander dargestellt werden.</li>
+<li>Das wars schon, jetzt wird auch eine Legende angezeigt. Der letzte Schritt sind die Popupfenster, die Informationen über die Airbnbs anzeigen. Dazu musst du den Code an zwei Stellen anpassen. Zuerst musst du zwischen <code>airbnb_dynamic() %&gt;%</code> und <code>leaflet() %&gt;%</code> eine Zeile mit dem untenstehenden Code einfügen. Der erste Teil erstellt dabei eine Variable <code>superhost</code>, die <code>"Ja"</code> und <code>"Nein"</code> anstelle von <code>TRUE</code> und <code>FALSE</code> angibt. Der zweite Teil erstellt eine Variable <code>info</code>, die Informationen aus unterschiedlichen Variablen mithilfe der <code>paste0()</code> Funktion zusammenfügt. Dabei wird etwas HTML verwendet, damit die Informationen später sauber formatiert untereinander dargestellt werden.</li>
 </ol>
 <pre class="r"><code>  mutate(
     superhost = case_when(isTRUE(Host_superhost) ~ &quot;Ja&quot;,
@@ -377,19 +376,19 @@ pal &lt;- colorFactor(farben_dynamic(),
                   &quot;&lt;/b&gt;&lt;br&gt;Preis pro Nacht: &lt;b&gt;&quot;, Preis, &quot;&amp;euro;&lt;/b&gt;&quot;)
   ) %&gt;% </code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li><p>Die neu erstellte Variable <code>info</code> muss jetzt noch in <code>addCircleMarkers()</code> aufgerufen werden, und der angezeigte Text etwas vergrössert werden. Füge dazu die Argumente <code>label = ~lapply(info, HTML)</code> und <code>labelOptions = labelOptions(textsize = "15px")</code> in der <code>addCircleMarkers()</code> Funktion hinzu. <code>lapply(info, HTML)</code> wendet die <code>HTML()</code> Funktion auf jedes Element von <code>info</code> an, was nötig ist, das der Text von <code>leaflet</code> als HTML gerendert wird.</p></li>
+<li><p>Die neu erstellte Variable <code>info</code> muss jetzt noch in <code>addCircleMarkers()</code> aufgerufen, und der angezeigte Text etwas vergrössert werden. Füge dazu die Argumente <code>label = ~lapply(info, HTML)</code> und <code>labelOptions = labelOptions(textsize = "15px")</code> in der <code>addCircleMarkers()</code> Funktion hinzu. <code>lapply(info, HTML)</code> wendet die <code>HTML()</code> Funktion auf jedes Element von <code>info</code> an, was nötig ist, das der Text von <code>leaflet</code> als HTML gerendert wird.</p></li>
 <li><p>Führe die App erneut aus. Jetzt sollte alles klappen. Fancy oder?</p></li>
 </ol>
 </div>
 <div id="x---exploriere-auf-eigene-faust---uncharted-territory---here-be-dragons" class="section level3">
 <h3>X - Exploriere auf eigene Faust - Uncharted territory - Here be dragons</h3>
 <p>Das wars mit den vorgegebenen Aufgaben. In diesem Teil wirst du dein Dashboard auf eigene Faust erweitern und uns am Ende kurz zeigen, was du gemacht hast.</p>
-<p>Untenstehend findest du ein paar Vorschläge, wie du dein Dashboard weiter aufpeppen und erweitern könntest. Versuche eigenständig weiter Features einzubauen. Dazu kannst du auf die Vorschläge unten zurückgreifen, kannst aber auch gerne eigene Ideen umsetzen; je nach dem was dich am meisten reizt.</p>
+<p>Untenstehend findest du einige Vorschläge, wie du dein Dashboard weiter aufpeppen und erweitern könntest. Versuche eigenständig weiter Features einzubauen. Dazu kannst du auf die Vorschläge unten zurückgreifen, aber auch gerne eigene Ideen umsetzen; je nach dem was dich am meisten reizt.</p>
 <ol style="list-style-type: decimal">
 <li><p>Schaue dir die Popupfenster der beiden Plots auf den Seiten 1 und 2 an. Gibt es zusätzliche Dinge die du angezeigt haben möchtest? Das können weitere Variablen, neu kreierte Variablen oder konditionale Variablen sein. Versuche diese zu implementieren.</p></li>
 <li><p><code>leaflet</code> ermöglicht es auch Icons anstatt nur Punkte zu plotten. Eine Anleitung findest du <a href="https://rstudio.github.io/leaflet/markers.html">hier</a> (siehe dazu auch das Beispiel in den <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/DashboardsI_slides.html">Slides zu Dashboards I</a>). Du könntest zum Beispiel versuchen, Marker mit unterschiedlichen Icons zu verwenden. Zum Beispiel könntest du ein bestimmtes Icon für Superhosts verwenden und ein weiteres für ganz schlechte Airbnbs, und ein weiteres für den Rest. Eine weiter Möglichkeit wäre, unterschiedliche Icons pro Unterkunftsart zu wählen.</p></li>
 <li><p>Gestern hast du im Bericht eine Regression gerechnet. Du könntest eine vierte Seite in das Dashboard einbauen, in der du z.B. Inputs für ein Regressionsmodell definierst und dir den jeweiligen Output als Tabelle anzeigen lasst. Zusätzlich könntest du einen Plot mit den vorhergesagten und tatsächlichen Werten einbauen. <strong>Tipp:</strong> <a href="https://shiny.rstudio.com/gallery/widget-gallery.html">Hier</a> findest du eine Übersicht der möglichen Inputformate.</p></li>
-<li><p>Keine der obigen Optionen spricht dich an (oder vielleicht hast du ja bereits alle gemacht)? Überlege dir, wie du das Dashboard weiter aufpeppen kannst. Das kann das Styling betreffen, die Inputs, die angezeigte Information etc. etc… Wir sind gespannt auf deine Kreation!</p></li>
+<li><p>Keine der obigen Optionen spricht dich an (oder vielleicht hast du ja bereits alle gemacht)? Überlege dir, wie du das Dashboard weiter aufpeppen kannst. Das kann das Styling betreffen, die Inputs, die angezeigte Information etc… Wir sind gespannt auf deine Kreationen!</p></li>
 </ol>
 </div>
 </div>
