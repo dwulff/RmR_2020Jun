@@ -299,15 +299,13 @@ print2 <- function(x, nlines=10,...) {
 
 <ul>
   <li class="m1"><span>Um Veränderungen durch <high>reaktive Objekte</high> zu ermöglichen, müssen die entsprechenden Outputs mit speziellen Funktionen <high>gerendert</high> werden.</span></li>  
-  <li class="m2"><span>Verschiedene <highm>renderXXX()</highm> Funktionen existieren in <mono>shiny</mono>, z.B.:</span></li>
+  <li class="m2"><span>Verschiedene <highm>render*()</highm> Funktionen existieren in <mono>shiny</mono>, z.B.:</span></li>
       <ul class="level">
       <li><span><mono>renderPlot()</mono></li></span>
       <li><span><mono>renderTable()</mono></li></span>
       <li><span><mono>renderText()</mono></li></span>
-      <li><span>...</li></span>
     </ul>
   <li class="m3"><span>Viele Pakete bieten <high>eigene</high> render Funktionen, z.B. <mono>renderLeaflet()</mono> oder <mono>renderPlotly()</mono>.</span></li>
-  <li class="m4"><span><highm>input$INPUT_ID</highm> kann direkt in render Funktionen verwendet werden.</span></li>
 </ul>
 
 ]
