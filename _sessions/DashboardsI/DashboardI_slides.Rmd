@@ -151,11 +151,11 @@ basel <- read.csv("1_Data/basel.csv")
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Standardmässig spaltenweise; zeilenweise möglich.</span></li>  
-  <li class="m2"><span>Standardmässig eine Spalte; mehrere möglich.</span></li>
-  <li class="m3"><span>Headers bestimmen die Boxen und Seiten.</span></li>
-  <li class="m4"><span>Standardmässig eine Seite; scrollable und mehrere Seiten
+  <li class="m1"><span>Headers bestimmen die Boxen und Seiten.</span></li>  
+  <li class="m2"><span>Standardmässig eine Seite; scrollable und mehrere Seiten
   möglich.</span></li>
+  <li class="m3"><span>Standardmässig spaltenweise; zeilenweise möglich.</span></li>
+  <li class="m4"><span>Standardmässig eine Spalte; mehrere möglich.</span></li>
   <li class="m5"><span>Tabs möglich.</span></li>
 </ul>
 
@@ -322,7 +322,7 @@ Spalte 2
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Mit <highm>{.storyboard}</highm> wird eine Seite als Storyboard deviniert</span></li>
+  <li class="m1"><span>Mit <highm>{.storyboard}</highm> wird eine Seite als Storyboard definiert</span></li>
   <li class="m2"><span>In Storyboards sind keine Titel zweiter Ordnung nötig.</span></li> 
   <li class="m3"><span>Mit <highm>***</highm> wird eine Kommentarspalte definiert.</span></li> 
 
