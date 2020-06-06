@@ -380,8 +380,8 @@ schliessen.&lt;/p&gt;</code></pre>
 <div id="e---leaflet" class="section level3">
 <h3>E - <code>leaflet</code></h3>
 <ol style="list-style-type: decimal">
-<li><p>Wir starten mit der Karte auf Seite 1. Gehe in deinem Skript zur Syntax, welche die Zeile 2 auf der ersten Seite erstellt (die Zeile unterhalb der value Boxen).</p></li>
-<li><p><a href="https://rstudio.github.io/leaflet/">leaflet</a> bietet die Möglichkeit, sehr einfach interaktive Karten zu erstellen. Erstelle einen neuen R chunk mit dem folgenden Code unterhalb des “Karte” Titel:</p></li>
+<li><p>Nun geht es an die Karte auf Seite 1. Gehe in deinem Skript zur Syntax, welche die Zeile 2 auf der ersten Seite erstellt (die Zeile unterhalb der <code>valueBox</code>en).</p></li>
+<li><p><a href="https://rstudio.github.io/leaflet/">leaflet</a> bietet die Möglichkeit, sehr einfach interaktive Karten zu erstellen. Erstelle einen neuen Code chunk mit dem folgenden Code unterhalb des <code>Karte</code> Titel:</p></li>
 </ol>
 <pre class="r"><code># Definiere Datensatz
 airbnb %&gt;% 
@@ -392,7 +392,7 @@ airbnb %&gt;%
   # Zeichne Karte
   addTiles()</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Damit hast du bereits eine Karte von Berlin erstellt. Einfach oder? Um andere Städte auszuwählen müsste man lediglich die Längen- und Breitengradangaben in <code>setView</code> anpassen. Füge nun den folgenden Code unten hinzu (<strong>Achtung</strong>: ersetze dabei <code>addTiles()</code> in deinem Code mit dem untenstehenden Code), um die Airbnbs einzuzeichnen:</li>
+<li>Damit hast du bereits eine Karte von Berlin erstellt. Einfach oder? Um andere Städte auszuwählen müsste man lediglich die Längen- und Breitengradangaben in <code>setView</code> anpassen. Ersetze nun <code>addTiles()</code> in deinem Code mit dem untenstehenden Code, um die Airbnbs einzuzeichnen:</li>
 </ol>
 <pre class="r"><code>  addTiles() %&gt;%
   # Füge Marker hinzu
@@ -407,14 +407,14 @@ airbnb %&gt;%
 <div id="f---plotly" class="section level3">
 <h3>F - <code>plotly</code></h3>
 <ol style="list-style-type: decimal">
-<li>Zeit den Plot auf Seite 2 hinzuzufügen. Gehe in deinem Skript zur Zeile, die den Titel “Entwicklung der Berliner Airbnbs seit 2009” in der linken Spalte auf der zweiten Seite erstellt:</li>
+<li>Zeit den Plot auf Seite 2 hinzuzufügen. Gehe in deinem Skript zur Zeile, die den Titel <code>Entwicklung der Berliner Airbnbs seit 2009</code> in der linken Spalte auf der zweiten Seite erstellt:</li>
 </ol>
 <pre class="mardown"><code>### Entwicklung der Berliner Airbnbs seit 2009
 
 HIER!
 </code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Füge einen R chunk mit dem untenstehenden Code ein (Datenvorbereitung und Plotting ist nicht Teil dieses Kurses, aber wenn du Fragen zum Code hast helfen wir gerne weiter!).</li>
+<li>Füge einen Code chunk mit dem untenstehenden Code ein. Datenvorbereitung und Plotting ist nicht Teil dieses Kurses, aber wenn du Fragen zum Code hast helfen wir gerne weiter!.</li>
 </ol>
 <pre class="r"><code>### Plot zum Verlauf über die Zeit
 

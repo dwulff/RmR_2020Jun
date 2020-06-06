@@ -393,7 +393,6 @@ Verlauf
 
 3. Schliesslich kannst du links zu Social Media Plattformen wie zum Beispiel Twitter und Facebook hinzufügen. Wiederum auf derselben Ebene wie vorhin, füge `social: ["twitter", "facebook"]` im YAML hinzu.
 
-
 ### X - Challenges
 
 1. Bis jetzt ist erst eine value Box definiert. Für die Allstar `valueBox` musst du zuerst die Anzahl Airbnbs, welche überall Topratings haben berechnen. Verwende dazu den untenstehenden Code in einem R chunk, diesmal unterhalb des "Allstar" Titels.
