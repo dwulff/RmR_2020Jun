@@ -89,8 +89,10 @@ print2 <- function(x, nlines=10,...) {
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Bisherige Dashboards konnten Popupfenster anzeigen etc. Daten filtern, Variablen auswählen etc. war aber nicht möglich.</span></li>  
-  <li class="m2"><span>Mit <highm>shiny</highm> ist genau dies möglich.</span></li>
+  <li class="m1"><span>Bisherige Dashboards konnten Daten in Fenstern <high>anzeigen</high>. </span></li>
+  <li class="m2"><span>Daten <high>filtern</high> oder Variablen <high>auswählen</high> war aber <high>nicht</high> möglich.
+</span></li>
+  <li class="m3"><span><highm>shiny</highm> ermöglicht genau diese Funktionalität.</span></li>
 </ul>
 
 ]
@@ -115,8 +117,9 @@ print2 <- function(x, nlines=10,...) {
 > Shiny is an R package that makes it easy to build interactive web applications (apps) straight from R. - RStudio
 
 <ul>
-  <li class="m1"><span>Interaktive Apps bieten höchste Flexibilität.</span></li>  
-  <li class="m2"><span>Dabei muss man (für simple bis moderat komplexe Apps) <high>ausschliesslich R</high> können.</span></li>
+  <li class="m1"><span>Mit Shiny erstellt <high>interaktive Webseiten/Applikationen</high> erstellen.</span></li>  
+  <li class="m1"><span>Interaktive Applikationen bieten höchste <high>Flexibilität</high>.</span></li>  
+  <li class="m2"><span>Simple bis moderat komplexe Applikationen basieren auf <high>R und RMarkdown</high>.</span></li>
 </ul>
 
 ]
@@ -159,8 +162,8 @@ print2 <- function(x, nlines=10,...) {
 
 <ul>
   <li class="m1"><span>Zwei Teile: <high>UI</high> und <high>server</high></span></li>  
-  <li class="m2"><span>Der UI-Teil beinhaltet die angezeigte Webseite.</span></li>
-  <li class="m3"><span>Der Server-Teil ist für die Umsetzung des Inputs verantwortlich.</span></li>
+  <li class="m2"><span>Der UI-Teil beinhaltet die angezeigte <high>Webseite</high>.</span></li>
+  <li class="m3"><span>Der Server-Teil ist für die <high>Umsetzung des Inputs</high> verantwortlich.</span></li>
 </ul>
 
 ]
@@ -177,23 +180,23 @@ print2 <- function(x, nlines=10,...) {
 
 ---
 
-# User Input
+# Benutzer Eingaben
 
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Input über <high>widgets</high>. Mögliche widgets sind:</span></li> 
+  <li class="m1"><span>Eingaben über <high>widgets</high>:</span></li> 
     <ul class="level">
       <li><span>Slider.</li></span>
       <li><span>Checkboxen.</li></span>
       <li><span>Dropdown Menus.</li></span>
       <li><span>...</li></span>
     </ul>
-  <li class="m2"><span>Inputwerte werden in <highm>input</highm> gespeichert.</span></li>
+  <li class="m2"><span>Eingabewerte werden in <highm>input</highm> gespeichert.</span></li>
     <ul class="level">
-      <li><span>Werte werden bei neuem Input upgedatet.</li></span>
+      <li><span>Werte werden bei neuer Eingabe <high>upgedatet</high>.</li></span>
       <li><span>Werte werden mit <highm>input$INPUT_ID</highm> angesteuert.</li></span>
-      <li><span>Kontrolliert auf der Serverseite ausgeführte Aktionen.</li></span>
+      <li><span>Eingaben kontrollieren auf der <high>Serverseite</high> ausgeführte Aktionen.</li></span>
     </ul>
 </ul>
 
@@ -217,11 +220,11 @@ print2 <- function(x, nlines=10,...) {
 .pull-left4[
 
 <ul>
-  <li class="m1"><span><high>Reaktive Objekte</high> werden getrackt.</span></li>  
-  <li class="m2"><span>Verändern sich, wenn Input sich verändert.</span></li>
-  <li class="m3"><span><mono>input</mono> kann nur in reaktiver Umwelt gelesen werden.</span></li>
-  <li class="m4"><span>Veranlassen, wenn sie verändert werden, dass jeder Codeblock, in dem die Objekte verwendet werden, erneut ausgeführt wird.</span></li>
-  <li class="m5"><span>Werden, wie eine Funktion, mit Klammern angesteuert.</span></li>
+  <li class="m1"><span><high>Reaktive Objekte</high> werden permanent getrackt.</span></li>  
+  <li class="m2"><span>Objekte verändern sich, wenn sich die <high>Eingabe verändert</high>.</span></li>
+  <li class="m3"><span><mono>input</mono> kann nur in <high>reaktiver Umwelt</high> gelesen werden.</span></li>
+  <li class="m4"><span>Jeder <high>Codeblock</high>, in dem die Objekte verwendet werden, wird erneut <high>ausgeführt</high> wenn es eine Eingabe gibt.</span></li>
+  <li class="m5"><span>Werden, wie eine <high>Funktion</high>, mit <high>Klammern angesteuert</high>.</span></li>
 </ul>
 
 
@@ -246,7 +249,7 @@ print2 <- function(x, nlines=10,...) {
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Um Veränderungen durch reaktive Objekte zu ermöglichen, müssen die entsprechenden Outputs mit speziellen Funktionen <high>gerendert</high> werden.</span></li>  
+  <li class="m1"><span>Um Veränderungen durch <high>reaktive Objekte</high> zu ermöglichen, müssen die entsprechenden Outputs mit speziellen Funktionen <high>gerendert</high> werden.</span></li>  
   <li class="m2"><span>Verschiedene <highm>renderXXX()</highm> Funktionen existieren in <mono>shiny</mono>, z.B.:</span></li>
       <ul class="level">
       <li><span><mono>renderPlot()</mono></li></span>
@@ -254,7 +257,7 @@ print2 <- function(x, nlines=10,...) {
       <li><span><mono>renderText()</mono></li></span>
       <li><span>...</li></span>
     </ul>
-  <li class="m3"><span>Viele Pakete bieten eigene render Funktionen, z.B. <mono>renderLeaflet()</mono> oder <mono>renderPlotly()</mono>.</span></li>
+  <li class="m3"><span>Viele Pakete bieten <high>eigene</high> render Funktionen, z.B. <mono>renderLeaflet()</mono> oder <mono>renderPlotly()</mono>.</span></li>
   <li class="m4"><span><highm>input$INPUT_ID</highm> kann direkt in render Funktionen verwendet werden.</span></li>
 </ul>
 
@@ -279,7 +282,7 @@ print2 <- function(x, nlines=10,...) {
 
 <ul>
   <li class="m1"><span>Verwende <highm>{}</highm> um mehrere <high>unabhängige</high> Statements in einer <mono>reactive()</mono> oder <mono>renderXXX()</mono> Funktion.</span></li>  
-  <li class="m2"><span>Statements in <highm>{}</highm> werden als Block ausgeführt und nur das letzte Statement wird zurückgegeben (kreierte Objekte werden aber gespeichert).</span></li>  
+  <li class="m2"><span>Statements in <highm>{}</highm> werden als <high>Block</high> ausgeführt und nur das <high>letzte Statement</high> wird zurückgegeben (kreierte Objekte werden aber gespeichert).</span></li>  
 </ul>
 
 
@@ -322,9 +325,9 @@ renderPlot({
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Input definiert Merkmal.</span></li> 
-  <li class="m2"><span>Reaktiver Datensatz, gefiltert nach Input.</span></li> 
-  <li class="m3"><span>Verwendung des reaktiven Datensatzes in Plot</span></li> 
+  <li class="m1"><span>Input definiert <high>Merkmal</high>.</span></li> 
+  <li class="m2"><span>Reaktiver Datensatz, <high>gefiltert</high> nach Input.</span></li> 
+  <li class="m3"><span>Verwendung des reaktiven Datensatzes in <high>Plot</high></span></li> 
 </ul>
 
 ]

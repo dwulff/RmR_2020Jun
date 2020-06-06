@@ -60,8 +60,10 @@ layout: true
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Bisherige Dashboards konnten Popupfenster anzeigen etc. Daten filtern, Variablen auswählen etc. war aber nicht möglich.&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;Mit &lt;highm&gt;shiny&lt;/highm&gt; ist genau dies möglich.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Bisherige Dashboards konnten Daten in Fenstern &lt;high&gt;anzeigen&lt;/high&gt;. &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Daten &lt;high&gt;filtern&lt;/high&gt; oder Variablen &lt;high&gt;auswählen&lt;/high&gt; war aber &lt;high&gt;nicht&lt;/high&gt; möglich.
+&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;highm&gt;shiny&lt;/highm&gt; ermöglicht genau diese Funktionalität.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -86,8 +88,9 @@ layout: true
 &gt; Shiny is an R package that makes it easy to build interactive web applications (apps) straight from R. - RStudio
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Interaktive Apps bieten höchste Flexibilität.&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;Dabei muss man (für simple bis moderat komplexe Apps) &lt;high&gt;ausschliesslich R&lt;/high&gt; können.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit Shiny erstellt &lt;high&gt;interaktive Webseiten/Applikationen&lt;/high&gt; erstellen.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m1"&gt;&lt;span&gt;Interaktive Applikationen bieten höchste &lt;high&gt;Flexibilität&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;Simple bis moderat komplexe Applikationen basieren auf &lt;high&gt;R und RMarkdown&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -130,8 +133,8 @@ layout: true
 
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Zwei Teile: &lt;high&gt;UI&lt;/high&gt; und &lt;high&gt;server&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;Der UI-Teil beinhaltet die angezeigte Webseite.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;Der Server-Teil ist für die Umsetzung des Inputs verantwortlich.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Der UI-Teil beinhaltet die angezeigte &lt;high&gt;Webseite&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Der Server-Teil ist für die &lt;high&gt;Umsetzung des Inputs&lt;/high&gt; verantwortlich.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 ]
@@ -148,23 +151,23 @@ layout: true
 
 ---
 
-# User Input
+# Benutzer Eingaben
 
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Input über &lt;high&gt;widgets&lt;/high&gt;. Mögliche widgets sind:&lt;/span&gt;&lt;/li&gt; 
+  &lt;li class="m1"&gt;&lt;span&gt;Eingaben über &lt;high&gt;widgets&lt;/high&gt;:&lt;/span&gt;&lt;/li&gt; 
     &lt;ul class="level"&gt;
       &lt;li&gt;&lt;span&gt;Slider.&lt;/li&gt;&lt;/span&gt;
       &lt;li&gt;&lt;span&gt;Checkboxen.&lt;/li&gt;&lt;/span&gt;
       &lt;li&gt;&lt;span&gt;Dropdown Menus.&lt;/li&gt;&lt;/span&gt;
       &lt;li&gt;&lt;span&gt;...&lt;/li&gt;&lt;/span&gt;
     &lt;/ul&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Inputwerte werden in &lt;highm&gt;input&lt;/highm&gt; gespeichert.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Eingabewerte werden in &lt;highm&gt;input&lt;/highm&gt; gespeichert.&lt;/span&gt;&lt;/li&gt;
     &lt;ul class="level"&gt;
-      &lt;li&gt;&lt;span&gt;Werte werden bei neuem Input upgedatet.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Werte werden bei neuer Eingabe &lt;high&gt;upgedatet&lt;/high&gt;.&lt;/li&gt;&lt;/span&gt;
       &lt;li&gt;&lt;span&gt;Werte werden mit &lt;highm&gt;input$INPUT_ID&lt;/highm&gt; angesteuert.&lt;/li&gt;&lt;/span&gt;
-      &lt;li&gt;&lt;span&gt;Kontrolliert auf der Serverseite ausgeführte Aktionen.&lt;/li&gt;&lt;/span&gt;
+      &lt;li&gt;&lt;span&gt;Eingaben kontrollieren auf der &lt;high&gt;Serverseite&lt;/high&gt; ausgeführte Aktionen.&lt;/li&gt;&lt;/span&gt;
     &lt;/ul&gt;
 &lt;/ul&gt;
 
@@ -188,11 +191,11 @@ layout: true
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Reaktive Objekte&lt;/high&gt; werden getrackt.&lt;/span&gt;&lt;/li&gt;  
-  &lt;li class="m2"&gt;&lt;span&gt;Verändern sich, wenn Input sich verändert.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;input&lt;/mono&gt; kann nur in reaktiver Umwelt gelesen werden.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m4"&gt;&lt;span&gt;Veranlassen, wenn sie verändert werden, dass jeder Codeblock, in dem die Objekte verwendet werden, erneut ausgeführt wird.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m5"&gt;&lt;span&gt;Werden, wie eine Funktion, mit Klammern angesteuert.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Reaktive Objekte&lt;/high&gt; werden permanent getrackt.&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m2"&gt;&lt;span&gt;Objekte verändern sich, wenn sich die &lt;high&gt;Eingabe verändert&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;input&lt;/mono&gt; kann nur in &lt;high&gt;reaktiver Umwelt&lt;/high&gt; gelesen werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;Jeder &lt;high&gt;Codeblock&lt;/high&gt;, in dem die Objekte verwendet werden, wird erneut &lt;high&gt;ausgeführt&lt;/high&gt; wenn es eine Eingabe gibt.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;Werden, wie eine &lt;high&gt;Funktion&lt;/high&gt;, mit &lt;high&gt;Klammern angesteuert&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
