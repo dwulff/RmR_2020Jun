@@ -82,10 +82,10 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Typischerweise einzelseitige Präsentation von Resultaten.</span></li> 
-  <li class="m2"><span>Präsentation zusammengehöriger Analysen.</span></li>  
-  <li class="m3"><span>Geben einfache Übersicht über wichtigste Parameter/KPI (Key Performance Indicators).</span></li>
-  <li class="m4"><span>Können dynamisch und interaktiv sein.</span></li>
+  <li class="m1"><span>Typischerweise einzelseitige <high>Präsentation</high> von Resultaten.</span></li> 
+  <li class="m2"><span>Präsentation zusammengehöriger <high>Analysen</high>.</span></li>  
+  <li class="m3"><span>Geben einfache <high>Übersicht</high> über wichtigste <high>Parameter/KPIs</high> (Key Performance Indicators).</span></li>
+  <li class="m4"><span>Können <high>dynamisch</high> und <high>interaktiv</high> sein.</span></li>
 </ul>
 
 ]
@@ -101,7 +101,7 @@ basel <- read.csv("1_Data/basel.csv")
 
 ---
 
-# Dashboards bieten...
+# Dashboards bieten ...
 
 .pull-left4[
 <ul>
@@ -151,12 +151,12 @@ basel <- read.csv("1_Data/basel.csv")
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Headers bestimmen die Boxen und Seiten.</span></li>  
-  <li class="m2"><span>Standardmässig eine Seite; scrollable und mehrere Seiten
+  <li class="m1"><span><high>Headers</high> bestimmen die Boxen und Seiten.</span></li>  
+  <li class="m2"><span>Standard: <high>eine Seite</high>; scrollable und mehrere Seiten
   möglich.</span></li>
-  <li class="m3"><span>Standardmässig spaltenweise; zeilenweise möglich.</span></li>
-  <li class="m4"><span>Standardmässig eine Spalte; mehrere möglich.</span></li>
-  <li class="m5"><span>Tabs möglich.</span></li>
+  <li class="m3"><span>Standard: <high>spaltenweise</high>; zeilenweise möglich.</span></li>
+  <li class="m4"><span>Standard: <high>eine Spalte</high>; mehrere möglich.</span></li>
+  <li class="m5"><span><high>Tabs</high> möglich.</span></li>
 </ul>
 
 
@@ -176,7 +176,7 @@ basel <- read.csv("1_Data/basel.csv")
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Seiten werden mit Titel erster Ordnung definiert.</span></li> 
+  <li class="m1"><span><high>Seiten</high> werden mit Titel <high>erster Ordnung</high> definiert.</span></li> 
   <li class="m2"><span>Konvention: Statt <highm>#</highm> wird <highm>=====</highm> verwendet.</span></li> 
 
 </ul>
@@ -206,7 +206,7 @@ Seite 2
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Spalten/Zeilen werden mit Titel zweiter Ordnung definiert.</span></li> 
+  <li class="m1"><span><high>Spalten/Zeilen</high> werden mit Titel <high>zweiter Ordnung</high> definiert.</span></li> 
   <li class="m2"><span>Konvention: Statt <highm>##</highm> wird <highm>----</highm> verwendet.</span></li> 
 
 </ul>
@@ -240,7 +240,7 @@ Spalte 2
 
 .pull-left4[
 <ul>
-  <li class="m1"><span>Spalten/Zeilen werden mit Titel dritter Ordnung weiter unterteilt</span></li> 
+  <li class="m1"><span><high>Spalten/Zeilen</high> werden mit Titel <high>dritter Ordnung</high> weiter unterteilt.</span></li> 
   <li class="m2"><span>Konvention: Hier wird ganz normal <highm>###</highm> verwendet.</span></li> 
 
 </ul>
@@ -305,7 +305,6 @@ Spalte 2
 ### Inhalt 3
 ````
 
-
 ]
 
 .pull-right5[
@@ -329,7 +328,7 @@ Spalte 2
 </ul>
 
 
-````mardown
+````markdown
 Seite 1 {.storyboard}
 ====================================
   
@@ -364,7 +363,7 @@ Kommentar
   <li class="m1"><span>Grafiken.</span></li>  
   <li class="m2"><span>Tabellen.</span></li>
   <li class="m3"><span><a href="http://stephanieevergreen.com/problem-with-dashboards/">Text</a>.</span></li>
-  <li class="m4"><span><mono>valueBox</mono>es.</span></li>
+  <li class="m4"><span><mono>valueBoxe</mono>s.</span></li>
   <li class="m5"><span><mono>gauge</mono>s.</span></li>
   <li class="m6"><span>htmlwidgets.</span></li>
 </ul>
@@ -387,7 +386,7 @@ Kommentar
 .pull-left5[
 
 <ul>
-  <li class="m1"><span>Zeige wichtige Werte.</span></li>  
+  <li class="m1"><span>Zeige <high>wichtige Werte.</high></span></li>  
   <li class="m2"><span>Grosse Auswahl an Icons:</span></li>
   <ul class="level">
     <li><span><a href="https://fontawesome.com/">Font Awesome</a> Icons mit <mono>"fa-NAME"</mono>.</li></span>
@@ -425,8 +424,8 @@ valueBox(WERT,
 .pull-left5[
 
 <ul>
-  <li class="m1"><span>Zeige wichtige Werte in relation zur Skala.</span></li>  
-  <li class="m2"><span>Balkenfarbe kann nach Werten variieren.</span></li>
+  <li class="m1"><span>Zeige wichtige Werte in <high>Relation</high> zur Skala.</span></li>  
+  <li class="m2"><span><high>Balkenfarbe</high> kann nach Werten variieren.</span></li>
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
@@ -459,8 +458,8 @@ gauge(WERT, min = MIN, max = MAX,
 .pull-left5[
 
 <ul>
-  <li class="m1"><span>Zeige wichtige Werte in relation zur Skala.</span></li>  
-  <li class="m2"><span>Balkenfarbe kann nach Werten variieren.</span></li>
+  <li class="m1"><span>Zeige wichtige Werte in <high>Relation</high> zur Skala.</span></li>  
+  <li class="m2"><span><high>Balkenfarbe</high> kann nach Werten variieren.</span></li>
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
@@ -494,8 +493,8 @@ gauge(round(mean(basel$glueck), 2),
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Interface zu JS library.</span></li>  
-  <li class="m2"><span>Einfaches Erstellen interaktiver Karten.</span></li>
+  <li class="m1"><span><high>Interface</high> zu JS library.</span></li>  
+  <li class="m2"><span>Einfaches Erstellen <high>interaktiver Karten</high>.</span></li>
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
@@ -532,8 +531,8 @@ leaflet() %>%
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Interface zu JS library.</span></li>  
-  <li class="m2"><span>Einfaches Erstellen interaktiver Karten.</span></li>
+  <li class="m1"><span><high>Interface</high> zu JS library.</span></li>  
+  <li class="m2"><span>Einfaches Erstellen <high>interaktiver Karten</high>.</span></li>
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
@@ -580,8 +579,8 @@ leaflet() %>%
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Interface zu JS library.</span></li>  
-  <li class="m2"><span>Einfaches Erstellen interaktiver Karten.</span></li>
+  <li class="m1"><span><high>Interface</high> zu JS library.</span></li>  
+  <li class="m2"><span>Einfaches Erstellen <high>interaktiver Karten</high>.</span></li>
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
@@ -633,8 +632,8 @@ leaflet() %>%
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Interface zu JS library.</span></li>  
-  <li class="m2"><span>Einfaches Erstellen interaktiver Plots; vor allem aus <mono>ggplot2</mono> Objekten.</span></li>
+  <li class="m1"><span><high>Interface</high> zu JS library.</span></li>  
+  <li class="m2"><span>Einfaches Erstellen <high>interaktiver Plots</high>, vor allem aus <mono>ggplot2</mono> Objekten.</span></li>
 </ul>
 
 ```{r eval = FALSE, echo =TRUE}
