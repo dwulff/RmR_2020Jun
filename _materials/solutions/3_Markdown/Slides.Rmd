@@ -62,9 +62,6 @@ options(digits = 4)
 require(tidyverse)
 require(knitr)
 
-# load color set
-source("../../_materials/palette/therbootcamp_palettes.R")
-
 # knitr options
 knitr::opts_chunk$set(dpi = 300, 
                       echo = FALSE, 
@@ -77,7 +74,7 @@ print2 <- function(x, nlines=10,...) {
    cat(head(capture.output(print(x,...)), nlines), sep="\n")}
 
 # load data
-airbnb <- read_csv("1_Data/airbnb.csv")
+airbnb <- read_csv("../1_Data/airbnb.csv")
 
 ```
 
